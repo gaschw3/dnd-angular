@@ -1,0 +1,44 @@
+<nav  class="navbar sticky-top navbar-expand-lg navbar-inverse bg-dark">
+  <a  class="navbar-brand"  href="#">Angular/Bootstrap Test</a>
+  <button  class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
+  <span  class="navbar-toggler-icon"></span>
+  </button>
+  <div  class="collapse navbar-collapse"  id="navbarSupportedContent">
+    <ul  class="navbar-nav mr-auto">
+        <li  class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownChar"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
+          Characters
+          </a>
+          <div  class="dropdown-menu"  aria-labelledby="navbarDropdownChar">
+            <a  class="dropdown-item" [routerLink]="'/classes'"> Classes </a>
+            <a  class="dropdown-item" [routerLink]="'/backgrounds'"> Backgrounds </a>
+            <a  class="dropdown-item" [routerLink]="'/races'"> Races </a>
+            <a  class="dropdown-item" [routerLink]="'/feats'"> Feats </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownRef"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
+          Reference
+          </a>
+          <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
+            <a  class="dropdown-item" [routerLink]="'/rules'"> Rules </a>
+            <a  class="dropdown-item" [routerLink]="'/conditions'"> Conditions </a>
+            <a  class="dropdown-item" [routerLink]="'/spells'"> Spells </a>
+            <a  class="dropdown-item" [routerLink]="'/campaign'"> Campaign <span className="label label-wip">new, WIP</span></a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle"  href="#"  id="navdarDropdownDm"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
+          DM
+          </a>
+          <div  class="dropdown-menu"  aria-labelledby="navdarDropdownDm">
+            <a  class="dropdown-item" [routerLink]="'/beastiary'"> Beastiary </a>
+            <a  class="dropdown-item" [routerLink]="'/items'"> Items </a>
+          </div>
+        </li>
+    </ul>
+</div>
+</nav>
+<div  class="container-fluid">
+    <router-outlet></router-outlet>
+</div>
