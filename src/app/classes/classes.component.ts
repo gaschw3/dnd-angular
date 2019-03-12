@@ -27,6 +27,10 @@ export class ClassesComponent implements OnInit {
       return this.http.get("assets/data/classData.json")
   }
 
+  private getFeatures(level) {
+    return this.currClass.features.filter(f => f.level == level && f.subclass == "base");
+  }
+
 	ngOnInit() {
     this.getJSON().subscribe(classes => {
         this.classes = classes;
@@ -34,13 +38,6 @@ export class ClassesComponent implements OnInit {
     });
 
     this.dtOptions = {
-      columnDefs: [
-        { width: '10%', targets: 0 },
-        { width: '10%', targets: 1 },
-        { width: '60%', targets: 2 },
-        { width: '10%', targets: 3 },
-        { width: '10%', targets: 4 },
-      ],
       dom: 'lftr',
       paging: false,
       ordering: false,

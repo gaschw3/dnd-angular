@@ -16,9 +16,10 @@
     "<ul><li>(a) a greataxe or (b) any martial melee weapon</li><li>(a) two handaxes or (b) any simple weapon</li><li>An explorer's pack, and four javelins</li></ul>",
     "Alternatively, you may start with 2d4 × 10 gp to buy your own equipment."
   ],
-  "levelHeaders": ["Level", "Proficiency", "Features", "Rages", "Rage Damage"],
   "levelHeaderWidth": ["10", "10", "50", "10", "10"],
   "levelTable": [
+    ["Level", "Proficiency", "Features", "Rages", "Rage Damage"],
+    ["10", "10", "50", "10", "10"],
     ["1", "+2", "features", "2", "+2"],
     ["2", "+2", "features", "2", "+2"],
     ["3", "+2", "features", "3", "+2"],

@@ -11,13 +11,20 @@
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-hover table-condensed">
       <thead>
         <tr>
-          <th *ngFor="let header of currClass.levelHeaders">{{header}}</th>
+          <th *ngFor="let header of currClass.levelTable[0]">{{header}}</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let levels of currClass.levelTable">
+        <tr *ngFor="let levels of currClass.levelTable | slice: 2; let i = index">
           <td *ngFor="let column of levels">
-            {{column}}
+            <ng-container *ngIf="column == 'features'; else static">
+              <ng-container *ngFor="let f of getFeatures(i+1); let last = last">
+                <a href="/features/{{f.name}}">{{ f.title }}</a><span *ngIf="!last">, </span>
+              </ng-container>
+            </ng-container>
+            <ng-template #static>
+              {{ column }}
+            </ng-template>
           </td>
         </tr>
       </tbody>
