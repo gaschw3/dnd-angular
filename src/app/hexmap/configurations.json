@@ -1,0 +1,52 @@
+{
+  "denari": {
+    "width": 1200,
+    "height": 1800,
+    "layout": { "width": 3, "height": 3, "flat": true, "spacing": 1 },
+    "origin": { "x": 0, "y": 0 },
+    "map": "orientedRectangle",
+    "mapProps": [ 17, 10 ],
+    "hexType": [ 
+              ["ocean", "ocean", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "green", "farms", "unkwn", "ocean"],
+              ["ocean", "ocean", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "mntn2", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "ocean", "unkwn", "unkwn", "ocean"],
+              ["ocean", "ocean", "unkwn", "unkwn", "unkwn", "mntn2", "mntn2", "unkwn", "dsrth", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "ocean", "unkwn", "unkwn", "ocean"],
+              ["ocean", "ocean", "unkwn", "unkwn", "frstm", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "ocean", "ocean", "unkwn", "unkwn"],
+              ["ocean", "ocean", "unkwn", "unkwn", "frsth", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "dsrth", "unkwn", "unkwn", "unkwn", "ocean", "ocean", "unkwn", "unkwn"],
+              ["ocean", "ocean", "ocean", "green", "dsrtm", "unkwn", "unkwn", "unkwn", "unkwn", "mntn1", "dsrtm", "unkwn", "unkwn", "unkwn", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "blgt2", "ocean", "green", "mntn1", "mntn1", "unkwn", "unkwn", "grash", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "ocean", "unkwn", "unkwn", "unkwn"],
+              ["ocean", "ocean", "ocean", "ocean", "green", "green", "grash", "blgt1", "blgt2", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn"],
+              ["ocean", "ocean", "ocean", "frst1", "frst1", "green", "grash", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn"],
+              ["ocean", "ocean", "frst2", "frst2", "farms", "green", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn", "unkwn"]
+            ],
+    "mapPropsFull": [ 21, 26 ],
+    "fullMap": [ 
+              ["ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "blgt1", "ocean", "green", "ocean", "green", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "ocean", "ocean", "blgt4", "blgt3", "blgt2", "blgt2", "blgt1", "green", "green", "green", "green", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "ocean", "ocean", "blgt3", "blgt3", "blgt3", "mntn2", "mntn2", "mntn2", "frsth", "frsth", "green", "green", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "ocean", "blgt3", "blgt3", "mntn3", "mntn3", "mntn2", "mntn2", "mntn2", "mntn1", "frsth", "green", "green", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "ocean", "blgt3", "blgt3", "mntn3", "mntn3", "mntn3", "mntn2", "mntn1", "frsth", "green", "farms", "green", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "ocean", "blgt2", "mntn2", "mntn3", "mntn4", "mntn2", "mntn2", "frsth", "green", "ocean", "farms", "green", "ocean", "frst1", "ocean", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "blgt2", "mntn1", "mntn2", "mntn3", "mntn3", "mntn2", "mntn1", "frsth", "green", "dsrt1", "dsrt1", "green", "ocean", "mntn3", "frst1", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "blgt2", "mntn1", "mntn2", "mntn2", "mntn3", "mntn2", "dsrtm", "dsrth", "dsrt1", "dsrt1", "dsrt1", "dsrt1", "green", "mshm1", "frst1", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "blgt2", "blgt1", "mntn2", "mntn2", "mntn2", "mntn2", "dsrtm", "dsrth", "dsrtr", "dsrt1", "dsrt1", "dsrt1", "ocean", "mshm1", "green", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "blgt1", "frsth", "frstm", "mntn2", "mntn2", "mntn1", "dsrtm", "dsrth", "dsrtr", "dsrtr", "dsrt1", "dsrt1", "ocean", "mshm2", "mshm1", "ocean", "ocean", "ocean", "ocean"],
+              ["ocean", "ocean", "frsth", "frsth", "frstm", "frstm", "mntn1", "mntn1", "dsrtm", "dsrtm", "dsrth", "dsrtr", "dsrt1", "dsrt1", "ocean", "ocean", "mshm2", "mshm2", "ocean", "ocean", "ocean"],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+              ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1", "1", "1", "1", ""]
+            ]
+
+  }
+}

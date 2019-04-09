@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ClassesComponent } from './classes/classes.component';
+import { HexmapComponent } from './hexmap/hexmap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClassesComponent
+    ClassesComponent,
+    HexmapComponent
   ],
   imports: [
     BrowserModule,

@@ -2,3 +2,98 @@
 .navbar-nav > li > a {
     color: #ccc;
 }
+
+svg {
+
+}
+svg g {
+  fill-opacity: 0.85;
+}
+svg g:hover {
+  fill-opacity: 1;
+}
+
+svg g polygon {
+  stroke: #111;
+  stroke-width: 0.1;
+  transition: fill-opacity .2s;
+}
+svg g text {
+  font-size: 1px;
+  fill: #fff;
+  fill-opacity: 0.9;
+}
+svg path {
+  fill: none;
+  stroke: hsl(60, 20%, 70%);
+  stroke-width: 0.4em;
+  stroke-opacity: 0.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ocean {
+  fill: #5ae;
+}
+.green {
+  fill: #99e54e;
+}
+.farms {
+  fill: #9fd16e;
+}
+.grash{
+  fill: #94af3a;
+}
+.blgt1 {
+  fill: #888;
+}
+.blgt2 {
+  fill: #666;
+}
+.blgt3 {
+  fill: #333;
+}
+.blgt4 {
+  fill: #222;
+}
+.mntn1 {
+  fill: #b70;
+}
+.mntn2 {
+  fill: #a70;
+}
+.mntn3 {
+  fill: #950;
+}
+.mntn4 {
+  fill: #830;
+}
+.frstm {
+  fill: #7e8800;
+}
+.frsth {
+  fill: #580;
+}
+.frst1 {
+  fill: #379b20;
+}
+.frst2 {
+  fill: #2a7719;
+}
+.dsrtm {
+  fill: #93882c;
+}
+.dsrth {
+  fill: #c1b451;
+}
+.dsrtr {
+  fill: #d6c964;
+}
+.dsrt1 {
+  fill: #ede076;
+}
+.mshm1 {
+  fill: #37ad7e;
+}
+.mshm2 {
+  fill: #288761;
+}

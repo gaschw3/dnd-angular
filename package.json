@@ -25,8 +25,13 @@
     "core-js": "^2.5.4",
     "datatables.net": "^1.10.19",
     "datatables.net-dt": "^1.10.19",
+    "invariant": "^2.2.4",
     "jquery": "^3.3.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hexgrid": "^1.0.3",
     "rxjs": "~6.3.3",
+    "uuid": "^3.3.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
