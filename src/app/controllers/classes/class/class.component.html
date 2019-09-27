@@ -1,11 +1,11 @@
 <div *ngIf="currClass">
   <h1>{{currClass.name}}</h1>
   <ul>
-  	<li>Desc: {{currClass.description}}</li>
-  	<li>HD: 1d{{currClass.hd}}</li>
-  	<ng-container *ngFor="let prof of currClass.proficiencies">
-  		<li [innerHtml]="prof"></li>
-  	</ng-container>
+    <li>Desc: {{currClass.description}}</li>
+    <li>HD: 1d{{currClass.hd}}</li>
+    <ng-container *ngFor="let prof of currClass.proficiencies">
+      <li [innerHtml]="prof"></li>
+    </ng-container>
   </ul>
   <div  class="table-responsive">
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-hover table-condensed">

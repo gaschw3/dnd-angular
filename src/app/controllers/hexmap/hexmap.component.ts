@@ -39,7 +39,7 @@ export class HexmapComponent implements OnInit, OnDestroy, OnChanges, AfterViewI
 
       hexagons.map((hex, i) => (
         hexes.push(
-          React.createElement(Hexagon, {"key":config.mapProps+i, "q":hex.q, "r":hex.r, "s":0, "className":config.hexType[hex.r + Math.floor(hex.q/2)][hex.q]},
+          React.createElement(Hexagon, {"key":config.mapProps+i, "q":hex.q, "r":hex.r, "s":0, "pattern":config.hexType[hex.r + Math.floor(hex.q/2)][hex.q], "className":config.hexType[hex.r + Math.floor(hex.q/2)][hex.q]},
             React.createElement(Text, null, config.hexType[hex.r + Math.floor(hex.q/2)][hex.q] == "ocean" ? "" : hex.q + "." + ((hex.r+7) + Math.floor(hex.q/2)) )
           )
       )));
@@ -47,11 +47,14 @@ export class HexmapComponent implements OnInit, OnDestroy, OnChanges, AfterViewI
       if (this.isMounted()) {
           ReactDOM.render(
             React.createElement(HexGrid, { "width":config.width, "height":config.height, "viewBox":"-5 20 100 100"},
-              React.createElement(Layout, { "size":{"x": config.layout.width, "y": config.layout.height}, "flat":config.layout.flat, "spacing":config.layout.spacing },
-                [
-                  hexes
-                ]  
-              )
+              [
+                React.createElement(Layout, { "size":{"x": config.layout.width, "y": config.layout.height}, "flat":config.layout.flat, "spacing":config.layout.spacing },
+                  [
+                    hexes
+                  ]  
+                ),
+                React.createElement(Pattern, {"key":0, "id":"green", "link":"http://lorempixel.com/400/400/cats/2/", "size":{"x": config.layout.width, "y": config.layout.height}})
+              ]
             ), this.getRootDomNode()
           );
       }
