@@ -3,6 +3,7 @@ import { Subject, Observable } from "rxjs";
 import { Class } from '../../models';
 import { HttpClient } from '@angular/common/http';
 import { DataTableDirective } from 'angular-datatables';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-classes',
@@ -18,7 +19,8 @@ export class ClassesComponent implements OnInit {
       return this.http.get("assets/data/classData.json")
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    private route: ActivatedRoute) {}
 
   // DataTables objects
   @ViewChild(DataTableDirective, {static: false})
@@ -54,6 +56,7 @@ export class ClassesComponent implements OnInit {
 
     this.getJSON().subscribe(classes => {
         this.classes = classes;
+        this.currClass = this.classes.find(f => f.id == this.route.snapshot.params.className);
         setTimeout(() => {
           this.dtTrigger.next();
         });

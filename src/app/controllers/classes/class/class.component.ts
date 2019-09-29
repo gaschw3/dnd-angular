@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Observable } from "rxjs";
 import { DataTableDirective } from "angular-datatables";
 
 import { Class, Proficiency } from '../../../models';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-class',
@@ -24,9 +22,7 @@ export class ClassComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject();
   dtOptions: DataTables.Settings = {};
 
-  constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute) {}
+  constructor() {}
 
   ngOnInit() {
     this.dtOptions = {
