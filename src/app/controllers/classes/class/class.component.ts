@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Observable } from "rxjs";
 import { DataTableDirective } from "angular-datatables";
 
-import { Class } from '../../../models';
+import { Class, Proficiency } from '../../../models';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -12,36 +13,32 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClassComponent implements OnInit {
   
-  classes: Class[];
-  currClass: Class;
+  @Input() class: Class;
+  prof: Proficiency;
+
   ccId: number = 0; //current class id
 
   // DataTables objects
-  @ViewChild(DataTableDirective)
-  private dtElement: DataTableDirective;
-  dtOptions: any = {};
+  @ViewChild(DataTableDirective, {static: true})
+  dtElement: DataTableDirective;
+  dtTrigger: Subject<any> = new Subject();
+  dtOptions: DataTables.Settings = {};
 
-  constructor(private http: HttpClient) {}
-
-  public getJSON(): Observable<any> {
-      return this.http.get("assets/data/classData.json")
-  }
-
-  private getFeatures(level) {
-    return this.currClass.features.filter(f => f.level == level && f.subclass == "base");
-  }
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.getJSON().subscribe(classes => {
-        this.classes = classes;
-        this.currClass = classes[0];
-    });
-
     this.dtOptions = {
       dom: 'lftr',
-      paging: false,
       ordering: false,
-      orderCellsTop: false
+      orderCellsTop: false,
+      paging: false
     }
+  }
+
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
   }
 }

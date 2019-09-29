@@ -1,0 +1,12 @@
+.level-table {
+    font-size:1em;
+    overflow: auto;
+}
+
+td.center, th.center {
+    text-align:center;
+}
+
+th,  td {
+    padding: 2px;
+}

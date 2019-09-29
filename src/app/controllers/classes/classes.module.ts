@@ -5,11 +5,15 @@ import { ClassesRoutingModule } from './classes-routing.module';
 
 import { ClassComponent } from './class/class.component';
 import { ClassesComponent } from './classes.component';
+import { FeaturesComponent } from './features/features.component';
+import { LevelTableComponent } from './level-table/level-table.component';
 
 @NgModule({
   declarations: [
     ClassComponent,
-    ClassesComponent
+    ClassesComponent,
+    FeaturesComponent,
+    LevelTableComponent
   ],
   imports: [
     CommonModule,

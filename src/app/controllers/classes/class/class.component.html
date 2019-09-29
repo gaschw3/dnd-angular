@@ -1,33 +1,36 @@
-<div *ngIf="currClass">
-  <h1>{{currClass.name}}</h1>
-  <ul>
-    <li>Desc: {{currClass.description}}</li>
-    <li>HD: 1d{{currClass.hd}}</li>
-    <ng-container *ngFor="let prof of currClass.proficiencies">
-      <li [innerHtml]="prof"></li>
-    </ng-container>
-  </ul>
-  <div  class="table-responsive">
-    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-hover table-condensed">
-      <thead>
-        <tr>
-          <th *ngFor="let header of currClass.levelTable[0]">{{header}}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let levels of currClass.levelTable | slice: 2; let i = index">
-          <td *ngFor="let column of levels">
-            <ng-container *ngIf="column == 'features'; else static">
-              <ng-container *ngFor="let f of getFeatures(i+1); let last = last">
-                <a href="/features/{{f.name}}">{{ f.title }}</a><span *ngIf="!last">, </span>
-              </ng-container>
-            </ng-container>
-            <ng-template #static>
-              {{ column }}
-            </ng-template>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="container-fluid">
+  <div class="row justify-content-center" *ngIf="class">
+    <div class="col-12">
+      <h1>{{class.name}}</h1>
+      <p>{{class.description}}</p>
+    </div>
+    <div class="col-md-5">
+      <h4>Hit Points</h4>
+      <div><strong>Hit Dice: </strong>1d{{class.hd}}</div>
+      <div><strong>HP at 1st Level: </strong>{{class.hd}} + {{class.stat}}</div>
+      <div><strong>HP at Higher Levels: </strong>(1d{{class.hd}} + {{class.stat}}) per Barbarian level after first</div>
+      
+      <h4>Proficiencies</h4>
+      <p>You are proficient with the following items, in addition to any proficiencies provided by your race or background.</p>
+      <ng-container *ngIf="prof">
+        <div><strong>Armor: </strong>{{prof.armor}}</div>
+        <div><strong>Weapons: </strong>{{prof.weapons}}</div>
+        <div><strong>Tools: </strong>{{prof.tools}}</div>
+        <div><strong>Saves: </strong>{{prof.saves}}</div>
+        <div><strong>Skills: </strong>{{prof.skills}}</div>
+      </ng-container>
+
+      <h4>Starting Equipment</h4>
+      <p>You start with the following items, plus anything provided by your background.</p>
+      <ul>
+        <ng-container *ngFor="let item of class.equipment.default">
+          <li>{{item}}</li>
+        </ng-container>
+      </ul>
+      <p>Alternatively, you may start with {{class.equipment.alt}} x 10gp to buy your own equipment</p>
+    </div>
+    <div class="col-12">
+      <app-features [features]="class.features"></app-features>
+    </div>
   </div>
 </div>

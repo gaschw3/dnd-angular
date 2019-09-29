@@ -1,0 +1,23 @@
+<div *ngIf="class" class="level-table">
+    <table class="table table table-{{class.id}} table-hover table-condensed">
+    <thead>
+        <tr>
+            <th class="center" *ngFor="let header of class.levelTable[0]">{{header}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let levels of class.levelTable | slice: 1; let i = index;">
+        <ng-container *ngFor="let column of levels">
+            <td *ngIf="column == 'features'; else static">
+            <ng-container *ngFor="let f of getFeatures(i+1); let last = last">
+                <a href="/features/{{f.name}}">{{ f.title }}</a><span *ngIf="!last">, </span>
+            </ng-container>
+            </td>
+            <ng-template #static>
+            <td class="center">{{column}}</td>
+            </ng-template>
+        </ng-container>
+        </tr>
+    </tbody>
+    </table>
+</div>
