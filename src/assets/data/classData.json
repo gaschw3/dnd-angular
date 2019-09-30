@@ -14,10 +14,10 @@
     },
     "equipment": {
       "default": [
-        "(a) a greataxe or (b) any martial melee weapon",
-        "(a) two handaxes or (b) any simple weapon",
+        "(a) a {@item/greataxe greataxe} or (b) any martial melee weapon",
+        "(a) two {@item/handaxe handaxes} or (b) any simple weapon",
         "An explorer's pack",
-        "four javelins"
+        "four {@item/javelin javelins}"
       ],
       "alt": "2d4"
     },
@@ -1537,7 +1537,7 @@
     "stat": "WIS",
     "proficiencies": {
       "armor": "light armor, medium armor, shields (most druids will not wear armor or use shields made of metal)",
-      "weapons": "clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears",
+      "weapons": "clubs, daggers, darts, {@item/javelin javelins}, maces, quarterstaffs, scimitars, sickles, slings, spears",
       "tools": "herbalism kit",
       "saves": "INT, WIS",
       "skills": "Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival"
@@ -1886,7 +1886,7 @@
       "default": [
         "(a) chain mail or (b) leather, longbow, and 20 arrows",
         "(a) a martial weapon and a shield or (b) two martial weapons",
-        "(a) a light crossbow and 20 bolts or (b) two handaxes",
+        "(a) a light crossbow and 20 bolts or (b) two {@item/handaxe handaxes}",
         "(a) a dungeoneer's pack or (b) an explorer's pack"
       ],
       "alt": "5d4"
@@ -3024,7 +3024,7 @@
     "equipment": {
       "default": [
         "(a) a martial weapon and a shield or (b) two martial weapons",
-        "(a) five javelins or (b) any simple melee weapon",
+        "(a) five {@item/javelin javelins} or (b) any simple melee weapon",
         "(a) a priest's pack or (b) an explorer's pack",
         "chain mail",
         "a holy symbol"

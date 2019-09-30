@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { RouterModule } from '@angular/router'
 import { Class } from 'src/app/models';
 
 @Component({

@@ -1,7 +1,7 @@
 <div>
   <div class="row" *ngIf="class">
     <div class="col-12">
-      <h2 class="text-center">{{class.name}}</h2>
+      <h2 class="text-center text-success">{{class.name}}</h2>
       <div class="col-md-6 offset-md-3">
         <p class="text-center">{{class.description}}</p>
       </div>
@@ -9,12 +9,12 @@
     <div class="class-info col-md-5">
       <div class="card">
         <div class="card-body">
-            <h4>Hit Points</h4>
+            <h4 class="text-success">Hit Points</h4>
             <div><strong>Hit Dice: </strong>1d{{class.hd}}</div>
             <div><strong>HP at 1st Level: </strong>{{class.hd}} + CON</div>
             <div><strong>HP at Higher Levels: </strong>(1d{{class.hd}} + CON) per {{class.name}} level after first</div>
 
-            <h4>Proficiencies</h4>
+            <h4 class="text-success">Proficiencies</h4>
             <p>You are proficient with the following items, in addition to any proficiencies provided by your race or background.</p>
             <ng-container *ngIf="prof">
               <div><strong>Armor: </strong>{{prof?.armor}}</div>
@@ -24,11 +24,11 @@
               <div><strong>Skills: </strong>{{prof?.skills}}</div>
             </ng-container>
 
-            <h4>Starting Equipment</h4>
+            <h4 class="text-success">Starting Equipment</h4>
             <p>You start with the following items, plus anything provided by your background.</p>
             <ul>
               <ng-container *ngFor="let item of class.equipment.default">
-                <li>{{item}}</li>
+                <li [innerHtml]="item | linkmaker"></li>
               </ng-container>
             </ul>
             <p>Alternatively, you may start with <span class="text--gp">{{class.equipment.alt}} x 10gp</span> to buy your own equipment</p>

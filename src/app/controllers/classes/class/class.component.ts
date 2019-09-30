@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { Subject, Observable } from "rxjs";
-import { DataTableDirective } from "angular-datatables";
 
 import { Class, Proficiency } from '../../../models';
 

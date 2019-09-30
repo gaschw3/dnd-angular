@@ -7,13 +7,15 @@ import { ClassComponent } from './class/class.component';
 import { ClassesComponent } from './classes.component';
 import { FeaturesComponent } from './features/features.component';
 import { LevelTableComponent } from './level-table/level-table.component';
+import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
 
 @NgModule({
   declarations: [
     ClassComponent,
     ClassesComponent,
     FeaturesComponent,
-    LevelTableComponent
+    LevelTableComponent,
+    LinkmakerPipe
   ],
   imports: [
     CommonModule,

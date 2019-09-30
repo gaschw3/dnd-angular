@@ -1,7 +1,7 @@
 <div class="card" *ngIf="features">
     <div class="card-body">
         <div class="col-lg-12" id="{{feature.name}}" *ngFor="let feature of features">
-            <h4 class="text-info">{{feature.title}}</h4>
+            <h4 class="text-success">{{feature.title}}</h4>
             <div class="feature-text">
                 <p *ngFor="let entry of feature.text">{{entry}}</p>
             </div>

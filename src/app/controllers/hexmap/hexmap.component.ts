@@ -14,7 +14,7 @@ interface HexmapProps {
 
 @Component({
   selector: 'app-hexmap',
-  template: '<span [id]="rootDomID"></span>',
+  template: '<span></span>',
   styleUrls: ['./hexmap.component.css']
 })
 export class HexmapComponent implements OnInit, OnDestroy, OnChanges, AfterViewInit {
