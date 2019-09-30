@@ -9,7 +9,7 @@
       "armor": "light armor, medium armor, shields",
       "weapons": "simple weapons, martial weapons",
       "tools": "none",
-      "savingThrows": "STR, CON",
+      "saves": "STR, CON",
       "skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
     },
     "equipment": {
@@ -21,7 +21,6 @@
       ],
       "alt": "2d4"
     },
-
     "levelTable": [
       ["Level", "Proficiency", "Features", "Rages", "Rage Damage"],
       ["1", "+2", "features", "2", "+2"],
@@ -426,19 +425,24 @@
     "id": "bard",
     "description": "Versatile adventurers defined by their use of artistic talents to induce magical effects. They can use powers of music and art to cast spells, inspire allies, and empower their attacks.",
     "hd": "8",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> light armor",
-      "<strong>Weapons:</strong> simple weapons, hand crossbows, longswords, rapiers, shortswords",
-      "<strong>Tools:</strong> three musical instruments of your choice",
-      "<strong>Saving Throws:</strong> DEX, CHA",
-      "<strong>Skills:</strong> Choose any three"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) a rapier, (b) a longsword, or (c) any simple weapon</li><li>(a) a diplomat's pack or (b) an entertainer's pack</li><li>(a) a lute or (b) any other musical instrument</li><li>Leather armor, and a dagger</li></ul>",
-      "Alternatively, you may start with 5d4 × 10 gp to buy your own equipment."
-    ],
+    "stat": "CHA",
+    "proficiencies": {
+      "armor": "light armor",
+      "weapons": "simple weapons, hand crossbows, longswords, rapiers, shortswords",
+      "tools": "three musical instruments of your choice",
+      "saves": "DEX, CHA",
+      "skills": "Choose any three"
+    },
+    "equipment": {
+      "default": [
+        "(a) a rapier, (b) a longsword, or (c) any simple weapon",
+        "(a) (a) a diplomat's pack or (b) an entertainer's pack",
+        "(a) a lute or (b) any other musical instrument",
+        "leather armor",
+        "a dagger"
+      ],
+      "alt": "5d4"
+    },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Spells", "Cantrips", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"],
       ["1", "+2", "features","4","2","2","-","-","-","-","-","-","-","-"],
@@ -868,84 +872,46 @@
     "id": "cleric",
     "description": "Divine casters defined by their powerful spells and devotion to a deity. Clerics use the power of their god to heal friends, fight undead, and smite foes.",
     "hd": "8",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> light armor, medium armor, shields",
-      "<strong>Weapons:</strong> simple weapons",
-      "<strong>Saving Throws:</strong> WIS, CHA",
-      "<strong>Skills:</strong> Choose two from History, Insight, Medicine, Persuasion, and Religion"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) a mace or (b) a warhammer (if proficient)</li><li>(a) scale mail, (b) leather armor, or (c) chain mail (if proficient)</li><li>(a) a light crossbow and 20 bolts or (b) any simple weapon</li><li>(a) a priest's pack or (b) an explorer's pack</li><li>A shield and a holy symbol</li></ul>",
-      "Alternatively, you may start with 5d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 13,
-        "data": ["Level", "Proficiency", "Features", "Cantrips", "1st", "2nd","3rd","4th","5th","6th", "7th", "8th", "9th"],
-        "width": ["1", "1", "5", "1", "1"]
-      },
-      {
-        "data": ["1", "+2", "features","3","2","-","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["2", "+2", "features","3","3","-","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["3", "+2", "features","3","4","2","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["4", "+2", "features","4","4","3","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["5", "+3", "features","4","4","3","2","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["6", "+3", "features","4","4","3","3","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["7", "+3", "features","4","4","3","3","1","-","-","-","-","-"]
-      },
-      {
-        "data": ["8", "+3", "features","4","4","3","3","2","-","-","-","-","-"]
-      },
-      {
-        "data": ["9", "+4", "features","4","4","3","3","3","1","-","-","-","-"]
-      },
-      {
-        "data": ["10", "+4", "features","5","4","3","3","3","2","-","-","-","-"]
-      },
-      {
-        "data": ["11", "+4", "features","5","4","3","3","3","2","1","-","-","-"]
-      },
-      {
-        "data": ["12", "+4", "features","5","4","3","3","3","2","1","-","-","-"]
-      },
-      {
-        "data": ["13", "+5", "features","5","4","3","3","3","2","1","1","-","-"]
-      },
-      {
-        "data": ["14", "+5", "features","5","4","3","3","3","2","1","1","-","-"]
-      },
-      {
-        "data": ["15", "+5", "features","5","4","3","3","3","2","1","1","1","-"]
-      },
-      {
-        "data": ["16", "+5", "features","5","4","3","3","3","2","1","1","1","-"]
-      },
-      {
-        "data": ["17", "+6", "features","5","4","3","3","3","2","1","1","1","1"]
-      },
-      {
-        "data": ["18", "+6", "features","5","4","3","3","3","3","1","1","1","1"]
-      },
-      {
-        "data": ["19", "+6", "features","5","4","3","3","3","3","2","1","1","1"]
-      },
-      {
-        "data": ["20", "+6", "features","5","4","3","3","3","3","2","2","1","1"]
-      }
+    "stat": "WIS",
+    "proficiencies": {
+      "armor": "light armor, medium armor, shields",
+      "weapons": "simple weapons",
+      "tools": "none",
+      "saves": "WIS, CHA",
+      "skills": "Choose two from from History, Insight, Medicine, Persuasion, and Religion"
+    },
+    "equipment": {
+      "default": [
+        "(a) a mace or (b) a warhammer (if proficient)",
+        "(a) scale mail, (b) leather armor, or (c) chain mail (if proficient)",
+        "(a) a light crossbow and 20 bolts or (b) any simple weapon",
+        "a shield",
+        "a holy symbol"
+      ],
+      "alt": "5d4"
+    },
+    "levelTable": [
+      ["Level", "Proficiency", "Features", "Cantrips", "1st", "2nd","3rd","4th","5th","6th", "7th", "8th", "9th"],
+      ["1", "+2", "features","3","2","-","-","-","-","-","-","-","-"],
+      ["2", "+2", "features","3","3","-","-","-","-","-","-","-","-"],
+      ["3", "+2", "features","3","4","2","-","-","-","-","-","-","-"],
+      ["4", "+2", "features","4","4","3","-","-","-","-","-","-","-"],
+      ["5", "+3", "features","4","4","3","2","-","-","-","-","-","-"],
+      ["6", "+3", "features","4","4","3","3","-","-","-","-","-","-"],
+      ["7", "+3", "features","4","4","3","3","1","-","-","-","-","-"],
+      ["8", "+3", "features","4","4","3","3","2","-","-","-","-","-"],
+      ["9", "+4", "features","4","4","3","3","3","1","-","-","-","-"],
+      ["10", "+4", "features","5","4","3","3","3","2","-","-","-","-"],
+      ["11", "+4", "features","5","4","3","3","3","2","1","-","-","-"],
+      ["12", "+4", "features","5","4","3","3","3","2","1","-","-","-"],
+      ["13", "+5", "features","5","4","3","3","3","2","1","1","-","-"],
+      ["14", "+5", "features","5","4","3","3","3","2","1","1","-","-"],
+      ["15", "+5", "features","5","4","3","3","3","2","1","1","1","-"],
+      ["16", "+5", "features","5","4","3","3","3","2","1","1","1","-"],
+      ["17", "+6", "features","5","4","3","3","3","2","1","1","1","1"],
+      ["18", "+6", "features","5","4","3","3","3","3","1","1","1","1"],
+      ["19", "+6", "features","5","4","3","3","3","3","2","1","1","1"],
+      ["20", "+6", "features","5","4","3","3","3","3","2","2","1","1"]
     ],
     "features" : [
       {
@@ -1568,85 +1534,46 @@
     "id": "druid",
     "description": "Arcane casters defined by their strong connection to nature and wildlife. They can use powers of the natural world to cast spells, summon allies, and even transform themselves in beasts.",
     "hd": "8",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> light armor, medium armor, shields (druids will not wear armor or use shields made of metal)",
-      "<strong>Weapons:</strong> clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears",
-      "<strong>Tools:</strong> herbalism kit",
-      "<strong>Saving Throws:</strong> INT, WIS",
-      "<strong>Skills:</strong> Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) a wooden shield or (b) any simple weapon</li><li>(a) a scimitar or (b) any simple melee weapon</li><li>Leather armor, an explorer's pack, and a druidic focus</li></ul>",
-      "Alternatively, you may start with 2d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 14,
-        "data": ["Level", "Proficiency", "Features", "Spells", "Cantrips", "1st", "2nd","3rd","4th","5th","6th", "7th", "8th", "9th"],
-        "width": ["1", "1", "5", "1", "1"]
-      },
-      {
-        "data": ["1", "+2", "features","2","2","-","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["2", "+2", "features","2","3","-","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["3", "+2", "features","2","4","2","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["4", "+2", "features","3","4","3","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["5", "+3", "features","3","4","3","2","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["6", "+3", "features","3","4","3","3","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["7", "+3", "features","3","4","3","3","1","-","-","-","-","-"]
-      },
-      {
-        "data": ["8", "+3", "features","3","4","3","3","2","-","-","-","-","-"]
-      },
-      {
-        "data": ["9", "+4", "features","3","4","3","3","3","1","-","-","-","-"]
-      },
-      {
-        "data": ["10", "+4", "features","4","4","3","3","3","2","-","-","-","-"]
-      },
-      {
-        "data": ["11", "+4", "features","4","4","3","3","3","2","1","-","-","-"]
-      },
-      {
-        "data": ["12", "+4", "features","4","4","3","3","3","2","1","-","-","-"]
-      },
-      {
-        "data": ["13", "+5", "features","4","4","3","3","3","2","1","1","-","-"]
-      },
-      {
-        "data": ["14", "+5", "features","4","4","3","3","3","2","1","1","-","-"]
-      },
-      {
-        "data": ["15", "+5", "features","4","4","3","3","3","2","1","1","1","-"]
-      },
-      {
-        "data": ["16", "+5", "features","4","4","3","3","3","2","1","1","1","-"]
-      },
-      {
-        "data": ["17", "+6", "features","4","4","3","3","3","2","1","1","1","1"]
-      },
-      {
-        "data": ["18", "+6", "features","4","4","3","3","3","3","1","1","1","1"]
-      },
-      {
-        "data": ["19", "+6", "features","4","4","3","3","3","3","2","1","1","1"]
-      },
-      {
-        "data": ["20", "+6", "features","4","4","3","3","3","3","2","2","1","1"]
-      }
+    "stat": "WIS",
+    "proficiencies": {
+      "armor": "light armor, medium armor, shields (most druids will not wear armor or use shields made of metal)",
+      "weapons": "clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears",
+      "tools": "herbalism kit",
+      "saves": "INT, WIS",
+      "skills": "Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival"
+    },
+    "equipment": {
+      "default": [
+        "(a) a wooden shield or (b) any simple weapon",
+        "(a) a scimitar or (b) any simple melee weapon",
+        "leather armor",
+        "an explorer's pack",
+        "a druidic focus"
+      ],
+      "alt": "2d4"
+    },
+    "levelTable": [
+      ["Level", "Proficiency", "Features", "Cantrips", "1st", "2nd","3rd","4th","5th","6th", "7th", "8th", "9th"],
+      ["1", "+2", "features","2","2","-","-","-","-","-","-","-","-"],
+      ["2", "+2", "features","2","3","-","-","-","-","-","-","-","-"],
+      ["3", "+2", "features","2","4","2","-","-","-","-","-","-","-"],
+      ["4", "+2", "features","3","4","3","-","-","-","-","-","-","-"],
+      ["5", "+3", "features","3","4","3","2","-","-","-","-","-","-"],
+      ["6", "+3", "features","3","4","3","3","-","-","-","-","-","-"],
+      ["7", "+3", "features","3","4","3","3","1","-","-","-","-","-"],
+      ["8", "+3", "features","3","4","3","3","2","-","-","-","-","-"],
+      ["9", "+4", "features","3","4","3","3","3","1","-","-","-","-"],
+      ["10", "+4", "features","4","4","3","3","3","2","-","-","-","-"],
+      ["11", "+4", "features","4","4","3","3","3","2","1","-","-","-"],
+      ["12", "+4", "features","4","4","3","3","3","2","1","-","-","-"],
+      ["13", "+5", "features","4","4","3","3","3","2","1","1","-","-"],
+      ["14", "+5", "features","4","4","3","3","3","2","1","1","-","-"],
+      ["15", "+5", "features","4","4","3","3","3","2","1","1","1","-"],
+      ["16", "+5", "features","4","4","3","3","3","2","1","1","1","-"],
+      ["17", "+6", "features","4","4","3","3","3","2","1","1","1","1"],
+      ["18", "+6", "features","4","4","3","3","3","3","1","1","1","1"],
+      ["19", "+6", "features","4","4","3","3","3","3","2","1","1","1"],
+      ["20", "+6", "features","4","4","3","3","3","3","2","2","1","1"]
     ],
     "features" : [
       {
@@ -1936,8 +1863,8 @@
       {
         "level": 20,
         "subclass": "base",
-        "name": "divine-intervention-improvement",
-        "title": "Divine Intervention Improvement",
+        "name": "archdruid",
+        "title": "Archdruid",
         "text": ["At 20th level, you can use your Wild Shape an unlimited number of times. Additionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren't consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape."]
       }
     ]
@@ -1947,83 +1874,45 @@
     "id": "fighter",
     "description": "Highly trained warriors defined by their martial prowess and battlefield command abilities. They hone their skills to stand head and shoulders above others on the field of battle.",
     "hd": "10",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> light armor, medium armor, heavy armor, shields",
-      "<strong>Weapons:</strong> simple weapons, martial weapons",
-      "<strong>Saving Throws:</strong> STR, CON",
-      "<strong>Skills:</strong> Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) chain mail or (b) leather, longbow, and 20 arrows</li><li>(a) a martial weapon and a shield or (b) two martial weapons</li><li>(a) a light crossbow and 20 bolts or (b) two handaxes</li><li>(a) a dungeoneer's pack or (b) an explorer's pack</li></ul>",
-      "Alternatively, you may start with 5d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 9,
-        "data": ["Level", "Proficiency", "Features", "Spells", "Cantrips", "1st", "2nd","3rd","4th"]
-      },
-      {
-        "data": ["1", "+2", "features","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["2", "+2", "features","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["3", "+2", "features","3","2","2","-","-","-"]
-      },
-      {
-        "data": ["4", "+2", "features","4","2","3","-","-","-"]
-      },
-      {
-        "data": ["5", "+3", "features","4","2","3","-","-","-"]
-      },
-      {
-        "data": ["6", "+3", "features","4","2","3","-","-","-"]
-      },
-      {
-        "data": ["7", "+3", "features","5","2","4","2","-","-"]
-      },
-      {
-        "data": ["8", "+3", "features","6","2","4","2","-","-"]
-      },
-      {
-        "data": ["9", "+4", "features","6","2","4","3","-","-"]
-      },
-      {
-        "data": ["10", "+4", "features","7","3","4","3","-","-"]
-      },
-      {
-        "data": ["11", "+4", "features","8","3","4","3","-","-"]
-      },
-      {
-        "data": ["12", "+4", "features","8","3","4","3","2","-"]
-      },
-      {
-        "data": ["13", "+5", "features","9","3","4","3","2","-"]
-      },
-      {
-        "data": ["14", "+5", "features","10","3","4","3","2","-"]
-      },
-      {
-        "data": ["15", "+5", "features","10","3","4","3","3","-"]
-      },
-      {
-        "data": ["16", "+5", "features","11","3","4","3","3","-"]
-      },
-      {
-        "data": ["17", "+6", "features","11","3","4","3","3","-"]
-      },
-      {
-        "data": ["18", "+6", "features","11","3","4","3","3","-"]
-      },
-      {
-        "data": ["19", "+6", "features","12","3","4","3","3","1"]
-      },
-      {
-        "data": ["20", "+6", "features","13","3","4","3","3","1"]
-      }
+    "stat": "CON",
+    "proficiencies": {
+      "armor": "light armor, medium armor, heavy armor, shields",
+      "weapons": "simple weapons, martial weapons",
+      "tools": "none",
+      "saves": "STR, CON",
+      "skills": "Choose two from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival"
+    },
+    "equipment": {
+      "default": [
+        "(a) chain mail or (b) leather, longbow, and 20 arrows",
+        "(a) a martial weapon and a shield or (b) two martial weapons",
+        "(a) a light crossbow and 20 bolts or (b) two handaxes",
+        "(a) a dungeoneer's pack or (b) an explorer's pack"
+      ],
+      "alt": "5d4"
+    },
+    "levelTable": [
+        ["Level", "Proficiency", "Features", "Spells", "Cantrips", "1st", "2nd","3rd","4th"],
+        ["1", "+2", "features","-","-","-","-","-","-"],
+        ["2", "+2", "features","-","-","-","-","-","-"],
+        ["3", "+2", "features","3","2","2","-","-","-"],
+        ["4", "+2", "features","4","2","3","-","-","-"],
+        ["5", "+3", "features","4","2","3","-","-","-"],
+        ["6", "+3", "features","4","2","3","-","-","-"],
+        ["7", "+3", "features","5","2","4","2","-","-"],
+        ["8", "+3", "features","6","2","4","2","-","-"],
+        ["9", "+4", "features","6","2","4","3","-","-"],
+        ["10", "+4", "features","7","3","4","3","-","-"],
+        ["11", "+4", "features","8","3","4","3","-","-"],
+        ["12", "+4", "features","8","3","4","3","2","-"],
+        ["13", "+5", "features","9","3","4","3","2","-"],
+        ["14", "+5", "features","10","3","4","3","2","-"],
+        ["15", "+5", "features","10","3","4","3","3","-"],
+        ["16", "+5", "features","11","3","4","3","3","-"],
+        ["17", "+6", "features","11","3","4","3","3","-"],
+        ["18", "+6", "features","11","3","4","3","3","-"],
+        ["19", "+6", "features","12","3","4","3","3","1"],
+        ["20", "+6", "features","13","3","4","3","3","1"]
     ],
     "features" : [
       {
@@ -2598,84 +2487,44 @@
     "id": "monk",
     "description": "Specialized warriors defined by their unique combat style and their reserve of internal power called ki. They use this ki to empower their attacks, bolster their defense, and create spell-like effects.",
     "hd": "8",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> none",
-      "<strong>Weapons:</strong> simple weapons, shortswords",
-      "<strong>Tools:</strong> any one type of artisan's tools or any one musical instrument of your choice",
-      "<strong>Saving Throws:</strong> STR, DEX",
-      "<strong>Skills:</strong> Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) a shortsword or (b) any simple weapon</li><li>(a) a dungeoneer's pack or (b) an explorer's pack</li><li>10 darts</li></ul>",
-      "Alternatively, you may start with 5d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 6,
-        "data": ["Level", "Proficiency", "Martial Arts", "Ki", "Unarmored Movement", "Features"]
-      },
-      {
-        "data": ["1", "+2", "1d4","-","-","-"]
-      },
-      {
-        "data": ["2", "+2", "1d4","2","+10 ft.","features"]
-      },
-      {
-        "data": ["3", "+2", "1d4","3","+10 ft.","features"]
-      },
-      {
-        "data": ["4", "+2", "1d4","4","+10 ft.","features"]
-      },
-      {
-        "data": ["5", "+3", "1d6","5","+10 ft.","features"]
-      },
-      {
-        "data": ["6", "+3", "1d6","6","+15 ft.","features"]
-      },
-      {
-        "data": ["7", "+3", "1d6","7","+15 ft.","features"]
-      },
-      {
-        "data": ["8", "+3", "1d6","8","+15 ft.","features"]
-      },
-      {
-        "data": ["9", "+4", "1d6","9","+15 ft.","features"]
-      },
-      {
-        "data": ["10", "+4", "1d6","10","+20 ft.","features"]
-      },
-      {
-        "data": ["11", "+4", "1d8","11","+20 ft.","features"]
-      },
-      {
-        "data": ["12", "+4", "1d8","12","+20 ft.","features"]
-      },
-      {
-        "data": ["13", "+5", "1d8","13","+20 ft.","features"]
-      },
-      {
-        "data": ["14", "+5", "1d8","14","+25 ft.","features"]
-      },
-      {
-        "data": ["15", "+5", "1d8","15","+25 ft.","features"]
-      },
-      {
-        "data": ["16", "+5", "1d8","16","+25 ft.","features"]
-      },
-      {
-        "data": ["17", "+6", "1d10","17","+25 ft.","features"]
-      },
-      {
-        "data": ["18", "+6", "1d10","18","+30 ft.","features"]
-      },
-      {
-        "data": ["19", "+6", "1d10","19","+30 ft.","features"]
-      },
-      {
-        "data": ["20", "+6", "1d10","20","+30 ft.","features"]
-      }
+    "stat": "WIS",
+    "proficiencies": {
+      "armor": "none",
+      "weapons": "simple weapons, shortswords",
+      "tools": "any one type of artisan's tools or any one musical instrument of your choice",
+      "saves": "STR, DEX",
+      "skills": "Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth"
+    },
+    "equipment": {
+      "default": [
+        "(a) a shortsword or (b) any simple weapon",
+        "(a) a dungeoneer's pack or (b) an explorer's pack",
+        "10 darts"
+      ],
+      "alt": "5d4"
+    },
+    "levelTable": [
+      ["Level", "Proficiency", "Martial Arts", "Ki", "Unarmored Movement", "Features"],
+      ["1", "+2", "1d4","-","-","features"],
+      ["2", "+2", "1d4","2","+10 ft.","features"],
+      ["3", "+2", "1d4","3","+10 ft.","features"],
+      ["4", "+2", "1d4","4","+10 ft.","features"],
+      ["5", "+3", "1d6","5","+10 ft.","features"],
+      ["6", "+3", "1d6","6","+15 ft.","features"],
+      ["7", "+3", "1d6","7","+15 ft.","features"],
+      ["8", "+3", "1d6","8","+15 ft.","features"],
+      ["9", "+4", "1d6","9","+15 ft.","features"],
+      ["10", "+4", "1d6","10","+20 ft.","features"],
+      ["11", "+4", "1d8","11","+20 ft.","features"],
+      ["12", "+4", "1d8","12","+20 ft.","features"],
+      ["13", "+5", "1d8","13","+20 ft.","features"],
+      ["14", "+5", "1d8","14","+25 ft.","features"],
+      ["15", "+5", "1d8","15","+25 ft.","features"],
+      ["16", "+5", "1d8","16","+25 ft.","features"],
+      ["17", "+6", "1d10","17","+25 ft.","features"],
+      ["18", "+6", "1d10","18","+30 ft.","features"],
+      ["19", "+6", "1d10","19","+30 ft.","features"],
+      ["20", "+6", "1d10","20","+30 ft.","features"]
     ],
     "features" : [
       {
@@ -2695,9 +2544,19 @@
       {
         "level": 2,
         "subclass": "base",
-        "name": "Ki",
+        "name": "ki",
         "title": "Ki",
         "text": ["<p>Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.</p><p>You can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.</p><p>When you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points.</p><p>Some of your ki features require your target to make a saving throw to resist the feature's effects. The saving throw DC is calculated as follows: Ki save DC = 8 + proficiency + WIS</p><h5>Flurry of Blows</h5><p class='pad-left'>Immediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action.</p><h5>Patient Defense</h5><p class='pad-left'>You can spend 1 ki point to take the Dodge action as a bonus action on your turn.</p><h5>Step of the Wind</h5><p class='pad-left'>You can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn.</p>"]
+      },
+      {
+        "level": 2,
+        "subclass": "base",
+        "name": "unarmmored-movement",
+        "title": "Unarmored Movement",
+        "text": [
+          "Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.",
+          "At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move."
+        ]
       },
       {
         "level": 3,
@@ -2843,7 +2702,7 @@
         "level": 3,
         "subclass": "base",
         "name": "deflect-missiles",
-        "title": "Detect Missiles",
+        "title": "Deflect Missiles",
         "text": ["<p>Starting at 3rd level, you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level.</p><p>If you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can spend 1 ki point to make a ranged attack (range 20 feet/60 feet) with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack.</p>"]
       },
       {
@@ -3154,83 +3013,46 @@
     "id": "paladin",
     "description": "Divine warriors defined by their martial prowess and unbreakable oath. Paladins use their strength of devotion to power their attacks and serve a god according to their oath.",
     "hd": "10",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> light armor, medium armor, heavy armor, shields",
-      "<strong>Weapons:</strong> simple weapons, martial weapons",
-      "<strong>Saving Throws:</strong> WIS, CHA",
-      "<strong>Skills:</strong> Choose two skills from Acrobatics, Animal Handling, Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) a martial weapon and a shield or (b) two martial weapons</li><li>(a) a martial weapon and a shield or (b) two martial weapons</li><li>(a) five javelins or (b) any simple melee weapon</li><li>(a) a priest's pack or (b) an explorer's pack</li><li>Chain mail and a holy symbol</li></ul>",
-      "Alternatively, you may start with 5d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 8,
-        "data": ["Level", "Proficiency", "Features", "1st", "2nd","3rd","4th", "5th"]
-      },
-      {
-        "data": ["1", "+2", "features","-","-","-","-","-"]
-      },
-      {
-        "data": ["2", "+2", "features","2","-","-","-","-"]
-      },
-      {
-        "data": ["3", "+2", "features","3","-","-","-","-"]
-      },
-      {
-        "data": ["4", "+2", "features","3","-","-","-","-"]
-      },
-      {
-        "data": ["5", "+3", "features","4","2","-","-","-"]
-      },
-      {
-        "data": ["6", "+3", "features","4","2","-","-","-"]
-      },
-      {
-        "data": ["7", "+3", "features","4","3","-","-","-"]
-      },
-      {
-        "data": ["8", "+3", "features","4","3","-","-","-"]
-      },
-      {
-        "data": ["9", "+4", "features","4","3","2","-","-"]
-      },
-      {
-        "data": ["10", "+4", "features","4","3","2","-","-"]
-      },
-      {
-        "data": ["11", "+4", "features","4","3","3","-","-"]
-      },
-      {
-        "data": ["12", "+4", "features","4","3","3","-","-"]
-      },
-      {
-        "data": ["13", "+5", "features","4","3","3","1","-"]
-      },
-      {
-        "data": ["14", "+5", "features","4","3","3","1","-"]
-      },
-      {
-        "data": ["15", "+5", "features","4","3","3","2","-"]
-      },
-      {
-        "data": ["16", "+5", "features","4","3","3","2","-"]
-      },
-      {
-        "data": ["17", "+6", "features","4","3","3","3","1"]
-      },
-      {
-        "data": ["18", "+6", "features","4","3","3","3","1"]
-      },
-      {
-        "data": ["19", "+6", "features","4","3","3","3","2"]
-      },
-      {
-        "data": ["20", "+6", "features","4","3","3","3","2"]
-      }
+    "stat": "CHA",
+    "proficiencies": {
+      "armor": "light armor, medium armor, heavy armor, shields",
+      "weapons": "simple weapons, martial weapons",
+      "tools": "any one type of artisan's tools or any one musical instrument of your choice",
+      "saves": "WIS, CHA",
+      "skills": "Choose two skills from Acrobatics, Animal Handling, Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion"
+    },
+    "equipment": {
+      "default": [
+        "(a) a martial weapon and a shield or (b) two martial weapons",
+        "(a) five javelins or (b) any simple melee weapon",
+        "(a) a priest's pack or (b) an explorer's pack",
+        "chain mail",
+        "a holy symbol"
+      ],
+      "alt": "5d4"
+    },
+    "levelTable": [
+        ["Level", "Proficiency", "Features", "1st", "2nd","3rd","4th", "5th"],
+        ["1", "+2", "features","-","-","-","-","-"],
+        ["2", "+2", "features","2","-","-","-","-"],
+        ["3", "+2", "features","3","-","-","-","-"],
+        ["4", "+2", "features","3","-","-","-","-"],
+        ["5", "+3", "features","4","2","-","-","-"],
+        ["6", "+3", "features","4","2","-","-","-"],
+        ["7", "+3", "features","4","3","-","-","-"],
+        ["8", "+3", "features","4","3","-","-","-"],
+        ["9", "+4", "features","4","3","2","-","-"],
+        ["10", "+4", "features","4","3","2","-","-"],
+        ["11", "+4", "features","4","3","3","-","-"],
+        ["12", "+4", "features","4","3","3","-","-"],
+        ["13", "+5", "features","4","3","3","1","-"],
+        ["14", "+5", "features","4","3","3","1","-"],
+        ["15", "+5", "features","4","3","3","2","-"],
+        ["16", "+5", "features","4","3","3","2","-"],
+        ["17", "+6", "features","4","3","3","3","1"],
+        ["18", "+6", "features","4","3","3","3","1"],
+        ["19", "+6", "features","4","3","3","3","2"],
+        ["20", "+6", "features","4","3","3","3","2"]
     ],
     "features" : [
       {
@@ -3738,83 +3560,45 @@
     "id": "ranger",
     "description": "Versatile fighters defined by their stance as a bastion protecting civilization from encroaching danger. Rangers use their martial powers, ingenuity, and limited nature magic to survive at any costs.",
     "hd": "10",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> light armor, medium armor, shields",
-      "<strong>Weapons:</strong> simple weapons, martial weapons",
-      "<strong>Saving Throws:</strong> STR, DEX",
-      "<strong>Skills:</strong> Choose three skills from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) scale mail or (b) leather armor</li><li> (a) two shortswords or (b) two simple melee weapons</li><li>(a) a dungeoneer's pack or (b) an explorer's pack</li><li>A longbow and a quiver of 20 arrows</li></ul>",
-      "Alternatively, you may start with 5d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 9,
-        "data": ["Level", "Proficiency", "Features", "Spells", "1st", "2nd","3rd","4th", "5th"]
-      },
-      {
-        "data": ["1", "+2", "features","-","-","-","-","-"]
-      },
-      {
-        "data": ["2", "+2", "features","2","2","-","-","-","-"]
-      },
-      {
-        "data": ["3", "+2", "features","3","3","-","-","-","-"]
-      },
-      {
-        "data": ["4", "+2", "features","3","3","-","-","-","-"]
-      },
-      {
-        "data": ["5", "+3", "features","4","4","2","-","-","-"]
-      },
-      {
-        "data": ["6", "+3", "features","4","4","2","-","-","-"]
-      },
-      {
-        "data": ["7", "+3", "features","5","4","3","-","-","-"]
-      },
-      {
-        "data": ["8", "+3", "features","5","4","3","-","-","-"]
-      },
-      {
-        "data": ["9", "+4", "features","6","4","3","2","-","-"]
-      },
-      {
-        "data": ["10", "+4", "features","6","4","3","2","-","-"]
-      },
-      {
-        "data": ["11", "+4", "features","7","4","3","3","-","-"]
-      },
-      {
-        "data": ["12", "+4", "features","7","4","3","3","-","-"]
-      },
-      {
-        "data": ["13", "+5", "features","8","4","3","3","1","-"]
-      },
-      {
-        "data": ["14", "+5", "features","8","4","3","3","1","-"]
-      },
-      {
-        "data": ["15", "+5", "features","9","4","3","3","2","-"]
-      },
-      {
-        "data": ["16", "+5", "features","9","4","3","3","2","-"]
-      },
-      {
-        "data": ["17", "+6", "features","10","4","3","3","3","1"]
-      },
-      {
-        "data": ["18", "+6", "features","10","4","3","3","3","1"]
-      },
-      {
-        "data": ["19", "+6", "features","11","4","3","3","3","2"]
-      },
-      {
-        "data": ["20", "+6", "features","11","4","3","3","3","2"]
-      }
+    "stat": "WIS",
+    "proficiencies": {
+      "armor": "light armor, medium armor, shields",
+      "weapons": "simple weapons, martial weapons",
+      "tools": "none",
+      "saves": "STR, DEX",
+      "skills": "Choose three skills from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival"
+    },
+    "equipment": {
+      "default": [
+        "(a) scale mail or (b) leather armor",
+        "(a) two shortswords or (b) two simple melee weapons",
+        "(a) a dungeoneer's pack or (b) an explorer's pack",
+        "a longbow and a quiver of 20 arrows"
+      ],
+      "alt": "5d4"
+    },
+    "levelTable": [
+        ["Level", "Proficiency", "Features", "Spells", "1st", "2nd","3rd","4th", "5th"],
+        ["1", "+2", "features","-","-","-","-","-"],
+        ["2", "+2", "features","2","2","-","-","-","-"],
+        ["3", "+2", "features","3","3","-","-","-","-"],
+        ["4", "+2", "features","3","3","-","-","-","-"],
+        ["5", "+3", "features","4","4","2","-","-","-"],
+        ["6", "+3", "features","4","4","2","-","-","-"],
+        ["7", "+3", "features","5","4","3","-","-","-"],
+        ["8", "+3", "features","5","4","3","-","-","-"],
+        ["9", "+4", "features","6","4","3","2","-","-"],
+        ["10", "+4", "features","6","4","3","2","-","-"],
+        ["11", "+4", "features","7","4","3","3","-","-"],
+        ["12", "+4", "features","7","4","3","3","-","-"],
+        ["13", "+5", "features","8","4","3","3","1","-"],
+        ["14", "+5", "features","8","4","3","3","1","-"],
+        ["15", "+5", "features","9","4","3","3","2","-"],
+        ["16", "+5", "features","9","4","3","3","2","-"],
+        ["17", "+6", "features","10","4","3","3","3","1"],
+        ["18", "+6", "features","10","4","3","3","3","1"],
+        ["19", "+6", "features","11","4","3","3","3","2"],
+        ["20", "+6", "features","11","4","3","3","3","2"]
     ],
     "features" : [
       {
@@ -4210,84 +3994,47 @@
     "id": "rogue",
     "description": "Stealthy killers who are defined by their ability to hit enemies where it will cause the most damage. Rogues used honed skill and quick hands to approach, kill, and retreat before the target can respond.",
     "hd": "8",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> light armor",
-      "<strong>Weapons:</strong> simple weapons, hand crossbows, longswords, rapiers, shortswords",
-      "<strong>Tools:</strong> thieves' tools",
-      "<strong>Saving Throws:</strong> DEX, INT",
-      "<strong>Skills:</strong> Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance. Persuasion, Sleight of Hand, and Stealth"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) a rapier or (b) a shortsword</li><li>(a) a shortbow and quiver of 20 arrows or (b) a shortsword</li><li>(a) a burglar's pack, (b) a dungeoneer's pack, or (c) an explorer's pack</li><li>Leather armor, two daggers, and thieves' tools</li></ul>",
-      "Alternatively, you may start with 4d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 10,
-        "data": ["Level", "Proficiency", "Features", "Sneak", "Spells", "Cantrips", "1st", "2nd","3rd","4th"]
-      },
-      {
-        "data": ["1", "+2", "features","1d6","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["2", "+2", "features","1d6","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["3", "+2", "features","2d6","3","3","2","-","-","-"]
-      },
-      {
-        "data": ["4", "+2", "features","2d6","4","3","3","-","-","-"]
-      },
-      {
-        "data": ["5", "+3", "features","3d6","4","3","3","-","-","-"]
-      },
-      {
-        "data": ["6", "+3", "features","3d6","4","3","3","-","-","-"]
-      },
-      {
-        "data": ["7", "+3", "features","4d6","5","3","4","2","-","-"]
-      },
-      {
-        "data": ["8", "+3", "features","4d6","6","3","4","2","-","-"]
-      },
-      {
-        "data": ["9", "+4", "features","5d6","6","3","4","3","-","-"]
-      },
-      {
-        "data": ["10", "+4", "features","5d6","7","4","4","3","-","-"]
-      },
-      {
-        "data": ["11", "+4", "features","6d6","8","4","4","3","-","-"]
-      },
-      {
-        "data": ["12", "+4", "features","6d6","8","4","4","3","2","-"]
-      },
-      {
-        "data": ["13", "+5", "features","7d6","9","4","4","3","2","-"]
-      },
-      {
-        "data": ["14", "+5", "features","7d6","10","4","4","3","2","-"]
-      },
-      {
-        "data": ["15", "+5", "features","8d6","10","4","4","3","3","-"]
-      },
-      {
-        "data": ["16", "+5", "features","8d6","11","4","4","3","3","-"]
-      },
-      {
-        "data": ["17", "+6", "features","9d6","11","4","4","3","3","-"]
-      },
-      {
-        "data": ["18", "+6", "features","9d6","11","4","4","3","3","-"]
-      },
-      {
-        "data": ["19", "+6", "features","10d6","12","3","4","3","3","1"]
-      },
-      {
-        "data": ["20", "+6", "features","10d6","13","3","4","3","3","1"]
-      }
+    "stat": "INT",
+    "proficiencies": {
+      "armor": "light armor",
+      "weapons": "simple weapons, hand crossbows, longswords, rapiers, shortswords",
+      "tools": "thieves' tools",
+      "saves": "DEX, INT",
+      "skills": "Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance. Persuasion, Sleight of Hand, and Stealth"
+    },
+    "equipment": {
+      "default": [
+        "(a) a rapier or (b) a shortsword",
+        "(a) a shortbow and quiver of 20 arrows or (b) a shortsword",
+        "(a) a burglar's pack, (b) a dungeoneer's pack, or (c) an explorer's pack",
+        "leather armor",
+        "two daggers",
+        "theives' tools"
+      ],
+      "alt": "4d4"
+    },
+    "levelTable": [
+      ["Level", "Proficiency", "Features", "Sneak", "Spells", "Cantrips", "1st", "2nd","3rd","4th"],
+      ["1", "+2", "features","1d6","-","-","-","-","-","-"],
+      ["2", "+2", "features","1d6","-","-","-","-","-","-"],
+      ["3", "+2", "features","2d6","3","3","2","-","-","-"],
+      ["4", "+2", "features","2d6","4","3","3","-","-","-"],
+      ["5", "+3", "features","3d6","4","3","3","-","-","-"],
+      ["6", "+3", "features","3d6","4","3","3","-","-","-"],
+      ["7", "+3", "features","4d6","5","3","4","2","-","-"],
+      ["8", "+3", "features","4d6","6","3","4","2","-","-"],
+      ["9", "+4", "features","5d6","6","3","4","3","-","-"],
+      ["10", "+4", "features","5d6","7","4","4","3","-","-"],
+      ["11", "+4", "features","6d6","8","4","4","3","-","-"],
+      ["12", "+4", "features","6d6","8","4","4","3","2","-"],
+      ["13", "+5", "features","7d6","9","4","4","3","2","-"],
+      ["14", "+5", "features","7d6","10","4","4","3","2","-"],
+      ["15", "+5", "features","8d6","10","4","4","3","3","-"],
+      ["16", "+5", "features","8d6","11","4","4","3","3","-"],
+      ["17", "+6", "features","9d6","11","4","4","3","3","-"],
+      ["18", "+6", "features","9d6","11","4","4","3","3","-"],
+      ["19", "+6", "features","10d6","12","3","4","3","3","1"],
+      ["20", "+6", "features","10d6","13","3","4","3","3","1"]
     ],
     "features" : [
       {
@@ -4802,85 +4549,45 @@
     "id": "sorcerer",
     "description": "Arcane casters defined by their ability to alter the effects of spells they cast. Sorcerers use their own inborn talents and power to create a wide variety of magic effects.",
     "hd": "6",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> none",
-      "<strong>Weapons:</strong> daggers, darts, slings, quarterstaffs, light crossbows",
-      "<strong>Tools:</strong> none",
-      "<strong>Saving Throws:</strong> CON, CHA",
-      "<strong>Skills:</strong> Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a)a light crossbow and 20 bolts or (b) any simple weapon</li><li>(a) a component pouch or (b) an arcane focus</li><li>(a) a dungeoneer's pack or (b) an explorer's pack</li><li>two daggers</li></ul>",
-      "Alternatively, you may start with 3d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 15,
-        "data": ["Level", "Proficiency", "Features", "Points", "Spells", "Cantrips", "1st", "2nd","3rd","4th","5th","6th", "7th", "8th", "9th"],
-        "width": ["1", "1", "5", "1", "1"]
-      },
-      {
-        "data": ["1", "+2", "features","-","2","4","2","-","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["2", "+2", "features","2","3","4","3","-","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["3", "+2", "features","3","4","4","4","2","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["4", "+2", "features","4","5","5","4","3","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["5", "+3", "features","5","6","5","4","3","2","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["6", "+3", "features","6","7","5","4","3","3","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["7", "+3", "features","7","8","5","4","3","3","1","-","-","-","-","-"]
-      },
-      {
-        "data": ["8", "+3", "features","8","9","5","4","3","3","2","-","-","-","-","-"]
-      },
-      {
-        "data": ["9", "+4", "features","9","10","5","4","3","3","3","1","-","-","-","-"]
-      },
-      {
-        "data": ["10", "+4", "features","10","11","6","4","3","3","3","2","-","-","-","-"]
-      },
-      {
-        "data": ["11", "+4", "features","11","12","6","4","3","3","3","2","1","-","-","-"]
-      },
-      {
-        "data": ["12", "+4", "features","12","12","6","4","3","3","3","2","1","-","-","-"]
-      },
-      {
-        "data": ["13", "+5", "features","13","13","6","4","3","3","3","2","1","1","-","-"]
-      },
-      {
-        "data": ["14", "+5", "features","14","13","6","4","3","3","3","2","1","1","-","-"]
-      },
-      {
-        "data": ["15", "+5", "features","15","14","6","4","3","3","3","2","1","1","1","-"]
-      },
-      {
-        "data": ["16", "+5", "features","16","14","6","4","3","3","3","2","1","1","1","-"]
-      },
-      {
-        "data": ["17", "+6", "features","17","15","6","4","3","3","3","2","1","1","1","1"]
-      },
-      {
-        "data": ["18", "+6", "features","18","15","6","4","3","3","3","3","1","1","1","1"]
-      },
-      {
-        "data": ["19", "+6", "features","19","15","6","4","3","3","3","3","2","1","1","1"]
-      },
-      {
-        "data": ["20", "+6", "features","20","15","6","4","3","3","3","3","2","2","1","1"]
-      }
+    "stat": "CHA",
+    "proficiencies": {
+      "armor": "none",
+      "weapons": "daggers, darts, slings, quarterstaffs, light crossbows",
+      "tools": "none",
+      "saves": "CON, CHA",
+      "skills": "Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion"
+    },
+    "equipment": {
+      "default": [
+        "(a)a light crossbow and 20 bolts or (b) any simple weapon",
+        "(a) a component pouch or (b) an arcane focus",
+        "(a) a dungeoneer's pack or (b) an explorer's pack",
+        "two daggers"
+      ],
+      "alt": "3d4"
+    },
+    "levelTable": [
+      ["Level", "Proficiency", "Features", "Points", "Spells", "Cantrips", "1st", "2nd","3rd","4th","5th","6th", "7th", "8th", "9th"],
+      ["1", "+2", "features","-","2","4","2","-","-","-","-","-","-","-","-"],
+      ["2", "+2", "features","2","3","4","3","-","-","-","-","-","-","-","-"],
+      ["3", "+2", "features","3","4","4","4","2","-","-","-","-","-","-","-"],
+      ["4", "+2", "features","4","5","5","4","3","-","-","-","-","-","-","-"],
+      ["5", "+3", "features","5","6","5","4","3","2","-","-","-","-","-","-"],
+      ["6", "+3", "features","6","7","5","4","3","3","-","-","-","-","-","-"],
+      ["7", "+3", "features","7","8","5","4","3","3","1","-","-","-","-","-"],
+      ["8", "+3", "features","8","9","5","4","3","3","2","-","-","-","-","-"],
+      ["9", "+4", "features","9","10","5","4","3","3","3","1","-","-","-","-"],
+      ["10", "+4", "features","10","11","6","4","3","3","3","2","-","-","-","-"],
+      ["11", "+4", "features","11","12","6","4","3","3","3","2","1","-","-","-"],
+      ["12", "+4", "features","12","12","6","4","3","3","3","2","1","-","-","-"],
+      ["13", "+5", "features","13","13","6","4","3","3","3","2","1","1","-","-"],
+      ["14", "+5", "features","14","13","6","4","3","3","3","2","1","1","-","-"],
+      ["15", "+5", "features","15","14","6","4","3","3","3","2","1","1","1","-"],
+      ["16", "+5", "features","16","14","6","4","3","3","3","2","1","1","1","-"],
+      ["17", "+6", "features","17","15","6","4","3","3","3","2","1","1","1","1"],
+      ["18", "+6", "features","18","15","6","4","3","3","3","3","1","1","1","1"],
+      ["19", "+6", "features","19","15","6","4","3","3","3","3","2","1","1","1"],
+      ["20", "+6", "features","20","15","6","4","3","3","3","3","2","2","1","1"]
     ],
     "features" : [
       {
@@ -5224,83 +4931,47 @@
     "id": "warlock",
     "description": "Arcane casters defined by their pact with a powerful patron. Warlocks use unique powers granted by their pact to cause damage, control the battlefield, and further their patrons aims on the material plane.",
     "hd": "8",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> light armor",
-      "<strong>Weapons:</strong> simple weapons",
-      "<strong>Saving Throws:</strong> WIS, CHA",
-      "<strong>Skills:</strong> Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) a light crossbow and 20 bolts or (b) any simple weapon</li><li>(a) a component pouch or (b) an arcane focus</li><li>(a) a scholar's pack or (b) a dungeoneer's pack</li><li>Leather armor, any simple weapon, and two daggers</li></ul>",
-      "Alternatively, you may start with 4d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 8,
-        "data": ["Level", "Proficiency", "Features", "Cantrips", "Spells", "Slots", "Level","Invocations"]
-      },
-      {
-        "data": ["1", "+2", "features","2","2","1","1st","-"]
-      },
-      {
-        "data": ["2", "+2", "features","2","3","2","1st","2"]
-      },
-      {
-        "data": ["3", "+2", "features","2","4","2","2nd","2"]
-      },
-      {
-        "data": ["4", "+2", "features","3","5","2","2nd","2"]
-      },
-      {
-        "data": ["5", "+3", "features","3","6","2","3rd","3"]
-      },
-      {
-        "data": ["6", "+3", "features","3","7","2","3rd","3"]
-      },
-      {
-        "data": ["7", "+3", "features","3","8","2","4th","4"]
-      },
-      {
-        "data": ["8", "+3", "features","3","9","2","4th","4"]
-      },
-      {
-        "data": ["9", "+4", "features","3","10","2","5th","5"]
-      },
-      {
-        "data": ["10", "+4", "features","4","10","2","5th","5"]
-      },
-      {
-        "data": ["11", "+4", "features","4","11","3","5th","5"]
-      },
-      {
-        "data": ["12", "+4", "features","4","11","3","5th","6"]
-      },
-      {
-        "data": ["13", "+5", "features","4","12","3","5th","6"]
-      },
-      {
-        "data": ["14", "+5", "features","4","12","3","5th","6"]
-      },
-      {
-        "data": ["15", "+5", "features","4","13","3","5th","7"]
-      },
-      {
-        "data": ["16", "+5", "features","4","13","3","5th","7"]
-      },
-      {
-        "data": ["17", "+6", "features","4","14","4","5th","7"]
-      },
-      {
-        "data": ["18", "+6", "features","4","14","4","5th","8"]
-      },
-      {
-        "data": ["19", "+6", "features","4","15","4","5th","8"]
-      },
-      {
-        "data": ["20", "+6", "features","4","15","4","5th","8"]
-      }
+    "stat": "CHA",
+    "proficiencies": {
+      "armor": "light armor",
+      "weapons": "simple weapons",
+      "tools": "none",
+      "saves": "WIS, CHA",
+      "skills": "Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion"
+    },
+    "equipment": {
+      "default": [
+        "(a)a light crossbow and 20 bolts or (b) any simple weapon",
+        "(a) a component pouch or (b) an arcane focus",
+        "(a) a scholar's pack or (b) a dungeoneer's pack",
+        "leather armor",
+        "any simple weapon",
+        "two daggers"
+      ],
+      "alt": "4d4"
+    },
+    "levelTable": [
+      ["Level", "Proficiency", "Features", "Cantrips", "Spells", "Slots", "Level","Invocations"],
+      ["1", "+2", "features","2","2","1","1st","-"],
+      ["2", "+2", "features","2","3","2","1st","2"],
+      ["3", "+2", "features","2","4","2","2nd","2"],
+      ["4", "+2", "features","3","5","2","2nd","2"],
+      ["5", "+3", "features","3","6","2","3rd","3"],
+      ["6", "+3", "features","3","7","2","3rd","3"],
+      ["7", "+3", "features","3","8","2","4th","4"],
+      ["8", "+3", "features","3","9","2","4th","4"],
+      ["9", "+4", "features","3","10","2","5th","5"],
+      ["10", "+4", "features","4","10","2","5th","5"],
+      ["11", "+4", "features","4","11","3","5th","5"],
+      ["12", "+4", "features","4","11","3","5th","6"],
+      ["13", "+5", "features","4","12","3","5th","6"],
+      ["14", "+5", "features","4","12","3","5th","6"],
+      ["15", "+5", "features","4","13","3","5th","7"],
+      ["16", "+5", "features","4","13","3","5th","7"],
+      ["17", "+6", "features","4","14","4","5th","7"],
+      ["18", "+6", "features","4","14","4","5th","8"],
+      ["19", "+6", "features","4","15","4","5th","8"],
+      ["20", "+6", "features","4","15","4","5th","8"]
     ],
     "features" : [
       {
@@ -5775,84 +5446,45 @@
     "id": "wizard",
     "description": "Arcane casters defined by their powerful spells and devotion to studying magic. Wizard use their ingenuity and arcane power to create all manner of powerful spell effects.",
     "hd": "6",
-    "proficiencies": [
-      "You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-      "<strong>Armor:</strong> none",
-      "<strong>Weapons:</strong> daggers, darts, slings, quarterstaffs, light crossbows",
-      "<strong>Saving Throws:</strong> INT, WIS",
-      "<strong>Skills:</strong> Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion"
-    ],
-    "equipment": [
-      "You start with the following items, plus anything provided by your background.",
-      "<ul><li>(a) a quarterstaff or (b) a dagger</li><li>(a) a component pouch or (b) an arcane focus</li><li>(a) a scholar's pack or (b) an explorer's pack</li><li>a spellbook</li></ul>",
-      "Alternatively, you may start with 4d4 × 10 gp to buy your own equipment."
-    ],
-    "leveltable": [
-      { 
-        "columns": 13,
-        "data": ["Level", "Proficiency", "Features", "Cantrips", "1st", "2nd","3rd","4th","5th","6th", "7th", "8th", "9th"],
-        "width": ["1", "1", "5", "1", "1"]
-      },
-      {
-        "data": ["1", "+2", "features","3","2","-","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["2", "+2", "features","3","3","-","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["3", "+2", "features","3","4","2","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["4", "+2", "features","4","4","3","-","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["5", "+3", "features","4","4","3","2","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["6", "+3", "features","4","4","3","3","-","-","-","-","-","-"]
-      },
-      {
-        "data": ["7", "+3", "features","4","4","3","3","1","-","-","-","-","-"]
-      },
-      {
-        "data": ["8", "+3", "features","4","4","3","3","2","-","-","-","-","-"]
-      },
-      {
-        "data": ["9", "+4", "features","4","4","3","3","3","1","-","-","-","-"]
-      },
-      {
-        "data": ["10", "+4", "features","5","4","3","3","3","2","-","-","-","-"]
-      },
-      {
-        "data": ["11", "+4", "features","5","4","3","3","3","2","1","-","-","-"]
-      },
-      {
-        "data": ["12", "+4", "features","5","4","3","3","3","2","1","-","-","-"]
-      },
-      {
-        "data": ["13", "+5", "features","5","4","3","3","3","2","1","1","-","-"]
-      },
-      {
-        "data": ["14", "+5", "features","5","4","3","3","3","2","1","1","-","-"]
-      },
-      {
-        "data": ["15", "+5", "features","5","4","3","3","3","2","1","1","1","-"]
-      },
-      {
-        "data": ["16", "+5", "features","5","4","3","3","3","2","1","1","1","-"]
-      },
-      {
-        "data": ["17", "+6", "features","5","4","3","3","3","2","1","1","1","1"]
-      },
-      {
-        "data": ["18", "+6", "features","5","4","3","3","3","3","1","1","1","1"]
-      },
-      {
-        "data": ["19", "+6", "features","5","4","3","3","3","3","2","1","1","1"]
-      },
-      {
-        "data": ["20", "+6", "features","5","4","3","3","3","3","2","2","1","1"]
-      }
+    "stat": "INT",
+    "proficiencies": {
+      "armor": "none",
+      "weapons": "daggers, darts, slings, quarterstaffs, light crossbows",
+      "tools": "none",
+      "saves": "INT, WIS",
+      "skills": "Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion"
+    },
+    "equipment": {
+      "default": [
+        "(a) a quarterstaff or (b) a dagger",
+        "(a) a component pouch or (b) an arcane focus",
+        "(a) a scholar's pack or (b) an explorer's pack",
+        "a spellbook"
+      ],
+      "alt": "4d4"
+    },
+    "levelTable": [
+      ["Level", "Proficiency", "Features", "Cantrips", "1st", "2nd","3rd","4th","5th","6th", "7th", "8th", "9th"],
+      ["1", "+2", "features","3","2","-","-","-","-","-","-","-","-"],
+      ["2", "+2", "features","3","3","-","-","-","-","-","-","-","-"],
+      ["3", "+2", "features","3","4","2","-","-","-","-","-","-","-"],
+      ["4", "+2", "features","4","4","3","-","-","-","-","-","-","-"],
+      ["5", "+3", "features","4","4","3","2","-","-","-","-","-","-"],
+      ["6", "+3", "features","4","4","3","3","-","-","-","-","-","-"],
+      ["7", "+3", "features","4","4","3","3","1","-","-","-","-","-"],
+      ["8", "+3", "features","4","4","3","3","2","-","-","-","-","-"],
+      ["9", "+4", "features","4","4","3","3","3","1","-","-","-","-"],
+      ["10", "+4", "features","5","4","3","3","3","2","-","-","-","-"],
+      ["11", "+4", "features","5","4","3","3","3","2","1","-","-","-"],
+      ["12", "+4", "features","5","4","3","3","3","2","1","-","-","-"],
+      ["13", "+5", "features","5","4","3","3","3","2","1","1","-","-"],
+      ["14", "+5", "features","5","4","3","3","3","2","1","1","-","-"],
+      ["15", "+5", "features","5","4","3","3","3","2","1","1","1","-"],
+      ["16", "+5", "features","5","4","3","3","3","2","1","1","1","-"],
+      ["17", "+6", "features","5","4","3","3","3","2","1","1","1","1"],
+      ["18", "+6", "features","5","4","3","3","3","3","1","1","1","1"],
+      ["19", "+6", "features","5","4","3","3","3","3","2","1","1","1"],
+      ["20", "+6", "features","5","4","3","3","3","3","2","2","1","1"]
     ],
     "features" : [
       {

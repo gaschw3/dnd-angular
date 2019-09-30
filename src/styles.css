@@ -3,8 +3,12 @@
     color: #ccc;
 }
 
-svg {
+.text--gp {
+  color: #c5b100;
+}
 
+
+svg {
 }
 svg g {
   fill-opacity: 0.85;

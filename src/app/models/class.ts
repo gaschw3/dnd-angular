@@ -7,7 +7,7 @@ export class Class {
   description: string;
   hd: number;
   stat: string;
-  proficiencies: Proficiency[];
+  proficiencies: Proficiency;
   equipment: Equipment;
   
   features: ClassFeature[];

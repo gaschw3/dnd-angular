@@ -8,11 +8,10 @@ import { ClassFeature } from 'src/app/models/class-feature';
 })
 export class FeaturesComponent implements OnInit {
 
-  @Input() features: ClassFeature;
+  @Input() features: ClassFeature[];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

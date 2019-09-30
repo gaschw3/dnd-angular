@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import {Location} from '@angular/common'; 
 import { Subject, Observable } from "rxjs";
+
 import { Class } from '../../models';
 import { HttpClient } from '@angular/common/http';
 import { DataTableDirective } from 'angular-datatables';
@@ -20,7 +22,8 @@ export class ClassesComponent implements OnInit {
   }
 
   constructor(private http: HttpClient,
-    private route: ActivatedRoute) {}
+    private route: ActivatedRoute,
+    private location: Location) {}
 
   // DataTables objects
   @ViewChild(DataTableDirective, {static: false})
@@ -69,6 +72,7 @@ export class ClassesComponent implements OnInit {
 
   setCurrClass(clickedClass): void {
     this.currClass = clickedClass;
+    this.location.replaceState("/classes/" + this.currClass.id)
   }
 
 }

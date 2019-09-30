@@ -16,25 +16,9 @@ export class ClassComponent implements OnInit {
 
   ccId: number = 0; //current class id
 
-  // DataTables objects
-  @ViewChild(DataTableDirective, {static: true})
-  dtElement: DataTableDirective;
-  dtTrigger: Subject<any> = new Subject();
-  dtOptions: DataTables.Settings = {};
-
   constructor() {}
 
   ngOnInit() {
-    this.dtOptions = {
-      dom: 'lftr',
-      ordering: false,
-      orderCellsTop: false,
-      paging: false
-    }
-  }
-
-  ngOnDestroy(): void {
-    // Do not forget to unsubscribe the event
-    this.dtTrigger.unsubscribe();
-  }
+    this.prof = this.class.proficiencies;
+   }
 }
