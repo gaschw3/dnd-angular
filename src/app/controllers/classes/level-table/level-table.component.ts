@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { RouterModule } from '@angular/router'
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Class } from 'src/app/models';
 
 @Component({
@@ -10,6 +9,7 @@ import { Class } from 'src/app/models';
 export class LevelTableComponent implements OnInit {
 
   @Input() class: Class;
+  @Output() talk: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
@@ -18,6 +18,10 @@ export class LevelTableComponent implements OnInit {
 
   private getFeatures(level) {
     return this.class.features.filter(f => f.level == level && f.subclass == "base");
+  }
+
+  shake(id: string){
+    this.talk.emit(id);
   }
 
 }

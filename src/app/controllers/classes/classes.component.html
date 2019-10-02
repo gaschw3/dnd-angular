@@ -27,8 +27,8 @@
       </table>
   </div>
   <div class="col-md-9">
-    <app-level-table *ngIf="currClass" [class]="currClass"></app-level-table>
+    <app-level-table *ngIf="currClass" (talk)="shake($event)" [class]="currClass"></app-level-table>
   </div>
 </div>
-<app-class *ngIf="currClass" [class]="currClass"></app-class>
+<app-class *ngIf="currClass" (talk)="shake($event)" [class]="currClass"></app-class>
   

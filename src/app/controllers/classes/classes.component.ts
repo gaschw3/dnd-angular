@@ -75,4 +75,12 @@ export class ClassesComponent implements OnInit {
     this.location.replaceState("/classes/" + this.currClass.id)
   }
 
+  shake(id: string): void {
+    $( '#'+id )
+    .animate({ "left": "-=5px" }, "fast" )
+    .animate({ "left": "+=10px" }, "fast" )
+    .animate({ "left": "-=10px" }, "fast" )
+    .animate({ "left": "+=5px" }, "fast" );
+   }
+
 }

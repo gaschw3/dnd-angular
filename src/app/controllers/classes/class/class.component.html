@@ -37,7 +37,11 @@
       <div class="list-group features-list sticky-top py-2">
         <h5>Outline (jump to feature)</h5>
         <ng-container *ngFor="let feature of class.features">
-            <a *ngIf="feature.subclass == 'base'" [ngClass]="{'active': this.child?.currActive == feature.name}" class="list-group-item list-group-item-action py-2" routerLink="./" fragment="{{feature.name}}">{{feature.title}}</a>
+            <a *ngIf="feature.subclass == 'base'" 
+            [ngClass]="{'active': this.child?.currActive == feature.name}" 
+            class="list-group-item list-group-item-action py-2"
+            (click)="shake(feature.name)" 
+            routerLink="./" fragment="{{feature.name}}">{{feature.title}}</a>
         </ng-container>
       </div>
     </div>
