@@ -1,0 +1,18 @@
+.card.feature-list {
+    margin-bottom:90vh;
+}
+
+.feature h4 {
+    color: #00bc8c;
+}
+
+.subclass {
+    padding-left: 30px;
+}
+.subclass h4 {
+    color: red;
+}
+
+.archetype h4 {
+    color: #3498DB;
+}
