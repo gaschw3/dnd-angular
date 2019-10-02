@@ -7,13 +7,13 @@ export class LinkmakerPipe implements PipeTransform {
 
   transform(value: string): string {
     var str;
-    if (value) {
+    if (value.includes('@')) {
       str = value.toString()
-        .replace(/{@([\w/]*) (\w*)}/g, '<a href="$1">$2</a>')
+        .replace(/{@([\w/\-]*) ([\w\-\s/']+)}/g, '<a href="$1">$2</a>')
         .toLowerCase();
       return str;
     } else {
-      return '';
+      return value;
     }
   }
 

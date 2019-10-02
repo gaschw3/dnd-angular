@@ -6,7 +6,7 @@
         <p class="text-center">{{class.description}}</p>
       </div>
     </div>
-    <div class="class-info col-md-5">
+    <div class="class-info col-md-4">
       <div class="card">
         <div class="card-body">
             <h4 class="text-success">Hit Points</h4>
@@ -34,8 +34,13 @@
             <p>Alternatively, you may start with <span class="text--gp">{{class.equipment.alt}} x 10gp</span> to buy your own equipment</p>
         </div>
       </div>
+      <div id="list-example" class="list-group features-list sticky-top">
+        <ng-container *ngFor="let feature of class.features">
+            <a *ngIf="feature.subclass == 'base'" class="list-group-item list-group-item-action" routerLink="./" fragment="{{feature.name}}">{{feature.title}}</a>
+        </ng-container>
+      </div>
     </div>
-    <div class="class-features col-md-7">
+    <div class="class-features col-md-8">
       <app-features [features]="class.features"></app-features>
     </div>
   </div>

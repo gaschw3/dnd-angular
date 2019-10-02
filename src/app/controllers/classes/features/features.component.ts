@@ -14,4 +14,12 @@ export class FeaturesComponent implements OnInit {
 
   ngOnInit() {}
 
+  getEntryType(entry): string {
+    if (entry.list) {
+      return "list";
+    } else {
+      return "";
+    }
+  }
+
 }

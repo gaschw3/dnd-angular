@@ -3,7 +3,12 @@
         <div class="col-lg-12" id="{{feature.name}}" *ngFor="let feature of features">
             <h4 class="text-success">{{feature.title}}</h4>
             <div class="feature-text">
-                <p *ngFor="let entry of feature.text">{{entry}}</p>
+                <ng-container *ngFor="let entry of feature.text" [ngSwitch]="getEntryType(entry)">
+                    <ul *ngSwitchCase="'list'">
+                        <li *ngFor="let item of entry.list" [innerHtml]="item | linkmaker"></li>
+                    </ul>
+                    <p *ngSwitchDefault [innerHtml]="entry | linkmaker"></p>
+                </ng-container>
             </div>
         </div>
     </div>

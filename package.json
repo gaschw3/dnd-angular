@@ -28,6 +28,7 @@
     "datatables.net-dt": "^1.10.19",
     "invariant": "^2.2.4",
     "jquery": "^3.4.1",
+    "ngx-scrolltop": "^0.5.3",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "react-hexgrid": "^1.0.3",
