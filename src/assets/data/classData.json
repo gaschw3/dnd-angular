@@ -92,7 +92,7 @@
         "name": "unarmored-defense",
         "title": "Unarmored Defense",
         "text": [
-          "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
+          "While you are not wearing any armor, your Armor Class equals 10 + DEX + CON. You can use a shield and still gain this benefit."
         ]
       },
       {
@@ -7994,7 +7994,7 @@
         "level": 2,
         "subclass": "base",
         "name": "arcane-tradition",
-        "title": "Arcane tradition",
+        "title": "Arcane Tradition",
         "text": [
           "When you reach 2nd level, you choose an arcane tradition from below that shapes your practice of magic. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level."
         ]
@@ -8274,7 +8274,7 @@
         "level": 4,
         "subclass": "base",
         "name": "asi-1",
-        "title": "Ability Score Improvement 1",
+        "title": "Ability Score Improvement (1)",
         "text": [
           "When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. You may instead take a feat."
         ]

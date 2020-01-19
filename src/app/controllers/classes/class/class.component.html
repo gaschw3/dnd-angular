@@ -5,6 +5,7 @@
       <div class="col-md-6 offset-md-3">
         <p class="text-center">{{class.description}}</p>
       </div>
+      <app-archetypes [archetypes]="this.getArchetypes()" [(selectedArchetypes)]="selectedArchetypes"></app-archetypes>
     </div>
     <div class="class-info col-md-4">
       <div class="card">
@@ -14,7 +15,7 @@
             <div><strong>HP at 1st Level: </strong>{{class.hd}} + CON</div>
             <div><strong>HP at Higher Levels: </strong>(1d{{class.hd}} + CON) per {{class.name}} level after first</div>
 
-            <h4 class="text-success">Proficiencies</h4>
+            <h4 class="text-success mt-3 mb-0">Proficiencies</h4>
             <p>You are proficient with the following items, in addition to any proficiencies provided by your race or background.</p>
             <ng-container *ngIf="prof">
               <div><strong>Armor: </strong>{{prof?.armor}}</div>
@@ -24,7 +25,7 @@
               <div><strong>Skills: </strong>{{prof?.skills}}</div>
             </ng-container>
 
-            <h4 class="text-success">Starting Equipment</h4>
+            <h4 class="text-success mt-3 mb-0">Starting Equipment</h4>
             <p>You start with the following items, plus anything provided by your background.</p>
             <ul>
               <ng-container *ngFor="let item of class.equipment.default">
@@ -46,7 +47,7 @@
       </div>
     </div>
     <div class="class-features col-md-8">
-      <app-features [features]="class.features"></app-features>
+      <app-features [features]="this.getFilteredFeatures()"></app-features>
     </div>
   </div>
 </div>

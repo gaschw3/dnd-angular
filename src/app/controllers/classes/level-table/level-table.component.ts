@@ -11,6 +11,8 @@ export class LevelTableComponent implements OnInit {
   @Input() class: Class;
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
 
+  private selected: Array<String> = ["beast"];
+
   constructor() { }
 
   ngOnInit() {

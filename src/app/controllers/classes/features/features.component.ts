@@ -28,7 +28,7 @@ export class FeaturesComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event) {
     var scroll = $(window).scrollTop();
-    var elements = $(".feature"); // VERY VERY bad performance tho, watch out!
+    var elements = $(".feature"); // bad performance, should so something else here maybe
     var el;
     for (var i=0; i<elements.length; i++) {
         el = $(elements[i]);

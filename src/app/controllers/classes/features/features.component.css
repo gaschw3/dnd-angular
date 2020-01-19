@@ -3,16 +3,19 @@
 }
 
 .feature h4 {
-    color: #00bc8c;
+    color: #62c462;
+    border-bottom: 1px solid;
 }
 
 .subclass {
     padding-left: 30px;
 }
-.subclass h4 {
-    color: red;
-}
 
 .archetype h4 {
-    color: #3498DB;
+    color: #5bc0de;
+}
+
+.subclass h4 {
+    color: #5bc0de;
+    border-bottom: 1px hidden;
 }

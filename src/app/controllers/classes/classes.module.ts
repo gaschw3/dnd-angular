@@ -8,6 +8,7 @@ import { ClassesComponent } from './classes.component';
 import { FeaturesComponent } from './features/features.component';
 import { LevelTableComponent } from './level-table/level-table.component';
 import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
+import { ArchetypesComponent } from './archetypes/archetypes.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
     ClassesComponent,
     FeaturesComponent,
     LevelTableComponent,
-    LinkmakerPipe
+    LinkmakerPipe,
+    ArchetypesComponent
   ],
   imports: [
     CommonModule,

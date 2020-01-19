@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, AfterViewInit, Input, Output, EventEmitte
 
 import { Class, Proficiency } from '../../../models';
 import { FeaturesComponent } from '../features/features.component';
+import { ArchetypesComponent } from '../archetypes/archetypes.component';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-class',
@@ -9,19 +11,35 @@ import { FeaturesComponent } from '../features/features.component';
   styleUrls: ['./class.component.css']
 })
 export class ClassComponent implements OnInit {
-  
+
   @Input() class: Class;
   @ViewChild(FeaturesComponent, {static: false}) child: FeaturesComponent;
+  @ViewChild(ArchetypesComponent, {static: false}) child2: ArchetypesComponent;
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
-  prof: Proficiency;
 
+  archetypeChange: Subject<Array<String>> = new Subject<Array<String>>();
+
+  prof: Proficiency;
+  selectedArchetypes: Array<String> = [];
   ccId: number = 0; //current class id
 
-  constructor() {}
+  constructor() {
+    this.archetypeChange.subscribe((value) => {
+      this.selectedArchetypes = value
+    });
+  }
 
   ngOnInit() {
     this.prof = this.class.proficiencies;
    }
+
+   private getFilteredFeatures() {
+      return this.class.features.filter(f => f.subclass == "base" || this.selectedArchetypes.includes(f.subclass));
+   }
+
+   private getArchetypes() {
+    return this.class.features.filter(f => f.filter == "yes");
+  }
 
    shake(id: string){
     this.talk.emit(id);
