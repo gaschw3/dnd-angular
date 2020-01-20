@@ -12,7 +12,7 @@ export class ArchetypesComponent implements OnInit {
   @Input() selectedArchetypes: any;
   @Output() check: EventEmitter<string> = new EventEmitter<string>();
 
-  private allSelected = false;
+  allSelected = false;
 
   constructor() { }
 
@@ -28,7 +28,7 @@ export class ArchetypesComponent implements OnInit {
     }
   }
 
-  private selectAll() {
+  selectAll() {
     this.allSelected = true;
     const that = this;
     $('.btn-archetype').each(function(index, item) {
@@ -40,7 +40,7 @@ export class ArchetypesComponent implements OnInit {
     this.selectedArchetypes;
   }
 
-  private selectNone() {
+  selectNone() {
     this.allSelected = false;
     this.selectedArchetypes.splice(0, 100);
   }
