@@ -1,0 +1,41 @@
+<ng-container *ngIf="spell">
+    <div class="class-info">
+        <div class="card">
+            <div class="card-body">
+                <div [class]="'spell-header spell-header-'+spell.school | lowercase">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="text-success" [class]="'color-'+spell.school | lowercase">{{spell.name}}</h2>
+                        </div>
+                        <div class="col">
+                            <h3 class="pull-right">{{spell.source}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h5><em>{{formatSpellLevel(spell.level, spell.school)}}</em></h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="p-0 m-0"><strong>Casting Time: </strong>{{spell.time}}</p>
+                            <p class="pt-0 mt-0"><strong>Components: </strong>{{spell.components}}</p>
+                        </div>
+                        <div class="col">
+                            <p class="p-0 m-0"><strong>Range: </strong>{{spell.range}}</p>
+                            <p class="pt-0 mt-0"><strong>Duration: </strong>{{spell.duration}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <ng-container *ngFor="let entry of spell.text" >
+                        <p [innerHtml]="entry | linkmaker"></p>
+                    </ng-container>
+                    <p *ngIf="spell.higher"><strong><em>At Higher Levels: </em></strong>{{spell.higher}}</p>
+                    <p *ngIf="spell.classes" ><strong>Classes: </strong><span [innerHtml]="spell.classes | linkmaker"></span></p>
+                    <p *ngIf="spell.subclasses" ><strong>Classes: </strong><span [innerHtml]="spell.subclasses | linkmaker"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
