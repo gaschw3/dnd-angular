@@ -31,17 +31,21 @@ export class ClassComponent implements OnInit {
 
   ngOnInit() {
     this.prof = this.class.proficiencies;
-   }
+  }
 
-   private getFilteredFeatures() {
+  getFilteredFeatures() {
+    if (this.selectedArchetypes.length == 0) {
+      return this.class.features
+    } else {
       return this.class.features.filter(f => f.subclass == "base" || this.selectedArchetypes.includes(f.subclass));
-   }
+    }
+  }
 
-   private getArchetypes() {
+  getArchetypes() {
     return this.class.features.filter(f => f.filter == "yes");
   }
 
-   shake(id: string){
+  shake(id: string){
     this.talk.emit(id);
   }
 }

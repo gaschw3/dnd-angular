@@ -2,12 +2,54 @@
 .navbar-nav > li > a {
     color: #ccc;
 }
+/*center scroll to top better */
+.scrolltop-button .symbol-container svg {
+  transform: translateY(-15%) !important;
+}
 
 .text--gp {
   color: #c5b100;
 }
 
-/*center scroll to top better */
-.scrolltop-button .symbol-container svg {
-  transform: translateY(-15%) !important;
+/* spell colors */
+.color-abjuration {
+  color: rgb(253, 246, 207);
+}
+.color-transmutation {
+  color: rgb(236, 145, 60);
+}
+.color-illusion {
+  color: rgb(45, 148, 245);
+}
+.color-necromancy {
+  color: rgb(143, 0, 172);
+}
+.color-evocation {
+  color: rgb(241, 90, 90);
+}
+.color-enchantment {
+  color: rgb(255, 152, 250);
+}
+.color-conjuration {
+  color: rgb(113, 230, 102);
+}
+.color-divination {
+  color: rgb(255, 255, 255);
+}
+
+/* source colors */
+.color-phb {
+  color: rgb(0, 119, 230);
+}
+.color-xge {
+  color: rgb(0, 230, 142);
+}
+.color-scag {
+  color: rgb(255, 253, 119);
+}
+.color-ua {
+  color: rgb(255, 119, 119);
+}
+.color-brew {
+  color: rgb(235, 125, 229);
 }

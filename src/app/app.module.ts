@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { DataTablesModule } from 'angular-datatables';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -8,24 +7,27 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HexmapComponent } from './controllers/hexmap/hexmap.component';
 import { ClassesModule } from './controllers/classes/classes.module';
+import { SpellsModule } from './controllers/spells/spells.module';
+import { SharedModule } from './shared/shared.module';
+
 import { NgxScrollTopModule } from 'ngx-scrolltop';
-import { ArchetypeFilterPipe } from './pipes/archetype-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HexmapComponent,
-    ArchetypeFilterPipe
+    HexmapComponent
   ],
   imports: [
     BrowserModule,
-    DataTablesModule,
     HttpModule,
     HttpClientModule,
     AppRoutingModule,
+    SharedModule,
     ClassesModule,
+    SpellsModule,
     NgxScrollTopModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

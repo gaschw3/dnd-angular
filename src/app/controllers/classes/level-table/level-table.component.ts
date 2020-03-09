@@ -18,7 +18,7 @@ export class LevelTableComponent implements OnInit {
   ngOnInit() {
   }
 
-  private getFeatures(level) {
+  getFeatures(level) {
     return this.class.features.filter(f => f.level == level && f.subclass == "base");
   }
 

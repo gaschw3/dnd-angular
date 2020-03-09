@@ -9,6 +9,10 @@ const routes: Routes = [
     path: 'classes',
     loadChildren: './controllers/classes/classes.module#ClassesModule'
   },
+  {
+    path: 'spells',
+    loadChildren: './controllers/spells/spells.module#SpellsModule'
+  },
   {path: 'map', component: HexmapComponent}
   //{ path: 'redirect', component: RedirectionComponent },
   //{ path: '401', component: NotAuthorizedComponent },

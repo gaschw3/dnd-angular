@@ -6,6 +6,7 @@ import { Class } from '../../models';
 import { HttpClient } from '@angular/common/http';
 import { DataTableDirective } from 'angular-datatables';
 import { ActivatedRoute } from '@angular/router';
+import { ClassComponent } from './class/class.component';
 
 @Component({
   selector: 'app-classes',
@@ -24,6 +25,8 @@ export class ClassesComponent implements OnInit {
   constructor(private http: HttpClient,
     private route: ActivatedRoute,
     private location: Location) {}
+
+  @ViewChild(ClassComponent, {static: false}) child: ClassComponent ; 
 
   // DataTables objects
   @ViewChild(DataTableDirective, {static: false})
@@ -59,7 +62,9 @@ export class ClassesComponent implements OnInit {
 
     this.getJSON().subscribe(classes => {
         this.classes = classes;
-        this.currClass = this.classes.find(f => f.id == this.route.snapshot.params.className);
+        this.route.paramMap.subscribe(params => {
+          this.currClass = this.classes.find(f => f.id == this.route.snapshot.params.className);
+        });
         setTimeout(() => {
           this.dtTrigger.next();
         });
@@ -71,8 +76,11 @@ export class ClassesComponent implements OnInit {
   }
 
   setCurrClass(clickedClass): void {
+    if (this.child) {
+      this.child.selectedArchetypes.splice(0,100); //clear out archetypes when you change classes
+    }
     this.currClass = clickedClass;
-    this.location.replaceState("/classes/" + this.currClass.id)
+    this.location.go("/classes/" + this.currClass.id)
   }
 
   shake(id: string): void {

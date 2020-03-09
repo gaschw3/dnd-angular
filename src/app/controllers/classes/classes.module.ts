@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DataTablesModule } from 'angular-datatables';
 import { ClassesRoutingModule } from './classes-routing.module';
 
 import { ClassComponent } from './class/class.component';
 import { ClassesComponent } from './classes.component';
 import { FeaturesComponent } from './features/features.component';
 import { LevelTableComponent } from './level-table/level-table.component';
-import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
+
 import { ArchetypesComponent } from './archetypes/archetypes.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +15,11 @@ import { ArchetypesComponent } from './archetypes/archetypes.component';
     ClassesComponent,
     FeaturesComponent,
     LevelTableComponent,
-    LinkmakerPipe,
     ArchetypesComponent
   ],
   imports: [
-    CommonModule,
-    ClassesRoutingModule,
-    DataTablesModule
+    SharedModule,
+    ClassesRoutingModule
   ]
 })
 export class ClassesModule { }

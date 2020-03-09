@@ -20,8 +20,8 @@ Just because I'll probably forget:
 
 `npm install -g angular-cli-ghpages` (don't need this one anymore, but maybe on a different machine)
 
-`ng build --prod --base-href "https://gaschw3.github.io/dnd-angular"`
+`ng build --prod --base-href "https://gaschw3.github.io/dnd-angular/"`
 
 `ngh --dir dist/dnd-angular` (differs slightly from the norm because of changes from Ang6 -> 8)
 
-Should update withing a few minutes to most recent version.
+Should update within a few minutes to most recent version.
