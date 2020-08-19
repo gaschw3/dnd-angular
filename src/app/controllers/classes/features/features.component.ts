@@ -20,6 +20,8 @@ export class FeaturesComponent implements OnInit {
   getEntryType(entry): string {
     if (entry.list) {
       return "list";
+    } else if (entry.column) {
+      return "column";
     } else {
       return "";
     }

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { HexmapComponent } from './controllers/hexmap/hexmap.component';
 import { ClassesModule } from './controllers/classes/classes.module';
 import { SpellsModule } from './controllers/spells/spells.module';
+import { BeastiaryModule } from './controllers/beastiary/beastiary.module';
 import { SharedModule } from './shared/shared.module';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
@@ -25,6 +26,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
     SharedModule,
     ClassesModule,
     SpellsModule,
+    BeastiaryModule,
     NgxScrollTopModule
   ],
   exports: [],

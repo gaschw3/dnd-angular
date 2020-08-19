@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'spells',
     loadChildren: './controllers/spells/spells.module#SpellsModule'
   },
+  {
+    path: 'beastiary',
+    loadChildren: './controllers/beastiary/beastiary.module#BeastiaryModule'
+  },
   {path: 'map', component: HexmapComponent}
   //{ path: 'redirect', component: RedirectionComponent },
   //{ path: '401', component: NotAuthorizedComponent },

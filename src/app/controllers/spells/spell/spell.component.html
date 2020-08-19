@@ -33,7 +33,6 @@
                     </ng-container>
                     <p *ngIf="spell.higher"><strong><em>At Higher Levels: </em></strong>{{spell.higher}}</p>
                     <p *ngIf="spell.classes" ><strong>Classes: </strong><span [innerHtml]="spell.classes | linkmaker"></span></p>
-                    <p *ngIf="spell.subclasses" ><strong>Classes: </strong><span [innerHtml]="spell.subclasses | linkmaker"></span></p>
                 </div>
             </div>
         </div>

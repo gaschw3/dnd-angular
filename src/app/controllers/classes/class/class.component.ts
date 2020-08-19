@@ -42,7 +42,9 @@ export class ClassComponent implements OnInit {
   }
 
   getArchetypes() {
-    return this.class.features.filter(f => f.filter == "yes");
+    return this.class.features.filter(f => f.filter == "yes").sort(function(a, b) {
+      return (a.name < b.name) ? -1 : 1;
+    });
   }
 
   shake(id: string){

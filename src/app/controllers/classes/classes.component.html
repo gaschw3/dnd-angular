@@ -1,6 +1,6 @@
 <h1>D&D 5e Classes</h1>
 <div class="row">
-  <div *ngIf="classes" class="col-md-3 class-table">
+  <div *ngIf="classes" class="col-md-2 class-table">
     <table id="tbl-classes" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-condensed">
       <thead>
         <tr>
@@ -15,18 +15,18 @@
         </tr>
         <tr>
           <th>Name</th>
-          <th>Src</th>
+          <th class="text-right">Src</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let class of classes" (click)="setCurrClass(class)" [class.table-active]="currClass?.id == class.id">
           <td>{{class.name}}</td>
-          <td>PHB</td>
+          <td [class]="'text-right color-PHB' | lowercase" class="text-right">PHB</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="col-md-9">
+  <div class="col-md-10">
     <app-level-table *ngIf="currClass" (talk)="shake($event)" [class]="currClass"></app-level-table>
   </div>
 </div>

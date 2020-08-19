@@ -1,0 +1,16 @@
+.beastiary-border {
+    border-bottom: 2px solid #62c462;;
+}
+
+.beastiary-full-border {
+    border: 2px solid #ccc;
+    padding: 1em;
+}
+
+.color-primary {
+    color: #62c462
+}
+
+.card-body {
+    margin: .5rem;
+}

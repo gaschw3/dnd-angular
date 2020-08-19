@@ -1,0 +1,147 @@
+<ng-container *ngIf="monster">
+    <div class="class-info">
+        <div class="card">
+            <div class="card-body">
+                <div [class]="'monster-header monster-header-'+monster.type | lowercase">
+                    <div class="beastiary-full-border mb-2">
+                        <div class="row">
+                            <div class="col">
+                                <h1 class="text-success" [class]="'color-'+monster.type | lowercase">{{monster.name}}</h1>
+                            </div>
+                            <div class="col">
+                                <h3 class="pull-right">{{monster.source}}</h3>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <h5><em>{{monster.type}}, {{monster.alignment}}</em></h5>
+                            </div>
+                        </div>
+                        <div class="row pb-2 mb-2">
+                            <div class="col">
+                                <p class="p-0 m-0"><strong>HP: </strong>{{monster.hp}}</p>
+                                <p class="p-0 m-0"><strong>AC: </strong>{{monster.ac}}</p>
+                            </div>
+                            <div class="col">
+                                <p class="p-0 m-0"><strong>Saves: </strong>{{monster.save ? monster.save : "no proficient saves"}}</p>
+                                <p class="p-0 m-0"><strong>Speed: </strong>{{monster.speed}}</p>
+                            </div>
+                        </div>
+                        <div class="row pb-2 mb-2">
+                            <div *ngIf="monster.cr" class="col-sm-6">
+                                <p class="p-0 m-0"><strong>CR: </strong>{{monster.cr}}</p>
+                            </div>
+                            <div *ngIf="monster.skill" class="col-sm-6">
+                                <p class="p-0 m-0"><strong>Skills: </strong>{{monster.skill}}</p>
+                            </div>
+                            <div *ngIf="monster.languages" class="col-sm-6">
+                                <p class="p-0 m-0"><strong>Languages: </strong>{{monster.languages}}</p>
+                            </div>
+                            <div *ngIf="monster.immune" class="col-sm-6">
+                                <p class="p-0 m-0"><strong>Immunities: </strong>{{monster.immune}}</p>
+                            </div>
+                            <div *ngIf="monster.resist" class="col-sm-6">
+                                <p class="p-0 m-0"><strong>Resistances: </strong>{{monster.resist}}</p>
+                            </div>
+                            <div *ngIf="monster.vulnerable" class="col-sm-6">
+                                <p class="p-0 m-0"><strong>Vulnerabilities: </strong>{{monster.vulnerable}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <strong>STR</strong>
+                            </div>
+                            <div class="col text-center">
+                                <strong>DEX</strong>
+                            </div>
+                            <div class="col text-center">
+                                <strong>CON</strong>
+                            </div>
+                            <div class="col text-center">
+                                <strong>INT</strong>
+                            </div>
+                            <div class="col text-center">
+                                <strong>WIS</strong>
+                            </div>
+                            <div class="col text-center">
+                                <strong>CHA</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                {{monster.str}} ({{this.getStatMod(monster.str)}})
+                            </div>
+                            <div class="col text-center">
+                                {{monster.dex}} ({{this.getStatMod(monster.dex)}})
+                            </div>
+                            <div class="col text-center">
+                                {{monster.con}} ({{this.getStatMod(monster.con)}})
+                            </div>
+                            <div class="col text-center">
+                                {{monster.int}} ({{this.getStatMod(monster.int)}})
+                            </div>
+                            <div class="col text-center">
+                                {{monster.wis}} ({{this.getStatMod(monster.wis)}})
+                            </div>
+                            <div class="col text-center">
+                                {{monster.cha}} ({{this.getStatMod(monster.cha)}})
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="monster.traits" class="col">
+                            <h3 class="color-primary beastiary-border">Special Traits</h3>
+                            <ng-container *ngFor="let trait of monster.traits" >
+                                <div class="col pb-2">
+                                    <strong>{{trait.name}}</strong>
+                                    <ng-container *ngFor="let line of trait.text" >
+                                        <p class="pl-2 m-0">{{line}}</p>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="monster.action" class="col">
+                            <h3 class="color-primary beastiary-border">Actions</h3>
+                            <ng-container *ngFor="let trait of monster.action" >
+                                <div class="col pb-2">
+                                    <strong>{{trait.name}}</strong>
+                                    <ng-container *ngFor="let line of trait.text" >
+                                        <p class="pl-2 m-0">{{line}}</p>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="monster.reaction" class="col">
+                            <h4 class="color-primary beastiary-border">Reactions</h4>
+                            <ng-container *ngFor="let trait of monster.reaction" >
+                                <div class="col pb-2">
+                                    <strong>{{trait.name}}</strong>
+                                    <ng-container *ngFor="let line of trait.text" >
+                                        <p class="pl-2 m-0">{{line}}</p>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="monster.legendary" class="col">
+                            <h4 class="color-primary beastiary-border">Legendary Actions</h4>
+                            <ng-container *ngFor="let trait of monster.legendary" >
+                                <div class="col pb-2">
+                                    <strong>{{trait.name}}</strong>
+                                    <ng-container *ngFor="let line of trait.text" >
+                                        <p class="pl-2 m-0">{{line}}</p>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

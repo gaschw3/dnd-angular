@@ -8,5 +8,7 @@ export class Spell {
   components: string;
   duration: string;
   classes: string;
+  higher: string;
   range: string;
+  text: string[];
 }

@@ -11,6 +11,10 @@
   color: #c5b100;
 }
 
+.table {
+  color: #aaa !important;
+}
+
 /* spell colors */
 .color-abjuration {
   color: rgb(253, 246, 207);
@@ -50,6 +54,75 @@
 .color-ua {
   color: rgb(255, 119, 119);
 }
+.color-dmg {
+  color: rgb(190, 14, 14);
+}
+.color-ggr {
+  color: rgb(119, 255, 248);
+}
+.color-mot {
+  color: rgb(90, 156, 131);
+}
 .color-brew {
   color: rgb(235, 125, 229);
+}
+
+/* beastiary sources, mostly*/
+.color-mm {
+  color: rgb(0, 119, 230);
+}
+.color-vgm {
+  color: rgb(0, 230, 142);
+}
+.color-ee {
+  color: rgb(255, 253, 119);
+}
+.color-tftyp {
+  color: rgb(190, 14, 14);
+}
+.color-tod {
+  color: rgb(190, 108, 14);
+}
+.color-oota {
+  color: rgb(137, 133, 172);
+}
+.color-cos {
+  color: rgb(146, 0, 139);
+}
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  display: none;
+  transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  display: block;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Show Surge Table';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Hide Surge Table';
+}
+
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #5bc0de;
+  border-radius: .25em;
 }

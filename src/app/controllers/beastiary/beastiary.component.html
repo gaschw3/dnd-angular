@@ -1,0 +1,71 @@
+<div class="carousel slide py-3" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://rawgit.com/gaschw3/dnd-react/master/src/images/Beastiary.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Beastiary</h5>
+        <p>The world is teeming with monsters. This is a list of them or whatever.</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" (click)="goBack()">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+</div>
+
+<div class="row">
+  <div *ngIf="monsters" class="col-md-12 beastiary-table">
+    <table id="tbl-beastiary" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th class="beastiary-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-search"></i></span>
+              </div>
+              <input id="beastiary-name-filter" class="form-control" type="search" placeholder="Name">
+            </div>
+          </th>
+          <th class="beastiary-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="beastiary-level-filter" class="form-control" type="search" placeholder="CR">
+            </div>
+          </th>
+          <th class="beastiary-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="beastiary-school-filter" class="form-control" type="search" placeholder="Type">
+            </div>
+          </th>
+          <th class="beastiary-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="beastiary-source-filter" class="form-control" type="search" placeholder="Tags">
+            </div>
+          </th>
+          <th class="beastiary-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="beastiary-classes-filter" class="form-control" type="search" placeholder="Source">
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>CR</th>
+          <th>Type</th>
+          <th>Tags</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let monster of monsters" (click)="setCurrMonster(monster)" [class.table-active]="currMonster?.id == monster.id">
+          <td>{{monster.name}}</td>
+          <td class="text-center">{{monster.cr}}</td>
+          <td>{{monster.type}}</td>
+          <td>{{monster.other}}</td>
+          <td [class]="'text-right color-'+monster.source | lowercase" class="text-right">{{monster.source}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-monster *ngIf="currMonster" [monster]="currMonster"></app-monster>

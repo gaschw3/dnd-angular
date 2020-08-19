@@ -7,6 +7,10 @@
     border-bottom: 1px solid;
 }
 
+.feature-text.row {
+    margin: 0px;
+}
+
 .subclass {
     padding-left: 30px;
 }
