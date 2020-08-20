@@ -98,13 +98,4 @@ export class BackgroundsComponent implements OnInit {
     this.currBackground = clicked;
     this.location.go("/backgrounds/" + this.currBackground.id)
   }
-
-  shake(id: string): void {
-    $( '#'+id )
-    .animate({ "left": "-=5px" }, "fast" )
-    .animate({ "left": "+=10px" }, "fast" )
-    .animate({ "left": "-=10px" }, "fast" )
-    .animate({ "left": "+=5px" }, "fast" );
-   }
-
 }
