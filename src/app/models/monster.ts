@@ -1,3 +1,5 @@
+import { Trait } from "./trait";
+
 export class Monster {
   name: string;
   size: string;
@@ -29,11 +31,6 @@ export class Monster {
   get id(): string {
     return this.name.toLowerCase().replace("\W","-");
   }
-}
-
-export class Trait {
-  name: string;
-  text: string[];
 }
 
 export class Action {

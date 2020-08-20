@@ -1,0 +1,45 @@
+<ng-container *ngIf="background">
+  <div class="class-info">
+      <div class="card">
+          <div class="card-body">
+              <div [class]="'background-header background-header-'+background.id | lowercase">
+                <div class="row">
+                    <div class="col">
+                        <h1 [class]="'color-'+background.source | lowercase">{{background.name}}</h1>
+                    </div>
+                    <div class="col">
+                        <h3 [class]="'pull-right color-'+background.source | lowercase">{{background.source}}</h3>
+                    </div>
+                </div>
+                      
+                <div class="row">
+                    <ng-container *ngIf="background.traits">
+                        <ng-container *ngFor="let trait of background.traits" >
+                          <ng-container [ngSwitch]="trait.name">
+                            <ng-container *ngSwitchCase="'Skill Proficiencies'">
+                              <div class="col-sm-6"><p class="m-0"><strong>{{trait.name}}</strong> {{trait.text}}</p></div>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'Languages'">
+                              <div class="col-sm-6"><p class="m-0"><strong>{{trait.name}}</strong> {{trait.text}}</p></div>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'Tool Proficiencies'">
+                              <div class="col-sm-6"><p class="m-0"><strong>{{trait.name}}</strong> {{trait.text}}</p></div>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'Equipment'">
+                              <div [class]="'col-12 background-border-bottom border-'+background.source | lowercase"><p class="pb-2 mb-0"><strong>{{trait.name}}</strong> {{trait.text}}</p></div>
+                            </ng-container>
+                            <div *ngSwitchDefault class="col-sm-6 pt-3">
+                                <h4 [class]="'color-'+background.source | lowercase">{{trait.name}}</h4>
+                                <ng-container *ngFor="let line of trait.text" >
+                                    <p class="m-0">{{line}}</p>
+                                </ng-container>
+                            </div>
+                          </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</ng-container>

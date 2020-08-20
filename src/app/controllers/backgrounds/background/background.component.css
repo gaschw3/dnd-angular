@@ -1,0 +1,28 @@
+.background-border-bottom {
+    border-bottom: 2px solid
+}
+
+.border-phb {
+    border-bottom: 2px solid rgb(0, 119, 230);
+  }
+  .border-xge {
+    border-bottom: 2px solid rgb(0, 230, 142);
+  }
+  .border-scag {
+    border-bottom: 2px solid rgb(255, 253, 119);
+  }
+  .border-ua {
+    border-bottom: 2px solid rgb(255, 119, 119);
+  }
+  .border-dmg {
+    border-bottom: 2px solid rgb(190, 14, 14);
+  }
+  .border-ggr {
+    border-bottom: 2px solid rgb(119, 255, 248);
+  }
+  .border-mot {
+    border-bottom: 2px solid rgb(90, 156, 131);
+  }
+  .border-brew {
+    border-bottom: 2px solid rgb(235, 125, 229);
+  }

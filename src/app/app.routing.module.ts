@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'beastiary',
     loadChildren: './controllers/beastiary/beastiary.module#BeastiaryModule'
   },
+  {
+    path: 'backgrounds',
+    loadChildren: './controllers/backgrounds/backgrounds.module#BackgroundsModule'
+  },
   {path: 'map', component: HexmapComponent}
   //{ path: 'redirect', component: RedirectionComponent },
   //{ path: '401', component: NotAuthorizedComponent },
