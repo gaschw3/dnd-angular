@@ -1,11 +1,12 @@
 import { Trait } from "./trait";
 
-export class Background {
+export class Ancestry {
   name: string;
   id: string;
+  speed: string;
+  size: string;
+  ability: string;
   source: string;
   proficiency: string;
-  skillProfs: string;
-  otherProfs: string;
   traits: Trait[];
 }

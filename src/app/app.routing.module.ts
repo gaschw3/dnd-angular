@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'backgrounds',
     loadChildren: './controllers/backgrounds/backgrounds.module#BackgroundsModule'
   },
+  {
+    path: 'ancestries',
+    loadChildren: './controllers/ancestries/ancestries.module#AncestriesModule'
+  },
   {path: 'map', component: HexmapComponent}
   //{ path: 'redirect', component: RedirectionComponent },
   //{ path: '401', component: NotAuthorizedComponent },

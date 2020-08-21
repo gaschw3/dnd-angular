@@ -10,6 +10,7 @@ import { ClassesModule } from './controllers/classes/classes.module';
 import { SpellsModule } from './controllers/spells/spells.module';
 import { BeastiaryModule } from './controllers/beastiary/beastiary.module';
 import { BackgroundsModule } from './controllers/backgrounds/backgrounds.module';
+import { AncestriesModule } from './controllers/ancestries/ancestries.module';
 import { SharedModule } from './shared/shared.module';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
@@ -29,6 +30,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
     SpellsModule,
     BeastiaryModule,
     BackgroundsModule,
+    AncestriesModule,
     NgxScrollTopModule
   ],
   exports: [],

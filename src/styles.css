@@ -7,6 +7,16 @@
   transform: translateY(-15%) !important;
 }
 
+.color-primary {
+  color: #62c462
+}
+.border-bottom-primary {
+  border-bottom: 2px solid #62c462;;
+}
+.beastiary-border {
+  border-bottom: 2px solid #62c462;;
+}
+
 .text--gp {
   color: #c5b100;
 }

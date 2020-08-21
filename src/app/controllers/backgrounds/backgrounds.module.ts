@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BackgroundsRoutingModule } from './backgrounds-routing.module';
 
 import { SharedModule } from 'src/app/shared/shared.module';
+import { BackgroundsRoutingModule } from './backgrounds-routing.module';
 import { BackgroundsComponent } from './backgrounds.component';
 import { BackgroundComponent } from './background/background.component';
 

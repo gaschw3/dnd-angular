@@ -1,0 +1,49 @@
+<ng-container *ngIf="ancestry">
+  <div class="class-info">
+    <div class="card">
+      <div class="card-body">
+        <div [class]="'ancestry-header ancestry-header-'+ancestry.id | lowercase">
+          <div class="row">
+            <div class="col">
+              <h1 [class]="'color-primary' | lowercase">{{ancestry.name}}</h1>
+            </div>
+            <div class="col">
+              <h3 [class]="'pull-right color-'+ancestry.source | lowercase">{{ancestry.source}}</h3>
+            </div>
+          </div>
+          <div class="row border-bottom-primary">
+            <div class="col-sm-6">
+              <p class="pb-0 m-0"><strong>Size</strong> {{ancestry.size}}</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="pb-0 m-0"><strong>Speed</strong> {{ancestry.speed}}</p>
+            </div>
+            <div class="col-sm-12">
+              <p class="pb-1 m-0"><strong>Ability Scores</strong> {{ancestry.ability}}</p>
+            </div>
+            <!-- This is badly done; the first three traits are Age, Alignment, and Size but I shouldn't be relying on that-->
+            <div class="col-sm-12">
+              <p class="pb-1 m-0"><strong>{{ancestry.traits[0].name}}</strong> {{ancestry.traits[0].text}}</p>
+            </div>
+            <div class="col-sm-12">
+              <p class="pb-1 m-0"><strong>{{ancestry.traits[1].name}}</strong> {{ancestry.traits[1].text}}</p>
+            </div>
+            <div class="col-sm-12">
+              <p class="pb-3 m-0"><strong>{{ancestry.traits[2].name}}</strong> {{ancestry.traits[2].text}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <ng-container *ngIf="ancestry.traits">
+              <ng-container *ngFor="let trait of ancestry.traits.slice(3)" >
+                <div class="col-sm-6 pt-3">
+                  <h4 [class]="'color-primary' | lowercase">{{trait.name}}</h4>
+                    <p class="m-0">{{trait.text}}</p>
+                </div>
+              </ng-container>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
