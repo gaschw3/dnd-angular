@@ -65,7 +65,7 @@
       ["20", "+6", "features", "Ultd", "+4"
       ]
     ],
-    "features": 
+    "features":
     [
       {
         "level": 1,
@@ -73,7 +73,7 @@
         "name": "rage",
         "title": "Rage",
         "text": [
-          
+
           "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:",
           {
             "list": [
@@ -171,7 +171,7 @@
         "title": "Primal Path: Path of the Totem Warrior",
         "source": "PHB",
         "text": [
-          
+
           "The Path of the Totem Warrior is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration. In battle, your totem spirit fills you with supernatural might, adding magical fuel to your barbarian rage.",
           "Most barbarian tribes consider a totem animal to be kin to a particular clan. In such cases, it is unusual for an individual to have more than one totem animal spirit, though exceptions exist."
         ]
@@ -433,7 +433,7 @@
         "name": "zealot-presence",
         "title": "Path of the Zealot: Zealous Presence",
         "text": [
-          
+
           "At 10th level, you learn to channel divine power to inspire zealotry in others. As a bonus action, you unleash a battle cry infused with divine energy. Up to ten other creatures of your choice within 60 feet of you that can hear you gain advantage on attack rolls and saving throws until the start of your next turn.",
           "Once you use this feature, you can't use it again until you finish a long rest."
         ]
@@ -533,7 +533,7 @@
         "name": "zealot-beyond-death",
         "title": "Path of the Zealot: Rage Beyond Death",
         "text": [
-          
+
           "Beginning at 14th level, the divine power that fuels your rage allows you to shrug off fatal blows.",
           "While you're raging, having 0 hit points doesn't knock you unconscious. You still must make death saving throws, and you suffer the normal effects of taking damage while at 0 hit points. However, if you would die due to failing death saving throws, you don't die until your rage ends, and you die then only if you still have 0 hit points."
         ]
@@ -667,7 +667,7 @@
         "subclass": "base",
         "name": "inspiration-1",
         "title": "Bardic Inspiration",
-        "text": [ 
+        "text": [
           "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.",
           "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.",
           "You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.",
@@ -679,7 +679,7 @@
         "subclass": "base",
         "name": "casting",
         "title": "Spellcasting",
-        "text": [ 
+        "text": [
           "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your spells are part of your vast repertoire, magic that you can tune to different situations.",
           "<h5 class='mb-0'>Cantrips</h5>",
           "You know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your choice at higher levels per the Bard table.",
@@ -695,7 +695,7 @@
               "Spell save DC = 8 + proficiency + CHA",
               "Spell attack modifier = proficiency + CHA</li>"
             ]
-          },  
+          },
           "<h5 class='mb-0'>Ritual Casting</h5>",
           "You can cast any bard spell you know as a ritual if that spell has the ritual tag.",
           "<h5 class='mb-0'>Spellcasting Focus</h5>",
@@ -849,7 +849,7 @@
         "name": "glamour-mantle",
         "title": "College of Glamour: Mantle of Inspiration",
         "text": [
-          
+
           "When you join the College of Glamour at 3rd level, you gain the ability to weave a song of fey magic that imbues your allies with vigor and speed. As a bonus action, you can expend a use of Bardic Inspiration to grant yourself a wondrous, otherworldly appearance. When you do so, choose a number of allies you can see and who can see you within 60 feet of you, up to a number of them equal to your Charisma modifier (minimum of one).  Each of them gains 6 temporary hit points. When a creature gains these temporary hit points, it can immediately use its reaction to move up to its speed, without provoking opportunity attacks.",
           "The number of temporary hit points increases alongside your bardic inspiration die (eg. to 8 at level 5)."
         ]
@@ -861,7 +861,7 @@
         "name": "glamour-enthrall",
         "title": "College of Glamour: Enthralling Performance",
         "text": [
-          
+
           "Also at 3rd level, you can charge your performance with seductive, fey magic. if you perform for at least 1 minute, you can attempt to inspire wonder in your audience by singing, reciting a poem, or dancing. At the end of the performance, choose a number of humanoids within 60 feet of you who watched and listened to all of it, up to a number of them equal to your Charisma modifier (minimum of one). Each target must succeed on a Wisdom saving throw against your spell save DC or be charmed by you. While charmed in this way, the target idolizes you, it speaks glowingly of you to anyone who speaks to it, and it hinders anyone who opposes you, avoiding violence unless it was already inclined to fight on your behalf. This effect ends on a target after 1 hour, if it takes any damage, if you attack it, or if it witnesses you attacking or damaging any of its allies.",
           "If a target succeeds on its save against this effect, the target has no hint that you tried to charm it.",
           "Once you use this feature, you can't use it again until you finish a short or long rest."
@@ -895,7 +895,7 @@
         "name": "whispers-words",
         "title": "College of Whispers: Venomous Words",
         "text": [
-          
+
           "You also learn to infuse innocent-seeming words with an insidious magic that can inspire terror. If you speak to a humanoid alone for at least 1 minute, you can attempt to seed paranoia in its mind. At the end of the conversation, the target must succeed on a Wisdom saving throw against your spell save DC or be frightened of you or another creature of your choice. The target is frightened in this way for 1 hour, until it is attacked or damaged, or until it witnesses its allies being attacked or damaged.",
           "If the target succeeds on its save, the target has no hint that you tried to frighten it.",
           "Once you use this feature, you can't use it again until you finish a short or long rest."
@@ -1331,7 +1331,7 @@
           "<h5 class='mb-0'>Spellcasting Ability</h5>",
           "Wisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity.",
           {
-            "list": 
+            "list":
             [
               "Spell save DC = 8 + proficiency + WIS",
               "Spell attack modifier = proficiency + WIS"
@@ -2499,7 +2499,7 @@
               "Your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.",
               "When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.",
               "You can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you've already cast.",
-              "You retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.",
+              "You retain the benefit of any features from your class, ancestry, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.",
               "You choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form."
             ]
           }
@@ -2629,7 +2629,7 @@
                 ]
               }
             ]
-          }   
+          }
         ]
       },
       {
@@ -2708,7 +2708,7 @@
               "7th - {@spells/blight blight}, {@spells/confusion confusion}",
               "9th - {@spells/cloudkill cloudkill}, {@spells/contagion contagion}"
             ]
-          }   
+          }
         ]
       },
       {
@@ -2997,7 +2997,7 @@
         "name": "shepherd-faithful",
         "title": "Circle of the Shephard: Faithful Summons",
         "text": [
-          "Starting at 14th level, the nature spirits you commune with protect you when you are the most defenseless. If you are reduced to 0 hit points or are incapacitated against your will, you can immediately gain the benefits of conjure animals as if it were cast using a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour, requiring no concentration, or until you dismiss it (no action required)..",
+          "Starting at 14th level, the nature spirits you commune with protect you when you are the most defenseless. If you are reduced to 0 hit points or are incapacitated against your will, you can immediately gain the benefits of conjure animals as if it were cast using a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour, requiring no concentration, or until you dismiss it (no action required).",
           "Once you use this feature, you can't use it again until you finish a long rest."
         ]
       },
@@ -3329,7 +3329,7 @@
               "The piercing damage increases to 2d8 when you reach 18th level in this class.",
               "<h5 class='mb-0'>Grasping Shot</h5>",
               "When this shot strikes its target, conjuration magic creates grasping, thorny brambles that wrap around the target. If the shot hits a creature, the target takes an extra 1d8 poison damage, its speed is reduced by 10 feet, and it takes 1d8 slashing damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength (Athletics) check against your Arcane Shot save DC. Otherwise, the brambles last for 1 minute or until you use this option again.",
-              "The poison and slashing damage both increase to 2d8 when you reach 18th level in this class."            
+              "The poison and slashing damage both increase to 2d8 when you reach 18th level in this class."
             ]
           },
           {
@@ -3358,7 +3358,7 @@
         "title": "Archetype: Samurai",
         "source": "XGE",
         "text": [
-          "The Samurai is a fighter who draws on an implacable fighting spirit to overcome enemies. A Samurai's resolve is nearly unbreakable, and the enemies in a Samurai's path have two choices: yield or die fighting.."
+          "The Samurai is a fighter who draws on an implacable fighting spirit to overcome enemies. A Samurai's resolve is nearly unbreakable, and the enemies in a Samurai's path have two choices: yield or die fighting."
         ]
       },
       {
@@ -3397,7 +3397,7 @@
         "title": "Echo Knight: Manifest Echo",
         "text": [
           "You can use a bonus action to magically manifest an echo of yourself in an unoccupied space you can see within 15 feet of you. This echo is a magical, translucent, gray image of you that lasts until it is destroyed, until you dismiss it as a bonus action, until you manifest another echo, or until you're incapacitated.",
-          "Your echo has AC 14 + your proficiency bonus, 1 hit point, and immunity to all conditions. If it has to make a saving throw, it uses your saving throw bonus for the roll. It is the same size as you, and it occupies its space. On your turn, you can mentally command the echo to move up to 30 feet in any direction (no action required). If your echo is ever more than 30 feet from you at the end of your turn, it is destroyed.",          
+          "Your echo has AC 14 + your proficiency bonus, 1 hit point, and immunity to all conditions. If it has to make a saving throw, it uses your saving throw bonus for the roll. It is the same size as you, and it occupies its space. On your turn, you can mentally command the echo to move up to 30 feet in any direction (no action required). If your echo is ever more than 30 feet from you at the end of your turn, it is destroyed.",
           "You can use the echo in the following ways:",
           {
             "list":
@@ -3436,7 +3436,7 @@
         "name": "banneret-proficiency",
         "title": "Banneret: Morale",
         "text": [
-          
+
           "You are able to inspire and bolster your comrades in battle, using special dice called morale dice. To do so, you use a bonus action on your turn to choose one creature other than yourself within 30 feet of you who can see or hear you. That creature gains one Morale die, a d4, and temporary hitpoints equal to your fighter level + your Charisma modifier.",
           "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one attack roll or weapon damage roll it makes. The creature can wait until after it rolls the d20 before deciding to use the Morale die, but must decide before the DM says whether the roll succeeds or fails.",
           "Alternatively, when an attack roll is made against the creature, it can use its reaction to roll the Morale die and add the number rolled to its AC against that attack, after seeing the roll but before knowing whether it hits or misses.",
@@ -3577,7 +3577,7 @@
         "name": "banneret-hold-the-line",
         "title": "Banneret: Hold the Line",
         "text": [
-          
+
           "Beginning at 7th level, you can rally your allies even in the most dire of situations. When you use your Second Wind feature, you can expend one of your uses of Morale to rally your allies. When you do so, each ally may roll one of their hit die and regain hit points equal to the number rolled.",
           "Additionally, when a friendly creature within 30 feet of you falls unconscious, you can use your reaction to expend one use of Morale and move up to your speed towards that creature. Roll a Morale die, the target regains hitpoints equal to the number rolled times the number of opportunity attacks you provoked by this movement (1, if no opportunity attacks were provoked)."
         ]
@@ -3952,7 +3952,7 @@
         "name": "banneret-warlord",
         "title": "Banneret: Warlord",
         "text": [
-          
+
           "Beginning at 18th level, you are a dominating presence in battle, striking fear into your enemies and courage into your allies. Your morale dice become d6s.",
           "Additionally, when you score a critical hit you regain 1 use of Morale."
         ]
@@ -4090,7 +4090,7 @@
         "name": "unarmmored-movement",
         "title": "Unarmored Movement",
         "text": [
-          
+
           "Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.",
           "At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move."
         ]
@@ -4511,7 +4511,7 @@
         "title": "Way of Four Elements: 11th Level Disciplines",
         "text": [
           "Starting at 11th level, you can learn the following disciplines:",
-          "<div class='row'><div class='col-sm-6'> <h5 class='mb-0'>Dance of Three Ways</h5><p class='pad-left'>You summon six spheres of earth from the ground, suspend them in the air around you, and ignite them with your fiery ki. With a thought, you launch these blazing meteors at your foe. You can spend 3 ki points to cast melf’s minute meteors.  <h5 class='mb-0'>Earth Reaches For Sky</h5><p class='pad-left'>Focusing your strength with a deep, rumbling shout, you swing your arms up high, causing an eruption of churned earth and stone that engulfs your foes. You can spend 3 ki points to cast erupting earth.   <h5 class='mb-0'>Eternal Mountain Defense</h5><p class='pad-left'>Your body hardens to stone, nearly impervious to weapons. You can spend 4 ki points to cast stoneskin, targeting yourself.   <h5 class='mb-0'>Spellfist Stance</h5><p class='pad-left'>You effortlessly flow between martial and elemental assault. When you use your action to use an elemental discipline, you can make one unarmed strike as a bonus action, or you can use your Flurry of Blows   <h5 class='mb-0'>Flames of the Phoenix</h5><p class='pad-left'>With a hand motion, you conjure a tiny bead of burning energy. You spend 3 ki points to cast fireball.  <h5 class='mb-0'>Fist of the Elements</h5><p class='pad-left'>The elements swirl around your weapon. You can spend 3 ki points to cast elemental weapon, choosing from only the damage types cold, fire, or thunder. Your unarmed strikes count as a weapon for the purposes of this discipline.  </div>  <div class='col-sm-6'><h5 class='mb-0'>Bing's Perilous Ground</h5><p class='pad-left'>You cool the air in the skies above you, condensing the water droplets into freezing rain and sleet. You can spend 3 ki points to cast sleet storm.  <h5 class='mb-0'>Mist Stance</h5><p class='pad-left'>A swirling mist envelopes your body and you merge with it, becoming a cloud. You can spend 3 ki points to cast gaseous form, targeting yourself.   <h5 class='mb-0'>One with the Waves</h5><p class='pad-left'>You reach out with your ki and become one with water. You spend 2 ki points as an action to gain underwater adaptations for 8 hours. While this ability is active, you can breath normally underwater, you gain a swim speed equal to your walking speed, and you gain blindsight with a radius of 60 feet while underwater.  <h5 class='mb-0'>Ride the Wind</h5><p class='pad-left'>You summon a mighty wind that envelopes your body, sweeping you to where you want to go. You spend 3 ki points to cast fly, targeting yourself, except your fly speed is equal to your movement speed.  <h5 class='mb-0'>River of Hungry Flame</h5><p class='pad-left'>You sweep your hands upward, causing a wall of blazing hot fire to leap up from the ground. You can spend 4 ki points to cast wall of fire.  <h5 class='mb-0'>Yue's Unbending Tide</h5><p class='pad-left'>You conjure up a mighty wave of water that crashes down on your foes. You can spend 3 ki to cast tidal wave. </div></div>"
+          "<div class='row'><div class='col-sm-6'> <h5 class='mb-0'>Dance of Three Ways</h5><p class='pad-left'>You summon six spheres of earth from the ground, suspend them in the air around you, and ignite them with your fiery ki. With a thought, you launch these blazing meteors at your foe. You can spend 3 ki points to cast melf’s minute meteors.  <h5 class='mb-0'>Earth Reaches For Sky</h5><p class='pad-left'>Focusing your strength with a deep, rumbling shout, you swing your arms up high, causing an eruption of churned earth and stone that engulfs your foes. You can spend 3 ki points to cast erupting earth.   <h5 class='mb-0'>Eternal Mountain Defense</h5><p class='pad-left'>Your body hardens to stone, nearly impervious to weapons. You can spend 4 ki points to cast stoneskin, targeting yourself.   <h5 class='mb-0'>Spellfist Stance</h5><p class='pad-left'>You effortlessly flow between martial and elemental assault. When you use your action to use an elemental discipline, you can make one unarmed strike as a bonus action, or you can use your Flurry of Blows <h5 class='mb-0'>Flames of the Phoenix</h5><p class='pad-left'>With a hand motion, you conjure a tiny bead of burning energy. You spend 3 ki points to cast fireball.  <h5 class='mb-0'>Fist of the Elements</h5><p class='pad-left'>The elements swirl around your weapon. You can spend 3 ki points to cast elemental weapon, choosing from only the damage types cold, fire, or thunder. Your unarmed strikes count as a weapon for the purposes of this discipline.  </div>  <div class='col-sm-6'><h5 class='mb-0'>Bing's Perilous Ground</h5><p class='pad-left'>You cool the air in the skies above you, condensing the water droplets into freezing rain and sleet. You can spend 3 ki points to cast sleet storm.  <h5 class='mb-0'>Mist Stance</h5><p class='pad-left'>A swirling mist envelopes your body and you merge with it, becoming a cloud. You can spend 3 ki points to cast gaseous form, targeting yourself.   <h5 class='mb-0'>One with the Waves</h5><p class='pad-left'>You reach out with your ki and become one with water. You spend 2 ki points as an action to gain underwater adaptations for 8 hours. While this ability is active, you can breath normally underwater, you gain a swim speed equal to your walking speed, and you gain blindsight with a radius of 60 feet while underwater.  <h5 class='mb-0'>Ride the Wind</h5><p class='pad-left'>You summon a mighty wind that envelopes your body, sweeping you to where you want to go. You spend 3 ki points to cast fly, targeting yourself, except your fly speed is equal to your movement speed.  <h5 class='mb-0'>River of Hungry Flame</h5><p class='pad-left'>You sweep your hands upward, causing a wall of blazing hot fire to leap up from the ground. You can spend 4 ki points to cast wall of fire.  <h5 class='mb-0'>Yue's Unbending Tide</h5><p class='pad-left'>You conjure up a mighty wave of water that crashes down on your foes. You can spend 3 ki to cast tidal wave. </div></div>"
         ]
       },
       {
@@ -4893,7 +4893,7 @@
         "title": "Oath of the Ancients",
         "source": "PHB",
         "text": [
-          "The Oath of the Ancients is as old as the race of elves and the rituals of the druids. Sometimes called fey knights, green knights, or horned knights, paladins who swear this oath cast their lot with the side of the light in the cosmic struggle against darkness because they love the beautiful and life-giving things of the world, not necessarily because they believe in principles of honor, courage, and justice. They adorn their armor and clothing with images of growing things—leaves, antlers, or flowers—to reflect their commitment to preserving life and light in the world.",
+          "The Oath of the Ancients is as old as the first elves and the rituals of the druids. Sometimes called fey knights, green knights, or horned knights, paladins who swear this oath cast their lot with the side of the light in the cosmic struggle against darkness because they love the beautiful and life-giving things of the world, not necessarily because they believe in principles of honor, courage, and justice. They adorn their armor and clothing with images of growing things—leaves, antlers, or flowers—to reflect their commitment to preserving life and light in the world.",
           "<h5 class='mb-0'>Tenets of the Ancients</h5>The tenets of the Oath of the Ancients have been preserved for uncounted centuries. This oath emphasizes the principles of good above any concerns of law or chaos. Its four central principles are simple.",
           "<p class='pad-left'><strong>Kindle the Light.</strong> Through your acts of mercy, kindness, and forgiveness, kindle the light of hope in the world, beating back despair.<p class='pad-left'><strong>Shelter the Light.</strong> Where there is good, beauty, love, and laughter in the world, stand against the wickedness that would swallow it. Where life flourishes, stand against the forces that would render it barren.<p class='pad-left'><strong>Preserve Your Own Light.</strong> Delight in song and laughter, in beauty and art. If you allow the light to die in your own heart, you can't preserve it in the world.<p class='pad-left'><strong>Be the Light.</strong> Be a glorious beacon for all who live in despair. Let the light of your joy and courage shine forth in all your deeds.<h5 class='mb-0'>Oath Spells</h5>",
 					"You gain oath spells at the paladin levels listed.",
@@ -5725,7 +5725,7 @@
         "name": "natural-explorer",
         "title": "Natural Explorer",
         "text": [
-          
+
           "You are a master of navigating the natural world, and you react with swift and decisive action when attacked. This grants you the following benefits:",
           {
             "list":
@@ -5765,7 +5765,7 @@
         "name": "casting",
         "title": "Spellcasting",
         "text": [
-          
+
           "By 2nd level, you have learned to use the magical essence of nature to cast spells, much as a druid does.",
           "<h5 class='mb-0'>Preparing and Casting Spells</h5>",
           "The Ranger table shows how many spell slots you have to cast your spells. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.",
@@ -5893,7 +5893,7 @@
         "name": "stalker-magic",
         "title": "Gloom Stalker: Gloom Stalker Magic",
         "text": [
-          
+
           "Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Gloom Stalker Spells table. The spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.",
           {
             "list":
@@ -5913,7 +5913,7 @@
         "name": "stalker-ambusher",
         "title": "Gloom Stalker: Dread Ambusher",
         "text": [
-          
+
           "At 3rd level, you master the art of the ambush. You can give yourself a bonus to your initiative rolls equal to your Wisdom modifier.",
           "At the start of your first turn of each combat, your walking speed increases by 10 feet, which lasts until the end of that turn. If you take the Attack action on that turn, you can make one additional weapon attack as part of that action. If that attack hits, the target takes an extra 1d8 damage of the weapon's damage type."
         ]
@@ -5924,8 +5924,8 @@
         "name": "stalker-sight",
         "title": "Gloom Stalker: Umbral Sight",
         "text": [
-          
-          "At 3rd level, you gain darkvision out to a range of 60 feet. If you already have darkvision from your race, its range increases by 30 feet.",
+
+          "At 3rd level, you gain darkvision out to a range of 60 feet. If you already have darkvision from your ancestry, its range increases by 30 feet.",
           "You are also adept at evading creatures that rely on darkvision. While in darkness, you are invisible to any creature that relies on darkvision to see you in that darkness."
         ]
       },
@@ -5946,7 +5946,7 @@
         "name": "horizon-magic",
         "title": "Horizon Walker: Planar Magic",
         "text": [
-          
+
           "Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Horizon Walker Spells table. The spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.",
           {
             "list":
@@ -5976,7 +5976,7 @@
         "name": "horizon-portal-lore",
         "title": "Horizon Walker: Portal Lore",
         "text": [
-          
+
           "At 3rd level, you gain the ability to magically sense the presence of a planar portal. As an action, you detect the distance and direction to the closest planar portal within 1 mile of you.",
           "Once you use this feature, you can't use it again until you finish a short or long rest."
         ]
@@ -6095,7 +6095,7 @@
         "name": "horizon-ethereal-step",
         "title": "Horizon Walker: Ethereal Step",
         "text": [
-          
+
           "At 7th level, you learn to step through the Ethereal Plane. As a bonus action, you can cast the {@spells/etherealness etherealness} spell with this feature, without expending a spell slot, but the spell ends at the end of the current turn.",
           "Once you use this feature, you can't use it again until you finish a short or long rest."
         ]
@@ -6115,7 +6115,7 @@
         "name": "fleet-of-foot",
         "title": "Fleet of Foot",
         "text": [
-          "Beginning at 8th level, you can use the Dash action as a bonus action on your turn.."
+          "Beginning at 8th level, you can use the Dash action as a bonus action on your turn."
         ]
       },
       {
@@ -6178,7 +6178,7 @@
         "name": "horizon-distant-strike",
         "title": "Horizon Walker: Distant Strike",
         "text": [
-          
+
           "At 11th level, you gain the ability to pass between the planes in the blink of an eye. When you take the Attack action, you can teleport up to 10 feet before each attack to an unoccupied space you can see.",
           "If you attack at least two different creatures with the action, you can make one additional attack with it against a third creature."
         ]
@@ -6921,7 +6921,7 @@
         "name": "thief-use-magic-device",
         "title": "Thief: Use Magic Device",
         "text": [
-          "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items."
+          "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, ancestry, and level requirements on the use of magic items."
         ]
       },
       {
@@ -7336,7 +7336,7 @@
         "title": "Gravity Wielder",
         "source": "BREW",
         "text": [
-          
+
           "Your innate magic comes from the cosmos itself. Perhaps you were touched by cosmic currents at birth, were granted your powers by an old god as a boon given to your lineage, or an incident hurled you into a plane with a vastly different composition and gravity than yours. Whatever the case, you are among the few that can exert control over the gravitational forces.",
           "At each indicated sorcerer level, add the listed spells to your list of known spells. They do not count towards your limit.",
           {
@@ -7462,7 +7462,7 @@
         "name": "gravity-concentrated",
         "title": "Gravity Wielder: Concentrated Cosmos",
         "text": [
-          
+
           "At 6th level, you gain the ability to create powerful nodes of gravity. As an action, you can spend 1 sorcery point and choose a point within 60 feet of you where a node is created. Each creature within 30 feet of the node must succeed on a Strength saving throw or be pulled up to 15 feet towards it. Huge or larger creatures have advantage on this saving throw, while Small or smaller creatures, as well as any creature not touching the ground, have disadvantage",
           "Alternatively, you may spend 1 sorcery point to increase your movement speed by 10 feet for 10 minutes."
         ]
@@ -7547,7 +7547,7 @@
         "name": "gravity-afloat",
         "title": "Gravity Wielder: Afloat in the Currents",
         "text": [
-          
+
           "At 14th level, you gain the ability to hover. You can start to hover as a bonus action. While hovering you can move in any direction, but you can't be higher than your base movement speed from the ground. You hover until you lose consiousness or use a bonus action to stop.",
           "Additionally, you can use a reaction and 1 sorcery point to cast {@spells/feather-fall feather fall}"
         ]
@@ -7623,7 +7623,7 @@
         "name": "gravity-master",
         "title": "Gravity Wielder: Master of Gravity",
         "text": [
-          
+
           "Beginning at 18th level, you can alther the gravity around you on a larger scale. As an action, you can spend 5 sorcery points to change the gravity in a 60-foot-radius, 60-foot high-cylinder, centered on you, for 1 minute or until you lose concentration (as if you were concentrating on a spell). You can create one of the following effects:",
           {
             "list": [
@@ -7632,7 +7632,7 @@
               "Gravity is halved: A creature moving through the area can move twice as fast and jump twice as high."
             ]
           },
-          
+
           "No matter which option you choose if a projectile from a ranged attack would travel through the affected area that attack is made at disadvantage.",
           "When you take this action, you can choose a number of creatures equal to your Charisma modifier that are unaffected by it."
         ]
@@ -7755,7 +7755,7 @@
         "title": "Patron: The Archfey",
         "source": "PHB",
         "text": [
-          "Your patron is a lord or lady of the fey, a creature of legend who holds secrets that were forgotten before the mortal races were born. This being's motivations are often inscrutable, and sometimes whimsical, and might involve a striving for greater magical power or the settling of age-old grudges. Beings of this sort include the Prince of Frost; the Queen of Air and Darkness, ruler of the Gloaming Court; Titania of the Summer Court; her consort Oberon, the Green Lord; Hyrsam, the Prince of Fools; and ancient hags.",
+          "Your patron is a lord or lady of the fey, a creature of legend who holds secrets that were forgotten before mortals were born. This being's motivations are often inscrutable, and sometimes whimsical, and might involve a striving for greater magical power or the settling of age-old grudges. Beings of this sort include the Prince of Frost; the Queen of Air and Darkness, ruler of the Gloaming Court; Titania of the Summer Court; her consort Oberon, the Green Lord; Hyrsam, the Prince of Fools; and ancient hags.",
           "The Archfey lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.",
           {
             "list":
@@ -7849,7 +7849,7 @@
         "title": "Patron: The Celestial",
         "source": "XGE",
         "text": [
-          
+
           "Your patron is a powerful being of the Upper Planes. You have bound yourself to an ancient empyrean, solar, ki-rin, or unicorn or to another entity that resides in the planes of everlasting bliss. Your pact with that being allows you to experience the barest touch of the holy light that illuminates the multiverse.",
           "Being connected to such power can cause changes in your behavior and beliefs. You might find yourself driven to annihilate the undead, to defeat fiends, and to protect the innocent. At times, your heart might also be filled with a longing for the celestial realm of your patron, a desire to wander that paradise for the rest of your days. But you know that your mission is among mortals for now and that your pact binds you to bring light to the dark places of the world.",
           "The Celestial lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.",
@@ -7880,7 +7880,7 @@
         "name": "celestial-healing-light",
         "title": "The Celestial: Healing Light",
         "text": [
-          
+
           "At 1st level, you gain the ability to channel celestial energy to heal wounds. You have a pool of d6s that you spend to fuel this healing. The number of dice in the pool equals 1 + your warlock level.",
           "As a bonus action, you can touch a creature and heal it, spending dice from the pool. The maximum number of dice you can spend at once equals your Charisma modifier (minimum of one die). Roll the dice you spend, add them together, and restore a number of hit points equal to the total.",
           "Your pool regains all expended dice when you finish a long rest."
@@ -7894,7 +7894,7 @@
         "title": "Patron: The Hexblade",
         "source": "XGE",
         "text": [
-          
+
           "You have made your pact with a mysterious entity from the Shadowfell—a force that manifests in sentient magic weapons carved from the stuff of shadow. The mighty sword Blackrazor is the most notable of these weapons, which have been spread across the multiverse over the ages. The shadowy force behind these weapons can offer power to warlocks who form pacts with it. Many hexblade warlocks create weapons that emulate those formed in the Shadowfell. Others forgo such arms, content to weave the dark magic of that plane into their spellcasting.",
           "The Hexblade lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.",
           {
@@ -7915,7 +7915,7 @@
         "name": "hexblade-warrior",
         "title": "The Hexblade: Hex Warrior",
         "text": [
-          
+
           "At 1st level, you acquire the training necessary to effectively arm yourself for battle. You gain proficiency with medium armor, shields, and martial weapons.",
           "The influence of your patron also allows you to mystically channel your will through a particular weapon. Whenever you finish a long rest, you can touch one weapon that you are proficient with and that lacks the two-handed property. When you attack with that weapon, you can use your Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls. This benefit lasts until you finish a long rest. If you later gain the Pact of the Blade feature, this benefit extends to every pact weapon you conjure with that feature, no matter the weapon's type."
         ]
@@ -7926,7 +7926,7 @@
         "name": "hexblade-curse",
         "title": "The Hexblade: Hexblade's Curse",
         "text": [
-          
+
           "Starting at 1st level, you gain the ability to place a baleful curse on someone. As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. The curse ends early if the target dies, you die, or you are incapacitated. Until the curse ends, you gain the following benefits:",
           {
             "list":
@@ -7946,7 +7946,7 @@
         "title": "Patron: The Undying",
         "source": "SCAG",
         "text": [
-          
+
           "Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize—like all power—comes at a price. Once mortal, the Undying has seen mortal lifetimes pass like the seasons, like the flicker of endless days and nights. It has the secrets of the ages to share, secrets of life and death. Beings of this sort include Vecna, Lord of the Hand and the Eye; the dread Iuz; the lich-queen Vol; the Undying Court of Aerenal; Vlaakith, lich-queen of the githyanki; and the deathless wizard Fistandantalus.",
           "The Undying lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.",
           {
@@ -7967,7 +7967,7 @@
         "name": "undying-among-the-dead",
         "title": "The Undying: Among the Dead",
         "text": [
-          
+
           "Starting at 1st level, you learn the spare the dying cantrip, which counts as a warlock cantrip for you. You also have advantage on saving throws against any disease.",
           "Additionally, undead have difficulty harming you. If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw against your spell save DC (an undead needn't make the save when it includes you in an area effect, such as the explosion of fireball). On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this effect for 24 hours if you target it with an attack or a harmful spell."
         ]
@@ -7978,7 +7978,7 @@
         "name": "eldritch-invocations",
         "title": "Eldritch Invocations",
         "text": [
-          
+
           "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability. At 2nd level, you gain two eldritch invocations from below. When you gain certain warlock levels, you gain additional invocations of your choice.",
           "Additionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level. A level prerequisite in an invocation refers to warlock level, not character level.",
           "<div class='row'><div class='col-sm-6'><h5 class='mb-0'><strong>All Warlocks</strong></h5><h5 class='mb-0'>Agonizing Blast</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you cast {@spells/eldritch-blast eldritch blast}, add your Charisma modifier to the damage it deals on a hit.<h5 class='mb-0'>Eldritch Spear</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you cast {@spells/eldritch-blast eldritch blast}, its range is 300 feet.<h5 class='mb-0'>Repelling Blast</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you hit a creature with {@spells/eldritch-blast eldritch blast}, you can push the creature up to 10 feet away from you in a straight line.<h5 class='mb-0'>Lance of Lethargy (XGE)</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>Once on each of your turns when you hit a creature with your {@spells/eldritch-blast eldritch blast}, you can reduce that creature's speed by 10 feet until the end of your next turn.<h5 class='mb-0'>Armor of Shadows</h5><p class='pad-left'>You can cast {@spells/mage-armor mage armor} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Beast Speech</h5><p class='pad-left'>You can cast {@spells/speak-with-animals speak with animals} at will, without expending a spell slot.<h5 class='mb-0'>Beguiling Influence</h5><p class='pad-left'>You gain proficiency in the Deception and Persuasion skills.<h5 class='mb-0'>Devil's Sight</h5><p class='pad-left'>You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.<h5 class='mb-0'>Eldritch Sight</h5><p class='pad-left'>You can cast {@spells/detect-magic detect magic} at will, without expending a spell slot.<h5 class='mb-0'>Eyes of the Rune Keeper</h5><p class='pad-left'>You can read all writing.<h5 class='mb-0'>Fiendish Vigor</h5><p class='pad-left'>You can cast {@spells/false-life false life} on yourself at will as a 1st-level spell, without expending a spell slot or material components.<h5 class='mb-0'>Gaze of Two Minds</h5><p class='pad-left'>You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.<h5 class='mb-0'>Mask of Many Faces</h5><p class='pad-left'>You can cast {@spells/disguise-self disguise self} at will, without expending a spell slot.<h5 class='mb-0'>Misty Visions</h5><p class='pad-left'>You can cast {@spells/silent-image silent image} at will, without expending a spell slot or material components.<h5 class='mb-0'>Thief of Five Fates</h5><p class='pad-left'>You learn the spell {@spells/bane bane}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Mire the Mind</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You learn the spell {@spells/slow slow}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>One with Shadows</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>When you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction.<h5 class='mb-0'>Signs of Ill Omen</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You learn the spell {@spells/bestow-curse bestow curse}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Gift of the Depths (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You can breathe underwater, and you gain a swimming speed equal to your walking speed. You can also cast water breathing once without expending a spell slot. You regain the ability to do so when you finish a long rest.<h5 class='mb-0'>Bewitching Whispers</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells/compulsion compulsion}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Dreadful Word</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells/confusion confusion}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Sculptor of Flesh</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells/polymorph polymorph}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Ghostly Gaze (XGE)</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>As an action, you gain the ability to see through solid objects to a range of 30 feet. Within that range, you have darkvision if you don't already have it. This special sight lasts for 1 minute or until your concentration ends (as if you were concentrating on a spell). During that time, you perceive objects as ghostly, transparent images. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Ascendant Step</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells/levitate levitate} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Minions of Chaos</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You learn the spell {@spells/conjure-elemental conjure elemental}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest. At your DMs discretion you may be able to conjure creatures of a different type (depending on your patron) as long as they meet the other criteria for the spell.<h5 class='mb-0'>Otherworldly Leap</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells/jump jump} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Whispers of the Grave</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells/speak-with-dead speak with dead} at will, without expending a spell slot.<h5 class='mb-0'>Lifedrinker</h5><p class='pad-left'><em>Prerequisite: 12th level</em><p class='pad-left'>When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum of 1).<h5 class='mb-0'>Master of Myriad Forms</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can cast {@spells/alter-self alter self} at will, without expending a spell slot.<h5 class='mb-0'>Witch Sight</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.<h5 class='mb-0'>Visions of Distant Realms</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can cast {@spells/arcane-eye arcane eye} at will, without expending a spell slot.</div><div class='col-sm-6'><h5 class='mb-0'><strong>Pact Based</strong></h5><h5 class='mb-0'>Thirsting Blade</h5><p class='pad-left'><em>Prerequisite: 5th level, Pact of the Blade feature</em><p class='pad-left'>You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.<h5 class='mb-0'>Improved Pact Weapon (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Blade feature</em><p class='pad-left'>You can use any weapon you summon with your Pact of the Blade feature as a spellcasting focus for your warlock spells. In addition, the weapon gains a +1 bonus to its attack and damage rolls, unless it is a magic weapon that already has a bonus to those rolls. Finally, the weapon you conjure can be a shortbow, longbow, light crossbow, or heavy crossbow.<h5 class='mb-0'>Eldritch Smite (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Pact of the Blade feature</em><p class='pad-left'>Once per turn when you hit a creature with your pact weapon, you can expend a warlock spell slot to deal an extra 1d8 force damage to the target, plus another 1d8 per level of the spell slot.<h5 class='mb-0'>Book of Ancient Secrets</h5><p class='pad-left'><em>Prerequisite: Pact of the Tome feature</em><p class='pad-left'>You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list. The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag.<p class='pad-left'>On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.<h5 class='mb-0'>Eternal Waking (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Tome feature</em><p class='pad-left'>You no longer need to sleep and can't be forced to sleep by any means. To gain the benefits of a long rest, you can spend all 8 hours doing light activity, such as reading your Book of Shadows and keeping watch.<h5 class='mb-0'>Voice of the Chain Master</h5><p class='pad-left'><em>Prerequisite: Pact of the Chain feature</em><p class='pad-left'>You can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.<h5 class='mb-0'>Gift of the Ever-Living Ones (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Chain feature</em><p class='pad-left'>Whenever you regain hit points while your familiar is within 100 feet of you, treat any dice rolled to determine the hit points you regain as having rolled their maximum value for you.</div><div class='col-sm-6'><h5 class='mb-0'><strong>Patron Based</strong></h5><h5 class='mb-0'>Grasp of Hadar (XGE)</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip, Great Old One patron</em><p class='pad-left'>Once on each of your turns when you hit a creature with your {@spells/eldritch-blast eldritch blast}, you can move that creature in a straight line 10 feet closer to you.<h5 class='mb-0'>Shroud of Ulban (XGE)</h5><p class='pad-left'><em>Prerequisite: 15th level, Great Old One patron</em><p class='pad-left'>As an action, you can turn invisible for 1 minute. If you attack, deal damage, or force a creature to make a saving throw, you become visible at the end of the current turn.<h5 class='mb-0'>Tomb of Levistus (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Fiend patron</em><p class='pad-left'>As a reaction when you take damage, you can entomb yourself in ice, which melts away at the end of your next turn. You gain 10 temporary hit points per warlock level, which take as much of the triggering damage as possible. Immediately after you take the damage, you gain vulnerability to fire damage, your speed is reduced to 0, and you are incapacitated. These effects, including any remaining temporary hit points, all end when the ice melts. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Cloak of Baal (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Fiend patron</em><p class='pad-left'>As a bonus action, you can surround yourself with a magical aura that looks like buzzing flies. The aura extends 5 feet from you in every direction, but not through total cover. It lasts until you're incapacitated or you dismiss it as a bonus action. The aura grants you advantage on Charisma (Intimidation) checks but disadvantage on all other Charisma checks. Any other creature that starts its turn in the aura takes poison damage equal to your Charisma modifier. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Divine Utterance (HB)</h5><p class='pad-left'><em>Prerequisite: Celestial patron</em><p class='pad-left'>You understand all spoken languages. Moreover, any creature that can understand a language can understand what you say.<h5 class='mb-0'>Angelic Step (HB)</h5><p class='pad-left'><em>Prerequisite: 15th level, Celestial patron</em><p class='pad-left'>As a bonus action you can manifest glowing angelic wings, you gain a flying speed of 30 feet, you can dismiss the wings as a bonus action.<h5 class='mb-0'>Maddening Hex (HB)</h5><p class='pad-left'><em>Prerequisite: 5th level, Hexblade patron</em><p class='pad-left'>As a bonus action, you cause a psychic disturbance around the target cursed by your Hexblade's Curse. When you do so, you deal psychic damage to the cursed target and each creature of your choice that you can see within 5 feet of it. The psychic damage equals your Charisma modifier. To use this invocation, you must be able to see the cursed target, and it must be within 30 feet of you.</div></div>"
@@ -8060,7 +8060,7 @@
         "name": "hexblade-curse",
         "title": "The Hexblade: Accursed Specter",
         "text": [
-          
+
           "Starting at 6th level, when you kill a person you can temporarily bind their soul to your service. When you slay a humanoid, you can cause its spirit to rise from its corpse as a <a>specter</a>. When the specter appears, it gains temporary hit points equal to half your warlock level. It obeys your verbal commands, takes it's actions on your turns in initiative, and gains a special bonus to its attack rolls equal to your Charisma modifier.",
           "The specter remains in your service until the end of your next long rest, at which point it vanishes to the afterlife. Once you bind a specter with this feature, you can't use the feature again until you finish a long rest."
         ]
@@ -8071,7 +8071,7 @@
         "name": "undying-defy-death",
         "title": "The Undying: Defy Death",
         "text": [
-          
+
           "Starting at 6th level, you can give yourself vitality when you cheat death or when you help someone else cheat it. You can regain hit points equal to 1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed on a death saving throw or when you stabilize a creature with spare the dying.",
           "Once you use this feature, you can't use it again until you finish a long rest."
         ]
@@ -8145,7 +8145,7 @@
         "name": "hexblade-armor",
         "title": "The Hexblade: Armor of Hexes",
         "text": [
-          
+
           "At 10th level, your hex grows more powerful. If the target cursed by your Hexblade's Curse hits you with an attack roll, you can use your reaction to roll a d6. On a 5 or higher, the attack instead misses you, regardless of its roll.",
           "You can use this feature a number of times equal to your Charisma modifier, regaining any expened uses when you finish a long rest."
         ]
@@ -8156,7 +8156,7 @@
         "name": "undying-nature",
         "title": "The Undying: Undying Nature",
         "text": [
-          
+
           "Beginning at 10th level, you can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests.",
           "In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged."
         ]
@@ -8238,7 +8238,7 @@
         "name": "celestial-healing-light",
         "title": "The Celestial: Healing Light",
         "text": [
-          
+
           "Starting at 14th level, the radiant energy you channel allows you to resist death. When you have to make a death saving throw at the start of your turn, you can instead spring back to your feet with a burst of radiant energy. You regain hit points equal to half your hit point maximum, and then you stand up if you so choose. Each creature of your choice that is within 30 feet of you takes radiant damage equal to 2d8 + your Charisma modifier, and it is blinded until the end of the current turn.",
           "Once you use this feature, you can't use it again until you finish a long rest."
         ]
@@ -8249,7 +8249,7 @@
         "name": "hexblade-master",
         "title": "The Hexblade: Master of Hexes",
         "text": [
-          
+
           "Starting at 14th level, you can spread your Hexblade's Curse from a slain creature to another creature. When the creature cursed by your Hexblade's Curse dies, you can apply the curse to a different creature you can see within 30 feet of you, provided you aren't incapacitated. When you apply the curse in this way, you don't regain hit points from the death of the previously cursed creature."
         ]
       },
@@ -8259,7 +8259,7 @@
         "name": "undying-indestructible",
         "title": "The Undying: Indestructible Life",
         "text": [
-          
+
           "When you reach 14th level, you partake some of the true secrets of the Undying. On your turn, you can use a bonus action to regain hit points equal to 1d8 + your warlock level. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.",
           "Once you use this feature, you can't use it again until you finish a short or long rest."
         ]

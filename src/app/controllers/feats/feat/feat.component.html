@@ -1,0 +1,37 @@
+<ng-container *ngIf="feat">
+  <div class="col class-info">
+    <div class="card">
+      <div class="card-body">
+        <div [class]="'feat-header feat-header-'+feat.id | lowercase">
+          <div class="row mb-3 border-bottom-primary">
+            <div class="col">
+              <h1 [class]="'color-primary' | lowercase">{{feat.name}}</h1>
+            </div>
+            <div class="col">
+              <h3 [class]="'pull-right color-'+feat.source.replace('+','').replace('-','') | lowercase">{{feat.source}}</h3>
+            </div>
+          </div>
+          <div class="col">
+            <p class="pb-1 m-0">{{feat.text.description}}</p>
+          </div>
+          <ul *ngIf="feat.text.benefits">
+            <li *ngFor="let text of feat.text.benefits">
+                {{text}}
+            </li>
+          </ul>
+          <div *ngIf="feat.text.extraDescription" class="col">
+            <p class="pb-1 m-0">{{feat.text.extraDescription}}</p>
+          </div>
+          <ul *ngIf="feat.text.extras">
+            <li *ngFor="let text of feat.text.extras">
+              {{text}}
+            </li>
+          </ul>
+          <div *ngIf="feat.text.multipleSelect" class="col">
+            <p class="pb-1 m-0">{{feat.text.multipleSelect}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -25,6 +25,10 @@ const routes: Routes = [
     path: 'ancestries',
     loadChildren: './controllers/ancestries/ancestries.module#AncestriesModule'
   },
+  {
+    path: 'feats',
+    loadChildren: './controllers/feats/feats.module#FeatsModule'
+  },
   {path: 'map', component: HexmapComponent}
   //{ path: 'redirect', component: RedirectionComponent },
   //{ path: '401', component: NotAuthorizedComponent },
