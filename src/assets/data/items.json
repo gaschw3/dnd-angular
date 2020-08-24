@@ -1,6 +1,7 @@
 [
   {
     "name": "Arrow",
+    "id": "arrow",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -11,6 +12,7 @@
   },
   {
     "name": "Battleaxe",
+    "id": "battleaxe",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -30,6 +32,7 @@
   },
   {
     "name": "Blowgun",
+    "id": "blowgun",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -50,6 +53,7 @@
   },
   {
     "name": "Blowgun Needle",
+    "id": "blowgun-needle",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -60,6 +64,7 @@
   },
   {
     "name": "Breastplate",
+    "id": "breastplate",
     "source": "PHB",
     "page": 145,
     "srd": true,
@@ -75,6 +80,7 @@
   },
   {
     "name": "Chain Mail",
+    "id": "chain-mail",
     "source": "PHB",
     "page": 145,
     "srd": true,
@@ -92,6 +98,7 @@
   },
   {
     "name": "Chain Shirt",
+    "id": "chain-shirt",
     "source": "PHB",
     "page": 144,
     "srd": true,
@@ -107,6 +114,7 @@
   },
   {
     "name": "Club",
+    "id": "club",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -125,6 +133,7 @@
   },
   {
     "name": "Crossbow Bolt",
+    "id": "crossbow-bolt",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -134,24 +143,8 @@
     "value": 5
   },
   {
-    "name": "Crossbow Bolts (20)",
-    "source": "PHB",
-    "page": 150,
-    "srd": true,
-    "type": "A",
-    "rarity": "none",
-    "weight": 1.5,
-    "value": 100,
-    "quantity": 20,
-    "packContents": [
-      {
-        "item": "crossbow bolt|phb",
-        "quantity": 20
-      }
-    ]
-  },
-  {
-    "name": "Crystal",
+    "name": "Arcane Focus, Crystal",
+    "id": "crystal",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -163,6 +156,7 @@
   },
   {
     "name": "Dagger",
+    "id": "dagger",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -184,6 +178,7 @@
   },
   {
     "name": "Dart",
+    "id": "dart",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -203,6 +198,7 @@
   },
   {
     "name": "Double-Bladed Scimitar",
+    "id": "double-bladed-scimitar",
     "source": "ERLW",
     "page": 21,
     "otherSources": [
@@ -236,6 +232,7 @@
   },
   {
     "name": "Flail",
+    "id": "flail",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -250,6 +247,7 @@
   },
   {
     "name": "Glaive",
+    "id": "glaive",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -269,6 +267,7 @@
   },
   {
     "name": "Greataxe",
+    "id": "greataxe",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -288,6 +287,7 @@
   },
   {
     "name": "Greatclub",
+    "id": "greatclub",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -306,6 +306,7 @@
   },
   {
     "name": "Greatsword",
+    "id": "greatsword",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -325,6 +326,7 @@
   },
   {
     "name": "Halberd",
+    "id": "halberd",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -344,6 +346,7 @@
   },
   {
     "name": "Half Plate Armor",
+    "id": "half-plate",
     "source": "PHB",
     "page": 145,
     "srd": true,
@@ -360,6 +363,7 @@
   },
   {
     "name": "Hand Crossbow",
+    "id": "hand-crossbow",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -382,6 +386,7 @@
   },
   {
     "name": "Handaxe",
+    "id": "handaxe",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -402,6 +407,7 @@
   },
   {
     "name": "Heavy Crossbow",
+    "id": "heavy-crossbow",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -425,6 +431,7 @@
   },
   {
     "name": "Hide Armor",
+    "id": "hide-armor",
     "source": "PHB",
     "page": 144,
     "srd": true,
@@ -440,6 +447,7 @@
   },
   {
     "name": "Hooked Shortspear",
+    "id": "hooked-shortspear",
     "source": "OotA",
     "page": 224,
     "type": "M",
@@ -458,6 +466,7 @@
   },
   {
     "name": "Javelin",
+    "id": "javelin",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -477,6 +486,7 @@
   },
   {
     "name": "Lance",
+    "id": "lance",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -504,6 +514,7 @@
   },
   {
     "name": "Leather Armor",
+    "id": "leather-armor",
     "source": "PHB",
     "page": 144,
     "srd": true,
@@ -519,6 +530,7 @@
   },
   {
     "name": "Light Crossbow",
+    "id": "light-crossbow",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -541,6 +553,7 @@
   },
   {
     "name": "Light Hammer",
+    "id": "light-hammer",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -561,6 +574,7 @@
   },
   {
     "name": "Longbow",
+    "id": "longbow",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -583,6 +597,7 @@
   },
   {
     "name": "Longsword",
+    "id": "longsword",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -602,6 +617,7 @@
   },
   {
     "name": "Mace",
+    "id": "mace",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -617,6 +633,7 @@
   },
   {
     "name": "Maul",
+    "id": "maul",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -636,6 +653,7 @@
   },
   {
     "name": "Morningstar",
+    "id": "morningstar",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -650,29 +668,8 @@
     "weapon": true
   },
   {
-    "name": "Musket",
-    "source": "DMG",
-    "page": 268,
-    "type": "R",
-    "rarity": "none",
-    "weight": 10,
-    "value": 50000,
-    "weaponCategory": "martial",
-    "age": "renaissance",
-    "property": [
-      "A",
-      "LD",
-      "2H"
-    ],
-    "range": "40/120",
-    "dmg1": "1d12",
-    "dmgType": "P",
-    "firearm": true,
-    "weapon": true,
-    "ammoType": "renaissance bullet"
-  },
-  {
     "name": "Net",
+    "id": "net",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -699,7 +696,8 @@
     ]
   },
   {
-    "name": "Orb",
+    "name": "Arcane Focus, Orb",
+    "id": "orb",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -711,6 +709,7 @@
   },
   {
     "name": "Padded Armor",
+    "id": "padded-armor",
     "source": "PHB",
     "page": 144,
     "srd": true,
@@ -727,6 +726,7 @@
   },
   {
     "name": "Pike",
+    "id": "pike",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -746,6 +746,7 @@
   },
   {
     "name": "Pistol",
+    "id": "pistol",
     "source": "DMG",
     "page": 268,
     "type": "R",
@@ -767,6 +768,7 @@
   },
   {
     "name": "Plate Armor",
+    "id": "plate",
     "source": "PHB",
     "page": 145,
     "srd": true,
@@ -784,6 +786,7 @@
   },
   {
     "name": "Quarterstaff",
+    "id": "quarterstaff",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -802,6 +805,7 @@
   },
   {
     "name": "Rapier",
+    "id": "rapier",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -820,6 +824,7 @@
   },
   {
     "name": "Powder Bullet",
+    "id": "powder-bullet",
     "source": "DMG",
     "page": 268,
     "type": "A",
@@ -830,6 +835,7 @@
   },
   {
     "name": "Ring Mail",
+    "id": "ring-mail",
     "source": "PHB",
     "page": 145,
     "srd": true,
@@ -845,7 +851,8 @@
     ]
   },
   {
-    "name": "Rod",
+    "name": "Arcane Focus, Rod",
+    "id": "rod",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -857,6 +864,7 @@
   },
   {
     "name": "Scale Mail",
+    "id": "scale-mail",
     "source": "PHB",
     "page": 144,
     "srd": true,
@@ -873,6 +881,7 @@
   },
   {
     "name": "Scimitar",
+    "id": "scimitar",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -892,6 +901,7 @@
   },
   {
     "name": "Shield",
+    "id": "shield",
     "source": "PHB",
     "page": 144,
     "type": "S",
@@ -905,6 +915,7 @@
   },
   {
     "name": "Shortbow",
+    "id": "shortbow",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -926,6 +937,7 @@
   },
   {
     "name": "Shortsword",
+    "id": "shortsword",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -945,6 +957,7 @@
   },
   {
     "name": "Sickle",
+    "id": "sickle",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -962,6 +975,7 @@
   },
   {
     "name": "Sling",
+    "id": "sling",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -980,6 +994,7 @@
   },
   {
     "name": "Sling Bullet",
+    "id": "sling-bullet",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -990,6 +1005,7 @@
   },
   {
     "name": "Spear",
+    "id": "spear",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -1011,6 +1027,7 @@
   },
   {
     "name": "Splint Armor",
+    "id": "splint-armor",
     "source": "PHB",
     "page": 145,
     "srd": true,
@@ -1027,7 +1044,8 @@
     ]
   },
   {
-    "name": "Staff",
+    "name": "Arcane Focus, Staff",
+    "id": "staff",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -1040,6 +1058,7 @@
   },
   {
     "name": "Studded Leather Armor",
+    "id": "studded-leather-armor",
     "source": "PHB",
     "page": 144,
     "srd": true,
@@ -1055,6 +1074,7 @@
   },
   {
     "name": "Trident",
+    "id": "trident",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -1074,7 +1094,8 @@
     "weapon": true
   },
   {
-    "name": "Wand",
+    "name": "Arcane Focus, Wand",
+    "id": "wand",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -1086,6 +1107,7 @@
   },
   {
     "name": "War Pick",
+    "id": "war-pick",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -1100,6 +1122,7 @@
   },
   {
     "name": "Warhammer",
+    "id": "warhammer",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -1119,6 +1142,7 @@
   },
   {
     "name": "Whip",
+    "id": "whip",
     "source": "PHB",
     "page": 149,
     "srd": true,
@@ -1136,28 +1160,8 @@
     "weapon": true
   },
   {
-    "name": "Yklwa",
-    "source": "ToA",
-    "page": 32,
-    "type": "M",
-    "rarity": "none",
-    "weight": 3,
-    "value": 100,
-    "weaponCategory": "simple",
-    "property": [
-      "T"
-    ],
-    "range": "10/30",
-    "dmg1": "1d8",
-    "dmgType": "P",
-    "weapon": true,
-    "entries": [
-      "A yklwa (pronounced YICK-ul-wah) is a simple melee weapon that is the traditional weapon of Chultan warriors. A yklwa consists of a 3-foot wooden shaft with a steel or stone blade up to 18 inches long. Although it has the thrown weapon property, the yklwa is not well balanced for throwing."
-    ]
-  },
-  {
-    "name": "+1 Rod of the Pact Keeper",
-    "id": "+1-rod-of-the-pact-keeper",
+    "name": "Rod of the Pact Keeper, +1",
+    "id": "rod-of-the-pact-keeper-1",
     "source": "DMG",
     "page": 197,
     "type": "RD",
@@ -1172,8 +1176,8 @@
     ]
   },
   {
-    "name": "+1 Wand of the War Mage",
-    "id": "+1-wand-of-the-war-mage",
+    "name": "Wand of the War Mage, +1",
+    "id": "wand-of-the-war-mage-1",
     "source": "DMG",
     "page": 212,
     "srd": true,
@@ -1188,8 +1192,8 @@
     ]
   },
   {
-    "name": "+2 Rod of the Pact Keeper",
-    "id": "+2-rod-of-the-pact-keeper",
+    "name": "Rod of the Pact Keeper, +2",
+    "id": "rod-of-the-pact-keeper-2",
     "source": "DMG",
     "page": 197,
     "type": "RD",
@@ -1207,8 +1211,8 @@
     ]
   },
   {
-    "name": "+2 Wand of the War Mage",
-    "id": "+2-wand-of-the-war-mage",
+    "name": "Wand of the War Mage, +2",
+    "id": "wand-of-the-war-mage",
     "source": "DMG",
     "page": 212,
     "srd": true,
@@ -1226,8 +1230,8 @@
     ]
   },
   {
-    "name": "+3 Rod of the Pact Keeper",
-    "id": "+3-rod-of-the-pact-keeper",
+    "name": "Rod of the Pact Keeper, +3",
+    "id": "rod-of-the-pact-keeper-3",
     "source": "DMG",
     "page": 197,
     "type": "RD",
@@ -1245,8 +1249,8 @@
     ]
   },
   {
-    "name": "+3 Wand of the War Mage",
-    "id": "+3-wand-of-the-war-mage",
+    "name": "Wand of the War Mage, +3",
+    "id": "wand-of-the-war-mage-3",
     "source": "DMG",
     "page": 212,
     "srd": true,
@@ -1276,7 +1280,7 @@
   },
   {
     "name": "Acid (vial)",
-    "id": "acid-(vial)",
+    "id": "acid-vial",
     "source": "PHB",
     "page": 148,
     "srd": true,
@@ -1303,6 +1307,7 @@
     "id": "adjustable-stilts",
     "source": "WDH",
     "page": 47,
+    "value": 1000,
     "type": "G",
     "rarity": "none",
     "entries": [
@@ -1311,7 +1316,7 @@
   },
   {
     "name": "Alchemist's Fire (flask)",
-    "id": "alchemist's-fire-(flask)",
+    "id": "alchemists-fire-flask",
     "source": "PHB",
     "page": 148,
     "srd": true,
@@ -1325,7 +1330,7 @@
   },
   {
     "name": "Alchemist's Supplies",
-    "id": "alchemist's-supplies",
+    "id": "alchemists-supplies",
     "source": "PHB",
     "page": 154,
     "type": "AT",
@@ -1475,7 +1480,7 @@
   },
   {
     "name": "Ale (Gallon)",
-    "id": "ale-(gallon)",
+    "id": "ale-gallon",
     "source": "PHB",
     "page": 158,
     "srd": true,
@@ -1485,7 +1490,7 @@
   },
   {
     "name": "Ale (Mug)",
-    "id": "ale-(mug)",
+    "id": "ale-mug",
     "source": "PHB",
     "page": 158,
     "srd": true,
@@ -1530,7 +1535,7 @@
     ]
   },
   {
-    "name": "Amulet",
+    "name": "Holy Symbol, Amulet",
     "id": "amulet",
     "source": "PHB",
     "page": 151,
@@ -1635,7 +1640,7 @@
   },
   {
     "name": "Antitoxin (vial)",
-    "id": "antitoxin-(vial)",
+    "id": "antitoxin-vial",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -1844,7 +1849,7 @@
   },
   {
     "name": "Assassin's Blood",
-    "id": "assassin's-blood",
+    "id": "assassins-blood",
     "source": "DMG",
     "page": 258,
     "srd": true,
@@ -2247,7 +2252,7 @@
   },
   {
     "name": "Ball Bearings (bag of 1,000)",
-    "id": "ball-bearings-(bag-of-1,000)",
+    "id": "ball-bearings-bag-of-1000",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -2309,7 +2314,7 @@
       {
         "type": "entries",
         "name": "Standard's Shield",
-    "id": "standard's-shield",
+    "id": "standards-shield",
         "entries": [
           "As a bonus action, you can touch the unfurled banner and invoke this power. Any ranged attack roll that targets you or an ally of yours has disadvantage if the target is within 20 feet of the unfurled banner. This benefit lasts for 1 minute or until the banner is furled. Once you use this property, you can't use it again until you finish a short or long rest."
         ]
@@ -2331,12 +2336,14 @@
     "source": "PHB",
     "page": 157,
     "srd": true,
+    "value": 30000,
+    "weight": 110,
     "type": "TAH",
     "rarity": "none",
     "weightMult": 2,
     "valueMult": 4,
     "entries": [
-      "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table in this chapter can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+      "Barding is armor designed to protect an animal's head, neck, chest, and body. Most people buy chain mail (listed price and weight) because its flexibility make it easier to store and transport with, but any type of armor available to characters can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
     ]
   },
   {
@@ -2367,6 +2374,8 @@
   {
     "name": "Trinket (Futuristic)",
     "id": "futuristic-trinket",
+    "value": 5000,
+    "weight": 1,
     "source": "BREW",
     "page": 7,
     "type": "G",
@@ -2591,7 +2600,7 @@
   },
   {
     "name": "Basic Poison (vial)",
-    "id": "basic-poison-(vial)",
+    "id": "basic-poison-vial",
     "source": "PHB",
     "page": 153,
     "srd": true,
@@ -2632,7 +2641,6 @@
     "rarity": "rare",
     "reqAttune": true,
     "weight": 6,
-    "value": 1000,
     "ac": 2,
     "bonusAc": "+1",
     "recharge": "dawn",
@@ -2646,6 +2654,7 @@
     "name": "Bead of Force",
     "id": "bead-of-force",
     "source": "DMG",
+    "value": 96000,
     "page": 154,
     "srd": true,
     "tier": "minor",
@@ -2933,6 +2942,8 @@
     "name": "Birdpipes",
     "id": "birdpipes",
     "source": "SCAG",
+    "value": 200,
+    "weight": 1,
     "page": 124,
     "type": "INS",
     "rarity": "none",
@@ -3390,7 +3401,6 @@
     "reqAttune": "by a humanoid",
     "sentient": true,
     "weight": 1,
-    "value": 200,
     "weaponCategory": "simple",
     "property": [
       "F",
@@ -3498,12 +3508,14 @@
   {
     "name": "Blasting Powder",
     "id": "blasting-powder",
+    "weight": 0.5,
+    "value": 2000,
     "source": "EGW",
     "page": 225,
     "type": "G",
     "rarity": "none",
     "entries": [
-      "This volatile alchemical powder comes in a small pouch. When ignited by an open flame or a fuse, the powder explodes. Each creature within 5 feet of the exploding pouch must make a DC 13 Dexterity saving throw, taking {@damage 3d6} bludgeoning damage on a failed save, or half as much damage on a successful one.",
+      "This volatile alchemical powder comes in a small pouch. When ignited by an open flame or a fuse, the powder explodes. Each creature within 5 feet of the exploding pouch must make a DC 13 Dexterity saving throw, taking {@damage 2d6} bludgeoning damage on a failed save, or half as much damage on a successful one.",
       "A character can bind multiple pouches of blasting powder together so they explode at the same time. Each additional pouch increases the damage by {@dice 1d6} (maximum of {@dice 10d6}) and the blast radius by 5 feet (maximum of 20 feet)."
     ]
   },
@@ -3925,6 +3937,7 @@
     "name": "Bottled Breath",
     "id": "bottled-breath",
     "source": "BREW",
+    "value": 15000,
     "type": "P",
     "rarity": "uncommon",
     "weight": 0.5,
@@ -4059,7 +4072,7 @@
   },
   {
     "name": "Brewer's Supplies",
-    "id": "brewer's-supplies",
+    "id": "brewers-supplies",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -4223,7 +4236,7 @@
   },
   {
     "name": "Burglar's Pack",
-    "id": "burglar's-pack",
+    "id": "burglars-pack",
     "source": "PHB",
     "page": 151,
     "type": "G",
@@ -4285,7 +4298,7 @@
   },
   {
     "name": "Calligrapher's Supplies",
-    "id": "calligrapher's-supplies",
+    "id": "calligraphers-supplies",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -4375,7 +4388,7 @@
   },
   {
     "name": "Caltrops (bag of 20)",
-    "id": "caltrops-(bag-of-20)",
+    "id": "caltrops-bag-of-20",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -4474,7 +4487,7 @@
   },
   {
     "name": "Canvas (1 sq. yd.)",
-    "id": "canvas-(1-sq.-yd.)",
+    "id": "canvas-1-sq-yd",
     "source": "PHB",
     "page": 157,
     "srd": true,
@@ -4531,7 +4544,7 @@
   },
   {
     "name": "Carpenter's Tools",
-    "id": "carpenter's-tools",
+    "id": "carpenters-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -4688,7 +4701,7 @@
   },
   {
     "name": "Cartographer's Tools",
-    "id": "cartographer's-tools",
+    "id": "cartographers-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -4709,7 +4722,7 @@
       {
         "type": "entries",
         "name": "Arcana, History, Religion",
-    "id": "arcana,-history,-religion",
+    "id": "arcana-history-religion",
         "entries": [
           "You can use your knowledge of maps and locations to unearth more detailed information when you use these skills. For instance, you might spot hidden messages in a map, identify when the map was made to determine if geographical features have changed since then, and so forth."
         ]
@@ -4829,7 +4842,7 @@
   },
   {
     "name": "Chain (10 feet)",
-    "id": "chain-(10-feet)",
+    "id": "chain-10-feet",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -4855,7 +4868,7 @@
   },
   {
     "name": "Chalk (1 piece)",
-    "id": "chalk-(1-piece)",
+    "id": "chalk-1-piece",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -4875,7 +4888,7 @@
   },
   {
     "name": "Charlatan's Die",
-    "id": "charlatan's-die",
+    "id": "charlatans-die",
     "source": "XGE",
     "page": 136,
     "tier": "minor",
@@ -4930,6 +4943,7 @@
     "name": "Chime of Opening",
     "id": "chime-of-opening",
     "source": "DMG",
+    "value": 140000,
     "page": 158,
     "srd": true,
     "tier": "minor",
@@ -5096,7 +5110,7 @@
   },
   {
     "name": "Climber's Kit",
-    "id": "climber's-kit",
+    "id": "climbers-kit",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -5316,7 +5330,7 @@
   },
   {
     "name": "Cobbler's Tools",
-    "id": "cobbler's-tools",
+    "id": "cobblers-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -5337,7 +5351,7 @@
       {
         "type": "entries",
         "name": "Arcana, History",
-    "id": "arcana,-history",
+    "id": "arcana-history",
         "entries": [
           "Your knowledge of shoes aids you in identifying the magical properties of enchanted boots or the history of such items."
         ]
@@ -5414,7 +5428,7 @@
   },
   {
     "name": "Common Wine (Pitcher)",
-    "id": "common-wine-(pitcher)",
+    "id": "common-wine-pitcher",
     "source": "PHB",
     "page": 158,
     "srd": true,
@@ -5438,7 +5452,7 @@
   },
   {
     "name": "Cook's Utensils",
-    "id": "cook's-utensils",
+    "id": "cooks-utensils",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -5533,7 +5547,7 @@
   },
   {
     "name": "Copper (cp)",
-    "id": "copper-(cp)",
+    "id": "copper-cp",
     "source": "PHB",
     "page": 143,
     "type": "$",
@@ -5541,12 +5555,84 @@
     "weight": 0.02,
     "value": 1,
     "entries": [
-      "Common coins come in several different denominations based on the relative worth of the metal from which they are made. The three most common coins are the gold piece (gp), the silver piece (sp), and the copper piece (cp).",
-      "With one gold piece, a character can buy a belt pouch, 50 feet of good rope, or a goat. A skilled (but not exceptional) artisan can earn one gold piece a day. The gold piece is the standard unit of measure for wealth, even if the coin itself is not commonly used. When merchants discuss deals that involve goods or services worth hundreds or thousands of gold pieces, the transactions don't usually involve the exchange of individual coins. Rather, the gold piece is a standard measure of value, and the actual exchange is in gold bars, letters of credit, or valuable goods.",
+      "Common coins come in several different denominations based on the relative worth of the metal from which they are made. The three most common coins are the platinum (pp), gold piece (gp), the silver piece (sp), and the copper piece (cp).",
+      "The most valuable coinage in active curculation for most parts of the world is the platinum. The platinum itself is rarely exchanged and is mostly used in the abstract when conducting large trades (at the scale of dragon-run banks or trades between kingdoms). The actual exchange is usually in bars of precious metal, letters of credit, or valuables goods. One platinum will buy most martial weapons; a bottle of fine wine or rare inks; or a spell focus for a spellcaster.",
+      "One platinum is worth ten gold pieces. The gold piece is the standard unit of measure for wealth, even in places where the coin itself isn't widely used.  With one gold piece, a character can buy a belt pouch, 50 feet of good rope, or a goat. A skilled (but not exceptional) artisan can earn one gold piece a day.",
       "One gold piece is worth ten silver pieces, the most prevalent coin among commoners. A silver piece buys a laborer's work for a day, a flask of lamp oil, or a night's rest in a poor inn.",
       "One silver piece is worth ten copper pieces, which are common among laborers and beggars. A single copper piece buys a candle, a torch, or a piece of chalk.",
-      "In addition, unusual coins made of other precious metals sometimes appear in treasure hoards. The electrum piece (ep) and the platinum piece (pp) originate from fallen empires and lost kingdoms, and they sometimes arouse suspicion and skepticism when used in transactions. An electrum piece is worth five silver pieces, and a platinum piece is worth ten gold pieces.",
+      "In addition, unusual coins made of other precious metals sometimes appear in treasure hoards. The electrum piece (ep) was often usedin ancient times and are still used today by elven enclaves and the denizens of Axiom. They sometimes arouse suspicion and skepticism when used in transactions, but will usually be accepted in larger. An electrum piece is worth five silver pieces.",
       "A standard coin weighs about a third of an ounce, so fifty coins weigh a pound."
+    ]
+  },
+  {
+    "name": "Electrum (ep)",
+    "id": "electrum-ep",
+    "source": "PHB",
+    "page": 143,
+    "type": "$",
+    "rarity": "none",
+    "weight": 0.02,
+    "value": 50,
+    "entries": [
+      "Common coins come in several different denominations based on the relative worth of the metal from which they are made. The three most common coins are the platinum (pp), gold piece (gp), the silver piece (sp), and the copper piece (cp).",
+      "The most valuable coinage in active curculation for most parts of the world is the platinum. The platinum itself is rarely exchanged and is mostly used in the abstract when conducting large trades (at the scale of dragon-run banks or trades between kingdoms). The actual exchange is usually in bars of precious metal, letters of credit, or valuables goods. One platinum will buy most martial weapons; a bottle of fine wine or rare inks; or a spell focus for a spellcaster.",
+      "One platinum is worth ten gold pieces. The gold piece is the standard unit of measure for wealth, even in places where the coin itself isn't widely used.  With one gold piece, a character can buy a belt pouch, 50 feet of good rope, or a goat. A skilled (but not exceptional) artisan can earn one gold piece a day.",
+      "One gold piece is worth ten silver pieces, the most prevalent coin among commoners. A silver piece buys a laborer's work for a day, a flask of lamp oil, or a night's rest in a poor inn.",
+      "One silver piece is worth ten copper pieces, which are common among laborers and beggars. A single copper piece buys a candle, a torch, or a piece of chalk.",
+      "In addition, unusual coins made of other precious metals sometimes appear in treasure hoards. The electrum piece (ep) was often usedin ancient times and are still used today by elven enclaves and the denizens of Axiom. They sometimes arouse suspicion and skepticism when used in transactions, but will usually be accepted in larger. An electrum piece is worth five silver pieces.",
+      "A standard coin weighs about a third of an ounce, so fifty coins weigh a pound."
+    ]
+  },
+  {
+    "name": "Silver (sp)",
+    "id": "silver-sp",
+    "source": "PHB",
+    "page": 143,
+    "type": "$",
+    "rarity": "none",
+    "weight": 0.02,
+    "value": 10,
+    "entries": [
+      "Common coins come in several different denominations based on the relative worth of the metal from which they are made. The three most common coins are the platinum (pp), gold piece (gp), the silver piece (sp), and the copper piece (cp).",
+      "The most valuable coinage in active curculation for most parts of the world is the platinum. The platinum itself is rarely exchanged and is mostly used in the abstract when conducting large trades (at the scale of dragon-run banks or trades between kingdoms). The actual exchange is usually in bars of precious metal, letters of credit, or valuables goods. One platinum will buy most martial weapons; a bottle of fine wine or rare inks; or a spell focus for a spellcaster.",
+      "One platinum is worth ten gold pieces. The gold piece is the standard unit of measure for wealth, even in places where the coin itself isn't widely used.  With one gold piece, a character can buy a belt pouch, 50 feet of good rope, or a goat. A skilled (but not exceptional) artisan can earn one gold piece a day.",
+      "One gold piece is worth ten silver pieces, the most prevalent coin among commoners. A silver piece buys a laborer's work for a day, a flask of lamp oil, or a night's rest in a poor inn.",
+      "One silver piece is worth ten copper pieces, which are common among laborers and beggars. A single copper piece buys a candle, a torch, or a piece of chalk.",
+      "In addition, unusual coins made of other precious metals sometimes appear in treasure hoards. The electrum piece (ep) was often usedin ancient times and are still used today by elven enclaves and the denizens of Axiom. They sometimes arouse suspicion and skepticism when used in transactions, but will usually be accepted in larger. An electrum piece is worth five silver pieces.",
+      "A standard coin weighs about a third of an ounce, so fifty coins weigh a pound."
+    ]
+  },
+  {
+    "name": "Gold (gp)",
+    "id": "gold-gp",
+    "source": "PHB",
+    "page": 143,
+    "type": "$",
+    "rarity": "none",
+    "weight": 0.02,
+    "value": 100,
+    "entries": [
+      "Common coins come in several different denominations based on the relative worth of the metal from which they are made. The three most common coins are the platinum (pp), gold piece (gp), the silver piece (sp), and the copper piece (cp).",
+      "The most valuable coinage in active curculation for most parts of the world is the platinum. The platinum itself is rarely exchanged and is mostly used in the abstract when conducting large trades (at the scale of dragon-run banks or trades between kingdoms). The actual exchange is usually in bars of precious metal, letters of credit, or valuables goods. One platinum will buy most martial weapons; a bottle of fine wine or rare inks; or a spell focus for a spellcaster.",
+      "One platinum is worth ten gold pieces. The gold piece is the standard unit of measure for wealth, even in places where the coin itself isn't widely used.  With one gold piece, a character can buy a belt pouch, 50 feet of good rope, or a goat. A skilled (but not exceptional) artisan can earn one gold piece a day.",
+      "One gold piece is worth ten silver pieces, the most prevalent coin among commoners. A silver piece buys a laborer's work for a day, a flask of lamp oil, or a night's rest in a poor inn.",
+      "One silver piece is worth ten copper pieces, which are common among laborers and beggars. A single copper piece buys a candle, a torch, or a piece of chalk.",
+      "In addition, unusual coins made of other precious metals sometimes appear in treasure hoards. The electrum piece (ep) was often usedin ancient times and are still used today by elven enclaves and the denizens of Axiom. They sometimes arouse suspicion and skepticism when used in transactions, but will usually be accepted in larger. An electrum piece is worth five silver pieces.",
+      "A standard coin weighs about a third of an ounce, so fifty coins weigh a pound."
+    ]
+  },
+  {
+    "name": "Occultum (op)",
+    "id": "occultum-op",
+    "source": "BREW",
+    "page": 143,
+    "type": "$",
+    "rarity": "none",
+    "weight": 0.02,
+    "value": 1000000,
+    "entries": [
+      "Occultum is raw, stabilized magic that (very) slowly accretes into tiny translucent gold-purple grains. On the surface, you'll be lucky to find a few grains. In the Veins, water and time concentrate particles of occultum and some long-dead civilizations now subsumed by the endless churning of the earth forged them into coins that can be used to buy, or do, impossible things.",
+      "If you want to build a deep carbon observatory, use occultum to hold the lens. If you want to build a time machine, use occultum to power the chronometric lever. It's a malleable, stable, and resistant material. Where inferior metals fail, explode, melt, or change into goats, occultum will persevere. It's the unsung hero of a thousand doomsday projects. If you want to build something insane, you wouldn't go awry to acquire some."
     ]
   },
   {
@@ -5583,7 +5669,7 @@
   },
   {
     "name": "Cotton Cloth (1 sq. yd.)",
-    "id": "cotton-cloth-(1-sq.-yd.)",
+    "id": "cotton-cloth-1-sq-yd",
     "source": "PHB",
     "page": 157,
     "srd": true,
@@ -5883,7 +5969,7 @@
   },
   {
     "name": "Danoth's Visor",
-    "id": "danoth's-visor",
+    "id": "danoths-visor",
     "source": "EGW",
     "page": 270,
     "rarity": "legendary",
@@ -6845,7 +6931,7 @@
   },
   {
     "name": "Diplomat's Pack",
-    "id": "diplomat's-pack",
+    "id": "diplomats-pack",
     "source": "PHB",
     "page": 151,
     "type": "G",
@@ -7202,7 +7288,7 @@
   },
   {
     "name": "Dungeoneer's Pack",
-    "id": "dungeoneer's-pack",
+    "id": "dungeoneers-pack",
     "source": "PHB",
     "page": 151,
     "type": "G",
@@ -7257,7 +7343,6 @@
     "rarity": "very rare",
     "reqAttune": true,
     "weight": 2,
-    "value": 1500,
     "weaponCategory": "martial",
     "property": [
       "V"
@@ -7291,6 +7376,7 @@
     "name": "Dust of Disappearance",
     "id": "dust-of-disappearance",
     "source": "DMG",
+    "value": 30000,
     "page": 166,
     "srd": true,
     "tier": "minor",
@@ -7306,6 +7392,7 @@
   {
     "name": "Dust of Dryness",
     "id": "dust-of-dryness",
+    "value": 10000,
     "source": "DMG",
     "page": 166,
     "srd": true,
@@ -7313,7 +7400,7 @@
     "rarity": "uncommon",
     "wondrous": true,
     "entries": [
-      "This small packet contains {@dice 1d6 + 4} pinches of dust. You can use an action to sprinkle a pinch of it over water. The dust turns a cube of water 15 feet on a side into one marble-sized pellet, which floats or rests near where the dust was sprinkled. The pellet's weight is negligible.",
+      "This small packet contains 1 pinch of dust. You can use an action to sprinkle it over water. The dust turns a cube of water 15 feet on a side into one marble-sized pellet, which floats or rests near where the dust was sprinkled. The pellet's weight is negligible.",
       "Someone can use an action to smash the pellet against a hard surface, causing the pellet to shatter and release the water the dust absorbed. Doing so ends that pellet's magic.",
       "An elemental composed mostly of water that is exposed to a pinch of the dust must make a DC 13 Constitution saving throw, taking {@dice 10d6} necrotic damage on a failed save, or half as much damage on a successful one."
     ],
@@ -7325,6 +7412,7 @@
     "name": "Dust of Sneezing and Choking",
     "id": "dust-of-sneezing-and-choking",
     "source": "DMG",
+    "value": 48000,
     "page": 166,
     "srd": true,
     "tier": "minor",
@@ -7447,27 +7535,10 @@
     ]
   },
   {
-    "name": "Electrum (ep)",
-    "id": "electrum-(ep)",
-    "source": "PHB",
-    "page": 143,
-    "type": "$",
-    "rarity": "none",
-    "weight": 0.02,
-    "value": 50,
-    "entries": [
-      "Common coins come in several different denominations based on the relative worth of the metal from which they are made. The three most common coins are the gold piece (gp), the silver piece (sp), and the copper piece (cp).",
-      "With one gold piece, a character can buy a belt pouch, 50 feet of good rope, or a goat. A skilled (but not exceptional) artisan can earn one gold piece a day. The gold piece is the standard unit of measure for wealth, even if the coin itself is not commonly used. When merchants discuss deals that involve goods or services worth hundreds or thousands of gold pieces, the transactions don't usually involve the exchange of individual coins. Rather, the gold piece is a standard measure of value, and the actual exchange is in gold bars, letters of credit, or valuable goods.",
-      "One gold piece is worth ten silver pieces, the most prevalent coin among commoners. A silver piece buys a laborer's work for a day, a flask of lamp oil, or a night's rest in a poor inn.",
-      "One silver piece is worth ten copper pieces, which are common among laborers and beggars. A single copper piece buys a candle, a torch, or a piece of chalk.",
-      "In addition, unusual coins made of other precious metals sometimes appear in treasure hoards. The electrum piece (ep) and the platinum piece (pp) originate from fallen empires and lost kingdoms, and they sometimes arouse suspicion and skepticism when used in transactions. An electrum piece is worth five silver pieces, and a platinum piece is worth ten gold pieces.",
-      "A standard coin weighs about a third of an ounce, so fifty coins weigh a pound."
-    ]
-  },
-  {
     "name": "Elemental Gem",
     "id": "elemental-gem",
     "source": "DMG",
+    "value": 94000,
     "page": 167,
     "srd": true,
     "tier": "minor",
@@ -7494,6 +7565,7 @@
     "name": "Elixir of Health",
     "id": "elixir-of-health",
     "source": "DMG",
+    "value": 12000,
     "page": 168,
     "type": "P",
     "tier": "minor",
@@ -7530,6 +7602,8 @@
     "name": "Trinket (Elven)",
     "id": "elven-trinket",
     "source": "MTF",
+    "value": 500,
+    "weight": 1,
     "page": 64,
     "type": "G",
     "rarity": "none",
@@ -7582,7 +7656,7 @@
     ]
   },
   {
-    "name": "Emblem",
+    "name": "Holy Symbol, Emblem",
     "id": "emblem",
     "source": "PHB",
     "page": 151,
@@ -7645,7 +7719,7 @@
   },
   {
     "name": "Entertainer's Pack",
-    "id": "entertainer's-pack",
+    "id": "entertainers-pack",
     "source": "PHB",
     "page": 151,
     "type": "G",
@@ -7750,7 +7824,7 @@
   },
   {
     "name": "Explorer's Pack",
-    "id": "explorer's-pack",
+    "id": "explorers-pack",
     "source": "PHB",
     "page": 151,
     "type": "G",
@@ -7793,6 +7867,8 @@
   {
     "name": "Explosive Seed",
     "id": "explosive-seed",
+    "weight": 0.25,
+    "value": 1000,
     "source": "EGW",
     "page": 225,
     "type": "G",
@@ -8017,7 +8093,7 @@
   },
   {
     "name": "Feed (per day)",
-    "id": "feed-(per-day)",
+    "id": "feed-per-day",
     "source": "PHB",
     "page": 157,
     "srd": true,
@@ -8264,7 +8340,7 @@
   },
   {
     "name": "Fine Wine (Bottle)",
-    "id": "fine-wine-(bottle)",
+    "id": "fine-wine-bottle",
     "source": "PHB",
     "page": 158,
     "srd": true,
@@ -8454,6 +8530,8 @@
     "name": "Grenade",
     "id": "grenade",
     "source": "DMG",
+    "value": 5000,
+    "weight": 1,
     "page": 268,
     "type": "P",
     "rarity": "uncommon",
@@ -8661,7 +8739,7 @@
   },
   {
     "name": "Glassblower's Tools",
-    "id": "glassblower's-tools",
+    "id": "glassblowers-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -8682,7 +8760,7 @@
       {
         "type": "entries",
         "name": "Arcana, History",
-    "id": "arcana,-history",
+    "id": "arcana-history",
         "entries": [
           "Your knowledge of glassmaking techniques aids you when you examine glass objects, such as potion bottles or glass items found in a treasure hoard. For instance, you can study how a glass potion bottle has been changed by its contents to help determine a potion's effects. (A potion might leave behind a residue, deform the glass, or stain it.)"
         ]
@@ -8731,6 +8809,8 @@
     "name": "Glaur",
     "id": "glaur",
     "source": "SCAG",
+    "weight": 2,
+    "value": 300,
     "page": 124,
     "type": "INS",
     "rarity": "none",
@@ -8839,24 +8919,6 @@
     "rarity": "none",
     "weight": 1,
     "value": 5000
-  },
-  {
-    "name": "Gold (gp)",
-    "id": "gold-(gp)",
-    "source": "PHB",
-    "page": 143,
-    "type": "$",
-    "rarity": "none",
-    "weight": 0.02,
-    "value": 100,
-    "entries": [
-      "Common coins come in several different denominations based on the relative worth of the metal from which they are made. The three most common coins are the gold piece (gp), the silver piece (sp), and the copper piece (cp).",
-      "With one gold piece, a character can buy a belt pouch, 50 feet of good rope, or a goat. A skilled (but not exceptional) artisan can earn one gold piece a day. The gold piece is the standard unit of measure for wealth, even if the coin itself is not commonly used. When merchants discuss deals that involve goods or services worth hundreds or thousands of gold pieces, the transactions don't usually involve the exchange of individual coins. Rather, the gold piece is a standard measure of value, and the actual exchange is in gold bars, letters of credit, or valuable goods.",
-      "One gold piece is worth ten silver pieces, the most prevalent coin among commoners. A silver piece buys a laborer's work for a day, a flask of lamp oil, or a night's rest in a poor inn.",
-      "One silver piece is worth ten copper pieces, which are common among laborers and beggars. A single copper piece buys a candle, a torch, or a piece of chalk.",
-      "In addition, unusual coins made of other precious metals sometimes appear in treasure hoards. The electrum piece (ep) and the platinum piece (pp) originate from fallen empires and lost kingdoms, and they sometimes arouse suspicion and skepticism when used in transactions. An electrum piece is worth five silver pieces, and a platinum piece is worth ten gold pieces.",
-      "A standard coin weighs about a third of an ounce, so fifty coins weigh a pound."
-    ]
   },
   {
     "name": "Gold bird cage with electrum filigree",
@@ -9004,7 +9066,6 @@
     "reqAttune": true,
     "sentient": true,
     "weight": 2,
-    "value": 1500,
     "weaponCategory": "martial",
     "property": [
       "V"
@@ -9140,7 +9201,7 @@
     "id": "gunpowder-horn",
     "source": "BREW",
     "page": 268,
-    "type": "G",
+    "type": "P",
     "rarity": "uncommon",
     "weight": 2,
     "value": 3500,
@@ -9204,7 +9265,7 @@
       {
         "type": "entries",
         "name": "Giant's Bane (Requires Attunement)",
-    "id": "giant's-bane-(requires-attunement)",
+    "id": "giants-bane-(requires-attunement)",
         "entries": [
           "You must be wearing a {@italic belt of giant strength} (any variety) and {@item gauntlets of ogre power} to attune to this weapon. The attunement ends if you take off either of those items. While you are attuned to this weapon and holding it, your Strength score increases by 4 and can exceed 20, but not 30. When you roll a 20 on an attack roll made with this weapon against a giant, the giant must succeed on a DC 17 Constitution saving throw or die."
         ]
@@ -9219,6 +9280,8 @@
     "name": "Hand Drum",
     "id": "hand-drum",
     "source": "SCAG",
+    "weight": 3,
+    "value": 500,
     "page": 124,
     "type": "INS",
     "rarity": "none",
@@ -9397,7 +9460,7 @@
   },
   {
     "name": "Healer's Kit",
-    "id": "healer's-kit",
+    "id": "healers-kit",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -9539,7 +9602,7 @@
   },
   {
     "name": "Hempen Rope (50 feet)",
-    "id": "hempen-rope-(50-feet)",
+    "id": "hempen-rope-50-feet",
     "source": "PHB",
     "page": 153,
     "srd": true,
@@ -9661,7 +9724,7 @@
   },
   {
     "name": "Heward's Handy Haversack",
-    "id": "heward's-handy-haversack",
+    "id": "hewards-handy-haversack",
     "source": "DMG",
     "page": 174,
     "srd": "Handy Haversack",
@@ -9689,7 +9752,7 @@
   },
   {
     "name": "Heward's Handy Spice Pouch",
-    "id": "heward's-handy-spice-pouch",
+    "id": "hewards-handy-spice-pouch",
     "source": "XGE",
     "page": 137,
     "tier": "minor",
@@ -9703,7 +9766,7 @@
   },
   {
     "name": "Heward's Hireling Armor",
-    "id": "heward's-hireling-armor",
+    "id": "hewards-hireling-armor",
     "source": "BREW",
     "baseItem": "leather armor",
     "type": "LA",
@@ -9739,7 +9802,6 @@
     "rarity": "legendary",
     "reqAttune": true,
     "weight": 13,
-    "value": 4500,
     "ac": 12,
     "bonusWeapon": "+1",
     "bonusAc": "+1",
@@ -9840,7 +9902,7 @@
   },
   {
     "name": "Holy Water (flask)",
-    "id": "holy-water-(flask)",
+    "id": "holy-water-flask",
     "source": "PHB",
     "page": 151,
     "srd": true,
@@ -9882,6 +9944,7 @@
     "name": "Horn of Blasting",
     "id": "horn-of-blasting",
     "source": "DMG",
+    "value": 45000,
     "page": 174,
     "srd": true,
     "tier": "major",
@@ -9891,9 +9954,6 @@
     "entries": [
       "You can use an action to speak the horn's command word and then blow the horn, which emits a thunderous blast in a 30-foot cone that is audible 600 feet away. Each creature in the cone must make a DC 15 Constitution saving throw. On a failed save, a creature takes {@dice 5d6} thunder damage and is {@condition deafened} for 1 minute. On a successful save, a creature takes half as much damage and isn't {@condition deafened}. Creatures and objects made of glass or crystal have disadvantage on the saving throw and take {@dice 10d6} thunder damage instead of {@dice 5d6}.",
       "Each use of the horn's magic has a {@chance 20} chance of causing the horn to explode. The explosion deals {@dice 10d6} fire damage to the blower and destroys the horn."
-    ],
-    "lootTables": [
-      "Magic Item Table G"
     ]
   },
   {
@@ -9912,7 +9972,7 @@
   },
   {
     "name": "Horn of Valhalla, Brass",
-    "id": "horn-of-valhalla,-brass",
+    "id": "horn-of-valhalla-brass",
     "source": "DMG",
     "page": 175,
     "srd": true,
@@ -9931,7 +9991,7 @@
   },
   {
     "name": "Horn of Valhalla, Bronze",
-    "id": "horn-of-valhalla,-bronze",
+    "id": "horn-of-valhalla-bronze",
     "source": "DMG",
     "page": 175,
     "srd": true,
@@ -9950,7 +10010,7 @@
   },
   {
     "name": "Horn of Valhalla, Iron",
-    "id": "horn-of-valhalla,-iron",
+    "id": "horn-of-valhalla-iron",
     "source": "DMG",
     "page": 175,
     "srd": true,
@@ -9969,7 +10029,7 @@
   },
   {
     "name": "Horn of Valhalla, Silver",
-    "id": "horn-of-valhalla,-silver",
+    "id": "horn-of-valhalla-silver",
     "source": "DMG",
     "page": 175,
     "srd": true,
@@ -10041,7 +10101,7 @@
   },
   {
     "name": "Hunter's Coat",
-    "id": "hunter's-coat",
+    "id": "hunters-coat",
     "source": "EGW",
     "page": 267,
     "baseItem": "leather armor",
@@ -10049,7 +10109,6 @@
     "rarity": "very rare",
     "reqAttune": true,
     "weight": 10,
-    "value": 1000,
     "ac": 11,
     "bonusAc": "+1",
     "recharge": "dawn",
@@ -10119,7 +10178,7 @@
   },
   {
     "name": "Infiltrator's Key",
-    "id": "infiltrator's-key",
+    "id": "infiltrators-key",
     "source": "EGW",
     "page": 272,
     "rarity": "legendary",
@@ -10243,7 +10302,7 @@
   },
   {
     "name": "Ink (1-ounce bottle)",
-    "id": "ink-(1-ounce-bottle)",
+    "id": "ink-1-ounce-bottle",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -11147,24 +11206,6 @@
     "value": 10
   },
   {
-    "name": "Iron Spikes (10)",
-    "id": "iron-spikes-(10)",
-    "source": "PHB",
-    "page": 150,
-    "srd": true,
-    "type": "G",
-    "rarity": "none",
-    "weight": 5,
-    "value": 100,
-    "quantity": 10,
-    "packContents": [
-      {
-        "item": "iron spike|phb",
-        "quantity": 10
-      }
-    ]
-  },
-  {
     "name": "Ironfang",
     "id": "ironfang",
     "source": "PotA",
@@ -11376,7 +11417,7 @@
   },
   {
     "name": "Jeweler's Tools",
-    "id": "jeweler's-tools",
+    "id": "jewelers-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -11477,7 +11518,9 @@
   },
   {
     "name": "Keoghtom's Ointment",
-    "id": "keoghtom's-ointment",
+    "id": "keoghtoms-ointment",
+    "value": 12000,
+    "weight": 0.5,
     "source": "DMG",
     "page": 179,
     "srd": "Restorative Ointment",
@@ -11485,7 +11528,7 @@
     "rarity": "uncommon",
     "wondrous": true,
     "entries": [
-      "This glass jar, 3 inches in diameter, contains {@dice 1d4 + 1} doses of a thick mixture that smells faintly of aloe. The jar and its contents weigh ½ pound.",
+      "This glass jar, 3 inches in diameter, contains 1 dose of a thick mixture that smells faintly of aloe. The jar and its contents weigh ½ pound.",
       "As an action, one dose of the ointment can be swallowed or applied to the skin. The creature that receives it regains {@dice 2d8 + 2} hit points, ceases to be {@condition poisoned}, and is cured of any disease."
     ],
     "lootTables": [
@@ -11505,7 +11548,7 @@
   },
   {
     "name": "Knave's Eye Patch",
-    "id": "knave's-eye-patch",
+    "id": "knaves-eye-patch",
     "source": "WDH",
     "page": 191,
     "rarity": "rare",
@@ -11525,7 +11568,7 @@
   },
   {
     "name": "Ladder (10-foot)",
-    "id": "ladder-(10-foot)",
+    "id": "ladder-10-foot",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -11609,7 +11652,6 @@
     "reqAttune": true,
     "sentient": true,
     "weight": 3,
-    "value": 200,
     "weaponCategory": "martial",
     "property": [
       "F",
@@ -11783,7 +11825,7 @@
   },
   {
     "name": "Leatherworker's Tools",
-    "id": "leatherworker's-tools",
+    "id": "leatherworkers-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -11851,7 +11893,7 @@
   },
   {
     "name": "Linen (1 sq. yd.)",
-    "id": "linen-(1-sq.-yd.)",
+    "id": "linen-1-sq-yd",
     "source": "PHB",
     "page": 157,
     "srd": true,
@@ -11917,17 +11959,6 @@
     ]
   },
   {
-    "name": "Longhorn",
-    "id": "longhorn",
-    "source": "SCAG",
-    "page": 124,
-    "type": "INS",
-    "rarity": "none",
-    "entries": [
-      "A Faerûnian flute of sophisticated make, found only in areas with skilled artisans, as in great cities or elven enclaves."
-    ]
-  },
-  {
     "name": "Longship",
     "id": "longship",
     "source": "DMG",
@@ -11945,7 +11976,7 @@
   },
   {
     "name": "Lord's Ensemble",
-    "id": "lord's-ensemble",
+    "id": "lords-ensemble",
     "source": "WDH",
     "page": 191,
     "rarity": "very rare",
@@ -11956,7 +11987,7 @@
       {
         "type": "entries",
         "name": "Lord's Helm",
-    "id": "lord's-helm",
+    "id": "lords-helm",
         "entries": [
           "This bucket helm covers your head and conceals your face. Screens over the eyes help to shroud your identity without blinding you. While you wear the helm, your voice is magically altered to sound genderless, and you are immune to magic that allows other creatures to read your thoughts, to determine whether you are lying, to know your alignment, or to know your creature type. Creatures can communicate telepathically with you only if you allow it."
         ]
@@ -11964,7 +11995,7 @@
       {
         "type": "entries",
         "name": "Lord's Amulet",
-    "id": "lord's-amulet",
+    "id": "lords-amulet",
         "entries": [
           "This amulet bears the crest of Waterdeep. It functions as an {@item amulet of proof against detection and location}."
         ]
@@ -11972,7 +12003,7 @@
       {
         "type": "entries",
         "name": "Lord's Robe",
-    "id": "lord's-robe",
+    "id": "lords-robe",
         "entries": [
           "This elegant robe functions as a {@item ring of free action}, and it creates the illusion that you have a nondescript, androgynous humanoid build and stand 6 feet tall."
         ]
@@ -12083,7 +12114,6 @@
     "reqAttune": true,
     "sentient": true,
     "weight": 4,
-    "value": 500,
     "weaponCategory": "simple",
     "dmg1": "1d6",
     "dmgType": "B",
@@ -12393,7 +12423,7 @@
   },
   {
     "name": "Mason's Tools",
-    "id": "mason's-tools",
+    "id": "masons-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -12527,7 +12557,7 @@
   },
   {
     "name": "Menga leaves (1 ounce)",
-    "id": "menga-leaves-(1-ounce)",
+    "id": "menga-leaves-1-ounce",
     "source": "ToA",
     "page": 205,
     "type": "P",
@@ -12541,7 +12571,7 @@
   },
   {
     "name": "Merchant's Scale",
-    "id": "merchant's-scale",
+    "id": "merchants-scale",
     "source": "PHB",
     "page": 153,
     "srd": true,
@@ -12600,7 +12630,7 @@
   },
   {
     "name": "Miner's Pick",
-    "id": "miner's-pick",
+    "id": "miners-pick",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -12835,7 +12865,7 @@
   },
   {
     "name": "Monster Hunter's Pack",
-    "id": "monster-hunter's-pack",
+    "id": "monster-hunters-pack",
     "source": "CoS",
     "page": 209,
     "type": "G",
@@ -13061,7 +13091,7 @@
   },
   {
     "name": "Navigator's Tools",
-    "id": "navigator's-tools",
+    "id": "navigators-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -13253,7 +13283,6 @@
     "rarity": "rare",
     "reqAttune": true,
     "weight": 1,
-    "value": 200,
     "weaponCategory": "simple",
     "property": [
       "F",
@@ -13303,9 +13332,10 @@
     ]
   },
   {
-    "name": "Nolzur's Marvelous Pigments",
-    "id": "nolzur's-marvelous-pigments",
+    "name": "Nolzur's Marvelous Pigments ",
+    "id": "nolzurs-marvelous-pigments",
     "source": "DMG",
+    "value": 20000,
     "page": 183,
     "srd": "Marvelous Pigments",
     "tier": "minor",
@@ -13313,7 +13343,7 @@
     "wondrous": true,
     "weight": 1,
     "entries": [
-      "Typically found in {@dice 1d4} pots inside a fine wooden box with a brush (weighing 1 pound in total), these pigments allow you to create three-dimensional objects by painting them in two dimensions. The paint flows from the brush to form the desired object as you concentrate on its image.",
+      "Typically found in 1d4 pots inside a fine wooden box with a brush (weighing 1 pound in total), these pigments allow you to create three-dimensional objects by painting them in two dimensions. The paint flows from the brush to form the desired object as you concentrate on its image.",
       "Each pot of paint is sufficient to cover 1,000 square feet of a surface, which lets you create inanimate objects or terrain features—such as a door, a pit, flowers, trees, cells, rooms, or weapons—that are up to 10,000 cubic feet. It takes 10 minutes to cover 100 square feet.",
       "When you complete the painting, the object or terrain feature depicted becomes a real, nonmagical object. Thus, painting a door on a wall creates an actual door that can be opened to whatever is beyond. Painting a pit on a floor creates a real pit, and its depth counts against the total area of objects you create.",
       "Nothing created by the pigments can have a value greater than 25 gp. If you paint an object of greater value (such as a diamond or a pile of gold), the object looks authentic, but close inspection reveals it is made from paste, bone, or some other worthless material.",
@@ -13377,7 +13407,7 @@
   },
   {
     "name": "Oil (flask)",
-    "id": "oil-(flask)",
+    "id": "oil-flask",
     "source": "PHB",
     "page": 152,
     "srd": true,
@@ -13393,6 +13423,7 @@
     "name": "Oil of Etherealness",
     "id": "oil-of-etherealness",
     "source": "DMG",
+    "value": 192000,
     "page": 183,
     "srd": true,
     "type": "P",
@@ -13413,6 +13444,7 @@
     "name": "Oil of Sharpness",
     "id": "oil-of-sharpness",
     "source": "DMG",
+    "value": 320000,
     "page": 184,
     "srd": true,
     "type": "P",
@@ -13431,6 +13463,7 @@
     "name": "Oil of Slipperiness",
     "id": "oil-of-slipperiness",
     "source": "DMG",
+    "value": 48000,
     "page": 184,
     "srd": true,
     "type": "P",
@@ -13904,7 +13937,7 @@
   },
   {
     "name": "Painted gold child's sarcophagus",
-    "id": "painted-gold-child's-sarcophagus",
+    "id": "painted-gold-childs-sarcophagus",
     "source": "DMG",
     "page": 135,
     "type": "$",
@@ -13922,7 +13955,7 @@
   },
   {
     "name": "Painter's Supplies",
-    "id": "painter's-supplies",
+    "id": "painters-supplies",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -13943,7 +13976,7 @@
       {
         "type": "entries",
         "name": "Arcana, History, Religion",
-    "id": "arcana,-history,-religion",
+    "id": "arcana-history-religion",
         "entries": [
           "Your expertise aids you in uncovering lore of any sort that is attached to a work of art, such as the magical properties of a painting or the origins of a strange mural found in a dungeon."
         ]
@@ -13951,7 +13984,7 @@
       {
         "type": "entries",
         "name": "Investigation, Perception",
-    "id": "investigation,-perception",
+    "id": "investigation-perception",
         "entries": [
           "When you inspect a painting or a similar work of visual art, your knowledge of the practices behind creating it can grant you additional insight."
         ]
@@ -14027,7 +14060,7 @@
   },
   {
     "name": "Paper (one sheet)",
-    "id": "paper-(one-sheet)",
+    "id": "paper-one-sheet",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -14051,7 +14084,7 @@
   },
   {
     "name": "Parchment (one sheet)",
-    "id": "parchment-(one-sheet)",
+    "id": "parchment-one-sheet",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -14175,7 +14208,7 @@
   },
   {
     "name": "Perfume (vial)",
-    "id": "perfume-(vial)",
+    "id": "perfume-vial",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -14263,6 +14296,7 @@
     "name": "Philter of Love",
     "id": "philter-of-love",
     "source": "DMG",
+    "value": 9000,
     "page": 184,
     "srd": true,
     "type": "P",
@@ -14391,7 +14425,7 @@
   },
   {
     "name": "Platinum (pp)",
-    "id": "platinum-(pp)",
+    "id": "platinum-pp",
     "source": "PHB",
     "page": 143,
     "type": "$",
@@ -14428,7 +14462,7 @@
   },
   {
     "name": "Poisoner's Kit",
-    "id": "poisoner's-kit",
+    "id": "poisoners-kit",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -14461,7 +14495,7 @@
       {
         "type": "entries",
         "name": "Investigation, Perception",
-    "id": "investigation,-perception",
+    "id": "investigation-perception",
         "entries": [
           "Your knowledge of poisons has taught you to handle those substances carefully, giving you an edge when you inspect {@condition poisoned} objects or try to extract clues from events that involve poison."
         ]
@@ -14477,7 +14511,7 @@
       {
         "type": "entries",
         "name": "Nature, Survival",
-    "id": "nature,-survival",
+    "id": "nature-survival",
         "entries": [
           "Working with poisons enables you to acquire lore about which plants and animals are poisonous."
         ]
@@ -14516,7 +14550,7 @@
   },
   {
     "name": "Pole (10-foot)",
-    "id": "pole-(10-foot)",
+    "id": "pole-10-foot",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -14609,21 +14643,10 @@
     ]
   },
   {
-    "name": "Potion of Acid Resistance",
-    "id": "potion-of-acid-resistance",
-    "source": "DMG",
-    "page": 188,
-    "srd": true,
-    "type": "P",
-    "resist": "acid",
-    "tier": "minor",
-    "rarity": "uncommon",
-    "weight": 0.5
-  },
-  {
     "name": "Potion of Animal Friendship",
     "id": "potion-of-animal-friendship",
     "source": "DMG",
+    "value": 20000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -14643,6 +14666,7 @@
   {
     "name": "Potion of Aqueous Form",
     "id": "potion-of-aqueous-form",
+    "value": 22000,
     "source": "MOT",
     "page": 197,
     "type": "P",
@@ -14679,6 +14703,7 @@
   {
     "name": "Potion of Clairvoyance",
     "id": "potion-of-clairvoyance",
+    "value": 96000,
     "source": "DMG",
     "page": 187,
     "srd": true,
@@ -14699,6 +14724,7 @@
   {
     "name": "Potion of Climbing",
     "id": "potion-of-climbing",
+    "value": 18000,
     "source": "DMG",
     "page": 187,
     "srd": true,
@@ -14717,6 +14743,7 @@
     "name": "Potion of Cloud Giant Strength",
     "id": "potion-of-cloud-giant-strength",
     "source": "DMG",
+    "value": 320000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -14737,20 +14764,26 @@
     ]
   },
   {
-    "name": "Potion of Cold Resistance",
-    "id": "potion-of-cold-resistance",
+    "name": "Potion of (Elemental) Resistance",
+    "id": "potion-of-resistance",
     "source": "DMG",
+    "value": 30000,
     "page": 188,
     "srd": true,
     "type": "P",
     "resist": "cold",
     "tier": "minor",
     "rarity": "uncommon",
-    "weight": 0.5
+    "weight": 0.5,
+    "entries": [
+      "When you drink this potion, you gain resistance to the listed type of elemental damage damage for 1 hour.",
+      "Types include acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, and thunder."
+    ]
   },
   {
     "name": "Potion of Comprehension",
     "id": "potion-of-comprehension",
+    "value": 7000,
     "source": "DMG",
     "page": 62,
     "type": "P",
@@ -14762,6 +14795,7 @@
   {
     "name": "Potion of Diminution",
     "id": "potion-of-diminution",
+    "value": 27000,
     "source": "DMG",
     "page": 187,
     "srd": true,
@@ -14782,6 +14816,7 @@
   {
     "name": "Potion of Fire Breath",
     "id": "potion-of-fire-breath",
+    "value": 15000,
     "source": "DMG",
     "page": 187,
     "type": "P",
@@ -14799,6 +14834,7 @@
     "name": "Potion of Fire Giant Strength",
     "id": "potion-of-fire-giant-strength",
     "source": "DMG",
+    "value": 150000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -14819,21 +14855,10 @@
     ]
   },
   {
-    "name": "Potion of Fire Resistance",
-    "id": "potion-of-fire-resistance",
-    "source": "DMG",
-    "page": 188,
-    "srd": true,
-    "type": "P",
-    "resist": "fire",
-    "tier": "minor",
-    "rarity": "uncommon",
-    "weight": 0.5
-  },
-  {
     "name": "Potion of Flying",
     "id": "potion-of-flying",
     "source": "DMG",
+    "value": 50000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -14848,21 +14873,10 @@
     ]
   },
   {
-    "name": "Potion of Force Resistance",
-    "id": "potion-of-force-resistance",
-    "source": "DMG",
-    "page": 188,
-    "srd": true,
-    "type": "P",
-    "resist": "force",
-    "tier": "minor",
-    "rarity": "uncommon",
-    "weight": 0.5
-  },
-  {
     "name": "Potion of Frost Giant Strength",
     "id": "potion-of-frost-giant-strength",
     "source": "DMG",
+    "value": 80000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -14886,6 +14900,7 @@
     "name": "Potion of Gaseous Form",
     "id": "potion-of-gaseous-form",
     "source": "DMG",
+    "value": 30000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -14906,6 +14921,7 @@
     "name": "Potion of Greater Healing",
     "id": "potion-of-greater-healing",
     "source": "DMG",
+    "value": 10000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -14924,6 +14940,7 @@
     "name": "Potion of Growth",
     "id": "potion-of-growth",
     "source": "DMG",
+    "value": 27000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -14961,6 +14978,7 @@
   {
     "name": "Potion of Heroism",
     "id": "potion-of-heroism",
+    "value": 18000,
     "source": "DMG",
     "page": 188,
     "srd": true,
@@ -14981,6 +14999,7 @@
   {
     "name": "Potion of Hill Giant Strength",
     "id": "potion-of-hill-giant-strength",
+    "value": 40000,
     "source": "DMG",
     "page": 187,
     "srd": true,
@@ -15004,6 +15023,7 @@
   {
     "name": "Potion of Invisibility",
     "id": "potion-of-invisibility",
+    "value": 18000,
     "source": "DMG",
     "page": 188,
     "srd": true,
@@ -15021,6 +15041,7 @@
   {
     "name": "Potion of Invulnerability",
     "id": "potion-of-invulnerability",
+    "value": 390000,
     "source": "DMG",
     "page": 188,
     "type": "P",
@@ -15035,20 +15056,9 @@
     ]
   },
   {
-    "name": "Potion of Lightning Resistance",
-    "id": "potion-of-lightning-resistance",
-    "source": "DMG",
-    "page": 188,
-    "srd": true,
-    "type": "P",
-    "resist": "lightning",
-    "tier": "minor",
-    "rarity": "uncommon",
-    "weight": 0.5
-  },
-  {
     "name": "Potion of Longevity",
     "id": "potion-of-longevity",
+    "value": 900000,
     "source": "DMG",
     "page": 188,
     "type": "P",
@@ -15065,6 +15075,7 @@
   {
     "name": "Potion of Maximum Power",
     "id": "potion-of-maximum-power",
+    "value": 400000,
     "source": "EGW",
     "page": 268,
     "type": "P",
@@ -15077,6 +15088,7 @@
   {
     "name": "Potion of Mind Reading",
     "id": "potion-of-mind-reading",
+    "value": 18000,
     "source": "DMG",
     "page": 188,
     "srd": true,
@@ -15095,21 +15107,10 @@
     ]
   },
   {
-    "name": "Potion of Necrotic Resistance",
-    "id": "potion-of-necrotic-resistance",
-    "source": "DMG",
-    "page": 188,
-    "srd": true,
-    "type": "P",
-    "resist": "necrotic",
-    "tier": "minor",
-    "rarity": "uncommon",
-    "weight": 0.5
-  },
-  {
     "name": "Potion of Poison",
     "id": "potion-of-poison",
     "source": "DMG",
+    "value": 10000,
     "page": 188,
     "srd": true,
     "type": "P",
@@ -15125,45 +15126,10 @@
     ]
   },
   {
-    "name": "Potion of Poison Resistance",
-    "id": "potion-of-poison-resistance",
-    "source": "DMG",
-    "page": 188,
-    "srd": true,
-    "type": "P",
-    "resist": "poison",
-    "tier": "minor",
-    "rarity": "uncommon",
-    "weight": 0.5
-  },
-  {
-    "name": "Potion of Psychic Resistance",
-    "id": "potion-of-psychic-resistance",
-    "source": "DMG",
-    "page": 188,
-    "srd": true,
-    "type": "P",
-    "resist": "psychic",
-    "tier": "minor",
-    "rarity": "uncommon",
-    "weight": 0.5
-  },
-  {
-    "name": "Potion of Radiant Resistance",
-    "id": "potion-of-radiant-resistance",
-    "source": "DMG",
-    "page": 188,
-    "srd": true,
-    "type": "P",
-    "resist": "radiant",
-    "tier": "minor",
-    "rarity": "uncommon",
-    "weight": 0.5
-  },
-  {
     "name": "Potion of Speed",
     "id": "potion-of-speed",
     "source": "DMG",
+    "value": 32000,
     "page": 188,
     "srd": true,
     "type": "P",
@@ -15184,6 +15150,7 @@
     "name": "Potion of Stone Giant Strength",
     "id": "potion-of-stone-giant-strength",
     "source": "DMG",
+    "value": 80000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -15207,6 +15174,7 @@
     "name": "Potion of Storm Giant Strength",
     "id": "potion-of-storm-giant-strength",
     "source": "DMG",
+    "value": 400000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -15230,6 +15198,7 @@
     "name": "Potion of Superior Healing",
     "id": "potion-of-superior-healing",
     "source": "DMG",
+    "value": 20000,
     "page": 187,
     "srd": true,
     "type": "P",
@@ -15246,6 +15215,7 @@
   {
     "name": "Potion of Supreme Healing",
     "id": "potion-of-supreme-healing",
+    "value": 40000,
     "source": "DMG",
     "page": 187,
     "srd": true,
@@ -15262,20 +15232,9 @@
     ]
   },
   {
-    "name": "Potion of Thunder Resistance",
-    "id": "potion-of-thunder-resistance",
-    "source": "DMG",
-    "page": 188,
-    "srd": true,
-    "type": "P",
-    "resist": "thunder",
-    "tier": "minor",
-    "rarity": "uncommon",
-    "weight": 0.5
-  },
-  {
     "name": "Potion of Vitality",
     "id": "potion-of-vitality",
+    "value": 94000,
     "source": "DMG",
     "page": 188,
     "type": "P",
@@ -15293,6 +15252,7 @@
     "name": "Potion of Water Breathing",
     "id": "potion-of-water-breathing",
     "source": "DMG",
+    "value": 18000,
     "page": 188,
     "srd": true,
     "type": "P",
@@ -15308,7 +15268,7 @@
   },
   {
     "name": "Potter's Tools",
-    "id": "potter's-tools",
+    "id": "potters-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -15337,7 +15297,7 @@
       {
         "type": "entries",
         "name": "Investigation, Perception",
-    "id": "investigation,-perception",
+    "id": "investigation-perception",
         "entries": [
           "You gain additional insight when inspecting ceramics, uncovering clues others would overlook by spotting minor irregularities."
         ]
@@ -15405,7 +15365,7 @@
   },
   {
     "name": "Priest's Pack",
-    "id": "priest's-pack",
+    "id": "priests-pack",
     "source": "PHB",
     "page": 151,
     "type": "G",
@@ -15464,7 +15424,7 @@
     "source": "DMG",
     "page": 258,
     "srd": true,
-    "type": "G",
+    "type": "P",
     "rarity": "none",
     "value": 200000,
     "poison": true,
@@ -15477,9 +15437,11 @@
   },
   {
     "name": "Quaal's Feather Token, Anchor",
-    "id": "quaal's-feather-token,-anchor",
+    "id": "quaals-feather-token-anchor",
     "source": "DMG",
     "page": 188,
+    "value": 6000,
+    "type": "P",
     "srd": "Feather Token, Anchor",
     "tier": "minor",
     "rarity": "rare",
@@ -15498,7 +15460,9 @@
   },
   {
     "name": "Quaal's Feather Token, Bird",
-    "id": "quaal's-feather-token,-bird",
+    "id": "quaals-feather-token-bird",
+    "value": 300000,
+    "type": "P",
     "source": "DMG",
     "page": 188,
     "srd": "Feather Token, Bird",
@@ -15519,8 +15483,10 @@
   },
   {
     "name": "Quaal's Feather Token, Fan",
-    "id": "quaal's-feather-token,-fan",
+    "id": "quaals-feather-token-fan",
     "source": "DMG",
+    "value": 25000,
+    "type": "P",
     "page": 188,
     "srd": "Feather Token, Fan",
     "tier": "minor",
@@ -15540,8 +15506,10 @@
   },
   {
     "name": "Quaal's Feather Token, Swan Boat",
-    "id": "quaal's-feather-token,-swan-boat",
+    "id": "quaals-feather-token-swan-boat",
     "source": "DMG",
+    "value": 300000,
+    "type": "P",
     "page": 188,
     "srd": "Feather Token, Swan Boat",
     "tier": "minor",
@@ -15561,13 +15529,15 @@
   },
   {
     "name": "Quaal's Feather Token, Tree",
-    "id": "quaal's-feather-token,-tree",
+    "id": "quaals-feather-token-tree",
     "source": "DMG",
     "page": 188,
     "srd": "Feather Token, Tree",
     "tier": "minor",
     "rarity": "rare",
     "wondrous": true,
+    "value": 25000,
+    "type": "P",
     "entries": [
       "This tiny object looks like a feather. Different types of feather tokens exist, each with a different single-use effect.",
       {
@@ -15582,8 +15552,10 @@
   },
   {
     "name": "Quaal's Feather Token, Whip",
-    "id": "quaal's-feather-token,-whip",
+    "id": "quaals-feather-token-whip",
     "source": "DMG",
+    "value": 25000,
+    "type": "P",
     "page": 188,
     "srd": "Feather Token, Whip",
     "tier": "minor",
@@ -15712,7 +15684,7 @@
   },
   {
     "name": "Rations (1 day)",
-    "id": "rations-(1-day)",
+    "id": "rations-1-day",
     "source": "PHB",
     "page": 153,
     "srd": true,
@@ -15725,7 +15697,7 @@
     ]
   },
   {
-    "name": "Reliquary",
+    "name": "Holy Symbol, Reliquary",
     "id": "reliquary",
     "source": "PHB",
     "page": 151,
@@ -17022,7 +16994,7 @@
   },
   {
     "name": "Ruin's Wake",
-    "id": "ruin's-wake",
+    "id": "ruins-wake",
     "source": "EGW",
     "page": 277,
     "baseItem": "spear",
@@ -17031,7 +17003,6 @@
     "reqAttune": true,
     "sentient": true,
     "weight": 3,
-    "value": 100,
     "weaponCategory": "simple",
     "property": [
       "T",
@@ -17254,7 +17225,7 @@
   },
   {
     "name": "Scholar's Pack",
-    "id": "scholar's-pack",
+    "id": "scholars-pack",
     "source": "PHB",
     "page": 151,
     "type": "G",
@@ -17303,7 +17274,7 @@
   },
   {
     "name": "Scribe's Pen",
-    "id": "scribe's-pen",
+    "id": "scribes-pen",
     "source": "BREW",
     "rarity": "common",
     "reqAttune": true,
@@ -17317,6 +17288,7 @@
   {
     "name": "Scroll of Protection from (Creature Type)",
     "id": "scroll-of-protection-from-aberrations",
+    "value": 18000,
     "source": "DMG",
     "page": 199,
     "type": "SC",
@@ -17528,15 +17500,7 @@
     "type": "INS",
     "rarity": "none",
     "weight": 1,
-    "value": 200
-  },
-  {
-    "name": "Shawm",
-    "id": "shawm",
-    "source": "SCAG",
-    "page": 124,
-    "type": "INS",
-    "rarity": "none",
+    "value": 200,
     "entries": [
       "A double-reed instrument similar to an oboe or a bassoon, popular with gnomes, who have developed some bellows-powered versions."
     ]
@@ -17610,7 +17574,7 @@
       {
         "type": "entries",
         "name": "Winter's Friend",
-    "id": "winter's-friend",
+    "id": "winters-friend",
         "entries": [
           "You are immune to cold damage."
         ]
@@ -17687,7 +17651,7 @@
   },
   {
     "name": "Silk (1 sq. yd.)",
-    "id": "silk-(1-sq.-yd.)",
+    "id": "silk-1-sq-yd",
     "source": "PHB",
     "page": 157,
     "srd": true,
@@ -17706,7 +17670,7 @@
   },
   {
     "name": "Silk Rope (50 feet)",
-    "id": "silk-rope-(50-feet)",
+    "id": "silk-rope-50-feet",
     "source": "PHB",
     "page": 153,
     "srd": true,
@@ -17729,7 +17693,6 @@
     "reqAttune": true,
     "sentient": true,
     "weight": 2,
-    "value": 2500,
     "weaponCategory": "martial",
     "property": [
       "F"
@@ -17837,24 +17800,6 @@
     "value": 500
   },
   {
-    "name": "Silver (sp)",
-    "id": "silver-(sp)",
-    "source": "PHB",
-    "page": 143,
-    "type": "$",
-    "rarity": "none",
-    "weight": 0.02,
-    "value": 10,
-    "entries": [
-      "Common coins come in several different denominations based on the relative worth of the metal from which they are made. The three most common coins are the gold piece (gp), the silver piece (sp), and the copper piece (cp).",
-      "With one gold piece, a character can buy a belt pouch, 50 feet of good rope, or a goat. A skilled (but not exceptional) artisan can earn one gold piece a day. The gold piece is the standard unit of measure for wealth, even if the coin itself is not commonly used. When merchants discuss deals that involve goods or services worth hundreds or thousands of gold pieces, the transactions don't usually involve the exchange of individual coins. Rather, the gold piece is a standard measure of value, and the actual exchange is in gold bars, letters of credit, or valuable goods.",
-      "One gold piece is worth ten silver pieces, the most prevalent coin among commoners. A silver piece buys a laborer's work for a day, a flask of lamp oil, or a night's rest in a poor inn.",
-      "One silver piece is worth ten copper pieces, which are common among laborers and beggars. A single copper piece buys a candle, a torch, or a piece of chalk.",
-      "In addition, unusual coins made of other precious metals sometimes appear in treasure hoards. The electrum piece (ep) and the platinum piece (pp) originate from fallen empires and lost kingdoms, and they sometimes arouse suspicion and skepticism when used in transactions. An electrum piece is worth five silver pieces, and a platinum piece is worth ten gold pieces.",
-      "A standard coin weighs about a third of an ounce, so fifty coins weigh a pound."
-    ]
-  },
-  {
     "name": "Silver and gold brooch",
     "id": "silver-and-gold-brooch",
     "source": "DMG",
@@ -17921,7 +17866,7 @@
   },
   {
     "name": "Sinda berries (10)",
-    "id": "sinda-berries-(10)",
+    "id": "sinda-berries-10",
     "source": "ToA",
     "page": 205,
     "type": "P",
@@ -18111,7 +18056,7 @@
   },
   {
     "name": "Smith's Tools",
-    "id": "smith's-tools",
+    "id": "smiths-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -18184,9 +18129,10 @@
   {
     "name": "Smoke Grenade",
     "id": "smoke-grenade",
+    "value": 5000,
     "source": "DMG",
     "page": 268,
-    "type": "G",
+    "type": "P",
     "rarity": "uncommon",
     "weight": 2,
     "entries": [
@@ -18203,17 +18149,6 @@
     "type": "G",
     "rarity": "none",
     "value": 2
-  },
-  {
-    "name": "Songhorn",
-    "id": "songhorn",
-    "source": "SCAG",
-    "page": 124,
-    "type": "INS",
-    "rarity": "none",
-    "entries": [
-      "A recorder, a simple type of flute, usually carved from wood."
-    ]
   },
   {
     "name": "Soothsalts",
@@ -18296,6 +18231,7 @@
     "name": "Sovereign Glue",
     "id": "sovereign-glue",
     "source": "DMG",
+    "value": 40000,
     "page": 200,
     "srd": true,
     "tier": "minor",
@@ -18341,8 +18277,9 @@
   },
   {
     "name": "Spell Scroll (1st Level)",
-    "id": "spell-scroll-(1st-level)",
+    "id": "spell-scroll-1st-level",
     "source": "DMG",
+    "value": 6000,
     "page": 200,
     "srd": true,
     "type": "SC",
@@ -18361,9 +18298,10 @@
   },
   {
     "name": "Spell Scroll (2nd Level)",
-    "id": "spell-scroll-(2nd-level)",
+    "id": "spell-scroll-2nd-level",
     "source": "DMG",
     "page": 201,
+    "value": 12000,
     "srd": true,
     "type": "SC",
     "tier": "minor",
@@ -18382,8 +18320,9 @@
   },
   {
     "name": "Spell Scroll (3rd Level)",
-    "id": "spell-scroll-(3rd-level)",
+    "id": "spell-scroll-3rd-level",
     "source": "DMG",
+    "value": 20000,
     "page": 202,
     "srd": true,
     "type": "SC",
@@ -18402,8 +18341,9 @@
   },
   {
     "name": "Spell Scroll (4th Level)",
-    "id": "spell-scroll-(4th-level)",
+    "id": "spell-scroll-4th-level",
     "source": "DMG",
+    "value": 32000,
     "page": 203,
     "srd": true,
     "type": "SC",
@@ -18422,8 +18362,9 @@
   },
   {
     "name": "Spell Scroll (5th Level)",
-    "id": "spell-scroll-(5th-level)",
+    "id": "spell-scroll-5th-level",
     "source": "DMG",
+    "value": 64000,
     "page": 204,
     "srd": true,
     "type": "SC",
@@ -18442,8 +18383,9 @@
   },
   {
     "name": "Spell Scroll (6th Level)",
-    "id": "spell-scroll-(6th-level)",
+    "id": "spell-scroll-6th-level",
     "source": "DMG",
+    "value": 128000,
     "page": 205,
     "srd": true,
     "type": "SC",
@@ -18462,7 +18404,7 @@
   },
   {
     "name": "Spell Scroll (7th Level)",
-    "id": "spell-scroll-(7th-level)",
+    "id": "spell-scroll-7th-level",
     "source": "DMG",
     "page": 206,
     "srd": true,
@@ -18482,7 +18424,7 @@
   },
   {
     "name": "Spell Scroll (8th Level)",
-    "id": "spell-scroll-(8th-level)",
+    "id": "spell-scroll-8th-level",
     "source": "DMG",
     "page": 207,
     "srd": true,
@@ -18503,7 +18445,7 @@
   },
   {
     "name": "Spell Scroll (9th Level)",
-    "id": "spell-scroll-(9th-level)",
+    "id": "spell-scroll-9th-level",
     "source": "DMG",
     "page": 208,
     "srd": true,
@@ -18523,7 +18465,7 @@
   },
   {
     "name": "Spell Scroll (10th Level), blank",
-    "id": "spell-scroll-(10th-level)",
+    "id": "spell-scroll-10th-level",
     "source": "BREW",
     "wondrous": true,
     "type": "SC",
@@ -18537,8 +18479,9 @@
   },
   {
     "name": "Spell Scroll (Cantrip)",
-    "id": "spell-scroll-(cantrip)",
+    "id": "spell-scroll-cantrip",
     "source": "DMG",
+    "value": 1000,
     "page": 199,
     "srd": true,
     "type": "SC",
@@ -18646,7 +18589,7 @@
   },
   {
     "name": "Spies' Murmur",
-    "id": "spies'-murmur",
+    "id": "spies-murmur",
     "source": "GGR",
     "page": 181,
     "rarity": "uncommon",
@@ -18669,7 +18612,7 @@
     ]
   },
   {
-    "name": "Sprig of Mistletoe",
+    "name": "Druidic Focus, Sprig of Mistletoe",
     "id": "sprig-of-mistletoe",
     "source": "PHB",
     "page": 151,
@@ -18695,7 +18638,7 @@
   },
   {
     "name": "Stabling (per day)",
-    "id": "stabling-(per-day)",
+    "id": "stabling-per-day",
     "source": "PHB",
     "page": 157,
     "srd": true,
@@ -20173,6 +20116,8 @@
   {
     "name": "Tangler Grenade",
     "id": "tangler-grenade",
+    "value": 5000,
+    "weight": 1,
     "source": "DMG",
     "page": 244,
     "type": "P",
@@ -20207,26 +20152,16 @@
     ]
   },
   {
-    "name": "Tantan",
-    "id": "tantan",
-    "source": "SCAG",
-    "page": 124,
-    "type": "INS",
-    "rarity": "none",
-    "entries": [
-      "A tambourine, a popular instrument with halflings and humans south of the Dalelands."
-    ]
-  },
-  {
-    "name": "Tej",
+    "name": "Tej (mug)",
     "id": "tej",
+    "value": 4,
+    "weight": 1,
     "source": "ToA",
     "page": 32,
     "type": "P",
     "rarity": "none",
-    "weight": 5,
     "entries": [
-      "Tej is an amber-colored, fermented drink made from honey. It's more common and popular in Chult than beer or ale. A mug of tej costs 4 cp in Port Nyanzaru or 6 cp in Fort Beluarian. A 1-gallon cask costs 2 sp in the city or 3 sp at the fort."
+      "Tej is an amber-colored, fermented drink made from honey. It's more common and popular in Ixalan than beer or ale.."
     ]
   },
   {
@@ -20257,7 +20192,6 @@
     "reqAttune": true,
     "sentient": true,
     "weight": 4,
-    "value": 1500,
     "weaponCategory": "martial",
     "dmg1": "1d8",
     "dmgType": "P",
@@ -20361,19 +20295,8 @@
     ]
   },
   {
-    "name": "Thelarr",
-    "id": "thelarr",
-    "source": "SCAG",
-    "page": 124,
-    "type": "INS",
-    "rarity": "none",
-    "entries": [
-      "Also known as a whistlecane, a simple and easy-to-make wind instrument cut from a reed. They are so simple, in fact, that skilled bards frequently make and give them away to children—to the parents' delight or regret."
-    ]
-  },
-  {
     "name": "Thieves' Tools",
-    "id": "thieves'-tools",
+    "id": "thieves-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -20582,7 +20505,7 @@
   },
   {
     "name": "Tinker's Tools",
-    "id": "tinker's-tools",
+    "id": "tinkers-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -20653,17 +20576,6 @@
     ]
   },
   {
-    "name": "Tocken",
-    "id": "tocken",
-    "source": "SCAG",
-    "page": 124,
-    "type": "INS",
-    "rarity": "none",
-    "entries": [
-      "A hanging set of carved oval bells, usually played with a pair of light wooden hammers (or open handed). They are most common in underground cultures, where the resonant tones can carry."
-    ]
-  },
-  {
     "name": "Tome of Clear Thought",
     "id": "tome-of-clear-thought",
     "source": "DMG",
@@ -20698,9 +20610,6 @@
     },
     "entries": [
       "This book contains guidelines for influencing and charming others, and its words are charged with magic. If you spend 48 hours over a period of 6 days or fewer studying the book's contents and practicing its guidelines, your Charisma score increases by 2, as does your maximum for that score. The manual then loses its magic, but regains it in a century."
-    ],
-    "lootTables": [
-      "Magic Item Table H"
     ]
   },
   {
@@ -20709,7 +20618,7 @@
     "source": "BREW",
     "page": 221,
     "type": "G",
-    "rarity": "none",
+    "rarity": "rare",
     "weight": 5,
     "entries": [
       "Regina's Journal is an ancient work penned by Regina Adler, a long and insane tale of how she came to her fallen state. The book is bound in a thick leather cover with steel hinges and fastenings. The pages are of parchment and very brittle. Most of the book is written in the curious shorthand that only Regina and her cult employ. Stains and age have made most of the work illegible, but several entries remain intact."
@@ -20802,7 +20711,7 @@
     ]
   },
   {
-    "name": "Totem",
+    "name": "Druidic Focus, Totem",
     "id": "totem",
     "source": "PHB",
     "page": 151,
@@ -20826,7 +20735,7 @@
   },
   {
     "name": "Traveler's Clothes",
-    "id": "traveler's-clothes",
+    "id": "travelers-clothes",
     "source": "PHB",
     "page": 150,
     "srd": true,
@@ -20872,6 +20781,8 @@
     "name": "Trinket (Pfennig)",
     "id": "trinket",
     "source": "BREW",
+    "value": 500,
+    "weight": 1,
     "page": 2,
     "type": "G",
     "rarity": "none",
@@ -21096,6 +21007,8 @@
   {
     "name": "Trinket (Elemental)",
     "id": "trinket-elemental",
+    "value": 500,
+    "weight": 1,
     "source": "BREW",
     "type": "G",
     "rarity": "none",
@@ -21520,6 +21433,8 @@
   {
     "name": "Trinket",
     "id": "trinket",
+    "value": 500,
+    "weight": 1,
     "source": "PHB",
     "page": 159,
     "type": "G",
@@ -21982,7 +21897,6 @@
     "baseItem": "sling",
     "type": "R",
     "rarity": "rare",
-    "value": 10,
     "weaponCategory": "simple",
     "property": [
       "A"
@@ -22028,6 +21942,7 @@
     "name": "Universal Solvent",
     "id": "universal-solvent",
     "source": "DMG",
+    "value": 30000,
     "page": 209,
     "srd": true,
     "tier": "minor",
@@ -22105,7 +22020,7 @@
   },
   {
     "name": "Veteran's Cane",
-    "id": "veteran's-cane",
+    "id": "veterans-cane",
     "source": "XGE",
     "page": 139,
     "tier": "minor",
@@ -22773,17 +22688,6 @@
     ]
   },
   {
-    "name": "Wargong",
-    "id": "wargong",
-    "source": "SCAG",
-    "page": 124,
-    "type": "INS",
-    "rarity": "none",
-    "entries": [
-      "A metal gong, traditionally made from a shield, particularly the shield of an enemy. Both goblins and dwarves make and play wargongs, their sound echoing through tunnels in the Underdark."
-    ]
-  },
-  {
     "name": "Warhorse",
     "id": "warhorse",
     "source": "PHB",
@@ -22877,7 +22781,7 @@
   },
   {
     "name": "Weaver's Tools",
-    "id": "weaver's-tools",
+    "id": "weavers-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -22898,7 +22802,7 @@
       {
         "type": "entries",
         "name": "Arcana, History",
-    "id": "arcana,-history",
+    "id": "arcana-history",
         "entries": [
           "Your expertise lends you additional insight when examining cloth objects, including cloaks and robes."
         ]
@@ -23115,7 +23019,7 @@
     "source": "ToA",
     "page": 205,
     "type": "P",
-    "rarity": "unknown",
+    "rarity": "uncommon",
     "weight": 1,
     "value": 2500,
     "entries": [
@@ -23133,7 +23037,6 @@
     "reqAttune": true,
     "sentient": true,
     "weight": 2,
-    "value": 500,
     "weaponCategory": "martial",
     "dmg1": "1d8",
     "dmgType": "P",
@@ -23390,7 +23293,7 @@
   },
   {
     "name": "Woodcarver's Tools",
-    "id": "woodcarver's-tools",
+    "id": "woodcarvers-tools",
     "source": "PHB",
     "page": 154,
     "srd": true,
@@ -23411,7 +23314,7 @@
       {
         "type": "entries",
         "name": "Arcana, History",
-    "id": "arcana,-history",
+    "id": "arcana-history",
         "entries": [
           "Your expertise lends you additional insight when you examine wooden objects, such as figurines or arrows."
         ]
@@ -23465,7 +23368,7 @@
     ]
   },
   {
-    "name": "Wooden Staff",
+    "name": "Druidic Focus, Wooden Staff",
     "id": "wooden-staff",
     "source": "PHB",
     "page": 151,
@@ -23622,17 +23525,6 @@
     ]
   },
   {
-    "name": "Yarting",
-    "id": "yarting",
-    "source": "SCAG",
-    "page": 124,
-    "type": "INS",
-    "rarity": "none",
-    "entries": [
-      "A southern instrument from Amn and Calimshan that is a Faerûnian analog to the guitar. Numerous variations have spread across the continent."
-    ]
-  },
-  {
     "name": "Yellow Sapphire",
     "id": "yellow-sapphire",
     "source": "DMG",
@@ -23645,7 +23537,7 @@
     ]
   },
   {
-    "name": "Yew Wand",
+    "name": "Druidic Focus, Yew Wand",
     "id": "yew-wand",
     "source": "PHB",
     "page": 151,
@@ -23679,138 +23571,6 @@
     "value": 5000,
     "entries": [
       "A transparent pale blue-green gemstone."
-    ]
-  },
-  {
-    "name": "Zulkoon",
-    "id": "zulkoon",
-    "source": "SCAG",
-    "page": 124,
-    "type": "INS",
-    "rarity": "none",
-    "entries": [
-      "A complex pump organ that originated with the zulkirs of Thay, who use it in the casting of their spells. It is considered to have a dramatic, but sinister, sound."
-    ]
-  },
-  {
-    "name": "Arcane Focus",
-    "id": "arcane-focus",
-    "source": "PHB",
-    "page": 151,
-    "type": "SCF",
-    "scfType": "arcane",
-    "rarity": "none",
-    "focus": [
-      "Sorcerer",
-      "Warlock",
-      "Wizard"
-    ],
-    "items": [
-      "Crystal|phb",
-      "Orb|phb",
-      "Rod|phb",
-      "Staff|phb",
-      "Wand|phb"
-    ]
-  },
-  {
-    "name": "Artisan's Tools",
-    "id": "artisan's-tools",
-    "source": "PHB",
-    "page": 154,
-    "srd": true,
-    "type": "AT",
-    "rarity": "none",
-    "items": [
-      "Alchemist's Supplies|PHB",
-      "Brewer's Supplies|PHB",
-      "Calligrapher's Supplies|PHB",
-      "Carpenter's Tools|PHB",
-      "Cartographer's Tools|PHB",
-      "Cobbler's Tools|PHB",
-      "Cook's Utensils|PHB",
-      "Glassblower's Tools|PHB",
-      "Jeweler's Tools|PHB",
-      "Leatherworker's Tools|PHB",
-      "Mason's Tools|PHB",
-      "Painter's Supplies|PHB",
-      "Potter's Tools|PHB",
-      "Smith's Tools|PHB",
-      "Tinker's Tools|PHB",
-      "Weaver's Tools|PHB",
-      "Woodcarver's Tools|PHB"
-    ]
-  },
-  {
-    "name": "Druidic Focus",
-    "id": "druidic-focus",
-    "source": "PHB",
-    "page": 151,
-    "type": "SCF",
-    "scfType": "druid",
-    "rarity": "none",
-    "focus": [
-      "Druid"
-    ],
-    "items": [
-      "Sprig of mistletoe|phb",
-      "Totem|phb",
-      "Wooden staff|phb",
-      "Yew wand|phb"
-    ]
-  },
-  {
-    "name": "Gaming Set",
-    "id": "gaming-set",
-    "source": "PHB",
-    "page": 154,
-    "srd": true,
-    "type": "GS",
-    "rarity": "none",
-    "items": [
-      "Dice Set|PHB",
-      "Dragonchess Set|PHB",
-      "Playing Card Set|PHB",
-      "Three-Dragon Ante Set|PHB"
-    ]
-  },
-  {
-    "name": "Holy Symbol",
-    "id": "holy-symbol",
-    "source": "PHB",
-    "page": 151,
-    "type": "SCF",
-    "scfType": "holy",
-    "rarity": "none",
-    "focus": [
-      "Cleric",
-      "Paladin"
-    ],
-    "items": [
-      "Amulet|phb",
-      "Emblem|phb",
-      "Reliquary|phb"
-    ]
-  },
-  {
-    "name": "Musical Instrument",
-    "id": "musical-instrument",
-    "source": "PHB",
-    "page": 154,
-    "srd": true,
-    "type": "INS",
-    "rarity": "none",
-    "items": [
-      "Bagpipes|PHB",
-      "Drum|PHB",
-      "Dulcimer|PHB",
-      "Flute|PHB",
-      "Horn|PHB",
-      "Lute|PHB",
-      "Lyre|PHB",
-      "Pan Flute|PHB",
-      "Shawm|PHB",
-      "Viol|PHB"
     ]
   }
 ]

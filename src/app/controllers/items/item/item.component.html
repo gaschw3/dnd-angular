@@ -20,8 +20,9 @@
           <div class="col">
             <p>
               <ng-container *ngIf="item.value">
-                <span [class]="'text--'+((item.value/100 > 1) ? 'gp' : (item.value/10 > 1) ? 'sp' : 'cp')">
-                  {{((item.value/100 > 1) ? item.value/100+'gp' : (item.value/10 > 1) ? item.value/10+'sp' : item.value+'cp')}}
+                <span [class]="'text--'+((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')">
+                  {{((item.value/100 >= 1) ? item.value/100 : (item.value/10 >= 1) ? item.value/10 : item.value) | number:'1.0':'en-US'}}
+                  {{((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')}}
                 </span>
                 <ng-container *ngIf="item.value && item.weight">,</ng-container>
               </ng-container>

@@ -64,7 +64,7 @@
             {{((item.value/100 >= 1) ? item.value/100 : (item.value/10 >= 1) ? item.value/10 : item.value) | number:'1.0':'en-US'}}
             {{((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')}}
           </td>
-          <td *ngIf="!item.value"></td>
+          <td [attr.data-sort]="0" *ngIf="!item.value"></td>
           <td [attr.data-sort]="getRaritySort(item.rarity)">{{item.rarity}}</td>
           <td [class]="'text-right color-'+item.source | lowercase" class="text-right">{{item.source}}</td>
         </tr>

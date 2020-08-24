@@ -139,6 +139,14 @@ export class ItemsComponent implements OnInit {
     }
   }
 
+  getValueSort(value): number {
+    if (value) {
+      return value;
+    } else {
+      return 1;
+    }
+  }
+
   getRaritySort(rarity): number {
     switch (rarity) {
       case "none":
