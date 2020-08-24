@@ -5,12 +5,14 @@ import { ArchetypeFilterPipe } from '../pipes/archetype-filter.pipe';
 import { LinkmakerPipe } from '../pipes/linkmaker.pipe';
 import { SanitizeHtmlPipe } from '../pipes/sanitize-html.pipe';
 import { BackButtonDirective } from '../directives/back-button.directive';
+import { ItemTypePipe } from '../pipes/item-type.pipe';
 
 @NgModule({
   declarations: [
     ArchetypeFilterPipe,
     LinkmakerPipe,
     SanitizeHtmlPipe,
+    ItemTypePipe,
     BackButtonDirective
   ],
   imports: [
@@ -23,6 +25,7 @@ import { BackButtonDirective } from '../directives/back-button.directive';
     ArchetypeFilterPipe,
     LinkmakerPipe,
     SanitizeHtmlPipe,
+    ItemTypePipe,
     BackButtonDirective
   ]
 })

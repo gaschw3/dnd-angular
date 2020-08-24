@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'feats',
     loadChildren: './controllers/feats/feats.module#FeatsModule'
   },
+  {
+    path: 'items',
+    loadChildren: './controllers/items/items.module#ItemsModule'
+  },
   {path: 'map', component: HexmapComponent}
   //{ path: 'redirect', component: RedirectionComponent },
   //{ path: '401', component: NotAuthorizedComponent },

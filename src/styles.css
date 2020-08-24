@@ -20,6 +20,12 @@
 .text--gp {
   color: #c5b100;
 }
+.text--sp {
+  color: #ffffff;
+}
+.text--cp {
+  color: #91590f;
+}
 
 .table {
   color: #aaa !important;
@@ -58,23 +64,47 @@
 .color-xge {
   color: rgb(0, 230, 142);
 }
+.color-ai {
+  color: rgb(0, 139, 7);
+}
 .color-scag {
-  color: rgb(255, 253, 119);
+  color: rgb(255, 251, 34);
+}
+.color-wdh {
+  color: rgb(212, 210, 50);
 }
 .color-ua {
-  color: rgb(255, 119, 119);
+  color: rgb(241, 137, 137);
+}
+.color-toa {
+  color: rgb(255, 127, 52);
 }
 .color-dmg {
   color: rgb(190, 14, 14);
 }
+.color-bgdia {
+  color: rgb(124, 12, 12);
+}
+.color-cos {
+  color: rgb(70, 9, 94);
+}
 .color-ggr {
-  color: rgb(119, 255, 248);
+  color: rgb(119, 223, 255);
+}
+.color-skt {
+  color: rgb(11, 192, 183);
+}
+.color-pota {
+  color: rgb(0, 255, 200);
 }
 .color-mot {
-  color: rgb(90, 156, 131);
+  color: rgb(83, 175, 140);
 }
 .color-brew {
   color: rgb(235, 125, 229);
+}
+.color-egw {
+  color: rgb(141, 115, 141);
 }
 
 /* beastiary sources, mostly*/

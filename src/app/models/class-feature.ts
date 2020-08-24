@@ -4,5 +4,5 @@ export class ClassFeature {
 	filter: string;
 	name: string;
 	title: string;
-	text: string[];
+	text: any[];
 }
