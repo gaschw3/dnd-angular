@@ -29,12 +29,24 @@ export class ItemComponent implements OnInit {
     "V": "versatile"
   }
 
+  isSimpleList(items): boolean {
+    if (typeof items[0] === 'string') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   getEntryType(entry): string {
     if (entry.type) {
       if (entry.type == "list") {
         return "list";
       } else if (entry.type == "table") {
-        return "column";
+        return "table";
+      } else if (entry.type == "item") {
+        return "item";
+      } else if (entry.type == "entries") {
+        return "entries";
       }
     } else {
       return "";
@@ -78,9 +90,9 @@ export class ItemComponent implements OnInit {
     let itemInfo = "";
 
     if (item.wondrous && item.type) {
-      itemInfo += "Wondrous Item, ";
+      itemInfo += "Wondrous item, ";
     } else if (item.wondrous) {
-      return "Wondrous Item";
+      return "Wondrous item";
     }
 
     switch (item.type) {

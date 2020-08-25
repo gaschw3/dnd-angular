@@ -13,12 +13,12 @@
         </div>
         <div class="row">
           <div class="col">
-            <h4><em>{{getItemInfo(item)}}</em></h4>
+            <h5><em>{{getItemInfo(item)}}</em></h5>
           </div>
         </div>
         <div class="row border-bottom-primary">
           <div class="col">
-            <p>
+            <p class="pb-0 mb-2">
               <ng-container *ngIf="item.value">
                 <span [class]="'text--'+((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')">
                   {{((item.value/100 >= 1) ? item.value/100 : (item.value/10 >= 1) ? item.value/10 : item.value) | number:'1.0':'en-US'}}
@@ -31,31 +31,46 @@
               </ng-container>
           </div>
           <div class="col">
-            <p class="pull-right">
+            <p class="pb-0 mb-2 pull-right">
               <ng-container *ngIf="item.dmg1">
                 {{getItemDamage(item)}}
               </ng-container>
           </div>
         </div>
-        <div class="row"></div>
-      <div class="feature-text row">
-        <ng-container *ngFor="let entry of item.entries" [ngSwitch]="getEntryType(entry)">
-          <div *ngSwitchCase="'list'">
-            <ul>
-              <li *ngFor="let item of entry.items" [innerHtml]="'\<strong>'+item.name+'\</strong>'+' '+item.entry | linkmaker"> </li>
-            </ul>
-          </div>
-          <div class="col-6" *ngSwitchCase="'table'">
-            <ng-container *ngFor="let entry of entry.column" [ngSwitch]="getEntryType(entry)">
-              <ul *ngSwitchCase="'list'">
-                <li *ngFor="let item of entry.list" [innerHtml]="item | linkmaker"></li>
-              </ul>
-              <p *ngSwitchDefault [innerHtml]="entry | linkmaker"></p>
-            </ng-container>
-          </div>
-          <span class="col-12 mb-2" *ngSwitchDefault [innerHtml]="entry"></span>
-        </ng-container>
+      </div>
+      <div class="mt-2 feature-text row">
+        <div class="col">
+          <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ list: item.entries, parent: '' }"></ng-container>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<ng-template #recursiveListTmpl let-list="list" let-parent="parent">
+  <ng-container *ngFor="let entry of list" [ngSwitch]="getEntryType(entry)">
+    <div *ngSwitchCase="'list'">
+      <ul>
+        <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ list: entry.items, parent: 'list' }"></ng-container>
+      </ul>
+    </div>
+    <div  *ngSwitchCase="'table'">
+      table item
+    </div>
+    <div *ngSwitchCase="'entries'">
+      <p *ngIf="parent==''"><strong>{{entry.name}}</strong>
+        <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ list: entry.entries, parent: 'entries' }"></ng-container>
+      </p>
+    </div>
+    <div *ngSwitchCase="'item'">
+      <p *ngIf="parent==''"><strong>{{entry.name}}</strong> {{entry.entry}}</p>
+      <li *ngIf="parent=='list'"><strong>{{entry.name}}</strong> {{entry.entry}}</li>
+    </div>
+    <ng-container *ngSwitchDefault>
+      <p *ngIf="parent==''" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
+      <p class="pb-0 mb-1" *ngIf="parent=='entries'" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
+      <li *ngIf="parent=='list'" [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
+    </ng-container>
+  </ng-container>
+</ng-template>
