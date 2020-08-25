@@ -1,31 +1,29 @@
-svg {
+.map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 30px;
+}
 
-}
-svg g {
-  fill-opacity: 0.85;
-}
-svg g:hover {
-  fill-opacity: 1;
+.map-frame {
+  border: 2px solid black;
+  height: 100%;
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
-svg g polygon {
-  stroke: #111;
-  stroke-width: 0.1;
-  transition: fill-opacity .2s;
+#map {
+  height: 100%;
 }
-svg g text {
-  font-size: 1px;
-  fill: #FFFFFF;
-  fill-opacity: 0.9;
+
+.leaflet-container {
+    background: #272B30;
+    outline: 0;
 }
-svg path {
-  fill: none;
-  stroke: hsl(60, 20%, 70%);
-  stroke-width: 0.4em;
-  stroke-opacity: 0.3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+
+
 .ocean {
   fill: #5ae;
 }
