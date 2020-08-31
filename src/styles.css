@@ -178,46 +178,51 @@
 }
 
 .continent-label {
-    font-size:40px;
+    font-size: 60px;
+    letter-spacing: 6px;
     font-weight: bold;
     background-color: transparent !important;
     border: transparent !important;
     box-shadow: none !important;
-    -webkit-text-stroke-width: 1px;
-    color: white !important;
-    -webkit-text-stroke-color: black;
+    color: #000 !important;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 .country-label {
     font-size:30px;
     font-weight: bold;
+    letter-spacing: 4px;
     background-color: transparent !important;
     border: transparent !important;
     box-shadow: none !important;
-    -webkit-text-stroke-width: 1px;
-    color: white !important;
-    -webkit-text-stroke-color: black;
+    color: #111 !important;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 .city-label {
     font-size:18px;
+    font-weight: bold;
     opacity: 0;
-     font-weight: bold;
     background-color: transparent !important;
     border: transparent !important;
     box-shadow: none !important;
-    -webkit-text-stroke-width: .5px;
-    color: white !important;
-    -webkit-text-stroke-color: black;
+    color: #fff !important;
+    text-shadow: -1px 0 0 #000, 1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
 }
 .town-label {
     font-size:14px;
     opacity: 0;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    color: #fff !important;
+}
+.water-label {
+    font-size:22px;
     font-weight: bold;
     background-color: transparent !important;
     border: transparent !important;
     box-shadow: none !important;
-    -webkit-text-stroke-width: .5px;
-    color: white !important;
-    -webkit-text-stroke-color: black;
+    color: rgb(88, 180, 255) !important;
+    text-shadow: -1px -1px 0 #555, 1px -1px 0 #555, -1px 1px 0 #555, 1px 1px 0 #555;
 }
 .leaflet-marker-icon {
     opacity: 0;

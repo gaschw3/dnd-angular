@@ -13,6 +13,7 @@ export class HexmapComponent implements AfterViewInit {
   private continents;
   private cities;
   private towns;
+  private seas;
 
   constructor() {
     this.continents = [
@@ -23,14 +24,26 @@ export class HexmapComponent implements AfterViewInit {
       ['Florin', 29, -105],
       ['Pfennig', 19, -105],
     ];
+    this.seas = [
+      ['Starfall Sea', 28, -88],
+      ['Illian Sea', 30, -113.5],
+      ['Devil\'s Eye', 36, -101],
+      ['The Darkslick', 24.5,-103],
+      ['Shimmerbay', 19.5, -95]
+    ];
     this.cities = [
       ['Avon', 30, -120.6],
-      ['Noxia', 27.4, -117.9],
+      ['Noctus', 27.4, -117.9],
       ['Tarraktur', 32.7, -116.5],
+
       ['Arden', 16.57, -100],
       ['Dalgrange', 22.3, -105.91],
       ['Tramere', 17.05, -101.18],
-      ['Avonshire', 24.69, -109.4]
+      ['Avonshire', 24.69, -109.4],
+
+      ['Reliqa', 28.4, -110.5],
+      ['Kintalla', 31.6, -106.4],
+      ['Hieraxa', 25.5, -104.79]
     ]
     this.towns = [
       ['Borderland Keep', 30.2, -119.7],
@@ -49,6 +62,7 @@ export class HexmapComponent implements AfterViewInit {
       ["Sungaze Monastery", 31.23, -118.92],
       ["Wordless Word Temple", 29.38, -119.322],
       ["Druid of Swarms", 29.27, -119.32],
+
       ["Mornrise", 21.32, -109.86],
       ["Penkirk", 22.42, -102.44],
       ["Trest", 17.93, -104.17],
@@ -57,7 +71,18 @@ export class HexmapComponent implements AfterViewInit {
       ["Bristad", 23.18, -109.32],
       ["Iverness", 22.34, -109],
       ["Belhoff", 19.425, -100.57],
-      ["Dale", 19.94, -104.06]
+      ["Dale", 19.94, -104.06],
+
+      ["Fairpoint", 29.4, -108.3],
+      ["Arborback Ferry", 29.1, -104],
+      ["Whistlefen", 28.2, -106.3],
+      ["Greenspan", 33.4, -105.24],
+      ["Adler Larkspur Manor", 29.07, -108.677],
+      ["Bone Dam", 29.76, -103.92],
+      ["Volungfist", 32.3, -104.1],
+      ["Empty Mountain", 30.83, -110.42],
+      ["Caer Kaan", 28.5, -103.4],
+      ["Endless Stairs", 31.8, -104.17],
     ]
    }
 
@@ -83,9 +108,9 @@ export class HexmapComponent implements AfterViewInit {
     });
     let townLabel = L.icon({
       iconUrl: 'assets/town-marker.png',
-      iconSize: [20, 20],
+      iconSize: [25, 25],
       iconAnchor: [10, 10],
-      popupAnchor: [0, 25],
+      popupAnchor: [0, 0],
       shadowUrl: 'my-icon-shadow.png',
       shadowSize: [0, 0],
       shadowAnchor: [0, 0]
@@ -116,6 +141,12 @@ export class HexmapComponent implements AfterViewInit {
       marker.bindTooltip(country[0], { permanent: true, className: "country-label", direction: "center", offset: [0, 0] });
       marker.addTo(map);
     }
+    for (let i = 0; i < this.seas.length; i++) {
+      let water = this.seas[i];
+      let marker = new L.marker([water[1], water[2]], { opacity: 1, icon: textLabel });
+      marker.bindTooltip(water[0], { permanent: true, className: "water-label", direction: "center", opacity: 0, offset: [0, 0] });
+      marker.addTo(map);
+    }
     for (let i = 0; i < this.cities.length; i++) {
       let city = this.cities[i];
       let marker = new L.marker([city[1], city[2]], { opacity: 0, icon: cityLabel, className: "cityLabel" });
@@ -125,11 +156,12 @@ export class HexmapComponent implements AfterViewInit {
     for (let i = 0; i < this.towns.length; i++) {
       let town = this.towns[i];
       let marker = new L.marker([town[1], town[2]], { opacity: 0, icon: townLabel, className: "townLabel" });
-      marker.bindTooltip(town[0], { permanent: true, className: "town-label", direction: "center", opacity: 0, offset: [0, 10] });
+      marker.bindTooltip(town[0], { permanent: true, className: "town-label", direction: "center", opacity: 0, offset: [0, 8] });
       marker.addTo(map);
     }
 
-    this.changeZoom(map, ".country-label", 3, 5);
+    this.changeZoom(map, ".country-label", 4, 5);
+    this.changeZoom(map, ".water-label", 5, 8);
     this.changeZoom(map, ".city-label", 5, 8);
     this.changeZoom(map, ".town-label", 7, 8);
     this.changeZoom(map, ".leaflet-marker-icon", 6, 8);
