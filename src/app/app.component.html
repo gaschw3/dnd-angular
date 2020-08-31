@@ -18,22 +18,23 @@
             </div>
           </li>
           <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-link dropdown-toggle" href="#" id="navdarDropdownDm" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              DM
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navdarDropdownDm">
+              <a class="dropdown-item" [routerLink]="'/beastiary'"> Beastiary </a>
+              <a class="dropdown-item" [routerLink]="'/items'"> Items </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
             <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownRef"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-            Reference
+            Reference <span class="badge badge-warning">WIP</span>
             </a>
             <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
               <a  class="dropdown-item" [routerLink]="'/conditions'"> Conditions </a>
               <a  class="dropdown-item" [routerLink]="'/spells'"> Spells </a>
-              <a  class="dropdown-item" [routerLink]="'/campaign'"> Campaign <span className="label label-wip">new, WIP</span></a>
-            </div>
-          </li>
-          <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a  class="nav-link dropdown-toggle"  href="#"  id="navdarDropdownDm"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-            DM
-            </a>
-            <div  class="dropdown-menu"  aria-labelledby="navdarDropdownDm">
-              <a  class="dropdown-item" [routerLink]="'/beastiary'"> Beastiary </a>
-              <a  class="dropdown-item" [routerLink]="'/items'"> Items </a>
+              <a  class="dropdown-item" [routerLink]="'/map'"> Map <span class="badge badge-warning">WIP</span></a>
             </div>
           </li>
         </ul>

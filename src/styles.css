@@ -176,3 +176,49 @@
   font-size: 1.2em;
   text-shadow: 0 0 8px #000;
 }
+
+.continent-label {
+    font-size:40px;
+    font-weight: bold;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    -webkit-text-stroke-width: 1px;
+    color: white !important;
+    -webkit-text-stroke-color: black;
+}
+.country-label {
+    font-size:30px;
+    font-weight: bold;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    -webkit-text-stroke-width: 1px;
+    color: white !important;
+    -webkit-text-stroke-color: black;
+}
+.city-label {
+    font-size:18px;
+    opacity: 0;
+     font-weight: bold;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    -webkit-text-stroke-width: .5px;
+    color: white !important;
+    -webkit-text-stroke-color: black;
+}
+.town-label {
+    font-size:14px;
+    opacity: 0;
+    font-weight: bold;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    -webkit-text-stroke-width: .5px;
+    color: white !important;
+    -webkit-text-stroke-color: black;
+}
+.leaflet-marker-icon {
+    opacity: 0;
+}
