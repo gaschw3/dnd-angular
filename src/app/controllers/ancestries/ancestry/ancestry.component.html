@@ -37,7 +37,9 @@
               <ng-container *ngFor="let trait of ancestry.traits.slice(3)" >
                 <div class="col-sm-6 pt-3">
                   <h4 [class]="'color-primary' | lowercase">{{trait.name}}</h4>
-                    <p class="m-0">{{trait.text}}</p>
+                    <ng-container class="" *ngFor="let entry of trait.text">
+                      <p class="mb-1" [innerHtml]="entry"></p>
+                    </ng-container>
                 </div>
               </ng-container>
             </ng-container>
