@@ -183,6 +183,10 @@
   text-shadow: 0 0 8px #000;
 }
 
+.card-columns {
+  column-count: 2 !important;
+}
+
 .continent-label {
     font-size: 60px;
     letter-spacing: 6px;

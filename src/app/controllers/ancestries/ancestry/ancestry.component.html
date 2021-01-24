@@ -32,18 +32,18 @@
               <p class="pb-3 m-0"><strong>{{ancestry.traits[2].name}}</strong> {{ancestry.traits[2].text}}</p>
             </div>
           </div>
-          <div class="row">
-            <ng-container *ngIf="ancestry.traits">
+            <div class="card-columns" *ngIf="ancestry.traits">
               <ng-container *ngFor="let trait of ancestry.traits.slice(3)" >
-                <div class="col-sm-6 pt-3">
-                  <h4 [class]="'color-primary' | lowercase">{{trait.name}}</h4>
+                <div class="card border-0">
+                  <div class="card-body">
+                    <h4 [class]="'color-primary' | lowercase">{{trait.name}}</h4>
                     <ng-container class="" *ngFor="let entry of trait.text">
-                      <p class="mb-1" [innerHtml]="entry"></p>
+                      <p class="card-text mb-1" [innerHtml]="entry"></p>
                     </ng-container>
+                  </div>
                 </div>
               </ng-container>
-            </ng-container>
-          </div>
+            </div>
         </div>
       </div>
     </div>

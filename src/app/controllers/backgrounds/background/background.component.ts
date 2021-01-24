@@ -12,5 +12,26 @@ export class BackgroundComponent implements OnInit {
 
   @Input() background: Background;
 
+  traitTables = ["Ideal", "Bond", "Flaw", "Personality Trait"];
+  repeatedTraits = ["Skill Proficiencies", "Languages", "Tool Proficiencies", "Equipment"];
+
   ngOnInit() {}
+
+  isUnique(trait) {
+    if (this.repeatedTraits.includes(trait.name)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  isTable(trait) {
+    if (this.traitTables.includes(trait.name)) {
+      return true;
+    } else if (Boolean(trait.leadin)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
