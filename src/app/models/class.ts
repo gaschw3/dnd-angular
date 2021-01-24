@@ -7,6 +7,7 @@ export class Class {
   description: string;
   hd: number;
   stat: string;
+  multiclassing: Multiclass;
   proficiencies: Proficiency;
   equipment: Equipment;
   
@@ -23,4 +24,11 @@ export class Level {
 export class Equipment {
   default: string[];
   alt: string;
+}
+
+export class Multiclass {
+  armor: string;
+  weapons: string;
+  tools: string;
+  skills: string;
 }

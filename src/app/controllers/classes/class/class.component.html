@@ -17,13 +17,11 @@
 
             <h4 class="text-success mt-3 mb-0">Proficiencies</h4>
             <p>You are proficient with the following items, in addition to any proficiencies provided by your race or background.</p>
-            <ng-container *ngIf="prof">
-              <div><strong>Armor: </strong>{{prof?.armor}}</div>
-              <div><strong>Weapons: </strong>{{prof?.weapons}}</div>
-              <div><strong>Tools: </strong>{{prof?.tools}}</div>
-              <div><strong>Saves: </strong>{{prof?.saves}}</div>
-              <div><strong>Skills: </strong>{{prof?.skills}}</div>
-            </ng-container>
+            <div><strong>Armor: </strong>{{prof.armor}}</div>
+            <div><strong>Weapons: </strong>{{prof.weapons}}</div>
+            <div><strong>Tools: </strong>{{prof.tools}}</div>
+            <div><strong>Saves: </strong>{{prof.saves}}</div>
+            <div><strong>Skills: </strong>{{prof.skills}}</div>
 
             <h4 class="text-success mt-3 mb-0">Starting Equipment</h4>
             <p>You start with the following items, plus anything provided by your background.</p>
@@ -33,6 +31,14 @@
               </ng-container>
             </ul>
             <p>Alternatively, you may start with <span class="text--gp">{{class.equipment.alt}} x 10gp</span> to buy your own equipment</p>
+
+            <h4 class="text-success mt-3 mb-0">Multiclassing</h4>
+            <p>When you gain a level in a class other than your first, there is a minimum requirement for one (or more) stats and you gain only some of that class's starting proficiencies.</p>
+            <div *ngIf="multi.minScore"><strong>Ability Score Min: </strong>{{multi.minScore}}</div>
+            <div *ngIf="multi.armor"><strong>Armor: </strong>{{multi.armor}}</div>
+            <div *ngIf="multi.weapons"><strong>Weapons: </strong>{{multi.weapons}}</div>
+            <div *ngIf="multi.tools"><strong>Tools: </strong>{{multi.tools}}</div>
+            <div *ngIf="multi.skills"><strong>Skills: </strong>{{multi.skills}}</div>
         </div>
       </div>
       <div class="list-group features-list sticky-top py-2">

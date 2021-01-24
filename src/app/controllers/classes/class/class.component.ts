@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Class, Proficiency } from '../../../models';
+import { Class, Proficiency, Multiclass } from '../../../models';
 import { FeaturesComponent } from '../features/features.component';
 import { ArchetypesComponent } from '../archetypes/archetypes.component';
 import { Subject } from 'rxjs';
@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
   templateUrl: './class.component.html',
   styleUrls: ['./class.component.css']
 })
-export class ClassComponent implements OnInit {
+export class ClassComponent implements OnInit, OnChanges {
 
   @Input() class: Class;
   @ViewChild(FeaturesComponent, {static: false}) child: FeaturesComponent;
@@ -20,6 +20,7 @@ export class ClassComponent implements OnInit {
   archetypeChange: Subject<Array<String>> = new Subject<Array<String>>();
 
   prof: Proficiency;
+  multi: Multiclass;
   selectedArchetypes: Array<String> = [];
   ccId: number = 0; //current class id
 
@@ -31,6 +32,12 @@ export class ClassComponent implements OnInit {
 
   ngOnInit() {
     this.prof = this.class.proficiencies;
+    this.multi = this.class.multiclassing;
+  }
+
+  ngOnChanges() {
+    this.prof = this.class.proficiencies;
+    this.multi = this.class.multiclassing;
   }
 
   getFilteredFeatures() {

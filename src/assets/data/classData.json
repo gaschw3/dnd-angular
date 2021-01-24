@@ -16,10 +16,15 @@
       "default": [
         "(a) a {@items/greataxe greataxe} or (b) any martial melee weapon",
         "(a) two {@items/handaxe handaxes} or (b) any simple weapon",
-        "An explorer's pack",
+        "An {@items/explorers-pack explorer's pack}",
         "four {@items/javelin javelins}"
       ],
       "alt": "2d4"
+    },
+    "multiclassing": {
+      "minScore": "Strength 13",
+      "armor": "shields",
+      "weapons": "simple weapons, martial weapons"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Rages", "Rage Damage"
@@ -609,13 +614,19 @@
     },
     "equipment": {
       "default": [
-        "(a) a rapier, (b) a longsword, or (c) any simple weapon",
-        "(a) (a) a diplomat's pack or (b) an entertainer's pack",
-        "(a) a lute or (b) any other musical instrument",
-        "leather armor",
-        "a dagger"
+        "(a) a {@items/rapier rapier}, (b) a {@items/longsword longsword}, or (c) any simple weapon",
+        "(a) a a {@items/diplomats-pack diplomat's pack} or (b) an a {@items/entertainers-pack entertainer's pack}",
+        "(a) a {@items/lute lute} or (b) any other musical instrument",
+        "a {@items/leather-armor leather armor}",
+        "a {@items/dagger dagger}"
       ],
       "alt": "5d4"
+    },
+    "multiclassing": {
+      "minScore": "Charisma 13",
+      "armor": "light armor",
+      "tools": "one musical weapon of your choice",
+      "skills": "choose any skill"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Spells", "Cantrips", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"
@@ -1263,13 +1274,17 @@
     },
     "equipment": {
       "default": [
-        "(a) a mace or (b) a warhammer (if proficient)",
-        "(a) scale mail, (b) leather armor, or (c) chain mail (if proficient)",
-        "(a) a light crossbow and 20 bolts or (b) any simple weapon",
-        "a shield",
-        "a holy symbol"
+        "(a) a {@items/mace mace} or (b) a {@items/warhammer warhammer} (if proficient)",
+        "(a) a {@items/scale-mail scale mail}, (b) a {@items/leather-armor leather armor}, or (c) chain mail (if proficient)",
+        "(a) a {@items/light-crossbow light crossbow} and 20 bolts or (b) any simple weapon",
+        "a {@items/shield shield}",
+        "a {@items/amulet holy symbol}"
       ],
       "alt": "5d4"
+    },
+    "multiclassing": {
+      "minScore": "Wisdom 13",
+      "armor": "light armor, medium armor, shields"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Cantrips", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"
@@ -2394,13 +2409,17 @@
     },
     "equipment": {
       "default": [
-        "(a) a wooden shield or (b) any simple weapon",
-        "(a) a scimitar or (b) any simple melee weapon",
-        "leather armor",
-        "an explorer's pack",
-        "a druidic focus"
+        "(a) a wooden {@items/shield shield} or (b) any simple weapon",
+        "(a) a {@items/scimitar scimitar} or (b) any simple melee weapon",
+        "a {@items/leather-armor leather armor}",
+        "an {@items/explorers-pack explorer's pack}",
+        "a {@items/yew-wand duidic focus}"
       ],
       "alt": "2d4"
+    },
+    "multiclassing": {
+      "minScore": "Wisdom 13",
+      "armor": "light armor, medium armor, shields (most druids will not wear armor or use shields made of metal)"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Cantrips", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"
@@ -3064,12 +3083,17 @@
     },
     "equipment": {
       "default": [
-        "(a) chain mail or (b) leather, longbow, and 20 arrows",
-        "(a) a martial weapon and a shield or (b) two martial weapons",
-        "(a) a light crossbow and 20 bolts or (b) two {@items/handaxe handaxes}",
-        "(a) a dungeoneer's pack or (b) an explorer's pack"
+        "(a) {@items/chain-mail chain mail} or (b) {@items/leather-armor leather armor}, a {@items/longbow longbow}, and 20 arrows",
+        "(a) a martial weapon and a {@items/shield shield} or (b) two martial weapons",
+        "(a) a {@items/light-crossbow light crossbow} and 20 bolts or (b) two {@items/handaxe handaxes}",
+        "(a) a {@items/dungeoneers-pack dungeoneer's pack} or (b) an {@items/explorers-pack explorer's pack}"
       ],
       "alt": "5d4"
+    },
+    "multiclassing": {
+      "minScore": "Strength or Dexterity 13",
+      "armor": "light armor, medium armor, shields",
+      "weapons": "simple weapons, martial weapons"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Spells", "Cantrips", "1st", "2nd", "3rd", "4th"
@@ -3993,11 +4017,15 @@
     },
     "equipment": {
       "default": [
-        "(a) a shortsword or (b) any simple weapon",
-        "(a) a dungeoneer's pack or (b) an explorer's pack",
-        "10 darts"
+        "(a) a {@items/shortsword shortsword} or (b) any simple weapon",
+        "(a) a {@items/dungeoneers-pack dungeoneer's pack} or (b) an {@items/explorers-pack explorer's pack}",
+        "10 {@items/dart darts}"
       ],
       "alt": "5d4"
+    },
+    "multiclassing": {
+      "minScore": "Dexterity 13, Wisdom 13",
+      "weapons": "simple weapons, shortswords"
     },
     "levelTable": [
       ["Level", "Proficiency", "Martial Arts", "Ki", "Unarmored Movement", "Features"
@@ -4744,13 +4772,18 @@
     },
     "equipment": {
       "default": [
-        "(a) a martial weapon and a shield or (b) two martial weapons",
+        "(a) a martial weapon and a {@items/shield shield} or (b) two martial weapons",
         "(a) five {@items/javelin javelins} or (b) any simple melee weapon",
-        "(a) a priest's pack or (b) an explorer's pack",
-        "chain mail",
-        "a holy symbol"
+        "(a) a {@items/priests-pack priest's pack} or (b) an {@items/explorers-pack explorer's pack}",
+        "{@items/chain-mail chain mail}",
+        "a {@items/amulet holy symbol}"
       ],
       "alt": "5d4"
+    },
+    "multiclassing": {
+      "minScore": "Strength 13, Charisma 13",
+      "armor": "light armor, medium armor, shields",
+      "weapons": "simple weapons, martal weapons"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "1st", "2nd", "3rd", "4th", "5th"
@@ -5657,12 +5690,18 @@
     },
     "equipment": {
       "default": [
-        "(a) scale mail or (b) leather armor",
-        "(a) two shortswords or (b) two simple melee weapons",
-        "(a) a dungeoneer's pack or (b) an explorer's pack",
-        "a longbow and a quiver of 20 arrows"
+        "(a) a {@items/scale-mail scale mail} or (b) a {@items/leather-armor leather armor}",
+        "(a) two {@items/shortsword shortswords} or (b) two simple melee weapons",
+        "(a) a {@items/dungeoneers-pack dungeoneer's pack} or (b) an {@items/explorers-pack explorer's pack}",
+        "a {@items/longbow longbow} and a quiver of 20 arrows"
       ],
       "alt": "5d4"
+    },
+    "multiclassing": {
+      "minScore": "Dexterity 13, Wisdom 13",
+      "armor": "light armor, medium armor, shields",
+      "weapons": "simple weapons, martal weapons",
+      "skills": "Choose one from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Spells", "1st", "2nd", "3rd", "4th", "5th"
@@ -6308,14 +6347,20 @@
     },
     "equipment": {
       "default": [
-        "(a) a rapier or (b) a shortsword",
-        "(a) a shortbow and quiver of 20 arrows or (b) a shortsword",
-        "(a) a burglar's pack, (b) a dungeoneer's pack, or (c) an explorer's pack",
-        "leather armor",
-        "two daggers",
-        "theives' tools"
+        "(a) a {@items/rapier rapier} or (b) a {@items/shortsword shortsword}",
+        "(a) a {@items/shortbow shortbow} and quiver of 20 arrows or (b) a {@items/shortsword shortsword}",
+        "(a) a {@items/burglars-pack burglar's pack}, (b) a {@items/dungeoneers-pack dungeoneer's pack}, or (c) an {@items/explorers-pack explorer's pack}",
+        "a {@items/leather-armor leather armor}",
+        "two {@items/dagger daggers}",
+        "{@items/thieves-tools thieves' tools}"
       ],
       "alt": "4d4"
+    },
+    "multiclassing": {
+      "minScore": "Dexterity 13",
+      "armor": "light armor",
+      "tools": "thieves' tools",
+      "skills": "Choose 1 from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Sneak", "Spells", "Cantrips", "1st", "2nd", "3rd", "4th"
@@ -7081,12 +7126,15 @@
     },
     "equipment": {
       "default": [
-        "(a)a light crossbow and 20 bolts or (b) any simple weapon",
-        "(a) a component pouch or (b) an arcane focus",
-        "(a) a dungeoneer's pack or (b) an explorer's pack",
-        "two daggers"
+        "(a)a {@items/light-crossbow light crossbow} and 20 bolts or (b) any simple weapon",
+        "(a) a {@items/component-pouch component pouch} or (b) an arcane focus",
+        "(a) a {@items/dungeoneers-pack dungeoneer's pack} or (b) an {@items/explorers-pack explorer's pack}",
+        "two {@items/dagger daggers}"
       ],
       "alt": "3d4"
+    },
+    "multiclassing": {
+      "minScore": "Charisma 13"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Points", "Spells", "Cantrips", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"
@@ -7673,14 +7721,19 @@
     },
     "equipment": {
       "default": [
-        "(a)a light crossbow and 20 bolts or (b) any simple weapon",
-        "(a) a component pouch or (b) an arcane focus",
-        "(a) a scholar's pack or (b) a dungeoneer's pack",
-        "leather armor",
+        "(a)a {@items/light-crossbow light crossbow} and 20 bolts or (b) any simple weapon",
+        "(a) a {@items/component-pouch component pouch} or (b) an arcane focus",
+        "(a) a {@items/scholars-pack scholar's pack} or (b) a {@items/dungeoneers-pack dungeoneer's pack}",
+        "a {@items/leather-armor leather armor}",
         "any simple weapon",
-        "two daggers"
+        "two {@items/dagger daggers}"
       ],
       "alt": "4d4"
+    },
+    "multiclassing": {
+      "minScore": "Charisma 13",
+      "armor": "light armor",
+      "weapons": "simple weapons"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Cantrips", "Spells", "Slots", "Level", "Invocations"
@@ -8329,12 +8382,15 @@
     },
     "equipment": {
       "default": [
-        "(a) a quarterstaff or (b) a dagger",
-        "(a) a component pouch or (b) an arcane focus",
-        "(a) a scholar's pack or (b) an explorer's pack",
-        "a spellbook"
+        "(a) a {@items/quarterstaff quarterstaff} or (b) a {@items/dagger dagger}",
+        "(a) a {@items/component-pouch component pouch} or (b) an arcane focus",
+        "(a) a {@items/scholars-pack scholar's pack} or (b) an {@items/explorers-pack explorer's pack}",
+        "a {@items/spellbook spellbook}"
       ],
       "alt": "4d4"
+    },
+    "multiclassing": {
+      "minScore": "Intelligence 13"
     },
     "levelTable": [
       ["Level", "Proficiency", "Features", "Cantrips", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"
