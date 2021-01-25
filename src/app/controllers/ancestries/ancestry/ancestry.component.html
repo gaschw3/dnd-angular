@@ -35,10 +35,10 @@
             <div class="card-columns" *ngIf="ancestry.traits">
               <ng-container *ngFor="let trait of ancestry.traits.slice(3)" >
                 <div class="card border-0">
-                  <div class="card-body">
+                  <div class="card-body pb-0">
                     <h4 [class]="'color-primary' | lowercase">{{trait.name}}</h4>
                     <ng-container class="" *ngFor="let entry of trait.text">
-                      <p class="card-text mb-1" [innerHtml]="entry"></p>
+                      <p class="card-text mb-1" [innerHtml]="entry | linkmaker"></p>
                     </ng-container>
                   </div>
                 </div>

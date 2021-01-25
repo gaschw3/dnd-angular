@@ -46,7 +46,7 @@
               <ng-container *ngFor="let trait of background.traits">
                 <ng-container *ngIf="isUnique(trait)">
                   <div class="card border-0">
-                    <div class="card-body">
+                    <div class="card-body pb-0">
                       <h4 [class]="'card-title color-primary' | lowercase">{{trait.name}}</h4>
                       <div *ngIf="isTable(trait)">
                         <p class="card-text pt-0" *ngIf="trait.leadin">{{trait.leadin}}</p>

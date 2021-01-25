@@ -3,7 +3,7 @@ export class Feat {
   id: string;
   source: string;
   text: Text;
-
+  prerequisite: string;
 }
 
 class Text {

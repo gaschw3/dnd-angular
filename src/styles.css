@@ -82,8 +82,11 @@
 .color-dmg {
   color: rgb(190, 14, 14);
 }
-.color-bgdia {
-  color: rgb(124, 12, 12);
+.color-dmg {
+  color: rgb(190, 14, 14);
+}
+.color-tce {
+  color: rgb(162, 77, 8);
 }
 .color-erlw {
   color: rgb(124, 12, 12);
@@ -96,6 +99,9 @@
 }
 .color-skt {
   color: rgb(11, 192, 183);
+}
+.color-gos {
+  color: rgb(0, 255, 200);
 }
 .color-pota {
   color: rgb(0, 255, 200);
@@ -172,15 +178,17 @@
   border: 1px solid #5bc0de;
   border-radius: .25em;
 }
-
 .carousel h5 {
   font-size: 3em;
   text-shadow: 0 0 8px #000;
 }
-
 .carousel p {
   font-size: 1.2em;
   text-shadow: 0 0 8px #000;
+}
+
+.features-list {
+  z-index: 800 !important;
 }
 
 .card-columns {
