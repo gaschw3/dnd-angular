@@ -3,6 +3,7 @@
       "name": "Telepathic",
       "id": "telepathic",
       "source": "TCE",
+      "asi": "Int, Wis, or Cha +1",
       "text": {
          "description": "You awaken the ability to mentally connect with others, granting you the following benefits:",
          "benefits": [
@@ -16,6 +17,7 @@
       "name": "Telekinetic",
       "id": "telekinetic",
       "source": "TCE",
+      "asi": "Int, Wis, or Cha +1",
       "text": {
          "description": "You learn to move things with your mind, granting you the following benefits:",
          "benefits": [
@@ -29,6 +31,7 @@
       "name": "Skill Expert",
       "id": "skill-expert",
       "source": "TCE",
+      "asi": "Any +1",
       "text": {
          "description": "You have honed your proficiency with particular skills, granting you the following benefits:",
          "benefits": [
@@ -42,6 +45,7 @@
       "name": "Shadow Touched",
       "id": "shadow-touched",
       "source": "TCE",
+      "asi": "Int, Wis, or Cha +1",
       "text": {
          "description": "Your exposure to the Shadowfell's magic has changed you, granting you the following benefits:",
          "benefits": [
@@ -54,8 +58,9 @@
       "name": "Fey Touched",
       "id": "fey-touched",
       "source": "TCE",
+      "asi": "Int, Wis, or Cha +1",
       "text": {
-         "description": "Your exposure to the Shadowfell's magic has changed you, granting you the following benefits:",
+         "description": "Your exposure to the Feywild's magic has changed you, granting you the following benefits:",
          "benefits": [
             "Increase your Intelligence, Wisdom, or Charisma by 1, to a maximum of 20.",
             "You learn the {@spell/misty-step misty step} spell and one 1st-level spell of your choice. The 1st-level spell must be from the divination or enchantment school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can't cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is the ability increased by this feat."
@@ -114,6 +119,7 @@
       "name": "Chef",
       "id": "chef",
       "source": "TCE",
+      "asi": "Con or Wis +1",
       "text": {
          "description": "Time spent mastering the culinary arts has paid off, granting you the following benefits:",
          "benefits": [
@@ -121,60 +127,6 @@
             "You gain proficiency with cook's utensils if you don't already have it.",
             "As part of a short rest, you can cook special food, provided you have ingredients and cook's utensils on hand. You can prepare enough of this food for a number of creatures equal to 4 + your proficiency bonus. At the end of the short rest, any creature who eats the food and spends one or more Hit Dice to regain hit points regains an extra 1d8 hit points.",
             "With one hour of work or when you finish a long rest, you can cook a number of treats equal to your proficiency bonus. These special treats last 8 hours after being made. A creature can use a bonus action to eat one of those treats to gain temporary hit points equal to your proficiency bonus."
-         ]
-      }
-   },
-   {
-      "name": "Fell Handed",
-      "id": "fell-handed",
-      "source": "UA",
-      "text": {
-         "description": "You master the handaxe, battleaxe, greataxe, warhammer, and maul. You gain the following benefits when using any of them:",
-         "benefits": [
-            "You gain a +1 bonus to attack rolls you make with the weapon.",
-            "Whenever you have advantage on a melee attack roll you make with the weapon and hit, you can knock the target prone if the lower of the two d20 rolls would also hit the target.",
-            "Whenever you have disadvantage on a melee attack roll you make with the weapon, the target takes bludgeoning damage equal to your Strength modifier (minimum of 0) if the attack misses but the higher of the two d20 rolls would have hit.",
-            "If you use the Help action to aid an ally’s melee attack while you’re wielding the weapon, you knock the target’s shield aside momentarily. In addition to the ally gaining advantage on the attack roll, the ally gains a +2 bonus to the roll if the target is using a shield."
-         ]
-      }
-   },
-   {
-      "name": "Blade Mastery",
-      "id": "blade-mastery",
-      "source": "UA",
-      "text": {
-         "description": "You master the shortsword, longsword, scimitar, rapier, and greatsword. You gain the following benefits when using any of them:",
-         "benefits": [
-            "You gain a +1 bonus to attack rolls you make with the weapon.",
-            "On your turn, you can use your reaction to assume a parrying stance, provided you have the weapon in hand. Doing so grants you a +1 bonus to your AC until the start of your next turn or until you’re not holding the weapon.",
-            "When you make an opportunity attack with the weapon, you have advantage on the attack roll."
-         ]
-      }
-   },
-   {
-      "name": "Flail Mastery",
-      "id": "flail-mastery",
-      "source": "UA",
-      "text": {
-         "description": "The flail is a tricky weapon to use, but you have spent countless hours mastering it. You gain the following benefits:",
-         "benefits": [
-            "You gain a +1 bonus to attack rolls you make with a flail.",
-            "As a bonus action on your turn, you can prepare yourself to extend your flail to sweep over targets’ shields. Until the end of this turn, your attack rolls with a flail gain a +2 bonus against any target using a shield.",
-            "When you hit with an opportunity attack using a flail, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + your Strength modifier) or be knocked prone."
-         ]
-      }
-   },
-   {
-      "name": "Spear Mastery",
-      "id": "spear-mastery",
-      "source": "UA",
-      "text": {
-         "description": "Though the spear is a simple weapon to learn, it rewards you for the time you have taken to master it. You gain the following benefits:",
-         "benefits": [
-            "You gain a +1 bonus to attack rolls you make with a spear.",
-            "When you use a spear, its damage die changes from a d6 to a d8, and from a d8 to a d10 when wielded with two hands. (This benefit has no effect if another feature has already improved the weapon’s die.)",
-            "You can set your spear to receive a charge. As a bonus action, choose a creature you can see that is at least 20 feet away from you. If that creature moves within your spear’s reach on its next turn, you can make a melee attack against it with your spear as a reaction. If the attack hits, the target takes an extra 1d8 piercing damage, or an extra 1d10 piercing damage if you wield the spear with two hands. You can’t use this ability if the creature used the Disengage action before moving.",
-            "As a bonus action on your turn, you can increase your reach with a spear by 5 feet for the rest of your turn."
          ]
       }
    },
@@ -208,11 +160,13 @@
    {
       "name": "Gunner",
       "id": "gunner",
-      "source": "BREW",
+      "source": "TCE",
+      "asi": "Dex +1",
       "text": {
          "description": "Guns are rare, but can sometimes be found or bought (especially from certain sects of Dwarves). Training has developed a quick hand and and keen eye when employing these new devices. You gain the following benefits:",
          "benefits": [
-            "You gain a +1 bonus to attack rolls made with firearms.",
+            "Increase your Dexterity score by 1, to a maximum of 20.",
+            "You gain proficiency with firearms",
             "You ignore the loading property of firearms.",
             "Being within 5 feet of a hostile creature doesn't impose disadvantage on your ranged attack rolls."
          ]
@@ -222,6 +176,7 @@
       "name": "Actor",
       "id": "actor",
       "source": "PHB",
+      "asi": "Cha +1",
       "text": {
          "description": "Skilled at mimicry and dramatics, you gain the following benefits:",
          "benefits": [
@@ -248,6 +203,7 @@
       "name": "Athlete",
       "id": "athlete",
       "source": "PHB",
+      "asi": "Str or Dex +1",
       "text": {
          "description": "You have undergone extensive physical training to gain the following benefits:",
          "benefits": [
@@ -262,10 +218,11 @@
       "name": "Charger",
       "id": "charger",
       "source": "PHB+",
+      "asi": "Str or Dex +1",
       "text": {
          "description": "You revel in being the first to enter battle, gaining the following benefits:",
          "benefits": [
-            "Increase your Strength or Dexterity score by 1, to a maximum of 20.",
+            "(BREW) Increase your Strength or Dexterity score by 1, to a maximum of 20.",
             "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or to shove a creature. If you move at least 10 feet in a straight line towards the creature immediately before taking this bonus action, you either gain a +5 bonus to the attack's damage roll (if you chose to make a melee attack and hit) or push the target up to 10 feet away from you (if you chose to shove and succeed)."
          ]
       }
@@ -287,11 +244,12 @@
       "name": "Defensive Duelist",
       "id": "defensive-duelist",
       "source": "PHB+",
+      "asi": "Dex +1",
       "prerequisite": "Dexterity 13 or higher",
       "text": {
          "description": "Trained in the art of fighting with speed and elegance, you gain the following benefits:",
          "benefits": [
-            "Increase your Dexterity score by 1, to a maximum of 20.",
+            "(BREW) Increase your Dexterity score by 1, to a maximum of 20.",
             "When you are wielding a finesse weapon with which you are proficient and another creature hits you with a melee attack, you can use your reaction to add your proficiency bonus to your AC for that attack, potentially causing the attack to miss you."
          ]
       }
@@ -313,10 +271,11 @@
       "name": "Dungeon Delver",
       "id": "dungeon-delver",
       "source": "PHB+",
+      "asi": "Int or Wis +1",
       "text": {
          "description": "Alert to the hidden traps and secret doors found in many dungeons, you gain the following benefits:",
          "benefits": [
-            "Increase your Intelligence or Wisdom score by 1, to a maximum of 20.",
+            "(BREW) Increase your Intelligence or Wisdom score by 1, to a maximum of 20.",
             "You have advantage on Wisdom (Perception) and Intelligence (Investigation) checks made to detect the presence of hidden traps, secret doors, and concealed treasures.",
             "You have advantage on saving throws made to avoid or resist traps.",
             "You have resistance to the damage dealt by traps.",
@@ -328,12 +287,13 @@
       "name": "Durable",
       "id": "durable",
       "source": "PHB+",
+      "asi": "Con +1",
       "text": {
          "description": "Hardy and resilient, you gain the following benefits:",
          "benefits": [
             "Increase your Constitution score by 1, to a maximum of 20.",
             "When you roll a Hit Die to regain hit points, the minimum number of hit points you regain from the roll equals twice your Constitution modifier (minimum of 2).",
-            "Your hit point maximum increases by an amount equal to your level when you gain this feat. Whenever you gain a level thereafter, your hit point maximum increases by an additional hit point."
+            "(BREW) Your hit point maximum increases by an amount equal to your level when you gain this feat. Whenever you gain a level thereafter, your hit point maximum increases by an additional hit point."
          ]
       }
    },
@@ -348,12 +308,12 @@
             "When you gain this feat, choose one of the following damage types: acid, cold, fire, lightning, or thunder.",
             "Spells you cast ignore resistance to damage of the chosen type. In addition, when you roll damage for a spell you cast that deals damage of that type, you can treat any 1 on a damage die as a 2."
          ],
-         "extraDescription": "Additionally, spells you cast of the chosen type gain teh following benefit based on the type:",
+         "extraDescription": "(BREW) Additionally, spells you cast of the chosen type gain the following benefit based on the type:",
          "extras": [
-            "(Acid) Caustic: Creatures that take damage from your Acid spells lose 2 AC until the start of your next turn.",
-            "(Cold) Brittle: Creatures that take damage from your cold spells now suffer the effects of a critical hit on a 19-20 until the start of your next turn.",
-            "(Fire) Scorch: Creatures that are ordinarily immune to fire damage are now instead treated as if they have resistance against damage from your fire spells.",
-            "(Lightning) Surge: When a creature suffers lightning damage from your spells, their allies within 5ft also take damage equal to 3x the spells level (minimum of 3).",
+            "(Acid) Caustic: Creatures that take damage from your acid spells lose 2 AC until the start of your next turn.",
+            "(Cold) Frigid: Instead of the above, when you roll damage for a spell you cast that deals cold damage you can treat any 1 or 2 on a damage die as a 3.",
+            "(Fire) Wreathe: Whenever you cast a spell that deals fire damage, you can cause flames to wreathe you until the end of your next turn. The flames don't harm you and they shed bright light out to 30 feet and dim light for an additional 30 feet.",
+            "(Lightning) Surge: When a creature suffers lightning damage from your spells, their allies within 5ft also take damage equal to 3x the spells level.",
             "(Thunder) Stricken: Creatures that take damage from your thunder spells suffer a -1 penalty to hit until the start of your next round."
          ],
          "multipleSelect": "You can select this feat multiple times. Each time you do so, you must choose a different damage type."
@@ -368,7 +328,7 @@
          "description": "You've developed the skills necessary to hold your own in close-quarters grappling. You gain the following benefits:",
          "benefits": [
             "You have advantage on attack rolls against a creature you are grappling.",
-            "(HB) Your Shove action can become a 'Throw'. You can dump your enemy prone within 5ft of yourself and deal 1d4+STR bludgeoning damage. After being thrown the creature is still Grappled.",
+            "(BREW) When you are already grappling a creature your Shove action can become a 'Throw'. You can dump your enemy prone within 5ft of yourself and deal 1d4+STR bludgeoning damage. After being thrown the creature is still Grappled.",
             "You can use an action to try and pin a creature grappled by you. To do so, make another grapple check. If you succeed, you and the creature are both restrained until the grapple ends."
          ]
       }
@@ -389,10 +349,11 @@
       "name": "Healer",
       "id": "healer",
       "source": "PHB+",
+      "asi": "Int or Wis +1",
       "text": {
          "description": "You are an able physician, allowing you to mend wounds quickly and get your allies back in the fight. You gain the following benefits:",
          "benefits": [
-            "Increase your Intelligence or Wisdom score by 1, to a maximum of 20.",
+            "(BREW) Increase your Intelligence or Wisdom score by 1, to a maximum of 20.",
             "When you use a healer's kit to stabilize a dying creature, that creature also regains 1 hit point.",
             "As an action, you can spend one use of a healer's kit to tend to a creature and restore 1d6 + 4 hit points to it, plus additional hit points equal to the creature's maximum number of Hit Dice. The creature can't regain hit points from this feat again until it finishes a short or long rest."
          ]
@@ -402,6 +363,7 @@
       "name": "Heavily Armored",
       "id": "heavily-armored",
       "source": "PHB",
+      "asi": "Str +1",
       "prerequisite": "Proficiency with medium armor",
       "text": {
          "description": "You have trained to master the use of heavy armor, gaining the following benefits:",
@@ -416,11 +378,12 @@
       "id": "heavy-armor-master",
       "source": "PHB+",
       "prerequisite": "Proficiency with heavy armor",
+      "asi": "Str or Con +1",
       "text": {
          "description": "You can use your armor to deflect strikes that would kill others. You gain the following benefits:",
          "benefits": [
-            "Increase your Strength or Constitution score by 1, to a maximum of 20.",
-            "While you are wearing heavy armor, bludgeoning, piercing, and slashing damage that you take from nonmagical weapons is reduced by an amount equal to your proficiency bonus."
+            "Increase your Strength or (BREW) Constitution score by 1, to a maximum of 20.",
+            "While you are wearing heavy armor, bludgeoning, piercing, and slashing damage that you take from nonmagical weapons is reduced by an amount equal to (BREW) your proficiency bonus."
          ]
       }
    },
@@ -428,11 +391,12 @@
       "name": "Inspiring Leader",
       "id": "inspiring-leader",
       "source": "PHB+",
+      "asi": "Cha +1",
       "prerequisite": "Charisma 13 or higher",
       "text": {
          "description": "You are a born leader who has honed their skills to command both allies and subordinates to fight harder and last longer in battle. You gain the following benefits:",
          "benefits": [
-            "Increase your Charisma score by 1, to a maximum of 20.",
+            "(BREW) Increase your Charisma score by 1, to a maximum of 20.",
             "When you spend 10 minutes inspiring your companions, choose up to six friendly creatures (which can include yourself) within 30 feet of you who can see or hear you and who can understand you. Each creature can gain temporary hit points equal to your level + your Charisma modifier. A creature can't gain temporary hit points from this feat again until it has finished a short or long rest."
          ]
       }
@@ -441,6 +405,7 @@
       "name": "Keen Mind",
       "id": "keen-mind",
       "source": "PHB",
+      "asi": "Int +1",
       "text": {
          "description": "You have a mind that can track time, direction, and detail with uncanny precision. You gain the following benefits:",
          "benefits": [
@@ -455,6 +420,7 @@
       "name": "Lightly Armored",
       "id": "lightly-armored",
       "source": "PHB",
+      "asi": "Str or Dex +1",
       "text": {
          "description": "You have trained to master the use of light armor, gaining the following benefits:",
          "benefits": [
@@ -467,6 +433,7 @@
       "name": "Linguist",
       "id": "linguist",
       "source": "PHB",
+      "asi": "Int +1",
       "text": {
          "description": "You have studied languages and codes, gaining the following benefits:",
          "benefits": [
@@ -522,8 +489,8 @@
       "text": {
          "description": "You have martial training that allows you to perform special combat maneuvers. You gain the following benefits:",
          "benefits": [
-            "You learn two maneuvers of your choice from among those available to the Battle Master archetype in the fighter class. If a maneuver you use requires your target to make a saving throw to resist the maneuver's effects, the saving throw DC equals 8 + prof + SRT or DEX (your choice).",
-            "If you already have superiority dice, you add one more to your existing pool; otherwise, you have two superiority die, which are d8s. These dice is used to fuel your maneuvers. A superiority die is expended when you use it. You regain your expended superiority dice when you finish a short or long rest."
+            "You learn two maneuvers of your choice from among those available to the Battle Master archetype in the fighter class. If a maneuver you use requires your target to make a saving throw to resist the maneuver's effects, the saving throw DC equals 8 + prof + STR or DEX (your choice).",
+            "(BREW) If you already have superiority dice, you add one more to your existing pool; otherwise, you have two superiority die, which are d8s. These dice is used to fuel your maneuvers. A superiority die is expended when you use it. You regain your expended superiority dice when you finish a short or long rest."
          ]
       }
    },
@@ -557,6 +524,7 @@
       "name": "Moderately Armored",
       "id": "moderately-armored",
       "source": "PHB",
+      "asi": "Str or Dex +1",
       "prerequisite": "Proficiency with light armor",
       "text": {
          "description": "You have trained to master the use of medium armor and shields, gaining the following benefits:",
@@ -576,7 +544,7 @@
             "You have advantage on melee attack rolls against any unmounted creature that is smaller than your mount.",
             "You can force an attack targeted at your mount to target you instead.",
             "If your mount is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
-            "If your mount takes the Dash action on its turn, you can use your reaction when a creature enters your reach to make a melee weapon attack against that creature. If the attack is made using a lance, you can add your proficiency bonus to the attack's damage roll."
+            "(BREW) If your mount takes the Dash action on its turn, you can use your reaction when a creature enters your reach to make a melee weapon attack against that creature. If the attack is made using a lance, you can add your proficiency bonus to the attack's damage roll."
          ]
       }
    },
@@ -584,6 +552,7 @@
       "name": "Observant",
       "id": "observant",
       "source": "PHB",
+      "asi": "Int or Wis +1",
       "text": {
          "description": "Quick to notice details of your environment, you gain the following benefits:",
          "benefits": [
@@ -600,8 +569,8 @@
       "text": {
          "description": "You can keep your enemies at bay with reach weapons. You gain the following benefits:",
          "benefits": [
-            "When you take the Attack action and attack with only a glaive, halberd, or quarterstaff, you can use a bonus action to make a melee attack with the opposite end of the weapon; this attack uses the same ability modifier as the main attack. The weapon's damage die for this attack is a d4, and the attack deals bludgeoning damage.",
-            "While you are wielding a glaive, halberd, pike, or quarterstaff, other creatures provoke an opportunity attack from you when they enter your reach."
+            "When you take the Attack action and attack with only a glaive, halberd, pike, spear, or quarterstaff, you can use a bonus action to make a melee attack with the opposite end of the weapon; this attack uses the same ability modifier as the main attack. The weapon's damage die for this attack is a d4, and the attack deals bludgeoning damage.",
+            "While you are wielding a glaive, halberd, pike, spear, or quarterstaff, other creatures provoke an opportunity attack from you when they enter your reach."
          ]
       }
    },
@@ -609,6 +578,7 @@
       "name": "Resilient",
       "id": "resilient",
       "source": "PHB",
+      "asi": "Any +1",
       "text": {
          "description": "Choose one ability score. You gain the following benefits:",
          "benefits": [
@@ -622,10 +592,11 @@
       "id": "ritual-caster",
       "source": "PHB+",
       "prerequisite": "Intelligence or Wisdom 13 or higher",
+      "asi": "Int or Wis +1",
       "text": {
          "description": "You have learned a number of spells that you can cast as rituals. These spells are written in a ritual book, which you must have in hand while casting one of them.",
          "benefits": [
-            "Increase your Intelligence or Wisdom by 1, to a maximum of 20.",
+            "(BREW) Increase your Intelligence or Wisdom by 1, to a maximum of 20.",
             "When you choose this feat, you acquire a ritual book holding two 1st-level spells of your choice. Choose one of the following classes: bard, cleric, druid, sorcerer, warlock, or wizard. You must choose your spells from that class's spell list, and the spells you choose must have the ritual tag. The class you choose also determines your spellcasting ability for these spells: Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid; or Intelligence for wizard.",
             "If you come across a spell in written form, such as a magical spell scroll or a wizard's spellbook, you might be able to add it to your ritual book. The spell must be on the spell list for the class you chose, the spell's level can be no higher than half your level (rounded up), and it must have the ritual tag. The process of copying the spell into your ritual book takes 2 hours per level of the spell, and costs 50 gp per level. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it."
          ]
@@ -634,7 +605,8 @@
    {
       "name": "Ferocious Attacker",
       "id": "ferocious-attacker",
-      "source": "PHB+",
+      "source": "BREW",
+      "asi": "Str +1",
       "text": {
          "description": "When you attack you do so with such violence that you rarely strike glancing blows",
          "benefits": [
@@ -663,10 +635,9 @@
       "text": {
          "description": "You have mastered ranged weapons and can make shots that others find impossible. You gain the following benefits:",
          "benefits": [
-            "(HB) The normal range for ranged weapons is tripled for weapons with which you are proficient",
+            "(BREW) The normal range for ranged weapons is tripled for weapons with which you are proficient",
             "Your ranged weapon attacks ignore half cover and three-quarters cover.",
-            "Before you make an attack with a ranged weapon that you are proficient with, you can choose to take a -5 penalty on the attack roll. If the attack hits, you add double your proficiency bonus (original: +10) to the attack's damage.",
-            "(removed original: attacking at long range doesn't impose disadvantage on your ranged weapon attack rolls.)"
+            "Before you make an attack with a ranged weapon that you are proficient with, you can choose to take a -5 penalty on the attack roll. If the attack hits, you add (BREW) double your proficiency bonus to the attack's damage."
          ]
       }
    },
@@ -684,18 +655,6 @@
       }
    },
    {
-      "name": "Skilled",
-      "id": "skilled",
-      "source": "PHB+",
-      "text": {
-         "description": "You are a voracious learner and you have honed more skills than the average adventurer to sharpness",
-         "benefits": [
-            "You gain proficiency in any combination of three skills or tools of your choice.",
-            "You may choose a skill or tool you are already proficient in to instead gain expertise in it."
-         ]
-      }
-   },
-   {
       "name": "Skulker",
       "id": "skulker",
       "source": "PHB+",
@@ -706,7 +665,7 @@
             "You can try to hide when you are lightly obscured from the creature from which you are hiding.",
             "When you are hidden from a creature and miss it with a ranged weapon attack, making the attack doesn't reveal your position.",
             "Dim light doesn't impose disadvantage on your Wisdom (Perception) checks relying on sight.",
-            "Attacking an enemy that is not aware of your presence grants a damage bonus equal to twice your proficiency bonus, provided you are proficient with the weapon."
+            "(BREW) Attacking an enemy that is not aware of your presence grants a damage bonus equal to twice your proficiency bonus, provided you are proficient with the weapon."
          ]
       }
    },
@@ -728,12 +687,14 @@
    {
       "name": "Tavern Brawler",
       "id": "tavern-brawler",
-      "source": "PHB",
+      "source": "PHB+",
+      "asi": "Str or Con +1",
       "text": {
          "description": "Accustomed to rough-and-tumble fighting using whatever weapons happen to be at hand, you gain the following benefits:",
          "benefits": [
             "Increase your Strength or Constitution score by 1, to a maximum of 20.",
             "You are proficient with improvised weapons.",
+            "(BREW) In your hands improvised weapons do 1d6 damage.",
             "Your unarmed strike uses a d4 for damage.",
             "When you hit a creature with an unarmed strike or an improvised weapon on your turn, you can use a bonus action to attempt to grapple the target."
          ]
@@ -757,24 +718,12 @@
       "name": "Weapon Master",
       "id": "weapon-master",
       "source": "PHB",
+      "asi": "Str or Dex +1",
       "text": {
          "description": "You have practiced extensively with a variety of weapons, gaining the following benefits:",
          "benefits": [
             "Increase your Strength or Dexterity score by 1, to a maximum of 20.",
             "You gain proficiency with four simple or martial weapons of your choice."
-         ]
-      }
-   },
-   {
-      "name": "Phalanx Fighter",
-      "id": "phalanx-fighter",
-      "source": "BREW",
-      "text": {
-         "description": "You have trained extensively with shields to protect yourself and others. You gain the following benefits:",
-         "benefits": [
-            "Increase your Strength or Constitution score by 1, to a maximum of 20.",
-            "You gain proficiency with shields.",
-            "While wielding a shield, as your bonus action, you may take a -2 penalty to your AC and grant a +3 AC bonus to an adjacent creature until the start of your next turn. If the creature ceases to be adjacent to you before the start of your next turn they lose the +3 AC bonus."
          ]
       }
    }

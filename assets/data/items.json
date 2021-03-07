@@ -1,5 +1,661 @@
 [
   {
+    "name": "Alchemical Compendium",
+    "id": "alchemical-compendium",
+    "source": "TCE",
+    "page": 119,
+    "rarity": "rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "type": "SB",
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "Acrid odors cling to this stained, heavy volume. The book's metal fittings are copper, iron, lead, silver, and gold, some frozen mid-transition from one metal to another. When found, the book contains the following spells: {@spells/enlarge-reduce enlarge/reduce}, {@spells/feather-fall feather fall}, {@spells/flesh-to-stone flesh to stone}, {@spells/gaseous-form gaseous form}, {@spells/magic-weapon magic weapon}, and {@spells/polymorph polymorph}. It functions as a spellbook for you.",
+      "While you are holding the book, you can use it as a spellcasting focus for your wizard spells.",
+      "The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the transmutation school.",
+          "As an action, you can touch a nonmagical object that isn't being worn or carried and spend a number of charges to transform the target into another object. For 1 charge, the object can be no larger than 1 foot on a side. You can spend additional charges to increase the maximum dimensions by 2 feet per charge. The new object must have a gold value equal to or less than the original."
+        ]
+      }
+    ],
+    "attachedSpells": [
+      "enlarge/reduce",
+      "feather fall",
+      "flesh to stone",
+      "gaseous form",
+      "magic weapon",
+      "polymorph"
+    ]
+  },
+  {
+    "name": "Atlas of Endless Horizons",
+    "id": "atlas-of-endless-horizons",
+    "source": "TCE",
+    "type": "SB",
+    "page": 120,
+    "rarity": "rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "This thick book is bound in dark leather, crisscrossed with inlaid silver lines suggesting a map or chart. When found, the book contains the following spells, which are wizard spells for you while you are attuned to the book: {@spells/arcane-gate arcane gate}, {@spells/dimension-door dimension door}, {@spells/gate gate}, {@spells/misty-step misty step}, {@spells/plane-shift plane shift}, {@spells/teleportation-circle teleportation circle}, and {@spells/word-of-recall word of recall}. It functions as a spellbook for you.",
+      "While you are holding the book, you can use it as a spellcasting focus for your wizard spells.",
+      "The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the conjuration school.",
+          "When you are hit by an attack, you can use your reaction to expend 1 charge to teleport up to 10 feet to an unoccupied space you can see. If your new position is out of range of the attack, it misses you."
+        ]
+      }
+    ],
+    "attachedSpells": [
+      "arcane gate",
+      "dimension door",
+      "gate",
+      "misty step",
+      "plane shift",
+      "teleportation circle",
+      "word of recall"
+    ],
+    "hasFluffImages": true
+  },
+  {
+    "name": "Crystalline Chronicle",
+    "id": "crystalline-chronicle",
+    "source": "TCE",
+    "page": 124,
+    "type": "SB",
+    "rarity": "very rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "An etched crystal sphere the size of a grapefruit hums faintly and pulses with irregular flares of inner light. While you are touching the crystal, you can retrieve and store information and spells within the crystal at the same rate as reading and writing. When found, the crystal contains the following spells: {@spells/detect-thoughts detect thoughts}, {@spells/intellect-fortress intellect fortress}, {@spells/rarys-telepathic-bond Rary's telepathic bond}, {@spells/sending sending}, {@spells/telekinesis telekinesis}, {@spells/tashas-mind-whip Tasha's mind whip}, and {@spells/tensers-floating-disk Tenser's floating disk}. It functions as a spellbook for you, with its spells and other writing psychically encoded within it.",
+      "While you are holding the crystal, you can use it as a spellcasting focus for your wizard spells, and you know the {@spells/mage-hand mage hand}, {@spells/mind-sliver mind sliver}, and {@spells/message message} cantrips if you don't already know them.",
+      "The crystal has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the information within the crystal, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book.",
+          "When you cast a wizard spell, you can expend 1 charge to cast the spell without verbal, somatic, or material components of up to 100 gp value."
+        ]
+      }
+    ],
+    "attachedSpells": [
+      "detect thoughts",
+      "intellect fortress",
+      "mage hand",
+      "message",
+      "mind sliver",
+      "rary's telepathic bond",
+      "sending",
+      "tasha's mind whip",
+      "telekinesis",
+      "tenser's floating disk"
+    ],
+    "hasFluffImages": true
+  },
+  {
+    "name": "Duplicitous Manuscript",
+    "id": "duplicitous-manuscript",
+    "source": "TCE",
+    "page": 126,
+    "type": "SB",
+    "rarity": "rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "To you, this book is a magical spellbook. To anyone else, the book appears to be a volume of verbose romance fiction. As an action, you can change the book's appearance and alter the plot of the romance.",
+      "When found, the book contains the following spells: {@spells/hallucinatory-terrain hallucinatory terrain}, {@spells/major-image major image}, {@spells/mirror-image mirror image}, {@spells/mislead mislead}, {@spells/nystuls-magic-aura Nystul's magic aura}, {@spells/phantasmal-force phantasmal force}, and {@spells/silent-image silent image}. It functions as a spellbook for you.",
+      "While you are holding the book, you can use it as a spellcasting focus for your wizard spells.",
+      "The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the illusion school.",
+          "When a creature you can see makes an Intelligence (Investigation) check to discern the true nature of an illusion spell you cast, or makes a saving throw against an illusion spell you cast, you can use your reaction and expend 1 charge to impose disadvantage on the roll."
+        ]
+      }
+    ],
+    "attachedSpells": [
+      "hallucinatory terrain",
+      "major image",
+      "mirror image",
+      "mislead",
+      "nystul's magic aura",
+      "phantasmal force",
+      "silent image"
+    ]
+  },
+  {
+    "name": "Fulminating Treatise",
+    "id": "fulminating-treatise",
+    "source": "TCE",
+    "page": 128,
+    "type": "SB",
+    "rarity": "rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "This thick, scorched spellbook reeks of smoke and ozone, and sparks of energy crackles along the edges of its pages. When found, the book contains the following spells: {@spells/contingency contingency}, {@spells/fireball fireball}, {@spells/gust-of-wind gust of wind}, {@spells/leomunds-tiny-hut Leomund's tiny hut}, {@spells/magic-missile magic missile}, {@spells/thunderwave thunderwave}, and {@spells/wall-of-force wall of force}. It functions as a spellbook for you.",
+      "While you are holding the book, you can use it as a spellcasting focus for your wizard spells.",
+      "The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the evocation school.",
+          "When one creature you can see takes damage from an evocation spell you cast, you can use your reaction and expend 1 charge to deal an extra 2d6 force damage to the creature and knock the creature {@conditions/prone prone} if it is Large or smaller."
+        ]
+      }
+    ],
+    "attachedSpells": [
+      "contingency",
+      "fireball",
+      "gust of wind",
+      "leomund's tiny hut",
+      "magic missile",
+      "thunderwave",
+      "wall of force"
+    ],
+    "hasFluffImages": true
+  },
+  {
+    "name": "Heart Weaver's Primer",
+    "id": "heart-weavers-primer",
+    "source": "TCE",
+    "page": 128,
+    "type": "SB",
+    "rarity": "rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "This pristine book smells faintly of a random scent you find pleasing. When found, the book contains the following spells: {@spells/antipathy-sympathy antipathy/sympathy}, {@spells/charm-person charm person}, {@spells/dominate-person dominate person}, {@spells/enthrall enthrall}, {@spells/hypnotic-pattern hypnotic pattern}, {@spells/modify-memory modify memory}, and {@spells/suggestion suggestion}. It functions as a spellbook for you.",
+      "While you are holding the book, you can use it as a spellcasting focus for your wizard spells.",
+      "The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the enchantment school.",
+          "When you cast an enchantment spell, you can expend 1 charge to impose disadvantage on the first saving throw one target makes against the spell."
+        ]
+      }
+    ],
+    "attachedSpells": [
+      "antipathy/sympathy",
+      "charm person",
+      "dominate person",
+      "enthrall",
+      "hypnotic pattern",
+      "modify memory",
+      "suggestion"
+    ]
+  },
+  {
+    "name": "Libram of Souls and Flesh",
+    "id": "libram-of-souls-and-flesh",
+    "source": "TCE",
+    "page": 129,
+    "type": "SB",
+    "rarity": "rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "With covers made of skin and fittings of bone, this tome is cold to the touch, and it whispers faintly. When found, the book contains the following spells, which are wizard spells for you while you are attuned to the book: {@spells/animate-dead animate dead}, {@spells/circle-of-death circle of death}, {@spells/false-life false life}, {@spells/finger-of-death finger of death}, {@spells/speak-with-dead speak with dead}, {@spells/summon-undead summon undead}, and {@spells/vampiric-touch vampiric touch}. It functions as a spellbook for you.",
+      "While you are holding the book, you can use it as a spellcasting focus for your wizard spells.",
+      "The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the necromancy school.",
+          "As an action, you can expend 1 charge to take on a semblance of undeath for 10 minutes. For the duration, you take on a deathly appearance, and undead creatures are indifferent to you, unless you have damaged them. You also appear undead to all outward inspection and to spells used to determine the target's status. The effect ends if you deal damage or force a creature to make a saving throw."
+        ]
+      }
+    ],
+    "attachedSpells": [
+      "animate dead",
+      "circle of death",
+      "false life",
+      "finger of death",
+      "speak with dead",
+      "summon undead",
+      "vampiric touch"
+    ]
+  },
+  {
+    "name": "Planecaller's Codex",
+    "id": "planecallers-codex",
+    "source": "TCE",
+    "page": 134,
+    "type": "SB",
+    "rarity": "rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "The pages of this book are bound in fiend hide, and its cover is embossed with a diagram of the Great Wheel of the multiverse. When found, the book contains the following spells: {@spells/banishment banishment}, {@spells/find-familiar find familiar}, {@spells/gate gate}, {@spells/magic-circle magic circle}, {@spells/planar-binding planar binding}, and {@spells/summon-elemental summon elemental}. It functions as a spellbook for you.",
+      "While you are holding the book, you can use it as a spellcasting focus for your wizard spells.",
+      "The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the conjuration school.",
+          "When you cast a conjuration spell that summons or creates one creature, you can expend 1 charge to grant that creature advantage on attack rolls for 1 minute."
+        ]
+      }
+    ],
+    "attachedSpells": [
+      "banishment",
+      "find familiar",
+      "gate",
+      "magic circle",
+      "planar binding",
+      "summon elemental"
+    ]
+  },
+  {
+    "name": "Protective Verses",
+    "id": "protective verses",
+    "type": "SB",
+    "source": "TCE",
+    "page": 134,
+    "rarity": "rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "This leather-bound spellbook is reinforced with iron and silver fittings and an iron lock (DC 20 to open). As an action, you can touch the book's cover and cause it to lock as if you cast {@spells/arcane-lock arcane lock} on it. When found, the book contains the following spells: {@spells/arcane-lock arcane lock}, {@spells/dispel-magic dispel magic}, {@spells/globe-of-invulnerability globe of invulnerability}, {@spells/glyph-of-warding glyph of warding}, {@spells/mordenkainens-private-sanctum Mordenkainen's private sanctum}, {@spells/protection-from-evil-and-good protection from evil and good}, and {@spells/symbol symbol}. It functions as a spellbook for you.",
+      "While you are holding the book, you can use it as a spellcasting focus for your wizard spells.",
+      "The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the abjuration school.",
+          "When you cast an abjuration spell, you can expend 1 charge to grant a creature you can see within 30 feet of you 2d10 temporary hit points."
+        ]
+      }
+    ],
+    "attachedSpells": [
+      "arcane lock",
+      "dispel magic",
+      "globe of invulnerability",
+      "glyph of warding",
+      "mordenkainen's private sanctum",
+      "protection from evil and good",
+      "symbol"
+    ]
+  },
+  {
+    "name": "Tarokka of Spells",
+    "id": "tarokka-of-spells",
+    "source": "BREW",
+    "page": 128,
+    "type": "SB",
+    "rarity": "rare",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "recharge": "dawn",
+    "charges": 3,
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "To you, this tarokka deck acts as a magical spellbook. It expands and contracts as you add spells, but can always also be used as a full tarokka deck for readings. It comes with the following spell cards: {@spells/detect-magic detect magic}, {@spells/locate-object locate object}, {@spells/tongues tongues}, {@spells/identify identify}, {@spells/mind-spike mind spike}, {@spells/comprehend-languages comprehend languages}, and {@spells/legend-lore legend lore}.",
+      "While you are holding the book, you can use it as a spellcasting focus for your wizard spells.",
+      "The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You can use the charges in the following ways while holding it:",
+      {
+        "type": "list",
+        "items": [
+          "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the divination school.",
+          "When one creature you can see takes damage from an evocation spell you cast, you can use your reaction and expend 1 charge to deal an extra 2d6 force damage to the creature and knock the creature {@conditions/prone prone} if it is Large or smaller."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sorcerous Essence Shard",
+    "id": "Sorcerous Essense Shard",
+    "source": "TCE",
+    "page": 127,
+    "rarity": "rare",
+    "reqAttune": "by a sorcerer",
+    "wondrous": true,
+    "weight": 1,
+    "entries": [
+      "This crackling crystal contains the essence of another plane or powerful creature. As an action, you can attach the shard to a Tiny object (such as a weapon or a piece of jewelry) or detach it. It falls off if your attunement to it ends. You can use the shard as a spellcasting focus while you hold or wear it.",
+      "Consult the Elemental Essence Shards table to determine the shard's essence and property. When you use a Metamagic option on a spell while you are holding or wearing the shard, you can use that property.",
+      {
+        "type": "table",
+        "caption": "Sorcerous Essence Shards",
+        "colLabels": [
+          "Essense",
+          "Effect"
+        ],
+        "colStyles": [
+          "col-2 text-center",
+          "col-8"
+        ],
+        "rows": [
+          [
+            "Air",
+            "You can immediately fly up to 60 feet without provoking opportunity attacks."
+          ],
+          [
+            "Earth",
+            "You gain resistance to a damage type of your choice until the start of your next turn."
+          ],
+          [
+            "Fire",
+            "One target of the spell that you can see burns for 2d10 fire damage at the start of its next turn."
+          ],
+          [
+            "Water",
+            "A wave of water  bursts out from you in a 10-foot radius. Each creature of your choice that in that area takes 2d6 cold damage."
+          ],
+          [
+            "Far Realm",
+            "A slimy tentacle rips through the fabric of reality and strikes one creature within 30 feet of you. The creature takes 2d6 psychic damage and must make a Chasima save or be frightened of you until your next turn."
+          ],
+          [
+            "Shadowfell",
+            "Choose an ability. Until the end of your next turn, one target of the spell has disadvantage on ability checks and saving throws that use that ability."
+          ],
+          [
+            "Limbo",
+            "One target of the spell has disadvantage on attack rolls and ability checks made before the start of your next turn."
+          ],
+          [
+            "Abyss",
+            "One target of the spell takes an extra 3d6 necrotic damage."
+          ],
+          [
+            "Celestia",
+            "You or one creature of your choice that you can see within 30 feet of you gains 3d6 temporary hit points."
+          ],
+          [
+            "Mechanus",
+            "You can end a condition affecting yourself or one creature you can see within 30 feet of you."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Baba Yaga's Mortar and Pestle",
+    "id": "baba-yagas-mortar-and-pestle",
+    "source": "TCE",
+    "page": 121,
+    "rarity": "artifact",
+    "reqAttune": true,
+    "wondrous": true,
+    "bonusWeapon": "+3",
+    "recharge": "dawn",
+    "charges": 12,
+    "entries": [
+      "The creations of the immortal hag Baba Yaga defy the laws of mortal magic. Among the notorious implements that cement her legend on countless worlds are the artifacts that propel her through the planes: Baba Yaga's Mortar and Pestle. These signature tools of Baba Yaga are a single artifact for purposes of attunement. Should the two objects become separated, the pestle appears next to the mortar at the next dawn.",
+      {
+        "type": "entries",
+        "name": "Random Properties",
+        "entries": [
+          "This artifact has the following random properties, which you can determine by rolling on the tables in the \"Artifacts\" section of the DMG:",
+          {
+            "type": "list",
+            "items": [
+              "2 minor beneficial properties",
+              "1 major beneficial property",
+              "1 minor detrimental property"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Properties of the Mortar",
+        "entries": [
+          "The mortar is a Tiny wooden bowl. However, the mortar increases in size to accommodate anything you place inside, expanding-if there's enough space-up to Large size, meaning it can hold even a Large creature."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Properties of the Pestle",
+        "entries": [
+          "The pestle is a 6-inch-long, worn wooden tool. Once during your turn while you are holding the pestle, you can extend it into a quarterstaff or shrink it back into a pestle (no action required). As a quarterstaff, the pestle is a magic weapon that grants a +3 bonus to attack and damage rolls made with it.",
+          "The pestle has 12 charges. When you hit with a melee attack using the pestle, you can expend up to 3 of its charges to deal an extra 1d8 force damage for each charge expended. The pestle regains all expended charges daily at dawn."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Perfect Tools",
+        "entries": [
+          "While holding the mortar and pestle, you can use your action to say the name of any nonmagical plant, mineral, or fluid and an amount of the material worth 10 gp or less. The mortar instantly fills with the desired amount of that material. Once you use this action, you can't do so again until you finish a short or long rest.",
+          "You can also use the artifact as {@item alchemist's supplies|PHB}, {@item brewer's supplies|PHB}, {@item cook's utensils|PHB}, an {@item herbalism kit|PHB}, and a {@item poisoner's kit|PHB}. You have advantage on any check you make using the artifact as one of these tools."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Primal Parts",
+        "entries": [
+          "As an action while the pestle and the mortar is within 5 feet of you, you can command the pestle to grind. For the next minute, or until you use your action to verbally command it to stop, the pestle moves on its own, grinding the contents of the mortar into a mush or fine powder that's equally useful for cooking or alchemy. At the start of each of your turns, whatever is in the mortar takes 4d10 force damage. If this reduces the target's hit points to 0, the target is reduced to powder, pulp, or paste, as appropriate. Only magic items are unaffected. If you wish, when the pestle stops, you can have the mortar separate its contents-like powdered bone, crushed herbs, pulped organs-into separate piles."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Traverse the Night",
+        "entries": [
+          "If you are holding the pestle while you are inside the mortar, you can use your action to verbally command the mortar to travel to a specific place or creature.",
+          "You don't need to know where your destination is, but it must be a specific destination-not just the nearest river or a red dragon's lair. If the stated destination is within 1,000 miles of you, the mortar lifts into the air and vanishes. You and any creatures in the mortar travel through a dreamlike sky, with hazy reflections of the world passing by below. Creatures might see images of you streaking through the sky between your point of origin and the destination. You arrive at the location 1 hour later or, if it is night, 1 minute later."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Bones Know Their Home",
+        "entries": [
+          "When you command the mortar to travel, you can instead throw out the dust or paste of something ground by the mortar and name a location on a different plane of existence or a different world on the Material Plane. If that material came from a creature native to the named plane or world, the mortar travels through an empty night sky to an unoccupied space at that destination, arriving in 1 minute."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Destroying the Mortar and Pestle",
+        "entries": [
+          "The mortar and pestle are destroyed if they are crushed underfoot by the {@i Dancing Hut of Baba Yaga} or by Baba Yaga herself."
+        ]
+      }
+    ],
+    "hasFluffImages": true
+  },
+  {
+    "name": "All-Purpose Tool, +1",
+    "id": "all-purpose-tool",
+    "source": "TCE",
+    "page": 119,
+    "rarity": "uncommon",
+    "reqAttune": "by an artificer",
+    "wondrous": true,
+    "bonusSpellAttack": "+1",
+    "bonusSpellSaveDc": "+1",
+    "entries": [
+      "This simple screwdriver can transform into a variety of tools; as an action, you can touch the item and transform it into any type of artisan's tool of your choice. Whatever form the tool takes, you are proficient with it.",
+      "While holding this tool, you gain a +1 bonus to the spell attack rolls and the saving throw DCs of your artificer spells.",
+      "As an action, you can focus on the tool to channel your creative forces. Choose a cantrip that you don't know from any class list. For 8 hours, you can cast that cantrip, and it counts as an artificer cantrip for you. Once this property is used, it can't be used again until the next dawn.",
+      "This item might also be found as a 'rare' +2 version, or a 'very rare' +3 version."
+    ]
+  },
+  {
+    "name": "Amulet of the Devout, +1",
+    "id": "amulet-of-the-devout",
+    "source": "TCE",
+    "page": 119,
+    "rarity": "uncommon",
+    "reqAttune": "by a cleric or paladin",
+    "wondrous": true,
+    "weight": 1,
+    "bonusSpellAttack": "+1",
+    "bonusSpellSaveDc": "+1",
+    "entries": [
+      "This amulet bears the symbol of a deity inlaid with precious stones or metals. While you wear the holy symbol, you gain a +1 bonus to spell attack rolls and the saving throw DCs of your spells.",
+      "While you wear this amulet, you can use your Channel Divinity feature without expending one of the feature's uses. Once this property is used, it can't be used again until the next dawn.",
+      "This item might also be found as a 'rare' +2 version, or a 'very rare' +3 version."
+    ]
+  },
+  {
+    "name": "Arcane Grimoire, +1",
+    "id": "arcane-grimoire",
+    "source": "TCE",
+    "page": 120,
+    "rarity": "uncommon",
+    "reqAttune": "by a wizard",
+    "wondrous": true,
+    "weight": 3,
+    "bonusSpellAttack": "+1",
+    "bonusSpellSaveDc": "+1",
+    "focus": [
+      "Wizard"
+    ],
+    "entries": [
+      "While you are holding this leather-bound book, you can use it as a spellcasting focus for your wizard spells, and you gain a +1 bonus to spell attack rolls and to the saving throw DCs of your wizard spells.",
+      "You can use this book as a spellbook. In addition, when you use your Arcane Recovery feature, you can increase the number of spell slot levels you regain by 1.",
+      "This item might also be found as a 'rare' +2 version, or a 'very rare' +3 version."
+    ]
+  },
+  {
+    "name": "Bloodwell Vial, +1",
+    "id": "bloodwell-vial",
+    "source": "TCE",
+    "page": 122,
+    "rarity": "uncommon",
+    "reqAttune": "by a sorcerer",
+    "wondrous": true,
+    "weight": 0.01,
+    "bonusSpellAttack": "+1",
+    "bonusSpellSaveDc": "+1",
+    "focus": [
+      "Sorcerer"
+    ],
+    "entries": [
+      "To attune to this vial, you must place a few drops of your blood into it. The vial can't be opened while your attunement to it lasts. If your attunement to the vial ends, the contained blood turns to ash. You can use the vial as a spellcasting focus for your spells while wearing or holding it, and you gain a +1 bonus to spell attack rolls and to the saving throw DCs of your sorcerer spells.",
+      "In addition, when you roll any Hit Dice to recover hit points while you are carrying the vial, you can regain 5 sorcery points. This property of the vial can't be used again until the next dawn.",
+      "This item might also be found as a 'rare' +2 version, or a 'very rare' +3 version."
+    ]
+  },
+  {
+    "name": "Moon Sickle, +1",
+    "id": "moon-sickle",
+    "source": "TCE",
+    "page": 133,
+    "baseItem": "sickle",
+    "type": "M",
+    "rarity": "uncommon",
+    "reqAttune": "by a druid or ranger",
+    "weight": 2,
+    "weaponCategory": "simple",
+    "property": [
+      "L"
+    ],
+    "dmg1": "1d4",
+    "dmgType": "S",
+    "bonusWeapon": "+1",
+    "bonusSpellAttack": "+1",
+    "bonusSpellSaveDc": "+1",
+    "focus": [
+      "Druid",
+      "Ranger"
+    ],
+    "weapon": true,
+    "entries": [
+      "This silver-bladed sickle glimmers softly with moonlight. While holding this magic weapon, you gain a bonus to attack and damage rolls made with it, and you gain a +1 bonus to spell attack rolls and the saving throw DCs of your druid and ranger spells. In addition, you can use the sickle as a spellcasting focus for your druid and ranger spells.",
+      "When you cast a spell that restores hit points, you can roll 1d4 and add the number rolled to the amount of hit points restored, provided you are holding the sickle.",
+      "This item might also be found as a 'rare' +2 version, or a 'very rare' +3 version."
+    ]
+  },
+  {
+    "name": "Rhythm-Maker's Instrument, +1",
+    "id": "rhythm-makers-instrument",
+    "source": "TCE",
+    "page": 134,
+    "type": "INS",
+    "rarity": "uncommon",
+    "reqAttune": "by a bard",
+    "wondrous": true,
+    "weight": 3,
+    "grantsProficiency": true,
+    "bonusSpellAttack": "+1",
+    "bonusSpellSaveDc": "+1",
+    "entries": [
+      "While holding this instrument, you gain a +1 bonus to spell attack rolls and to the saving throw DCs of your bard spells.",
+      "As an action, you can play the instrument to regain one use of your Bardic Inspiration feature. This property of the instrument can't be used again until the next dawn."
+    ]
+  },
+  {
+    "name": "Astral Shard",
+    "id": "astral-shard",
+    "source": "TCE",
+    "page": 120,
+    "rarity": "rare",
+    "reqAttune": "by a sorcerer",
+    "wondrous": true,
+    "weight": 1,
+    "focus": [
+      "Sorcerer"
+    ],
+    "entries": [
+      "This crystal is a solidified shard of the Astral Plane, swirling with silver mist. As an action, you can attach the shard to a Tiny object (such as a weapon or a piece of jewelry) or detach it. It falls off if your attunement to it ends. You can use the shard as a spellcasting focus for your sorcerer spells while you hold or wear it.",
+      "When you use a Metamagic option on a spell while you are holding or wearing the shard, immediately after casting the spell you can teleport to an unoccupied space you can see within 30 feet of you."
+    ]
+  },
+  {
     "name": "Arrow",
     "id": "arrow",
     "source": "PHB",
@@ -1172,7 +1828,8 @@
     "bonusSpellAttack": "+1",
     "entries": [
       "While holding this rod, you gain a +1 bonus to spell attack rolls and to the saving throw DCs of your warlock spells.",
-      "In addition, you can regain one warlock spell slot as an action while holding the rod. You can't use this property again until you finish a long rest."
+      "In addition, you can regain one warlock spell slot as an action while holding the rod. You can't use this property again until you finish a long rest.",
+      "This item might also be found as a 'rare' +2 version, or a 'very rare' +3 version."
     ]
   },
   {
@@ -1188,83 +1845,8 @@
     "weight": 1,
     "bonusSpellAttack": "+1",
     "entries": [
-      "While you are holding this wand, you gain a +1 bonus to spell attack rolls. In addition, you ignore half cover when making a spell attack."
-    ]
-  },
-  {
-    "name": "Rod of the Pact Keeper, +2",
-    "id": "rod-of-the-pact-keeper-2",
-    "source": "DMG",
-    "page": 197,
-    "type": "RD",
-    "tier": "major",
-    "rarity": "rare",
-    "reqAttune": "by a warlock",
-    "weight": 2,
-    "bonusSpellAttack": "+2",
-    "entries": [
-      "While holding this rod, you gain a +2 bonus to spell attack rolls and to the saving throw DCs of your warlock spells.",
-      "In addition, you can regain one warlock spell slot as an action while holding the rod. You can't use this property again until you finish a long rest."
-    ],
-    "lootTables": [
-      "Magic Item Table G"
-    ]
-  },
-  {
-    "name": "Wand of the War Mage, +2",
-    "id": "wand-of-the-war-mage",
-    "source": "DMG",
-    "page": 212,
-    "srd": true,
-    "type": "WD",
-    "tier": "major",
-    "rarity": "rare",
-    "reqAttune": "by a spellcaster",
-    "weight": 1,
-    "bonusSpellAttack": "+2",
-    "entries": [
-      "While you are holding this wand, you gain a +2 bonus to spell attack rolls. In addition, you ignore half cover when making a spell attack."
-    ],
-    "lootTables": [
-      "Magic Item Table G"
-    ]
-  },
-  {
-    "name": "Rod of the Pact Keeper, +3",
-    "id": "rod-of-the-pact-keeper-3",
-    "source": "DMG",
-    "page": 197,
-    "type": "RD",
-    "tier": "major",
-    "rarity": "very rare",
-    "reqAttune": "by a warlock",
-    "weight": 2,
-    "bonusSpellAttack": "+3",
-    "entries": [
-      "While holding this rod, you gain a +3 bonus to spell attack rolls and to the saving throw DCs of your warlock spells.",
-      "In addition, you can regain one warlock spell slot as an action while holding the rod. You can't use this property again until you finish a long rest."
-    ],
-    "lootTables": [
-      "Magic Item Table H"
-    ]
-  },
-  {
-    "name": "Wand of the War Mage, +3",
-    "id": "wand-of-the-war-mage-3",
-    "source": "DMG",
-    "page": 212,
-    "srd": true,
-    "type": "WD",
-    "tier": "major",
-    "rarity": "very rare",
-    "reqAttune": "by a spellcaster",
-    "weight": 1,
-    "bonusSpellAttack": "+3",
-    "entries": [
-      "While you are holding this wand, you gain a +3 bonus to spell attack rolls. In addition, you ignore half cover when making a spell attack."
-    ],
-    "lootTables": [
-      "Magic Item Table H"
+      "While you are holding this wand, you gain a +1 bonus to spell attack rolls. In addition, you ignore half cover when making a spell attack.",
+      "This item might also be found as a 'rare' +2 version, or a 'very rare' +3 version."
     ]
   },
   {
@@ -1337,7 +1919,7 @@
     "rarity": "none",
     "weight": 8,
     "value": 5000,
-    "additionalEntries": [
+    "entries": [
       "Alchemist's supplies enable a character to produce useful concoctions, such as acid or alchemist's fire.",
       {
         "type": "entries",
@@ -2234,7 +2816,53 @@
     "type": "INS",
     "rarity": "none",
     "weight": 6,
-    "value": 3000
+    "value": 3000,
+    "entries": [
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
+    ]
   },
   {
     "name": "Ball Bearing",
@@ -2381,7 +3009,7 @@
     "type": "G",
     "rarity": "none",
     "entries": [
-      "At any point while the characters are searching through unusual equipment or detritus in the Monastery of the Distressed Body or the city of Daoine Gloine, roll on the following table to determine what they find. Some very strange backstories might mean a person starts with one of these trinkets.",
+      "At any point while the characters are searching through unusual equipment or detritus in the Barrier Peaks or the found city of Haven, roll on the following table to determine what they find. Some very strange backstories might mean a person starts with one of these trinkets.",
       {
         "type": "table",
         "caption": "Futuristic Trinkets",
@@ -2903,7 +3531,51 @@
     "type": "INS",
     "rarity": "none",
     "entries": [
-      "Pan pipes or satyr pipes, also known as the shalm, these are sacred to Lliira and popular with wood elf and wild elf bards."
+      "Pan pipes or satyr pipes, also known as the shalm, these are sacred to Lliira and popular with wood elf and wild elf bards.",
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
     ]
   },
   {
@@ -4027,7 +4699,7 @@
     "rarity": "none",
     "weight": 9,
     "value": 2000,
-    "additionalEntries": [
+    "entries": [
       "Brewing is the art of producing beer. Not only does beer serve as an alcoholic beverage, but the process of brewing purifies water. Crafting beer takes weeks of fermentation, but only a few hours of work.",
       {
         "type": "entries",
@@ -4253,7 +4925,7 @@
     "rarity": "none",
     "weight": 5,
     "value": 1000,
-    "additionalEntries": [
+    "entries": [
       "Calligraphy treats writing as a delicate, beautiful art. Calligraphers produce text that is pleasing to the eye, using a style that is difficult to forge. Their supplies also give them some ability to examine scripts and determine if they are legitimate, since a calligrapher's training involves long hours of studying writing and attempting to replicate its style and design.",
       {
         "type": "entries",
@@ -4499,7 +5171,7 @@
     "rarity": "none",
     "weight": 6,
     "value": 800,
-    "additionalEntries": [
+    "entries": [
       "Skill at carpentry enables a character to construct wooden structures. A carpenter can build a house, a shack, a wooden cabinet, or similar items.",
       {
         "type": "entries",
@@ -4656,7 +5328,7 @@
     "rarity": "none",
     "weight": 6,
     "value": 1500,
-    "additionalEntries": [
+    "entries": [
       "Using cartographer's tools, you can create accurate maps to make travel easier for yourself and those who come after you. These maps can range from large-scale depictions of mountain ranges to diagrams that show the layout of a dungeon level.",
       {
         "type": "entries",
@@ -5285,7 +5957,7 @@
     "rarity": "none",
     "weight": 5,
     "value": 500,
-    "additionalEntries": [
+    "entries": [
       "Although the cobbler's trade might seem too humble for an adventurer, a good pair of boots will see a character across rugged wilderness and through deadly dungeons.",
       {
         "type": "entries",
@@ -5407,7 +6079,7 @@
     "rarity": "none",
     "weight": 8,
     "value": 100,
-    "additionalEntries": [
+    "entries": [
       "Adventuring is a hard life. With a cook along on the journey, your meals will be much better than the typical mix of hardtack and dried fruit.",
       {
         "type": "entries",
@@ -6937,9 +7609,7 @@
     "weight": 3,
     "value": 2500,
     "entries": [
-      "This pouch of cosmetics, hair dye, and small props lets you create disguises that change your physical appearance. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a visual disguise."
-    ],
-    "additionalEntries": [
+      "This pouch of cosmetics, hair dye, and small props lets you create disguises that change your physical appearance. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a visual disguise.",
       "The perfect tool for anyone who wants to engage in trickery, a disguise kit enables its owner to adopt a false identity.",
       {
         "type": "entries",
@@ -7219,7 +7889,53 @@
     "type": "INS",
     "rarity": "none",
     "weight": 3,
-    "value": 600
+    "value": 600,
+    "entries": [
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
+    ]
   },
   {
     "name": "Dulcimer",
@@ -7230,7 +7946,53 @@
     "type": "INS",
     "rarity": "none",
     "weight": 10,
-    "value": 2500
+    "value": 2500,
+    "entries": [
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
+    ]
   },
   {
     "name": "Dungeoneer's Pack",
@@ -7556,6 +8318,7 @@
     "entries": [
       {
         "type": "table",
+        "caption": "Elven Trinkets",
         "colLabels": [
           "d8",
           "Trinket"
@@ -8354,7 +9117,53 @@
     "type": "INS",
     "rarity": "none",
     "weight": 1,
-    "value": 200
+    "value": 200,
+    "entries": [
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
+    ]
   },
   {
     "name": "Folding Boat",
@@ -8388,9 +9197,7 @@
     "weight": 5,
     "value": 1500,
     "entries": [
-      "This small box contains a variety of papers and parchments, pens and inks, seals and sealing wax, gold and silver leaf, and other supplies necessary to create convincing forgeries of physical documents. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a physical forgery of a document."
-    ],
-    "additionalEntries": [
+      "This small box contains a variety of papers and parchments, pens and inks, seals and sealing wax, gold and silver leaf, and other supplies necessary to create convincing forgeries of physical documents. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a physical forgery of a document.",
       "A forgery kit is designed to duplicate documents and to make it easier to copy a person's seal or signature.",
       {
         "type": "entries",
@@ -8481,7 +9288,6 @@
     "page": 268,
     "type": "P",
     "rarity": "uncommon",
-    "weight": 1,
     "age": "modern",
     "entries": [
       "Dwarf experimentation hasa resulted in the creation of these small but deadly explosive devices in a few Thanes around the world. The recipe is a tightly protected secret and disseminating it would be considered high treason against the whole Dwarf civilization.",
@@ -8693,7 +9499,7 @@
     "rarity": "none",
     "weight": 5,
     "value": 3000,
-    "additionalEntries": [
+    "entries": [
       "Someone who is proficient with glassblower's tools has not only the ability to shape glass, but also specialized knowledge of the methods used to produce glass objects.",
       {
         "type": "entries",
@@ -8761,7 +9567,51 @@
     "type": "INS",
     "rarity": "none",
     "entries": [
-      "Short, curved horns like a cornucopia. Played with valves, glaur sound like trumpets, while those without valves, known as gloon, have a more mournful sound."
+      "Short, curved horns like a cornucopia. Played with valves, glaur sound like trumpets, while those without valves, known as gloon, have a more mournful sound.",
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
     ]
   },
   {
@@ -9224,7 +10074,51 @@
     "type": "INS",
     "rarity": "none",
     "entries": [
-      "A double-headed skin drum fitted with handles along its side."
+      "A double-headed skin drum fitted with handles along its side.",
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
     ]
   },
   {
@@ -9563,9 +10457,7 @@
     "weight": 3,
     "value": 500,
     "entries": [
-      "This kit contains a variety of instruments such as clippers, mortar and pestle, and pouches and vials used by herbalists to create remedies and potions. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to identify or apply herbs. Also, proficiency with this kit is required to create antitoxin and potions of healing."
-    ],
-    "additionalEntries": [
+      "This kit contains a variety of instruments such as clippers, mortar and pestle, and pouches and vials used by herbalists to create remedies and potions. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to identify or apply herbs. Also, proficiency with this kit is required to create antitoxin and potions of healing.",
       "Proficiency with an herbalism kit allows you to identify plants and safely collect their useful elements.",
       {
         "type": "entries",
@@ -9827,7 +10719,53 @@
     "type": "INS",
     "rarity": "none",
     "weight": 2,
-    "value": 300
+    "value": 300,
+    "entries": [
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
+    ]
   },
   {
     "name": "Horn of Blasting",
@@ -11267,7 +12205,7 @@
     "rarity": "none",
     "weight": 2,
     "value": 2500,
-    "additionalEntries": [
+    "entries": [
       "Training with jeweler's tools includes the basic techniques needed to beautify gems. It also gives you expertise in identifying precious stones.",
       {
         "type": "entries",
@@ -11667,7 +12605,7 @@
     "rarity": "none",
     "weight": 5,
     "value": 500,
-    "additionalEntries": [
+    "entries": [
       "Knowledge of leatherworking extends to lore concerning animal hides and their properties. It also confers knowledge of leather armor and similar goods.",
       {
         "type": "entries",
@@ -11853,7 +12791,53 @@
     "type": "INS",
     "rarity": "none",
     "weight": 2,
-    "value": 3500
+    "value": 3500,
+    "entries": [
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
+    ]
   },
   {
     "name": "Lyre",
@@ -11864,7 +12848,53 @@
     "type": "INS",
     "rarity": "none",
     "weight": 2,
-    "value": 3000
+    "value": 3000,
+    "entries": [
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
+    ]
   },
   {
     "name": "Mace of Disruption",
@@ -12257,7 +13287,7 @@
     "rarity": "none",
     "weight": 8,
     "value": 1000,
-    "additionalEntries": [
+    "entries": [
       "Mason's tools allow you to craft stone structures, including walls and buildings crafted from brick.",
       {
         "type": "entries",
@@ -12926,9 +13956,7 @@
     "weight": 2,
     "value": 2500,
     "entries": [
-      "This set of instruments is used for navigation at sea. Proficiency with navigator's tools lets you chart a ship's course and follow navigation charts. In addition, these tools allow you to add your proficiency bonus to any ability check you make to avoid getting lost at sea."
-    ],
-    "additionalEntries": [
+      "This set of instruments is used for navigation at sea. Proficiency with navigator's tools lets you chart a ship's course and follow navigation charts. In addition, these tools allow you to add your proficiency bonus to any ability check you make to avoid getting lost at sea.",
       "Proficiency with navigator's tools helps you determine a true course based on observing the stars. It also grants you insight into charts and maps while developing your sense of direction.",
       {
         "type": "entries",
@@ -13789,7 +14817,7 @@
     "rarity": "none",
     "weight": 5,
     "value": 1000,
-    "additionalEntries": [
+    "entries": [
       "Proficiency with painter's supplies represents your ability to paint and draw. You also acquire an understanding of art history, which can aid you in examining works of art.",
       {
         "type": "entries",
@@ -13882,7 +14910,53 @@
     "type": "INS",
     "rarity": "none",
     "weight": 2,
-    "value": 1200
+    "value": 1200,
+    "entries": [
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
+    ]
   },
   {
     "name": "Paper (one sheet)",
@@ -14298,9 +15372,7 @@
     "value": 5000,
     "entries": [
       "A poisoner's kit includes the vials, chemicals, and other equipment necessary for the creation of poisons. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to craft or use poisons.",
-      "Additionally, the Crafting and Harvesting Poison rules require the use of a poisoner's kit."
-    ],
-    "additionalEntries": [
+      "Additionally, the Crafting and Harvesting Poison rules require the use of a poisoner's kit.",
       "A poisoner's kit is a favored resource for thieves, assassins, and others who engage in skulduggery. It allows you to apply poisons and create them from various materials. Your knowledge of poisons also helps you treat them.",
       {
         "type": "entries",
@@ -15102,7 +16174,7 @@
     "rarity": "none",
     "weight": 3,
     "value": 1000,
-    "additionalEntries": [
+    "entries": [
       "Potter's tools are used to create a variety of ceramic objects, most typically pots and similar vessels.",
       {
         "type": "entries",
@@ -17309,7 +18381,51 @@
     "weight": 1,
     "value": 200,
     "entries": [
-      "A double-reed instrument similar to an oboe or a bassoon, popular with gnomes, who have developed some bellows-powered versions."
+      "A double-reed instrument similar to an oboe or a bassoon, popular with gnomes, who have developed some bellows-powered versions.",
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
     ]
   },
   {
@@ -17863,7 +18979,7 @@
     "rarity": "none",
     "weight": 8,
     "value": 2000,
-    "additionalEntries": [
+    "entries": [
       "Smith's tools allow you to work metal, heating it to alter its shape, repair damage, or work raw ingots into useful items.",
       {
         "type": "entries",
@@ -20096,9 +21212,7 @@
     "weight": 1,
     "value": 2500,
     "entries": [
-      "This set of tools includes a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps or open locks."
-    ],
-    "additionalEntries": [
+      "This set of tools includes a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps or open locks.",
       "Perhaps the most common tools used by adventurers, thieves' tools are designed for picking locks and foiling traps. Proficiency with the tools also grants you a general knowledge of traps and locks.",
       {
         "type": "entries",
@@ -20127,7 +21241,7 @@
       {
         "type": "entries",
         "name": "Set a Trap",
-    "id": "set-a-trap",
+        "id": "set-a-trap",
         "entries": [
           "Just as you can disable traps, you can also set them. As part of a short rest, you can create a trap using items you have on hand. The total of your check becomes the DC for someone else's attempt to discover or disable the trap. The trap deals damage appropriate to the materials used in crafting it (such as poison or a weapon) or damage equal to half the total of your check, whichever the DM deems appropriate."
         ]
@@ -20304,7 +21418,7 @@
     "rarity": "none",
     "weight": 10,
     "value": 5000,
-    "additionalEntries": [
+    "entries": [
       "A set of tinker's tools is designed to enable you to repair many mundane objects. Though you can't manufacture much with tinker's tools, you can mend torn clothes, sharpen a worn sword, and patch a tattered suit of chain mail.",
       {
         "type": "entries",
@@ -20569,7 +21683,7 @@
       "When you make your character, you can roll once on the Trinkets table to gain a trinket, a simple item lightly touched by mystery. The DM might also use this table. It can help stock a room in a dungeon or fill a creatures pockets.",
       {
         "type": "table",
-        "caption": "Curse of Strahd. Character Options, Gothic Trinket Table",
+        "caption": "Gothic Trinket Table",
         "colLabels": [
           "d100",
           "Trinket"
@@ -21845,7 +22959,53 @@
     "type": "INS",
     "rarity": "none",
     "weight": 1,
-    "value": 3000
+    "value": 3000,
+    "entries": [
+      "Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+      {
+        "type": "entries",
+        "name": "History",
+        "entries": [
+          "Your expertise aids you in recalling lore related to your instrument."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Performance",
+        "entries": [
+          "Your ability to put on a good show is improved when you incorporate an instrument into your act."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Compose a Tune",
+        "entries": [
+          "As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Musical Instrument",
+        "colLabels": [
+          "Activity",
+          "DC"
+        ],
+        "colStyles": [
+          "col-10",
+          "col-2 text-center"
+        ],
+        "rows": [
+          [
+            "Identify a tune",
+            "10"
+          ],
+          [
+            "Improvise a tune",
+            "20"
+          ]
+        ]
+      }
+    ]
   },
   {
     "name": "Voyager Staff",
@@ -22568,7 +23728,7 @@
     "rarity": "none",
     "weight": 5,
     "value": 100,
-    "additionalEntries": [
+    "entries": [
       "Weaver's tools allow you to create cloth and tailor it into articles of clothing.",
       {
         "type": "entries",
@@ -23072,7 +24232,7 @@
     "rarity": "none",
     "weight": 5,
     "value": 100,
-    "additionalEntries": [
+    "entries": [
       "Woodcarver's tools allow you to craft intricate objects from wood, such as wooden tokens or arrows.",
       {
         "type": "entries",

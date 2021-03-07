@@ -1,5 +1,261 @@
 [
     {
+        "name": "Mind Sliver",
+        "id": "mind-sliver",
+        "source": "TCE",
+        "level": "0",
+        "school": "Enchantment",
+        "time": "1 action",
+        "range": "60 feet",
+        "components": "V",
+        "duration": "1 round",
+        "classes": "Sorcerer, Sorcerer (Aberrant Mind), Warlock, Wizard",
+        "text": [
+            "You drive a disorienting spike of psychic energy into the mind of one creature you can see within range. The target must succeed on an Intelligence saving throw or take 1d6 psychic damage and subtract 1d4 from the next saving throw it makes before the end of your next turn.",
+            "This spell's damage increases by 1d6 when you reach certain levels: 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+        ]
+    },
+    {
+        "name": "Tasha's Caustic Brew",
+        "id": "tashas-caustic-brew",
+        "source": "TCE",
+        "level": "1",
+        "school": "Evocation",
+        "time": "1 action",
+        "range": "Self (30-foot line)",
+        "components": "V, S, M (a bit of rotten food)",
+        "duration": "Concentration, up to 1 minute",
+        "classes": "Artificier, Sorcerer, Wizard",
+        "text": [
+            "A stream of acid emanates from you in a line 30 feet long and 5 feet wide in a direction you choose. Each creature in the line must succeed on a Dexterity saving throw or be covered in acid for the spell's duration or until a creature uses its action to scrape or wash the acid off itself or another creature. A creature covered in the acid takes 2d4 acid damage at start of each of its turns."
+        ],
+        "higher": "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 2d4 for each slot level above 1st."
+    },
+    {
+        "name": "Tasha's Mind Whip",
+        "id": "tashas-mind-whip",
+        "source": "TCE",
+        "level": "1",
+        "school": "Enchantment",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V",
+        "duration": "1 round",
+        "classes": "Bard, Sorcerer, Wizard",
+        "text": [
+            "You psychically lash out at one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 psychic damage, and it can't take a reaction until the end of its next turn. Moreover, on its next turn, it must choose whether it gets a move, an action, or a bonus action; it gets only one of the three. On a successful save, the target takes half as much damage and suffers none of the spell's other effects."
+        ],
+        "higher": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd. The creatures must be within 30 feet of each other when you target them."
+    },
+    {
+        "name": "Intellect Fortress",
+        "id": "intellect-fortress",
+        "source": "TCE",
+        "level": "3",
+        "school": "Abjuration",
+        "time": "1 action",
+        "range": "30 feet",
+        "components": "V",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Artificier, Bard, Sorcerer, Warlock, Wizard",
+        "text": [
+            "For the duration, you or one willing creature you can see within range has resistance to psychic damage, as well as advantage on Intelligence, Wisdom, and Charisma saving throws."
+        ],
+        "higher": "When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd. The creatures must be within 30 feet of each other when you target them."
+    },
+    {
+        "name": "Spirit Shroud (b)",
+        "id": "spirit-shroud",
+        "source": "TCE",
+        "level": "3",
+        "school": "Necromancy",
+        "time": "1 bonus action",
+        "range": "30 feet",
+        "components": "V",
+        "duration": "Concentration, up to 1 minute",
+        "classes": "Cleric, Paladin, Warlock, Wizard",
+        "text": [
+            "You call forth spirits of the dead, which flit around you for the spell's duration. The spirits are intangible and invulnerable.",
+            "Until the spell ends, any attack you make deals 1d8 extra damage when you hit a creature within 10 feet of you. This damage is radiant, necrotic, or cold (your choice when you cast the spell). Any creature that takes this damage can't regain hit points until the start of your next turn.",
+            "In addition, any creature of your choice that you can see that starts its turn within 10 feet of you has its speed reduced by 10 feet until the start of your next turn."
+        ],
+        "higher": "When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for every two slot levels above 3rd."
+    },
+    {
+        "name": "Tasha's Otherworldly Guise",
+        "id": "tashas-otherworldly-guise",
+        "source": "TCE",
+        "level": "6",
+        "school": "Transmutation",
+        "time": "1 bonus action",
+        "range": "30 feet",
+        "components": "V, S, M (an object engraved with a symbol of the Outer Planes, worth at least 500 gp)",
+        "duration": "Concentration, up to 1 minute",
+        "classes": "Sorcerer, Warlock, Wizard",
+        "text": [
+            "Uttering an incantation, you draw on the magic of the Lower Planes or Upper Planes (your choice) to transform yourself. You gain the following benefits until the spell ends:",
+            "You are immune to fire and poison damage (Lower Planes) or radiant and necrotic damage (Upper Planes).",
+            "You are immune to the poisoned condition (Lower Planes) or the charmed condition (Upper Planes).",
+            "Spectral wings appear on your back, giving you a flying speed of 40 feet.",
+            "You have a +2 bonus to AC.",
+            "All your weapon attacks are magical, and when you make a weapon attack, you can use your spellcasting ability modifier, instead of Strength or Dexterity, for the attack and damage rolls.",
+            "You can attack twice, instead of once, when you take the Attack action on your turn. You ignore this benefit if you already have a feature, like Extra Attack, that lets you attack more than once when you take the Attack action on your turn."
+        ]
+    },
+    {
+        "name": "Summon Beast",
+        "id": "summon-beast",
+        "source": "TCE",
+        "level": "2",
+        "school": "Conjuration",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V, S, M (a feather, tuft of fur, and fish tail inside a gilded acorn worth at least 200 gp)",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Druid, Ranger",
+        "text": [
+            "You call forth a bestial spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Bestial Spirit stat block. When you cast the spell, choose an environment: Air, Land, or Water. The creature resembles an animal of your choice that is native to the chosen environment, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.",
+            "The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger."
+        ],
+        "higher": "When you cast this spell using a spell slot of 3rd level or higher, use the higher level wherever the spell's level appears in the stat block."
+    },
+    {
+        "name": "Summon Fey",
+        "id": "summon-fey",
+        "source": "TCE",
+        "level": "3",
+        "school": "Conjuration",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V, S, M (a gilded flower worth at least 300 gp)",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Druid, Ranger, Warlock, Wizard",
+        "text": [
+            "You call forth a fey spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Fey Spirit stat block. When you cast the spell, choose a mood: Fuming, Mirthful, or Tricksy. The creature resembles a fey creature of your choice marked by the chosen mood, which determines one of the traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.",
+            "The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger."
+        ],
+        "higher": "When you cast this spell using a spell slot of 4th level or higher, use the higher level wherever the spell's level appears in the stat block."
+    },
+    {
+        "name": "Summon Shadowspawn",
+        "id": "summon-shadowspawn",
+        "source": "TCE",
+        "level": "3",
+        "school": "Conjuration",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V, S, M (tears inside a gem worth at least 300 gp)",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Warlock, Wizard",
+        "text": [
+            "You call forth a shadowy spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Shadow Spirit stat block. When you cast the spell, choose an emotion: Fury, Despair, or Fear. The creature resembles a misshapen biped marked by the chosen emotion, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.",
+            "The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger."
+        ],
+        "higher": "When you cast this spell using a spell slot of 4th level or higher, use the higher level wherever the spell's level appears in the stat block."
+    },
+    {
+        "name": "Summon Undead",
+        "id": "summon-undead",
+        "source": "TCE",
+        "level": "3",
+        "school": "Necromancy",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V, S, M (a gilded skull worth at least 300 gp)",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Warlock, Wizard",
+        "text": [
+            "You call forth an undead spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Undead Spirit stat block. When you cast the spell, choose the creature's form: Ghostly, Putrid, or Skeletal. The spirit resembles an undead creature with the chosen form, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.",
+            "The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger."
+        ],
+        "higher": "When you cast this spell using a spell slot of 4th level or higher, use the higher level wherever the spell's level appears in the stat block."
+    },
+    {
+        "name": "Summon Aberration",
+        "id": "summon-aberration",
+        "source": "TCE",
+        "level": "4",
+        "school": "Conjuration",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V, S, M (a pickled tentacle and an eyeball in a platinum-inlaid vial worth at least 400 gp)",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Sorcerer (Aberrant Mind), Warlock, Wizard",
+        "text": [
+            "You call forth an aberrant spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Aberrant Spirit stat block. When you cast the spell, choose Beholderkin, Slaad, or Star Spawn. The creature resembles an aberration of that kind, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.",
+            "The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger."
+        ],
+        "higher": "When you cast this spell using a spell slot of 5th level or higher, use the higher level wherever the spell's level appears in the stat block."
+    },
+    {
+        "name": "Summon Construct",
+        "id": "summon-construct",
+        "source": "TCE",
+        "level": "4",
+        "school": "Conjuration",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V, S, M (an ornate stone and metal lockbox worth at least 400 gp)",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Artificier, Sorcerer (Clockwork Soul), Warlock, Wizard",
+        "text": [
+            "You call forth the spirit of a construct. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Construct Spirit stat block. When you cast the spell, choose a material: Clay, Metal, or Stone. The creature resembles a golem or a modron (your choice) made of the chosen material, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.",
+            "The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger."
+        ],
+        "higher": "When you cast this spell using a spell slot of 5th level or higher, use the higher level wherever the spell's level appears in the stat block."
+    },
+    {
+        "name": "Summon Elemental",
+        "id": "summon-elemental",
+        "source": "TCE",
+        "level": "4",
+        "school": "Conjuration",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V, S, M (air, a pebble, ash, and water inside a gold-inlaid vial worth at least 400 gp)",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Druid, Ranger, Warlock (Fathomless), Wizard",
+        "text": [
+            "You call forth an elemental spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Elemental Spirit stat block. When you cast the spell, choose an element: Air, Earth, Fire, or Water. The creature resembles a bipedal form wreathed in the chosen element, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.",
+            "The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger."
+        ],
+        "higher": "When you cast this spell using a spell slot of 5th level or higher, use the higher level wherever the spell's level appears in the stat block."
+    },
+    {
+        "name": "Summon Celestial",
+        "id": "summon-celestial",
+        "source": "TCE",
+        "level": "5",
+        "school": "Conjuration",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V, S, M (a golden reliquary worth at least 500 gp)",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Cleric, Paladin",
+        "text": [
+            "You call forth a celestial spirit. It manifests in an angelic form in an unoccupied space that you can see within range. This corporeal form uses the Celestial Spirit stat block. When you cast the spell, choose Avenger or Defender. Your choice determines the creature's attack in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.",
+            "The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger."
+        ],
+        "higher": "When you cast this spell using a spell slot of 6th level or higher, use the higher level wherever the spell's level appears in the stat block."
+    },
+    {
+        "name": "Summon Fiend",
+        "id": "summon-fiend",
+        "source": "TCE",
+        "level": "6",
+        "school": "Conjuration",
+        "time": "1 action",
+        "range": "90 feet",
+        "components": "V, S, M (humanoid blood inside a ruby vial worth at least 600 gp)",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Warlock, Wizard, Cleric (Evil)",
+        "text": [
+            "You call forth a fiendish spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Fiendish Spirit stat block. When you cast the spell, choose Demon, Devil, or Yugoloth. The creature resembles a fiend of the chosen type, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.",
+            "The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger."
+        ],
+        "higher": "When you cast this spell using a spell slot of 7th level or higher, use the higher level wherever the spell's level appears in the stat block."
+    },
+    {
         "name": "Abi-Dalzim's Horrid Wilting",
         "id": "abi-dalzims-horrid-wilting",
         "source": "XGE",
@@ -7891,29 +8147,6 @@
         ]
     },
     {
-        "name": "Ceremony (r)",
-        "id": "ceremony",
-        "source": "XGE",
-        "level": "1",
-        "ritual": "YES",
-        "school": "Abjuration",
-        "time": "1 hour",
-        "range": "Touch",
-        "components": "V, S, M (25 gp worth of powdered silver)",
-        "duration": "Instantaneous",
-        "classes": "Cleric, Paladin",
-        "text": [
-            "You perform a special religious ceremony that is infused with magic. When you cast the spell, choose one of the following rites, the target of which must be within 10 feet of you throughout the casting.",
-            "Atonement. You touch one willing creature whose alignment has changed, and you make a DC 20 Wisdom (Insight) check. On a successful check, you restore the target to its original alignment.",
-            "Bless Water. You touch one vial of water and cause it to become holy water.",
-            "Coming of Age. You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a 1d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.",
-            "Dedication. You touch one humanoid who wishes to be dedicated to your god's service. For the next 24 hours, whenever the target makes a saving throw, it can roll a 1d4 and add the number rolled to the save. A creature can benefit from this rite only once.",
-            "Funeral Rite. You touch one corpse, and for the next 7 days, the target can't become undead by any means short of a wish spell.",
-            "Investiture: You touch one willing humanoid. Choose one 1st-level spell you have prepared and expend a spell slot and any material components as if you were casting that spell. The spell has no effect. Instead, the target can cast this spell once without having to expend a spell slot or use material components. If the target doesn’t cast the spell within 1 hour, the invested spell is lost.",
-            "Wedding. You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed."
-        ]
-    },
-    {
         "name": "Chaos Bolt",
         "id": "chaos-bolt",
         "source": "XGE",
@@ -7989,21 +8222,6 @@
         ]
     },
     {
-        "name": "Puppet",
-        "id": "puppet",
-        "source": "UA",
-        "level": "1",
-        "school": "Enchantment",
-        "time": "1 action",
-        "range": "120 feet",
-        "components": "S",
-        "duration": "Instantaneous",
-        "classes": "Bard, Warlock, Wizard",
-        "text": [
-            "Your gesture forces one humanoid you can see within range to make a Constitution saving throw. On a failed save, the target must move up to its speed in a direction you choose. In addition, you can cause the target to drop whatever it is holding. This spell has no effect on a humanoid that is immune to being charmed."
-        ]
-    },
-    {
         "name": "Snare",
         "id": "snare",
         "source": "XGE",
@@ -8023,21 +8241,6 @@
         ]
     },
     {
-        "name": "Sudden Awakening (b)",
-        "id": "sudden-awakening",
-        "source": "UA",
-        "level": "1",
-        "school": "Enchantment",
-        "time": "1 bonus action",
-        "range": "10 feet",
-        "components": "V",
-        "duration": "Instantaneous",
-        "classes": "Bard, Ranger, Sorcerer, Wizard",
-        "text": [
-            "Each sleeping creature you choose within range awakens, and then each prone creature within range can stand up without expending any movement."
-        ]
-    },
-    {
         "name": "Toll the Dead",
         "id": "toll-the-dead",
         "source": "XGE",
@@ -8051,22 +8254,6 @@
         "text": [
             "You point at one creature you can see within range, and the sound of a dolorous bell fills the air around it for a moment. The target must succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the target is missing any of its hit points, it instead takes 1d12 necrotic damage.",
             "The spell’s damage increases by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and 17th level (4d8 or 4d12)."
-        ]
-    },
-    {
-        "name": "Unearthly Chorus",
-        "id": "unearthly-chorus",
-        "source": "UA",
-        "level": "1",
-        "school": "Illusion",
-        "time": "1 action",
-        "range": "Self (30-foot radius)",
-        "components": "V",
-        "duration": "Concentration, up to 10 minutes",
-        "classes": "Bard",
-        "text": [
-            "Music of a style you choose fills the air around you in a 30-foot radius. The music spreads around corners and can be heard from up to 100 feet away. The music moves with you, centered on you for the duration.",
-            "Until the spell ends, you make Charisma (Performance) checks with advantage. In addition, you can use a bonus action on each of your turns to beguile one creature you choose within 30 feet of you that can see you and hear the music. The creature must make a Charisma saving throw. If you or your companions are attacking it, the creature automatically succeeds on the saving throw. On a failure, the creature becomes friendly to you for as long as it can hear the music and for 1 hour thereafter. You make Charisma (Deception) checks and Charisma (Persuasion) checks against creatures made friendly by this spell with advantage."
         ]
     },
     {
@@ -8085,28 +8272,7 @@
         ]
     },
     {
-        "name": "Wild Cunning (r)",
-        "id": "wild-cunning",
-        "source": "UA",
-        "level": "1",
-        "ritual": "YES",
-        "school": "Divination",
-        "time": "1 action",
-        "range": "120 feet",
-        "components": "V, S",
-        "duration": "Instantaneous",
-        "classes": "Druid, Ranger",
-        "text": [
-            "You call out to the spirits of nature to aid you. When you cast this spell, choose one of the following effects:",
-            "• If there are any tracks on the ground within range, you know where they are, and you make Wisdom (Survival) checks to follow these tracks with advantage for 1 hour or until you cast this spell again.",
-            "• If there is edible forage within range, you know it and where to find it. • If there is clean drinking water within range, you know it and where to find it.",
-            "• If there is suitable shelter for you and your companions with range, you know it and where to find.",
-            "• Send the spirits to bring back wood for a fire and to set up a campsite in the area using your supplies. The spirits build the fire in a circle of stones, put up tents, unroll bedrolls, and put out any rations and water for consumption.",
-            "• Have the spirits instantly break down a campsite, which includes putting out a fire, taking down tents, packing up bags, and burying any rubbish."
-        ]
-    },
-    {
-        "name": "Origami (HB)",
+        "name": "Origami",
         "id": "origami",
         "source": "BREW",
         "level": "0",
@@ -8115,7 +8281,7 @@
         "range": "5 feet",
         "components": "V, S",
         "duration": "Up to 1 hour",
-        "classes": "Bard, Wizard, Monk",
+        "classes": "Bard, Monk",
         "text": [
             "You magically fold and animate a Tiny piece of paper or similiar material, such as a leaf, within range. You can fold it into one of the following shapes:.",
             "• Boat. The boat floats on and is not destroyed by water. When placed in water, you can mentally direct the boat to move in any direction along the water's surface, at a speed of 5 feet per round. The boat is able to carry a single Tiny object that weighs 1 pound or less.",
@@ -8125,39 +8291,5 @@
             "• Samurai. The samurai has a movement speed of 5 feet. You can mentally direct the samurai to move. The samurai always points his sword in the direction of the nearest castle or fort.",
             "If you cast this spell multiple times, you can have up to two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action."
         ]
-    },
-    {
-        "name": "Power Word Spook (HB)",
-        "id": "power-word-spook",
-        "source": "BREW",
-        "level": "9",
-        "school": "Necromancy",
-        "time": "1 action",
-        "range": "60 feet",
-        "components": "V",
-        "duration": "Instantaneous",
-        "classes": "Bard, Sorcerer, Warlock, Wizard",
-        "text": [
-            "You utter a word of power that makes a humanoid you can see within range realize that there was a skeleton inside them the whole time. If the creature you chose has 50 hitpoints or fewer, its skeleton is removed from its body, and it dies. If the target dies, each humanoid within 60 feet of it that can see it becomes frightened of you for 1 minute. Otherwise, the spell has no effect other than to make the target frightened of you until the end of your next turn.",
-            "If you kill a humanoid with this spell, its removed skeleton becomes an undead Skeleton under your command, until it is reduced to 0 hitpoints. On each of your turns, you can use a bonus action to mentally command the skeleton if its within 60 feet of you. You decide what action the skeleton will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the skeleton only defends itself against hostile creatures. Once given an order, the skeleton continues to follow it until its task is complete."
-        ]
-    },
-    {
-        "name": "Erase (HB)",
-        "id": "erase",
-        "source": "BREW",
-        "level": "1",
-        "school": "Transmutation",
-        "time": "1 action",
-        "range": "30 feet",
-        "components": "V, S",
-        "duration": "Instantaneous",
-        "classes": "Wizard",
-        "text": [
-            "Remove writings of either magical or mundane nature from a scroll or from one or two pages of paper, parchment, or similar surfaces. Nonmagical writing is automatically erased if no one else is holding it. Otherwise, the chance of erasing nonmagical writing is 90%.",
-            "With this spell, you can also remove spells similar to {@spells/glyph-of-warding glyph of warding}, {@spells/illusory-script illusory script} or {@spells/symbol symbol} from surfaces. Any magical writing created by a spell of 1rd level or lower is erased. If the magical writing was created by a spell of 2nd level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a successful check, the magical writing is erased.",
-            "If you fail to erase glyphs of warding, arcane runes or the like, you accidentally activate it instead."
-        ],
-        "higher": "When you cast this spell using a spell slot of 2nd level or higher, you automatically erase magical writing if the spell that created the writing is equal to or less than the level of the spell slot you used. Additionally, you can erase an increasingly large volumes of non-magical writing. At 3rd level you can erase a single book, at 5th level you can erase a bookself, and at 7th level you can erase an entire library worth of text."
     }
 ]

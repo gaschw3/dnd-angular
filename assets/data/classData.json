@@ -211,6 +211,30 @@
       {
         "level": 3,
         "filter": "yes",
+        "subclass": "beast",
+        "name": "beast",
+        "title": "Primal Path: Path of the Beast",
+        "source": "TCE",
+        "text": [
+          "Barbarians who walk the Path of the Beast draw their rage from a bestial spark burning within their souls. That beast bursts forth in the throes of rage, physically transforming the barbarian. Such a barbarian might be inhabited by a primal spirit or be descended from shape-shifters. You can choose the origin of your feral might or determine it by rolling on the Origin of the Beast table.",
+          "<table class='table table-striped table-bordered table-sm'><thead><tr><th class='text-center'>d4</th><th>Origin</th></tr></thead><tbody><tr><td class='text-center'>1</td><td>One of your parents is a lycanthrope, and you've inherited some of their curse.</td></tr><tr><td class='text-center'>2</td><td>You are descended from an archdruid and inherited the ability to partially change shape.</td></tr><tr><td class='text-center'>3</td><td>A fey spirit gifted you with the ability to adopt different bestial aspects.</td></tr><tr><td class='text-center'>4</td><td>An ancient animal spirit dwells within you, allowing you to walk this path.</td></tr></tbody></table>"
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "beast",
+        "name": "beast-form",
+        "title": "Path of the Beast: Form of the Beast",
+        "text": [
+          "When you enter your rage, you can transform, revealing the bestial power within you. Until the rage ends, you manifest a natural weapon. It counts as a simple melee weapon for you, and you add your Strength modifier to the attack and damage rolls when you attack with it, as normal. You choose the weapon's form each time you rage:",
+          "<strong>Bite. </strong>Your mouth transforms into a bestial muzzle or great mandibles (your choice). It deals 1d8 piercing damage on a hit. Once on each of your turns when you damage a creature with this bite, you regain a number of hit points equal to your proficiency bonus, provided you have less than half your hit points when you hit.",
+          "<strong>Claws. </strong>Each of your hands transforms into a claw, which you can use as a weapon if it's empty. It deals 1d6 slashing damage on a hit. Once on each of your turns when you attack with a claw using the Attack action, you can make one additional claw attack as part of the same action.",
+          "<strong>Tail. </strong>You grow a lashing, spiny tail, which deals 1d8 piercing damage on a hit and has the reach property. If a creature you can see within 10 feet of you hits you with an attack roll, you can use your reaction to swipe your tail and roll a d8, applying a bonus to your AC equal to the number rolled, potentially causing the attack to miss you."
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
         "subclass": "wild",
         "name": "wild",
         "title": "Primal Path: Path of Wild Magic",
@@ -368,7 +392,24 @@
       },
       {
         "level": 6,
-        "subclass": "totem",
+        "subclass": "beast",
+        "name": "beast-soul",
+        "title": "Path of the Beast: Beastial Soul",
+        "text": [
+          "The feral power within you increases, causing the natural weapons of your Form of the Beast to count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.",
+          "You can also alter your form to help you adapt to your surroundings. When you finish a short or long rest, choose one of the following benefits, which lasts until you finish your next short or long rest:",
+          {
+            "list": [
+              "You gain a swimming speed equal to your walking speed, and you can breathe underwater.",
+              "You gain a climbing speed equal to your walking speed, and you can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
+              "When you jump, you can make a Strength (Athletics) check and extend your jump by a number of feet equal to the check's total. You can make this special check only once per turn."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "wild",
         "name": "wild-bolstering",
         "title": "Path of Wild Magic: Bolstering Magic",
         "text": [
@@ -472,8 +513,24 @@
       },
       {
         "level": 10,
+        "subclass": "beast",
+        "name": "beast-fury",
+        "title": "Path of the Beast: Infectious Fury",
+        "text": [
+          "When you hit a creature with your natural weapons while you are raging, the beast within you can curse your target with rabid fury. The target must succeed on a Wisdom saving throw (DC equal to 8 + your Constitution modifier + your proficiency bonus) or suffer one of the following effects (your choice):",
+          {
+            "list": [
+              "The target must use its reaction to make a melee attack against another creature of your choice that you can see.",
+              "The target takes 2d12 psychic damage."
+            ]
+          },
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "level": 10,
         "subclass": "wild",
-        "name": "wild-instable",
+        "name": "wild-unstable",
         "title": "Path of Wild Magic: Unstable Backlash",
         "text": [
           "When you are imperiled during your rage, the magic within you can lash out; immediately after you take damage or fail a saving throw while raging, you can use your reaction to roll on the Wild Magic table and immediately produce the effect rolled. This effect replaces your current Wild Magic effect."
@@ -570,6 +627,17 @@
               "<strong>Wolf: </strong>While you're raging, you can use a bonus action on your turn to knock a Large or smaller creature prone when you hit it with melee weapon attack."
             ]
           }
+        ]
+      },
+      {
+        "level": 14,
+        "subclass": "beast",
+        "name": "beast-call",
+        "title": "Path of the Beast: Call the Hunt",
+        "text": [
+          "The beast within you grows so powerful that you can spread its ferocity to others and gain resilience from them joining your hunt. When you enter your rage, you can choose a number of other willing creatures you can see within 30 feet of you equal to your Constitution modifier (minimum of one creature).",
+          "You gain 5 temporary hit points for each creature that accepts this feature. Until the rage ends, the chosen creatures can each use the following benefit once on each of their turns: when the creature hits a target with an attack roll and deals damage to it, the creature can roll a d6 and gain a bonus to the damage equal to the number rolled.",
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
         ]
       },
       {
@@ -3816,6 +3884,55 @@
       {
         "level": 3,
         "filter": "yes",
+        "subclass": "rune",
+        "name": "rune",
+        "title": "Archetype: Rune Knight",
+        "source": "TCE",
+        "text": [
+          "Rune Knights enhance their martial prowess using the supernatural power of runes, an ancient practice that originated with giants. Rune cutters can be found among any family of giants, and you likely learned your methods first or second hand from such a mystical artisan. Whether you found the giant's work carved into a hill or cave, learned of the runes from a sage, or met the giant in person, you studied the giant's craft and learned how to apply magic runes to empower your equipment."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "rune",
+        "name": "rune-carver",
+        "title": "Rune Knight: Rune Carver",
+        "text": [
+          "You can use magic runes to enhance your gear. You learn two runes of your choice, from among the runes described below, and each time you gain a level in this class, you can replace one rune you know with a different one from this feature. When 7th, 10th, and 15th levels you can learn an additional rune (up to 3, 4, then 5, respectively).",
+          "Whenever you finish a long rest, you can touch a number of objects equal to the number of runes you know, and you inscribe a different rune onto each of the objects. To be eligible, an object must be a weapon, a suit of armor, a shield, a piece of jewelry, or something else you can wear or hold in a hand. Your rune remains on an object until you finish a long rest, and an object can bear only one of your runes at a time.",
+          "The following runes are available to you when you learn a rune. If a rune has a level requirement, you must be at least that level in this class to learn the rune. If a rune requires a saving throw, your Rune Magic save DC equals 8 + prof + CON.",
+          {
+            "list": [
+              "<strong>Cloud Rune. </strong>This rune's magic channels the masterful craftsmanship of great smiths. While wearing or carrying an object inscribed with this rune, your proficiency bonus is doubled for any ability check you make that uses your proficiency with a tool. In addition, when you hit a creature with an attack using a weapon, you can invoke the rune to summon fiery shackles: the target takes an extra 2d6 fire damage, and it must succeed on a Strength saving throw or be restrained for 1 minute. While restrained by the shackles, the target takes 2d6 fire damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, banishing the shackles on a success. Once you invoke this rune, you can't do so again until you finish a short or long rest.",
+              "<strong>Fire Rune. </strong> This rune's magic evokes the might of those who survive in the wintry wilderness, such as frost giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom (Animal Handling) checks and Charisma (Intimidation) checks. In addition, you can invoke the rune as a bonus action to increase your sturdiness. For 10 minutes, you gain a +2 bonus to all ability checks and saving throws that use Strength or Constitution. Once you invoke this rune, you can't do so again until you finish a short or long rest.",
+              "<strong>Frost Rune. </strong>This rune's magic channels the judiciousness associated with stone giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom (Insight) checks, and you have darkvision out to a range of 120 feet. In addition, when a creature you can see ends its turn within 30 feet of you, you can use your reaction to invoke the rune and force the creature to make a Wisdom saving throw. Unless the save succeeds, the creature is charmed by you for 1 minute. While charmed in this way, the creature has a speed of 0 and is incapacitated, descending into a dreamy stupor. The creature repeats the saving throw at the end of each of its turns, ending the effect on a success. Once you invoke this rune, you can't do so again until you finish a short or long rest.",
+              "<strong>Stone Rune. </strong>This rune's magic channels the judiciousness associated with stone giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom (Insight) checks, and you have darkvision out to a range of 120 feet. In addition, when a creature you can see ends its turn within 30 feet of you, you can use your reaction to invoke the rune and force the creature to make a Wisdom saving throw. Unless the save succeeds, the creature is charmed by you for 1 minute. While charmed in this way, the creature has a speed of 0 and is incapacitated, descending into a dreamy stupor. The creature repeats the saving throw at the end of each of its turns, ending the effect on a success. Once you invoke this rune, you can't do so again until you finish a short or long rest.",
+              "<strong>Hill Rune (7th level+). </strong>This rune's magic bestows a resilience reminiscent of a hill giant. While wearing or carrying an object that bears this rune, you have advantage on saving throws against being poisoned, and you have resistance against poison damage. In addition, you can invoke the rune as a bonus action, gaining resistance to bludgeoning, piercing, and slashing damage for 1 minute. Once you invoke this rune, you can't do so again until you finish a short or long rest.",
+              "<strong>Storm Rune (7th Level+). </strong>Using this rune, you can glimpse the future like a storm giant seer. While wearing or carrying an object inscribed with this rune, you have advantage on Intelligence (Arcana) checks, and you can't be surprised as long as you aren't incapacitated. In addition, you can invoke the rune as a bonus action to enter a prophetic state for 1 minute or until you're incapacitated. Until the state ends, when you or another creature you can see within 60 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to cause the roll to have advantage or disadvantage. Once you invoke this rune, you can't do so again until you finish a short or long rest."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "rune",
+        "name": "rune-might",
+        "title": "Rune Knight: Giant's Might",
+        "text": [
+          "You have learned how to imbue yourself with the might of giants. As a bonus action, you magically gain the following benefits, which last for 1 minute:",
+          {
+            "list": [
+              "If you are smaller than Large, you become Large, along with anything you are wearing. If you lack the room to become Large, your size doesn't change.",
+              "You have advantage on Strength checks and Strength saving throws.",
+              "Once on each of your turns, one of your attacks with a weapon or an unarmed strike can deal an extra 1d6 damage to a target on a hit."
+            ]
+          },
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest."
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
         "subclass": "echo",
         "name": "echo",
         "title": "Archetype: Echo Knight",
@@ -3988,6 +4105,16 @@
       },
       {
         "level": 7,
+        "subclass": "rune",
+        "name": "rune-shield",
+        "title": "Rune Knight: Runic Shield",
+        "text": [
+          "You learn to invoke your rune magic to protect your allies. When another creature you can see within 60 feet of you is hit by an attack roll, you can use your reaction to force the attacker to reroll the d20 and use the new roll.",
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "level": 7,
         "subclass": "echo",
         "name": "echo-avatar",
         "title": "Echo Knight: Echo Avatar",
@@ -4119,6 +4246,16 @@
         "title": "Samurai: Tireless Spirit",
         "text": [
           "Starting at 10th level, when you roll initiative and have no uses of Fighting Spirit remaining, you regain one use."
+        ]
+      },
+      {
+        "level": 10,
+        "subclass": "rune",
+        "name": "rune-stature",
+        "title": "Rune Knight: Great Stature",
+        "text": [
+          "The magic of your runes permanently alters you. When you gain this feature, roll 3d4. You grow a number of inches in height equal to the roll.",
+          "Moreover, the extra damage you deal with your Giant's Might feature increases to 1d8."
         ]
       },
       {
@@ -4260,6 +4397,15 @@
       },
       {
         "level": 15,
+        "subclass": "rune",
+        "name": "rune-master",
+        "title": "Rune Knight: Master of Runes",
+        "text": [
+          "You can invoke each rune you know from your Rune Carver feature twice, rather than once, and you regain all expended uses when you finish a short or long rest."
+        ]
+      },
+      {
+        "level": 15,
         "subclass": "echo",
         "name": "echo-reclaim",
         "title": "Echo Knight: Reclaim Potential",
@@ -4365,6 +4511,15 @@
         "title": "Samurai: Strength Before Death",
         "text": [
           "Starting at 18th level, your fighting spirit can delay the grasp of death. If you take damage that reduces you to 0 hit points and doesn't kill you outright, you can use your reaction to delay falling unconscious, and you can immediately take an extra turn, interrupting the current turn. While you have 0 hit points during that extra turn, taking damage causes death saving throw failures as normal, and three death saving throw failures can still kill you. When the extra turn ends, you fall unconscious if you still have 0 hit points. Once you use this feature, you can't use it again until you finish a long rest."
+        ]
+      },
+      {
+        "level": 18,
+        "subclass": "rune",
+        "name": "rune-juggernaut",
+        "title": "Rune Knight: Runic Juggernaut",
+        "text": [
+          "You learn how to amplify your rune-powered transformation. As a result, the extra damage you deal with the Giant's Might feature increases to 1d10. Moreover, when you use that feature, your size can increase to Huge, and while you are that size, your reach increases by 5 feet."
         ]
       },
       {

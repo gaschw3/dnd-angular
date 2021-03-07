@@ -284,7 +284,7 @@
         {
             "name": "Languages",
             "text": [
-              "Languages: any two of your choice"
+              "Any two of your choice"
             ]
         },
         {
@@ -3021,7 +3021,7 @@
         ]
       },
       {
-        "name": "Tools",
+        "name": "Tool Proficiencies",
         "text": [
           "Cartographer's or navigator's tools"
         ]
@@ -3126,7 +3126,7 @@
         ]
       },
       {
-        "name": "Tools",
+        "name": "Tool Proficiencies",
         "text": [
           "One type of musical instrument, thieves' tools"
         ]
