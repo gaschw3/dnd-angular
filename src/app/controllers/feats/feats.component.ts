@@ -37,8 +37,9 @@ export class FeatsComponent implements OnInit {
   ngOnInit(): void {
     this.dtOptions = {
       columnDefs: [
-        { width: '60%', targets: 0 },
-        { width: '20%', targets: 1 },
+        { width: '55%', targets: 0 },
+        { width: '35%', targets: 1 },
+        { width: '10%', targets: 2 },
       ],
       autoWidth: false,
       dom: 'trlp',

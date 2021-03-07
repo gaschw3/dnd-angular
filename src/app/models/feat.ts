@@ -1,5 +1,6 @@
 export class Feat {
   name: string;
+  asi: String;
   id: string;
   source: string;
   text: Text;

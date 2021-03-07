@@ -55,8 +55,22 @@
         <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ list: entry.items, parent: 'list' }"></ng-container>
       </ul>
     </div>
-    <div  *ngSwitchCase="'table'">
-      table item
+    <div *ngSwitchCase="'table'">
+      <h4>{{entry.caption}}</h4>
+      <table class="table table-bordered table-striped table-sm">
+        <thead>
+          <tr>
+            <ng-container *ngFor="let row of entry.colLabels">
+              <th>{{row}}</th>
+            </ng-container>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of entry.rows">
+              <td *ngFor="let cell of row" [innerHtml]="cell | linkmaker | sanitizeHtml"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div *ngSwitchCase="'entries'">
       <p *ngIf="parent==''"><strong>{{entry.name}}</strong>

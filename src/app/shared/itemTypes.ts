@@ -30,5 +30,6 @@ export const typeTable = {
   "SC": "consumable",
   "EXP": "consumable",
   "WON": "wonderous item",
-  "OTH": "other"
+  "OTH": "other",
+  "SB": "spellbook"
 }
