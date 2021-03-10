@@ -2,29 +2,61 @@
     <div class="class-info">
         <div class="card">
             <div class="card-body">
-                <div [class]="'monster-header monster-header-'+monster.type | lowercase">
+                <div class="monster-header monster-header">
                     <div class="beastiary-full-border mb-2">
                         <div class="row">
                             <div class="col">
-                                <h1 class="text-success" [class]="'color-'+monster.type | lowercase">{{monster.name}}</h1>
+                                <h1 class="text-success">{{monster.name}}</h1>
                             </div>
                             <div class="col">
-                                <h3 class="pull-right">{{monster.source}}</h3>
+                                <h3 [class]="'pull-right color-'+monster.source | lowercase">{{monster.source}}</h3>
                             </div>
+                        </div>
+                        <div *ngIf="monster.hasToken" id="float-token" class="ecgen__hidden relative">
+                            <a class="mon__wrp-token">
+                                <img src="{{'https://5e.tools/img/' + monster.source + '/' + monster.name + '.png?v=1.123.0'}}" class="mon__token" alt="{{monster.name}}" style="opacity: 1; top: 0px;"/>
+                            </a>
                         </div>
                         <div class="row mb-2">
                             <div class="col">
-                                <h5><em>{{monster.type}}, {{monster.alignment}}</em></h5>
+                                <h5><em>{{sizeMap[monster.size] | titlecase}} {{this.getType(monster.type)}}, {{this.translateAlignment(monster.alignment)}}</em></h5>
                             </div>
                         </div>
                         <div class="row pb-2 mb-2">
                             <div class="col">
-                                <p class="p-0 m-0"><strong>HP: </strong>{{monster.hp}}</p>
-                                <p class="p-0 m-0"><strong>AC: </strong>{{monster.ac}}</p>
+                                <p class="p-0 m-0"><strong>HP: </strong>
+                                    <ng-container *ngIf="monster.hp.average;then normal else special"></ng-container>
+                                    <ng-template #normal>{{monster.hp.average}} ({{monster.hp.formula}})</ng-template>
+                                    <ng-template #special>{{monster.hp.special}})</ng-template>
+                                </p>
+                                <p class="p-0 m-0"><strong>AC: </strong>
+                                    <ng-container *ngFor="let ac of monster.ac; index as i; let isLast=last">
+                                        <ng-container *ngIf="isObject(monster.ac[i]);then ac_souce else ac"></ng-container>
+                                        <ng-template #ac>{{monster.ac[i]}}</ng-template>
+                                        <ng-template #ac_souce>
+                                            <!--special case for "sciela summons from TCE, working this in as a groos baskwards compatible patch because of how the souce JSON did it"-->
+                                            <ng-container *ngIf="monster.ac[i].special">{{monster.ac[i].special}}</ng-container>
+                                            <ng-container *ngIf="!monster.ac[i].special">{{monster.ac[i].ac}} ({{monster.ac[i].from}}{{monster.ac[i].condition}})</ng-container>
+                                        </ng-template>
+                                        {{isLast ? '' : ', '}}
+                                    </ng-container>
+                                </p>
                             </div>
                             <div class="col">
-                                <p class="p-0 m-0"><strong>Saves: </strong>{{monster.save ? monster.save : "no proficient saves"}}</p>
-                                <p class="p-0 m-0"><strong>Speed: </strong>{{monster.speed}}</p>
+                                <p class="p-0 m-0"><strong>Saves: </strong>
+                                    <ng-container *ngIf="!(monster.save)">no proficient saves</ng-container>
+                                    <ng-container *ngFor="let save of monster.save | keyvalue; let isLast=last">
+                                        {{save.key | titlecase}} {{save.value}}{{isLast ? '' : ', '}}
+                                    </ng-container>
+                                </p>
+                                <p class="p-0 m-0"><strong>Speed: </strong>
+                                    <ng-container *ngFor="let speed of monster.speed | keyvalue; let isLast=last">
+                                        <ng-container *ngIf="isObject(speed.value);then complex else simple"></ng-container>
+                                        <ng-template #complex>{{speed.value.number}} ft. {{speed.value.condition}}</ng-template>
+                                        <ng-template #simple>{{speed.key}} {{speed.value}} ft.</ng-template>
+                                        {{isLast ? '' : ', '}}
+                                    </ng-container>
+                                </p>
                             </div>
                         </div>
                         <div class="row pb-2 mb-2">
@@ -32,19 +64,23 @@
                                 <p class="p-0 m-0"><strong>CR: </strong>{{monster.cr}}</p>
                             </div>
                             <div *ngIf="monster.skill" class="col-sm-6">
-                                <p class="p-0 m-0"><strong>Skills: </strong>{{monster.skill}}</p>
+                                <p class="p-0 m-0"><strong>Skills: </strong>
+                                    <ng-container *ngFor="let skill of monster.skill | keyvalue; let isLast=last">
+                                        {{skill.key}} {{skill.value}}{{isLast ? '' : ', '}}
+                                    </ng-container>
+                                </p>
                             </div>
                             <div *ngIf="monster.languages" class="col-sm-6">
-                                <p class="p-0 m-0"><strong>Languages: </strong>{{monster.languages}}</p>
+                                <p class="p-0 m-0"><strong>Languages: </strong>{{monster.languages.join(", ")}}</p>
                             </div>
                             <div *ngIf="monster.immune" class="col-sm-6">
-                                <p class="p-0 m-0"><strong>Immunities: </strong>{{monster.immune}}</p>
+                                <p class="p-0 m-0"><strong>Immunities: </strong>{{monster.immune.join(", ")}}</p>
                             </div>
                             <div *ngIf="monster.resist" class="col-sm-6">
-                                <p class="p-0 m-0"><strong>Resistances: </strong>{{monster.resist}}</p>
+                                <p class="p-0 m-0"><strong>Resistances: </strong>{{monster.resist.join(", ")}}</p>
                             </div>
                             <div *ngIf="monster.vulnerable" class="col-sm-6">
-                                <p class="p-0 m-0"><strong>Vulnerabilities: </strong>{{monster.vulnerable}}</p>
+                                <p class="p-0 m-0"><strong>Vulnerabilities: </strong>{{monster.vulnerable.join(", ")}}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -89,12 +125,79 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div *ngIf="monster.traits" class="col">
+                        <div *ngIf="monster.spellcasting" class="col">
+                            <h3 class="color-primary beastiary-border">{{monster.spellcasting[0].name}}</h3>
+                            <div class="col pb-2">
+                                <ng-container *ngFor="let line of monster.spellcasting[0].headerEntries">
+                                    <p class="pl-2 m-0">{{line}}</p>
+                                </ng-container>
+                                <div class="pt-2" *ngIf="monster.spellcasting[0].spells">
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.cantrip">
+                                        <p class="pl-2 m-0" [innerHtml]="'Cantrips (at will): ' + monster.spellcasting[0].spells.cantrip.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.first">
+                                        <p class="pl-2 m-0" [innerHtml]="'1st level (' + monster.spellcasting[0].spells.first.slots + ' slots): ' + monster.spellcasting[0].spells.first.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.second">
+                                        <p class="pl-2 m-0" [innerHtml]="'2nd level (' + monster.spellcasting[0].spells.second.slots + ' slots): ' + monster.spellcasting[0].spells.second.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.third">
+                                        <p class="pl-2 m-0" [innerHtml]="'3rd level (' + monster.spellcasting[0].spells.third.slots + ' slots): ' + monster.spellcasting[0].spells.third.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.fourth">
+                                        <p class="pl-2 m-0" [innerHtml]="'4th level (' + monster.spellcasting[0].spells.fourth.slots + ' slots): ' + monster.spellcasting[0].spells.fourth.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.fifth">
+                                        <p class="pl-2 m-0" [innerHtml]="'5th level (' + monster.spellcasting[0].spells.fifth.slots + ' slots): ' + monster.spellcasting[0].spells.fifth.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.sixth">
+                                        <p class="pl-2 m-0" [innerHtml]="'6th level (' + monster.spellcasting[0].spells.sixth.slots + ' slots): ' + monster.spellcasting[0].spells.sixth.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.seventh">
+                                        <p class="pl-2 m-0" [innerHtml]="'7th level (' + monster.spellcasting[0].spells.seventh.slots + ' slots): ' + monster.spellcasting[0].spells.seventh.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.eighth">
+                                        <p class="pl-2 m-0" [innerHtml]="'8th level (' + monster.spellcasting[0].spells.eighth.slots + ' slots): ' + monster.spellcasting[0].spells.eighth.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].spells.ninth">
+                                        <p class="pl-2 m-0" [innerHtml]="'9th level (' + monster.spellcasting[0].spells.ninth.slots + ' slots): ' + monster.spellcasting[0].spells.ninth.spells.join(', ') | linkmaker"></p>
+                                    </ng-container>
+                                </div>
+                                <div class="pt-2" *ngIf="monster.spellcasting[0].will">
+                                    <p class="pl-2 m-0"
+                                        [innerHtml]="'At will: ' + monster.spellcasting[0].will.join(', ') | linkmaker">
+                                    </p>
+                                </div>
+                                <div *ngIf="monster.spellcasting[0].daily">
+                                    <ng-container *ngIf="monster.spellcasting[0].daily.once">
+                                        <p class="pl-2 m-0"
+                                            [innerHtml]="'1/day each: ' + monster.spellcasting[0].daily.once.join(', ') | linkmaker">
+                                        </p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].daily.twice">
+                                        <p class="pl-2 m-0"
+                                            [innerHtml]="'2/day each: ' + monster.spellcasting[0].daily.twice.join(', ') | linkmaker">
+                                        </p>
+                                    </ng-container>
+                                    <ng-container *ngIf="monster.spellcasting[0].daily.thrice">
+                                        <p class="pl-2 m-0"
+                                            [innerHtml]="'3/day each: ' + monster.spellcasting[0].daily.thrice.join(', ') | linkmaker">
+                                        </p>
+                                    </ng-container>
+                                </div>
+                                <ng-container *ngFor="let line of monster.spellcasting[0].footerEntries">
+                                    <p class="pl-2 m-0">{{line}}</p>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="monster.trait" class="col">
                             <h3 class="color-primary beastiary-border">Special Traits</h3>
-                            <ng-container *ngFor="let trait of monster.traits" >
+                            <ng-container *ngFor="let trait of monster.trait">
                                 <div class="col pb-2">
                                     <strong>{{trait.name}}</strong>
-                                    <ng-container *ngFor="let line of trait.text" >
+                                    <ng-container *ngFor="let line of trait.entries">
                                         <p class="pl-2 m-0">{{line}}</p>
                                     </ng-container>
                                 </div>
@@ -107,7 +210,7 @@
                             <ng-container *ngFor="let trait of monster.action" >
                                 <div class="col pb-2">
                                     <strong>{{trait.name}}</strong>
-                                    <ng-container *ngFor="let line of trait.text" >
+                                    <ng-container *ngFor="let line of trait.entries" >
                                         <p class="pl-2 m-0">{{line}}</p>
                                     </ng-container>
                                 </div>
@@ -120,7 +223,7 @@
                             <ng-container *ngFor="let trait of monster.reaction" >
                                 <div class="col pb-2">
                                     <strong>{{trait.name}}</strong>
-                                    <ng-container *ngFor="let line of trait.text" >
+                                    <ng-container *ngFor="let line of trait.entries" >
                                         <p class="pl-2 m-0">{{line}}</p>
                                     </ng-container>
                                 </div>
@@ -133,7 +236,7 @@
                             <ng-container *ngFor="let trait of monster.legendary" >
                                 <div class="col pb-2">
                                     <strong>{{trait.name}}</strong>
-                                    <ng-container *ngFor="let line of trait.text" >
+                                    <ng-container *ngFor="let line of trait.entries" >
                                         <p class="pl-2 m-0">{{line}}</p>
                                     </ng-container>
                                 </div>

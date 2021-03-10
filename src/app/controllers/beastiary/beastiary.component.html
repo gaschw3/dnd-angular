@@ -46,7 +46,7 @@
         <tr *ngFor="let monster of monsters" (click)="setCurrMonster(monster)" [class.table-active]="currMonster?.id == monster.id">
           <td>{{monster.name}}</td>
           <td class="text-center">{{monster.cr}}</td>
-          <td>{{monster.type}}</td>
+          <td>{{this.getType(monster.type)}}</td>
           <td>{{monster.other}}</td>
           <td [class]="'text-right color-'+monster.source | lowercase" class="text-right">{{monster.source}}</td>
         </tr>

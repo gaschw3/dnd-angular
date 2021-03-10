@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {Location} from '@angular/common'; 
+import {Location} from '@angular/common';
 import { Observable, Subject } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
@@ -7,6 +7,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { MonsterComponent } from './monster/monster.component';
 import { DataTableDirective } from 'angular-datatables';
 import { Monster } from 'src/app/models/monster';
+import { sizeMap } from 'src/app/shared/sizeMap';
 
 @Component({
   selector: 'app-beastiary',
@@ -20,14 +21,14 @@ export class BeastiaryComponent implements OnInit {
   monsterName: string;
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/beastiaryData.json")
+      return this.http.get("assets/data/beastiary.json")
   }
 
   constructor(private http: HttpClient,
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(MonsterComponent, {static: false}) child: MonsterComponent ; 
+  @ViewChild(MonsterComponent, {static: false}) child: MonsterComponent ;
 
   // DataTables objects
   @ViewChild(DataTableDirective, {static: false})
@@ -39,9 +40,9 @@ export class BeastiaryComponent implements OnInit {
     this.dtOptions = {
       columnDefs: [
         { width: '30%', targets: 0 },
-        { width: '5%', targets: 1 },
+        { width: '10%', targets: 1 },
         { width: '30%', targets: 2 },
-        { width: '30%', orderable: false, targets: 3 },
+        { width: '25%', orderable: false, targets: 3 },
         { width: '5%', targets: 4 }
       ],
       autoWidth: false,
@@ -83,7 +84,7 @@ export class BeastiaryComponent implements OnInit {
     };
 
     this.getJSON().subscribe(beastiary => {
-        this.monsters = beastiary;
+        this.monsters = beastiary.monsters;
         this.route.paramMap.subscribe(params => {
           this.currMonster = this.monsters.find(f => f.id == this.route.snapshot.params.monsterName);
         });
@@ -100,6 +101,16 @@ export class BeastiaryComponent implements OnInit {
   setCurrMonster(clickedMonster): void {
     this.currMonster = clickedMonster;
     this.location.go("/beastiary/" + this.currMonster.id)
+  }
+
+  getType(type): String {
+    if (type.tags) {
+      return `${type.type} (${type.tags[0]})`;
+    } else if (type.swarmSize) {
+      return `swarm of ${sizeMap[type.swarmSize]} ${type.type}`;
+    } else {
+      return type;
+    }
   }
 
   goBack() {

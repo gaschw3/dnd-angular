@@ -6,6 +6,7 @@ import { LinkmakerPipe } from '../pipes/linkmaker.pipe';
 import { SanitizeHtmlPipe } from '../pipes/sanitize-html.pipe';
 import { BackButtonDirective } from '../directives/back-button.directive';
 import { ItemTypePipe } from '../pipes/item-type.pipe';
+import { OrdinalPipe } from '../pipes/ordinal.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ItemTypePipe } from '../pipes/item-type.pipe';
     LinkmakerPipe,
     SanitizeHtmlPipe,
     ItemTypePipe,
-    BackButtonDirective
+    BackButtonDirective,
+    OrdinalPipe
   ],
   imports: [
     CommonModule,
