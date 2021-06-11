@@ -26,10 +26,10 @@ export class ClassesComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(ClassComponent, {static: false}) child: ClassComponent ; 
+  @ViewChild(ClassComponent) child: ClassComponent ; 
 
   // DataTables objects
-  @ViewChild(DataTableDirective, {static: false})
+  @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
   dtTrigger: Subject<any> = new Subject();

@@ -8,31 +8,31 @@ import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 const routes: Routes = [
   {
     path: 'classes',
-    loadChildren: './controllers/classes/classes.module#ClassesModule'
+    loadChildren: () => import('./controllers/classes/classes.module').then(m => m.ClassesModule)
   },
   {
     path: 'spells',
-    loadChildren: './controllers/spells/spells.module#SpellsModule'
+    loadChildren: () => import('./controllers/spells/spells.module').then(m => m.SpellsModule)
   },
   {
     path: 'beastiary',
-    loadChildren: './controllers/beastiary/beastiary.module#BeastiaryModule'
+    loadChildren: () => import('./controllers/beastiary/beastiary.module').then(m => m.BeastiaryModule)
   },
   {
     path: 'backgrounds',
-    loadChildren: './controllers/backgrounds/backgrounds.module#BackgroundsModule'
+    loadChildren: () => import('./controllers/backgrounds/backgrounds.module').then(m => m.BackgroundsModule)
   },
   {
     path: 'ancestries',
-    loadChildren: './controllers/ancestries/ancestries.module#AncestriesModule'
+    loadChildren: () => import('./controllers/ancestries/ancestries.module').then(m => m.AncestriesModule)
   },
   {
     path: 'feats',
-    loadChildren: './controllers/feats/feats.module#FeatsModule'
+    loadChildren: () => import('./controllers/feats/feats.module').then(m => m.FeatsModule)
   },
   {
     path: 'items',
-    loadChildren: './controllers/items/items.module#ItemsModule'
+    loadChildren: () => import('./controllers/items/items.module').then(m => m.ItemsModule)
   },
   {
     path: 'point-buy', component: PointBuyComponent

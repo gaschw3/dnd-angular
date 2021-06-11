@@ -13,8 +13,8 @@ import { Subject } from 'rxjs';
 export class ClassComponent implements OnInit, OnChanges {
 
   @Input() class: Class;
-  @ViewChild(FeaturesComponent, {static: false}) child: FeaturesComponent;
-  @ViewChild(ArchetypesComponent, {static: false}) child2: ArchetypesComponent;
+  @ViewChild(FeaturesComponent) child: FeaturesComponent;
+  @ViewChild(ArchetypesComponent) child2: ArchetypesComponent;
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
 
   archetypeChange: Subject<Array<String>> = new Subject<Array<String>>();

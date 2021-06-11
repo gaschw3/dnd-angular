@@ -27,10 +27,10 @@ export class SpellsComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(SpellComponent, {static: false}) child: SpellComponent ; 
+  @ViewChild(SpellComponent) child: SpellComponent ; 
 
   // DataTables objects
-  @ViewChild(DataTableDirective, {static: false})
+  @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
   dtTrigger: Subject<any> = new Subject();

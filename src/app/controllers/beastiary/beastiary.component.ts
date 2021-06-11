@@ -28,10 +28,10 @@ export class BeastiaryComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(MonsterComponent, {static: false}) child: MonsterComponent ;
+  @ViewChild(MonsterComponent) child: MonsterComponent ;
 
   // DataTables objects
-  @ViewChild(DataTableDirective, {static: false})
+  @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
   dtTrigger: Subject<any> = new Subject();

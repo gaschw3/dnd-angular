@@ -26,10 +26,10 @@ export class AncestriesComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(AncestryComponent, {static: false}) child: AncestryComponent ;
+  @ViewChild(AncestryComponent) child: AncestryComponent ;
 
   // DataTables objects
-  @ViewChild(DataTableDirective, {static: false})
+  @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
   dtTrigger: Subject<any> = new Subject();

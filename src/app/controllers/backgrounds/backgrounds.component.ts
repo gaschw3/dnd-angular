@@ -26,10 +26,10 @@ export class BackgroundsComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(BackgroundComponent, {static: false}) child: BackgroundComponent ; 
+  @ViewChild(BackgroundComponent) child: BackgroundComponent ; 
 
   // DataTables objects
-  @ViewChild(DataTableDirective, {static: false})
+  @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
   dtTrigger: Subject<any> = new Subject();
