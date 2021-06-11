@@ -1,0 +1,154 @@
+<div class="container container-fluid">
+  <div class="flex py-3 xs12 md10 offset-md1 lg8 offset-lg2">
+    <div class="card" style="height: auto;">
+      <div class="container container-fluid">
+
+        <div class="layout row mt-4">
+          <div class="col-4 offset-2">
+            <div class="form-group">
+              <label for="availPointsUnput">Available Points</label>
+              <input [(ngModel)]="totalPoints" (change)="updatePercentage()" type="number" class="form-control" id="totalPoints" aria-describedby="availablePointsHelp">
+              <small id="emailHelp" class="form-text text-muted">The standard start is 27 points. Your DM might choose another.</small>
+            </div>
+          </div>
+
+          <!-- Avail Points progress bar -->
+          <div class="col-4">
+            <div class="progress mx-auto" attr.data-value="{{getPercentage()}}">
+              <span class="progress-left">
+                <span class="progress-bar border-success"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar border-success"></span>
+              </span>
+              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                <div class="h5 mb-0 font-weight-bold">{{totalPoints-pointsSpent}}/{{totalPoints}}<sup class="small"></sup></div>
+              </div>
+            </div>
+          </div>
+          <!-- END -->
+
+        </div>
+
+        <!-- Ancestry selectors-->
+        <div class="layout row">
+          <div class="col-sm offset-2">
+            <div class="form-group">
+              <label for="ancestrySelect">Ancestry</label>
+              <select class="form-control" id="ancestrySelect" [(ngModel)]="selectedAncestry" (ngModelChange)="setCurrAncestry($event)">
+                <option *ngFor="let ancestry of ancestries" [ngValue]="ancestry">
+                  {{ancestry.name}} ({{ancestry.ability}})
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-2"><!-- empty spacing column --></div>
+        </div>
+        <!-- END -->
+
+        <div class="layout row">
+          <div class="col center-block">
+            <table class="datatable table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th role="columnheader" scope="col" class="text-center">Stat</th>
+                  <th role="columnheader" scope="col" class="text-center">Base</th>
+                  <th role="columnheader" scope="col" class="text-center">Racial</th>
+                  <th role="columnheader" scope="col" class="text-center">Score</th>
+                  <th role="columnheader" scope="col" class="text-center">Modifier</th>
+                  <th role="columnheader" scope="col" class="text-center">Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="dtRow-str">
+                  <th class="text-center">STR</th>
+                  <td class="text-center">
+                    <div>
+                      <div class="number-input input-group input-group--dirty input-group--text-field primary--text">
+                        <input [(ngModel)]="str" max="15" min="8" value="8" tabindex="0" type="number" id="str">
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center" [ngClass]="{'text-success': anStr > 0}">{{anStr}}</td>
+                  <td class="text-center">{{str + anStr}}</td>
+                  <td class="text-center" [ngClass]="{'text-danger': (getMod(str) < 0), 'text-success': (getMod(str) > 0)}">{{getMod(str)}}</td>
+                  <td class="text-center">1</td>
+                </tr>
+                <tr id="dtRow-dex">
+                  <th class="text-center">DEX</th>
+                  <td>
+                    <div>
+                      <div class="number-input input-group input-group--dirty input-group--text-field primary--text">
+                        <input [(ngModel)]="dex" max="15" min="8" value="8" tabindex="0" type="number" id="dex">
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center" [ngClass]="{'text-success': anDex > 0}">{{anDex}}</td>
+                  <td class="text-center">{{dex + anDex}}</td>
+                  <td class="text-center" [ngClass]="{'text-danger': (getMod(dex) < 0), 'text-success': (getMod(dex) > 0)}">{{getMod(dex)}}</td>
+                  <td class="text-center">1</td>
+                </tr>
+                <tr id="dtRow-con">
+                  <th class="text-center">CON</th>
+                  <td>
+                    <div>
+                      <div class="number-input input-group input-group--dirty input-group--text-field primary--text">
+                        <input [(ngModel)]="con" max="15" min="8" value="8" tabindex="0" type="number" id="con">
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center" [ngClass]="{'text-success': anCon > 0}">{{anCon}}</td>
+                  <td class="text-center">{{con + anCon}}</td>
+                  <td class="text-center" [ngClass]="{'text-danger': (getMod(con) < 0), 'text-success': (getMod(con) > 0)}">{{getMod(con)}}</td>
+                  <td class="text-center">1</td>
+                </tr>
+                <tr id="dtRow-int">
+                  <th class="text-center">INT</th>
+                  <td>
+                    <div>
+                      <div class="number-input input-group input-group--dirty input-group--text-field primary--text">
+                        <input [(ngModel)]="int" max="15" min="8" value="8" tabindex="0" type="number" id="int">
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center" [ngClass]="{'text-success': anInt > 0}">{{anInt}}</td>
+                  <td class="text-center">{{int + anInt}}</td>
+                  <td class="text-center" [ngClass]="{'text-danger': (getMod(int) < 0), 'text-success': (getMod(int) > 0)}">{{getMod(int)}}</td>
+                  <td class="text-center">1</td>
+                </tr>
+                <tr id="dtRow-wis">
+                  <th class="text-center">WIS</th>
+                  <td>
+                    <div>
+                      <div class="number-input input-group input-group--dirty input-group--text-field primary--text">
+                        <input [(ngModel)]="wis" max="15" min="8" value="8" tabindex="0" type="number" id="wis">
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center" [ngClass]="{'text-success': anWis > 0}">{{anWis}}</td>
+                  <td class="text-center">{{wis + anWis}}</td>
+                  <td class="text-center" [ngClass]="{'text-danger': (getMod(wis) < 0), 'text-success': (getMod(wis) > 0)}">{{getMod(wis)}}</td>
+                  <td class="text-center">1</td>
+                </tr>
+                <tr id="dtRow-cha">
+                  <th class="text-center">CHA</th>
+                  <td>
+                    <div>
+                      <div class="number-input input-group input-group--dirty input-group--text-field primary--text">
+                        <input [(ngModel)]="cha" max="15" min="8" value="8" tabindex="0" type="number" id="cha">
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center" [ngClass]="{'text-success': anCha > 0}">{{anCha}}</td>
+                  <td class="text-center">{{cha + anCha}}</td>
+                  <td class="text-center" [ngClass]="{'text-danger': (getMod(cha) < 0), 'text-success': (getMod(cha) > 0)}">{{getMod(cha)}}</td>
+                  <td class="text-center">1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

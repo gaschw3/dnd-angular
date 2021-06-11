@@ -14,11 +14,13 @@ import { AncestriesModule } from './controllers/ancestries/ancestries.module';
 import { SharedModule } from './shared/shared.module';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { PointBuyComponent } from './controllers/point-buy/point-buy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HexmapComponent
+    HexmapComponent,
+    PointBuyComponent
   ],
   imports: [
     BrowserModule,
@@ -37,4 +39,5 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

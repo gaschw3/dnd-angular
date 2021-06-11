@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 //import { ForbiddenComponent, NotAuthorizedComponent, NotFoundComponent, ServerErrorComponent } from './error';
 
 import { HexmapComponent } from './controllers/hexmap/hexmap.component'
+import { PointBuyComponent } from './controllers/point-buy/point-buy.component';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
 const routes: Routes = [
@@ -33,6 +34,9 @@ const routes: Routes = [
     path: 'items',
     loadChildren: './controllers/items/items.module#ItemsModule'
   },
+  {
+    path: 'point-buy', component: PointBuyComponent
+  },
   {path: 'map', component: HexmapComponent}
   //{ path: 'redirect', component: RedirectionComponent },
   //{ path: '401', component: NotAuthorizedComponent },
@@ -53,4 +57,5 @@ const routerOptions: ExtraOptions = {
   imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

@@ -5,6 +5,8 @@
     "source": "VGM",
     "size": "M",
     "speed": "30",
+    "cha": 2,
+    "wis": 1,
     "ability": "Cha +2, Wis +1",
     "traits": [
       {
@@ -55,6 +57,8 @@
     "source": "VGM",
     "size": "M",
     "speed": "30",
+    "cha": 2,
+    "str": 1,
     "ability": "Cha +2, Str +1",
     "traits": [
       {
@@ -105,6 +109,8 @@
     "source": "VGM",
     "size": "M",
     "speed": "30",
+    "cha": 2,
+    "con": 1,
     "ability": "Cha +2, Con +1",
     "traits": [
       {
@@ -155,6 +161,8 @@
     "source": "GGR",
     "size": "M",
     "speed": "40",
+    "str": 2,
+    "wis": 1,
     "ability": "Str +2, Wis +1",
     "traits": [
       {
@@ -206,6 +214,8 @@
     "source": "ERLW",
     "size": "M",
     "speed": "30",
+    "cha": 2,
+    "choose": 1,
     "ability": "Cha +2, Choose One +1",
     "traits": [
       {
@@ -245,6 +255,8 @@
     "size": "M",
     "source": "PHB",
     "speed": "30",
+    "str": 2,
+    "cha": 1,
     "ability": "Str +2, Cha +1",
     "traits": [
       {
@@ -296,6 +308,8 @@
     "size": "M",
     "source": "PHB",
     "speed": "25",
+    "con": 2,
+    "wis": 1,
     "ability": "Con +2, Wis +1",
     "traits": [
       {
@@ -346,6 +360,8 @@
     "size": "M",
     "source": "PHB",
     "speed": "25",
+    "cha": 2,
+    "str": 2,
     "ability": "Con +2, Str +2",
     "traits": [
       {
@@ -396,6 +412,8 @@
     "size": "M",
     "source": "PHB",
     "speed": "30",
+    "dex": 2,
+    "cha": 1,
     "ability": "Dex +2, Cha +1",
     "proficiency": "Perception",
     "traits": [
@@ -451,6 +469,8 @@
     "size": "M",
     "source": "PHB",
     "speed": "30",
+    "dex": 2,
+    "int": 1,
     "ability": "Dex +2, Int +1",
     "proficiency": "Perception",
     "traits": [
@@ -498,6 +518,8 @@
     "size": "M",
     "source": "PHB",
     "speed": "35",
+    "dex": 2,
+    "wis": 1,
     "ability": "Dex +2, Wis +1",
     "proficiency": "Perception",
     "traits": [
@@ -549,6 +571,8 @@
     "size": "M",
     "source": "VGM",
     "speed": "30",
+    "wis": 2,
+    "str": 1,
     "ability": "Wis +2, Str +1",
     "traits": [
       {
@@ -591,6 +615,8 @@
     "size": "M",
     "source": "EE",
     "speed": "30",
+    "con": 2,
+    "dex": 1,
     "ability": "Con +2, Dex +1",
     "traits": [
       {
@@ -625,6 +651,8 @@
     "size": "M",
     "source": "EE",
     "speed": "30",
+    "con": 2,
+    "str": 1,
     "ability": "Con +2, Str +1",
     "traits": [
       {
@@ -659,6 +687,8 @@
     "size": "M",
     "source": "EE",
     "speed": "30",
+    "con": 2,
+    "int": 1,
     "ability": "Con +2, Int +1",
     "traits": [
       {
@@ -693,6 +723,8 @@
     "size": "M",
     "source": "EE",
     "speed": "30",
+    "con": 2,
+    "wis": 1,
     "ability": "Con +2, Wis +1",
     "traits": [
       {
@@ -731,6 +763,8 @@
     "size": "S",
     "source": "PHB",
     "speed": "25",
+    "int": 2,
+    "dex": 1,
     "ability": "Int +2, Dex +1",
     "traits": [
       {
@@ -769,6 +803,8 @@
     "source": "PHB",
     "size": "S",
     "speed": "25",
+    "int": 2,
+    "con": 1,
     "ability": "Int +2, Con +1",
     "traits": [
       {
@@ -813,6 +849,8 @@
     "size": "M",
     "source": "VGM",
     "speed": "30",
+    "str": 2,
+    "con": 1,
     "ability": "Str +2, Con +1",
     "proficiency": "Athletics",
     "traits": [
@@ -856,6 +894,8 @@
     "source": "PHB",
     "size": "M",
     "speed": "30",
+    "cha": 2,
+    "choose": 2,
     "ability": "Cha +2, Choose Two +1",
     "traits": [
       {
@@ -894,6 +934,8 @@
     "size": "M",
     "source": "PHB",
     "speed": "30",
+    "str": 2,
+    "con": 1,
     "ability": "Str +2, Con +1",
     "proficiency": "Intimidation",
     "traits": [
@@ -933,6 +975,8 @@
     "size": "S",
     "source": "SCAG",
     "speed": "25",
+    "dex": 2,
+    "wis": 1,
     "ability": "Dex +2, Wis +1",
     "traits": [
       {
@@ -975,6 +1019,8 @@
     "size": "S",
     "source": "PHB",
     "speed": "25",
+    "dex": 2,
+    "cha": 1,
     "ability": "Dex +2, Cha +1",
     "traits": [
       {
@@ -1017,6 +1063,8 @@
     "size": "S",
     "source": "PHB",
     "speed": "25",
+    "dex": 2,
+    "con": 1,
     "ability": "Dex +2, Con +1",
     "traits": [
       {
@@ -1059,6 +1107,12 @@
     "size": "M",
     "source": "PHB",
     "speed": "30",
+    "str": 1,
+    "dex": 1,
+    "con": 1,
+    "wis": 1,
+    "int": 1,
+    "cha": 1,
     "ability": "Str,Dex,Con,Int,Wis +1",
     "traits": [
       {
@@ -1085,6 +1139,7 @@
     "source": "PHB",
     "size": "M",
     "speed": "30",
+    "choose": 2,
     "ability": "Choose Two +1",
     "traits": [
       {
@@ -1119,6 +1174,8 @@
     "source": "VGM",
     "size": "M",
     "speed": "30",
+    "dex": 2,
+    "wis": 1,
     "ability": "Dex +2, Wis +1",
     "traits": [
       {
@@ -1157,6 +1214,8 @@
     "size": "M",
     "source": "PHB",
     "speed": "30",
+    "cha": 2,
+    "int": 1,
     "ability": "Cha +2, Int +1",
     "traits": [
       {
@@ -1212,6 +1271,8 @@
     "source": "ERLW",
     "size": "M",
     "speed": "30",
+    "con": 2,
+    "str": 1,
     "ability": "Con +2, Str +1",
     "traits": [
       {
@@ -1259,6 +1320,8 @@
     "source": "ERLW",
     "size": "M",
     "speed": "30",
+    "str": 2,
+    "dex": 1,
     "ability": "Str +2, Dex +1",
     "traits": [
       {
@@ -1306,6 +1369,8 @@
     "source": "ERLW",
     "size": "M",
     "speed": "30",
+    "dex": 2,
+    "cha": 1,
     "ability": "Dex +2, Cha +1",
     "traits": [
       {
@@ -1353,6 +1418,8 @@
     "source": "ERLW",
     "size": "M",
     "speed": "30",
+    "wis": 2,
+    "dex": 1,
     "ability": "Wis +2, Dex +1",
     "traits": [
       {
@@ -1400,6 +1467,8 @@
     "source": "OTHER",
     "size": "M",
     "speed": "30 ft.",
+    "str": 2,
+    "wis": 1,
     "ability": "Str +2, Wis +1",
     "traits": [
       {
@@ -1450,6 +1519,8 @@
     "source": "OTHER",
     "size": "S",
     "speed": "25 ft., 25 ft. climbing",
+    "dex": 2,
+    "con": 1,
     "ability": "Dex +2, Con +1",
     "traits": [
       {
@@ -1505,6 +1576,8 @@
     "source": "ERLW",
     "size": "M",
     "speed": "30 ft.",
+    "con": 2,
+    "choose": 1,
     "ability": "Con +2, Choose One +1",
     "traits": [
       {

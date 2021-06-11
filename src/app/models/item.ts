@@ -6,6 +6,7 @@ export class Item {
   source: string;
   value: number;
   weight: number;
+  reqAttune: string;
   dmg1: string;
   dmgType: string;
   dmg2: string;

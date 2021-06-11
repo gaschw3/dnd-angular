@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "resolveJsonModule": true,
   "esModuleInterop": true,
+  "importHelpers": true,
   "allowSyntheticDefaultImports": true,
   "compilerOptions": {
     "baseUrl": "./",
@@ -20,5 +21,9 @@
       "es2018",
       "dom"
     ]
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true,
+    "enableIvy": false
   }
 }

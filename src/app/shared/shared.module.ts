@@ -7,6 +7,7 @@ import { SanitizeHtmlPipe } from '../pipes/sanitize-html.pipe';
 import { BackButtonDirective } from '../directives/back-button.directive';
 import { ItemTypePipe } from '../pipes/item-type.pipe';
 import { OrdinalPipe } from '../pipes/ordinal.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { OrdinalPipe } from '../pipes/ordinal.pipe';
   ],
   imports: [
     CommonModule,
-    DataTablesModule
+    DataTablesModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     CommonModule,
