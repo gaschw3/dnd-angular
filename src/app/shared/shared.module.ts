@@ -20,9 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    DataTablesModule,
-    FormsModule,
-    ReactiveFormsModule,
+    DataTablesModule
   ],
   exports: [
     CommonModule,

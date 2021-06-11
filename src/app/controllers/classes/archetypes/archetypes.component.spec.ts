@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ArchetypesComponent } from './archetypes.component';
 
@@ -6,7 +6,7 @@ describe('ArchetypesComponent', () => {
   let component: ArchetypesComponent;
   let fixture: ComponentFixture<ArchetypesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ArchetypesComponent ]
     })

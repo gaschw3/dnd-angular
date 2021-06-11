@@ -15,7 +15,7 @@ export class PointBuyComponent implements OnInit {
   ancestryForm: FormGroup;
 
   ancestries: Ancestry[];
-  currAncestry: Ancestry;
+  selectedAncestry: Ancestry;
 
   public getJSON(): Observable<any> {
     return this.http.get("assets/data/ancestryData.json")

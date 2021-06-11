@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HexmapComponent } from './hexmap.component';
 
@@ -6,7 +6,7 @@ describe('HexmapComponent', () => {
   let component: HexmapComponent;
   let fixture: ComponentFixture<HexmapComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HexmapComponent ]
     })

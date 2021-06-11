@@ -47,10 +47,11 @@ const routes: Routes = [
 ];
 
 const routerOptions: ExtraOptions = {
-  useHash: false,
-  anchorScrolling: 'enabled',
-  onSameUrlNavigation: 'reload',
-  scrollOffset: [0, 80]
+    useHash: false,
+    anchorScrolling: 'enabled',
+    onSameUrlNavigation: 'reload',
+    scrollOffset: [0, 80],
+    relativeLinkResolution: 'legacy'
 };
 
 @NgModule({

@@ -15,6 +15,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { PointBuyComponent } from './controllers/point-buy/point-buy.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { PointBuyComponent } from './controllers/point-buy/point-buy.component';
     BrowserModule,
     HttpModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     SharedModule,
     ClassesModule,
