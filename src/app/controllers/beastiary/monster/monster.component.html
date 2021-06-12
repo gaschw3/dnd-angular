@@ -31,8 +31,8 @@
                                 </p>
                                 <p class="p-0 m-0"><strong>AC: </strong>
                                     <ng-container *ngFor="let ac of monster.ac; index as i; let isLast=last">
-                                        <ng-container *ngIf="isObject(monster.ac[i]);then ac_souce else ac"></ng-container>
-                                        <ng-template #ac>{{monster.ac[i]}}</ng-template>
+                                        <ng-container *ngIf="isObject(monster.ac[i]);then ac_souce else acStd"></ng-container>
+                                        <ng-template #acStd>{{monster.ac[i]}}</ng-template>
                                         <ng-template #ac_souce>
                                             <!--special case for "sciela summons from TCE, working this in as a groos baskwards compatible patch because of how the souce JSON did it"-->
                                             <ng-container *ngIf="monster.ac[i].special">{{monster.ac[i].special}}</ng-container>
