@@ -5,7 +5,7 @@
                 <div [class]="'spell-header spell-header-'+spell.school | lowercase">
                     <div class="row">
                         <div class="col">
-                            <h2 class="text-success" [class]="'color-'+spell.school | lowercase">{{spell.name}}</h2>
+                            <h2 [class]="'color-'+spell.school | lowercase">{{spell.name}}</h2>
                         </div>
                         <div class="col">
                             <h3 [class]="'pull-right color-'+spell.source | lowercase">{{spell.source}}</h3>
