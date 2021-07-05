@@ -4588,47 +4588,47 @@
       "weapons": "simple weapons, shortswords"
     },
     "levelTable": [
-      ["Level", "Proficiency", "Martial Arts", "Ki", "Unarmored Movement", "Features"
+      ["Level", "Proficiency", "Features", "Martial Arts", "Ki", "Unarmored Movement"
       ],
-      ["1", "+2", "1d4", "-", "-", "features"
+      ["1", "+2", "features", "1d4", "-", "-"
       ],
-      ["2", "+2", "1d4", "2", "+10 ft.", "features"
+      ["2", "+2", "features", "1d4", "2", "+10 ft."
       ],
-      ["3", "+2", "1d4", "3", "+10 ft.", "features"
+      ["3", "+2", "features", "1d4", "3", "+10 ft."
       ],
-      ["4", "+2", "1d4", "4", "+10 ft.", "features"
+      ["4", "+2", "features", "1d4", "4", "+10 ft."
       ],
-      ["5", "+3", "1d6", "5", "+10 ft.", "features"
+      ["5", "+3", "features", "1d6", "5", "+10 ft."
       ],
-      ["6", "+3", "1d6", "6", "+15 ft.", "features"
+      ["6", "+3", "features", "1d6", "6", "+15 ft."
       ],
-      ["7", "+3", "1d6", "7", "+15 ft.", "features"
+      ["7", "+3", "features", "1d6", "7", "+15 ft."
       ],
-      ["8", "+3", "1d6", "8", "+15 ft.", "features"
+      ["8", "+3", "features", "1d6", "8", "+15 ft."
       ],
-      ["9", "+4", "1d6", "9", "+15 ft.", "features"
+      ["9", "+4", "features", "1d6", "9", "+15 ft."
       ],
-      ["10", "+4", "1d6", "10", "+20 ft.", "features"
+      ["10", "+4", "features", "1d6", "10", "+20 ft."
       ],
-      ["11", "+4", "1d8", "11", "+20 ft.", "features"
+      ["11", "+4", "features", "1d8", "11", "+20 ft."
       ],
-      ["12", "+4", "1d8", "12", "+20 ft.", "features"
+      ["12", "+4", "features", "1d8", "12", "+20 ft."
       ],
-      ["13", "+5", "1d8", "13", "+20 ft.", "features"
+      ["13", "+5", "features", "1d8", "13", "+20 ft."
       ],
-      ["14", "+5", "1d8", "14", "+25 ft.", "features"
+      ["14", "+5", "features", "1d8", "14", "+25 ft."
       ],
-      ["15", "+5", "1d8", "15", "+25 ft.", "features"
+      ["15", "+5", "features", "1d8", "15", "+25 ft."
       ],
-      ["16", "+5", "1d8", "16", "+25 ft.", "features"
+      ["16", "+5", "features", "1d8", "16", "+25 ft."
       ],
-      ["17", "+6", "1d10", "17", "+25 ft.", "features"
+      ["17", "+6", "features", "1d10", "17", "+25 ft."
       ],
-      ["18", "+6", "1d10", "18", "+30 ft.", "features"
+      ["18", "+6", "features", "1d10", "18", "+30 ft."
       ],
-      ["19", "+6", "1d10", "19", "+30 ft.", "features"
+      ["19", "+6", "features", "1d10", "19", "+30 ft."
       ],
-      ["20", "+6", "1d10", "20", "+30 ft.", "features"
+      ["20", "+6", "features", "1d10", "20", "+30 ft."
       ]
     ],
     "features": [
@@ -4890,12 +4890,84 @@
       },
       {
         "level": 3,
+        "filter": "yes",
+        "subclass": "mercy",
+        "name": "mercy",
+        "title": "Monastic Tradition: Way of Mercy",
+        "source": "TCE",
+        "text": [
+          "Monks of the Way of Mercy learn to manipulate the life force of others to bring aid to those in need. They are wandering physicians to the poor and hurt. However, to those beyond their help, they bring a swift end as an act of mercy.",
+          "Those who follow the Way of Mercy might be members of a religious order, administering to the needy and making grim choices rooted in reality rather than idealism. Some might be gentle-voiced healers, beloved by their communities, while others might be masked bringers of macabre mercies. The walkers of this way usually don robes with deep cowls, and they often conceal their faces with masks, presenting themselves as the faceless bringers of life and death."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "mercy",
+        "name": "mercy-implements",
+        "title": "Way of Mercy: Implements of Mercy",
+        "text": [
+          "You gain proficiency in the Insight and Medicine skills, and you gain proficiency with the herbalism kit.",
+          "You also gain a special mask, which you often wear when using the features of this subclass. It's appearence might be connected with life, death, or transitions but you ultimately determine its appearance. Some examples might be: a raven plague doctor mask, a skull, a lank white face, or a butterfly."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "mercy",
+        "name": "mercy-hands-of-healing",
+        "title": "Way of Mercy: Hand of Healing",
+        "text": [
+          "Your mystical touch can mend wounds. As an action, you can spend 1 ki point to touch a creature and restore a number of hit points equal to a roll of your Martial Arts die + your Wisdom modifier.",
+          "When you use your Flurry of Blows, you can replace one of the unarmed strikes with a use of this feature without spending a ki point for the healing."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "mercy",
+        "name": "mercy-hands-of-harm",
+        "title": "Way of Mercy: Hand of Harm",
+        "text": [
+          "You use your ki to inflict wounds. When you hit a creature with an unarmed strike, you can spend 1 ki point to deal extra necrotic damage equal to one roll of your Martial Arts die + your Wisdom modifier. You can use this feature only once per turn."
+        ]
+      },
+      {
+        "level": 3,
         "subclass": "base",
         "name": "deflect-missiles",
         "title": "Deflect Missiles",
         "text": [
           "Starting at 3rd level, you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level.",
           "If you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can spend 1 ki point to make a ranged attack (range 20 feet/60 feet) with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack."
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "astral",
+        "name": "astral",
+        "title": "Monastic Tradition: Way of the Astral Self",
+        "source": "TCE",
+        "text": [
+          "A monk who follows the Way of the Astral Self believes their body is an illusion. They see their ki as a representation of their true form, an astral self. This astral self has the capacity to be a force of order or disorder, with some monasteries training students to use their power to protect the weak and other instructing aspirants in how to manifest their true selves in service to the mighty.",
+          "The astral self is a translucent embodiment of the monk's soul. As a result, an astral self can reflect aspects of a monk's background, ideals, flaws, and bonds, and an astral self doesn't necessarily look anything like the monk. For example, the astral self of a lanky human might be reminiscent of a minotaur-the strength of which the monk feels within. Similarly, an orc monk might manifest gossamer arms and a delicate visage, representing the gentle beauty of the orc's soul. Each astral self is unique, and some of the monks of this monastic tradition are known more for the appearance of their astral self than for their physical appearance."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "astral",
+        "name": "astral-arms-of-the-astral-self",
+        "title": "Way of the Astral Self: Arms of the Astral Self",
+        "text": [
+          "Your mastery of your ki allows you to summon a portion of your astral self. As a bonus action, you can spend 1 ki point to summon the arms of your astral self. When you do so, each creature of your choice that you can see within 10 feet of you must succeed on a Dexterity saving throw or take force damage equal to two rolls of your Martial Arts die.",
+          "For 10 minutes, these spectral arms hover near your shoulders or surround your arms (your choice). You determine the arms' appearance, and they vanish early if you are incapacitated or die.",
+          "While the spectral arms are present, you gain the following benefits:",
+          {
+            "list": [
+              "You can use your Wisdom modifier in place of your Strength modifier when making Strength checks and Strength saving throws.",
+              "You can use the spectral arms to make unarmed strikes.",
+              "When you make an unarmed strike with the arms on your turn, your reach for it is 5 feet greater than normal.",
+              "The unarmed strikes you make with the arms can use your Wisdom modifier in place of your Strength or Dexterity modifier for the attack and damage rolls, and their damage type is force."
+            ]
+          }
         ]
       },
       {
@@ -5022,6 +5094,33 @@
         ]
       },
       {
+        "level": 6,
+        "subclass": "mercy",
+        "name": "mercy-physicians-touch",
+        "title": "Way of Mercy: Physician's Touch",
+        "text": [
+          "You can administer even greater cures with a touch, and if you feel it's necessary, you can use your knowledge to cause harm.",
+          "When you use Hand of Healing on a creature, you can also end one disease or one of the following conditions affecting the creature: blinded, deafened, paralyzed, poisoned, or stunned. When you use Hand of Harm on a creature, you can subject that creature to the poisoned condition until the end of your next turn."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "astral",
+        "name": "astral-visage-of-the-astral-self",
+        "title": "Way of the Astral Self: Visage of the Astral Self",
+        "text": [
+          "You can summon the visage of your astral self. As a bonus action, or as part of the bonus action you take to activate Arms of the Astral Self, you can spend 1 ki point to summon this visage for 10 minutes. It vanishes early if you are incapacitated or die. The spectral visage covers your face like a helmet or mask. You determine its appearance.",
+          "While the spectral visage is present, you gain the following benefits:",
+          {
+            "list": [
+              "<strong>Astral Sight.</strong> You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.",
+              "<strong>Wisdom of the Spirit.</strong> You have advantage on Wisdom (Insight) and Charisma (Intimidation) checks.",
+              "<strong>Word of the Spirit.</strong> When you speak, you can direct your words to a creature of your choice that you can see within 60 feet of you, making it so only that creature can hear you. Alternatively, you can amplify your voice so that all creatures within 600 feet can hear you."
+            ]
+          }
+        ]
+      },
+      {
         "level": 7,
         "subclass": "base",
         "name": "evasion",
@@ -5139,6 +5238,32 @@
         "title": "Way of the Sohei: Imbue Weapon",
         "text": [
           "At 11th level, you gain the ability to augment your weapons further with your ki. As a bonus action, you can expend up to 3 ki points to grant one sohei weapon you touch a bonus to attack and damage rolls when you attack with it. The bonus equals the number of ki points you spent. This bonus lasts for 1 minute or until you use this feature again. This feature has no effect on a magic weapon that already has a bonus to attack and damage rolls."
+        ]
+      },
+      {
+        "level": 11,
+        "subclass": "mercy",
+        "name": "mercy-flurry",
+        "title": "Way of Mercy: Flurry of Healing and Harm",
+        "text": [
+          "You can now mete out a flurry of comfort and hurt. When you use Flurry of Blows, you can now replace each of the unarmed strikes with a use of your Hand of Healing, without spending ki points for the healing.",
+          "In addition, when you make an unarmed strike with Flurry of Blows, you can use Hand of Harm with that strike without spending the ki point for Hand of Harm. You can still use Hand of Harm only once per turn."
+        ]
+      },
+      {
+        "level": 11,
+        "subclass": "astral",
+        "name": "astral-body-of-the-astral-self",
+        "title": "Way of the Astral Self: Body of the Astral Self",
+        "text": [
+          "When you have both your astral arms and visage summoned, you can cause the body of your astral self to appear (no action required). This spectral body covers your physical form like a suit of armor, connecting with the arms and visage. You determine its appearance.",
+          "While the spectral body is present, you gain the following benefits:",
+          {
+            "list": [
+              "<strong>Deflect Energy.</strong> When you take acid, cold, fire, force, lightning, or thunder damage, you can use your reaction to deflect it. When you do so, the damage you take is reduced by 1d10 + your Wisdom modifier (minimum reduction of 1).",
+              "<strong>Empowered Arms.</strong> Once on each of your turns when you hit a target with the Arms of the Astral Self, you can deal extra damage to the target equal to your Martial Arts die."
+            ]
+          }
         ]
       },
       {
@@ -5285,6 +5410,32 @@
         "title": "Way of the Sohei: Unerring Accuracy",
         "text": [
           "At 17th level, your mastery of weapons grants you extraordinary accuracy. If you miss with an attack roll using a monk weapon on your turn, you can reroll it. You can use this feature only once on each of your turns."
+        ]
+      },
+      {
+        "level": 16,
+        "subclass": "mercy",
+        "name": "mercy-hand-of-ultimate-mercy",
+        "title": "Way of Mercy: Hand of Ultimate Mercy",
+        "text": [
+          "Your mastery of life energy opens the door to the ultimate mercy. As an action, you can touch the corpse of a creature that died within the past 24 hours and expend 5 ki points. The creature then returns to life, regaining a number of hit points equal to 4d10 + your Wisdom modifier. If the creature died while subject to any of the following conditions, it revives with them removed: blinded, deafened, paralyzed, poisoned, and stunned.",
+          "Once you use this feature, you can't use it again until you finish a long rest."
+        ]
+      },
+      {
+        "level": 16,
+        "subclass": "astral",
+        "name": "awakened-astral-self",
+        "title": "Way of the Astral Self: Awakened Astral Self",
+        "text": [
+          "Your connection to your astral self is complete, allowing you to unleash its full potential. As a bonus action, you can spend 5 ki points to summon the arms, visage, and body of your astral self and awaken it for 10 minutes. This awakening ends early if you are incapacitated or die.",
+          "While your astral self is awakened, you gain the following benefits.",
+          {
+            "list": [
+              "<strong>Armor of the Spirit.</strong> You gain a +2 bonus to Armor Class.",
+              "<strong>Astral Barrage.</strong> Whenever you use the Extra Attack feature to attack twice, you can instead attack three times if all the attacks are made with your astral arms."
+            ]
+          }
         ]
       },
       {
@@ -5819,6 +5970,95 @@
         ]
       },
       {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "watchers",
+        "name": "watchers",
+        "title": "Oath of the Watchers",
+        "source": "TCE",
+        "text": [
+          "The Oath of the Watchers binds paladins to protect mortal realms from the predations of extraplanar creatures, many of which can lay waste to mortal soldiers. Thus, the Watchers hone their minds, spirits, and bodies to be the ultimate weapons against such threats.Paladins who follow the Watchers' oath are ever vigilant in spotting the influence of extraplanar forces, often establishing a network of spies and informants to gather information on suspected cults. To a Watcher, keeping a healthy suspicion and awareness about one's surroundings is as natural as wearing armor in battle.",
+          "<h5 class='mb-0'>Tenets of Madness</h5> A paladin who assumes the Oath of the Watchers swears to safeguard mortal realms from otherworldly threats.",
+          "<strong>Vigilance</strong>. The threats you face are cunning, powerful, and subversive. Be ever alert for their corruption.",
+          "<strong>Loyalty</strong>. Never accept gifts or favors from fiends or those who truck with them. Stay true to your order, your comrades, and your duty.",
+          "<strong>Discipline.</strong> You are the shield against the endless terrors that lie beyond the stars. Your blade must be forever sharp and your mind keen to survive what lies beyond.",
+          "<h5 class='mb-0'>Oath Spells</h5>You gain oath spells at the paladin levels listed.",
+          {
+            "list":
+            [
+              "3rd - {@spells/alarm alarm}, {@spells/detect-magic detect magic}",
+              "5th - {@spells/moonbeam moonbeam}, {@spells/see-invisibility see invisibility}",
+              "9th - {@spells/counterspell counterspell}, {@spells/nondetection nondetection}",
+              "13th - {@spells/aura-of-purity aura of purity}, {@spells/banishment banishment}",
+              "17th - {@spells/hold-monster hold monster}, {@spells/scryin scrying}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "watchers",
+        "name": "watchers-channel-1",
+        "title": "Oath of the Watchers Channel Divinity: Watcher's Will",
+        "text": [
+          "You can use your Channel Divinity to invest your presence with the warding power of your faith. As an action, you can choose a number of creatures you can see within 30 feet of you, up to a number equal to your Charisma modifier (minimum of one creature). For 1 minute, you and the chosen creatures have advantage on Intelligence, Wisdom, and Charisma saving throws."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "watchers",
+        "name": "watchers-channel-2",
+        "title": "Oath of the Watchers Channel Divinity: Abjure the Extraplanar",
+        "text": [
+          "You can use your Channel Divinity to castigate unworldly beings. As an action, you present your holy symbol and each aberration, celestial, elemental, fey, or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.",
+          "A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can take the Dodge action."
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "glory",
+        "name": "glory",
+        "title": "Oath of Glory",
+        "source": "TCE",
+        "text": [
+          "Paladins who take the Oath of Glory believe they and their companions are destined to achieve glory through deeds of heroism. They train diligently and encourage their companions so they're all ready when destiny calls.",
+          "<h5 class='mb-0'>Tenets of Glory</h5>The tenets of the Oath of Glory drive a paladin to attempt heroics that might one day shine in legend.",
+          "<strong>Actions over Words.</strong> Strive to be known by glorious deeds, not words.",
+          "<strong>Challenges Are but Tests.</strong> Face hardships with courage, and encourage your allies to face them with you.",
+          "Hone the Body. Like raw stone, your body must be worked so its potential can be realized.",
+          "<strong>Discipline the Soul.</strong> You must marshal the discipline to overcome failings within yourself that threaten to dim the glory of you and your friends.",
+          "<h5 class='mb-0'>Oath Spells</h5> You gain oath spells at the paladin levels listed.",
+          {
+            "list": [
+              "3rd - {@spells/guiding-bolt guiding bolt}, {@spells/heroism heroism}",
+              "5th - {@spells/enhance-agility enhance agility}, {@spells/magic-weapon magic weapon}",
+              "9th - {@spells/haste haste}, {@spells/protection-from-energy protection from energy}",
+              "13th - {@spells/compulsion compulsion}, {@spells/freedom-of-movement freedom of movement}",
+              "17th - {@spells/commune commune}, {@spells/flame-strike flame strike}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "glory",
+        "name": "glory-channel-1",
+        "title": "Oath of Glory Channel Divinity: Peerless Athlete",
+        "text": [
+          "As a bonus action, you can use your Channel Divinity to augment your athleticism. For the next 10 minutes, you have advantage on Strength (Athletics) and Dexterity (Acrobatics) checks; you can carry, push, drag, and lift twice as much weight as normal; and the distance of your long and high jumps increases by 10 feet (this extra distance costs movement as normal)."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "glory",
+        "name": "glory-channel-2",
+        "title": "Oath of Glory Channel Divinity: Inspiring Smite",
+        "text": [
+          "Immediately after you deal damage to a creature with your Divine Smite feature, you can use your Channel Divinity as a bonus action and distribute temporary hit points to creatures of your choice within 30 feet of you, which can include you. The total number of temporary hit points equals 2d8 + your level in this class, divided among the chosen creatures however you like."
+        ]
+      },
+      {
         "level": 4,
         "subclass": "base",
         "name": "asi-1",
@@ -5924,6 +6164,24 @@
         "title": "Oath of Spheres: Acamar's Beckoning",
         "text": [
           "At 7th level, your knowledge of forbidden geometries imparts the ability to create a small but powerful gravity well around yourself. Creatures of your choice moving away from you treat the area within 10 feet of you as difficult terrain. At 18th level, the range of this aura increases to 30 feet. Additionally, you can choose up to three tiny objects and concentrate to hold them in orbit around yourself."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "watchers",
+        "name": "watchers-aura",
+        "title": "Oath of the Watchers: Aura of Alacrity",
+        "text": [
+          "You emit an aura of alertness while you aren't incapacitated. When you and any creatures of your choice within 10 feet of you roll initiative, you all gain a bonus to initiative equal to your proficiency bonus. At 18th level, the range of this aura increases to 30 feet."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "glory",
+        "name": "glory-aura",
+        "title": "Oath of Glory: Aura of the Sentinel",
+        "text": [
+          "You emanate an aura that fills you and your companions with supernatural speed, allowing you to race across a battlefield in formation. Your walking speed increases by 10 feet. In addition, if you aren't incapacitated, the walking speed of any ally who starts their turn within 5 feet of you increases by 10 feet until the end of that turn. When you reach 18th level in this class, the range of the aura increases to 10 feet."
         ]
       },
       {
@@ -6052,6 +6310,24 @@
         "title": "Oath of Spheres: Unknowable Mind",
         "text": [
           "Starting at 15th level, your mind becomes so warped and strange that you have resistance to psychic damage and advantage on saving throws against effects that would read your thoughts or control your actions."
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "watchers",
+        "name": "watchers-vigilant-rebuke",
+        "title": "Oath of the Watchers: Vigilant Rebuke",
+        "text": [
+          "You've learned how to chastise anyone who dares wield beguilements against you and your wards. Whenever you or a creature you can see within 30 feet of you succeeds on an Intelligence, a Wisdom, or a Charisma saving throw, you can use your reaction to deal 2d8 + your Charisma modifier force damage to the creature that forced the saving throw."
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "glory",
+        "name": "glory-glorious-defense",
+        "title": "Oath of Glory: Glorious Defense",
+        "text": [
+          "You can turn defense into a sudden strike. When you or another creature you can see within 10 feet of you is hit by an attack roll, you can use your reaction to grant a bonus to the target's AC against that attack, potentially causing it to miss. The bonus equals your Charisma modifier (minimum of +1). If the attack misses, you can make one weapon attack against the attacker as part of this reaction, provided the attacker is within your weapon's range. You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest."
         ]
       },
       {
@@ -6232,6 +6508,40 @@
           },
           "Once you use this feature, you can't use it again until you finish a long rest."
         ]
+      },
+      {
+        "level": 20,
+        "subclass": "watchers",
+        "name": "watchers-mortal-bulwark",
+        "title": "Oath of the Watchers: Vigilant Rebuke",
+        "text": [
+          "You can empower yourself with the legends—whether true or exaggerated—of your great deeds. As a bonus action, you gain the following benefits for 1 minute:",
+          {
+            "list": [
+              "You gain truesight with a range of 120 feet.",
+              "You have advantage on attack rolls against aberrations, celestials, elementals, fey, and fiends.",
+              "When you hit a creature with an attack roll and deal damage to it, you can also force it to make a Charisma saving throw against your spell save DC. On a failed save, the creature is magically banished to its native plane of existence if it's currently not there. On a successful save, the creature can't be banished by this feature for 24 hours."
+            ]
+          },
+          "Once you use this feature, you can't use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again."
+        ]
+      },
+      {
+        "level": 20,
+        "subclass": "glory",
+        "name": "glory-living-legend",
+        "title": "Oath of Glory: Glorious Defense",
+        "text": [
+          "You manifest a spark of divine power in defense of the mortal realms. As a bonus action, you gain the following benefits for 1 minute:",
+          {
+            "list": [
+              "You are blessed with an otherworldly presence, gaining advantage on all Charisma checks.",
+              "Once on each of your turns when you make a weapon attack and miss, you can cause that attack to hit instead.",
+              "If you fail a saving throw, you can use your reaction to reroll it. You must use this new roll."
+            ]
+          },
+          "Once you use this feature, you can't use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again."
+        ]
       }
     ]
   },
@@ -6325,7 +6635,6 @@
         "name": "natural-explorer",
         "title": "Natural Explorer",
         "text": [
-
           "You are a master of navigating the natural world, and you react with swift and decisive action when attacked. This grants you the following benefits:",
           {
             "list":
@@ -6365,7 +6674,6 @@
         "name": "casting",
         "title": "Spellcasting",
         "text": [
-
           "By 2nd level, you have learned to use the magical essence of nature to cast spells, much as a druid does.",
           "<h5 class='mb-0'>Preparing and Casting Spells</h5>",
           "The Ranger table shows how many spell slots you have to cast your spells. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.",
@@ -6390,11 +6698,17 @@
         "name": "primeval-awareness",
         "title": "Primeval Awareness",
         "text": [
-          "Beginning at 3rd level, your mastery of ranger lore allows you to establish a powerful link to beasts and to the land around you.",
-          "You have an innate ability to communicate with beasts, and they recognize you as a kindred spirit. Through sounds and gestures, you can communicate simple ideas to a beast as an action, and can read its basic mood and intent. You learn its emotional state, whether it is affected by magic of any sort, its short-term needs (such as food or safety), and actions you can take (if any) to persuade it to not attack.",
-          "You cannot use this ability against a creature that you have attacked within the past 10 minutes.",
-          "Additionally, you can attune your senses to determine if any of your favored enemies lurk nearby. By spending 1 uninterrupted minute in concentration (as if you were concentrating on a spell), you can sense whether any of your favored enemies are present within 5 miles of you. This feature reveals which of your favored enemies are present, their numbers, and the creatures' general direction and distance (in miles) from you.",
-          "If there are multiple groups of your favored enemies within range, you learn this information for each group."
+          "Beginning at 3rd level, You can focus your awareness through the interconnections of nature: you learn additional spells when you reach certain levels in this class if you don't already know them, as shown in the Primal Awareness Spells table. These spells don't count against the number of ranger spells you know.",
+          {
+            "list": [
+              "3rd - {@spells/speak-with-animals speak with animals}",
+              "5th - {@spells/beast-sense beast sense}",
+              "9th - {@spells/speak-with-plants speak with plants}",
+              "13th - {@spells/locate-creature locate creature}",
+              "17th - {@spells/commune-with-naute commune with nature}"
+            ]
+          },
+          "You can cast each of these spells once without expending a spell slot. Once you cast a spell in this way, you can't do so again until you finish a long rest."
         ]
       },
       {
@@ -6493,7 +6807,6 @@
         "name": "stalker-magic",
         "title": "Gloom Stalker: Gloom Stalker Magic",
         "text": [
-
           "Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Gloom Stalker Spells table. The spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.",
           {
             "list":
@@ -6546,7 +6859,6 @@
         "name": "horizon-magic",
         "title": "Horizon Walker: Planar Magic",
         "text": [
-
           "Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Horizon Walker Spells table. The spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.",
           {
             "list":
@@ -6582,6 +6894,105 @@
         ]
       },
       {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "fey",
+        "name": "fey",
+        "title": "Archetype: Fey Wanderer",
+        "source": "TCE",
+        "text": [
+          "A fey mystique surrounds you, thanks to the boon of an archfey, the shining fruit you ate from a talking tree, the magic spring you swam in, or some other auspicious event. However you acquired your fey magic, you are now a Fey Wanderer, a ranger who represents both the mortal and the fey realms. As you wander the multiverse, your joyful laughter brightens the hearts of the downtrodden, and your martial prowess strikes terror in your foes, for great is the mirth of the fey and dreadful is their fury."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "fey",
+        "name": "fey-magic",
+        "title": "Fey Wonderer: Fey Magic",
+        "text": [
+          "Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Horizon Walker Spells table. The spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.",
+          {
+            "list": [
+              "3rd - {@spells/charm-person charm person}",
+              "5th - {@spells/misty-step misty step}",
+              "9th - {@spells/dispel-magic dispel magic}",
+              "13th - {@spells/dimension-door dimension door}",
+              "17th - {@spells/mislead mislead}"
+            ]
+          },
+          "You also possess a preternatural blessing from a fey ally or a place of fey power. Choose your blessing from the Feywild Gifts table or determine it randomly.",
+          "<table class='table table-striped table-bordered table-sm'><thead><tr><th class='text-center'>d6</th><th>Fey Gift</th></tr></thead><tbody><tr><td class='text-center'>1</td><td>Illusory butterflies flutter around you while you take a short or long rest.</td></tr><tr><td class='text-center'>2</td><td>Fresh, seasonal flowers sprout from your hair each dawn.</td></tr><tr><td class='text-center'>3</td><td>You faintly smell of cinnamon, lavender, nutmeg, or another comforting herb or spice.</td></tr><tr><td class='text-center'>4</td><td>Your shadow dances while no one is looking directly at it.</td></tr><tr><td class='text-center'>5</td><td>Horns or antlers sprout from your head.</td></tr><tr><td class='text-center'>6</td><td>Your skin and hair change color to match the season at each dawn.</td></tr></tbody></table>"
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "fey",
+        "name": "fey-strikes",
+        "title": "Fey Wonderer: Dreadful Strikes",
+        "text": [
+          "You can augment your weapon strikes with mind-scarring magic, drawn from the enchanted hollows of the Feywild. When you hit a creature with a weapon, you can deal an extra 1d4 psychic damage to the target, which can take this extra damage only once per turn. The extra damage increases to 1d6 when you reach 11th level in this class."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "fey",
+        "name": "fey-glamour",
+        "title": "Fey Wonderer: Otherworldly Glamour",
+        "text": [
+          "Your fey qualities give you a supernatural charm. As a result, whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier (minimum of +1).",
+          "In addition, you gain proficiency in one of the following skills of your choice: Deception, Performance, or Persuasion."
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "swarmkeeper",
+        "name": "swarmkeeper",
+        "title": "Archetype: Swarmkeeper",
+        "source": "TCE",
+        "text": [
+          "Feeling a deep connection to the environment around them, some rangers reach out through their magical connection to the world and bond with a swarm of nature spirits. The swarm becomes a potent force in battle, as well as helpful company for the ranger. Some Swarmkeepers are outcasts or hermits, keeping to themselves and their attendant swarms rather than dealing with the discomfort of others. Other Swarmkeepers enjoy building vibrant communities that work for the mutual benefit of all those they consider part of their swarm."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "swarmkeeper",
+        "name": "swarmkeeper-magic",
+        "title": "Swarmkeeper: Swarm Magic",
+        "text": [
+          "You learn the mage hand cantrip if you don't already know it. When you cast it, the hand takes the form of your swarming nature spirits.",
+          "You also learn an additional spell of 1st level or higher when you reach certain levels in this class, as shown in the Swarmkeeper Spells table. Each spell counts as a ranger spell for you and is always prepared.",
+          {
+            "list": [
+              "3rd - {@spells/faerie-fire faerie fire}",
+              "5th - {@spells/web web}",
+              "9th - {@spells/gaseous-form gaseous form}",
+              "13th - {@spells/arcne-eye arcane eye}",
+              "17th - {@spells/insect-plague insect plague}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "swarmkeeper",
+        "name": "swarmkeeper-gathered-swarm",
+        "title": "Swarmkeeper: Gathered Swarm",
+        "text": [
+          "A swarm of intangible nature spirits has bonded itself to you and can assist you in battle. Until you die, the swarm remains in your space, crawling on you or flying and skittering around you within your space. You determine its appearance, or you generate its appearance by rolling on the Swarm Appearance table.",
+          "<table class='table table-striped table-bordered table-sm'><thead><tr><th class='text-center'>d6</th><th>Fey Gift</th></tr></thead><tbody><tr><td class='text-center'>1</td><td>Swarming insects</td></tr><tr><td class='text-center'>2</td><td>Miniature twig, vine, or needle blights</td></tr><tr><td class='text-center'>3</td><td>Fluttering birds</td></tr><tr><td class='text-center'>4</td><td>Pixies or other tiny fey spirits</td></tr><tr><td class='text-center'>5</td><td>Tiny elementals (eg. sand motes, flames, water droplets, etc.)</td></tr><tr><td class='text-center'>6</td><td>Animated bits of materials (eg. bones, brambles, crystals, pages from books, etc.)</td></tr></tbody></table>",
+          "Once on each of your turns, you can cause the swarm to assist you in one of the following ways, immediately after you hit a creature with an attack:",
+          {
+            "list": [
+              "The attack's target takes 1d6 piercing damage (or slashing/bludgeoning, as appropriate) from the swarm.",
+              "The attack's target must succeed on a Strength saving throw against your spell save DC or be moved by the swarm up to 15 feet horizontally in a direction of your choice.",
+              "You are moved by the swarm 5 feet horizontally in a direction of your choice."
+            ]
+          },
+          "A Swarmkeeper's swarm and spells are reflections of the character's bond with nature spirits. Take the opportunity to describe the swarm and the ranger's magic in play."
+        ]
+      },
+      {
         "level": 4,
         "subclass": "base",
         "name": "asi-1",
@@ -6593,44 +7004,8 @@
       {
         "level": 5,
         "subclass": "base",
-        "name": "ranger-archetype-1",
-        "title": "Archetype Feature",
-        "text": [
-          "At 5th level, you gain a feature granted to you by your Archetype."
-        ]
-      },
-      {
-        "level": 5,
-        "subclass": "beast",
-        "name": "beast-attack",
-        "title": "Beast Conclave: Coordinated Attack",
-        "text": [
-          "Beginning at 5th level, you and your animal companion form a more potent fighting force. When you use the Attack action on your turn, if your companion can see you, it can use its reaction to make a melee attack."
-        ]
-      },
-      {
-        "level": 5,
-        "subclass": "hunter",
-        "name": "hunter-attack",
-        "title": "Hunter Conclave: Extra Attack",
-        "text": [
-          "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
-        ]
-      },
-      {
-        "level": 5,
-        "subclass": "stalker",
-        "name": "stalker-attack",
-        "title": "Gloom Stalker: Extra Attack",
-        "text": [
-          "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
-        ]
-      },
-      {
-        "level": 5,
-        "subclass": "horizon",
-        "name": "horizon-attack",
-        "title": "Horizon Walker: Extra Attack",
+        "name": "ranger-extra attack",
+        "title": "Extra Attack",
         "text": [
           "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
         ]
@@ -6701,6 +7076,26 @@
         ]
       },
       {
+        "level": 7,
+        "subclass": "fey",
+        "name": "fey-beguiling-twist",
+        "title": "Fey Wanderer: Beguiling Twist",
+        "text": [
+          "The magic of the Feywild guards your mind. You have advantage on saving throws against being charmed or frightened.",
+          "In addition, whenever you or a creature you can see within 120 feet of you succeeds on a saving throw against being charmed or frightened, you can use your reaction to force a different creature you can see within 120 feet of you to make a Wisdom saving throw against your spell save DC. If the save fails, the target is charmed or frightened by you (your choice) for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
+        ]
+      },
+      {
+        "level": 7,
+        "subclass": "swarmkeeper",
+        "name": "swarmkeeper-writhing-tide",
+        "title": "Swarmkeeper: Writhing Tide",
+        "text": [
+          "You can condense part of your swarm into a focused mass that lifts you up. As a bonus action, you gain a flying speed of 10 feet and can hover. This effect lasts for 1 minute or until you are incapacitated.",
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
         "level": 8,
         "subclass": "base",
         "name": "asi-2",
@@ -6721,12 +7116,11 @@
       {
         "level": 10,
         "subclass": "base",
-        "name": "hide-in-plain-sight",
-        "title": "Hide in Plain Sight",
+        "name": "natures-veil",
+        "title": "Nature's Veil",
         "text": [
-          "Starting at 10th level, you can remain perfectly still for long periods of time to set up ambushes.",
-          "When you attempt to hide on your turn, you can opt to not move on that turn. If you avoid moving, creatures that attempt to detect you take a -10 penalty to their Wisdom (Perception) checks until the start of your next turn. You lose this benefit if you move or fall prone, either voluntarily or because of some external effect. You are still automatically detected if any effect or action causes you to no longer be hidden.",
-          "If you are still hidden on your next turn, you can continue to remain motionless and gain this benefit until you are detected."
+          "Starting at 10th level, you can draw on the powers of nature to hide yourself from view briefly. As a bonus action, you can magically become invisible, along with any equipment you are wearing or carrying, until the start of your next turn.",
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
         ]
       },
       {
@@ -6784,6 +7178,32 @@
         ]
       },
       {
+        "level": 11,
+        "subclass": "fey",
+        "name": "fey-reinforcements",
+        "title": "Fey Wanderer: Fey Reinforcements",
+        "text": [
+          "The royal courts of the Feywild have blessed you with the assistance of fey beings: you know the spell {@spells/summon-fey summon fey}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
+          "Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting."
+        ]
+      },
+      {
+        "level": 11,
+        "subclass": "swarmkeeper",
+        "name": "swarmkeeper-mighty-swarm",
+        "title": "Swarmkeeper: Mighty Swarm",
+        "text": [
+          "Your Gathered Swarm grows mightier in the following ways:",
+          {
+            "list": [
+              "The damage of Gathered Swarm increases to 1d8.",
+              "If a creature fails its saving throw against being moved by Gathered Swarm, you can also cause the swarm to knock the creature prone.",
+              "When you are moved by Gathered Swarm, it gives you half cover until the start of your next turn."
+            ]
+          }
+        ]
+      },
+      {
         "level": 12,
         "subclass": "base",
         "name": "asi-3",
@@ -6829,9 +7249,9 @@
           {
             "list":
             [
-              "Evasion: When you are subjected to an effect, such as a red dragon's fiery breath or a lightning bolt spell, that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.",
-              "Stand Against the Tide: When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.",
-              "Uncanny Dodge: When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
+              "<strong>Evasion:</strong> When you are subjected to an effect, such as a red dragon's fiery breath or a lightning bolt spell, that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.",
+              "<strong>Stand Against the Tide:</strong> When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.",
+              "<strong>Uncanny Dodge:</strong> When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
             ]
           }
         ]
@@ -6852,6 +7272,26 @@
         "title": "Horizon Walker: Spectral Defense",
         "text": [
           "At 15th level, your ability to move between planes enables you to slip through the planar boundaries to lessen the harm done to you during battle. When you take damage from an attack, you can use your reaction to give yourself resistance to all of that attack's damage on this turn."
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "fey",
+        "name": "fey-misty-wanderer",
+        "title": "Fey Wanderer: Misty Wanderer",
+        "text": [
+          "You can slip in and out of the Feywild to move in a blink of an eye: you can cast {@spells/misty-step misty step} without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
+          "In addition, whenever you cast misty step, you can bring along one willing creature you can see within 5 feet of you. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space."
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "swarmkeeper",
+        "name": "swarmkeeper-mighty-swarm",
+        "title": "Swarmkeeper: Mighty Swarm",
+        "text": [
+          "You can discorporate into your swarm, avoiding danger. When you take damage, you can use your reaction to give yourself resistance to that damage. You vanish into your swarm and then teleport to an unoccupied space that you can see within 30 feet of you, where you reappear with the swarm.",
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
         ]
       },
       {
@@ -7281,6 +7721,82 @@
         ]
       },
       {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "phantom",
+        "name": "phantom",
+        "title": "Archetype: Phantom",
+        "source": "TCE",
+        "text": [
+          "Many rogues walk a fine line between life and death, risking their own lives and taking the lives of others. While adventuring on that line, some rogues discover a mystical connection to death itself. These rogues take knowledge from the dead and become immersed in negative energy, eventually becoming like ghosts. Thieves' guilds value them as highly effective information gatherers and spies.",
+          "Many denizens of the Shadowfell are masters of these macabre techniques, and some are willing to teach the path. In places where necromancers practice their craft, a Phantom can become a wizard's confidant and right hand. In temples of gods of death, the Phantom might work as an agent to track down those who try to cheat death and to recover knowledge that might otherwise be lost to the grave."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "phantom",
+        "name": "phantom-whispers-of-the-dead",
+        "title": "Phantom: Whispers of the Dead",
+        "text": [
+          "Echoes of those who have died cling to you. Whenever you finish a short or long rest, you can choose one skill or tool proficiency that you lack and gain it, as a ghostly presence shares its knowledge with you. You lose this proficiency when you use this feature to choose a different proficiency that you lack."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "phantom",
+        "name": "phantom-wails-from-the-grave",
+        "title": "Phantom: Wails from the Grave",
+        "text": [
+          "As you nudge someone closer to the grave, you can channel the power of death to harm someone else as well. Immediately after you deal your Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. Roll half the number of Sneak Attack dice for your level (round up), and the second creature takes necrotic damage equal to the roll's total, as wails of the dead sound around them for a moment.",
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "phantom",
+        "name": "phantom-tokens-of-the-departed",
+        "title": "Phantom: Token of the Departed",
+        "text": [
+          "When a life ends in your presence, you're able to snatch a token from the departing soul, a sliver of its life essence that takes physical form: as a reaction when a creature you can see dies within 30 feet of you, you can open your free hand and cause a Tiny trinket to appear there, a soul trinket. The DM determines the trinket's form or has you roll on the Trinkets table in the Player's Handbook to generate it. You can have a maximum number of soul trinkets equal to your proficiency bonus, and you can't create one while at your maximum.",
+          "When you deal Sneak Attack damage on your turn, you can destroy one of your soul trinkets that's on your person and then immediately use Wails from the Grave, without expending a use of that feature."
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "soulknife",
+        "name": "soulknife",
+        "title": "Archetype: Soulknife",
+        "source": "TCE",
+        "text": [
+          "Most assassins strike with physical weapons, and many burglars and spies use thieves' tools to infiltrate secure locations. In contrast, a Soulknife strikes and infiltrates with the mind, cutting through barriers both physical and psychic. These rogues discover power within themselves and channel it to do their roguish work. They find easy employment as members of thieves' guilds, though they are often mistrusted by rogues who are leery of anyone using strange mind powers to conduct their business. Most governments would also be happy to employ a Soulknife as a spy.",
+          "Amid the trees of ancient forests on the Material Plane and in the Feywild, some elves walk the path of the Soulknife, serving as silent, lethal guardians of their domains. In the endless mahinations of Capital, 5th and 6th children of noble houses are often encouraged to become Soulknives and used as weapons against other houses."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "soulknife",
+        "name": "soulknife-whispers-of-the-dead",
+        "title": "Soulknife: Psionic Power",
+        "text": [
+          "You harbor a wellspring of psionic energy within yourself. This energy is represented by your Energy dice, which are each a d6. You have a number of these dice equal to twice your proficiency bonus, and they fuel various psionic powers you have.",
+          "Some of your powers expend the Energy die they use, as specified in a power's description, and you can't use a power if it requires you to use a die when your dice are all expended. You regain all your expended Energy dice when you finish a long rest. In addition, as a bonus action, you can regain one expended Energy die, but you can't do so again until you finish a short or long rest.",
+          "When you reach certain levels in this class, the size of your Energy dice increases: at 5th level (d8), 11th level (d10), and 17th level (d12). The powers below use your Energy dice:",
+          "<strong>Knack.</strong> When your training fails you, your psionic power can help: if you fail an ability check using a skill or tool with which you have proficiency, you can roll one Energy die and add the number rolled to the check, potentially turning failure into success. You expend the die only if the roll succeeds.",
+          "<strong>Whispers.</strong> You can establish telepathic communication between yourself and others - perfect for quiet infiltration. As an action, choose one or more creatures you can see, up to a number of creatures equal to your proficiency bonus, and then roll one Energy die. For a number of hours equal to the number rolled, the chosen creatures can speak telepathically with you, and you can speak telepathically with them. To send or receive a message, you and the other creature must be within 1 mile of each other. A creature can't use this telepathy if it can't speak any languages, and a creature can end the telepathic connection at any time. You and the creature don't need to speak a common language to understand each other. The first time you use this power after each long rest, you don't expend the Energy die. All other times you use the power, you expend the die."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "soulknife",
+        "name": "soulknife-blades",
+        "title": "Soulknife: Psychic Blades",
+        "text": [
+          "You can manifest your psionic power as shimmering blades of psychic energy. Whenever you take the Attack action, you can manifest a psychic blade from your free hand and make the attack with that blade. This magic blade is a simple melee weapon with the finesse and thrown properties. It has a normal range of 60 feet and no long range, and on a hit, it deals psychic damage equal to 1d6 plus the ability modifier you used for the attack roll. The blade vanishes immediately after it hits or misses its target, and it leaves no mark on its target if it deals damage.",
+          "After you attack with the blade, you can make a melee or ranged weapon attack with a second psychic blade as a bonus action on the same turn, provided your other hand is free to create it. The damage die of this bonus attack is 1d4, instead of 1d6."
+        ]
+      },
+      {
         "level": 4,
         "subclass": "base",
         "name": "asi-1",
@@ -7421,6 +7937,32 @@
         ]
       },
       {
+        "level": 9,
+        "subclass": "phantom",
+        "name": "phantom-tokens-of-the-departed",
+        "title": "Phantom: Improved Tokens",
+        "text": [
+          "At 9th level, you gain two additional ways to use your soul trinkets:",
+          {
+            "list": [
+              "While a soul trinket is on your person, you have advantage on death saving throws and Constitution saving throws, for your vitality is enhanced by the life essence within the object.",
+              "As an action, you can destroy one of your soul trinkets, no matter where it's located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It's under no obligation to be truthful, and it answers as concisely as possible, eager to be free. The spirit knows only what it knew in life, as determined by the DM."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "subclass": "soulknife",
+        "name": "soulknife-soul-blades",
+        "title": "Soulknife: Soul Blades",
+        "text": [
+          "Your Psychic Blades are now an expression of your soul, giving you these powers that use your Energy dice:",
+          "<strong>Homing Strikes.</strong> If you make an attack roll with your Psychic Blades and miss the target, you can roll one Energy die and add the number rolled to the attack roll. If this causes the attack to hit, you expend the Energy die.",
+          "<strong>Teleportation.</strong> As a bonus action, you manifest one of your Psychic Blades, expend one Energy die and roll it, and throw the blade at an unoccupied space you can see, up to a number of feet away equal to 10 times the number rolled. You then teleport to that space, and the blade vanishes"
+        ]
+      },
+      {
         "level": 10,
         "subclass": "base",
         "name": "asi",
@@ -7528,6 +8070,26 @@
         "title": "Thief: Use Magic Device",
         "text": [
           "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, ancestry, and level requirements on the use of magic items."
+        ]
+      },
+      {
+        "level": 13,
+        "subclass": "phantom",
+        "name": "phantom-ghost-walk",
+        "title": "Phantom: Ghost Walk",
+        "text": [
+          "You can phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or an object.",
+          "You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk."
+        ]
+      },
+      {
+        "level": 13,
+        "subclass": "soulknife",
+        "name": "soulknife-psychic-veil",
+        "title": "Soulknife: Psychic Veil",
+        "text": [
+          "You can weave a veil of psychic static to mask yourself. As an action, you can magically become invisible, along with anything you are wearing or carrying, for 1 hour or until you dismiss this effect (no action required). This invisibility ends early immediately after you deal damage to a creature or you force a creature to make a saving throw.",
+          "Once you use this feature, you can't do so again until you finish a long rest, unless you expend a Energy die to use this feature again."
         ]
       },
       {
@@ -7639,6 +8201,31 @@
         "title": "Thief: Thief's Reflexes",
         "text": [
           "When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised."
+        ]
+      },
+      {
+        "level": 13,
+        "subclass": "phantom",
+        "name": "phantom-deaths-friend",
+        "title": "Phantom: Death's Friend",
+        "text": [
+          "Your association with death has become so close that you gain the following benefits:",
+          {
+            "list": [
+              "When you use your Wails from the Grave, you can deal the necrotic damage to both the first and the second creature.",
+              "At the end of a long rest, a soul trinket appears in your hand if you don't have any soul trinkets, as the spirits of the dead are drawn to you."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 13,
+        "subclass": "soulknife",
+        "name": "soulknife-rend-mind",
+        "title": "Soulknife: Rend Mind",
+        "text": [
+          "You can sweep your Psychic Blades directly through a creature's mind. When you use your Psychic Blades to deal Sneak Attack damage to a creature, you can force that target to make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Dexterity modifier). If the save fails, the target is stunned for 1 minute. The stunned target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+          "Once you use this feature, you can't do so again until you finish a long rest, unless you expend three Energy dice to use it again."
         ]
       },
       {
