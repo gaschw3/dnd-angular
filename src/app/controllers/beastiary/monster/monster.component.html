@@ -195,11 +195,9 @@
                         <div *ngIf="monster.trait" class="col">
                             <h3 class="color-primary beastiary-border">Special Traits</h3>
                             <ng-container *ngFor="let trait of monster.trait">
-                                <div class="col pb-2">
+                                <div class="col">
                                     <strong>{{trait.name}}</strong>
-                                    <ng-container *ngFor="let line of trait.entries">
-                                        <p class="pl-2 m-0">{{line}}</p>
-                                    </ng-container>
+                                    <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
                                 </div>
                             </ng-container>
                         </div>
@@ -208,11 +206,20 @@
                         <div *ngIf="monster.action" class="col">
                             <h3 class="color-primary beastiary-border">Actions</h3>
                             <ng-container *ngFor="let trait of monster.action" >
-                                <div class="col pb-2">
+                                <div class="col">
                                     <strong>{{trait.name}}</strong>
-                                    <ng-container *ngFor="let line of trait.entries" >
-                                        <p class="pl-2 m-0">{{line}}</p>
-                                    </ng-container>
+                                    <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="monster.bonus" class="col">
+                            <h4 class="color-primary beastiary-border">Bonus Actions</h4>
+                            <ng-container *ngFor="let trait of monster.bonus">
+                                <div class="col">
+                                    <strong>{{trait.name}}</strong>
+                                    <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
                                 </div>
                             </ng-container>
                         </div>
@@ -221,11 +228,9 @@
                         <div *ngIf="monster.reaction" class="col">
                             <h4 class="color-primary beastiary-border">Reactions</h4>
                             <ng-container *ngFor="let trait of monster.reaction" >
-                                <div class="col pb-2">
+                                <div class="col">
                                     <strong>{{trait.name}}</strong>
-                                    <ng-container *ngFor="let line of trait.entries" >
-                                        <p class="pl-2 m-0">{{line}}</p>
-                                    </ng-container>
+                                    <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
                                 </div>
                             </ng-container>
                         </div>
@@ -234,11 +239,9 @@
                         <div *ngIf="monster.legendary" class="col">
                             <h4 class="color-primary beastiary-border">Legendary Actions</h4>
                             <ng-container *ngFor="let trait of monster.legendary" >
-                                <div class="col pb-2">
+                                <div class="col">
                                     <strong>{{trait.name}}</strong>
-                                    <ng-container *ngFor="let line of trait.entries" >
-                                        <p class="pl-2 m-0">{{line}}</p>
-                                    </ng-container>
+                                    <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
                                 </div>
                             </ng-container>
                         </div>

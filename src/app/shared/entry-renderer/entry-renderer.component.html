@@ -25,17 +25,20 @@
         <entry-renderer [list]=entry.column [parent]="''"></entry-renderer>
     </div>
     <div *ngSwitchCase="'entries'">
-        <p *ngIf="parent==''"><strong>{{entry.name}}</strong>
-            <entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+        <p *ngIf="parent==''" class="pb-0 mb-2">
+            <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
         </p>
+        <li *ngIf="parent=='list'">
+            <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+        </li>
     </div>
     <div *ngSwitchCase="'item'">
-        <p *ngIf="parent==''"><strong>{{entry.name}}</strong> {{entry.entry}}</p>
-        <li *ngIf="parent=='list'"><strong>{{entry.name}}</strong> {{entry.entry}}</li>
+        <p *ngIf="parent==''" [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></p>
+        <li *ngIf="parent=='list'" [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></li>
     </div>
     <ng-container *ngSwitchDefault>
         <p *ngIf="parent==''" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
-        <p class="pb-0 mb-1" *ngIf="parent=='entries'" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
+        <span class="pb-0 mb-1" *ngIf="parent=='entries'" [innerHtml]="entry | linkmaker | sanitizeHtml"></span>
         <li *ngIf="parent=='list'" [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
     </ng-container>
 </ng-container>

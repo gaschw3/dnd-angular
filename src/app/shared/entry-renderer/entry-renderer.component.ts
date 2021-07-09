@@ -40,4 +40,8 @@ export class EntryRendererComponent implements OnInit {
     }
   }
 
+  getListItemHtml(entry): string {
+    return '<strong>'+entry.name+'</strong> '+entry.entry;
+  }
+
 }

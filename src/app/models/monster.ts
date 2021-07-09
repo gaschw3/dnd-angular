@@ -26,6 +26,7 @@ export interface Monster {
   trait: Trait[];
   spellcasting: Spellcasting[];
   action: Action[];
+  bonus?: Action[];
   reaction: Action[];
   legendary: Action[];
   source: string;
