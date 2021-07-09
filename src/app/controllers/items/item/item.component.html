@@ -40,51 +40,9 @@
       </div>
       <div class="mt-2 feature-text row">
         <div class="col">
-          <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ list: item.entries, parent: '' }"></ng-container>
+          <entry-renderer [list]=item.entries [parent]="''"></entry-renderer>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-<ng-template #recursiveListTmpl let-list="list" let-parent="parent">
-  <ng-container *ngFor="let entry of list" [ngSwitch]="getEntryType(entry)">
-    <div *ngSwitchCase="'list'">
-      <ul>
-        <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ list: entry.items, parent: 'list' }"></ng-container>
-      </ul>
-    </div>
-    <div *ngSwitchCase="'table'">
-      <h4>{{entry.caption}}</h4>
-      <table class="table table-bordered table-striped table-sm">
-        <thead>
-          <tr>
-            <ng-container *ngFor="let row of entry.colLabels">
-              <th>{{row}}</th>
-            </ng-container>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of entry.rows">
-              <td *ngFor="let cell of row" [innerHtml]="cell | linkmaker | sanitizeHtml"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div *ngSwitchCase="'entries'">
-      <p *ngIf="parent==''"><strong>{{entry.name}}</strong>
-        <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ list: entry.entries, parent: 'entries' }"></ng-container>
-      </p>
-    </div>
-    <div *ngSwitchCase="'item'">
-      <p *ngIf="parent==''"><strong>{{entry.name}}</strong> {{entry.entry}}</p>
-      <li *ngIf="parent=='list'"><strong>{{entry.name}}</strong> {{entry.entry}}</li>
-    </div>
-    <ng-container *ngSwitchDefault>
-      <p *ngIf="parent==''" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
-      <p class="pb-0 mb-1" *ngIf="parent=='entries'" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
-      <li *ngIf="parent=='list'" [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
-    </ng-container>
-  </ng-container>
-</ng-template>

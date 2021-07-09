@@ -1,15 +1,15 @@
 import { Trait } from "./trait";
 
-export class Monster {
+export interface Monster {
   name: string;
   id: string;
   size: string;
   type: string;
   other: string;
   alignment: string;
-  ac: string[]|AC;
+  ac: (any|AC)[];
   hp: HP;
-  speed: string[];
+  speed: (any|ConditionalSpeed)[];
   save: string[];
   str: string;
   dex: string;
@@ -32,24 +32,27 @@ export class Monster {
   hasToken: boolean;
 }
 
-export class Action {
+interface Action {
   name: string;
   entries: string[];
   attack: string[];
 }
 
-export class HP {
+interface HP {
   average: string;
   formula: string[];
   special: string; //specific hack to work with TCE summons
 }
 
-export class AC {
-  ac: string;
-  from: string[];
+interface AC {
+  ac?:        number;
+  from?:      string[];
+  condition?: string;
+  braces?:    boolean;
+  special?:   string;
 }
 
-export class Spellcasting {
+interface Spellcasting {
   name: string;
   headerEntries: string[];
   footerEntries: string[];
@@ -59,7 +62,7 @@ export class Spellcasting {
   from: string[];
 }
 
-export class Spells {
+interface Spells {
   cantrip: sLevel;
   first: sLevel;
   second: sLevel;
@@ -72,13 +75,18 @@ export class Spells {
   ninth: sLevel;
 }
 
-export class Daily {
+interface Daily {
   once: string[];
   twice: string[];
   thrice: string[];
 }
 
-export class sLevel {
+interface sLevel {
   spells: string[];
   slots: string;
+}
+
+interface ConditionalSpeed {
+    number:    number;
+    condition: string;
 }

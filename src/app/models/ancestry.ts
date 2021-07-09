@@ -1,6 +1,6 @@
 import { Trait } from "./trait";
 
-export class Ancestry {
+export interface Ancestry {
   name: string;
   id: string;
   speed: string;

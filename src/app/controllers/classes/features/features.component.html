@@ -3,20 +3,7 @@
         <div class="feature" [ngClass]="{'archetype': feature.filter == 'yes', 'subclass': (feature.subclass != 'base' && feature.filter != 'yes')}" [ngClass]="" id="{{feature.name}}" *ngFor="let feature of features">
             <h4>{{feature.title}}</h4>
             <div class="feature-text row">
-                <ng-container class="" *ngFor="let entry of feature.text" [ngSwitch]="getEntryType(entry)">
-                    <ul class="col-12 ml-3" *ngSwitchCase="'list'">
-                        <li *ngFor="let item of entry.list" [innerHtml]="item | linkmaker"></li>
-                    </ul>
-                    <div class="col-6" *ngSwitchCase="'column'">
-                        <ng-container *ngFor="let entry of entry.column" [ngSwitch]="getEntryType(entry)">
-                            <ul *ngSwitchCase="'list'">
-                                <li *ngFor="let item of entry.list" [innerHtml]="item | linkmaker"></li>
-                            </ul>
-                            <p *ngSwitchDefault [innerHtml]="entry | linkmaker"></p>
-                        </ng-container>
-                    </div>
-                    <span class="col-12 mb-2" *ngSwitchDefault [innerHtml]="entry | linkmaker | sanitizeHtml"></span>
-                </ng-container>
+                <entry-renderer [list]=feature.text parent=''></entry-renderer>
             </div>
         </div>
     </div>

@@ -34,7 +34,7 @@
                                         <ng-container *ngIf="isObject(monster.ac[i]);then ac_souce else acStd"></ng-container>
                                         <ng-template #acStd>{{monster.ac[i]}}</ng-template>
                                         <ng-template #ac_souce>
-                                            <!--special case for "sciela summons from TCE, working this in as a groos baskwards compatible patch because of how the souce JSON did it"-->
+                                            <!--special case for "spell summons from TCE, working this in as a gross backwards compatible patch because of how the souce JSON did it"-->
                                             <ng-container *ngIf="monster.ac[i].special">{{monster.ac[i].special}}</ng-container>
                                             <ng-container *ngIf="!monster.ac[i].special">{{monster.ac[i].ac}} ({{monster.ac[i].from}}{{monster.ac[i].condition}})</ng-container>
                                         </ng-template>

@@ -1,7 +1,7 @@
 import { ClassFeature } from './class-feature';
 import { Proficiency } from './proficiency';
 
-export class Class {
+export interface Class {
   name: string;
   id: string;
   description: string;
@@ -17,18 +17,19 @@ export class Class {
   levelTable: Level[];
 }
 
-export class Level {
+interface Level {
   data: string[];
 }
 
-export class Equipment {
+interface Equipment {
   default: string[];
   alt: string;
 }
 
-export class Multiclass {
+export interface Multiclass {
   armor: string;
   weapons: string;
   tools: string;
+  minScore: string;
   skills: string;
 }

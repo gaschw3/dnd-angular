@@ -1,16 +1,24 @@
-export class Feat {
-  name: string;
-  asi: String;
-  id: string;
-  source: string;
-  text: Text;
-  prerequisite: string;
+export interface Feat {
+  name:          string;
+  id:            string;
+  source:        Source;
+  asi?:          string;
+  text:          Text;
+  prerequisite?: string;
 }
 
-class Text {
-  description: string;
-  benefits: string[];
-  extraDescription: string;
-  extras: string[];
-  multipleSelect: string;
+interface Text {
+  description:       string;
+  benefits?:         string[];
+  extraDescription?: string;
+  extras?:           string[];
+  multipleSelect?:   string;
+}
+
+enum Source {
+    Brew = "BREW",
+    Phb = "PHB",
+    PurplePHB = "PHB-",
+    SourcePHB = "PHB+",
+    Tce = "TCE",
 }

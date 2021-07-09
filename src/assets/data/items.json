@@ -14650,13 +14650,11 @@
               {
                 "type": "item",
                 "name": "Weapon.",
-    "id": "weapon.",
                 "entry": "The weapon is now an uncommon magic weapon. It deals an extra 1d6 fire damage to any target it hits."
               },
               {
                 "type": "item",
                 "name": "Armor.",
-    "id": "armor.",
                 "entry": "The armor is now a rare magic item that requires attunement. You have resistance to cold damage while wearing the armor."
               }
             ]

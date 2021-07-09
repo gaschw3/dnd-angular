@@ -1,4 +1,4 @@
-export class Proficiency {
+export interface Proficiency {
   armor: string;
   weapons: string;
   tools: string;

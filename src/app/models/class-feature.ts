@@ -1,4 +1,4 @@
-export class ClassFeature {
+export interface ClassFeature {
 	level: number;
 	subclass: string;
 	filter: string;

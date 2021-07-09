@@ -8,6 +8,7 @@ import { BackButtonDirective } from '../directives/back-button.directive';
 import { ItemTypePipe } from '../pipes/item-type.pipe';
 import { OrdinalPipe } from '../pipes/ordinal.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EntryRendererComponent } from './entry-renderer/entry-renderer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SanitizeHtmlPipe,
     ItemTypePipe,
     BackButtonDirective,
-    OrdinalPipe
+    OrdinalPipe,
+    EntryRendererComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LinkmakerPipe,
     SanitizeHtmlPipe,
     ItemTypePipe,
-    BackButtonDirective
+    BackButtonDirective,
+    EntryRendererComponent
   ]
 })
 export class SharedModule { }
