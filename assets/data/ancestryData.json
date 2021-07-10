@@ -360,7 +360,7 @@
     "size": "M",
     "source": "PHB",
     "speed": "25",
-    "cha": 2,
+    "con": 2,
     "str": 2,
     "ability": "Con +2, Str +2",
     "traits": [
@@ -1243,20 +1243,16 @@
         "text": ["You can speak, read, and write Common and Infernal."]
       },
       {
-        "name": "Feral (Variant)",
-        "text": ["Your Intelligence score increases by 1, and your Dexterity score increases by 2. This replaces the Ability Score Increase trait."]
-      },
-      {
         "name": "Variant Features (Choose 1)",
         "text": [
           "Tieflings can be born of a variety of devilish heritages. Choose one from below. ",
           "You start with the listed cantrip. When you reach 3rd level, you can cast the listed spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest.  When you reach 5th level, you can cast the listed spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells",
           "<strong>Avernian</strong> cantrip: thaumaturgy. 3rd level: searing smite, 5th level: branding smite",
           "<strong>Canian</strong> cantrip: mage hand. 3rd level: burning hands, 5th level: flame blade",
-          "<strong>Malbolgian</strong> cantrip: minor illusion. 3rd level: disguise self, 5th level: invisibility",
-          "<strong>Stygian</strong> You know the ray of frost cantrip. When you reach 3rd level, you can cast the armor of Agathys spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
           "<strong>Infernal</strong> cantrip: thaumaturgy. 3rd level: hellish rebuke, 5th level: darkness",
-          "<strong>Phlegthan</strong> cantrip: friends. 3rd level: charm person, 5th level: suggestion"
+          "<strong>Malbolgian</strong> cantrip: minor illusion. 3rd level: disguise self, 5th level: invisibility",
+          "<strong>Phlegethan</strong> cantrip: friends. 3rd level: charm person, 5th level: suggestion",
+          "<strong>Stygian</strong> cantrip: ray of frost cantrip.3rd level: armor of Agathys spell,  5th level: darkness"
         ]
       },
       {
@@ -1458,6 +1454,51 @@
       {
         "name": "Shifting Feature",
         "text": ["While shifted, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll with advantage against you, unless you're incapacitated."]
+      }
+    ]
+  },
+  {
+    "name": "Tabaxi",
+    "id": "tabaxi",
+    "source": "VGM",
+    "size": "M",
+    "speed": "30",
+    "extraspeed": "20 ft. climbing",
+    "dex": 2,
+    "cha": 1,
+    "ability": "Dex +2, Cha +1",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Tabaxi have lifespans similar to humans. They reach adulthood in their late teens and live less than a century."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Tabaxi tend toward chaotic alignments, as they let impulse and fancy guide their decisions. They are rarely evil, with most of them driven by curiosity rather than greed or other dark impulses."]
+      },
+      {
+        "name": "Size",
+        "text": ["Tabaxi are taller on average than humans and relatively slender. Your size is Medium."]
+      },
+      {
+        "name": "Darkvision",
+        "text": ["You have a cat's keen senses, especially in the dark. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."]
+      },
+      {
+        "name": "Cat's Claws",
+        "text": ["Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."]
+      },
+      {
+        "name": "Feline Agility",
+        "text": ["Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns."]
+      },
+      {
+        "name": "Cat's Talents",
+        "text": ["You have proficiency in the Perception and Stealth skills."]
+      },
+      {
+        "name": "Languages",
+        "text": ["You can speak, read, and write Common and one other language of your choice."]
       }
     ]
   },
