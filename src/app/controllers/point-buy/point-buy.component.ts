@@ -5,6 +5,13 @@ import { Subject, Observable } from "rxjs";
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+
+interface Stat {
+  name: string,
+  value: number
+}
+
+
 @Component({
   selector: 'app-point-buy',
   templateUrl: './point-buy.component.html',
@@ -26,6 +33,25 @@ export class PointBuyComponent implements OnInit {
   totalPoints: number = 27;
 
   // stats start at 8 by default
+  stats: Array<Stat> = [
+    {name: "str", value: 8},
+    {name: "dex", value: 8},
+    {name: "con", value: 8},
+    {name: "int", value: 8},
+    {name: "wis", value: 8},
+    {name: "cha", value: 8},
+  ]
+
+  // storage for ancestry related boosts
+  ancestryStats: Array<Stat> = [
+    {name: "str", value: 0},
+    {name: "dex", value: 0},
+    {name: "con", value: 0},
+    {name: "int", value: 0},
+    {name: "wis", value: 0},
+    {name: "cha", value: 0},
+  ]
+
   str: number = 8;
   dex: number = 8;
   con: number = 8;
@@ -33,13 +59,16 @@ export class PointBuyComponent implements OnInit {
   wis: number = 8;
   cha: number = 8;
 
-  // storage for ancestry related boosts
   anStr: number = 0;
   anDex: number = 0;
   anCon: number = 0;
   anInt: number = 0;
   anWis: number = 0;
   anCha: number = 0;
+
+  //starting values and store for races where you choose stat bonuses
+  anChoose: number = 0;
+  choose: number = 0;
 
   constructor(private http: HttpClient,
     private fb: FormBuilder) { this.updatePercentage();}
@@ -48,10 +77,6 @@ export class PointBuyComponent implements OnInit {
     this.updatePercentage();
     this.getJSON().subscribe(ancestries => {
       this.ancestries = ancestries;
-    });
-
-    this.ancestryForm = this.fb.group({
-      ancestryControl: ['choose']
     });
   }
 
@@ -87,13 +112,76 @@ export class PointBuyComponent implements OnInit {
 
   setCurrAncestry(ancestry) {
     if (ancestry) {
-      ancestry.str ? this.anStr = ancestry.str : this.anStr = 0;
-      ancestry.dex ? this.anDex = ancestry.dex : this.anDex = 0;
-      ancestry.con ? this.anCon = ancestry.con : this.anCon = 0;
-      ancestry.int ? this.anInt = ancestry.int : this.anInt = 0;
-      ancestry.wis ? this.anWis = ancestry.wis : this.anWis = 0;
-      ancestry.cha ? this.anCha = ancestry.cha : this.anCha = 0;
+      for (let anStat of this.ancestryStats) {
+        ancestry[anStat.name] ? anStat.value = ancestry[anStat.name] : anStat.value = 0;
+      }
+      ancestry.choose ? this.choose = ancestry.choose : this.choose = 0;
     }
+  }
+
+  chooseStats(event) {
+    this.anChoose = $('input:checkbox:checked').length;
+    if(event.target.checked === true){
+      if (this.anChoose <= this.choose) {
+        this.anChoose++;
+        for (let anStat of this.ancestryStats) {
+          if (event.target.value == anStat.name) {
+            anStat.value += 1;
+          }
+        }
+      } else {
+          event.target.checked = false;
+      }
+    } else if (this.anChoose > -1) {
+      this.anChoose--;
+      for (let anStat of this.ancestryStats) {
+        if (event.target.value == anStat.name) {
+          anStat.value += 1;
+        }
+      }
+    }
+  }
+
+  calculatePoints() {
+    this.pointsSpent = 0;
+    for (let stat of this.stats) {
+      this.validateStat(stat);
+      this.pointsSpent += this.pointCost(stat.value);
+    }
+    this.updatePercentage();
+  }
+
+  pointCost(stat) {
+    if (stat > 7 && stat < 14) {
+        return stat - 8;
+    }
+    if (stat == 14) {
+        return 7;
+    }
+    if (stat == 15) {
+        return 9;
+    }
+  }
+
+  // don't allow illegal values in the input fields
+  validateStat(stat) {
+    if (stat < 8) {
+      return 8;
+    } else if (stat > 15) {
+      return 15;
+    } else {
+      return stat
+    }
+  }
+
+  // don't allow illegal values in the input fields
+  getAnStat(statName) {
+    return (this.ancestryStats.filter(anStat => anStat.name == statName))[0].value;
+  }
+
+  // return absolute value so that positive and negative stats can use same 'over50' calc
+  abs(number) {
+    return Math.abs(number);
   }
 
 }
