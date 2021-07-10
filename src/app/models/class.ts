@@ -14,11 +14,7 @@ export interface Class {
   features: ClassFeature[];
 
   levelWidths: string[];
-  levelTable: Level[];
-}
-
-interface Level {
-  data: string[];
+  levelTable: string[][];
 }
 
 interface Equipment {

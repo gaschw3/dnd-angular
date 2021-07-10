@@ -16,7 +16,7 @@ const typeTable = {
   "WD": "Wand",
   "S": "Shield",
   "FD": "Food & Drink",
-  "WON": "Wonderous Item",
+  "WON": "Wondrous Item",
   "AT": "Artisan's Tools",
   "HA": "Heavy Armor",
   "RG": "Ring",

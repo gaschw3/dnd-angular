@@ -29,7 +29,7 @@ export const typeTable = {
   "P": "consumable",
   "SC": "consumable",
   "EXP": "consumable",
-  "WON": "wonderous item",
+  "WON": "wondrous item",
   "OTH": "other",
   "SB": "spellbook"
 }

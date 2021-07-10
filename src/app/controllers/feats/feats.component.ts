@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
-import { Subject, Observable } from "rxjs";
+import { Observable } from "rxjs";
+import { Subject } from 'angular-datatables/node_modules/rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DataTableDirective } from 'angular-datatables';
 import { ActivatedRoute } from '@angular/router';

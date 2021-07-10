@@ -19,7 +19,7 @@ export class ArchetypesComponent implements OnInit {
   ngOnInit() {
   }
 
-  private clickArchetype(name) {
+  clickArchetype(name) {
     this.selectedArchetypes.includes(name) ? this.selectedArchetypes.splice(this.selectedArchetypes.indexOf(name), 1) : this.selectedArchetypes.push(name);
     if (this.selectedArchetypes.length == $('.btn-archetype').length){
       this.allSelected = true;
