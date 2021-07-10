@@ -16,7 +16,7 @@
               <p class="pb-0 m-0"><strong>Size</strong> {{ancestry.size}}</p>
             </div>
             <div class="col-sm-6">
-              <p class="pb-0 m-0"><strong>Speed</strong> {{ancestry.speed}} ft.</p>
+              <p class="pb-0 m-0"><strong>Speed</strong> {{ancestry.speed}} ft.<ng-container *ngIf=ancestry.extraspeed>, {{ancestry.extraspeed}}</ng-container></p>
             </div>
             <div class="col-sm-12">
               <p class="pb-1 m-0"><strong>Ability Scores</strong> {{ancestry.ability}}</p>
