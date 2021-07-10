@@ -1,5 +1,216 @@
 [
   {
+    "name": "Shackles - Brineheart's Coat",
+    "id": "brinehearts-coat",
+    "source": "BREW",
+    "reqAttune": true,
+    "baseItem": "studded leather",
+    "type": "LA",
+    "rarity": "uncommon",
+    "ac": 12,
+    "weight": 15,
+    "armor": true,
+    "entries": [
+      "This was once a fine turqoise captain's overcoat. Ages spent under the sea on Brineheart's lost galleon has left it crusted with barnacles, corals, and seaweed. Though it remains comfortable to the wearer, the coat is always wet to the touch and smells faintly of the sea.",
+      {
+        "name": "Bottom Feeder",
+        "type": "entries",
+        "entries": [
+          "While attuned to this coar you can breate underwater and you have a swim speed equal to you walking speed. Additionally you can expend a full turn of movement to ascend or descend 90 ft in a straight vertical line."
+        ]
+      },
+      {
+        "name": "Bottom Feeder",
+        "type": "entries",
+        "entries": [
+          "When you are underwater, you have advantage on all Dexterity (Stealth) checks as the organic parts of this coat help obscure you from vision."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shackles - Capt'n Mike's Peg Leg",
+    "id": "captian-mikes-peg-leg",
+    "source": "BREW",
+    "type": "RD",
+    "tier": "major",
+    "rarity": "very rare",
+    "reqAttune": true,
+    "weight": 2,
+    "bonusSpellAttack": "+2",
+    "entries": [
+      "While holding this rod, you gain a +2 bonus to spell attack rolls. In addition, you ignore half cover when making a spell attack.",
+      {
+        "name": "Prosthetic",
+        "type": "entries",
+        "entries": [
+          "If you replace one of your legs with this rod you may still use it as a spell casting focus without having to use your hands. Additionally, you gain access to the drop anchor ability as long as the rod is attached to your body."
+        ]
+      },
+      {
+        "name": "Drop Anchor",
+        "type": "entries",
+        "entries": [
+          "You can use your reaction to stomp your peg leg into the ground. Until the start of your next turn you have advantage on Strength saving throws against effects that would move you or knock you prone."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shackles - Cloak of the Macaw",
+    "id": "cloak-of-the-macaw",
+    "source": "BREW",
+    "tier": "major",
+    "rarity": "very rare",
+    "reqAttune": true,
+    "wondrous": true,
+    "entries": [
+      "This beautiful cloak is covered in enormous red, yellow, and blue iridescent feathers. The captain who had it claimed they belonged to parrots ho found on an island in teh Shackles, but in reality they are coatl feathers. While attuned to it, you gain the following benefits:",
+      {
+        "type": "list",
+        "items": [
+          "As a reaction you can slow your rate of descent to 60 ft per round. When you land after useing this reaction you take no damage and you can always land on your feet..",
+          "While attuned to this cloak you can mimic sounds you have heard. If you are mimicing a voice in this way you can only use the exact phrase and words as they were spoken.",
+          "You can use an action to turn the cloak into brightly colored wings and cast the {@spells/fly fly} spell targeting yourself. Once used, this property of the cloak can't be used again until you finish a short rest."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shackles - Doubloonblaster",
+    "id": "doubloonblaster",
+    "source": "BREW",
+    "page": 268,
+    "type": "R",
+    "rarity": "rare",
+    "weight": 3,
+    "baseItem": "pistol",
+    "weaponCategory": "martial",
+    "property": [
+      "A",
+      "LD"
+    ],
+    "range": "30/90",
+    "dmg1": "1d10",
+    "dmgType": "P",
+    "firearm": true,
+    "reqAttune": true,
+    "weapon": true,
+    "entries": [
+      "This +2 pistol is made entierly of magically enchanted gold.",
+      {
+        "name": "Coin Ammunition",
+        "type": "entries",
+        "entries": [
+          "Instead of bullets this pistol uses bold coins for ammunition. A coin can be loaded into the gun through a slot on the top. The coin is magically tuned into a bullet when the trigger is pulled.",
+          "You can also load a platinum coin into the gun instead of a gold coin. When you do, you receive a +5 bonues to your attack roll and deal and extra 1d10 damage. You can shoot two platinum coins per day. The pistol malfunctions if you try to shoota third platinum coin or any type of currency less valuable than gold."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shackles - Ol' Shipwrecker",
+    "id": "ol-shipwrecker",
+    "source": "BREW",
+    "page": 268,
+    "type": "R",
+    "rarity": "artifact",
+    "weight": 60,
+    "baseItem": "greataxe",
+    "weaponCategory": "martial",
+    "property": [
+      "H",
+      "2H"
+    ],
+    "dmg1": "1d12",
+    "dmgType": "S",
+    "axe": true,
+    "weapon": true,
+    "reqAttune": true,
+    "entries": [
+      "According to legend this enormous salted steel weapon was once the anchor for the merchant vessel <i>Windfall</i>. When the vessel failed to pay proper respect to the ocean a vengeful spirt rose from teh waves, ripped off the anchor and used to to sink the <i>Windfall</i>. It has since been pased down through the ages as a fearsome weapon of the Depths, appearing from time to time in history to destroy enemies of the open sea.",
+      {
+        "type": "entries",
+        "name": "Dormant",
+        "entries": [
+          "The anchor grants the following benefits in its dormant state:",
+          {
+            "type": "list",
+            "items": [
+              "You can breate in water and have a swim speed equal to your walking speed.",
+              "You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+              "<b>Dredge Line.</b> As can use the attack action to throw the arnchor at a target within 40 ft of you that isn't in the air. If this attack hits the target must make a DC 15 Strength saving throw. On a failure the target and attacker are pulled towards one another, meeting halfway. This action can be used once per long rest in the dormant state, twice in the awakened state, and three times in the exalted state. This attack can also be used against solid terrain (walls, columns, etc.) to pull the attacker towards the location. Using the Drredge Line on terrain doesn't expend a use."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Awakened",
+        "entries": [
+          "When the anchir reaches an awakened state, it gains the following properties:",
+          {
+            "type": "list",
+            "items": [
+              "The weapon's bonus to attack and damage rolls increases to +2.",
+              "You can use your <b>Dredge Line</b> attack against enemies twice per long rest.",
+              "<b>Whelming Wave.</b> As an action you can now use the anchor to smash the ground, and explode a magical wave outward in a 15 ft spehere surrounded the wielder. Each creature within that sphere has its movement reduced to half for one round, and the must make a DC 15 Dexterity save, taking 16 (3d10) damage on a failed save or half as much no a success. This action can be used once per long rest in the awakened state, and twice times in the exalted state."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Exalted",
+        "entries": [
+          "When the anchor reaches an exalted state, it gains the following properties:",
+          {
+            "type": "list",
+            "items": [
+              "The weapon's bonus to attack and damage rolls increases to +3.",
+              "You can use your <b>Dredge Line</b> attack against enemies three times per long rest.",
+              "You can use your <b>Whelming Wave</b> action against twice per long rest.",
+              "<b>Hullbreacher.</b> Choose a target within 60 ft. that isn't airbourne. As an action you can slam the anchors head into the ground, sending a 10 ft. rolling surge towards the chosen target. The charge takes until the beginning your next turn to travel to the selected target. Any creature the charge passes under make a DC 18 Dexterity savw, taking 19 (3d12) bludgeoning damage and 19 (3d12) cold damage and falling prone on a failure. A success results in taking half damage and not being knocked prone. Once the charge reaches underneath the target, it detonates, causing a 15 ft. high column of water to spring up under the target. They then make a DC 20 Dexterity save, taking 32 (5d12) bludgeoning damage and 32 (5d12) cold damage and falling prone on a failed save. A success results in taking half damage and not being knocked prone."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shackles - Compass of the Homesick",
+    "id": "compass-of-the-homesick",
+    "source": "BREW",
+    "tier": "minor",
+    "rarity": "common",
+    "reqAttune": true,
+    "wondrous": true,
+    "entries": [
+      "This aged brass compass has a small compartment under the dial which can be filled with earth, sand, dirt, or pebbles. The compass features two needles. The large, regular needle always points towards magnetic north (per a standard compass), but the thing golden needle always points towards the location from where material in the compartment was taken.",
+      "If the compartment is empty, filled with some other material, or filled with material taken from another plane, the golden needle spins and stop erratically with no obvious pattern."
+    ]
+  },
+  {
+    "name": "Shackles - Ring of the Lone Captain",
+    "id": "riong-of-the-lone-captain",
+    "source": "BREW",
+    "type": "RG",
+    "tier": "major",
+    "rarity": "rare",
+    "reqAttune": true,
+    "wondrous": true,
+    "entries": [
+      "While attuned to this ring, you can bond it to the rigging of a ship of which you are the captain. It takes 30 minutes to bond the ship to the rinf. WHen the ring is bonded to a ship, you can adjust teh sails and steering wheel of that ship by shouting command words as long as you are within 300ft of the ship. When comandeering a ship this way you do not need any crew to perform those tasks.",
+      {
+        "name": "Open Fire",
+        "type": "entries",
+        "entries": [
+          "Additionally, you can use an action to point to a target you can see withing 300ft and speak a command word. A dark cannonball appears in front of you and shoots toward your target. All creatres within 10 ft of the target must make a DC 15 Dexterity save. On a failed save they take 27 (5d10) force damage. On a successful save they take half damage. This damage is doubled against structures. You can use this feature once per long rest."
+        ]
+      }
+    ]
+  },
+  {
     "name": "Alchemical Compendium",
     "id": "alchemical-compendium",
     "source": "TCE",
@@ -338,7 +549,7 @@
     ]
   },
   {
-    "name": "Tarokka of Spells",
+    "name": "Pfennig - Tarokka of Spells",
     "id": "tarokka-of-spells",
     "source": "BREW",
     "page": 128,
@@ -4044,7 +4255,6 @@
       {
         "type": "entries",
         "name": "Sentience",
-    "id": "sentience",
         "entries": [
           "The Blade of Broken Mirrors is a sentient chaotic evil weapon with an Intelligence of 21, a Wisdom of 24, and a Charisma of 24. It has hearing and darkvision out to a range of 120 feet.",
           "The weapon communicates telepathically with its wielder and can speak, read, and understand Abyssal and Common."
@@ -4053,7 +4263,6 @@
       {
         "type": "entries",
         "name": "Personality",
-    "id": "personality",
         "entries": [
           "An insane {@creature glabrezu} named Ragazuu lives within the Blade of Broken Mirrors. The weapon yearns to cause chaos. It learns its wielder's principles, then uses those ideals to encourage reckless action. The dagger whispers ideas of revolution."
         ]
@@ -4061,7 +4270,6 @@
       {
         "type": "entries",
         "name": "Dormant",
-    "id": "dormant",
         "entries": [
           "The dagger grants the following benefits in its dormant state:",
           {
@@ -4077,7 +4285,6 @@
       {
         "type": "entries",
         "name": "Awakened",
-    "id": "awakened",
         "entries": [
           "When the dagger reaches an awakened state, it gains the following properties:",
           {
@@ -4092,7 +4299,6 @@
       {
         "type": "entries",
         "name": "Exalted",
-    "id": "exalted",
         "entries": [
           "When the dagger reaches an exalted state, it gains the following properties:",
           {
@@ -14444,13 +14650,11 @@
               {
                 "type": "item",
                 "name": "Weapon.",
-    "id": "weapon.",
                 "entry": "The weapon is now an uncommon magic weapon. It deals an extra 1d6 fire damage to any target it hits."
               },
               {
                 "type": "item",
                 "name": "Armor.",
-    "id": "armor.",
                 "entry": "The armor is now a rare magic item that requires attunement. You have resistance to cold damage while wearing the armor."
               }
             ]
@@ -14650,7 +14854,7 @@
     ]
   },
   {
-    "name": "Order of the Blue Heron Shield",
+    "name": "Pfennig - Order of the Blue Heron Shield",
     "id": "order-of-the-silver-dragon-shield",
     "source": "BREW",
     "page": 68,
@@ -14662,8 +14866,7 @@
     "bonusAc": "+2",
     "entries": [
       "While holding this shield, you have a +2 bonus to AC. This bonus is in addition to the shield's normal bonus to AC.",
-      "The shield is emblazoned with a stylized silver dragon that is the emblem of the Order of the Blue Heron (an order of ranging swords-women in Pfennig). The shield whispers warnings to its bearer, granting a +2 bonus to initiative if the bearer isn't incapacitated.",
-      "A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time."
+      "The shield is emblazoned with a stylized silver dragon that is the emblem of the Order of the Blue Heron (an order of ranging swords-women in Pfennig). The shield whispers warnings to its bearer, granting a +2 bonus to initiative if the bearer isn't incapacitated."
     ]
   },
   {
@@ -16540,7 +16743,7 @@
     ]
   },
   {
-    "name": "Riteknife",
+    "name": "Pfennig - Riteknife",
     "id": "riteknife",
     "source": "BREW",
     "baseItem": "dagger",
@@ -16565,7 +16768,6 @@
       {
         "type": "entries",
         "name": "Siphon Vitality",
-    "id": "siphon-vitality",
         "entries": [
           "As a bonus action, you can release any number of stored souls from the dagger to regain 1d10 hit points per soul released."
         ]
@@ -16573,7 +16775,6 @@
       {
         "type": "entries",
         "name": "Annihilation",
-    "id": "annihilation",
         "entries": [
           "If the dagger holds five souls, you can use this property: As a reaction immediately after you hit a creature with the dagger and deal damage to that target, you can release all five souls. If the target now has fewer than 75 hit points, it must succeed on a DC 15 Constitution saving throw or die. If the target dies, you can't use this property again until you finish a long rest."
         ]
@@ -20337,7 +20538,7 @@
     ]
   },
   {
-    "name": "Statuette of Childe Roland",
+    "name": "Pfennig - Statuette of Childe Roland",
     "id": "statuette-of-childe-roland",
     "source": "BREW",
     "page": 152,
@@ -20489,7 +20690,7 @@
     ]
   },
   {
-    "name": "Sunsword",
+    "name": "Pfennig - Sunsword",
     "id": "sunsword",
     "source": "BREW",
     "page": 223,
@@ -20511,10 +20712,9 @@
     "entries": [
       "The Sunsword is a unique blade once possessed by an angel since killed. In its original form, it had a platinum hilt and guard, and a thin crystal blade as strong as steel.",
       "Regina Adler employed a powerful wizard named Gaspard to destroy the weapon after the angel's death. The first part of the process required the hilt and the blade to be separated, which Gaspard accomplished. While Gaspard was busying himself destroying the blade, his apprentice stole the hilt and fled. Gaspard later located his apprentice's mutilated corpse in the Khosrov Woods, but the hilt was nowhere to be found. To avoid the prophet's wrath, Gaspard told Regina that the entire weapon had been destroyed.",
-      "The hilt, which is sentient, knows that it can never be reunited with its original crystal blade. It has, however, gained the properties of a {@items/sun-blade sun blade}.",
+      "The hilt, which is sentient, knows that it can never be reunited with its original crystal blade. It has, however, gained several other special properties:",
       {
         "name": "Sentience",
-    "id": "sentience",
         "type": "entries",
         "entries": [
           "The Sunsword is a sentient chaotic good weapon with an Intelligence of 11, a Wisdom of 17, and a Charisma of 16. It has hearing and normal vision out to a range of 60 feet. The weapon communicates by transmitting emotions to the creature carrying it or wielding it."
@@ -20522,13 +20722,18 @@
       },
       {
         "name": "Personality",
-    "id": "personality",
         "type": "entries",
         "entries": [
-          "The Sunsword's special purpose is to destroy Strahd, not so much because it wants to free the land of Barovia from evil but because it wants revenge for the loss of its crystal blade. The weapon secretly fears its own destruction."
+          "The Sunsword's special purpose is to destroy evil, not so much because it wants to free the land of Pfennig from evil but because it wants revenge for the loss of its crystal blade. The weapon secretly fears its own destruction."
         ]
       },
-      "{@items/sun-blade Sun blade}. This item appears to be a longsword hilt. While grasping the hilt, you can use a bonus action to cause a blade of pure radiance to spring into existence, or make the blade disappear. While the blade exists, this magic longsword has the finesse property. If you are proficient with {@items/shortsword|shortswords shortsword|shortswords} or {@items/longsword|longswords longsword|longswords}, you are proficient with the {@items/sun-blade sun blade}.",
+      {
+        "name": "Sun Blade",
+        "type": "entries",
+        "entries": [
+          "This item appears to be a longsword hilt. While grasping the hilt, you can use a bonus action to cause a blade of pure radiance to spring into existence, or make the blade disappear. While the blade exists, this magic longsword has the finesse property. If you are proficient with {@items/shortsword|shortswords shortsword|shortswords} or {@items/longsword|longswords longsword|longswords}, you are proficient with the sun blade."
+        ]
+      },
       "You gain a +2 bonus to attack and damage rolls made with this weapon, which deals radiant damage instead of slashing damage. When you hit an undead with it, that target takes an extra 1d8 radiant damage.",
       "The sword's luminous blade emits bright light in a 15-foot radius and dim light for an additional 15 feet. The light is sunlight. While the blade persists, you can use an action to expand or reduce its radius of bright and dim light by 5 feet each, to a maximum of 30 feet each or a minimum of 10 feet each."
     ]
@@ -24148,7 +24353,7 @@
     "grantsProficiency": true,
     "bonusWeapon": "+2",
     "entries": [
-      "A silver spear, Windvane has dark sapphires on the filigreed surface of its polished head. Held by its shining haft, the weapon feels insubstantial, as if clutching a cool, gently flowing breeze. The spear contains a spark of {@creature Yan-C-Bin|PotA}, the Prince of Evil Air.",
+      "A silver spear, Windvane has dark sapphires on the filigreed surface of its polished head. Held by its shining haft, the weapon feels insubstantial, as if clutching a cool, gently flowing breeze. The spear contains a spark of, the Prince of Evil Air.",
       "You have a +2 bonus to attack and damage rolls made with this magic weapon, which has the finesse weapon property. When you hit with it, the target takes an extra 1d6 lightning damage.",
       {
         "name": "Air Mastery",
@@ -24505,7 +24710,7 @@
     ]
   },
   {
-    "name": "Little Red Hood",
+    "name": "Livre - Little Red Hood",
     "id": "little-red-hood",
     "wondrous": true,
     "weight": "1",
@@ -24784,7 +24989,7 @@
     "source": "BREW",
     "type": "WEN",
     "reqAttune": true,
-    "rarity": "rate",
+    "rarity": "rare",
     "weight": 0,
     "entries": [
       "Flametongued weapons are decorated with a flame motif and always feel warm to the touch.",
@@ -24797,7 +25002,7 @@
     "source": "BREW",
     "type": "WEN",
     "reqAttune": true,
-    "rarity": "very rare",
+    "rarity": "rare",
     "weight": 0,
     "entries": [
       "Frostfang weapons are partially constructed from the tooth, claw, or scales of a white dragon or similarly powerful creature that dwells in the cold.",
@@ -24814,7 +25019,7 @@
     "rarity": "uncommon",
     "weight": -2,
     "entries": [
-      "Ghosttouched weapons are oddly ethereal and feels lighter than they should. The also wavers perceptibly when swung about.",
+      "Ghosttouched weapons are oddly ethereal and feels lighter than they should. They also waver perceptibly when swung about.",
       "Ghost-touched weapons attack targets in the Ethereal Plane and gain an additional +1 magical modifier if they are wielded by a missing limb."
     ]
   },
@@ -24830,14 +25035,14 @@
     ]
   },
   {
-    "name": "Sonjourner's (enchantment)",
-    "id": "sonjourners",
+    "name": "Sojourner's (enchantment)",
+    "id": "sojourners",
     "source": "BREW",
     "type": "WEN",
     "rarity": "uncommon",
     "weight": -1,
     "entries": [
-      "A poem, story, or map that describes a long-forgotten treasure that will make this weapon more powerful is etched on the surface of the weapon."
+      "A poem, story, or map that describes a long-forgotten treasure that will make this weapon more powerful is etched on its surface."
     ]
   },
   {

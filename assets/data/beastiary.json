@@ -11149,7 +11149,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The kruthik has advantage on Wisdom ($1) checks that rely on smell."
+            "The kruthik has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -14945,7 +14945,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -15283,7 +15283,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the derro has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the derro has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -15441,7 +15441,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the derro savant has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the derro savant has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -15701,7 +15701,7 @@
         {
           "name": "Keen Senses",
           "entries": [
-            "The troll has advantage on Wisdom ($1) checks that rely on smell or sight."
+            "The troll has advantage on Wisdom (Perception) checks that rely on smell or sight."
           ]
         },
         {
@@ -15921,7 +15921,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -16158,7 +16158,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -16324,7 +16324,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -16572,7 +16572,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -16846,7 +16846,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -17037,7 +17037,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -17212,7 +17212,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the duergar despot has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the duergar despot has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -17471,7 +17471,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -17610,7 +17610,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -17642,7 +17642,7 @@
         {
           "name": "Reduce (Recharges after a Short or Long Rest)",
           "entries": [
-            "For 1 minute, the duergar magically decreases in size, along with anything it is wearing or carrying. While reduced, the duergar is Tiny, reduces its weapon damage to 1, and makes attacks, checks, and saving throws with disadvantage if they use Strength. It gains a +5 bonus to all Dexterity ($1) checks and a +5 bonus to its AC. It can also take a bonus action on each of its turns to take the Hide action."
+            "For 1 minute, the duergar magically decreases in size, along with anything it is wearing or carrying. While reduced, the duergar is Tiny, reduces its weapon damage to 1, and makes attacks, checks, and saving throws with disadvantage if they use Strength. It gains a +5 bonus to all Dexterity (Stealth) checks and a +5 bonus to its AC. It can also take a bonus action on each of its turns to take the Hide action."
           ]
         }
       ],
@@ -17879,7 +17879,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -18006,7 +18006,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -18126,7 +18126,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -18275,7 +18275,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -19004,7 +19004,7 @@
         {
           "name": "Living Storm",
           "entries": [
-            "The tempest is always at the center of a storm 1d6 + 4 miles in diameter. Heavy precipitation in the form of either rain or snow falls there, causing the area to be lightly obscured. Heavy rain also extinguishes open flames and imposes disadvantage on Wisdom ($1) checks that rely on hearing.",
+            "The tempest is always at the center of a storm 1d6 + 4 miles in diameter. Heavy precipitation in the form of either rain or snow falls there, causing the area to be lightly obscured. Heavy rain also extinguishes open flames and imposes disadvantage on Wisdom (Perception) checks that rely on hearing.",
             "In addition, strong winds swirl in the area covered by the storm. The winds impose disadvantage on ranged attack rolls. The winds extinguish open flames and disperse fog."
           ]
         },
@@ -22342,7 +22342,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The kruthik has advantage on Wisdom ($1) checks that rely on smell."
+            "The kruthik has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -29186,7 +29186,7 @@
         {
           "name": "Two Heads",
           "entries": [
-            "The Angry has advantage on Wisdom ($1."
+            "The Angry has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious."
           ]
         },
         {
@@ -30336,7 +30336,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The troll has advantage on Wisdom ($1) checks that rely on smell."
+            "The troll has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -31462,7 +31462,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The kruthik has advantage on Wisdom ($1) checks that rely on smell."
+            "The kruthik has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -35770,7 +35770,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The barghest has advantage on Wisdom ($1) checks that rely on smell."
+            "The barghest has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -36773,7 +36773,7 @@
         {
           "name": "Uncanny Smell",
           "entries": [
-            "The boggle has advantage on Wisdom ($1) checks that rely on smell."
+            "The boggle has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -36945,7 +36945,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The catoblepas has advantage on Wisdom ($1) checks that rely on smell."
+            "The catoblepas has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -37286,7 +37286,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the chitine has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the chitine has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -37447,7 +37447,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the choldrith has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the choldrith has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -37642,7 +37642,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The giant has advantage on Wisdom ($1) checks that rely on smell."
+            "The giant has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -38069,7 +38069,7 @@
         {
           "name": "Light Sensitivity",
           "entries": [
-            "While in bright light, the darkling has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in bright light, the darkling has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -40631,7 +40631,7 @@
         {
           "name": "Extra Heads",
           "entries": [
-            "The giant has a 25 percent chance of having more than one head. If it has more than one, it has advantage on Wisdom ($1."
+            "The giant has a 25 percent chance of having more than one head. If it has more than one, it has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious."
           ]
         },
         {
@@ -43248,7 +43248,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The ki-rin makes a Wisdom ($1) check."
+            "The ki-rin makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -43390,7 +43390,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -43497,7 +43497,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -43726,7 +43726,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -44130,7 +44130,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The leucrotta has advantage on Wisdom ($1) checks that rely on smell."
+            "The leucrotta has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -44642,7 +44642,7 @@
         {
           "name": "Light Sensitivity",
           "entries": [
-            "While in bright light, the meenlock has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in bright light, the meenlock has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -47270,7 +47270,7 @@
         {
           "name": "Iron Boots",
           "entries": [
-            "While moving, the redcap has disadvantage on Dexterity ($1) checks."
+            "While moving, the redcap has disadvantage on Dexterity (Stealth) checks."
           ]
         },
         {
@@ -47597,7 +47597,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The shadow mastiff has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The shadow mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -49051,7 +49051,7 @@
         {
           "name": "Plant Camouflage",
           "entries": [
-            "The thorny has advantage on Dexterity ($1) checks it makes in any terrain with ample obscuring plant life."
+            "The thorny has advantage on Dexterity (Stealth) checks it makes in any terrain with ample obscuring plant life."
           ]
         },
         {
@@ -49782,7 +49782,7 @@
         {
           "name": "Plant Camouflage",
           "entries": [
-            "The vegepygmy has advantage on Dexterity ($1) checks it makes in any terrain with ample obscuring plant life."
+            "The vegepygmy has advantage on Dexterity (Stealth) checks it makes in any terrain with ample obscuring plant life."
           ]
         },
         {
@@ -49892,7 +49892,7 @@
         {
           "name": "Plant Camouflage",
           "entries": [
-            "The vegepygmy has advantage on Dexterity ($1) checks it makes in any terrain with ample obscuring plant life."
+            "The vegepygmy has advantage on Dexterity (Stealth) checks it makes in any terrain with ample obscuring plant life."
           ]
         },
         {
@@ -51055,7 +51055,7 @@
         {
           "name": "Plant Camouflage",
           "entries": [
-            "The wood woad has advantage on Dexterity ($1) checks it makes in any terrain with ample obscuring plant life."
+            "The wood woad has advantage on Dexterity (Stealth) checks it makes in any terrain with ample obscuring plant life."
           ]
         },
         {
@@ -51540,7 +51540,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The yeth hound has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The yeth hound has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -51718,7 +51718,7 @@
         {
           "name": "Six Heads",
           "entries": [
-            "The anathema has advantage on Wisdom ($1."
+            "The anathema has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious."
           ]
         }
       ],
@@ -71825,7 +71825,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The aboleth makes a Wisdom ($1) check."
+            "The aboleth makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -71957,13 +71957,13 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The yeti has advantage on Wisdom ($1) checks that rely on smell."
+            "The yeti has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
           "name": "Snow Camouflage",
           "entries": [
-            "The yeti has advantage on Dexterity ($1) checks made to hide in snowy terrain."
+            "The yeti has advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
           ]
         }
       ],
@@ -72289,7 +72289,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -72484,7 +72484,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dracolich makes a Wisdom ($1) check."
+            "The dracolich makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -72672,7 +72672,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -72872,7 +72872,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -73095,7 +73095,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -73292,7 +73292,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -73502,7 +73502,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -73695,7 +73695,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -73888,7 +73888,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -74097,7 +74097,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -74300,7 +74300,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -74727,7 +74727,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -74910,7 +74910,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -75112,7 +75112,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -75323,7 +75323,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -75527,7 +75527,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -75729,7 +75729,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -75922,7 +75922,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -76109,7 +76109,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -76310,7 +76310,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -76501,7 +76501,7 @@
         {
           "name": "Detect",
           "entries": [
-            "The dragon makes a Wisdom ($1) check."
+            "The dragon makes a Wisdom (Perception) check."
           ]
         },
         {
@@ -78376,7 +78376,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The badger has advantage on Wisdom ($1) checks that rely on smell."
+            "The badger has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -79544,7 +79544,7 @@
         {
           "name": "Keen Hearing",
           "entries": [
-            "The bat has advantage on Wisdom ($1) checks that rely on hearing."
+            "The bat has advantage on Wisdom (Perception) checks that rely on hearing."
           ]
         }
       ],
@@ -80422,7 +80422,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The bear has advantage on Wisdom ($1) checks that rely on smell."
+            "The bear has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -80772,7 +80772,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The dog has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The dog has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         }
       ],
@@ -80866,7 +80866,7 @@
         {
           "name": "Keen Sight",
           "entries": [
-            "The hawk has advantage on Wisdom ($1) checks that rely on sight."
+            "The hawk has advantage on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -81980,7 +81980,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The bear has advantage on Wisdom ($1) checks that rely on smell."
+            "The bear has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -82882,7 +82882,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The carrion crawler has advantage on Wisdom ($1) checks that rely on smell."
+            "The carrion crawler has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -83010,7 +83010,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The cat has advantage on Wisdom ($1) checks that rely on smell."
+            "The cat has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -83097,7 +83097,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The bear has advantage on Wisdom ($1) checks that rely on smell."
+            "The bear has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -84055,7 +84055,7 @@
         {
           "name": "Light Sensitivity",
           "entries": [
-            "While in bright light, the cloaker has disadvantage on attack rolls and Wisdom ($1) checks that rely on sight."
+            "While in bright light, the cloaker has disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -84237,7 +84237,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The giant has advantage on Wisdom ($1) checks that rely on smell."
+            "The giant has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -86044,7 +86044,7 @@
         {
           "name": "Two-Headed",
           "entries": [
-            "The dog has advantage on Wisdom ($1."
+            "The dog has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious."
           ]
         }
       ],
@@ -87338,7 +87338,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The wolf has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -87789,7 +87789,7 @@
         {
           "name": "Read Thoughts",
           "entries": [
-            "The doppelganger magically reads the surface thoughts of one creature within 60 feet of it. The effect can penetrate barriers, but 3 feet of wood or dirt, 2 feet of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the doppelganger can continue reading its thoughts, as long as the doppelganger's concentration isn't broken (as if concentrating on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom ($1) checks against the target."
+            "The doppelganger magically reads the surface thoughts of one creature within 60 feet of it. The effect can penetrate barriers, but 3 feet of wood or dirt, 2 feet of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the doppelganger can continue reading its thoughts, as long as the doppelganger's concentration isn't broken (as if concentrating on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom (Perception) checks against the target."
           ]
         }
       ],
@@ -88255,7 +88255,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drider has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drider has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -88454,7 +88454,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -88616,7 +88616,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -88850,7 +88850,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -89058,7 +89058,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -89523,7 +89523,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -89872,7 +89872,7 @@
         {
           "name": "Keen Sight",
           "entries": [
-            "The eagle has advantage on Wisdom ($1) checks that rely on sight."
+            "The eagle has advantage on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -90985,7 +90985,7 @@
         {
           "name": "Two Heads",
           "entries": [
-            "The ettin has advantage on Wisdom ($1."
+            "The ettin has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious."
           ]
         },
         {
@@ -92160,7 +92160,7 @@
         {
           "name": "Illumination",
           "entries": [
-            "The elemental sheds bright light in a 30-foot radius and dim light in an additional 30 ft.."
+            "The elemental sheds bright light in a 30-foot radius and dim light in an additional 30 ft."
           ]
         },
         {
@@ -94601,7 +94601,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The badger has advantage on Wisdom ($1) checks that rely on smell."
+            "The badger has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -94707,7 +94707,7 @@
         {
           "name": "Keen Hearing",
           "entries": [
-            "The bat has advantage on Wisdom ($1) checks that rely on hearing."
+            "The bat has advantage on Wisdom (Perception) checks that rely on hearing."
           ]
         }
       ],
@@ -95284,7 +95284,7 @@
         {
           "name": "Keen Sight",
           "entries": [
-            "The eagle has advantage on Wisdom ($1) checks that rely on sight."
+            "The eagle has advantage on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -95494,7 +95494,7 @@
         {
           "name": "Illumination",
           "entries": [
-            "The beetle sheds bright light in a 10-foot radius and dim light for an additional 10 ft.."
+            "The beetle sheds bright light in a 10-foot radius and dim light for an additional 10 ft."
           ]
         }
       ],
@@ -95995,7 +95995,7 @@
         {
           "name": "Underwater Camouflage",
           "entries": [
-            "The octopus has advantage on Dexterity ($1) checks made while underwater."
+            "The octopus has advantage on Dexterity (Stealth) checks made while underwater."
           ]
         },
         {
@@ -96116,7 +96116,7 @@
         {
           "name": "Keen Hearing and Sight",
           "entries": [
-            "The owl has advantage on Wisdom ($1) checks that rely on hearing or sight."
+            "The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight."
           ]
         }
       ],
@@ -96315,7 +96315,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The rat has advantage on Wisdom ($1) checks that rely on smell."
+            "The rat has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -96998,7 +96998,7 @@
         {
           "name": "Keen Sight and Smell",
           "entries": [
-            "The vulture has advantage on Wisdom ($1) checks that rely on sight or smell."
+            "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell."
           ]
         },
         {
@@ -97176,7 +97176,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The weasel has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         }
       ],
@@ -100700,7 +100700,7 @@
         {
           "name": "Keen Sight",
           "entries": [
-            "The griffon has advantage on Wisdom ($1) checks that rely on sight."
+            "The griffon has advantage on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -100819,7 +100819,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The grimlock has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The grimlock has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -101788,7 +101788,7 @@
         {
           "name": "Keen Sight",
           "entries": [
-            "The hawk has advantage on Wisdom ($1) checks that rely on sight."
+            "The hawk has advantage on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -101906,7 +101906,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The hound has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The hound has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -102451,7 +102451,7 @@
         {
           "name": "Keen Sight",
           "entries": [
-            "The hippogriff has advantage on Wisdom ($1) checks that rely on sight."
+            "The hippogriff has advantage on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -103088,7 +103088,7 @@
         {
           "name": "Keen Hearing",
           "entries": [
-            "The hook horror has advantage on Wisdom ($1) checks that rely on hearing."
+            "The hook horror has advantage on Wisdom (Perception) checks that rely on hearing."
           ]
         }
       ],
@@ -104741,7 +104741,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The jackal has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The jackal has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -104845,7 +104845,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The jackalwere has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The jackalwere has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -105093,7 +105093,7 @@
         {
           "name": "Keen Hearing",
           "entries": [
-            "The whale has advantage on Wisdom ($1) checks that rely on hearing."
+            "The whale has advantage on Wisdom (Perception) checks that rely on hearing."
           ]
         }
       ],
@@ -105361,7 +105361,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -105721,7 +105721,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -105921,7 +105921,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -106063,7 +106063,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -106232,7 +106232,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -106842,7 +106842,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The lion has advantage on Wisdom ($1) checks that rely on smell."
+            "The lion has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -108814,7 +108814,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The mastiff has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         }
       ],
@@ -112162,7 +112162,7 @@
         {
           "name": "Keen Sight",
           "entries": [
-            "The nothic has advantage on Wisdom ($1) checks that rely on sight."
+            "The nothic has advantage on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -112610,7 +112610,7 @@
         {
           "name": "Underwater Camouflage",
           "entries": [
-            "The octopus has advantage on Dexterity ($1) checks made while underwater."
+            "The octopus has advantage on Dexterity (Stealth) checks made while underwater."
           ]
         },
         {
@@ -113875,7 +113875,7 @@
         {
           "name": "Keen Hearing and Sight",
           "entries": [
-            "The owl has advantage on Wisdom ($1) checks that rely on hearing or sight."
+            "The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight."
           ]
         }
       ],
@@ -113996,7 +113996,7 @@
         {
           "name": "Keen Sight and Smell",
           "entries": [
-            "The owlbear has advantage on Wisdom ($1) checks that rely on sight or smell."
+            "The owlbear has advantage on Wisdom (Perception) checks that rely on sight or smell."
           ]
         }
       ],
@@ -114102,7 +114102,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The panther has advantage on Wisdom ($1) checks that rely on smell."
+            "The panther has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -114435,7 +114435,7 @@
         {
           "name": "Keen Sight and Smell",
           "entries": [
-            "The peryton has advantage on Wisdom ($1) checks that rely on sight or smell."
+            "The peryton has advantage on Wisdom (Perception) checks that rely on sight or smell."
           ]
         }
       ],
@@ -115423,7 +115423,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The bear has advantage on Wisdom ($1) checks that rely on smell."
+            "The bear has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -115550,7 +115550,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the poltergeist has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the poltergeist has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -115916,7 +115916,7 @@
         {
           "name": "Keen Senses",
           "entries": [
-            "The pseudodragon has advantage on Wisdom ($1) checks that rely on sight, hearing, or smell."
+            "The pseudodragon has advantage on Wisdom (Perception) checks that rely on sight, hearing, or smell."
           ]
         },
         {
@@ -117123,7 +117123,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The rat has advantage on Wisdom ($1) checks that rely on smell."
+            "The rat has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -118107,7 +118107,7 @@
         {
           "name": "Keen Sight",
           "entries": [
-            "The roc has advantage on Wisdom ($1) checks that rely on sight."
+            "The roc has advantage on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -118592,7 +118592,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The tiger has advantage on Wisdom ($1) checks that rely on smell."
+            "The tiger has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -119682,7 +119682,7 @@
         {
           "name": "Keen Hearing and Sight",
           "entries": [
-            "The scout has advantage on Wisdom ($1) checks that rely on hearing or sight."
+            "The scout has advantage on Wisdom (Perception) checks that rely on hearing or sight."
           ]
         }
       ],
@@ -120263,7 +120263,7 @@
         {
           "name": "Light Sensitivity",
           "entries": [
-            "While in bright light, the demon has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in bright light, the demon has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -121675,7 +121675,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -123419,7 +123419,7 @@
         {
           "name": "Keen Hearing",
           "entries": [
-            "The swarm has advantage on Wisdom ($1) checks that rely on hearing."
+            "The swarm has advantage on Wisdom (Perception) checks that rely on hearing."
           ]
         },
         {
@@ -124101,7 +124101,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The swarm has advantage on Wisdom ($1) checks that rely on smell."
+            "The swarm has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -125075,7 +125075,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The tiger has advantage on Wisdom ($1) checks that rely on smell."
+            "The tiger has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -125668,7 +125668,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the troglodyte has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the troglodyte has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -125818,7 +125818,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The troll has advantage on Wisdom ($1) checks that rely on smell."
+            "The troll has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -128127,7 +128127,7 @@
         {
           "name": "Keen Sight and Smell",
           "entries": [
-            "The vulture has advantage on Wisdom ($1) checks that rely on sight or smell."
+            "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell."
           ]
         },
         {
@@ -128653,7 +128653,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The weasel has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         }
       ],
@@ -128758,7 +128758,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The werebear has advantage on Wisdom ($1) checks that rely on smell."
+            "The werebear has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -129079,7 +129079,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The wererat has advantage on Wisdom ($1) checks that rely on smell."
+            "The wererat has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         }
       ],
@@ -129222,7 +129222,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The weretiger has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The weretiger has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -129414,7 +129414,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The werewolf has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         }
       ],
@@ -129693,7 +129693,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -129979,7 +129979,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         },
         {
@@ -130106,7 +130106,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The wolf has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -130241,7 +130241,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The wolf has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         },
         {
@@ -130349,7 +130349,7 @@
         {
           "name": "Keen Hearing and Smell",
           "entries": [
-            "The worg has advantage on Wisdom ($1) checks that rely on hearing or smell."
+            "The worg has advantage on Wisdom (Perception) checks that rely on hearing or smell."
           ]
         }
       ],
@@ -130512,7 +130512,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the wraith has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the wraith has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
@@ -130872,7 +130872,7 @@
         {
           "name": "Keen Smell",
           "entries": [
-            "The yeti has advantage on Wisdom ($1) checks that rely on smell."
+            "The yeti has advantage on Wisdom (Perception) checks that rely on smell."
           ]
         },
         {
@@ -132364,7 +132364,7 @@
         {
           "name": "Sunlight Sensitivity",
           "entries": [
-            "While in sunlight, the dragon has disadvantage on attack rolls, as well as on Wisdom ($1) checks that rely on sight."
+            "While in sunlight, the dragon has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
           ]
         }
       ],
