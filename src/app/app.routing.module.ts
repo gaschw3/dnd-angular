@@ -1,3 +1,4 @@
+import { PointBuyModule } from './controllers/point-buy/point-buy.module';
 import { NgModule } from '@angular/core';
 //import { ForbiddenComponent, NotAuthorizedComponent, NotFoundComponent, ServerErrorComponent } from './error';
 
@@ -35,7 +36,8 @@ const routes: Routes = [
     loadChildren: () => import('./controllers/items/items.module').then(m => m.ItemsModule)
   },
   {
-    path: 'point-buy', component: PointBuyComponent
+    path: 'point-buy',
+    loadChildren: () => import('./controllers/point-buy/point-buy.module').then(m => m.PointBuyModule)
   },
   {path: 'map', component: HexmapComponent}
   //{ path: 'redirect', component: RedirectionComponent },

@@ -1,6 +1,6 @@
 <ng-container *ngIf="ancestry">
   <div class="class-info">
-    <div class="card">
+    <div class="card mb-4">
       <div class="card-body">
         <div [class]="'ancestry-header ancestry-header-'+ancestry.id | lowercase">
           <div class="row">
@@ -16,7 +16,7 @@
               <p class="pb-0 m-0"><strong>Size</strong> {{ancestry.size}}</p>
             </div>
             <div class="col-sm-6">
-              <p class="pb-0 m-0"><strong>Speed</strong> {{ancestry.speed}}</p>
+              <p class="pb-0 m-0"><strong>Speed</strong> {{ancestry.speed}} ft.</p>
             </div>
             <div class="col-sm-12">
               <p class="pb-1 m-0"><strong>Ability Scores</strong> {{ancestry.ability}}</p>

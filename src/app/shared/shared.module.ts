@@ -1,3 +1,4 @@
+import { AncestryComponent } from './../controllers/ancestries/ancestry/ancestry.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataTablesModule } from 'angular-datatables';
@@ -18,6 +19,7 @@ import { EntryRendererComponent } from './entry-renderer/entry-renderer.componen
     ItemTypePipe,
     BackButtonDirective,
     OrdinalPipe,
+    AncestryComponent,
     EntryRendererComponent
   ],
   imports: [
@@ -32,6 +34,7 @@ import { EntryRendererComponent } from './entry-renderer/entry-renderer.componen
     SanitizeHtmlPipe,
     ItemTypePipe,
     BackButtonDirective,
+    AncestryComponent,
     EntryRendererComponent
   ]
 })

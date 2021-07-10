@@ -11,17 +11,16 @@ import { SpellsModule } from './controllers/spells/spells.module';
 import { BeastiaryModule } from './controllers/beastiary/beastiary.module';
 import { BackgroundsModule } from './controllers/backgrounds/backgrounds.module';
 import { AncestriesModule } from './controllers/ancestries/ancestries.module';
+import { PointBuyModule } from './controllers/point-buy/point-buy.module';
 import { SharedModule } from './shared/shared.module';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
-import { PointBuyComponent } from './controllers/point-buy/point-buy.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HexmapComponent,
-    PointBuyComponent
+    HexmapComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +35,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BeastiaryModule,
     BackgroundsModule,
     AncestriesModule,
+    PointBuyModule,
     NgxScrollTopModule
   ],
   exports: [],

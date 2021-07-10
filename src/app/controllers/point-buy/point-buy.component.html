@@ -2,13 +2,14 @@
   <div class="flex py-3 xs12 md10 offset-md1 lg8 offset-lg2">
     <div class="card" style="height: auto;">
       <div class="container container-fluid">
+        <h1 class="text-center mt-1">Point Buy Calculator</h1>
 
-        <div class="layout row mt-4">
+        <div class="layout row">
           <div class="col-4 offset-2">
             <div class="form-group">
               <label for="availPointsUnput">Available Points</label>
               <input [(ngModel)]="totalPoints" (change)="updatePercentage()" type="number" class="form-control" id="totalPoints" aria-describedby="availablePointsHelp">
-              <small id="emailHelp" class="form-text text-muted">The standard start is 27 points. Your DM might choose another.</small>
+              <small id="emailHelp" class="form-text text-muted">The default is 27 points. Some games use other numbers.</small>
             </div>
           </div>
 
@@ -45,7 +46,7 @@
         <div *ngIf="this.choose > 0" class="container pb-2">
           <div class="row justify-content-center">
             <div *ngFor="let stat of stats" class="col-1 form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="{{stat.name}}Choose" value="{{stat.name}}" (change)="this.chooseStats($event)">
+              <input class="form-check-input"[disabled]="selectedAncestry[stat.name] > 0" type="checkbox" id="{{stat.name}}Choose" value="{{stat.name}}" (change)="this.chooseStats($event)">
               <label class="form-check-label" for="{{stat.name}}Choose">{{stat.name | uppercase}}</label>
             </div>
           </div>
@@ -62,7 +63,7 @@
                   <th role="columnheader" scope="col" class="text-center">Racial</th>
                   <th role="columnheader" scope="col" class="text-center">Score</th>
                   <th role="columnheader" scope="col" class="text-center">Modifier</th>
-                  <th role="columnheader" scope="col" class="text-center">Cost</th>
+                  <th role="columnheader" scope="col" class="text-center">Point Cost</th>
                 </tr>
               </thead>
               <tbody>
@@ -78,7 +79,9 @@
                   <td class="text-center" [ngClass]="{'text-danger': (getMod(stat.value+getAnStat(stat.name)) < 0), 'text-success': (getMod(stat.value+getAnStat(stat.name)) > 0)}">
                     {{getMod(stat.value+getAnStat(stat.name))}}
                   </td>
-                  <td class="text-center">1</td>
+                  <td class="text-center">
+                    {{pointCost(stat.value)}}
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -87,4 +90,5 @@
       </div>
     </div>
   </div>
+  <app-ancestry *ngIf="selectedAncestry" [ancestry]="selectedAncestry"></app-ancestry>
 </div>

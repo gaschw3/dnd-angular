@@ -1,6 +1,5 @@
-<div class="card feature-list" *ngIf="item">
-  <div class="class-info">
-  <div class="card">
+<ng-container *ngIf="item">
+  <div class="card mb-4">
     <div class="card-body">
       <div [class]="'item-header item-header-'+item.id | lowercase">
         <div class="row">
@@ -45,4 +44,4 @@
       </div>
     </div>
   </div>
-</div>
+</ng-container>

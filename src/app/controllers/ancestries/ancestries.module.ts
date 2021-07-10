@@ -7,7 +7,6 @@ import { AncestryComponent } from './ancestry/ancestry.component';
 
 @NgModule({
   declarations: [
-    AncestryComponent,
     AncestriesComponent
   ],
   imports: [
