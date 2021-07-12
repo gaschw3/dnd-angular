@@ -6,7 +6,7 @@ import { Background } from 'src/app/models/background';
 @Component({
   selector: 'app-background',
   templateUrl: './background.component.html',
-  styleUrls: ['./background.component.css']
+  styleUrls: ['./background.component.scss']
 })
 export class BackgroundComponent implements OnInit {
 

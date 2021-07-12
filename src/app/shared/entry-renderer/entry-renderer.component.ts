@@ -3,7 +3,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 @Component({
   selector: 'entry-renderer',
   templateUrl: './entry-renderer.component.html',
-  styleUrls: ['./entry-renderer.component.css'],
+  styleUrls: ['./entry-renderer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EntryRendererComponent implements OnInit {

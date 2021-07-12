@@ -12,7 +12,7 @@ import { Ancestry } from 'src/app/models/ancestry';
 @Component({
   selector: 'app-ancestries',
   templateUrl: './ancestries.component.html',
-  styleUrls: ['./ancestries.component.css']
+  styleUrls: ['./ancestries.component.scss']
 })
 export class AncestriesComponent implements OnInit {
 

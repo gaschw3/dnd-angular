@@ -4,6 +4,9 @@
 /dist
 /tmp
 /out-tsc
+#css files compiled by VSCode extension aren't wanted in github
+*.css
+*.css.map
 
 # dependencies
 /node_modules

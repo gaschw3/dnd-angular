@@ -1,0 +1,19 @@
+.class-filter {
+    padding: 0px !important;
+    border: none !important;
+}
+
+.class-table {
+    font-size:1em;
+    overflow: auto;
+}
+
+.table td, .table th {
+    padding: .1rem;
+    vertical-align: top;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    /*Bootstrap 4 override*/
+    -webkit-appearance: searchfield-cancel-button;
+}

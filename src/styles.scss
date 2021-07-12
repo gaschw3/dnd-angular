@@ -1,0 +1,258 @@
+/*general sytles used on multiple pages
+  Mostly color relates, also some stuff for navbars, tables, and map labels*/
+@import './scss-theme/themes.scss';
+
+.navbar-nav > li > a {
+    color: #ccc;
+}
+/*center scroll to top better */
+.scrolltop-button .symbol-container svg {
+  transform: translateY(-15%) !important;
+}
+
+.color-primary {
+  color: #62c462
+}
+.border-bottom-primary {
+  border-bottom: 2px solid #62c462;;
+}
+.beastiary-border {
+  border-bottom: 2px solid #62c462;;
+}
+
+/* sizing and placement for monster tokens in the beastiary entries */
+.mon__wrp-token {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 40%;
+    width: auto;
+    max-width: 6rem;
+    height: auto;
+}
+.mon__token {
+    width: 100%;
+    height: 100%;
+}
+
+.text--gp {
+  color: #c5b100;
+}
+.text--sp {
+  color: #ffffff;
+}
+.text--cp {
+  color: #91590f;
+}
+
+.table {
+  color: #aaa !important;
+}
+
+/* spell colors */
+.color-abjuration {
+  color: rgb(253, 246, 207);
+}
+.color-transmutation {
+  color: rgb(236, 145, 60);
+}
+.color-illusion {
+  color: rgb(45, 148, 245);
+}
+.color-necromancy {
+  color: rgb(143, 0, 172);
+}
+.color-evocation {
+  color: rgb(241, 90, 90);
+}
+.color-enchantment {
+  color: rgb(255, 152, 250);
+}
+.color-conjuration {
+  color: rgb(113, 230, 102);
+}
+.color-divination {
+  color: rgb(255, 255, 255);
+}
+
+/* source colors */
+.color-phb {
+  color: rgb(0, 119, 230);
+}
+.color-xge {
+  color: rgb(0, 230, 142);
+}
+.color-ai {
+  color: rgb(0, 139, 7);
+}
+.color-scag {
+  color: rgb(255, 251, 34);
+}
+.color-wdh {
+  color: rgb(212, 210, 50);
+}
+.color-ua {
+  color: rgb(241, 137, 137);
+}
+.color-toa {
+  color: rgb(255, 127, 52);
+}
+.color-dmg {
+  color: rgb(190, 14, 14);
+}
+.color-dmg {
+  color: rgb(190, 14, 14);
+}
+.color-tce {
+  color: rgb(162, 77, 8);
+}
+.color-erlw {
+  color: rgb(124, 12, 12);
+}
+.color-cos {
+  color: rgb(70, 9, 94);
+}
+.color-ggr {
+  color: rgb(119, 223, 255);
+}
+.color-skt {
+  color: rgb(11, 192, 183);
+}
+.color-gos {
+  color: rgb(0, 255, 200);
+}
+.color-pota {
+  color: rgb(0, 255, 200);
+}
+.color-mot {
+  color: rgb(83, 175, 140);
+}
+.color-brew {
+  color: rgb(235, 125, 229);
+}
+.color-egw {
+  color: rgb(141, 115, 141);
+}
+.color-other {
+  color: rgb(141, 115, 141);
+}
+/* beastiary sources, mostly*/
+.color-mm {
+  color: rgb(0, 119, 230);
+}
+.color-vgm {
+  color: rgb(0, 230, 142);
+}
+.color-mtf {
+  color: rgb(255, 253, 119);
+}
+.color-tftyp {
+  color: rgb(190, 14, 14);
+}
+.color-hotdq {
+  color: rgb(190, 108, 14);
+}
+.color-rot {
+  color: rgb(190, 108, 14);
+}
+.color-oota {
+  color: rgb(137, 133, 172);
+}
+.color-cos {
+  color: rgb(146, 0, 139);
+}
+
+/* specific rules around some hidden very large tables on class pages */
+.read-more-state {
+  display: none;
+}
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  display: none;
+  transition: .25s ease;
+}
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  display: block;
+  font-size: inherit;
+  max-height: 999em;
+}
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Show Surge Table';
+}
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Hide Surge Table';
+}
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #5bc0de;
+  border-radius: .25em;
+}
+
+/* make sure fieature list doesn't ride on top of the navbar */
+.features-list {
+  z-index: 800 !important;
+}
+
+.card-columns {
+  column-count: 2 !important;
+}
+
+/* labels for map stuff, probably better way to do this but it's working for now */
+.continent-label {
+    font-size: 60px;
+    letter-spacing: 6px;
+    font-weight: bold;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+.country-label {
+    font-size:30px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    color: #111 !important;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+.city-label {
+    font-size:18px;
+    font-weight: bold;
+    opacity: 0;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    text-shadow: -1px 0 0 #000, 1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
+}
+.town-label {
+    font-size:14px;
+    opacity: 0;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    color: #fff !important;
+}
+.water-label {
+    font-size:22px;
+    font-weight: bold;
+    background-color: transparent !important;
+    border: transparent !important;
+    box-shadow: none !important;
+    color: rgb(88, 180, 255) !important;
+    text-shadow: -1px -1px 0 #555, 1px -1px 0 #555, -1px 1px 0 #555, 1px 1px 0 #555;
+}
+.leaflet-marker-icon {
+    opacity: 0;
+}

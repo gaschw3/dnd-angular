@@ -13,7 +13,7 @@ import { sizeMap } from 'src/app/shared/sizeMap';
 @Component({
   selector: 'app-beastiary',
   templateUrl: './beastiary.component.html',
-  styleUrls: ['./beastiary.component.css']
+  styleUrls: ['./beastiary.component.scss']
 })
 export class BeastiaryComponent implements OnInit {
 

@@ -1,0 +1,33 @@
+$themes: (
+  light: (
+    backgroundColor: #272b30,
+    navColor: #3a3f44,
+    cardColor: #32383e,
+    textColor: #aaa,
+    textLinkColor: #fff,
+    textLinkBackground: #272b30,
+    linkColor: #5bc0de,
+    colorPrimary: #62c462,
+    buttonTextColor: #408bbd,
+    buttonTextTransform: none,
+    buttonTextHoverColor: #61b0e7,
+    buttonColor: #fff,
+    buttonBorder: 2px solid #fff,
+  ),
+  dark: (
+    backgroundColor: #272b30,
+    navColor: #3a3f44,
+    cardColor: #32383e,
+    textColor: #aaa,
+    textLinkColor: #fff,
+    textLinkBackground: #272b30,
+    linkColor: #5bc0de,
+    colorPrimary: #62c462, //most headers on site
+    colorSecondary: #5bc0de, //feature headers in class, features outline,
+    buttonTextColor: #aaa,
+    buttonTextTransform: uppercase,
+    buttonTextHoverColor: #ddd,
+    buttonColor: #333,
+    buttonBorder: 1px solid #aaa,
+  ),
+);

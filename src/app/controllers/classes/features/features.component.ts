@@ -4,7 +4,7 @@ import { ClassFeature } from 'src/app/models/class-feature';
 @Component({
   selector: 'app-features',
   templateUrl: './features.component.html',
-  styleUrls: ['./features.component.css']
+  styleUrls: ['./features.component.scss']
 })
 export class FeaturesComponent implements OnInit {
 

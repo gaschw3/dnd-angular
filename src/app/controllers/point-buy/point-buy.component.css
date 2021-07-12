@@ -3,296 +3,1117 @@ input {
 }
 
 .progress-circle {
-   font-size: 20px;
-   margin: 20px;
-   position: relative; /* so that children can be absolutely positioned */
-   padding: 0;
-   width: 5em;
-   height: 5em;
-   background-color: #F2E9E1;
-   border-radius: 50%;
-   line-height: 5em;
+  font-size: 20px;
+  margin: 20px;
+  position: relative;
+  /* so that children can be absolutely positioned */
+  padding: 0;
+  width: 5em;
+  height: 5em;
+  background-color: #F2E9E1;
+  border-radius: 50%;
+  line-height: 5em;
 }
 
-.progress-circle:after{
-    border: none;
-    position: absolute;
-    top: 0.35em;
-    left: 0.35em;
-    text-align: center;
-    display: block;
-    border-radius: 50%;
-    width: 4.3em;
-    height: 4.3em;
-    background-color: #32383e;
-    content: " ";
+.progress-circle:after {
+  border: none;
+  position: absolute;
+  top: 0.35em;
+  left: 0.35em;
+  text-align: center;
+  display: block;
+  border-radius: 50%;
+  width: 4.3em;
+  height: 4.3em;
+  background-color: #32383e;
+  content: " ";
 }
+
 /* Text inside the control */
 .progress-circle span {
-    position: absolute;
-    line-height: 5em;
-    width: 5em;
-    text-align: center;
-    display: block;
-    color: white;
-    z-index: 2;
+  position: absolute;
+  line-height: 5em;
+  width: 5em;
+  text-align: center;
+  display: block;
+  color: white;
+  z-index: 2;
 }
+
 .left-half-clipper {
-   /* a round circle */
-   border-radius: 50%;
-   width: 5em;
-   height: 5em;
-   position: absolute; /* needed for clipping */
-   clip: rect(0, 5em, 5em, 2.5em); /* clips the whole left half*/
+  /* a round circle */
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  /* needed for clipping */
+  clip: rect(0, 5em, 5em, 2.5em);
+  /* clips the whole left half*/
 }
+
 /* when p>50, don't clip left half*/
 .progress-circle.over50 .left-half-clipper {
-   clip: rect(auto,auto,auto,auto);
+  clip: rect(auto, auto, auto, auto);
 }
+
 .value-bar {
-   position: absolute; /*needed for clipping*/
-   clip: rect(0, 2.5em, 5em, 0);
-   width: 5em;
-   height: 5em;
-   border-radius: 50%;
-   border: 1em solid green; /*The border is 0.35 but making it larger removes visual artifacts */
-   box-sizing: border-box;
-
+  position: absolute;
+  /*needed for clipping*/
+  clip: rect(0, 2.5em, 5em, 0);
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  border: 1em solid green;
+  /*The border is 0.35 but making it larger removes visual artifacts */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.value-bar2 {
-   position: absolute; /*needed for clipping*/
-   clip: rect(0, 2.5em, 5em, 0);
-   width: 5em;
-   height: 5em;
-   border-radius: 50%;
-   border: 1em solid red; /*The border is 0.35 but making it larger removes visual artifacts */
-   box-sizing: border-box;
 
+.value-bar2 {
+  position: absolute;
+  /*needed for clipping*/
+  clip: rect(0, 2.5em, 5em, 0);
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  border: 1em solid red;
+  /*The border is 0.35 but making it larger removes visual artifacts */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Progress bar filling the whole right half for values above 50% */
 .progress-circle.over50 .first50-bar {
-   position: absolute; /*needed for clipping*/
-   clip: rect(0, 5em, 5em, 2.5em);
-   background-color: green;
-   border-radius: 50%;
-   width: 5em;
-   height: 5em;
+  position: absolute;
+  /*needed for clipping*/
+  clip: rect(0, 5em, 5em, 2.5em);
+  background-color: green;
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
 }
+
 /* Progress bar filling the whole right half for values above 50% */
 .progress-circle.over50 .neg50-bar {
-   position: absolute; /*needed for clipping*/
-   clip: rect(0, 5em, 5em, 2.5em);
-   background-color: red;
-   border-radius: 50%;
-   width: 5em;
-   height: 5em;
+  position: absolute;
+  /*needed for clipping*/
+  clip: rect(0, 5em, 5em, 2.5em);
+  background-color: red;
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
 }
-.progress-circle:not(.over50) .first50-bar{ display: none; }
+
+.progress-circle:not(.over50) .first50-bar {
+  display: none;
+}
+
 .hidden {
   display: none;
 }
 
-
 /* Yet another reason to switch to SCSS */
-.progress-circle.per-1 .value-bar2 { transform: rotate(4deg); }
-.progress-circle.per-2 .value-bar2 { transform: rotate(7deg); }
-.progress-circle.per-3 .value-bar2 { transform: rotate(11deg); }
-.progress-circle.per-4 .value-bar2 { transform: rotate(14deg); }
-.progress-circle.per-5 .value-bar2 { transform: rotate(18deg); }
-.progress-circle.per-6 .value-bar2 { transform: rotate(22deg); }
-.progress-circle.per-7 .value-bar2 { transform: rotate(25deg); }
-.progress-circle.per-8 .value-bar2 { transform: rotate(29deg); }
-.progress-circle.per-9 .value-bar2 { transform: rotate(32deg); }
-.progress-circle.per-10 .value-bar2 { transform: rotate(36deg); }
-.progress-circle.per-11 .value-bar2 { transform: rotate(40deg); }
-.progress-circle.per-12 .value-bar2 { transform: rotate(43deg); }
-.progress-circle.per-13 .value-bar2 { transform: rotate(47deg); }
-.progress-circle.per-14 .value-bar2 { transform: rotate(50deg); }
-.progress-circle.per-15 .value-bar2 { transform: rotate(54deg); }
-.progress-circle.per-16 .value-bar2 { transform: rotate(58deg); }
-.progress-circle.per-17 .value-bar2 { transform: rotate(61deg); }
-.progress-circle.per-18 .value-bar2 { transform: rotate(65deg); }
-.progress-circle.per-19 .value-bar2 { transform: rotate(68deg); }
-.progress-circle.per-20 .value-bar2 { transform: rotate(72deg); }
-.progress-circle.per-21 .value-bar2 { transform: rotate(76deg); }
-.progress-circle.per-22 .value-bar2 { transform: rotate(79deg); }
-.progress-circle.per-23 .value-bar2 { transform: rotate(83deg); }
-.progress-circle.per-24 .value-bar2 { transform: rotate(86deg); }
-.progress-circle.per-25 .value-bar2 { transform: rotate(90deg); }
-.progress-circle.per-26 .value-bar2 { transform: rotate(94deg); }
-.progress-circle.per-27 .value-bar2 { transform: rotate(97deg); }
-.progress-circle.per-28 .value-bar2 { transform: rotate(101deg); }
-.progress-circle.per-29 .value-bar2 { transform: rotate(104deg); }
-.progress-circle.per-30 .value-bar2 { transform: rotate(108deg); }
-.progress-circle.per-31 .value-bar2 { transform: rotate(112deg); }
-.progress-circle.per-32 .value-bar2 { transform: rotate(115deg); }
-.progress-circle.per-33 .value-bar2 { transform: rotate(119deg); }
-.progress-circle.per-34 .value-bar2 { transform: rotate(122deg); }
-.progress-circle.per-35 .value-bar2 { transform: rotate(126deg); }
-.progress-circle.per-36 .value-bar2 { transform: rotate(130deg); }
-.progress-circle.per-37 .value-bar2 { transform: rotate(133deg); }
-.progress-circle.per-38 .value-bar2 { transform: rotate(137deg); }
-.progress-circle.per-39 .value-bar2 { transform: rotate(140deg); }
-.progress-circle.per-40 .value-bar2 { transform: rotate(144deg); }
-.progress-circle.per-41 .value-bar2 { transform: rotate(148deg); }
-.progress-circle.per-42 .value-bar2 { transform: rotate(151deg); }
-.progress-circle.per-43 .value-bar2 { transform: rotate(155deg); }
-.progress-circle.per-44 .value-bar2 { transform: rotate(158deg); }
-.progress-circle.per-45 .value-bar2 { transform: rotate(162deg); }
-.progress-circle.per-46 .value-bar2 { transform: rotate(166deg); }
-.progress-circle.per-47 .value-bar2 { transform: rotate(169deg); }
-.progress-circle.per-48 .value-bar2 { transform: rotate(173deg); }
-.progress-circle.per-49 .value-bar2 { transform: rotate(176deg); }
-.progress-circle.per-50 .value-bar2 { transform: rotate(180deg); }
-.progress-circle.per-51 .value-bar2 { transform: rotate(184deg); }
-.progress-circle.per-52 .value-bar2 { transform: rotate(187deg); }
-.progress-circle.per-53 .value-bar2 { transform: rotate(191deg); }
-.progress-circle.per-54 .value-bar2 { transform: rotate(194deg); }
-.progress-circle.per-55 .value-bar2 { transform: rotate(198deg); }
-.progress-circle.per-56 .value-bar2 { transform: rotate(202deg); }
-.progress-circle.per-57 .value-bar2 { transform: rotate(205deg); }
-.progress-circle.per-58 .value-bar2 { transform: rotate(209deg); }
-.progress-circle.per-59 .value-bar2 { transform: rotate(212deg); }
-.progress-circle.per-60 .value-bar2 { transform: rotate(216deg); }
-.progress-circle.per-61 .value-bar2 { transform: rotate(220deg); }
-.progress-circle.per-62 .value-bar2 { transform: rotate(223deg); }
-.progress-circle.per-63 .value-bar2 { transform: rotate(227deg); }
-.progress-circle.per-64 .value-bar2 { transform: rotate(230deg); }
-.progress-circle.per-65 .value-bar2 { transform: rotate(234deg); }
-.progress-circle.per-66 .value-bar2 { transform: rotate(238deg); }
-.progress-circle.per-67 .value-bar2 { transform: rotate(241deg); }
-.progress-circle.per-68 .value-bar2 { transform: rotate(245deg); }
-.progress-circle.per-69 .value-bar2 { transform: rotate(248deg); }
-.progress-circle.per-70 .value-bar2 { transform: rotate(252deg); }
-.progress-circle.per-71 .value-bar2 { transform: rotate(256deg); }
-.progress-circle.per-72 .value-bar2 { transform: rotate(259deg); }
-.progress-circle.per-73 .value-bar2 { transform: rotate(263deg); }
-.progress-circle.per-74 .value-bar2 { transform: rotate(266deg); }
-.progress-circle.per-75 .value-bar2 { transform: rotate(270deg); }
-.progress-circle.per-76 .value-bar2 { transform: rotate(274deg); }
-.progress-circle.per-77 .value-bar2 { transform: rotate(277deg); }
-.progress-circle.per-78 .value-bar2 { transform: rotate(281deg); }
-.progress-circle.per-79 .value-bar2 { transform: rotate(284deg); }
-.progress-circle.per-80 .value-bar2 { transform: rotate(288deg); }
-.progress-circle.per-81 .value-bar2 { transform: rotate(292deg); }
-.progress-circle.per-82 .value-bar2 { transform: rotate(295deg); }
-.progress-circle.per-83 .value-bar2 { transform: rotate(299deg); }
-.progress-circle.per-84 .value-bar2 { transform: rotate(302deg); }
-.progress-circle.per-85 .value-bar2 { transform: rotate(306deg); }
-.progress-circle.per-86 .value-bar2 { transform: rotate(310deg); }
-.progress-circle.per-87 .value-bar2 { transform: rotate(313deg); }
-.progress-circle.per-88 .value-bar2 { transform: rotate(317deg); }
-.progress-circle.per-89 .value-bar2 { transform: rotate(320deg); }
-.progress-circle.per-90 .value-bar2 { transform: rotate(324deg); }
-.progress-circle.per-91 .value-bar2 { transform: rotate(328deg); }
-.progress-circle.per-92 .value-bar2 { transform: rotate(331deg); }
-.progress-circle.per-93 .value-bar2 { transform: rotate(335deg); }
-.progress-circle.per-94 .value-bar2 { transform: rotate(338deg); }
-.progress-circle.per-95 .value-bar2 { transform: rotate(342deg); }
-.progress-circle.per-96 .value-bar2 { transform: rotate(346deg); }
-.progress-circle.per-97 .value-bar2 { transform: rotate(349deg); }
-.progress-circle.per-98 .value-bar2 { transform: rotate(353deg); }
-.progress-circle.per-99 .value-bar2 { transform: rotate(356deg); }
-.progress-circle.per-100 .value-bar2 { transform: rotate(360deg); }
-.progress-circle.per0 .value-bar { display: none; }
-.progress-circle.per1 .value-bar { transform: rotate(4deg); }
-.progress-circle.per2 .value-bar { transform: rotate(7deg); }
-.progress-circle.per3 .value-bar { transform: rotate(11deg); }
-.progress-circle.per4 .value-bar { transform: rotate(14deg); }
-.progress-circle.per5 .value-bar { transform: rotate(18deg); }
-.progress-circle.per6 .value-bar { transform: rotate(22deg); }
-.progress-circle.per7 .value-bar { transform: rotate(25deg); }
-.progress-circle.per8 .value-bar { transform: rotate(29deg); }
-.progress-circle.per9 .value-bar { transform: rotate(32deg); }
-.progress-circle.per10 .value-bar { transform: rotate(36deg); }
-.progress-circle.per11 .value-bar { transform: rotate(40deg); }
-.progress-circle.per12 .value-bar { transform: rotate(43deg); }
-.progress-circle.per13 .value-bar { transform: rotate(47deg); }
-.progress-circle.per14 .value-bar { transform: rotate(50deg); }
-.progress-circle.per15 .value-bar { transform: rotate(54deg); }
-.progress-circle.per16 .value-bar { transform: rotate(58deg); }
-.progress-circle.per17 .value-bar { transform: rotate(61deg); }
-.progress-circle.per18 .value-bar { transform: rotate(65deg); }
-.progress-circle.per19 .value-bar { transform: rotate(68deg); }
-.progress-circle.per20 .value-bar { transform: rotate(72deg); }
-.progress-circle.per21 .value-bar { transform: rotate(76deg); }
-.progress-circle.per22 .value-bar { transform: rotate(79deg); }
-.progress-circle.per23 .value-bar { transform: rotate(83deg); }
-.progress-circle.per24 .value-bar { transform: rotate(86deg); }
-.progress-circle.per25 .value-bar { transform: rotate(90deg); }
-.progress-circle.per26 .value-bar { transform: rotate(94deg); }
-.progress-circle.per27 .value-bar { transform: rotate(97deg); }
-.progress-circle.per28 .value-bar { transform: rotate(101deg); }
-.progress-circle.per29 .value-bar { transform: rotate(104deg); }
-.progress-circle.per30 .value-bar { transform: rotate(108deg); }
-.progress-circle.per31 .value-bar { transform: rotate(112deg); }
-.progress-circle.per32 .value-bar { transform: rotate(115deg); }
-.progress-circle.per33 .value-bar { transform: rotate(119deg); }
-.progress-circle.per34 .value-bar { transform: rotate(122deg); }
-.progress-circle.per35 .value-bar { transform: rotate(126deg); }
-.progress-circle.per36 .value-bar { transform: rotate(130deg); }
-.progress-circle.per37 .value-bar { transform: rotate(133deg); }
-.progress-circle.per38 .value-bar { transform: rotate(137deg); }
-.progress-circle.per39 .value-bar { transform: rotate(140deg); }
-.progress-circle.per40 .value-bar { transform: rotate(144deg); }
-.progress-circle.per41 .value-bar { transform: rotate(148deg); }
-.progress-circle.per42 .value-bar { transform: rotate(151deg); }
-.progress-circle.per43 .value-bar { transform: rotate(155deg); }
-.progress-circle.per44 .value-bar { transform: rotate(158deg); }
-.progress-circle.per45 .value-bar { transform: rotate(162deg); }
-.progress-circle.per46 .value-bar { transform: rotate(166deg); }
-.progress-circle.per47 .value-bar { transform: rotate(169deg); }
-.progress-circle.per48 .value-bar { transform: rotate(173deg); }
-.progress-circle.per49 .value-bar { transform: rotate(176deg); }
-.progress-circle.per50 .value-bar { transform: rotate(180deg); }
-.progress-circle.per51 .value-bar { transform: rotate(184deg); }
-.progress-circle.per52 .value-bar { transform: rotate(187deg); }
-.progress-circle.per53 .value-bar { transform: rotate(191deg); }
-.progress-circle.per54 .value-bar { transform: rotate(194deg); }
-.progress-circle.per55 .value-bar { transform: rotate(198deg); }
-.progress-circle.per56 .value-bar { transform: rotate(202deg); }
-.progress-circle.per57 .value-bar { transform: rotate(205deg); }
-.progress-circle.per58 .value-bar { transform: rotate(209deg); }
-.progress-circle.per59 .value-bar { transform: rotate(212deg); }
-.progress-circle.per60 .value-bar { transform: rotate(216deg); }
-.progress-circle.per61 .value-bar { transform: rotate(220deg); }
-.progress-circle.per62 .value-bar { transform: rotate(223deg); }
-.progress-circle.per63 .value-bar { transform: rotate(227deg); }
-.progress-circle.per64 .value-bar { transform: rotate(230deg); }
-.progress-circle.per65 .value-bar { transform: rotate(234deg); }
-.progress-circle.per66 .value-bar { transform: rotate(238deg); }
-.progress-circle.per67 .value-bar { transform: rotate(241deg); }
-.progress-circle.per68 .value-bar { transform: rotate(245deg); }
-.progress-circle.per69 .value-bar { transform: rotate(248deg); }
-.progress-circle.per70 .value-bar { transform: rotate(252deg); }
-.progress-circle.per71 .value-bar { transform: rotate(256deg); }
-.progress-circle.per72 .value-bar { transform: rotate(259deg); }
-.progress-circle.per73 .value-bar { transform: rotate(263deg); }
-.progress-circle.per74 .value-bar { transform: rotate(266deg); }
-.progress-circle.per75 .value-bar { transform: rotate(270deg); }
-.progress-circle.per76 .value-bar { transform: rotate(274deg); }
-.progress-circle.per77 .value-bar { transform: rotate(277deg); }
-.progress-circle.per78 .value-bar { transform: rotate(281deg); }
-.progress-circle.per79 .value-bar { transform: rotate(284deg); }
-.progress-circle.per80 .value-bar { transform: rotate(288deg); }
-.progress-circle.per81 .value-bar { transform: rotate(292deg); }
-.progress-circle.per82 .value-bar { transform: rotate(295deg); }
-.progress-circle.per83 .value-bar { transform: rotate(299deg); }
-.progress-circle.per84 .value-bar { transform: rotate(302deg); }
-.progress-circle.per85 .value-bar { transform: rotate(306deg); }
-.progress-circle.per86 .value-bar { transform: rotate(310deg); }
-.progress-circle.per87 .value-bar { transform: rotate(313deg); }
-.progress-circle.per88 .value-bar { transform: rotate(317deg); }
-.progress-circle.per89 .value-bar { transform: rotate(320deg); }
-.progress-circle.per90 .value-bar { transform: rotate(324deg); }
-.progress-circle.per91 .value-bar { transform: rotate(328deg); }
-.progress-circle.per92 .value-bar { transform: rotate(331deg); }
-.progress-circle.per93 .value-bar { transform: rotate(335deg); }
-.progress-circle.per94 .value-bar { transform: rotate(338deg); }
-.progress-circle.per95 .value-bar { transform: rotate(342deg); }
-.progress-circle.per96 .value-bar { transform: rotate(346deg); }
-.progress-circle.per97 .value-bar { transform: rotate(349deg); }
-.progress-circle.per98 .value-bar { transform: rotate(353deg); }
-.progress-circle.per99 .value-bar { transform: rotate(356deg); }
-.progress-circle.per100 .value-bar { transform: rotate(360deg); }
+.progress-circle.per0 .value-bar {
+  display: none;
+}
+
+.progress-circle.per1 .value-bar {
+  -webkit-transform: rotate(3.6 deg);
+          transform: rotate(3.6 deg);
+}
+
+.progress-circle.per-1 .value-bar2 {
+  -webkit-transform: rotate(3.6 deg);
+          transform: rotate(3.6 deg);
+}
+
+.progress-circle.per2 .value-bar {
+  -webkit-transform: rotate(7.2 deg);
+          transform: rotate(7.2 deg);
+}
+
+.progress-circle.per-2 .value-bar2 {
+  -webkit-transform: rotate(7.2 deg);
+          transform: rotate(7.2 deg);
+}
+
+.progress-circle.per3 .value-bar {
+  -webkit-transform: rotate(10.8 deg);
+          transform: rotate(10.8 deg);
+}
+
+.progress-circle.per-3 .value-bar2 {
+  -webkit-transform: rotate(10.8 deg);
+          transform: rotate(10.8 deg);
+}
+
+.progress-circle.per4 .value-bar {
+  -webkit-transform: rotate(14.4 deg);
+          transform: rotate(14.4 deg);
+}
+
+.progress-circle.per-4 .value-bar2 {
+  -webkit-transform: rotate(14.4 deg);
+          transform: rotate(14.4 deg);
+}
+
+.progress-circle.per5 .value-bar {
+  -webkit-transform: rotate(18 deg);
+          transform: rotate(18 deg);
+}
+
+.progress-circle.per-5 .value-bar2 {
+  -webkit-transform: rotate(18 deg);
+          transform: rotate(18 deg);
+}
+
+.progress-circle.per6 .value-bar {
+  -webkit-transform: rotate(21.6 deg);
+          transform: rotate(21.6 deg);
+}
+
+.progress-circle.per-6 .value-bar2 {
+  -webkit-transform: rotate(21.6 deg);
+          transform: rotate(21.6 deg);
+}
+
+.progress-circle.per7 .value-bar {
+  -webkit-transform: rotate(25.2 deg);
+          transform: rotate(25.2 deg);
+}
+
+.progress-circle.per-7 .value-bar2 {
+  -webkit-transform: rotate(25.2 deg);
+          transform: rotate(25.2 deg);
+}
+
+.progress-circle.per8 .value-bar {
+  -webkit-transform: rotate(28.8 deg);
+          transform: rotate(28.8 deg);
+}
+
+.progress-circle.per-8 .value-bar2 {
+  -webkit-transform: rotate(28.8 deg);
+          transform: rotate(28.8 deg);
+}
+
+.progress-circle.per9 .value-bar {
+  -webkit-transform: rotate(32.4 deg);
+          transform: rotate(32.4 deg);
+}
+
+.progress-circle.per-9 .value-bar2 {
+  -webkit-transform: rotate(32.4 deg);
+          transform: rotate(32.4 deg);
+}
+
+.progress-circle.per10 .value-bar {
+  -webkit-transform: rotate(36 deg);
+          transform: rotate(36 deg);
+}
+
+.progress-circle.per-10 .value-bar2 {
+  -webkit-transform: rotate(36 deg);
+          transform: rotate(36 deg);
+}
+
+.progress-circle.per11 .value-bar {
+  -webkit-transform: rotate(39.6 deg);
+          transform: rotate(39.6 deg);
+}
+
+.progress-circle.per-11 .value-bar2 {
+  -webkit-transform: rotate(39.6 deg);
+          transform: rotate(39.6 deg);
+}
+
+.progress-circle.per12 .value-bar {
+  -webkit-transform: rotate(43.2 deg);
+          transform: rotate(43.2 deg);
+}
+
+.progress-circle.per-12 .value-bar2 {
+  -webkit-transform: rotate(43.2 deg);
+          transform: rotate(43.2 deg);
+}
+
+.progress-circle.per13 .value-bar {
+  -webkit-transform: rotate(46.8 deg);
+          transform: rotate(46.8 deg);
+}
+
+.progress-circle.per-13 .value-bar2 {
+  -webkit-transform: rotate(46.8 deg);
+          transform: rotate(46.8 deg);
+}
+
+.progress-circle.per14 .value-bar {
+  -webkit-transform: rotate(50.4 deg);
+          transform: rotate(50.4 deg);
+}
+
+.progress-circle.per-14 .value-bar2 {
+  -webkit-transform: rotate(50.4 deg);
+          transform: rotate(50.4 deg);
+}
+
+.progress-circle.per15 .value-bar {
+  -webkit-transform: rotate(54 deg);
+          transform: rotate(54 deg);
+}
+
+.progress-circle.per-15 .value-bar2 {
+  -webkit-transform: rotate(54 deg);
+          transform: rotate(54 deg);
+}
+
+.progress-circle.per16 .value-bar {
+  -webkit-transform: rotate(57.6 deg);
+          transform: rotate(57.6 deg);
+}
+
+.progress-circle.per-16 .value-bar2 {
+  -webkit-transform: rotate(57.6 deg);
+          transform: rotate(57.6 deg);
+}
+
+.progress-circle.per17 .value-bar {
+  -webkit-transform: rotate(61.2 deg);
+          transform: rotate(61.2 deg);
+}
+
+.progress-circle.per-17 .value-bar2 {
+  -webkit-transform: rotate(61.2 deg);
+          transform: rotate(61.2 deg);
+}
+
+.progress-circle.per18 .value-bar {
+  -webkit-transform: rotate(64.8 deg);
+          transform: rotate(64.8 deg);
+}
+
+.progress-circle.per-18 .value-bar2 {
+  -webkit-transform: rotate(64.8 deg);
+          transform: rotate(64.8 deg);
+}
+
+.progress-circle.per19 .value-bar {
+  -webkit-transform: rotate(68.4 deg);
+          transform: rotate(68.4 deg);
+}
+
+.progress-circle.per-19 .value-bar2 {
+  -webkit-transform: rotate(68.4 deg);
+          transform: rotate(68.4 deg);
+}
+
+.progress-circle.per20 .value-bar {
+  -webkit-transform: rotate(72 deg);
+          transform: rotate(72 deg);
+}
+
+.progress-circle.per-20 .value-bar2 {
+  -webkit-transform: rotate(72 deg);
+          transform: rotate(72 deg);
+}
+
+.progress-circle.per21 .value-bar {
+  -webkit-transform: rotate(75.6 deg);
+          transform: rotate(75.6 deg);
+}
+
+.progress-circle.per-21 .value-bar2 {
+  -webkit-transform: rotate(75.6 deg);
+          transform: rotate(75.6 deg);
+}
+
+.progress-circle.per22 .value-bar {
+  -webkit-transform: rotate(79.2 deg);
+          transform: rotate(79.2 deg);
+}
+
+.progress-circle.per-22 .value-bar2 {
+  -webkit-transform: rotate(79.2 deg);
+          transform: rotate(79.2 deg);
+}
+
+.progress-circle.per23 .value-bar {
+  -webkit-transform: rotate(82.8 deg);
+          transform: rotate(82.8 deg);
+}
+
+.progress-circle.per-23 .value-bar2 {
+  -webkit-transform: rotate(82.8 deg);
+          transform: rotate(82.8 deg);
+}
+
+.progress-circle.per24 .value-bar {
+  -webkit-transform: rotate(86.4 deg);
+          transform: rotate(86.4 deg);
+}
+
+.progress-circle.per-24 .value-bar2 {
+  -webkit-transform: rotate(86.4 deg);
+          transform: rotate(86.4 deg);
+}
+
+.progress-circle.per25 .value-bar {
+  -webkit-transform: rotate(90 deg);
+          transform: rotate(90 deg);
+}
+
+.progress-circle.per-25 .value-bar2 {
+  -webkit-transform: rotate(90 deg);
+          transform: rotate(90 deg);
+}
+
+.progress-circle.per26 .value-bar {
+  -webkit-transform: rotate(93.6 deg);
+          transform: rotate(93.6 deg);
+}
+
+.progress-circle.per-26 .value-bar2 {
+  -webkit-transform: rotate(93.6 deg);
+          transform: rotate(93.6 deg);
+}
+
+.progress-circle.per27 .value-bar {
+  -webkit-transform: rotate(97.2 deg);
+          transform: rotate(97.2 deg);
+}
+
+.progress-circle.per-27 .value-bar2 {
+  -webkit-transform: rotate(97.2 deg);
+          transform: rotate(97.2 deg);
+}
+
+.progress-circle.per28 .value-bar {
+  -webkit-transform: rotate(100.8 deg);
+          transform: rotate(100.8 deg);
+}
+
+.progress-circle.per-28 .value-bar2 {
+  -webkit-transform: rotate(100.8 deg);
+          transform: rotate(100.8 deg);
+}
+
+.progress-circle.per29 .value-bar {
+  -webkit-transform: rotate(104.4 deg);
+          transform: rotate(104.4 deg);
+}
+
+.progress-circle.per-29 .value-bar2 {
+  -webkit-transform: rotate(104.4 deg);
+          transform: rotate(104.4 deg);
+}
+
+.progress-circle.per30 .value-bar {
+  -webkit-transform: rotate(108 deg);
+          transform: rotate(108 deg);
+}
+
+.progress-circle.per-30 .value-bar2 {
+  -webkit-transform: rotate(108 deg);
+          transform: rotate(108 deg);
+}
+
+.progress-circle.per31 .value-bar {
+  -webkit-transform: rotate(111.6 deg);
+          transform: rotate(111.6 deg);
+}
+
+.progress-circle.per-31 .value-bar2 {
+  -webkit-transform: rotate(111.6 deg);
+          transform: rotate(111.6 deg);
+}
+
+.progress-circle.per32 .value-bar {
+  -webkit-transform: rotate(115.2 deg);
+          transform: rotate(115.2 deg);
+}
+
+.progress-circle.per-32 .value-bar2 {
+  -webkit-transform: rotate(115.2 deg);
+          transform: rotate(115.2 deg);
+}
+
+.progress-circle.per33 .value-bar {
+  -webkit-transform: rotate(118.8 deg);
+          transform: rotate(118.8 deg);
+}
+
+.progress-circle.per-33 .value-bar2 {
+  -webkit-transform: rotate(118.8 deg);
+          transform: rotate(118.8 deg);
+}
+
+.progress-circle.per34 .value-bar {
+  -webkit-transform: rotate(122.4 deg);
+          transform: rotate(122.4 deg);
+}
+
+.progress-circle.per-34 .value-bar2 {
+  -webkit-transform: rotate(122.4 deg);
+          transform: rotate(122.4 deg);
+}
+
+.progress-circle.per35 .value-bar {
+  -webkit-transform: rotate(126 deg);
+          transform: rotate(126 deg);
+}
+
+.progress-circle.per-35 .value-bar2 {
+  -webkit-transform: rotate(126 deg);
+          transform: rotate(126 deg);
+}
+
+.progress-circle.per36 .value-bar {
+  -webkit-transform: rotate(129.6 deg);
+          transform: rotate(129.6 deg);
+}
+
+.progress-circle.per-36 .value-bar2 {
+  -webkit-transform: rotate(129.6 deg);
+          transform: rotate(129.6 deg);
+}
+
+.progress-circle.per37 .value-bar {
+  -webkit-transform: rotate(133.2 deg);
+          transform: rotate(133.2 deg);
+}
+
+.progress-circle.per-37 .value-bar2 {
+  -webkit-transform: rotate(133.2 deg);
+          transform: rotate(133.2 deg);
+}
+
+.progress-circle.per38 .value-bar {
+  -webkit-transform: rotate(136.8 deg);
+          transform: rotate(136.8 deg);
+}
+
+.progress-circle.per-38 .value-bar2 {
+  -webkit-transform: rotate(136.8 deg);
+          transform: rotate(136.8 deg);
+}
+
+.progress-circle.per39 .value-bar {
+  -webkit-transform: rotate(140.4 deg);
+          transform: rotate(140.4 deg);
+}
+
+.progress-circle.per-39 .value-bar2 {
+  -webkit-transform: rotate(140.4 deg);
+          transform: rotate(140.4 deg);
+}
+
+.progress-circle.per40 .value-bar {
+  -webkit-transform: rotate(144 deg);
+          transform: rotate(144 deg);
+}
+
+.progress-circle.per-40 .value-bar2 {
+  -webkit-transform: rotate(144 deg);
+          transform: rotate(144 deg);
+}
+
+.progress-circle.per41 .value-bar {
+  -webkit-transform: rotate(147.6 deg);
+          transform: rotate(147.6 deg);
+}
+
+.progress-circle.per-41 .value-bar2 {
+  -webkit-transform: rotate(147.6 deg);
+          transform: rotate(147.6 deg);
+}
+
+.progress-circle.per42 .value-bar {
+  -webkit-transform: rotate(151.2 deg);
+          transform: rotate(151.2 deg);
+}
+
+.progress-circle.per-42 .value-bar2 {
+  -webkit-transform: rotate(151.2 deg);
+          transform: rotate(151.2 deg);
+}
+
+.progress-circle.per43 .value-bar {
+  -webkit-transform: rotate(154.8 deg);
+          transform: rotate(154.8 deg);
+}
+
+.progress-circle.per-43 .value-bar2 {
+  -webkit-transform: rotate(154.8 deg);
+          transform: rotate(154.8 deg);
+}
+
+.progress-circle.per44 .value-bar {
+  -webkit-transform: rotate(158.4 deg);
+          transform: rotate(158.4 deg);
+}
+
+.progress-circle.per-44 .value-bar2 {
+  -webkit-transform: rotate(158.4 deg);
+          transform: rotate(158.4 deg);
+}
+
+.progress-circle.per45 .value-bar {
+  -webkit-transform: rotate(162 deg);
+          transform: rotate(162 deg);
+}
+
+.progress-circle.per-45 .value-bar2 {
+  -webkit-transform: rotate(162 deg);
+          transform: rotate(162 deg);
+}
+
+.progress-circle.per46 .value-bar {
+  -webkit-transform: rotate(165.6 deg);
+          transform: rotate(165.6 deg);
+}
+
+.progress-circle.per-46 .value-bar2 {
+  -webkit-transform: rotate(165.6 deg);
+          transform: rotate(165.6 deg);
+}
+
+.progress-circle.per47 .value-bar {
+  -webkit-transform: rotate(169.2 deg);
+          transform: rotate(169.2 deg);
+}
+
+.progress-circle.per-47 .value-bar2 {
+  -webkit-transform: rotate(169.2 deg);
+          transform: rotate(169.2 deg);
+}
+
+.progress-circle.per48 .value-bar {
+  -webkit-transform: rotate(172.8 deg);
+          transform: rotate(172.8 deg);
+}
+
+.progress-circle.per-48 .value-bar2 {
+  -webkit-transform: rotate(172.8 deg);
+          transform: rotate(172.8 deg);
+}
+
+.progress-circle.per49 .value-bar {
+  -webkit-transform: rotate(176.4 deg);
+          transform: rotate(176.4 deg);
+}
+
+.progress-circle.per-49 .value-bar2 {
+  -webkit-transform: rotate(176.4 deg);
+          transform: rotate(176.4 deg);
+}
+
+.progress-circle.per50 .value-bar {
+  -webkit-transform: rotate(180 deg);
+          transform: rotate(180 deg);
+}
+
+.progress-circle.per-50 .value-bar2 {
+  -webkit-transform: rotate(180 deg);
+          transform: rotate(180 deg);
+}
+
+.progress-circle.per51 .value-bar {
+  -webkit-transform: rotate(183.6 deg);
+          transform: rotate(183.6 deg);
+}
+
+.progress-circle.per-51 .value-bar2 {
+  -webkit-transform: rotate(183.6 deg);
+          transform: rotate(183.6 deg);
+}
+
+.progress-circle.per52 .value-bar {
+  -webkit-transform: rotate(187.2 deg);
+          transform: rotate(187.2 deg);
+}
+
+.progress-circle.per-52 .value-bar2 {
+  -webkit-transform: rotate(187.2 deg);
+          transform: rotate(187.2 deg);
+}
+
+.progress-circle.per53 .value-bar {
+  -webkit-transform: rotate(190.8 deg);
+          transform: rotate(190.8 deg);
+}
+
+.progress-circle.per-53 .value-bar2 {
+  -webkit-transform: rotate(190.8 deg);
+          transform: rotate(190.8 deg);
+}
+
+.progress-circle.per54 .value-bar {
+  -webkit-transform: rotate(194.4 deg);
+          transform: rotate(194.4 deg);
+}
+
+.progress-circle.per-54 .value-bar2 {
+  -webkit-transform: rotate(194.4 deg);
+          transform: rotate(194.4 deg);
+}
+
+.progress-circle.per55 .value-bar {
+  -webkit-transform: rotate(198 deg);
+          transform: rotate(198 deg);
+}
+
+.progress-circle.per-55 .value-bar2 {
+  -webkit-transform: rotate(198 deg);
+          transform: rotate(198 deg);
+}
+
+.progress-circle.per56 .value-bar {
+  -webkit-transform: rotate(201.6 deg);
+          transform: rotate(201.6 deg);
+}
+
+.progress-circle.per-56 .value-bar2 {
+  -webkit-transform: rotate(201.6 deg);
+          transform: rotate(201.6 deg);
+}
+
+.progress-circle.per57 .value-bar {
+  -webkit-transform: rotate(205.2 deg);
+          transform: rotate(205.2 deg);
+}
+
+.progress-circle.per-57 .value-bar2 {
+  -webkit-transform: rotate(205.2 deg);
+          transform: rotate(205.2 deg);
+}
+
+.progress-circle.per58 .value-bar {
+  -webkit-transform: rotate(208.8 deg);
+          transform: rotate(208.8 deg);
+}
+
+.progress-circle.per-58 .value-bar2 {
+  -webkit-transform: rotate(208.8 deg);
+          transform: rotate(208.8 deg);
+}
+
+.progress-circle.per59 .value-bar {
+  -webkit-transform: rotate(212.4 deg);
+          transform: rotate(212.4 deg);
+}
+
+.progress-circle.per-59 .value-bar2 {
+  -webkit-transform: rotate(212.4 deg);
+          transform: rotate(212.4 deg);
+}
+
+.progress-circle.per60 .value-bar {
+  -webkit-transform: rotate(216 deg);
+          transform: rotate(216 deg);
+}
+
+.progress-circle.per-60 .value-bar2 {
+  -webkit-transform: rotate(216 deg);
+          transform: rotate(216 deg);
+}
+
+.progress-circle.per61 .value-bar {
+  -webkit-transform: rotate(219.6 deg);
+          transform: rotate(219.6 deg);
+}
+
+.progress-circle.per-61 .value-bar2 {
+  -webkit-transform: rotate(219.6 deg);
+          transform: rotate(219.6 deg);
+}
+
+.progress-circle.per62 .value-bar {
+  -webkit-transform: rotate(223.2 deg);
+          transform: rotate(223.2 deg);
+}
+
+.progress-circle.per-62 .value-bar2 {
+  -webkit-transform: rotate(223.2 deg);
+          transform: rotate(223.2 deg);
+}
+
+.progress-circle.per63 .value-bar {
+  -webkit-transform: rotate(226.8 deg);
+          transform: rotate(226.8 deg);
+}
+
+.progress-circle.per-63 .value-bar2 {
+  -webkit-transform: rotate(226.8 deg);
+          transform: rotate(226.8 deg);
+}
+
+.progress-circle.per64 .value-bar {
+  -webkit-transform: rotate(230.4 deg);
+          transform: rotate(230.4 deg);
+}
+
+.progress-circle.per-64 .value-bar2 {
+  -webkit-transform: rotate(230.4 deg);
+          transform: rotate(230.4 deg);
+}
+
+.progress-circle.per65 .value-bar {
+  -webkit-transform: rotate(234 deg);
+          transform: rotate(234 deg);
+}
+
+.progress-circle.per-65 .value-bar2 {
+  -webkit-transform: rotate(234 deg);
+          transform: rotate(234 deg);
+}
+
+.progress-circle.per66 .value-bar {
+  -webkit-transform: rotate(237.6 deg);
+          transform: rotate(237.6 deg);
+}
+
+.progress-circle.per-66 .value-bar2 {
+  -webkit-transform: rotate(237.6 deg);
+          transform: rotate(237.6 deg);
+}
+
+.progress-circle.per67 .value-bar {
+  -webkit-transform: rotate(241.2 deg);
+          transform: rotate(241.2 deg);
+}
+
+.progress-circle.per-67 .value-bar2 {
+  -webkit-transform: rotate(241.2 deg);
+          transform: rotate(241.2 deg);
+}
+
+.progress-circle.per68 .value-bar {
+  -webkit-transform: rotate(244.8 deg);
+          transform: rotate(244.8 deg);
+}
+
+.progress-circle.per-68 .value-bar2 {
+  -webkit-transform: rotate(244.8 deg);
+          transform: rotate(244.8 deg);
+}
+
+.progress-circle.per69 .value-bar {
+  -webkit-transform: rotate(248.4 deg);
+          transform: rotate(248.4 deg);
+}
+
+.progress-circle.per-69 .value-bar2 {
+  -webkit-transform: rotate(248.4 deg);
+          transform: rotate(248.4 deg);
+}
+
+.progress-circle.per70 .value-bar {
+  -webkit-transform: rotate(252 deg);
+          transform: rotate(252 deg);
+}
+
+.progress-circle.per-70 .value-bar2 {
+  -webkit-transform: rotate(252 deg);
+          transform: rotate(252 deg);
+}
+
+.progress-circle.per71 .value-bar {
+  -webkit-transform: rotate(255.6 deg);
+          transform: rotate(255.6 deg);
+}
+
+.progress-circle.per-71 .value-bar2 {
+  -webkit-transform: rotate(255.6 deg);
+          transform: rotate(255.6 deg);
+}
+
+.progress-circle.per72 .value-bar {
+  -webkit-transform: rotate(259.2 deg);
+          transform: rotate(259.2 deg);
+}
+
+.progress-circle.per-72 .value-bar2 {
+  -webkit-transform: rotate(259.2 deg);
+          transform: rotate(259.2 deg);
+}
+
+.progress-circle.per73 .value-bar {
+  -webkit-transform: rotate(262.8 deg);
+          transform: rotate(262.8 deg);
+}
+
+.progress-circle.per-73 .value-bar2 {
+  -webkit-transform: rotate(262.8 deg);
+          transform: rotate(262.8 deg);
+}
+
+.progress-circle.per74 .value-bar {
+  -webkit-transform: rotate(266.4 deg);
+          transform: rotate(266.4 deg);
+}
+
+.progress-circle.per-74 .value-bar2 {
+  -webkit-transform: rotate(266.4 deg);
+          transform: rotate(266.4 deg);
+}
+
+.progress-circle.per75 .value-bar {
+  -webkit-transform: rotate(270 deg);
+          transform: rotate(270 deg);
+}
+
+.progress-circle.per-75 .value-bar2 {
+  -webkit-transform: rotate(270 deg);
+          transform: rotate(270 deg);
+}
+
+.progress-circle.per76 .value-bar {
+  -webkit-transform: rotate(273.6 deg);
+          transform: rotate(273.6 deg);
+}
+
+.progress-circle.per-76 .value-bar2 {
+  -webkit-transform: rotate(273.6 deg);
+          transform: rotate(273.6 deg);
+}
+
+.progress-circle.per77 .value-bar {
+  -webkit-transform: rotate(277.2 deg);
+          transform: rotate(277.2 deg);
+}
+
+.progress-circle.per-77 .value-bar2 {
+  -webkit-transform: rotate(277.2 deg);
+          transform: rotate(277.2 deg);
+}
+
+.progress-circle.per78 .value-bar {
+  -webkit-transform: rotate(280.8 deg);
+          transform: rotate(280.8 deg);
+}
+
+.progress-circle.per-78 .value-bar2 {
+  -webkit-transform: rotate(280.8 deg);
+          transform: rotate(280.8 deg);
+}
+
+.progress-circle.per79 .value-bar {
+  -webkit-transform: rotate(284.4 deg);
+          transform: rotate(284.4 deg);
+}
+
+.progress-circle.per-79 .value-bar2 {
+  -webkit-transform: rotate(284.4 deg);
+          transform: rotate(284.4 deg);
+}
+
+.progress-circle.per80 .value-bar {
+  -webkit-transform: rotate(288 deg);
+          transform: rotate(288 deg);
+}
+
+.progress-circle.per-80 .value-bar2 {
+  -webkit-transform: rotate(288 deg);
+          transform: rotate(288 deg);
+}
+
+.progress-circle.per81 .value-bar {
+  -webkit-transform: rotate(291.6 deg);
+          transform: rotate(291.6 deg);
+}
+
+.progress-circle.per-81 .value-bar2 {
+  -webkit-transform: rotate(291.6 deg);
+          transform: rotate(291.6 deg);
+}
+
+.progress-circle.per82 .value-bar {
+  -webkit-transform: rotate(295.2 deg);
+          transform: rotate(295.2 deg);
+}
+
+.progress-circle.per-82 .value-bar2 {
+  -webkit-transform: rotate(295.2 deg);
+          transform: rotate(295.2 deg);
+}
+
+.progress-circle.per83 .value-bar {
+  -webkit-transform: rotate(298.8 deg);
+          transform: rotate(298.8 deg);
+}
+
+.progress-circle.per-83 .value-bar2 {
+  -webkit-transform: rotate(298.8 deg);
+          transform: rotate(298.8 deg);
+}
+
+.progress-circle.per84 .value-bar {
+  -webkit-transform: rotate(302.4 deg);
+          transform: rotate(302.4 deg);
+}
+
+.progress-circle.per-84 .value-bar2 {
+  -webkit-transform: rotate(302.4 deg);
+          transform: rotate(302.4 deg);
+}
+
+.progress-circle.per85 .value-bar {
+  -webkit-transform: rotate(306 deg);
+          transform: rotate(306 deg);
+}
+
+.progress-circle.per-85 .value-bar2 {
+  -webkit-transform: rotate(306 deg);
+          transform: rotate(306 deg);
+}
+
+.progress-circle.per86 .value-bar {
+  -webkit-transform: rotate(309.6 deg);
+          transform: rotate(309.6 deg);
+}
+
+.progress-circle.per-86 .value-bar2 {
+  -webkit-transform: rotate(309.6 deg);
+          transform: rotate(309.6 deg);
+}
+
+.progress-circle.per87 .value-bar {
+  -webkit-transform: rotate(313.2 deg);
+          transform: rotate(313.2 deg);
+}
+
+.progress-circle.per-87 .value-bar2 {
+  -webkit-transform: rotate(313.2 deg);
+          transform: rotate(313.2 deg);
+}
+
+.progress-circle.per88 .value-bar {
+  -webkit-transform: rotate(316.8 deg);
+          transform: rotate(316.8 deg);
+}
+
+.progress-circle.per-88 .value-bar2 {
+  -webkit-transform: rotate(316.8 deg);
+          transform: rotate(316.8 deg);
+}
+
+.progress-circle.per89 .value-bar {
+  -webkit-transform: rotate(320.4 deg);
+          transform: rotate(320.4 deg);
+}
+
+.progress-circle.per-89 .value-bar2 {
+  -webkit-transform: rotate(320.4 deg);
+          transform: rotate(320.4 deg);
+}
+
+.progress-circle.per90 .value-bar {
+  -webkit-transform: rotate(324 deg);
+          transform: rotate(324 deg);
+}
+
+.progress-circle.per-90 .value-bar2 {
+  -webkit-transform: rotate(324 deg);
+          transform: rotate(324 deg);
+}
+
+.progress-circle.per91 .value-bar {
+  -webkit-transform: rotate(327.6 deg);
+          transform: rotate(327.6 deg);
+}
+
+.progress-circle.per-91 .value-bar2 {
+  -webkit-transform: rotate(327.6 deg);
+          transform: rotate(327.6 deg);
+}
+
+.progress-circle.per92 .value-bar {
+  -webkit-transform: rotate(331.2 deg);
+          transform: rotate(331.2 deg);
+}
+
+.progress-circle.per-92 .value-bar2 {
+  -webkit-transform: rotate(331.2 deg);
+          transform: rotate(331.2 deg);
+}
+
+.progress-circle.per93 .value-bar {
+  -webkit-transform: rotate(334.8 deg);
+          transform: rotate(334.8 deg);
+}
+
+.progress-circle.per-93 .value-bar2 {
+  -webkit-transform: rotate(334.8 deg);
+          transform: rotate(334.8 deg);
+}
+
+.progress-circle.per94 .value-bar {
+  -webkit-transform: rotate(338.4 deg);
+          transform: rotate(338.4 deg);
+}
+
+.progress-circle.per-94 .value-bar2 {
+  -webkit-transform: rotate(338.4 deg);
+          transform: rotate(338.4 deg);
+}
+
+.progress-circle.per95 .value-bar {
+  -webkit-transform: rotate(342 deg);
+          transform: rotate(342 deg);
+}
+
+.progress-circle.per-95 .value-bar2 {
+  -webkit-transform: rotate(342 deg);
+          transform: rotate(342 deg);
+}
+
+.progress-circle.per96 .value-bar {
+  -webkit-transform: rotate(345.6 deg);
+          transform: rotate(345.6 deg);
+}
+
+.progress-circle.per-96 .value-bar2 {
+  -webkit-transform: rotate(345.6 deg);
+          transform: rotate(345.6 deg);
+}
+
+.progress-circle.per97 .value-bar {
+  -webkit-transform: rotate(349.2 deg);
+          transform: rotate(349.2 deg);
+}
+
+.progress-circle.per-97 .value-bar2 {
+  -webkit-transform: rotate(349.2 deg);
+          transform: rotate(349.2 deg);
+}
+
+.progress-circle.per98 .value-bar {
+  -webkit-transform: rotate(352.8 deg);
+          transform: rotate(352.8 deg);
+}
+
+.progress-circle.per-98 .value-bar2 {
+  -webkit-transform: rotate(352.8 deg);
+          transform: rotate(352.8 deg);
+}
+
+.progress-circle.per99 .value-bar {
+  -webkit-transform: rotate(356.4 deg);
+          transform: rotate(356.4 deg);
+}
+
+.progress-circle.per-99 .value-bar2 {
+  -webkit-transform: rotate(356.4 deg);
+          transform: rotate(356.4 deg);
+}
+
+.progress-circle.per100 .value-bar {
+  -webkit-transform: rotate(360 deg);
+          transform: rotate(360 deg);
+}
+
+.progress-circle.per-100 .value-bar2 {
+  -webkit-transform: rotate(360 deg);
+          transform: rotate(360 deg);
+}
+/*# sourceMappingURL=point-buy.component.css.map */

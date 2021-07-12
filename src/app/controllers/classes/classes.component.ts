@@ -12,7 +12,7 @@ import { ClassComponent } from './class/class.component';
 @Component({
   selector: 'app-classes',
   templateUrl: './classes.component.html',
-  styleUrls: ['./classes.component.css']
+  styleUrls: ['./classes.component.scss']
 })
 export class ClassesComponent implements OnInit {
 

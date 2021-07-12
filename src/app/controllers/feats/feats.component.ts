@@ -12,7 +12,7 @@ import { Feat } from 'src/app/models/feat';
 @Component({
   selector: 'app-feats',
   templateUrl: './feats.component.html',
-  styleUrls: ['./feats.component.css']
+  styleUrls: ['./feats.component.scss']
 })
 export class FeatsComponent implements OnInit {
 

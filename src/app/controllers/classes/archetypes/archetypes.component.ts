@@ -4,7 +4,7 @@ import { Class } from 'src/app/models';
 @Component({
   selector: 'app-archetypes',
   templateUrl: './archetypes.component.html',
-  styleUrls: ['./archetypes.component.css']
+  styleUrls: ['./archetypes.component.scss']
 })
 export class ArchetypesComponent implements OnInit {
 

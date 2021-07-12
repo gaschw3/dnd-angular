@@ -1,25 +1,26 @@
 .card.feature-list {
-    margin-bottom:90vh;
+  margin-bottom: 90vh;
 }
 
 .feature h4 {
-    color: #62c462;
-    border-bottom: 1px solid;
+  color: #62c462;
+  border-bottom: 1px solid;
 }
 
 .feature-text.row {
-    margin: 0px;
+  margin: 0px;
 }
 
 .subclass {
-    padding-left: 30px;
+  padding-left: 30px;
 }
 
 .archetype h4 {
-    color: #5bc0de;
+  color: #5bc0de;
 }
 
 .subclass h4 {
-    color: #5bc0de;
-    border-bottom: 1px hidden;
+  color: #5bc0de;
+  border-bottom: 1px hidden;
 }
+/*# sourceMappingURL=features.component.css.map */

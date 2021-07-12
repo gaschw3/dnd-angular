@@ -4,7 +4,7 @@ import { Spell } from 'src/app/models/spell';
 @Component({
   selector: 'app-spell',
   templateUrl: './spell.component.html',
-  styleUrls: ['./spell.component.css']
+  styleUrls: ['./spell.component.scss']
 })
 export class SpellComponent implements OnInit {
   

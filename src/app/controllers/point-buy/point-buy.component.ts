@@ -14,7 +14,7 @@ interface Stat {
 @Component({
   selector: 'app-point-buy',
   templateUrl: './point-buy.component.html',
-  styleUrls: ['./point-buy.component.css']
+  styleUrls: ['./point-buy.component.scss']
 })
 export class PointBuyComponent implements OnInit {
 

@@ -4,7 +4,7 @@ import * as L from 'leaflet';
 @Component({
   selector: 'app-hexmap',
   templateUrl: './hexmap.component.html',
-  styleUrls: ['./hexmap.component.css']
+  styleUrls: ['./hexmap.component.scss']
 })
 export class HexmapComponent implements AfterViewInit {
   private map;

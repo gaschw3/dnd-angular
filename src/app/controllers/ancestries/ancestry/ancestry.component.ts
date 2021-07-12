@@ -4,7 +4,7 @@ import { Ancestry } from 'src/app/models/ancestry';
 @Component({
   selector: 'app-ancestry',
   templateUrl: './ancestry.component.html',
-  styleUrls: ['./ancestry.component.css']
+  styleUrls: ['./ancestry.component.scss']
 })
 export class AncestryComponent implements OnInit {
 

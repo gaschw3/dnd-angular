@@ -1,11 +1,12 @@
 .level-table {
-    overflow: auto;
+  overflow: auto;
 }
 
 td.center, th.center {
-    text-align:center;
+  text-align: center;
 }
 
-th,  td {
-    padding: 2px;
+th, td {
+  padding: 2px;
 }
+/*# sourceMappingURL=level-table.component.css.map */

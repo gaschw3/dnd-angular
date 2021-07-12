@@ -1,28 +1,36 @@
 .background-border-bottom {
-    border-bottom: 2px solid
+  border-bottom: 2px solid;
 }
 
 .border-phb {
-    border-bottom: 2px solid rgb(0, 119, 230);
-  }
-  .border-xge {
-    border-bottom: 2px solid rgb(0, 230, 142);
-  }
-  .border-scag {
-    border-bottom: 2px solid rgb(255, 253, 119);
-  }
-  .border-ua {
-    border-bottom: 2px solid rgb(255, 119, 119);
-  }
-  .border-dmg {
-    border-bottom: 2px solid rgb(190, 14, 14);
-  }
-  .border-ggr {
-    border-bottom: 2px solid rgb(119, 255, 248);
-  }
-  .border-mot {
-    border-bottom: 2px solid rgb(90, 156, 131);
-  }
-  .border-brew {
-    border-bottom: 2px solid rgb(235, 125, 229);
-  }
+  border-bottom: 2px solid #0077e6;
+}
+
+.border-xge {
+  border-bottom: 2px solid #00e68e;
+}
+
+.border-scag {
+  border-bottom: 2px solid #fffd77;
+}
+
+.border-ua {
+  border-bottom: 2px solid #ff7777;
+}
+
+.border-dmg {
+  border-bottom: 2px solid #be0e0e;
+}
+
+.border-ggr {
+  border-bottom: 2px solid #77fff8;
+}
+
+.border-mot {
+  border-bottom: 2px solid #5a9c83;
+}
+
+.border-brew {
+  border-bottom: 2px solid #eb7de5;
+}
+/*# sourceMappingURL=background.component.css.map */

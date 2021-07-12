@@ -4,7 +4,7 @@ import { Class } from 'src/app/models';
 @Component({
   selector: 'app-level-table',
   templateUrl: './level-table.component.html',
-  styleUrls: ['./level-table.component.css']
+  styleUrls: ['./level-table.component.scss']
 })
 export class LevelTableComponent implements OnInit {
 
