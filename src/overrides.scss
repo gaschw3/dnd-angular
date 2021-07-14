@@ -1,11 +1,18 @@
 @use "sass:color";
 @import "./scss-theme/functions.scss";
-@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Monoton&family=Iceberg&display=swap');
 
-/* overrides for full app styles from Angular-Bootstrep (mostly default colors */
+// TODO: should need this, but I'm seeing a tiny y-scroll bar show up sometimes
 body {
+  overflow-x:hidden;
+}
+
+/* overrides for full app styles from Angular-Bootstrep (mostly default colors) */
+.theme-container {
   @include themify($themes) {
     background: themed('background') no-repeat center center fixed;
+    min-height: 100vh;
+    min-width: 100vw;
     background-color: themed('backgroundColor');
     color: themed('textColor');
 

@@ -4,7 +4,7 @@
 @import './scss-theme/themes.scss';
 @import "./scss-theme/functions.scss";
 
-body {
+.theme-container {
   @include themify($themes) {
 
   .navbar-nav > li > a {

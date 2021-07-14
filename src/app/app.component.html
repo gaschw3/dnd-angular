@@ -1,48 +1,61 @@
-<app-particles></app-particles>
-<nav  class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand"  href="#">EotCC 5e</a>
-    <button  class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
-    <span  class="navbar-toggler-icon"></span>
-    </button>
-    <div  class="collapse navbar-collapse"  id="navbarSupportedContent">
-      <ul  class="navbar-nav mr-auto">
-          <li  class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownChar"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-            Characters
-            </a>
-            <div  class="dropdown-menu"  aria-labelledby="navbarDropdownChar">
-              <a  class="dropdown-item" [routerLink]="'/classes'"> Classes </a>
-              <a  class="dropdown-item" [routerLink]="'/backgrounds'"> Backgrounds </a>
-              <a  class="dropdown-item" [routerLink]="'/ancestries'"> Ancestries </a>
-              <a  class="dropdown-item" [routerLink]="'/feats'"> Feats </a>
-              <a class="dropdown-item" [routerLink]="'/point-buy'"> Point Buy Calculator </a>
+<app-particles [theme]="theme"></app-particles>
+<div [ngClass]="'theme-'+theme"><div class="theme-container">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand"  href="#">EotCC 5e</a>
+      <button  class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
+      <span  class="navbar-toggler-icon"></span>
+      </button>
+      <div  class="collapse navbar-collapse"  id="navbarSupportedContent">
+        <ul  class="navbar-nav mr-auto">
+            <li  class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownChar"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
+              Characters
+              </a>
+              <div  class="dropdown-menu"  aria-labelledby="navbarDropdownChar">
+                <a  class="dropdown-item" [routerLink]="'/classes'"> Classes </a>
+                <a  class="dropdown-item" [routerLink]="'/backgrounds'"> Backgrounds </a>
+                <a  class="dropdown-item" [routerLink]="'/ancestries'"> Ancestries </a>
+                <a  class="dropdown-item" [routerLink]="'/feats'"> Feats </a>
+                <a class="dropdown-item" [routerLink]="'/point-buy'"> Point Buy Calculator </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a class="nav-link dropdown-toggle" href="#" id="navdarDropdownDm" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                DM
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navdarDropdownDm">
+                <a class="dropdown-item" [routerLink]="'/beastiary'"> Beastiary </a>
+                <a class="dropdown-item" [routerLink]="'/items'"> Items </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownRef"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
+              Reference <span class="badge badge-warning">WIP</span>
+              </a>
+              <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
+                <a  class="dropdown-item" [routerLink]="'/spells'"> Spells </a>
+                <a  class="dropdown-item" [routerLink]="'/map'"> Map <span class="badge badge-warning">WIP</span></a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline form-sm my-2">
+            <div class="form-group">
+              <label for="theme">Theme</label>
+              <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
+                <option value="dark">Material Realm</option>
+                <option value="hell">The Abyss</option>
+                <option value="snow">Plane of Ice</option>
+                <option value="rainbow">Whimsyshire</option>
+              </select>
             </div>
-          </li>
-          <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a class="nav-link dropdown-toggle" href="#" id="navdarDropdownDm" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              DM
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navdarDropdownDm">
-              <a class="dropdown-item" [routerLink]="'/beastiary'"> Beastiary </a>
-              <a class="dropdown-item" [routerLink]="'/items'"> Items </a>
-            </div>
-          </li>
-          <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownRef"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-            Reference <span class="badge badge-warning">WIP</span>
-            </a>
-            <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
-              <a  class="dropdown-item" [routerLink]="'/spells'"> Spells </a>
-              <a  class="dropdown-item" [routerLink]="'/map'"> Map <span class="badge badge-warning">WIP</span></a>
-            </div>
-          </li>
-        </ul>
+          </form>
+      </div>
     </div>
+  </nav>
+  <div  class="container-fluid">
+      <router-outlet></router-outlet>
   </div>
-</nav>
-<div  class="container-fluid">
-    <router-outlet></router-outlet>
-</div>
+</div></div>
 <ngx-scrolltop backgroundColor="#62c462" symbol="↑ to Top" [size]="50" symbolColor="#fff"></ngx-scrolltop>
