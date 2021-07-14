@@ -16,11 +16,13 @@ import { SharedModule } from './shared/shared.module';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ParticlesComponent } from './controllers/particles/particles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HexmapComponent
+    HexmapComponent,
+    ParticlesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,127 +1,178 @@
 @use "sass:color";
 @import "./scss-theme/functions.scss";
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Monoton&display=swap');
 
 /* overrides for full app styles from Angular-Bootstrep (mostly default colors */
 body {
   @include themify($themes) {
+    background: themed('background') no-repeat center center fixed;
     background-color: themed('backgroundColor');
     color: themed('textColor');
 
-  .bg-primary {
-    background-color: themed('navColor') !important;
-  }
-
-  a {
-    color: themed('linkColor');
-    text-decoration: none;
-
-    &:hover {
-      color: color.scale(themed('linkColor'), $lightness: 50%);
-      text-decoration: underline;
-    }
-  }
-
-  .dropdown-menu {
-    background-color: themed('navColor');
-    border: 1px solid rgba(0,0,0,.6);
-
-    .dropdown-item {
-      color: themed('textColor');
+    .bg-primary {
+      background-color: themed('navColor') !important;
     }
 
-    :focus, :hover {
-      color: themed('textLinkColor')!important;
+    h1, h2, h3,
+    h4, h5, h6 {
+      font-family: themed("headerFont"), themed("headerFallbackFont");
+    }
+
+    h1 {
+      background: themed('headerColor');
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    h5 {
+      color: themed("colorTertiary");
+    }
+
+    a {
+      color: themed('linkColor');
       text-decoration: none;
-      background-color: themed('textLinkBackground')!important;
+
+      &:hover {
+        color: color.scale(themed('linkColor'), $lightness: 50%);
+        text-decoration: underline;
+      }
+    }
+
+    .color-primary {
+      color: themed('colorPrimary');
+    }
+
+    .dropdown-menu {
+      background-color: themed('navColor');
+      border: 1px solid rgba(0,0,0,.6);
+
+      .dropdown-item {
+        color: themed('textColor');
       }
 
-    .active, :active {
-      color: themed('textLinkColor')!important;
-      text-decoration: none;
-      background-color: themed('textLinkBackground')!important;
+      :focus, :hover {
+        color: themed('textLinkColor')!important;
+        text-decoration: none;
+        background-color: themed('textLinkBackground')!important;
+        }
+
+      .active, :active {
+        color: themed('textLinkColor')!important;
+        text-decoration: none;
+        background-color: themed('textLinkBackground')!important;
+        }
+    }
+
+    .card {
+      background-color: themed('cardColor');
+    }
+
+    .text-success {
+      color: themed('colorPrimary')!important;
+    }
+
+    .btn-warning.active {
+      box-shadow: 0px 0px 1px 3px  #a17940 !important;
+      background-image: linear-gradient(#9e5f04, #ad6704 40%, #b76d04) !important;
+    }
+
+    .btn-success.active {
+      box-shadow: 0px 0px 1px 3px #609960 !important;
+      background-image: linear-gradient(#379337, #3b9e3b 40%, #3ea63e) !important;
+    }
+
+    .btn-primary {
+      background-image: themed("classButtonGradient");
+      background-repeat: no-repeat;
+      -webkit-filter: none;
+      filter: none;
+      border-color: themed("navColor");
+
+      &.active {
+        background-image: themed("classButtonGradientActive");
+        border-color: themed("colorSecondary")!important;
       }
-  }
 
-  .card {
-    background-color: themed('cardColor');
-  }
+      &:hover {
+        border-color: themed("colorSecondary");
+      }
 
-  .text-success {
-    color: themed('colorPrimary')!important;
-  }
-
-  .btn-primary {
-    background-image: linear-gradient(#484e55,#3a3f44 60%,#313539);
-    background-repeat: no-repeat;
-    -webkit-filter: none;
-    filter: none;
-    border-color: #3a3f44;
-    background-color: #3a3f44;
-
-    &:hover {
-      background-color: #171b1f;
-      border-color: #171b1f;
+      &:focus {
+        box-shadow: 0 0 0 0.2rem themed("colorSecondary")!important;
+      }
     }
-  }
 
-  .table-hover tbody tr:hover {
-      color: #fff;
-      background-color: rgba(255,255,255,.075)
-  }
-
-  .list-group-item {
-    color: #aaa;
-    background-color: #32383e;
-    border: 1px solid rgba(0,0,0,.6);
-
-    :hover {
-      color: #fff;
-      background-color: #1c1e22
+    .table-hover tbody tr:hover {
+        color: themed("textLinkColor");
+        background-color: rgba(255,255,255,.075)
     }
-  }
 
-  table.dataTable tbody tr {
-      background-color: inherit;
-  }
-  table .table-hover tr:hover {
-    background-color: rgba(255,255,255,.15)!important;
-    filter: brightness(125%);
-  }
-  table .table-active {
-      background-color: #3a3f44!important;
-      color: #fff;
-  }
-  .table td, .table th {
-      border-top: 1px solid rgba(0,0,0,.6);
-  }
-  .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
-      color: #aaa;
-  }
-  .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
-      cursor: default;
-      color: #aaa!important;
-      visibility: hidden;
-  }
-  .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_paginate, .dataTables_wrapper .dataTables_processing {
-      color: #aaa!important;
-  }
-  .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-      color: #fff!important;
-      border: 1px solid transparent;
-      background-color: #fff;
-      background: rgba(102,163,255,.514);
-  }
-  .dataTables_wrapper .dataTables_paginate .paginate_button {
-      color: #aaa!important;
-  }
-  .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-      color: white !important;
-      background: #585858!important;
-  }
-  .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-      color: #fff!important;
-      border: 1px solid #979797;
-      background: rgba(121, 175, 255, 0.514)!important;
-  }
+    .list-group-item {
+      color: themed("textColor");
+      background-color: themed("cardColor");
+      border: 1px solid rgba(0,0,0,.6);
+
+      &.active {
+        background-color: themed("colorSecondary");
+        color: themed("textLinkColor");
+
+        &:hover {
+          background-color: color.scale(themed("colorSecondary"), $lightness: -50%);
+        }
+      }
+
+      &:hover {
+        color: themed("textLinkColor");
+        background-color: color.scale(themed("cardColor"), $lightness: -25%);
+      }
+    }
+
+    table.dataTable tbody tr {
+        background-color: inherit;
+    }
+    table .table-hover tr:hover {
+      background-color: rgba(255,255,255,.15)!important;
+      filter: brightness(125%);
+    }
+    table .table-active {
+        background-color: themed("navColor")!important;
+        color: themed("textLinkColor");
+    }
+    .table td, .table th {
+        border-top: 1px solid rgba(0,0,0,.6);
+    }
+    .table-sm td, .table-sm th {
+        border-top: 1px solid themed("textColor");
+    }
+    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+        color: themed("textColor");
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+        cursor: default;
+        color: themed("textColor")!important;
+        visibility: hidden;
+    }
+    .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_paginate, .dataTables_wrapper .dataTables_processing {
+        color: themed("textColor")!important;
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        color: themed("textLinkColor")!important;
+        border: 1px solid transparent;
+        background-color: themed("textLinkColor");
+        background: themed("paginateSelected");
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        color: themed("textColor")!important;
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        color: themed("textLinkColor")!important;
+        background: themed("navColor")!important;
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        color: themed("textLinkColor")!important;
+        border: 1px solid #979797;
+        background: themed("paginateSelected")!important;
+    }
   }
 }

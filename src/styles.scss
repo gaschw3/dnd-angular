@@ -1,39 +1,96 @@
 /*general sytles used on multiple pages
   Mostly color relates, also some stuff for navbars, tables, and map labels*/
+@use "sass:color";
 @import './scss-theme/themes.scss';
+@import "./scss-theme/functions.scss";
 
-.navbar-nav > li > a {
-    color: #ccc;
-}
-/*center scroll to top better */
-.scrolltop-button .symbol-container svg {
-  transform: translateY(-15%) !important;
-}
+body {
+  @include themify($themes) {
 
-.color-primary {
-  color: #62c462
-}
-.border-bottom-primary {
-  border-bottom: 2px solid #62c462;;
-}
-.beastiary-border {
-  border-bottom: 2px solid #62c462;;
-}
+  .navbar-nav > li > a {
+      color: #ccc;
+  }
+  /*center scroll to top better */
+  .scrolltop-button .symbol-container svg {
+    transform: translateY(-15%) !important;
+  }
 
-/* sizing and placement for monster tokens in the beastiary entries */
-.mon__wrp-token {
+  .color-primary {
+    color: theme("colorPrimary");
+  }
+  .color-secondary {
+    color: themed("colorSecondary");
+  }
+  .border-bottom-primary {
+    border-bottom: 2px solid themed("colorPrimary");
+  }
+  .beastiary-border {
+    border-bottom: 2px solid themed("colorPrimary");
+  }
+
+  /* sizing and placement for monster tokens in the beastiary entries */
+  .mon__wrp-token {
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 40%;
+      width: auto;
+      max-width: 6rem;
+      height: auto;
+  }
+  .mon__token {
+      width: 100%;
+      height: 100%;
+  }
+
+  .table {
+    color: themed("textColor") !important;
+  }
+
+  /* specific rules around some hidden very large tables on class pages */
+  .read-more-state {
+    display: none;
+  }
+  .read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    display: none;
+    transition: .25s ease;
+  }
+  .read-more-state:checked ~ .read-more-wrap .read-more-target {
+    opacity: 1;
     display: block;
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    right: 40%;
-    width: auto;
-    max-width: 6rem;
-    height: auto;
-}
-.mon__token {
-    width: 100%;
-    height: 100%;
+    font-size: inherit;
+    max-height: 999em;
+  }
+  .read-more-state ~ .read-more-trigger:before {
+    content: 'Show Surge Table';
+  }
+  .read-more-state:checked ~ .read-more-trigger:before {
+    content: 'Hide Surge Table';
+  }
+  .read-more-trigger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 .5em;
+    font-size: .9em;
+    line-height: 2;
+    border: 1px solid themed("colorSecondary");
+    border-radius: .25em;
+  }
+
+  /* make sure fieature list doesn't ride on top of the navbar */
+  .features-list {
+    z-index: 800 !important;
+  }
+
+  .card-columns {
+    column-count: 2 !important;
+  }
+
+  }
 }
 
 .text--gp {
@@ -45,11 +102,6 @@
 .text--cp {
   color: #91590f;
 }
-
-.table {
-  color: #aaa !important;
-}
-
 /* spell colors */
 .color-abjuration {
   color: rgb(253, 246, 207);
@@ -161,48 +213,6 @@
 }
 .color-cos {
   color: rgb(146, 0, 139);
-}
-
-/* specific rules around some hidden very large tables on class pages */
-.read-more-state {
-  display: none;
-}
-.read-more-target {
-  opacity: 0;
-  max-height: 0;
-  font-size: 0;
-  display: none;
-  transition: .25s ease;
-}
-.read-more-state:checked ~ .read-more-wrap .read-more-target {
-  opacity: 1;
-  display: block;
-  font-size: inherit;
-  max-height: 999em;
-}
-.read-more-state ~ .read-more-trigger:before {
-  content: 'Show Surge Table';
-}
-.read-more-state:checked ~ .read-more-trigger:before {
-  content: 'Hide Surge Table';
-}
-.read-more-trigger {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0 .5em;
-  font-size: .9em;
-  line-height: 2;
-  border: 1px solid #5bc0de;
-  border-radius: .25em;
-}
-
-/* make sure fieature list doesn't ride on top of the navbar */
-.features-list {
-  z-index: 800 !important;
-}
-
-.card-columns {
-  column-count: 2 !important;
 }
 
 /* labels for map stuff, probably better way to do this but it's working for now */
