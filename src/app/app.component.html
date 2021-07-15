@@ -1,8 +1,8 @@
-<app-particles [theme]="theme"></app-particles>
+<app-particles *ngIf="particles" [theme]="theme"></app-particles>
 <div [ngClass]="'theme-'+theme"><div class="theme-container">
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand"  href="#">EotCC 5e</a>
+      <a class="navbar-brand" class="d-inline-block align-top" href="#"><img src="/favicon.ico" width="30" height="30" alt=""> EotCC 5e</a>
       <button  class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
       <span  class="navbar-toggler-icon"></span>
       </button>
@@ -40,17 +40,35 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline form-sm my-2">
-            <div class="form-group">
-              <label for="theme">Theme</label>
-              <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
-                <option value="dark">Material Realm</option>
-                <option value="hell">The Abyss</option>
-                <option value="snow">Plane of Ice</option>
-                <option value="rainbow">Whimsyshire</option>
-              </select>
-            </div>
-          </form>
+          <ul  class="navbar-nav portal">
+            <li class="nav-item dropdown float-right" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a class="nav-link " href="#" id="navbarDropdownRef" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Planar Portal
+              <i class="fa fa-cog" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownRef">
+                <form class="form-sm m-3">
+                  <div class="form-group">
+                    <label for="theme">Destination</label>
+                    <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
+                      <option value="dark">Material Realm</option>
+                      <option value="hell">The Abyss</option>
+                      <option value="light">Celestia</option>
+                      <option value="ice">Plane of Ice</option>
+                      <option value="rainbow">Whimsyshire</option>
+                    </select>
+                  </div>
+                  <div *ngIf="theme != 'dark'" class="form-group">
+                    <div class="form-check form-switch">
+                      <input type="checkbox" class="form-check-input" [(ngModel)]="particles" id="particles" name="particles">
+                      <label class="form-check-label" for="particles">Use Occultum<sup><a href="/items/occultum-op">?</a></sup></label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+          </ul>
       </div>
     </div>
   </nav>

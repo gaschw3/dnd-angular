@@ -59,7 +59,6 @@ input {
    border-radius: 50%;
    border: 1em solid green; /*The border is 0.35 but making it larger removes visual artifacts */
    box-sizing: border-box;
-
 }
 .value-bar2 {
    position: absolute; /*needed for clipping*/
@@ -69,7 +68,6 @@ input {
    border-radius: 50%;
    border: 1em solid red; /*The border is 0.35 but making it larger removes visual artifacts */
    box-sizing: border-box;
-
 }
 
 /* Progress bar filling the whole right half for values above 50% */

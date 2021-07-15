@@ -42,14 +42,15 @@ body {
     $ember-duration: random_range(8, 15) * 1s;
     $ember-yoyo-y: $random-yoyo-time * 150vh;
 
-    .snow &:nth-child(#{$i}) {
+    .ice &:nth-child(#{$i}) {
+      filter: drop-shadow(0 0 10px white);
       opacity: random(100) * 0.01;
       background: rgb(255,255,255);
       transform: translate($random-x, -10px) scale(random(10)*0.1);
-      animation: snow-#{$i} $fall-duration $fall-delay linear infinite;
+      animation: ice-#{$i} $fall-duration $fall-delay linear infinite;
     }
 
-    @keyframes snow-#{$i} {
+    @keyframes ice-#{$i} {
       #{percentage($random-yoyo-time)} {
         transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
       }
@@ -61,6 +62,7 @@ body {
 
     .hell &:nth-child(#{$i}) {
       opacity: random(1000) * 0.1;
+      filter: drop-shadow(0 0 50px rgb(255, random(200), 0));
       background: rgb(255, random(200), 0);
       transform: translate($random-x, 100vh) scale($random-scale);
       animation: ember-#{$i} $ember-duration $fall-delay linear infinite;
@@ -79,6 +81,7 @@ body {
 
     .rainbow &:nth-child(#{$i}) {
       animation: rainbow-#{$i} 60s infinite;
+      filter: drop-shadow(0 0 10px hsl(random(360), 70%, 50%));
       $size: random(10) * 1px;
       opacity: random(100)/100;
       height: $size;
@@ -92,6 +95,23 @@ body {
       100% {
         transform: translate3d((random(100) * 1vw), (random(100) * 1vh), (random(100) * 1px));
         background: hsl(random(360), 100%, 70%);
+      }
+    }
+
+    .light &:nth-child(#{$i}) {
+      animation: light-#{$i} 25s $fall-delay linear infinite;
+      filter: drop-shadow(0 0 10px rgb(255, 255, 0));
+      $size: random(10) * 1px;
+      opacity: random(100)/10;
+      height: $size;
+      width: $size;
+      transform: translate($random-x, -10px);
+      background: hsl(random_range(52, 58), 100%, 80%);
+    }
+
+    @keyframes light-#{$i} {
+      100% {
+        transform: translate((random(100) * 1vw), (random(100) * 1vh));
       }
     }
   }

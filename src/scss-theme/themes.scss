@@ -1,24 +1,24 @@
 $themes: (
   light: (
-    backgroundColor: rgb(223, 223, 223),
-    headerFont: auto,
-    headerFallbackFont: sans-serif,
+    backgroundColor: #fff,
+    headerFont: "Cinzel Decorative",
+    headerFallbackFont: cursive,
     background: auto,
-    navColor: #43a368,
-    cardColor: #ebebeb,
-    textColor: #000000,
-    textLinkColor: #134e27,
-    textLinkBackground: #272b30,
-    linkColor: #45a352,
-    colorPrimary: #007ac0,
-    colorSecondary: #309e5e, //feature headers in class, features outline,
-    buttonTextColor: #40bd97,
-    buttonTextTransform: none,
-    buttonTextHoverColor: #61e7af,
-    buttonColor: #fff,
-    buttonBorder: 2px solid #fff,
-    classButtonGradient: linear-gradient(#484e55,#3a3f44 60%,#313539),
-    paginateSelected: rgba(121, 175, 255, 0.514)
+    navColor: #fff59b,
+    navText: #000,
+    cardColor: #fff,
+    textColor: auto,
+    textLinkColor: auto,
+    textLinkBackground: inherit,
+    linkColor: #0044ff,
+    colorPrimary: #0044ff, //most headers on site
+    colorSecondary: #c4ba87, //feature headers in class, features outline,
+    colorTertiary: #60adff, //feature usbheaders for stuff like fighting styles
+    headerColor: #ffed49,
+    classButtonGradient: auto,
+    classButtonGradientActive: auto,
+    paginateSelected: auto,
+    tableHover: rgba(0, 0, 0, 0.075)
   ),
   dark: (
     backgroundColor: #272b30,
@@ -26,6 +26,7 @@ $themes: (
     headerFallbackFont: sans-serif,
     background: auto,
     navColor: #3a3f44,
+    navText: #fff,
     cardColor: #32383e,
     textColor: #aaa,
     textLinkColor: #fff,
@@ -37,7 +38,8 @@ $themes: (
     headerColor: #aaa,
     classButtonGradient: linear-gradient(#484e55,#3a3f44 60%,#313539),
     classButtonGradientActive: linear-gradient(#101112, #17191b 40%, #1b1e20),
-    paginateSelected: rgba(121, 175, 255, 0.514)
+    paginateSelected: rgba(121, 175, 255, 0.514),
+    tableHover: rgba(255,255,255,.075)
   ),
   rainbow: (
     backgroundColor: #272b30,
@@ -56,7 +58,8 @@ $themes: (
         rgb(141, 82, 133) 90%,
         rgb(122, 71, 71) 100%
     ),
-    navColor: #000000,
+    navColor: #000,
+    navText: #fff,
     cardColor: #2b333a,
     textColor: #fff,
     textLinkColor: #00f7ff,
@@ -104,18 +107,20 @@ $themes: (
       rgba(255, 154, 0, 1) 90%,
       rgba(255, 0, 0, 1) 100%
     ),
-    paginateSelected: rgb(228, 0, 0)
+    paginateSelected: rgb(228, 0, 0),
+    tableHover: rgba(255,255,255,.075)
   ),
   hell: (
     backgroundColor: #2e0505,
     headerFont: 'Mate SC',
     headerFallbackFont: serif,
-    background: auto,
+    background: linear-gradient(#2e0505 80%, #ffbb001c),
     navColor: #531111,
+    navText: #fff,
     cardColor: #531111,
     textColor: #ccc,
     textLinkColor: #ffeac4,
-    textLinkBackground: #420707,
+    textLinkBackground: #030303,
     linkColor: #fdf915,
     colorPrimary: #ffb546, //most headers on site
     colorSecondary: #ff4949, //feature headers in class, features outline,
@@ -123,14 +128,16 @@ $themes: (
     headerColor: linear-gradient(0deg, rgba(0,29,133,0.75) 0%, rgba(255,166,0,0.85) 30%, rgba(253,29,29,1) 95%),
     classButtonGradientActive: linear-gradient(315deg,  #f5a020 0%, #ac2500 74%),
     classButtonGradient: linear-gradient(50deg,  #b16a00 0%, #5c1400 74%),
-    paginateSelected: rgba(255, 121, 121, 0.514)
+    paginateSelected: rgba(255, 121, 121, 0.514),
+    tableHover: rgba(255,255,255,.075)
   ),
-  snow: (
+  ice: (
     backgroundColor: #2e0505,
     headerFont: 'Iceberg',
     headerFallbackFont: cursive,
     background: linear-gradient(15deg,  #140220 0%, #0a0046 74%),
     navColor: #192970,
+    navText: #fff,
     cardColor: #35377c,
     textColor: #eee,
     textLinkColor: #c4fff7,
@@ -142,6 +149,7 @@ $themes: (
     headerColor: linear-gradient(1deg, rgb(217, 251, 255) 0%, rgb(0, 162, 255) 30%, rgb(205, 129, 255) 95%),
     classButtonGradientActive: linear-gradient(315deg,  #35338b 0%, #4193a1 74%),
     classButtonGradient: linear-gradient(50deg,  #29286b 0%, #316770 74%),
-    paginateSelected: rgba(184, 255, 216, 0.514)
+    paginateSelected: rgba(184, 255, 216, 0.514),
+    tableHover: rgba(255,255,255,.075)
   )
 );

@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'dnd-angular';
   defaultTheme = "dark";
+  particles = true;
+
   theme= this.getCookie("theme");
 
   setCookie (name, value, days) {
@@ -34,5 +36,5 @@ export class AppComponent {
   changeTheme() {
     this.setCookie("theme", this.theme,30); //set "user_email" cookie, expires in 30 days
   }
-  
+
 }

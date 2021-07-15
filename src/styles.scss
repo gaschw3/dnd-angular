@@ -7,8 +7,18 @@
 .theme-container {
   @include themify($themes) {
 
-  .navbar-nav > li > a {
-      color: #ccc;
+  .navbar-nav a {
+      color: themed("navText");
+
+      &:hover {
+        text-decoration: none;
+        color: themed("colorPrimary");
+      }
+
+      &:focus {
+        text-decoration: none;
+        color: themed("colorPrimary");
+      }
   }
   /*center scroll to top better */
   .scrolltop-button .symbol-container svg {

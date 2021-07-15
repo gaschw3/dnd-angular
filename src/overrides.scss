@@ -1,6 +1,6 @@
 @use "sass:color";
 @import "./scss-theme/functions.scss";
-@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Monoton&family=Iceberg&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Cinzel+Decorative&family=Monoton&family=Iceberg&display=swap');
 
 // TODO: should need this, but I'm seeing a tiny y-scroll bar show up sometimes
 body {
@@ -54,22 +54,29 @@ body {
       background-color: themed('navColor');
       border: 1px solid rgba(0,0,0,.6);
 
+
       .dropdown-item {
         color: themed('textColor');
       }
 
-      :focus, :hover {
+      a:focus, a:hover {
         color: themed('textLinkColor')!important;
         text-decoration: none;
         background-color: themed('textLinkBackground')!important;
-        }
+      }
 
-      .active, :active {
+      a.active, a:active {
         color: themed('textLinkColor')!important;
         text-decoration: none;
         background-color: themed('textLinkBackground')!important;
-        }
+      }
+
+      .form-group {
+        color: themed("textColor");
+      }
     }
+
+    .portal>li>.dropdown-menu { min-width: 180px; }
 
     .card {
       background-color: themed('cardColor');
@@ -112,7 +119,7 @@ body {
 
     .table-hover tbody tr:hover {
         color: themed("textLinkColor");
-        background-color: rgba(255,255,255,.075)
+        background-color: themed("tableHover");
     }
 
     .list-group-item {
@@ -121,26 +128,22 @@ body {
       border: 1px solid rgba(0,0,0,.6);
 
       &.active {
-        background-color: themed("colorSecondary");
+        background-color: themed("tableHover");
         color: themed("textLinkColor");
 
         &:hover {
-          background-color: color.scale(themed("colorSecondary"), $lightness: -50%);
+          background-color: color.scale(themed("tableHover"), $lightness: -15%);
         }
       }
 
       &:hover {
         color: themed("textLinkColor");
-        background-color: color.scale(themed("cardColor"), $lightness: -25%);
+        background-color: color.scale(themed("cardColor"), $lightness: -15%);
       }
     }
 
     table.dataTable tbody tr {
         background-color: inherit;
-    }
-    table .table-hover tr:hover {
-      background-color: rgba(255,255,255,.15)!important;
-      filter: brightness(125%);
     }
     table .table-active {
         background-color: themed("navColor")!important;
