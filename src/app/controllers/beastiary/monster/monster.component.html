@@ -19,7 +19,7 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col">
-                                <h5><em>{{sizeMap[monster.size] | titlecase}} {{this.getType(monster.type)}}, {{this.translateAlignment(monster.alignment)}}</em></h5>
+                                <h5><em>{{monsterService.translateSize(monster.size) | titlecase}} {{monsterService.getType(monster.type)}}, {{monsterService.translateAlignment(monster.alignment)}}</em></h5>
                             </div>
                         </div>
                         <div class="row pb-2 mb-2">
@@ -105,22 +105,22 @@
                         </div>
                         <div class="row">
                             <div class="col text-center">
-                                {{monster.str}} ({{this.getStatMod(monster.str)}})
+                                {{monster.str}} ({{helper.getStatMod(monster.str)}})
                             </div>
                             <div class="col text-center">
-                                {{monster.dex}} ({{this.getStatMod(monster.dex)}})
+                                {{monster.dex}} ({{helper.getStatMod(monster.dex)}})
                             </div>
                             <div class="col text-center">
-                                {{monster.con}} ({{this.getStatMod(monster.con)}})
+                                {{monster.con}} ({{helper.getStatMod(monster.con)}})
                             </div>
                             <div class="col text-center">
-                                {{monster.int}} ({{this.getStatMod(monster.int)}})
+                                {{monster.int}} ({{helper.getStatMod(monster.int)}})
                             </div>
                             <div class="col text-center">
-                                {{monster.wis}} ({{this.getStatMod(monster.wis)}})
+                                {{monster.wis}} ({{helper.getStatMod(monster.wis)}})
                             </div>
                             <div class="col text-center">
-                                {{monster.cha}} ({{this.getStatMod(monster.cha)}})
+                                {{monster.cha}} ({{helper.getStatMod(monster.cha)}})
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,4 @@
+import { HelperService } from './../../shared/helpers/helper.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Ancestry } from '../../models/ancestry';
 
@@ -56,7 +57,8 @@ export class PointBuyComponent implements OnInit {
   choose: number = 0;
 
   constructor(private http: HttpClient,
-    private fb: FormBuilder) { this.updatePercentage();}
+    private fb: FormBuilder,
+    public helper: HelperService) { this.updatePercentage();}
 
   ngOnInit() {
     this.updatePercentage();
@@ -89,10 +91,6 @@ export class PointBuyComponent implements OnInit {
 
   getPercentage() {
     return Math.floor(((this.totalPoints - this.pointsSpent) / this.totalPoints) * 100);
-  }
-
-  getMod(stat) {
-    return Math.floor( (stat-10)/2 );
   }
 
   setCurrAncestry(ancestry) {
@@ -157,14 +155,16 @@ export class PointBuyComponent implements OnInit {
     }
   }
 
-  // don't allow illegal values in the input fields
-  getAnStat(statName) {
-    return (this.ancestryStats.filter(anStat => anStat.name == statName))[0].value;
+  getMod (stat, ancestryStat) {
+    return this.helper.getStatMod(stat + ancestryStat);
   }
 
-  // return absolute value so that positive and negative stats can use same 'over50' calc
-  abs(number) {
-    return Math.abs(number);
+  getModNum(stat, ancestryStat): number {
+    return parseInt(this.getMod(stat, ancestryStat));
+  }
+
+  getAnStat(statName) {
+    return (this.ancestryStats.filter(anStat => anStat.name == statName))[0].value;
   }
 
 }

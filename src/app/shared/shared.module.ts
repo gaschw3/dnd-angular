@@ -1,3 +1,4 @@
+import { MonsterHelperService } from './helpers/monster-helper.service';
 import { AncestryComponent } from './../controllers/ancestries/ancestry/ancestry.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +15,8 @@ import { HelperService } from './helpers/helper.service';
 
 @NgModule({
   providers: [
-    HelperService
+    HelperService,
+    MonsterHelperService
   ],
   declarations: [
     ArchetypeFilterPipe,
@@ -39,8 +41,7 @@ import { HelperService } from './helpers/helper.service';
     ItemTypePipe,
     BackButtonDirective,
     AncestryComponent,
-    EntryRendererComponent,
-    HelperService
+    EntryRendererComponent
   ]
 })
 export class SharedModule { }

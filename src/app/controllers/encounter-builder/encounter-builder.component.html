@@ -6,13 +6,13 @@
           <form>
             <div class="form-group row">
               <label for="partySizeSelect" class="col-sm-6 autcol-form-label">Players: </label>
-              <select [(ngModel)]="partySize" name="partySize"  class="form-control col-sm-6" id="partySizeSelect">
+              <select [(ngModel)]="partySize" name="partySize"  class="form-select col-sm-6 form-select-sm" id="partySizeSelect">
                 <option *ngFor="let num of helper.counter(10); let i = index" [ngValue]="i+1">{{i+1}}</option>
               </select>
             </div>
             <div class="form-group row">
               <label for="partyLevelSelect" class="col-sm-6 col-form-label">Level: </label>
-              <select [(ngModel)]="partyLevel" name="partyLevel" class="form-control col-sm-6" id="partyLevelSelect">
+              <select [(ngModel)]="partyLevel" name="partyLevel" class="form-select col-sm-6 form-select-sm" id="partyLevelSelect">
                 <option *ngFor="let num of helper.counter(20); let i = index" [ngValue]="i+1">{{i+1}}</option>
               </select>
             </div>
@@ -36,17 +36,14 @@
       </div>
       <hr/>
     <div class="encounter-builder--current-encounter-container">
-      <div class="encounter-builder--current-encounter-slider"
-        ng-class="{'encounter-builder--current-encounter-slider__shown': encounterShown }">
+      <div class="encounter-builder--current-encounter-slider">
         <div class="encounter-builder--current-encounter">
             <h2>Encounter Info
-              <div ng-if="!vm.isPool" class="btn-group pull-right">
-                <button class="btn btn-info "
-                  ng-click="vm.generateRandom()">Random Medium</button>
+              <div class="btn-group pull-right">
+                <button class="btn btn-info" (click)="generateRandom()">Random Medium</button>
                   <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
+                  <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
                   <li><a href="#" (click)="generateRandom()">Random Easy</a></li>
@@ -57,7 +54,7 @@
               </div>
             </h2>
             <p>No more than
-              <input class="form-control input-sm" type="number" [(ngModel)]="randomEncSize"/>monsters.
+              <input class="form-control form-control-sm" type="number" [(ngModel)]="randomEncSize"/>monsters.
             </p>
             <p class="bg-info text-muted">
               Create an encounter by clicking the Random encounter button or by adding monsters from the monsters table.
@@ -68,7 +65,7 @@
                   <!--monsters go here, hopefully with +/- clicker to add/remove -->
                 </div>
                 <div class="current-encounter--totals">
-                  <div class="current-encounter--totals-difficulty">Difficulty: <!--Minimal/E/M/H/D--></div>
+                  <div class="current-encounter--totals-difficulty">Difficulty: <!--Trivial/E/M/H/D--></div>
                   <div class="current-encounter--totals-xp">
                     <span>Total XP: <!--XP--> (<!--XP--> per player)</span>
                     <span>Adjusted XP: <!--XP--> (<!--XP--> per player)</span>
@@ -148,7 +145,7 @@
               [class.table-active]="currMonster?.id == monster.id">
               <td>{{monster.name}}</td>
               <td class="text-center">{{monster.cr}}</td>
-              <td>{{this.getType(monster.type)}}</td>
+              <td>{{monsterHelper.getType(monster.type)}}</td>
               <td>{{monster.other}}</td>
               <td [class]="'text-right color-'+monster.source | lowercase" class="text-right">{{monster.source}}</td>
             </tr>

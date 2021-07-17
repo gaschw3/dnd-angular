@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { MonsterHelperService } from './../../shared/helpers/monster-helper.service';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'angular-datatables/node_modules/rxjs';
+
+import { Observable } from 'rxjs';
+import { Monster } from 'src/app/models';
 import { HelperService } from '../../shared/helpers/helper.service';
 
 @Component({
@@ -34,11 +41,84 @@ export class EncounterBuilderComponent implements OnInit {
 
   partySize: any = 1;
   partyLevel: any = 1;
+  monsters: Monster[];
+  currMonster: Monster;
+  monsterName: string;
 
-  constructor(public helper: HelperService) { }
+  public getJSON(): Observable<any> {
+      return this.http.get("assets/data/beastiary.json")
+  }
+
+  constructor(
+    private http: HttpClient,
+    public helper: HelperService,
+    public monsterHelper: MonsterHelperService) {}
+
+  // DataTables objects
+  @ViewChild(DataTableDirective)
+  private dtElement: DataTableDirective;
+  dtOptions:  {};
+  dtTrigger: Subject<any> = new Subject();
 
   ngOnInit(): void {
+    this.dtOptions = {
+      columnDefs: [
+        { width: '30%', targets: 0 },
+        { width: '10%', targets: 1 },
+        { width: '30%', targets: 2 },
+        { width: '25%', orderable: false, targets: 3 },
+        { width: '5%', targets: 4 }
+      ],
+      autoWidth: false,
+      dom: 'trpl',
+      paging: true,
+      orderMulti: true,
+      pagingType: "full_numbers",
+      searching: true,
+      language: {
+        lengthMenu: 'Show <select>'+
+        '<option value="10">10</option>'+
+        '<option value="15">15</option>'+
+        '<option value="20">30</option>'+
+        '<option value="60">60</option>'+
+        '<option value="-1">All</option>'+
+        '</select> monsters',
+        paginate: {
+          first:      "<<",
+          last:       ">>",
+          next:       ">",
+          previous:   "<"
+        }
+      },
+      initComplete: function(settings, json) {
+        const api = this.api();
+        api.columns().every(function() {
+          const column = this;
+          const $head = $(column.header());
+          const inputContainer = $head.parent().prev().children().get($head.index());
+          $(':input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
+            const $this = $(this);
+            const value = <string>$this.val();
+            if (column.search() !== value) {
+              column.search(value).draw();
+            }
+          }).trigger('change');
+        });
+      }
+    };
+
+    this.getJSON().subscribe(beastiary => {
+        this.monsters = beastiary.monsters;
+        setTimeout(() => {
+          this.dtTrigger.next();
+        });
+    });
   }
+
+  setCurrMonster(clickedMonster): void {
+    this.currMonster = clickedMonster;
+  }
+
 }
 
 interface Budget {

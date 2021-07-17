@@ -15,7 +15,7 @@
 
           <!-- Avail Points progress bar -->
           <div class="col-4">
-            <div class="progress-circle {{abs(getPercentage()) > 50 ? 'over50' : ''}} per{{getPercentage()}}">
+            <div class="progress-circle {{helper.abs(getPercentage()) > 50 ? 'over50' : ''}} per{{getPercentage()}}">
               <span>{{totalPoints-pointsSpent}}/{{totalPoints}}</span>
               <div class="left-half-clipper">
                 <div class="first50-bar {{getPercentage() < 0 ? 'hidden' : ''}}"></div>
@@ -76,8 +76,8 @@
                   </td>
                   <td class="text-center" [ngClass]="{'text-success': getAnStat(stat.name) > 0}">{{getAnStat(stat.name)}}</td>
                   <td class="text-center">{{stat.value+getAnStat(stat.name)}}</td>
-                  <td class="text-center" [ngClass]="{'text-danger': (getMod(stat.value+getAnStat(stat.name)) < 0), 'text-success': (getMod(stat.value+getAnStat(stat.name)) > 0)}">
-                    {{getMod(stat.value+getAnStat(stat.name))}}
+                  <td class="text-center" [ngClass]="{'text-danger': getModNum(stat.value, getAnStat(stat.name)) < 0, 'text-success': getModNum(stat.value, getAnStat(stat.name)) > 0}">
+                    {{getMod(stat.value, getAnStat(stat.name))}}
                   </td>
                   <td class="text-center">
                     {{pointCost(stat.value)}}
