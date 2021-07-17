@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HelperService } from '../../shared/helpers/helper.service';
 
 @Component({
   selector: 'app-particles',
@@ -8,13 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ParticlesComponent implements OnInit {
 
   @Input() theme: string;
-  constructor() { }
+  constructor(private helper: HelperService) { }
 
   ngOnInit(): void {
-  }
-
-  counter(i: number) {
-    return new Array(i);
   }
 
 }

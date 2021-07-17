@@ -17,12 +17,14 @@ import { SharedModule } from './shared/shared.module';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParticlesComponent } from './controllers/particles/particles.component';
+import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HexmapComponent,
-    ParticlesComponent
+    ParticlesComponent,
+    EncounterBuilderComponent
   ],
   imports: [
     BrowserModule,

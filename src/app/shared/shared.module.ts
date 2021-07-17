@@ -10,8 +10,12 @@ import { ItemTypePipe } from '../pipes/item-type.pipe';
 import { OrdinalPipe } from '../pipes/ordinal.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EntryRendererComponent } from './entry-renderer/entry-renderer.component';
+import { HelperService } from './helpers/helper.service';
 
 @NgModule({
+  providers: [
+    HelperService
+  ],
   declarations: [
     ArchetypeFilterPipe,
     LinkmakerPipe,
@@ -35,7 +39,8 @@ import { EntryRendererComponent } from './entry-renderer/entry-renderer.componen
     ItemTypePipe,
     BackButtonDirective,
     AncestryComponent,
-    EntryRendererComponent
+    EntryRendererComponent,
+    HelperService
   ]
 })
 export class SharedModule { }

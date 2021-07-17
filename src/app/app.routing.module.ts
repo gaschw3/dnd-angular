@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { HexmapComponent } from './controllers/hexmap/hexmap.component'
 import { PointBuyComponent } from './controllers/point-buy/point-buy.component';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
+import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'point-buy',
     loadChildren: () => import('./controllers/point-buy/point-buy.module').then(m => m.PointBuyModule)
+  },
+  {
+    path: 'encounter-builder',
+    component: EncounterBuilderComponent
   },
   {path: 'map', component: HexmapComponent}
   //{ path: 'redirect', component: RedirectionComponent },

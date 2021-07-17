@@ -1,0 +1,174 @@
+<div class="row">
+  <div class="col-md-4">
+      <div class="group-info row">
+        <div class="group-info--input col-sm-6 ml-auto">
+          <h2 class="group-info--header">EXP Budget</h2>
+          <form>
+            <div class="form-group row">
+              <label for="partySizeSelect" class="col-sm-6 autcol-form-label">Players: </label>
+              <select [(ngModel)]="partySize" name="partySize"  class="form-control col-sm-6" id="partySizeSelect">
+                <option *ngFor="let num of helper.counter(10); let i = index" [ngValue]="i+1">{{i+1}}</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="partyLevelSelect" class="col-sm-6 col-form-label">Level: </label>
+              <select [(ngModel)]="partyLevel" name="partyLevel" class="form-control col-sm-6" id="partyLevelSelect">
+                <option *ngFor="let num of helper.counter(20); let i = index" [ngValue]="i+1">{{i+1}}</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-6 mt-4">
+          <ul class="float-right list-unstyled text-right">
+            <li>
+              <span>Easy:</span> {{this.levelXp[partyLevel].easy * partySize | number}} exp</li>
+            <li>
+              <span>Medium:</span> {{this.levelXp[partyLevel].medium * partySize | number}} exp</li>
+            <li>
+              <span>Hard:</span> {{this.levelXp[partyLevel].hard * partySize | number}} exp</li>
+            <li>
+              <span>Deadly:</span> {{this.levelXp[partyLevel].deadly * partySize | number}} exp</li>
+            <li class="mt-3">
+              <span>Daily:</span> {{this.levelXp[partyLevel].daily * partySize | number}} exp
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr/>
+    <div class="encounter-builder--current-encounter-container">
+      <div class="encounter-builder--current-encounter-slider"
+        ng-class="{'encounter-builder--current-encounter-slider__shown': encounterShown }">
+        <div class="encounter-builder--current-encounter">
+            <h2>Encounter Info
+              <div ng-if="!vm.isPool" class="btn-group pull-right">
+                <button class="btn btn-info "
+                  ng-click="vm.generateRandom()">Random Medium</button>
+                  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#" (click)="generateRandom()">Random Easy</a></li>
+                  <li><a href="#" (click)="generateRandom()">Random Medium</a></li>
+                  <li><a href="#" (click)="generateRandom()">Random Hard</a></li>
+                  <li><a href="#" (click)="generateRandom()">Random Deadly</a></li>
+                </ul>
+              </div>
+            </h2>
+            <p>No more than
+              <input class="form-control input-sm" type="number" [(ngModel)]="randomEncSize"/>monsters.
+            </p>
+            <p class="bg-info text-muted">
+              Create an encounter by clicking the Random encounter button or by adding monsters from the monsters table.
+            </p>
+            <div class="current-encounter">
+              <div class="current-encounter--body">
+                <div class="current-encounter--table">
+                  <!--monsters go here, hopefully with +/- clicker to add/remove -->
+                </div>
+                <div class="current-encounter--totals">
+                  <div class="current-encounter--totals-difficulty">Difficulty: <!--Minimal/E/M/H/D--></div>
+                  <div class="current-encounter--totals-xp">
+                    <span>Total XP: <!--XP--> (<!--XP--> per player)</span>
+                    <span>Adjusted XP: <!--XP--> (<!--XP--> per player)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="difficulty-legend hidden-xs hidden-sm">
+      <button class="btn btn-warning difficulty-legend-button" type="button" data-toggle="collapse" data-target="#legend-collapse">
+        Legend <i class="fa fa-angle-double-up"aria-hidden="true"></i>
+      </button>
+      <div id="legend-collapse" class="difficulty-legend-popout collapse" aria-expanded="false"
+        aria-controls="legend-collapse">
+        <!--Can I find 7 colors that will work here? Magic colors WOUBPRG-->
+          <ul>
+            <li class="difficulty-legend__deadly">Deadly: One of these is a deadly challenge</li>
+            <li class="difficulty-legend__hard">Hard: One of these is a hard challenge</li>
+            <li class="difficulty-legend__medium">Medium: One of these is a medium challenge</li>
+            <li class="difficulty-legend__easy">Easy: One of these is an easy challenge</li>
+            <li class="difficulty-legend__pair">Pair: Two of these is a medium challenge</li>
+            <li class="difficulty-legend__group">Group: Four of these is a medium challenge</li>
+            <li class="difficulty-legend__trivial">Trivial: Eight or more of these is a medium challenge</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <!-- Monster table from beastiary, slightly altered? SHould break out a monster service or something? -->
+    <!-- columns: Add / (+) button, Name, CR, Type, Size, Tags, Book?-->
+      <div *ngIf="monsters" class="col-md-12 beastiary-table">
+        <table id="tbl-beastiary" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+          class="table table-hover table-condensed">
+          <thead>
+            <tr>
+              <th class="beastiary-filter" colspan="1">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                  </div>
+                  <input id="beastiary-name-filter" class="form-control" type="search" placeholder="Name">
+                </div>
+              </th>
+              <th class="beastiary-filter" colspan="1">
+                <div class="input-group input-group-sm">
+                  <input id="beastiary-level-filter" class="form-control" type="search" placeholder="CR">
+                </div>
+              </th>
+              <th class="beastiary-filter" colspan="1">
+                <div class="input-group input-group-sm">
+                  <input id="beastiary-school-filter" class="form-control" type="search" placeholder="Type">
+                </div>
+              </th>
+              <th class="beastiary-filter" colspan="1">
+                <div class="input-group input-group-sm">
+                  <input id="beastiary-source-filter" class="form-control" type="search" placeholder="Tags">
+                </div>
+              </th>
+              <th class="beastiary-filter" colspan="1">
+                <div class="input-group input-group-sm">
+                  <input id="beastiary-classes-filter" class="form-control" type="search" placeholder="Source">
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <th>CR</th>
+              <th>Type</th>
+              <th>Tags</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let monster of monsters" (click)="setCurrMonster(monster)"
+              [class.table-active]="currMonster?.id == monster.id">
+              <td>{{monster.name}}</td>
+              <td class="text-center">{{monster.cr}}</td>
+              <td>{{this.getType(monster.type)}}</td>
+              <td>{{monster.other}}</td>
+              <td [class]="'text-right color-'+monster.source | lowercase" class="text-right">{{monster.source}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <div class="difficulty-legend-sm visible-xs visible-sm">
+      <!-- <difficulty-legend show-header="true" class="ng-isolate-scope"> -->
+        <!-- ngIf: vm.showHeader -->
+        <h3 ng-if="vm.showHeader">Legend</h3><!-- end ngIf: vm.showHeader -->
+        <ul>
+          <li class="difficulty-legend__deadly">Deadly: One of these is a deadly challenge</li>
+          <li class="difficulty-legend__hard">Hard: One of these is a hard challenge</li>
+          <li class="difficulty-legend__medium">Medium: One of these is a medium challenge</li>
+          <li class="difficulty-legend__easy">Easy: One of these is an easy challenge</li>
+          <li class="difficulty-legend__pair">Pair: Two of these is a medium challenge</li>
+          <li class="difficulty-legend__group">Group: Four of these is a medium challenge</li>
+          <li class="difficulty-legend__trivial">Trivial: Eight or more of these is a medium challenge</li>
+        </ul>
+      <!-- </difficulty-legend> -->
+    </div>
+  </div>
+</div>
