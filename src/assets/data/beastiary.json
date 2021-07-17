@@ -3963,10 +3963,8 @@
       "size": "M",
       "type": "fey",
       "alignment": [
-        "C",
-        "G",
         "NY",
-        "E"
+        "C"
       ],
       "ac": [
         13
@@ -33197,6 +33195,9 @@
       ],
       "size": "T",
       "type": "construct",
+      "alignment": [
+        "U"
+      ],
       "ac": [
         {
           "ac": 13,
@@ -33641,6 +33642,9 @@
       ],
       "size": "M",
       "type": "construct",
+      "alignment": [
+        "U"
+      ],
       "ac": [
         {
           "ac": 15,
@@ -34160,9 +34164,7 @@
       "size": "M",
       "type": "undead",
       "alignment": [
-        "L",
-        "NX",
-        "C",
+        "NY",
         "E"
       ],
       "ac": [
@@ -36335,11 +36337,8 @@
         ]
       },
       "alignment": [
-        "L",
         "NX",
-        "C",
-        "NY",
-        "E"
+        "G"
       ],
       "ac": [
         {
@@ -42593,9 +42592,7 @@
       "size": "M",
       "type": "undead",
       "alignment": [
-        "L",
-        "NX",
-        "C",
+        "NY",
         "E"
       ],
       "ac": [
@@ -43962,9 +43959,7 @@
         ]
       },
       "alignment": [
-        "L",
-        "NX",
-        "C",
+        "NY",
         "E"
       ],
       "ac": [
@@ -48768,10 +48763,7 @@
       },
       "alignment": [
         "NX",
-        "C",
-        "G",
-        "NY",
-        "E"
+        "L"
       ],
       "ac": [
         {
@@ -77775,11 +77767,8 @@
         ]
       },
       "alignment": [
-        "L",
         "NX",
-        "C",
-        "NY",
-        "E"
+        "G"
       ],
       "ac": [
         {
@@ -78644,10 +78633,7 @@
       },
       "alignment": [
         "NX",
-        "C",
-        "G",
-        "NY",
-        "E"
+        "L"
       ],
       "ac": [
         {
@@ -78783,10 +78769,7 @@
       },
       "alignment": [
         "NX",
-        "C",
-        "G",
-        "NY",
-        "E"
+        "L"
       ],
       "ac": [
         {
@@ -80289,10 +80272,8 @@
         ]
       },
       "alignment": [
-        "C",
-        "G",
         "NY",
-        "E"
+        "C"
       ],
       "ac": [
         {
@@ -82569,9 +82550,7 @@
       "size": "M",
       "type": "fiend",
       "alignment": [
-        "L",
-        "NX",
-        "C",
+        "NY",
         "E"
       ],
       "ac": [
@@ -85296,11 +85275,8 @@
         ]
       },
       "alignment": [
-        "L",
         "NX",
-        "C",
-        "NY",
-        "E"
+        "G"
       ],
       "ac": [
         {
@@ -85495,11 +85471,8 @@
         ]
       },
       "alignment": [
-        "L",
         "NX",
-        "C",
-        "NY",
-        "E"
+        "G"
       ],
       "ac": [
         {
@@ -101408,10 +101381,8 @@
       "size": "L",
       "type": "giant",
       "alignment": [
-        "C",
-        "G",
         "NY",
-        "E"
+        "C"
       ],
       "ac": [
         {
@@ -106556,9 +106527,7 @@
       "size": "M",
       "type": "undead",
       "alignment": [
-        "L",
-        "NX",
-        "C",
+        "NY",
         "E"
       ],
       "ac": [
@@ -124922,11 +124891,8 @@
         ]
       },
       "alignment": [
-        "L",
         "NX",
-        "C",
-        "NY",
-        "E"
+        "G"
       ],
       "ac": [
         {

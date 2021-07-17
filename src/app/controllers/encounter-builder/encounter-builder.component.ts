@@ -1,6 +1,6 @@
 import { MonsterHelperService } from './../../shared/helpers/monster-helper.service';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'angular-datatables/node_modules/rxjs';
 
@@ -13,7 +13,7 @@ import { HelperService } from '../../shared/helpers/helper.service';
   templateUrl: './encounter-builder.component.html',
   styleUrls: ['./encounter-builder.component.scss']
 })
-export class EncounterBuilderComponent implements OnInit {
+export class EncounterBuilderComponent implements OnInit, OnDestroy {
 
   levelXp: Budget[] = [
     { level: 1,   daily: 100,	  easy: 10,	  medium: 20,		hard: 30,	  deadly: 40 },
@@ -44,6 +44,8 @@ export class EncounterBuilderComponent implements OnInit {
   monsters: Monster[];
   currMonster: Monster;
   monsterName: string;
+  min: number;
+  max: number;
 
   public getJSON(): Observable<any> {
       return this.http.get("assets/data/beastiary.json")
@@ -61,13 +63,27 @@ export class EncounterBuilderComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject();
 
   ngOnInit(): void {
+
+    // Add a new search method to be used on the CR column for a range of numbers
+    $.fn['dataTable'].ext.search.push((settings, data, dataIndex) => {
+      const id = parseFloat(data[2]) || 0; // data[2] is the CR column, this should in unit tests
+      if ((isNaN(this.min) && isNaN(this.max)) ||
+        (isNaN(this.min) && id <= this.max) ||
+        (this.min <= id && isNaN(this.max)) ||
+        (this.min <= id && id <= this.max)) {
+        return true;
+      }
+      return false;
+    });
+
     this.dtOptions = {
       columnDefs: [
-        { width: '30%', targets: 0 },
-        { width: '10%', targets: 1 },
-        { width: '30%', targets: 2 },
-        { width: '25%', orderable: false, targets: 3 },
-        { width: '5%', targets: 4 }
+        { width: '5%', orderable: false, targets: 0 },
+        { width: '30%', targets: 1 },
+        { width: '15%', targets: 2 },
+        { width: '15%', targets: 3 },
+        { width: '30%', targets: 4 },
+        { width: '5%', targets: 5 }
       ],
       autoWidth: false,
       dom: 'trpl',
@@ -98,9 +114,14 @@ export class EncounterBuilderComponent implements OnInit {
           const inputContainer = $head.parent().prev().children().get($head.index());
           $(':input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
             const $this = $(this);
-            const value = <string>$this.val();
-            if (column.search() !== value) {
-              column.search(value).draw();
+            const colIndex = $(column.header()).index();
+            if (colIndex === 2) {
+              //intentionally blank, I don't want this search method for the CR column
+            } else {
+              const value = <string>$this.val();
+              if (column.search() !== value) {
+                column.search(value).draw();
+              }
             }
           }).trigger('change');
         });
@@ -112,6 +133,19 @@ export class EncounterBuilderComponent implements OnInit {
         setTimeout(() => {
           this.dtTrigger.next();
         });
+    });
+  }
+
+  ngOnDestroy(): void {
+      // We remove the last function in the global ext search array so we do not add the fn each time the component is drawn
+      // /!\ This is not the ideal solution as other components may add other search function in this array, so be careful when
+      // handling this global variable
+      $.fn['dataTable'].ext.search.pop();
+    }
+
+  complexCrFilter(): void {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      dtInstance.draw();
     });
   }
 

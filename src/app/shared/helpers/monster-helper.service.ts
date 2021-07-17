@@ -12,9 +12,25 @@ export class MonsterHelperService {
   sizeMap = sizeMap;
   alignmentMap = alignmentMap;
 
+  //convert CR fractions into usable numbers for sorting
+  getSortCr(cr: string): number {
+    if (cr.match("/")) {
+      if (cr == "N/A") {
+        return 10000; //some summons don't have a CR, return arbitrary high val so they go to 'bottom'
+      } else {
+        let split = cr.split('/');
+        return (parseInt(split[0]) / parseInt(split[1]));
+      }
+    } else {
+      return parseInt(cr); //non fractional, just use the normal one
+    }
+  }
+
   //convert "alignment": { "L", "E" }  -> "lawful evil"
   translateAlignment(alignment): string {
-    return alignment.map(alignment => this.alignmentMap[alignment]).join(' ');
+    let alignString = alignment.map(alignment => this.alignmentMap[alignment]).join(' ');
+    return alignString.replace("- ", "-"); //hacky way to remove slashed in "any non-X" situations (
+    // eg. alignment: ["NX", "E"] -> 'any non-evil' instead of 'any non- evil')
   }
 
   translateSize(size): string {

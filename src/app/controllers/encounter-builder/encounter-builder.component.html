@@ -1,17 +1,17 @@
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-lg-4">
       <div class="group-info row">
         <div class="group-info--input col-sm-6 ml-auto">
           <h2 class="group-info--header">EXP Budget</h2>
           <form>
             <div class="form-group row">
-              <label for="partySizeSelect" class="col-sm-6 autcol-form-label">Players: </label>
+              <label for="partySizeSelect" class="col-sm-6 col-xl-4 autcol-form-label">Players: </label>
               <select [(ngModel)]="partySize" name="partySize"  class="form-select col-sm-6 form-select-sm" id="partySizeSelect">
                 <option *ngFor="let num of helper.counter(10); let i = index" [ngValue]="i+1">{{i+1}}</option>
               </select>
             </div>
             <div class="form-group row">
-              <label for="partyLevelSelect" class="col-sm-6 col-form-label">Level: </label>
+              <label for="partyLevelSelect" class="col-sm-6 col-xl-4 col-form-label">Level: </label>
               <select [(ngModel)]="partyLevel" name="partyLevel" class="form-select col-sm-6 form-select-sm" id="partyLevelSelect">
                 <option *ngFor="let num of helper.counter(20); let i = index" [ngValue]="i+1">{{i+1}}</option>
               </select>
@@ -95,7 +95,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-lg-8">
     <!-- Monster table from beastiary, slightly altered? SHould break out a monster service or something? -->
     <!-- columns: Add / (+) button, Name, CR, Type, Size, Tags, Book?-->
       <div *ngIf="monsters" class="col-md-12 beastiary-table">
@@ -103,6 +103,8 @@
           class="table table-hover table-condensed">
           <thead>
             <tr>
+              <th class="beastiary-filter" colspan="0">
+              </th>
               <th class="beastiary-filter" colspan="1">
                 <div class="input-group input-group-sm">
                   <div class="input-group-prepend">
@@ -113,40 +115,50 @@
               </th>
               <th class="beastiary-filter" colspan="1">
                 <div class="input-group input-group-sm">
-                  <input id="beastiary-level-filter" class="form-control" type="search" placeholder="CR">
+                  <input id="beastiary-cr-min-filter" class="form-control" min=0 max=29 [(ngModel)]="min" (change)="complexCrFilter()" type="number" placeholder="Min CR">
+                  <input id="beastiary-cr-max-filter" class="form-control" min=1 max=31 [(ngModel)]="max" (change)="complexCrFilter()" type="number" placeholder="Max CR">
                 </div>
               </th>
               <th class="beastiary-filter" colspan="1">
                 <div class="input-group input-group-sm">
-                  <input id="beastiary-school-filter" class="form-control" type="search" placeholder="Type">
+                  <input id="beastiary-size-filter" class="form-control" type="search" placeholder="Size">
                 </div>
               </th>
               <th class="beastiary-filter" colspan="1">
                 <div class="input-group input-group-sm">
-                  <input id="beastiary-source-filter" class="form-control" type="search" placeholder="Tags">
+                  <input id="beastiary-type-filter" class="form-control" type="search" placeholder="Type">
                 </div>
               </th>
               <th class="beastiary-filter" colspan="1">
                 <div class="input-group input-group-sm">
-                  <input id="beastiary-classes-filter" class="form-control" type="search" placeholder="Source">
+                  <input id="beastiary-alignment-filter" class="form-control" type="search" placeholder="Alignment">
+                </div>
+              </th>
+              <th class="beastiary-filter" colspan="1">
+                <div class="input-group input-group-sm">
+                  <input id="beastiary-source-filter" class="form-control" type="search" placeholder="Source">
                 </div>
               </th>
             </tr>
             <tr>
+              <th></th>
               <th>Name</th>
               <th>CR</th>
+              <th>Size</th>
               <th>Type</th>
-              <th>Tags</th>
+              <th>Alignment</th>
               <th>Source</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let monster of monsters" (click)="setCurrMonster(monster)"
               [class.table-active]="currMonster?.id == monster.id">
+              <td><button>Add</button></td>
               <td>{{monster.name}}</td>
-              <td class="text-center">{{monster.cr}}</td>
+              <td class="text-center" [attr.data-sort]="monsterHelper.getSortCr(monster.cr)">{{monster.cr}}</td>
+              <td>{{monsterHelper.translateSize(monster.size)}}</td>
               <td>{{monsterHelper.getType(monster.type)}}</td>
-              <td>{{monster.other}}</td>
+              <td>{{monsterHelper.translateAlignment(monster.alignment)}}</td>
               <td [class]="'text-right color-'+monster.source | lowercase" class="text-right">{{monster.source}}</td>
             </tr>
           </tbody>
