@@ -8,7 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { MonsterComponent } from './monster/monster.component';
 import { DataTableDirective } from 'angular-datatables';
 import { Monster } from 'src/app/models/monster';
-import { sizeMap } from 'src/app/shared/sizeMap';
+import { sizeMap } from 'src/app/shared/helpers/monster/sizeMap';
 
 @Component({
   selector: 'app-beastiary',

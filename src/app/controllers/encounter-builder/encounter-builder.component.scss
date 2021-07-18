@@ -7,6 +7,33 @@
     padding-bottom: 15px;
 }
 
-tbody td {
-    padding: 5px !important;
+.color {
+    &--deadly{
+        background-color: rgb(136, 85, 85);
+    }
+    &--hard {
+        background-color: rgb(148, 121, 75);
+    }
+    &--medium {
+        background-color: rgb(116, 116, 52);
+    }
+    &--easy {
+        background-color: rgb(72, 139, 72);
+    }
+    &--pair {
+        background-color: rgb(61, 81, 134);
+    }
+    &--group {
+        background-color: rgb(128, 80, 128);
+    }
+    &--trivial {
+        background-color: rgb(172, 172, 172);
+    }
+}
+
+.text--black {
+    color: #000;
+}
+.text--white {
+    color: #fff;
 }

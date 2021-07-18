@@ -1,9 +1,7 @@
-import { MonsterHelperService } from './../../../shared/helpers/monster-helper.service';
+import { MonsterHelperService } from '../../../shared/helpers/monster/monster-helper.service';
 import { HelperService } from './../../../shared/helpers/helper.service';
 import { Component, Input } from '@angular/core';
 import { Monster } from 'src/app/models/monster';
-import { sizeMap } from 'src/app/shared/sizeMap';
-import { alignmentMap } from 'src/app/shared/alignmentMap';
 
 
 @Component({

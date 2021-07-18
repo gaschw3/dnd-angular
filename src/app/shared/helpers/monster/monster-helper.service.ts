@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { sizeMap } from 'src/app/shared/sizeMap';
-import { alignmentMap } from 'src/app/shared/alignmentMap';
+import { sizeMap } from 'src/app/shared/helpers/monster/sizeMap';
+import { alignmentMap } from 'src/app/shared/helpers/monster/alignmentMap';
+import { crXpMap } from './experienceMaps';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class MonsterHelperService {
 
   sizeMap = sizeMap;
   alignmentMap = alignmentMap;
+  crXp = crXpMap;
 
   //convert CR fractions into usable numbers for sorting
   getSortCr(cr: string): number {
@@ -24,6 +26,10 @@ export class MonsterHelperService {
     } else {
       return parseInt(cr); //non fractional, just use the normal one
     }
+  }
+
+  getXpByCr(passedCr: string): number {
+    return (this.crXp.find(i => i.cr === passedCr)).xp;
   }
 
   //convert "alignment": { "L", "E" }  -> "lawful evil"

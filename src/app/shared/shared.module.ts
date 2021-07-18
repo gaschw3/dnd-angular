@@ -1,4 +1,4 @@
-import { MonsterHelperService } from './helpers/monster-helper.service';
+import { MonsterHelperService } from './helpers/monster/monster-helper.service';
 import { AncestryComponent } from './../controllers/ancestries/ancestry/ancestry.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +9,6 @@ import { SanitizeHtmlPipe } from '../pipes/sanitize-html.pipe';
 import { BackButtonDirective } from '../directives/back-button.directive';
 import { ItemTypePipe } from '../pipes/item-type.pipe';
 import { OrdinalPipe } from '../pipes/ordinal.pipe';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EntryRendererComponent } from './entry-renderer/entry-renderer.component';
 import { HelperService } from './helpers/helper.service';
 

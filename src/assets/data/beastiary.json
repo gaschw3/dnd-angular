@@ -34442,7 +34442,8 @@
         "Giant",
         "Sylvan"
       ],
-      "cr": "6 (8 in coven)",
+      "cr": "6",
+      "specialcr": "4 in coven",
       "spellcasting": [
         {
           "name": "Innate Spellcasting",
@@ -35890,7 +35891,8 @@
         "Common",
         "Giant"
       ],
-      "cr": "7 (9 in coven)",
+      "cr": "7",
+      "specialcr": "9 in coven",
       "spellcasting": [
         {
           "name": "Innate Spellcasting",
@@ -45098,7 +45100,8 @@
       "languages": [
         "telepathy 120 ft."
       ],
-      "cr": "11 (12 in lair)",
+      "cr": "11",
+      "specialcr": "12 in lair",
       "spellcasting": [
         {
           "name": "Spellcasting",
@@ -70861,7 +70864,8 @@
         "Common",
         "Giant"
       ],
-      "cr": "12 (14 in lair)",
+      "cr": "12",
+      "specialcr": "14 in lair",
       "spellcasting": [
         {
           "name": "Innate Spellcasting",
@@ -79917,7 +79921,8 @@
         "Deep Speech",
         "Undercommon"
       ],
-      "cr": "13 (14 in lair)",
+      "cr": "13",
+      "specialcr": "14 in coven",
       "trait": [
         {
           "name": "Antimagic Cone",
@@ -86546,7 +86551,8 @@
         "Deep Speech",
         "Undercommon"
       ],
-      "cr": "14 (15 in lair)",
+      "cr": "14",
+      "specialcr": "15 in coven",
       "trait": [
         {
           "name": "Negative Energy Cone",
@@ -86981,7 +86987,8 @@
         "prone",
         "stunned"
       ],
-      "cr": "18 (20 in lair)",
+      "cr": "18",
+      "specialcr": "20 in coven",
       "trait": [
         {
           "name": "Avoidance",
@@ -99908,7 +99915,8 @@
         "Draconic",
         "Sylvan"
       ],
-      "cr": "3 (5 in coven)",
+      "cr": "3",
+      "specialcr": "5 in coven",
       "spellcasting": [
         {
           "name": "Innate Spellcasting",
@@ -106585,7 +106593,8 @@
       "languages": [
         "Common plus up to five other languages"
       ],
-      "cr": "21 (22 in lair)",
+      "cr": "21",
+      "specialcr": "22 in lair",
       "spellcasting": [
         {
           "name": "Spellcasting",
@@ -110712,7 +110721,8 @@
       "languages": [
         "the languages it knew in life"
       ],
-      "cr": "15 (16 in lair)",
+      "cr": "15",
+      "specialcr": "16 in lair",
       "spellcasting": [
         {
           "name": "Spellcasting",
@@ -119773,7 +119783,8 @@
         "Common",
         "Giant"
       ],
-      "cr": "2 (4 in a coven)",
+      "cr": "2",
+      "specialcr": "4 in coven",
       "spellcasting": [
         {
           "name": "Shared Spellcasting (Coven Only)",
