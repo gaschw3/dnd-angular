@@ -5,6 +5,7 @@
 // TODO: should need this, but I'm seeing a tiny y-scroll bar show up sometimes
 body {
   overflow-x:hidden;
+  min-width: auto!important;
 }
 
 /* overrides for full app styles from Angular-Bootstrep (mostly default colors) */

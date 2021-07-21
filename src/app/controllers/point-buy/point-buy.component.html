@@ -31,7 +31,7 @@
 
         <!-- Ancestry selectors-->
         <div class="row">
-          <div class="col offset-md-2">
+          <div class="col offset-md-2 offset-sm-1">
             <div class="form-group">
               <label for="ancestrySelect">Ancestry</label>
               <select class="form-control" id="ancestrySelect" [(ngModel)]="selectedAncestry" (ngModelChange)="setCurrAncestry($event)">
@@ -41,12 +41,12 @@
               </select>
             </div>
           </div>
-          <div class="col-md-2"><!-- empty spacing column --></div>
+          <div class="col-md-2 col-sm-1"><!-- empty spacing column --></div>
         </div>
         <div *ngIf="this.choose > 0" class="container pb-2">
           <div class="row justify-content-center">
-            <div *ngFor="let stat of stats" class="col-1 form-check form-check-inline">
-              <input class="form-check-input"[disabled]="selectedAncestry[stat.name] > 0" type="checkbox" id="{{stat.name}}Choose" value="{{stat.name}}" (change)="this.chooseStats($event)">
+            <div *ngFor="let stat of stats" class="col-md-1 col form-check form-check-inline">
+              <input class="form-check-input" [disabled]="selectedAncestry[stat.name] > 0" type="checkbox" id="{{stat.name}}Choose" value="{{stat.name}}" (change)="this.chooseStats($event)">
               <label class="form-check-label" for="{{stat.name}}Choose">{{stat.name | uppercase}}</label>
             </div>
           </div>
