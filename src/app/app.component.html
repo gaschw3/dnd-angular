@@ -10,33 +10,34 @@
         <ul  class="navbar-nav mr-auto">
             <li  class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownChar"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-              Characters
+              Characters<span class="ml-1 badge badge-success">*</span>
               </a>
               <div  class="dropdown-menu"  aria-labelledby="navbarDropdownChar">
                 <a  class="dropdown-item" [routerLink]="'/classes'"> Classes </a>
                 <a  class="dropdown-item" [routerLink]="'/backgrounds'"> Backgrounds </a>
                 <a  class="dropdown-item" [routerLink]="'/ancestries'"> Ancestries </a>
                 <a  class="dropdown-item" [routerLink]="'/feats'"> Feats </a>
-                <a class="dropdown-item" [routerLink]="'/point-buy'"> Point Buy Calculator </a>
+                <a class="dropdown-item" [routerLink]="'/point-buy'"> Point Buy Calculator<span class="ml-1 badge badge-success">New</span> </a>
               </div>
             </li>
             <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a class="nav-link dropdown-toggle" href="#" id="navdarDropdownDm" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                DM
+                DM<span class="ml-1 badge badge-success">*</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navdarDropdownDm">
                 <a class="dropdown-item" [routerLink]="'/beastiary'"> Beastiary </a>
+                <a class="dropdown-item" [routerLink]="'/encounter-builder'"> Encounter Builder<span class="ml-1 badge badge-success">New</span> </a>
                 <a class="dropdown-item" [routerLink]="'/items'"> Items </a>
               </div>
             </li>
             <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownRef"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-              Reference <span class="badge badge-warning">WIP</span>
+              Reference
               </a>
               <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
                 <a  class="dropdown-item" [routerLink]="'/spells'"> Spells </a>
-                <a  class="dropdown-item" [routerLink]="'/map'"> Map <span class="badge badge-warning">WIP</span></a>
+                <a  class="dropdown-item" [routerLink]="'/map'"> Map</a>
               </div>
             </li>
           </ul>
@@ -45,18 +46,22 @@
               <a class="nav-link " href="#" id="navbarDropdownRef" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Planar Portal
-              <i class="fa fa-cog" aria-hidden="true"></i>
+              <i class="fa fa-cog" aria-hidden="true"></i><span class="ml-1 badge badge-warning">WIP</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownRef">
                 <form class="form-sm m-3">
                   <div class="form-group">
-                    <label for="theme">Destination</label>
+                    <label for="theme"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label> <span class="ml-1 badge badge-warning">WIP</span>
                     <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
                       <option value="dark">Material Realm</option>
-                      <option value="hell">The Abyss</option>
+                      <option value="dark">Aligning relays...</option>
+                      <option value="dark">Interpolating weave...</option>
+                      <option value="dark">Stailizing tears...</option>
+                      <option value="dark">Channeling divinity...</option>
+                      <!--<option value="hell">The Abyss</option>
                       <option value="light">Celestia</option>
                       <option value="ice">Plane of Ice</option>
-                      <option value="rainbow">Whimsyshire</option>
+                      <option value="rainbow">Whimsyshire</option>-->
                     </select>
                   </div>
                   <div *ngIf="theme != 'dark'" class="form-group">

@@ -37,3 +37,80 @@
 .text--white {
     color: #fff;
 }
+
+.group-info {
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-xs, .btn-group-xs > .btn {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.current-encounter {
+    &--row {
+        clear: right;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: row; 
+    }
+    &--monster-info {
+        flex-grow: 1;
+        padding-bottom: 0.5rem;
+        min-width: 0;
+    }
+    &--monster-name {
+        font-size: 2.25em;
+        font-weight: 300; 
+    }
+    &--monster-cr {
+        font-size: 1.1em; }
+    &--monster-xp {
+        font-size: 1.1em;
+        margin-left: 1rem; }
+    &--monster-qty-col {
+        min-width: 130px; }
+    &--monster-qty {
+        display: inline;
+        vertical-align: middle;
+        width: 6rem;
+        }
+    &--monster-qty-btns {
+        display: inline-block;
+        vertical-align: middle; 
+        
+        button {
+            display: block; 
+        }
+    }
+
+    &--totals {
+        border-top: 1px solid #ddd;
+        display: flex;
+        font-size: 1.5em;
+        padding-top: 1rem;
+
+        &-difficulty {
+            flex-grow: 1;
+        }
+        &-xp {
+            text-align: right;
+        }
+        &-xp span {
+            display: block;
+        }
+        &-individual-xp {
+            font-style: italic;
+            font-size: 70%; 
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import { MonsterComponent } from './../controllers/beastiary/monster/monster.component';
 import { MonsterHelperService } from './helpers/monster/monster-helper.service';
 import { AncestryComponent } from './../controllers/ancestries/ancestry/ancestry.component';
 import { NgModule } from '@angular/core';
@@ -25,6 +26,7 @@ import { HelperService } from './helpers/helper.service';
     BackButtonDirective,
     OrdinalPipe,
     AncestryComponent,
+    MonsterComponent,
     EntryRendererComponent
   ],
   imports: [
@@ -40,6 +42,7 @@ import { HelperService } from './helpers/helper.service';
     ItemTypePipe,
     BackButtonDirective,
     AncestryComponent,
+    MonsterComponent,
     EntryRendererComponent
   ]
 })

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { Monster } from 'src/app/models';
 import { HelperService } from '../../shared/helpers/helper.service';
 import { crXpMap, levelXp } from 'src/app/shared/helpers/monster/experienceMaps';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-encounter-builder',
@@ -36,6 +37,9 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   min: number;
   max: number;
 
+  //toggle show/hide monster table to change button text
+  showMonsterTable: boolean = true;
+
   //various monsters show in table, card, or encounter areas
   currMonster: Monster;
   monsters: Array<Monster>;
@@ -48,6 +52,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   constructor(
     private http: HttpClient,
     public helper: HelperService,
+    private route: ActivatedRoute,
     public monsterHelper: MonsterHelperService) {}
 
   // DataTables objects
@@ -72,19 +77,21 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
 
     this.dtOptions = {
       columnDefs: [
-        { width: '5%', orderable: false, targets: 0 },
+        { width: '5%', sortable: false, orderable: false, targets: 0 },
         { width: '30%', targets: 1 },
         { width: '15%', targets: 2 },
         { width: '15%', targets: 3 },
         { width: '30%', targets: 4 },
         { width: '5%', targets: 5 }
       ],
+
       autoWidth: false,
       dom: 'trpl',
       paging: true,
       orderMulti: true,
       pagingType: "full_numbers",
       searching: true,
+      order: [1, "asc"],
       language: {
         lengthMenu: 'Show <select>'+
         '<option value="10">10</option>'+
@@ -105,8 +112,8 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
         api.columns().every(function() {
           const column = this;
           const $head = $(column.header());
-          const inputContainer = $head.parent().prev().children().get($head.index());
-          $(':input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
+          const inputContainer = $head.parent().prev().children().get($head.index()+1);
+          $('table :input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
             const $this = $(this);
             const colIndex = $(column.header()).index();
             if (colIndex === 2) {
@@ -123,7 +130,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
     };
 
     this.getJSON().subscribe(beastiary => {
-        this.monsters = beastiary.monsters;
+        this.monsters = beastiary.monsters.filter(f => f.cr !== "N/A");
         setTimeout(() => {
           this.dtTrigger.next();
         });
@@ -135,6 +142,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
     // We remove the last function in the global ext search array so we do not add the fn each time the component is drawn
     // /!\ This is not the ideal solution if other components add search function in this array, so be careful
     $.fn['dataTable'].ext.search.pop();
+    this.dtTrigger.unsubscribe();
   }
 
   complexCrFilter(): void {
@@ -149,7 +157,12 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
 
   addMonster(clickedMonster: Monster): void {
     let newMonster = { monster: clickedMonster, number:1 };
-    this.currEncounter.push(newMonster);
+    let monsterInCurrEncounter = this.currEncounter.find(encEntry => encEntry.monster == clickedMonster);
+    if (monsterInCurrEncounter) {
+      monsterInCurrEncounter.number++;
+    } else {
+      this.currEncounter.push(newMonster);
+    }
     this.recalcEncounterXp()
   }
 
@@ -158,6 +171,12 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
     if (this.currEncounter[index].number < 1) {
       this.currEncounter.splice(index, 1);
     }
+    this.recalcEncounterXp()
+  }
+
+  clearEncounter(): void {
+    //reset current counter, is this okay?
+    this.currEncounter = [];
     this.recalcEncounterXp()
   }
 

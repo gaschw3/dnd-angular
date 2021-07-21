@@ -7,8 +7,7 @@ import { MonsterComponent } from './monster/monster.component';
 
 @NgModule({
   declarations: [
-    BeastiaryComponent,
-    MonsterComponent
+    BeastiaryComponent
   ],
   imports: [
     SharedModule,
