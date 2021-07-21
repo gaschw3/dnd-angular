@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {Location} from '@angular/common'; 
+import {Location} from '@angular/common';
 import { Observable } from "rxjs";
 import { Subject } from 'angular-datatables/node_modules/rxjs';
 
@@ -27,7 +27,7 @@ export class ClassesComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(ClassComponent) child: ClassComponent ; 
+  @ViewChild(ClassComponent) child: ClassComponent ;
 
   // DataTables objects
   @ViewChild(DataTableDirective)

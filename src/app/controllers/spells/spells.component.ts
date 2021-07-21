@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {Location} from '@angular/common'; 
+import {Location} from '@angular/common';
 import { Observable } from 'rxjs';
 import { Subject } from 'angular-datatables/node_modules/rxjs';
 
@@ -28,7 +28,7 @@ export class SpellsComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(SpellComponent) child: SpellComponent ; 
+  @ViewChild(SpellComponent) child: SpellComponent ;
 
   // DataTables objects
   @ViewChild(DataTableDirective)
@@ -46,6 +46,7 @@ export class SpellsComponent implements OnInit {
         { width: '5%', targets: 4 }
       ],
       autoWidth: false,
+      scrollX: true,
       dom: 'trpl',
       paging: true,
       orderMulti: true,

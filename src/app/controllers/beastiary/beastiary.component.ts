@@ -47,6 +47,7 @@ export class BeastiaryComponent implements OnInit {
         { width: '5%', targets: 4 }
       ],
       autoWidth: false,
+      scrollX: true,
       dom: 'trpl',
       paging: true,
       orderMulti: true,

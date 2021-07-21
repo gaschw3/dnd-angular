@@ -43,6 +43,7 @@ export class AncestriesComponent implements OnInit {
         { width: '20%', targets: 2 },
       ],
       autoWidth: false,
+      scrollX: true,
       dom: 'trlp',
       orderMulti: true,
       pagingType: "full_numbers",

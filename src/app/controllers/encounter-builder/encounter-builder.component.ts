@@ -84,8 +84,8 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
         { width: '30%', targets: 4 },
         { width: '5%', targets: 5 }
       ],
-
       autoWidth: false,
+      scrollX: true,
       dom: 'trpl',
       paging: true,
       orderMulti: true,

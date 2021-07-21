@@ -41,15 +41,17 @@
             <div *ngIf="multi.skills"><strong>Skills: </strong>{{multi.skills}}</div>
         </div>
       </div>
-      <div class="list-group features-list sticky-top py-2">
+      <div class="list-group features-list sticky-top py-2 d-none d-md-block">
         <h5>Outline (jump to feature)</h5>
         <ng-container *ngFor="let feature of class.features">
-            <a *ngIf="feature.subclass == 'base'" 
-            [ngClass]="{'active': this.child?.currActive == feature.name}" 
+            <a *ngIf="feature.subclass == 'base'"
+            [ngClass]="{'active': this.child?.currActive == feature.name}"
             class="list-group-item list-group-item-action py-2"
-            (click)="shake(feature.name)" 
+            (click)="shake(feature.name)"
             routerLink="./" fragment="{{feature.name}}">{{feature.title}}</a>
         </ng-container>
+      </div>
+      <div class="py-2 d-sm-none d-md-block">
       </div>
     </div>
     <div class="class-features col-md-8">

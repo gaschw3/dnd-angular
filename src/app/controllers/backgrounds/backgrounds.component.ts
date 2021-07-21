@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {Location} from '@angular/common'; 
+import {Location} from '@angular/common';
 import { Observable } from "rxjs";
 import { Subject } from 'angular-datatables/node_modules/rxjs';
 
@@ -27,7 +27,7 @@ export class BackgroundsComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(BackgroundComponent) child: BackgroundComponent ; 
+  @ViewChild(BackgroundComponent) child: BackgroundComponent ;
 
   // DataTables objects
   @ViewChild(DataTableDirective)
@@ -44,6 +44,7 @@ export class BackgroundsComponent implements OnInit {
         { width: '10%', targets: 3 }
       ],
       autoWidth: false,
+      scrollX: true,
       dom: 'trlp',
       orderMulti: true,
       pagingType: "full_numbers",

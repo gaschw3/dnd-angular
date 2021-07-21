@@ -43,6 +43,7 @@ export class FeatsComponent implements OnInit {
         { width: '10%', targets: 2 },
       ],
       autoWidth: false,
+      scrollX: true,
       dom: 'trlp',
       orderMulti: true,
       pageLength: 20,

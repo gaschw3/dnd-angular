@@ -1,5 +1,9 @@
 @use "sass:math";
 
+.center-block {
+   overflow: scroll;
+}
+
 input {
   margin: 0 auto;
 }

@@ -1,11 +1,11 @@
 <div class="container container-fluid">
-  <div class="flex py-3 xs12 md10 offset-md1 lg8 offset-lg2">
-    <div class="card" style="height: auto;">
+  <div class="flex py-3 offset-md-1 offset-lg-2">
+    <div class="card">
       <div class="container container-fluid">
         <h1 class="text-center mt-1">Point Buy Calculator</h1>
 
         <div class="layout row">
-          <div class="col-4 offset-2">
+          <div class="col offset-md-2 offset-sm-1">
             <div class="form-group">
               <label for="availPointsUnput">Available Points</label>
               <input [(ngModel)]="totalPoints" (change)="updatePercentage()" type="number" class="form-control" id="totalPoints" aria-describedby="availablePointsHelp">
@@ -14,7 +14,7 @@
           </div>
 
           <!-- Avail Points progress bar -->
-          <div class="col-4">
+          <div class="col">
             <div class="progress-circle {{helper.abs(getPercentage()) > 50 ? 'over50' : ''}} per{{getPercentage()}}">
               <span>{{totalPoints-pointsSpent}}/{{totalPoints}}</span>
               <div class="left-half-clipper">
@@ -31,7 +31,7 @@
 
         <!-- Ancestry selectors-->
         <div class="row">
-          <div class="col-sm offset-2">
+          <div class="col offset-md-2">
             <div class="form-group">
               <label for="ancestrySelect">Ancestry</label>
               <select class="form-control" id="ancestrySelect" [(ngModel)]="selectedAncestry" (ngModelChange)="setCurrAncestry($event)">
@@ -41,7 +41,7 @@
               </select>
             </div>
           </div>
-          <div class="col-2"><!-- empty spacing column --></div>
+          <div class="col-md-2"><!-- empty spacing column --></div>
         </div>
         <div *ngIf="this.choose > 0" class="container pb-2">
           <div class="row justify-content-center">
