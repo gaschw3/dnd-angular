@@ -1,8 +1,5 @@
 @use "sass:color";
 @import "./scss-theme/functions.scss";
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
 @import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Cinzel+Decorative&family=Monoton&family=Iceberg&display=swap');
 
 // TODO: should need this, but I'm seeing a tiny y-scroll bar show up sometimes

@@ -9,7 +9,7 @@ import { HelperService } from '../../shared/helpers/helper.service';
 export class ParticlesComponent implements OnInit {
 
   @Input() theme: string;
-  constructor(private helper: HelperService) { }
+  constructor(public helper: HelperService) { }
 
   ngOnInit(): void {
   }
