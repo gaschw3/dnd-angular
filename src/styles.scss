@@ -2,7 +2,25 @@
   Mostly color relates, also some stuff for navbars, tables, and map labels*/
 @use "sass:color";
 @import './scss-theme/themes.scss';
+@import "./scss-theme/colors.scss";
 @import "./scss-theme/functions.scss";
+
+//fix for number of card columns displayed at certain breakpoints
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2!important;
+    }
+}
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 2!important;
+    }
+}
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 3!important;
+    }
+}
 
 .theme-container {
   @include themify($themes) {
@@ -97,128 +115,6 @@
   }
 
   }
-}
-
-.text--gp {
-  color: #c5b100;
-}
-.text--sp {
-  color: #ffffff;
-}
-.text--cp {
-  color: #91590f;
-}
-/* spell colors */
-.color-abjuration {
-  color: rgb(253, 246, 207);
-}
-.color-transmutation {
-  color: rgb(236, 145, 60);
-}
-.color-illusion {
-  color: rgb(45, 148, 245);
-}
-.color-necromancy {
-  color: rgb(143, 0, 172);
-}
-.color-evocation {
-  color: rgb(241, 90, 90);
-}
-.color-enchantment {
-  color: rgb(255, 152, 250);
-}
-.color-conjuration {
-  color: rgb(113, 230, 102);
-}
-.color-divination {
-  color: rgb(255, 255, 255);
-}
-
-/* source colors */
-.color-phb {
-  color: rgb(0, 119, 230);
-}
-.color-xge {
-  color: rgb(0, 230, 142);
-}
-.color-ai {
-  color: rgb(0, 139, 7);
-}
-.color-scag {
-  color: rgb(255, 251, 34);
-}
-.color-wdh {
-  color: rgb(212, 210, 50);
-}
-.color-ua {
-  color: rgb(241, 137, 137);
-}
-.color-toa {
-  color: rgb(255, 127, 52);
-}
-.color-dmg {
-  color: rgb(190, 14, 14);
-}
-.color-dmg {
-  color: rgb(190, 14, 14);
-}
-.color-tce {
-  color: rgb(162, 77, 8);
-}
-.color-erlw {
-  color: rgb(124, 12, 12);
-}
-.color-cos {
-  color: rgb(70, 9, 94);
-}
-.color-ggr {
-  color: rgb(119, 223, 255);
-}
-.color-skt {
-  color: rgb(11, 192, 183);
-}
-.color-gos {
-  color: rgb(0, 255, 200);
-}
-.color-pota {
-  color: rgb(0, 255, 200);
-}
-.color-mot {
-  color: rgb(83, 175, 140);
-}
-.color-brew {
-  color: rgb(235, 125, 229);
-}
-.color-egw {
-  color: rgb(141, 115, 141);
-}
-.color-other {
-  color: rgb(141, 115, 141);
-}
-/* beastiary sources, mostly*/
-.color-mm {
-  color: rgb(0, 119, 230);
-}
-.color-vgm {
-  color: rgb(0, 230, 142);
-}
-.color-mtf {
-  color: rgb(255, 253, 119);
-}
-.color-tftyp {
-  color: rgb(190, 14, 14);
-}
-.color-hotdq {
-  color: rgb(190, 108, 14);
-}
-.color-rot {
-  color: rgb(190, 108, 14);
-}
-.color-oota {
-  color: rgb(137, 133, 172);
-}
-.color-cos {
-  color: rgb(146, 0, 139);
 }
 
 /* labels for map stuff, probably better way to do this but it's working for now */

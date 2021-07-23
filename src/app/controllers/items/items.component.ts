@@ -49,6 +49,7 @@ export class ItemsComponent implements OnInit {
         { width: '20%', targets: 1 },
         { width: '20%', targets: 2 },
       ],
+      autoWidth: false,
       scrollX: true,
       dom: 'trlp',
       orderMulti: true,

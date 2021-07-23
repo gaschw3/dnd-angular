@@ -6,7 +6,7 @@
   <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': this.selected == 'treasure' }" (click)="setItems('treasure')">Treasure</button>
 </div>
 <div class="row">
-  <div *ngIf="shownItems" class="col items-table">
+  <div *ngIf="shownItems" class="col items-table p-0">
     <table id="tbl-items" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
       class="table table-hover table-condensed">
       <thead>
@@ -57,7 +57,7 @@
       <tbody>
         <tr *ngFor="let item of shownItems" (click)="setCurrItem(item)"
           [class.table-active]="currItem?.id == item.id">
-          <td>{{item.name}}</td>
+          <td [innerHtml]="item.name | sanitizeHtml">{{item.name}}</td>
           <td>{{getItemType(item) | titlecase}}</td>
           <td>{{item.reqAttune ? "X" : ""}}</td>
           <td [attr.data-sort]="item.value" *ngIf="item.value" [class]="'text--'+((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')">

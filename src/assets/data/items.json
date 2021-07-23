@@ -6447,7 +6447,7 @@
     ]
   },
   {
-    "name": "Occultum (op)",
+    "name": "<span class='text--op'>Occultum (op)</span>",
     "id": "occultum-op",
     "source": "BREW",
     "page": 143,
@@ -6456,8 +6456,8 @@
     "weight": 0.02,
     "value": 1000000,
     "entries": [
-      "Occultum is raw, stabilized magic that (very) slowly accretes into tiny translucent gold-purple grains. On the surface, you'll be lucky to find a few grains. In the Veins, water and time concentrate particles of occultum and some long-dead civilizations now subsumed by the endless churning of the earth forged them into coins that can be used to buy, or do, impossible things.",
-      "If you want to build a deep planar observatory, use occultum to hold the lens. If you want to build a time machine, use occultum to power the chronometric lever. If you want to cast a spell that shouldn't exist, focus your magic through occultum. It's a malleable, stable, and resistant material. Where inferior metals fail, explode, melt, or change into goats, occultum will persevere. It's the unsung hero of a thousand doomsday projects. If you want to do something insane, you wouldn't go awry in acquiring some."
+      "<span class='text--op'>Occultum</span> is raw, stabilized magic that (very) slowly accretes into tiny translucent gold-purple grains. On the surface, you'll be lucky to find a few grains. In the Veins, water and time concentrate particles of <span class='text--op'>occultum</span> and some long-dead civilizations now subsumed by the endless churning of the earth forged them into coins that can be used to buy, or do, impossible things.",
+      "If you want to build a deep planar observatory, use <span class='text--op'>occultum</span> to hold the lens. If you want to build a time machine, use <span class='text--op'>occultum</span> to power the chronometric lever. If you want to cast a spell that shouldn't exist, focus your magic through <span class='text--op'>occultum</span>. It's a malleable, stable, and resistant material. Where inferior metals fail, explode, melt, or change into goats, <span class='text--op'>occultum</span> will persevere. It's the unsung hero of a thousand doomsday projects. If you want to do something insane, you wouldn't go awry in acquiring some."
     ]
   },
   {

@@ -4,7 +4,7 @@
       <div [class]="'item-header item-header-'+item.id | lowercase">
         <div class="row">
           <div class="col">
-            <h1 [class]="'color-primary' | lowercase">{{item.name}}</h1>
+            <h1 [class]="'color-primary' | lowercase" [innerHtml]="item.name | sanitizeHtml"></h1>
           </div>
           <div class="col">
             <h3 [class]="'pull-right color-'+item.source | lowercase">{{item.source}}</h3>
