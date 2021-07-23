@@ -6,6 +6,8 @@ import { HexmapComponent } from './controllers/hexmap/hexmap.component'
 import { PointBuyComponent } from './controllers/point-buy/point-buy.component';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
+import { NotFoundComponent } from './error/not-found/not-found.component';
+import { ServerErrorComponent } from './error/server-error/server-error.component';
 
 const routes: Routes = [
   {
@@ -44,13 +46,13 @@ const routes: Routes = [
     path: 'encounter-builder',
     component: EncounterBuilderComponent
   },
-  {path: 'map', component: HexmapComponent}
-  //{ path: 'redirect', component: RedirectionComponent },
-  //{ path: '401', component: NotAuthorizedComponent },
-  //{ path: '403', component: ForbiddenComponent },
-  //{ path: '404', component: NotFoundComponent },
-  //{ path: '500', component: ServerErrorComponent },
-  //{ path: '**', component: NotFoundComponent },
+  {
+    path: 'map',
+    component: HexmapComponent
+  },
+  { path: '404', component: NotFoundComponent },
+  { path: '500', component: ServerErrorComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 const routerOptions: ExtraOptions = {

@@ -18,13 +18,17 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParticlesComponent } from './controllers/particles/particles.component';
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
+import { NotFoundComponent } from './error/not-found/not-found.component';
+import { ServerErrorComponent } from './error/server-error/server-error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HexmapComponent,
     ParticlesComponent,
-    EncounterBuilderComponent
+    EncounterBuilderComponent,
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   imports: [
     BrowserModule,

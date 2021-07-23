@@ -1,3 +1,5 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from "@angular/router/testing";
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ItemsComponent } from './items.component';
@@ -8,6 +10,7 @@ describe('ItemsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [ RouterTestingModule, HttpClientTestingModule ],
       declarations: [ ItemsComponent ]
     })
     .compileComponents();

@@ -95,8 +95,8 @@ export class ItemsComponent implements OnInit {
       this.treasure = this.items.filter(f => f.type ? f.type.includes("$") : false);
       this.normal = this.items.filter(f => f.type ? (!f.type.includes("$") && f.rarity.includes("none")) : false);
       this.magic = this.items.filter(f => f.type ? (!f.type.includes("$") && !f.rarity.includes("none")) : true)
-      this.shownItems = this.magic;
-      this.selected = 'magic';
+      this.shownItems = this.items;
+      this.selected = 'all';
       this.route.paramMap.subscribe(params => {
         this.currItem = this.items.find(f => f.id == this.route.snapshot.params.itemName);
       });

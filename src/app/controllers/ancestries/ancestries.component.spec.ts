@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { AncestriesComponent } from './ancestries.component';
 
@@ -8,6 +10,7 @@ describe('AncestriesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [ RouterTestingModule, HttpClientTestingModule ],
       declarations: [ AncestriesComponent ]
     })
     .compileComponents();

@@ -19,9 +19,13 @@ export class MonsterHelperService {
     if (cr.match("/")) {
       if (cr == "N/A") {
         return 10000; //some summons don't have a CR, return arbitrary high val so they go to 'bottom'
-      } else {
+      } else if (cr.match(/\d\/\d/)) {
         let split = cr.split('/');
         return (parseInt(split[0]) / parseInt(split[1]));
+      } else {
+        //this is an error state and something bad has ahappened in the JSON
+        console.log("Gound problem CR, returning -1: " + cr);
+        return -1;
       }
     } else {
       return parseInt(cr); //non fractional, just use the normal one
