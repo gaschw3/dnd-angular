@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 //import { ForbiddenComponent, NotAuthorizedComponent, NotFoundComponent, ServerErrorComponent } from './error';
 
 import { HexmapComponent } from './controllers/hexmap/hexmap.component'
-import { PointBuyComponent } from './controllers/point-buy/point-buy.component';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
@@ -41,6 +40,10 @@ const routes: Routes = [
   {
     path: 'point-buy',
     loadChildren: () => import('./controllers/point-buy/point-buy.module').then(m => m.PointBuyModule)
+  },
+  {
+    path: 'other-features',
+    loadChildren: () => import('./controllers/other-features/other-features.module').then(m => m.OtherFeaturesModule)
   },
   {
     path: 'encounter-builder',

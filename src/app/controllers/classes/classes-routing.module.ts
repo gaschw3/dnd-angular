@@ -6,8 +6,8 @@ import { ClassComponent } from './class/class.component';
 
 const routes: Routes = [
   { path: '', component: ClassesComponent },
-  { 
-    path: ':className', 
+  {
+    path: ':className',
     component: ClassesComponent
   }
 ]

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 import { Observable } from "rxjs";
 import { Subject } from 'angular-datatables/node_modules/rxjs';
 

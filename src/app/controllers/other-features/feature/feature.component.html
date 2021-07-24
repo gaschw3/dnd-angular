@@ -1,0 +1,31 @@
+<ng-container *ngIf="feature">
+  <div class="card">
+    <div class="card-body">
+      <div [class]="'feature-header feature-header-'+this.id | lowercase">
+        <div class="row">
+          <div class="col">
+            <h1 [class]="'color-primary' | lowercase" [innerHtml]="feature.name"></h1>
+          </div>
+          <div class="col">
+            <h3 [class]="'pull-right color-'+feature.source | lowercase">{{feature.source}}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h2 [class]="'color-secondary' | lowercase" [innerHtml]="this.featureType[feature.featureType[0]]"></h2>
+          </div>
+        </div>
+        <div class="row border-bottom-primary">
+          <div *ngIf="feature.prerequisite" class="col">
+            <h5><em>Prerequisites: {{getPrereq(feature.prerequisite)}}</em></h5>
+          </div>
+        </div>
+      </div>
+      <div class="mt-2 feature-text row">
+        <div class="col">
+          <entry-renderer [list]=feature.entries [parent]="''"></entry-renderer>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

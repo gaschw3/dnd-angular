@@ -1,0 +1,63 @@
+<h1>D&D 5e Features</h1>
+<div class="table-type p-3">
+  <button class="btn btn-sm btn-primary p-2 m-1" (click)="setFilter('all')" [ngClass]="{'active': this.selected == 'all' }">All</button>
+  <button *ngFor="let fType of featureType | keyvalue" class="btn btn-sm btn-primary p-2 m-1" role="button" [ngClass]="{'active': this.selected == fType.key }"
+    (click)="setFilter(fType.key)">{{fType.value}}</button>
+</div>
+<div class="row">
+  <div *ngIf="otherFeatures" class="col otherFeatures-table">
+    <table id="tbl-otherFeatures" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+      class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th class="otherFeature-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-search"></i></span>
+              </div>
+              <input id="otherFeature-name-filter" class="form-control" type="search" placeholder="Filter Feature">
+            </div>
+          </th>
+          <th class="otherFeature-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="otherFeature-prof-filter" class="form-control" type="search" placeholder="Type">
+            </div>
+          </th>
+          <th class="otherFeature-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="otherFeature-prof-filter" class="form-control" type="search" placeholder="Prerequisites">
+            </div>
+          </th>
+          <th class="otherFeature-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="otherFeature-prof-filter" class="form-control" type="search" placeholder="Level">
+            </div>
+          </th>
+          <th class="otherFeature-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="otherFeature-source-filter" class="form-control" type="search" placeholder="Source">
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Prerequisites</th>
+          <th class="text-center">Level</th>
+          <th class="text-right">Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let otherFeature of shownFeatures" (click)="setCurrFeature(otherFeature)"
+          [class.table-active]="currFeature?.name == otherFeature.name">
+          <td>{{otherFeature.name}}</td>
+          <td>{{this.featureType[otherFeature.featureType[0]]}}</td>
+          <td>{{this.getPrereq(otherFeature.prerequisite)}}</td>
+          <td [attr.data-order]="(this.getLevelPrereq(otherFeature.prerequisite) == '—') ? 0 : this.getLevelPrereq(otherFeature.prerequisite)" class="text-center">{{this.getLevelPrereq(otherFeature.prerequisite)}}</td>
+          <td [class]="'text-right color-'+otherFeature.source | lowercase" class="text-right">{{otherFeature.source}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-feature *ngIf="currFeature" [feature]="currFeature"></app-feature>

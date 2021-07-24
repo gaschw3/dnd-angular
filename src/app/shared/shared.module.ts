@@ -12,6 +12,7 @@ import { ItemTypePipe } from '../pipes/item-type.pipe';
 import { OrdinalPipe } from '../pipes/ordinal.pipe';
 import { EntryRendererComponent } from './entry-renderer/entry-renderer.component';
 import { HelperService } from './helpers/helper.service';
+import { IdToNamePipe } from '../pipes/id-to-name.pipe';
 
 @NgModule({
   providers: [
@@ -27,7 +28,8 @@ import { HelperService } from './helpers/helper.service';
     OrdinalPipe,
     AncestryComponent,
     MonsterComponent,
-    EntryRendererComponent
+    EntryRendererComponent,
+    IdToNamePipe
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { HelperService } from './helpers/helper.service';
     BackButtonDirective,
     AncestryComponent,
     MonsterComponent,
-    EntryRendererComponent
+    EntryRendererComponent,
+    IdToNamePipe
   ]
 })
 export class SharedModule { }

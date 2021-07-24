@@ -20,6 +20,7 @@ import { ParticlesComponent } from './controllers/particles/particles.component'
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
+import { OtherFeaturesModule } from './controllers/other-features/other-features.module';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ServerErrorComponent } from './error/server-error/server-error.componen
     BackgroundsModule,
     AncestriesModule,
     PointBuyModule,
+    OtherFeaturesModule,
     NgxScrollTopModule
   ],
   exports: [],
