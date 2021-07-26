@@ -1,45 +1,47 @@
 <ng-container *ngIf="item">
-  <div class="card">
-    <div class="card-body">
-      <div [class]="'item-header item-header-'+item.id | lowercase">
-        <div class="row">
-          <div class="col">
-            <h1 [class]="'color-primary' | lowercase" [innerHtml]="item.name | sanitizeHtml"></h1>
+  <div class="pt-2 pb-4">
+    <div class="card">
+      <div class="card-body">
+        <div [class]="'item-header item-header-'+item.id | lowercase">
+          <div class="row">
+            <div class="col">
+              <h1 [class]="'color-primary' | lowercase" [innerHtml]="item.name | sanitizeHtml"></h1>
+            </div>
+            <div class="col">
+              <h3 [class]="'pull-right color-'+item.source | lowercase">{{item.source}}</h3>
+            </div>
           </div>
-          <div class="col">
-            <h3 [class]="'pull-right color-'+item.source | lowercase">{{item.source}}</h3>
+          <div class="row">
+            <div class="col">
+              <h5><em>{{getItemInfo(item)}}</em></h5>
+            </div>
+          </div>
+          <div class="row border-bottom-primary">
+            <div class="col">
+              <p class="pb-0 mb-2">
+                <ng-container *ngIf="item.value">
+                  <span [class]="'text--'+((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')">
+                    {{((item.value/100 >= 1) ? item.value/100 : (item.value/10 >= 1) ? item.value/10 : item.value) | number:'1.0':'en-US'}}
+                    {{((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')}}
+                  </span>
+                  <ng-container *ngIf="item.value && item.weight">,</ng-container>
+                </ng-container>
+                <ng-container *ngIf="item.weight">
+                  {{item.weight + ' lbs.'}}
+                </ng-container>
+            </div>
+            <div class="col">
+              <p class="pb-0 mb-2 pull-right">
+                <ng-container *ngIf="item.dmg1">
+                  {{getItemDamage(item)}}
+                </ng-container>
+            </div>
           </div>
         </div>
-        <div class="row">
+        <div class="mt-2 feature-text row">
           <div class="col">
-            <h5><em>{{getItemInfo(item)}}</em></h5>
+            <entry-renderer [list]=item.entries [parent]="''"></entry-renderer>
           </div>
-        </div>
-        <div class="row border-bottom-primary">
-          <div class="col">
-            <p class="pb-0 mb-2">
-              <ng-container *ngIf="item.value">
-                <span [class]="'text--'+((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')">
-                  {{((item.value/100 >= 1) ? item.value/100 : (item.value/10 >= 1) ? item.value/10 : item.value) | number:'1.0':'en-US'}}
-                  {{((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')}}
-                </span>
-                <ng-container *ngIf="item.value && item.weight">,</ng-container>
-              </ng-container>
-              <ng-container *ngIf="item.weight">
-                {{item.weight + ' lbs.'}}
-              </ng-container>
-          </div>
-          <div class="col">
-            <p class="pb-0 mb-2 pull-right">
-              <ng-container *ngIf="item.dmg1">
-                {{getItemDamage(item)}}
-              </ng-container>
-          </div>
-        </div>
-      </div>
-      <div class="mt-2 feature-text row">
-        <div class="col">
-          <entry-renderer [list]=item.entries [parent]="''"></entry-renderer>
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
 <h1>D&D 5e Features</h1>
 <div class="table-type p-3">
   <button class="btn btn-sm btn-primary p-2 m-1" (click)="setFilter('all')" [ngClass]="{'active': this.selected == 'all' }">All</button>
-  <button *ngFor="let fType of featureType | keyvalue" class="btn btn-sm btn-primary p-2 m-1" role="button" [ngClass]="{'active': this.selected == fType.key }"
-    (click)="setFilter(fType.key)">{{fType.value}}</button>
+  <ng-container *ngFor="let fType of featureType | keyvalue">
+    <button *ngIf="!fType.key.includes(':')" class="btn btn-sm btn-primary p-2 m-1" role="button" [ngClass]="{'active': this.selected == fType.key }" (click)="setFilter(fType.key)">{{fType.value}}</button>
+  </ng-container>
 </div>
 <div class="row">
   <div *ngIf="otherFeatures" class="col otherFeatures-table">

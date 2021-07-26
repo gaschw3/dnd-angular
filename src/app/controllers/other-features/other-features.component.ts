@@ -173,7 +173,11 @@ export class OtherFeaturesComponent implements OnInit {
       let ret = [];
       let reqs = prereq[0]; // there is always only one entry at this point
       if (typeof reqs.level != "undefined") {
-        ret.push(reqs.level.level);
+        if (typeof reqs.level.level == "undefined") {
+          return "—"
+        } else {
+          ret.push(reqs.level.level);
+        }
       } else {
         return "—";
       }

@@ -7,6 +7,7 @@ import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
+import { SpellbookComponent } from './controllers/spellbook/spellbook.component';
 
 const routes: Routes = [
   {
@@ -44,6 +45,10 @@ const routes: Routes = [
   {
     path: 'other-features',
     loadChildren: () => import('./controllers/other-features/other-features.module').then(m => m.OtherFeaturesModule)
+  },
+  {
+    path: 'spellbook',
+    component: SpellbookComponent
   },
   {
     path: 'encounter-builder',

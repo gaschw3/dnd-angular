@@ -31,6 +31,7 @@ export const featureType = {
     "AI": "Artificer Infusion",
     "AS": "Arcane Shot",
     "ED": "Elemental Discipline",
+    "ED:B": "Elemental Discipline Rebrewed",
     "EI": "Eldritch Invocation",
     "FS": "Fighting Style",
     "MM": "Metamagic",

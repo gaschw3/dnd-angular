@@ -17,7 +17,9 @@
                 <a  class="dropdown-item" [routerLink]="'/backgrounds'"> Backgrounds </a>
                 <a  class="dropdown-item" [routerLink]="'/ancestries'"> Ancestries </a>
                 <a  class="dropdown-item" [routerLink]="'/feats'"> Feats </a>
-                <a class="dropdown-item" [routerLink]="'/point-buy'"> Point Buy Calculator<span class="ml-1 badge badge-success">New</span> </a>
+                <a class="dropdown-item" [routerLink]="'/other-features'"> Misc. Class Features
+                  <span class="ml-1 badge badge-success">New</span>
+                </a>
               </div>
             </li>
             <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
@@ -33,11 +35,17 @@
             </li>
             <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownRef"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-              Reference
+              Reference<span class="ml-1 badge badge-success">*</span>
               </a>
               <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
                 <a  class="dropdown-item" [routerLink]="'/spells'"> Spells </a>
                 <a  class="dropdown-item" [routerLink]="'/map'"> Map</a>
+                <a class="dropdown-item" [routerLink]="'/point-buy'"> Point Buy Calculator
+                  <span class="ml-1 badge badge-success">New</span>
+                </a>
+                <a class="dropdown-item" [routerLink]="'/spellbook'"> Spellbook Creator
+                  <span class="ml-1 badge badge-success">New</span>
+                </a>
               </div>
             </li>
           </ul>
@@ -54,13 +62,15 @@
                     <label for="theme"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label> <span class="ml-1 badge badge-warning">WIP</span>
                     <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
                       <option value="dark">Material Realm</option>
-                      <option value="hell">The Abyss</option>
                       <option value="dark">Interpolating weave...</option>
                       <option value="dark">Stailizing tears...</option>
                       <option value="dark">Channeling divinity...</option>
-                      <!--<option value="light">Celestia</option>
+                      <!--
+                      <option value="light">Celestia</option>
+                      <option value="hell">The Abyss</option>
                       <option value="ice">Plane of Ice</option>
-                      <option value="rainbow">Whimsyshire</option>-->
+                      <option value="rainbow">Whimsyshire</option>
+                      -->
                     </select>
                   </div>
                   <div *ngIf="theme != 'dark'" class="form-group">

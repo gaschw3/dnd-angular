@@ -5414,9 +5414,9 @@
         "level": 17,
         "subclass": "elements",
         "name": "elements-avatar",
-        "title": "Way of Four Elements: Avatar of Elements",
+        "title": "Way of Four Elements: Avatar of the Elements",
         "text": [
-          "Also at 17th level, you learn to display ultimate master of the elements. You can spend 7 ki points as an action and have the elements of earth, fire, air, and water form a protective sphere around your body gaining the following benefits for one minute:",
+          "Also at 17th level, you learn to display ultimate master of the elements. You can spend 5 ki points as an action and have the elements of earth, fire, air, and water form a protective sphere around your body gaining the following benefits for one minute:",
           {
             "type": "list",
             "items": [

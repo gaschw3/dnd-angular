@@ -21,6 +21,7 @@ import { EncounterBuilderComponent } from './controllers/encounter-builder/encou
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
 import { OtherFeaturesModule } from './controllers/other-features/other-features.module';
+import { SpellbookComponent } from './controllers/spellbook/spellbook.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { OtherFeaturesModule } from './controllers/other-features/other-features
     ParticlesComponent,
     EncounterBuilderComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    SpellbookComponent
   ],
   imports: [
     BrowserModule,
