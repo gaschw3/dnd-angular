@@ -1,0 +1,24 @@
+{
+  "short_name": "EotCC D&D 5e",
+  "name": "EotCC D&D 5e",
+  "icons": [
+    {
+      "src": "./icon_x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "./icon_x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    }
+  ],
+  "start_url": "./classes",
+  "background_color": "#424a4f",
+  "display": "standalone",
+  "scope": "./",
+  "theme_color": "#424a4f",
+  "description": "Explorers of the Candle Cove D&D 5e reference"
+}
