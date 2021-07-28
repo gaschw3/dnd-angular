@@ -1,1 +1,164 @@
-<p>spellbook works!</p>
+<h1>D&D 5e Spellbook Maker</h1>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="spellbook-info--input">
+      <h2 class="spellbook-info--header">Spellcasting Info</h2>
+      <form>
+        <div class="form-group row">
+          <div class="col-sm-3">
+            <label for="inputLevel">Level</label>
+            <input name="level" type="number" min=1 max=20 class="form-control" id="inputLevel" value=1 [(ngModel)]="level">
+          </div>
+          <div class="col-sm-3">
+            <label for="inputMod">Spell Mod</label>
+            <input type="number" min=-5 max=5 class="form-control" id="inputMod" value=3>
+          </div>
+          <div class="col-sm-6">
+            <label for="inputPostalCode">Class</label>
+            <select name="inputClass" class="form-select form-control" id="inputClass">
+              <option *ngFor="let class of ['Cleric', 'Wizard']; let i = index" [ngValue]="class | lowercase">{{class}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <label for="inputFirstname">Subclass</label>
+            <select name="inputSubclass" class="form-select form-control" id="inputSubclass">
+              <option *ngFor="let subclass of ['Knowledge Domain', 'Order Domain', 'Twilight Domain']; let i = index" [ngValue]="subclass | lowercase">{{subclass}}</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+    <hr />
+    <h2 class="spellbook--header">Spellbook</h2>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">Cantrips</h3>
+    </div>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">1st</h3>
+      <div class="col-sm-4 float-right">
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin"></i>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">2nd</h3>
+      <div class="col-sm-4 float-right">
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin"></i>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">3rd</h3>
+      <div class="col-sm-4 float-right">
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin"></i>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">4th</h3>
+      <div class="col-sm-4 float-right">
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin"></i>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">5th</h3>
+      <div class="col-sm-4 float-right">
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin"></i>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">6th</h3>
+      <div class="col-sm-4 float-right">
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin"></i>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">7th</h3>
+      <div class="col-sm-4 float-right">
+        <i class="fa fa-circle-thin pr-1"></i>
+        <i class="fa fa-circle-thin"></i>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">8th</h3>
+      <div class="col-sm-4 float-right">
+        <i class="fa fa-circle-thin"></i>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="spellbook-level--header col-sm-8">9th</h3>
+      <div class="col-sm-4 float-right">
+        <i class="fa fa-circle-thin"></i>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="currSpells" class="col-lg-8">
+    <!-- Monster table from beastiary, slightly altered? SHould break out a monster service or something? -->
+    <!-- columns: Add / (+) button, Name, CR, Type, Size, Tags, Book?-->
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#spellCollapse"
+      aria-expanded="false" aria-controls="spellCollapse" (click)="showSpellTable = !showSpellTable">
+      {{ showSpellTable == true ? 'Hide ' : 'Show ' }}Spell Table
+    </button>
+    <div *ngIf=currSpells id="spellCollapse" class="collapse show spell-table">
+      <div class="card">
+        <div class="card-body">
+          <table id="tbl-spells" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+            class="table table-hover table-condensed">
+            <thead>
+              <tr>
+                <th class="spell-filter" colspan="1">
+                  <div class="input-group input-group-sm">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-search"></i></span>
+                    </div>
+                    <input id="spell-name-filter" class="form-control" type="search" placeholder="Name">
+                  </div>
+                </th>
+                <th class="spell-filter" colspan="1">
+                  <div class="input-group input-group-sm">
+                    <input id="spell-level-filter" class="form-control" type="search" placeholder="Lvl">
+                  </div>
+                </th>
+                <th class="spell-filter" colspan="1">
+                  <div class="input-group input-group-sm">
+                    <input id="spell-school-filter" class="form-control" type="search" placeholder="School">
+                  </div>
+                </th>
+                <th class="spell-filter" colspan="1">
+                  <div class="input-group input-group-sm">
+                    <input id="spell-source-filter" class="form-control" type="search" placeholder="Source">
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <th>Name</th>
+                <th>Level</th>
+                <th>School</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let spell of currSpells">
+                <td>{{spell.name}}</td>
+                <td class="text-center">{{spell.level}}</td>
+                <td [class]="'color-'+spell.school | lowercase" class="text-center">{{spell.school}}</td>
+                <td [class]="'text-right color-'+spell.source | lowercase" class="text-right">{{spell.source}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,7 @@ export interface Spell {
   range:      string;
   components: string;
   duration:   string;
-  classes:    string;
+  classes:    string[];
   entries:    string[];
   higher?:    string;
   ritual?:    string;

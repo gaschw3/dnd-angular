@@ -30,7 +30,7 @@
                 <div class="feature-text">
                     <entry-renderer [list]=spell.entries [parent]="''"></entry-renderer>
                     <p *ngIf="spell.higher"><strong><em>At Higher Levels: </em></strong>{{spell.higher}}</p>
-                    <p *ngIf="spell.classes" ><strong>Classes: </strong><span [innerHtml]="spell.classes | linkmaker"></span></p>
+                    <p *ngIf="spell.classes" ><strong>Classes: </strong><span [innerHtml]="spell.classes.join(', ') | linkmaker"></span></p>
                 </div>
             </div>
         </div>
