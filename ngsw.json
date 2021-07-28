@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1627493494166,
+  "timestamp": 1627512191283,
   "index": "https://gaschw3.github.io/dnd-angular/index.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
         "https://gaschw3.github.io/dnd-angular/903.d8774632adc65d77aca5.js",
         "https://gaschw3.github.io/dnd-angular/favicon.ico",
         "https://gaschw3.github.io/dnd-angular/index.html",
-        "https://gaschw3.github.io/dnd-angular/main.6e3738b064a2b647d67c.js",
+        "https://gaschw3.github.io/dnd-angular/main.23bb8495b0b96b5cf965.js",
         "https://gaschw3.github.io/dnd-angular/manifest.json",
         "https://gaschw3.github.io/dnd-angular/polyfills-es5.62687c7eba8b2c3b574b.js",
         "https://gaschw3.github.io/dnd-angular/polyfills.b5beea2ddc6e9ba93d3a.js",
@@ -80,10 +80,10 @@
     "https://gaschw3.github.io/dnd-angular/favicon.ico": "863d5aec8cd33fb144b94c2251bfb56de043d43c",
     "https://gaschw3.github.io/dnd-angular/icon_x192.png": "b2909ba733e66d1d66794c050be27601554c0cf4",
     "https://gaschw3.github.io/dnd-angular/icon_x512.png": "c6f45c946f9cb98f5633da0839e304e2096333a2",
-    "https://gaschw3.github.io/dnd-angular/index.html": "99d0c23c009866035d8d312cfa6ef4e09a890162",
+    "https://gaschw3.github.io/dnd-angular/index.html": "ef0a7294d8e488bc26ca92398c64346be4e5d8f2",
     "https://gaschw3.github.io/dnd-angular/layers-2x.8f2c4d11474275fbc161.png": "152a162333e46d24f9d89f566312fc0c64011dee",
     "https://gaschw3.github.io/dnd-angular/layers.416d91365b44e4b4f477.png": "c9e7528e491a39232ba24a2706c6c739d6fb0f06",
-    "https://gaschw3.github.io/dnd-angular/main.6e3738b064a2b647d67c.js": "9849bd1a6cfd0a81c5096f9749fd1eea26de6eae",
+    "https://gaschw3.github.io/dnd-angular/main.23bb8495b0b96b5cf965.js": "18f3772eccb1d343d9fa5df39dd380da9923df5a",
     "https://gaschw3.github.io/dnd-angular/manifest.json": "47772832102a402aa8d301434f850ac04406c3e3",
     "https://gaschw3.github.io/dnd-angular/marker-icon.2b3e1faf89f94a483539.png": "60a90bcbb2b42b7ddb4556db94eb7c1084b0e5da",
     "https://gaschw3.github.io/dnd-angular/polyfills-es5.62687c7eba8b2c3b574b.js": "d162799a03a1ace8105b539ca13dbacae1e131fa",
