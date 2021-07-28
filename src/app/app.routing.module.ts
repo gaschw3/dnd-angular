@@ -10,6 +10,7 @@ import { ServerErrorComponent } from './error/server-error/server-error.componen
 import { SpellbookComponent } from './controllers/spellbook/spellbook.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'classes', pathMatch: 'full' },
   {
     path: 'classes',
     loadChildren: () => import('./controllers/classes/classes.module').then(m => m.ClassesModule)
