@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
+
+declare var gtag
 
 @Component({
   selector: 'app-root',
@@ -11,6 +15,16 @@ export class AppComponent {
   particles = true;
 
   theme= this.getCookie("theme");
+
+  constructor(router: Router) {
+    const navEndEvent$ = router.events.pipe(
+      filter(e => e instanceof NavigationEnd)
+    );
+    navEndEvent$.subscribe((e: NavigationEnd) => {
+      gtag('config', 'G-BKMXZP7BG0', {'page_path':e.urlAfterRedirects});
+    });
+
+  }
 
   setCookie (name, value, days) {
     var expires = "";

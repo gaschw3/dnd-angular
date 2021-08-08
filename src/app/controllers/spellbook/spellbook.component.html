@@ -1,105 +1,110 @@
 <h1>D&D 5e Spellbook Maker</h1>
 <div class="row">
-  <div class="col-lg-4">
+  <div *ngIf="currClass" class="col-lg-4">
     <div class="spellbook-info--input">
       <h2 class="spellbook-info--header">Spellcasting Info</h2>
       <form>
         <div class="form-group row">
           <div class="col-sm-3">
             <label for="inputLevel">Level</label>
-            <input name="level" type="number" min=1 max=20 class="form-control" id="inputLevel" value=1 [(ngModel)]="level">
+            <input name="level" type="number" min=1 max=20 class="form-control" id="inputLevel" value=1 [(ngModel)]="level" (change)="redrawTable()">
           </div>
           <div class="col-sm-3">
             <label for="inputMod">Spell Mod</label>
-            <input type="number" min=-5 max=5 class="form-control" id="inputMod" value=3>
+            <input name="inputLevel" type="number" min=-5 max=5 class="form-control" id="inputMod" value=3 [(ngModel)]="spellMod">
           </div>
-          <div class="col-sm-6">
+          <div *ngIf="currClass" class="col-sm-6">
             <label for="inputPostalCode">Class</label>
-            <select name="inputClass" class="form-select form-control" id="inputClass">
-              <option *ngFor="let class of ['Cleric', 'Wizard']; let i = index" [ngValue]="class | lowercase">{{class}}</option>
+            <select name="inputClass" class="form-select form-control" [(ngModel)]="currClass" id="inputClass" (change)="redrawTable()">
+              <option *ngFor="let class of classes; let i = index" [ngValue]="class">{{class.name}}</option>
             </select>
           </div>
         </div>
-        <div class="form-group row">
+        <div *ngIf="hasSubclassSpells()" class="form-group row">
           <div class="col-sm-12">
             <label for="inputFirstname">Subclass</label>
-            <select name="inputSubclass" class="form-select form-control" id="inputSubclass">
-              <option *ngFor="let subclass of ['Knowledge Domain', 'Order Domain', 'Twilight Domain']; let i = index" [ngValue]="subclass | lowercase">{{subclass}}</option>
+            <select name="inputSubclass" class="form-select form-control" [(ngModel)]="currSubclass" id="inputSubclass" (change)="redrawTable()">
+              <option *ngFor="let subclass of subclasses" [ngValue]="subclass.val | titlecase">{{subclass.name | titlecase}}</option>
+            </select>
+          </div>
+        </div>
+        <div *ngIf="currClass.name == 'Fighter' || currClass.name == 'Rogue'" class="form-group row">
+          <div class="col-sm-12">
+            <label for="inputFirstname">Subclass</label>
+            <select name="inputSubclass" class="form-select form-control">
+              <option *ngIf="currClass.name == 'Fighter'" selected="true" disabled="disabled">Eldritch Knight</option>
+              <option *ngIf="currClass.name == 'Rogue'" selected="true" disabled="disabled">Arcane Trickster</option>
             </select>
           </div>
         </div>
       </form>
     </div>
     <hr />
-    <h2 class="spellbook--header">Spellbook</h2>
     <div class="row">
-      <h3 class="spellbook-level--header col-sm-8">Cantrips</h3>
+      <h2 class="spellbook-level--header col">Spellbook</h2>
     </div>
     <div class="row">
+      <h6 class="spellbook-level--header col-sm-6">Spell Attack: +{{spellMod + (1+Math.ceil(level/4))}}</h6>
+      <h6 class="spellbook-level--header col-sm-6">Spell DC: {{8 + spellMod + (1+Math.ceil(level/4))}}</h6>
+    </div>
+    <div *ngIf="levelTable[levelKey.indexOf('Cantrips')] > 0" class="row">
+      <h3 class="spellbook-level--header col-sm-8">Cantrips</h3>
+      <div class="col-sm-4 float-right">
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('Cantrips')])" class="fa fa-circle pr-1"></i>
+      </div>
+    </div>
+    <div *ngIf="levelTable[levelKey.indexOf('1st')] > 0" class="row">
       <h3 class="spellbook-level--header col-sm-8">1st</h3>
       <div class="col-sm-4 float-right">
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin"></i>
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('1st')])" class="fa fa-circle-thin pr-1"></i>
       </div>
     </div>
-    <div class="row">
+    <div *ngIf="levelTable[levelKey.indexOf('2nd')] > 0" class="row">
       <h3 class="spellbook-level--header col-sm-8">2nd</h3>
       <div class="col-sm-4 float-right">
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin"></i>
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('2nd')])" class="fa fa-circle-thin pr-1"></i>
       </div>
     </div>
-    <div class="row">
+    <div *ngIf="levelTable[levelKey.indexOf('3rd')] > 0" class="row">
       <h3 class="spellbook-level--header col-sm-8">3rd</h3>
       <div class="col-sm-4 float-right">
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin"></i>
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('3rd')])" class="fa fa-circle-thin pr-1"></i>
       </div>
     </div>
-    <div class="row">
+    <div *ngIf="levelTable[levelKey.indexOf('4th')] > 0" class="row">
       <h3 class="spellbook-level--header col-sm-8">4th</h3>
       <div class="col-sm-4 float-right">
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin"></i>
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('4th')])" class="fa fa-circle-thin pr-1"></i>
       </div>
     </div>
-    <div class="row">
+    <div *ngIf="levelTable[levelKey.indexOf('5th')] > 0" class="row">
       <h3 class="spellbook-level--header col-sm-8">5th</h3>
       <div class="col-sm-4 float-right">
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin"></i>
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('5th')])" class="fa fa-circle-thin pr-1"></i>
       </div>
     </div>
-    <div class="row">
+    <div *ngIf="levelTable[levelKey.indexOf('6th')] > 0" class="row">
       <h3 class="spellbook-level--header col-sm-8">6th</h3>
       <div class="col-sm-4 float-right">
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin"></i>
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('6th')])" class="fa fa-circle-thin pr-1"></i>
       </div>
     </div>
-    <div class="row">
+    <div *ngIf="levelTable[levelKey.indexOf('7th')] > 0" class="row">
       <h3 class="spellbook-level--header col-sm-8">7th</h3>
       <div class="col-sm-4 float-right">
-        <i class="fa fa-circle-thin pr-1"></i>
-        <i class="fa fa-circle-thin"></i>
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('7th')])" class="fa fa-circle-thin pr-1"></i>
       </div>
     </div>
-    <div class="row">
+    <div *ngIf="levelTable[levelKey.indexOf('8th')] > 0" class="row">
       <h3 class="spellbook-level--header col-sm-8">8th</h3>
       <div class="col-sm-4 float-right">
-        <i class="fa fa-circle-thin"></i>
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('8th')])" class="fa fa-circle-thin pr-1"></i>
       </div>
     </div>
-    <div class="row">
+    <div *ngIf="levelTable[levelKey.indexOf('9th')] > 0" class="row">
       <h3 class="spellbook-level--header col-sm-8">9th</h3>
       <div class="col-sm-4 float-right">
-        <i class="fa fa-circle-thin"></i>
+        <i *ngFor="let i of helper.counter(levelTable[levelKey.indexOf('9th')])" class="fa fa-circle-thin pr-1"></i>
       </div>
     </div>
   </div>
@@ -117,6 +122,7 @@
             class="table table-hover table-condensed">
             <thead>
               <tr>
+                <th></th>
                 <th class="spell-filter" colspan="1">
                   <div class="input-group input-group-sm">
                     <div class="input-group-prepend">
@@ -142,6 +148,7 @@
                 </th>
               </tr>
               <tr>
+                <th></th>
                 <th>Name</th>
                 <th>Level</th>
                 <th>School</th>
@@ -150,7 +157,12 @@
             </thead>
             <tbody>
               <tr *ngFor="let spell of currSpells">
-                <td>{{spell.name}}</td>
+                <td>
+                  <button (click)="addSpell(spell)" class="btn btn-sm btn-success">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </td>
+                <td [ngClass]="{'color-primary': spell.classes.includes(currClass.name + ' (' + currSubclass + ')')}">{{spell.name}}</td>
                 <td class="text-center">{{spell.level}}</td>
                 <td [class]="'color-'+spell.school | lowercase" class="text-center">{{spell.school}}</td>
                 <td [class]="'text-right color-'+spell.source | lowercase" class="text-right">{{spell.source}}</td>
