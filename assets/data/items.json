@@ -10021,7 +10021,7 @@
         "name": "Dormant",
         "id": "dormant",
         "entries": [
-          "Most of the book is blank, but the following spells are recorded in the first pages of the tome: {@spells/alarm alarm}, {@spells/antimagic-field antimagic field}, {@spells/bigby's hand Bigby's hand}, {@spells/blight blight}, {@spells/charm-person charm person}, {@spells/confusion confusion}, {@spells/control-weather control weather}, {@spells/create-undead create undead}, {@spells/detect-thoughts detect thoughts}, {@spells/enlarge/reduce enlarge/reduce}, {@spells/fear fear}, {@spells/foresight foresight}, {@spells/gaseous-form gaseous form}, {@spells/glyph-of-warding glyph of warding}, {@spells/legend-lore legend lore}, {@spells/leomund's tiny hut Leomund's tiny hut}, {@spells/mass-suggestion mass suggestion}, {@spells/mislead mislead}, {@spells/misty-step misty step}, {@spells/mordenkainen's faithful hound Mordenkainen's faithful hound}, {@spells/prismatic-spray prismatic spray}, {@spells/ray-of-enfeeblement ray of enfeeblement}, {@spells/silent-image silent image}, {@spells/teleport teleport}, and {@spells/thunderwave thunderwave}.",
+          "Most of the book is blank, but the following spells are recorded in the first pages of the tome: {@spells/alarm alarm}, {@spells/antimagic-field antimagic field}, {@spells/bigbys-hand Bigby's hand}, {@spells/blight blight}, {@spells/charm-person charm person}, {@spells/confusion confusion}, {@spells/control-weather control weather}, {@spells/create-undead create undead}, {@spells/detect-thoughts detect thoughts}, {@spells/enlarge/reduce enlarge/reduce}, {@spells/fear fear}, {@spells/foresight foresight}, {@spells/gaseous-form gaseous form}, {@spells/glyph-of-warding glyph of warding}, {@spells/legend-lore legend lore}, {@spells/leomund's tiny hut Leomund's tiny hut}, {@spells/mass-suggestion mass suggestion}, {@spells/mislead mislead}, {@spells/misty-step misty step}, {@spells/mordenkainens-faithful-hound Mordenkainen's faithful hound}, {@spells/prismatic-spray prismatic spray}, {@spells/ray-of-enfeeblement ray of enfeeblement}, {@spells/silent-image silent image}, {@spells/teleport teleport}, and {@spells/thunderwave thunderwave}.",
           "You can use the grimoire as your spellbook, and you can scribe new spells into it as normal. When you prepare wizard spells using the grimoire, the number of wizard spells you can prepare increases by 1."
         ]
       },
@@ -13813,7 +13813,7 @@
           ],
           [
             "4",
-            "{@spells/melf's acid arrow Melf's acid arrow}"
+            "{@spells/melfs-acid-arrow Melf's acid arrow}"
           ],
           [
             "5",
@@ -13885,7 +13885,7 @@
           ],
           [
             "3",
-            "{@spells/evard's black tentacles Evard's black tentacles}"
+            "{@spells/evards-black-tentacles Evard's black tentacles}"
           ],
           [
             "4",
@@ -14694,7 +14694,7 @@
       "Each orb contains the essence of an evil dragon, a presence that resents any attempt to coax magic from it. Those lacking in force of personality might find themselves enslaved to an orb.",
       "An orb is an etched crystal globe about 10 inches in diameter. When used, it grows to about 20 inches in diameter, and mist swirls inside it.",
       "While attuned to an orb, you can use an action to peer into the orb's depths and speak its command word. You must then make a DC 15 Charisma check. On a successful check, you control the orb for as long as you remain attuned to it. On a failed check, you become {@conditions/charmed charmed} by the orb for as long as you remain attuned to it.",
-      "While you are {@conditions/charmed charmed} by the orb, you can't voluntarily end your attunement to it, and the orb casts {@spells/suggestion suggestion} on you at will (save DC 18), urging you to work toward the evil ends it desires. The dragon essence within the orb might want many things: the annihilation of a particular people, freedom from the orb, to spread suffering in the world, to advance the worship of Takhisis ({@creature Tiamat|RoT|Tiamat's} name on Krynn), or something else the DM decides.",
+      "While you are {@conditions/charmed charmed} by the orb, you can't voluntarily end your attunement to it, and the orb casts {@spells/suggestion suggestion} on you at will (save DC 18), urging you to work toward the evil ends it desires. The dragon essence within the orb might want many things: the annihilation of a particular people, freedom from the orb, to spread suffering in the world, to advance the worship of Tiamat, or something else the DM decides.",
       {
         "type": "entries",
         "name": "Random Properties",
@@ -17489,7 +17489,7 @@
             "type": "list",
             "items": [
               "You can expend 1 charge as an action and use the ring to lower the temperature in a 120-foot-radius sphere centered on a point you can see within 300 feet of you. The temperature in that area drops 20 degrees per minute, to a minimum of -30 degrees Fahrenheit. Frost and ice begin to form on surfaces once the temperature drops below 32 degrees. This effect is permanent unless you use the ring to end it as an action, at which point the temperature in the area returns to normal at a rate of 10 degrees per minute.",
-              "You can cast one of the following spells from the ring (spell save DC 17) by expending the necessary number of charges: {@spells/bigby's hand Bigby's hand} (2 charges; the hand is made of ice, is immune to cold damage, and deals bludgeoning damage instead of force damage as a clenched fist), {@spells/cone-of-cold cone of cold} (2 charges), flesh to ice (3 charges; as {@spells/flesh-to-stone flesh to stone} except that the target turns to solid ice with the density and durability of stone), {@spells/ice-storm ice storm} (2 charges), {@spells/otiluke's freezing sphere Otiluke's freezing sphere} (3 charges), {@spells/sleet-storm sleet storm} (1 charge), {@spells/spike-growth spike growth} (1 charge; the spikes are made of ice), or {@spells/wall-of-ice wall of ice} (2 charges).",
+              "You can cast one of the following spells from the ring (spell save DC 17) by expending the necessary number of charges: {@spells/bigbys-hand Bigby's hand} (2 charges; the hand is made of ice, is immune to cold damage, and deals bludgeoning damage instead of force damage as a clenched fist), {@spells/cone-of-cold cone of cold} (2 charges), flesh to ice (3 charges; as {@spells/flesh-to-stone flesh to stone} except that the target turns to solid ice with the density and durability of stone), {@spells/ice-storm ice storm} (2 charges), {@spells/freezing-sphere Otiluke's freezing sphere} (3 charges), {@spells/sleet-storm sleet storm} (1 charge), {@spells/spike-growth spike growth} (1 charge; the spikes are made of ice), or {@spells/wall-of-ice wall of ice} (2 charges).",
               "You can expend the necessary number of charges as an action and use the ring to create either an inanimate ice object (2 charges) or an animated ice creature (4 charges). The ice object can't have any moving parts, must be able to fit inside a 10-foot cube, and has the density and durability of metal or stone (your choice). The ice creature must be modeled after a beast with a challenge rating of 2 or less. The ice creature has the same statistics as the beast it models, with the following changes: the creature is a construct with vulnerability to fire damage, immunity to cold and poison damage, and immunity to the following conditions: {@conditions/charmed charmed}, {@conditions/exhaustion exhaustion}, {@conditions/frightened frightened}, {@conditions/paralyzed paralyzed}, {@conditions/petrified petrified}, and {@conditions/poisoned poisoned}. The ice creature obeys only its creator's commands. The ice object or creature appears in an unoccupied space within 60 feet of you. It melts into a pool of normal water after 24 hours or when it drops to 0 hit points. In extreme heat, it loses 5 (1d10) hit points per minute as it melts. Use the guidelines in chapter 8 of the Dungeon Master's Guide to determine the hit points of an inanimate object if they become necessary."
             ]
           }
@@ -25101,6 +25101,62 @@
     "weight": -10,
     "entries": [
       "Mithril a magical metal that somehow lighter and stronger than steel. Armor made of mithril no longers imposes disadvantage on Dexterity (Stealth) checks or has a Strength requirement."
+    ]
+  },
+  {
+    "name": "Gold Dragon Fire Whiskey",
+    "id": "gold-dragon-fire-whiskey",
+    "value": 3000,
+    "source": "BREW",
+    "type": "FD",
+    "tier": "minor",
+    "rarity": "uncommon",
+    "weight": 0.5,
+    "entries": [
+      "This drink from a legendary brewing Monastery in Denari smells strongly of pepper and fainly of ash.",
+      "After drinking a shot of this drink, make a DC 12 Constitution saving throw. On a successful save, smoke pours out of your ears and any time in the next our you can use an action to exhale fire. Creatures in a 15-foot cone must make a DC 13 Dexterity saving throw, taking 3d6 fire damage on a failed save, or half as much damage on a successful one. If you fail your save after taking the drink, you instead immediately belch fire, take 1d6 fire damage, and do not gain the fire breath action."
+    ]
+  },
+  {
+    "name": "Gold Dragon Riot Juice",
+    "id": "gold-dragon-riot-juice",
+    "value": 5000,
+    "source": "BREW",
+    "type": "FD",
+    "tier": "minor",
+    "rarity": "uncommon",
+    "weight": 0.5,
+    "entries": [
+      "This 'drink' from a legendary brewing Monastery in Denari is certainly not whiskey, but some do consider it <em>technically</em> potable. Legends say it was originally brewed by a long lost offshoot of mole-like Dwarves discovered in the Veins of the Earth, but there have never been confirmed sightings of such a creature.",
+      "After taking a drink of this liqud you must make a DC 18 Consitiution save. On a successful save, you may spend a single hit die to recove health equal to the maximum possible roll of that hit die and when you make a melee weapon attack using Strength, you gain a +2 bonus to the damage roll. On a failed save you enter a frenzy and use the next 18 seconds attempting to punch who or whatever is standing closest to you."
+    ]
+  },
+  {
+    "name": "Gold Dragon Honeyed Whiskey",
+    "id": "gold-dragon-honeyed-whiskey",
+    "value": 2000,
+    "source": "BREW",
+    "type": "FD",
+    "tier": "minor",
+    "rarity": "uncommon",
+    "weight": 0.5,
+    "entries": [
+      "This drink from a legendary brewing Monastery in Denari is made with honey produced in hives controlled by the Archdruid of Swarms. It is infused with subtle natural magic the confers a very small amount of magical healing.",
+      "When you drink a shot of this whiskey you regain 1d4 + 1 hit points."
+    ]
+  },
+  {
+    "name": "Gold Dragon Glory Whiskey",
+    "id": "gold-dragon-honeyed-whiskey",
+    "value": 20000,
+    "source": "BREW",
+    "type": "FD",
+    "tier": "minor",
+    "rarity": "very rare",
+    "weight": 0.5,
+    "entries": [
+      "This drink from a legendary brewing Monastery in Denari is the most rare, and most fantastic of their products and is created in special small batches on one of the floating battle cubes of Acheron. Drinking a shot of this swirling amber liquid streaked with vibrant red empowers you with some small amout of the Glory competed for in the eternal combats of Acheron.",
+      "For 1 hour after you quaff a drink of this potion you are under the effects of the {@spells/aid aid} spell cast at 3rd level and the {@spell/bless bless} spell (no concentration required for either). When the effects wear off if you are not on the plane of Acheron with additional Glory to use, you must succeed on a DC 20 Charisma save or gain 2 levels of exhaustion as you descend into despondancy."
     ]
   }
 ]

@@ -2043,7 +2043,7 @@
             "items": [
               "1st - {@spells/faerie-fire faerie fire}, {@spells/sleep sleep}",
               "3rd - {@spells/moonbeam moonbeam}, {@spells/see-invisibility see invisibility}",
-              "5th - {@spells/aura-of-vitality aura of vitality}, {@spells/tiny-hut tiny-hut}",
+              "5th - {@spells/aura-of-vitality aura of vitality}, {@spells/leomnuds-tiny-hut tiny hut}",
               "7th - {@spells/aura-of-life aura of life}, {@spells/greater-invisibility greater invisibility}",
               "9th - {@spells/circle-of-power circle of power}, {@spells/mislead mislead}"
             ]
@@ -2956,6 +2956,7 @@
         "text": [
           "Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid. Once you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day.",
           {
+            "type": "column",
             "column": [
               "<h5 class='mb-0'>Circle Spells: Arctic</h5>",
               {
@@ -2997,10 +2998,8 @@
                   "9th - {@spells/dream dream}, {@spells/insect-plague insect plague}"
                 ]
               }
-            ]
-          },
-          {
-            "column": [
+            ],
+            "column2": [
               "<h5 class='mb-0'>Circle Spells: Grassland</h5>",
               {
                 "type": "list",
@@ -3265,7 +3264,7 @@
             "type": "list",
             "items": [
               "2rd - {@spells/burning-hands burning hands}, {@spells/cure-wounds cure wounds}",
-              "3th - {@spells/flaming-sphere slaming sphere}, {@spells/scorching-ray scorching ray}",
+              "3th - {@spells/flaming-sphere flaming sphere}, {@spells/scorching-ray scorching ray}",
               "5th - {@spells/plant-growth plant growth}, {@spells/revivify revivify}",
               "7th - {@spells/aura-of-life aura of life}, {@spells/fire-shield fire shield}",
               "9th - {@spells/flame-strike flame strike}, {@spells/mass-cure-wounds mass cure wounds}"
@@ -3647,19 +3646,19 @@
       ],
       ["8", "+3", "features", "6", "2", "4", "2", "-", "-"
       ],
-      ["9", "+4", "features", "6", "2", "4", "3", "-", "-"
+      ["9", "+4", "features", "6", "2", "4", "2", "-", "-"
       ],
       ["10", "+4", "features", "7", "3", "4", "3", "-", "-"
       ],
       ["11", "+4", "features", "8", "3", "4", "3", "-", "-"
       ],
-      ["12", "+4", "features", "8", "3", "4", "3", "2", "-"
+      ["12", "+4", "features", "8", "3", "4", "3", "-", "-"
       ],
       ["13", "+5", "features", "9", "3", "4", "3", "2", "-"
       ],
       ["14", "+5", "features", "10", "3", "4", "3", "2", "-"
       ],
-      ["15", "+5", "features", "10", "3", "4", "3", "3", "-"
+      ["15", "+5", "features", "10", "3", "4", "3", "2", "-"
       ],
       ["16", "+5", "features", "11", "3", "4", "3", "3", "-"
       ],
@@ -3875,6 +3874,7 @@
           "You gain an additional Arcane Shot option of your choice when you reach certain levels in this class: 7th, 10th, 15th, and 18th level. Each option also improves when you become an 18th-level fighter.",
           "If an option requires a saving throw, your Arcane Shot save DC is calculated as follows: 8 + proficiency + INT",
           {
+            "type": "column",
             "column": [
               "<h5 class='mb-0'>Banishing Shot</h5>",
               "You use abjuration magic to try to temporarily banish your target to a harmless location in the Feywild. If the shot hits a creature, the target must also succeed on a Charisma saving throw or be banished. While banished in this way, its speed is 0, and it is incapacitated. At the end of its next turn, the target reappears in the space it vacated or in the nearest unoccupied space if that space is occupied.",
@@ -3888,10 +3888,8 @@
               "<h5 class='mb-0'>Grasping Shot</h5>",
               "When this shot strikes its target, conjuration magic creates grasping, thorny brambles that wrap around the target. If the shot hits a creature, the target takes an extra 1d8 poison damage, its speed is reduced by 10 feet, and it takes 1d8 slashing damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength (Athletics) check against your Arcane Shot save DC. Otherwise, the brambles last for 1 minute or until you use this option again.",
               "The poison and slashing damage both increase to 2d8 when you reach 18th level in this class."
-            ]
-          },
-          {
-            "column": [
+            ],
+            "column2": [
               "<h5 class='mb-0'>Beguiling Shot</h5>",
               "Your enchantment magic causes this shot to temporarily beguile its target. Choose one of your allies within 30 feet of the target. If the shot hits a creature, the target takes an extra 1d8 psychic damage, and it must succeed on a Wisdom saving throw or be charmed by that ally until the start of your next turn. This effect ends early if the chosen ally deals any damage to the target.",
               "The psychic damage increases to 2d8 when you reach 18th level in this class.",
@@ -5923,7 +5921,7 @@
               "3rd - {@spells/sanctuary sanctuary}, {@spells/sleep sleep}",
               "5th - {@spells/hold-person hold person}, {@spells/calm-emotions calm emotions}",
               "9th - {@spells/counterspell counterspell}, {@spells/hypnotic-pattern hypnotic pattern}",
-              "13th - {@spells/otilukes-resilient-sphere Otiluke's resilient sphere}, {@spells/stoneskin stoneskin}",
+              "13th - {@spells/resilient-sphere resilient sphere}, {@spells/stoneskin stoneskin}",
               "17th - {@spells/hold-monster hold monster}, {@spells/wall-of-force wall of force}"
             ]
           }
@@ -5997,7 +5995,7 @@
         "source": "BREW",
         "text": [
           "The Oath of Spheres is sometimes taken by warriors who serve otherworldly entities and quest to release them into the material plane, but other adherents are incidental devotees. Some were trying to prevent otherworldly incursion and lost their way. Some simply allowed their studies or imagination to roam too widely. Whatever the cause, many who find themselves brushing too close to incomprehensible truth eventually take this oath and become singly devoted to showing others the joy of unrestrained consciousness found in the ever-widening gyre of the stars",
-          "<h5 class='mb-0'>Tenets of Madness</h5>The tenets of the Oath of the Madness vary as widely as its followers, but generally emphasize the following tenets.",
+          "<h5 class='mb-0'>Tenets of the Spheres</h5>The tenets of the Oath of Spheres vary as widely as its followers, but generally emphasize the following tenets.",
           "<p class='pad-left'><strong>Whisper the Truths.</strong> Normalcy is a curse. You must find hidden knowledge and share its truths to unburden the afflicted.<p class='pad-left'><strong>Write the Books.</strong> There is no point only speaking -- spoken word exists for mere seconds. Write the gospel wherever you go, with whatever tools and surfaces are available.<p class='pad-left'><strong>Assist the Envoys.</strong> Those touched with madness have seen the patterns in the stars. You are the protector of the mad, wild, and forgotten; do not allow them to be harmed.<p class='pad-left'><strong>Open the Way.</strong> Doors and windows must be open and uncovered as much as possible so that you might look to the stars -- and so that the stars might look back.<h5 class='mb-0'>Oath Spells</h5>You gain oath spells at the paladin levels listed.",
           {
             "type": "list",
@@ -6040,7 +6038,7 @@
         "source": "TCE",
         "text": [
           "The Oath of the Watchers binds paladins to protect mortal realms from the predations of extraplanar creatures, many of which can lay waste to mortal soldiers. Thus, the Watchers hone their minds, spirits, and bodies to be the ultimate weapons against such threats.Paladins who follow the Watchers' oath are ever vigilant in spotting the influence of extraplanar forces, often establishing a network of spies and informants to gather information on suspected cults. To a Watcher, keeping a healthy suspicion and awareness about one's surroundings is as natural as wearing armor in battle.",
-          "<h5 class='mb-0'>Tenets of Madness</h5> A paladin who assumes the Oath of the Watchers swears to safeguard mortal realms from otherworldly threats.",
+          "<h5 class='mb-0'>Tenets of the Watchers</h5> A paladin who assumes the Oath of the Watchers swears to safeguard mortal realms from otherworldly threats.",
           "<strong>Vigilance</strong>. The threats you face are cunning, powerful, and subversive. Be ever alert for their corruption.",
           "<strong>Loyalty</strong>. Never accept gifts or favors from fiends or those who truck with them. Stay true to your order, your comrades, and your duty.",
           "<strong>Discipline.</strong> You are the shield against the endless terrors that lie beyond the stars. Your blade must be forever sharp and your mind keen to survive what lies beyond.",
@@ -6860,7 +6858,7 @@
         "level": 3,
         "filter": "yes",
         "subclass": "stalker",
-        "name": "stalker",
+        "name": "gloom stalker",
         "title": "Archetype: Gloom Stalker",
         "source": "XGE",
         "text": [
@@ -6912,7 +6910,7 @@
         "level": 3,
         "filter": "yes",
         "subclass": "horizon",
-        "name": "horizon",
+        "name": "horizon walker",
         "title": "Archetype: Horizon Walker",
         "source": "XGE",
         "text": [
@@ -6963,7 +6961,7 @@
         "level": 3,
         "filter": "yes",
         "subclass": "fey",
-        "name": "fey",
+        "name": "fey wanderer",
         "title": "Archetype: Fey Wanderer",
         "source": "TCE",
         "text": [
@@ -7451,19 +7449,19 @@
       ],
       ["8", "+3", "features", "4d6", "6", "3", "4", "2", "-", "-"
       ],
-      ["9", "+4", "features", "5d6", "6", "3", "4", "3", "-", "-"
+      ["9", "+4", "features", "5d6", "6", "3", "4", "2", "-", "-"
       ],
       ["10", "+4", "features", "5d6", "7", "4", "4", "3", "-", "-"
       ],
       ["11", "+4", "features", "6d6", "8", "4", "4", "3", "-", "-"
       ],
-      ["12", "+4", "features", "6d6", "8", "4", "4", "3", "2", "-"
+      ["12", "+4", "features", "6d6", "8", "4", "4", "3", "-", "-"
       ],
       ["13", "+5", "features", "7d6", "9", "4", "4", "3", "2", "-"
       ],
       ["14", "+5", "features", "7d6", "10", "4", "4", "3", "2", "-"
       ],
-      ["15", "+5", "features", "8d6", "10", "4", "4", "3", "3", "-"
+      ["15", "+5", "features", "8d6", "10", "4", "4", "3", "2", "-"
       ],
       ["16", "+5", "features", "8d6", "11", "4", "4", "3", "3", "-"
       ],
@@ -8433,7 +8431,7 @@
         "level": 1,
         "filter": "yes",
         "subclass": "raw",
-        "name": "raw",
+        "name": "raw magic",
         "title": "Raw Magic",
         "source": "BREW",
         "text": [
@@ -8466,7 +8464,7 @@
         "level": 1,
         "filter": "yes",
         "subclass": "dragon",
-        "name": "dragon",
+        "name": "draconic",
         "title": "Draconic Bloodline",
         "source": "PHB",
         "text": [
@@ -8600,7 +8598,7 @@
         "level": 1,
         "filter": "yes",
         "subclass": "gravity",
-        "name": "gravity",
+        "name": "gravity wielder",
         "title": "Gravity Wielder",
         "source": "BREW",
         "text": [
@@ -9025,7 +9023,7 @@
         "level": 1,
         "filter": "yes",
         "subclass": "fey",
-        "name": "fey",
+        "name": "archfey",
         "title": "Patron: The Archfey",
         "source": "PHB",
         "text": [
