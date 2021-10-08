@@ -1,7 +1,805 @@
 [
   {
+    "name": "Artificier",
+    "id": "artificier",
+    "source": "TCE",
+    "description": "Masters of invention, artificers use ingenuity and magic to unlock extraordinary capabilities in objects. They see magic as a complex system waiting to be decoded and then harnessed in their spells and inventions.",
+    "hd": "8",
+    "stat": "CON",
+    "proficiencies": {
+      "armor": "light armor, medium armor, shields",
+      "weapons": "simple weapons, firearms",
+      "tools": "{@items/thieves-tools thieves' tools}, {@items/tinkers-tools tinker's tools}, one type of artisan's tolls of your choice",
+      "saves": "CON, INT",
+      "skills": "Choose two from Arcana, History, Investigation, Medicine, Nature, Perception, and Sleight of Hand"
+    },
+    "equipment": {
+      "default": [
+        "any two simple weapons of your choice",
+        "a {@items/light-crossbow light crossbow} and 20 {@items/crossbow-bolt bolts}",
+        "(a) {@items/studded-leather-armor studded leather armor} or (b) {@items/scale-mail scale mail}",
+        "{@items/thieves-tools thieves' tools} and a {@items/dungeoneers-pack dungeoneer's pack}"
+      ],
+      "alt": "5d4"
+    },
+    "multiclassing": {
+      "minScore": "Intellegence 13",
+      "armor": "light armor, medium armor, shields",
+      "weapons": "thieves' tools, tinker's tools"
+    },
+    "levelTable": [
+      ["Level", "Proficiency", "Features", "Infusions", "Infused Items", "Cantrips", "1st", "2nd", "3rd", "4th", "5th"
+      ],
+      ["1", "+2", "features", "-", "-", "2", "2", "-", "-", "-", "-"
+      ],
+      ["2", "+2", "features", "4", "2", "2", "2", "-", "-", "-", "-"
+      ],
+      ["3", "+2", "features", "4", "2", "2", "3", "-", "-", "-", "-"
+      ],
+      ["4", "+2", "features", "4", "2", "2", "3", "-", "-", "-", "-"
+      ],
+      ["5", "+3", "features", "4", "2", "2", "4", "2", "-", "-", "-"
+      ],
+      ["6", "+3", "features", "6", "3", "2", "4", "2", "-", "-", "-"
+      ],
+      ["7", "+3", "features", "6", "3", "2", "4", "3", "-", "-", "-"
+      ],
+      ["8", "+3", "features", "6", "3", "2", "4", "3", "-", "-", "-"
+      ],
+      ["9", "+4", "features", "6", "3", "2", "4", "3", "2", "-", "-"
+      ],
+      ["10", "+4", "features", "8", "4", "3", "4", "3", "2", "-", "-"
+      ],
+      ["11", "+4", "features", "8", "4", "3", "4", "3", "3", "-", "-"
+      ],
+      ["12", "+4", "features", "8", "4", "3", "4", "3", "3", "-", "-"
+      ],
+      ["13", "+5", "features", "8", "4", "3", "4", "3", "3", "1", "-"
+      ],
+      ["14", "+5", "features", "10", "5", "4", "4", "3", "3", "1", "-"
+      ],
+      ["15", "+5", "features", "10", "5", "4", "4", "3", "3", "2", "-"
+      ],
+      ["16", "+5", "features", "10", "5", "4", "4", "3", "3", "2", "-"
+      ],
+      ["17", "+6", "features", "10", "5", "4", "4", "3", "3", "3", "1"
+      ],
+      ["18", "+6", "features", "12", "6", "4", "4", "3", "3", "3", "1"
+      ],
+      ["19", "+6", "features", "12", "6", "4", "4", "3", "3", "3", "2"
+      ],
+      ["20", "+6", "features", "12", "6", "4", "4", "3", "3", "3", "2"
+      ]
+    ],
+    "features":
+    [
+      {
+        "level": 1,
+        "subclass": "base",
+        "name": "magical-tinkering",
+        "title": "Magical Tinkering",
+        "text": [
+          "At 1st level, you learn how to invest a spark of magic into mundane objects. To use this ability, you must have thieves' tools or artisan's tools in hand. You then touch a Tiny nonmagical object as an action and give it one of the following magical properties of your choice:",
+          {
+            "type": "list",
+            "items": [
+              "The object sheds bright light in a 5-foot radius and dim light for an additional 5 feet.",
+              "Whenever tapped by a creature, the object emits a recorded message that can be heard up to 10 feet away. You utter the message when you bestow this property on the object, and the recording can be no more than 6 seconds long.",
+              "The object continuously emits your choice of an odor or a nonverbal sound (wind, waves, chirping, or the like). The chosen phenomenon is perceivable up to 10 feet away.",
+              "A static visual effect appears on one of the object's surfaces. This effect can be a picture, up to 25 words of text, lines and shapes, or a mixture of these elements, as you like."
+            ]
+          },
+          "The chosen property lasts indefinitely. As an action, you can touch the object and end the property early.",
+          "You can bestow magic on multiple objects, touching one object each time you use this feature, though a single object can only bear one property at a time. The maximum number of objects you can affect with this feature at one time is equal to your Intelligence modifier (minimum of one object). If you try to exceed your maximum, the oldest property immediately ends, and then the new property applies."
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "base",
+        "name": "casting",
+        "title": "Spellcasting",
+        "text": [
+          "You have studied the workings of magic and how to channel it through objects. As a result, you have gained the ability to cast spells. To observers, you don't appear to be casting spells in a conventional way; you look as if you're producing wonders using mundane items or outlandish inventions.",
+          "<h5 class='mb-0'>Tools Required</h5>",
+          "You produce your artificer spell effects through your tools. You must have a spellcasting focus—specifically thieves' tools or some kind of artisan's tool—in hand when you cast any spell with this Spellcasting feature (meaning the spell has an 'M' component when you cast it). You must be proficient with the tool to use it in this way.",
+          "After you gain the Infuse Item feature at 2nd level, you can also use any item bearing one of your infusions as a spellcasting focus.",
+          "As an artificer, you use tools when you cast your spells. When describing your spellcasting, think about how you're using a tool to perform the spell effect. If you cast cure wounds using alchemist's supplies, you could be quickly producing a salve. If you cast it using tinker's tools, you might have a miniature mechanical spider that binds wounds. When you cast poison spray, you could fling foul chemicals or use a wand that spits venom. The effect of the spell is the same as for a spellcaster of any other class, but your method of spellcasting is special.",
+          "The same principle applies when you prepare your spells. As an artificer, you don't study a spellbook or pray to prepare your spells. Instead, you work with your tools and create the specialized items you'll use to produce your effects. If you replace cure wounds with heat metal, you might be altering the device you use to heal—perhaps modifying a tool so that it channels heat instead of healing energy. Such details don't limit you in any way or provide you with any benefit beyond the spell's effects. You don't have to justify how you're using tools to cast a spell. But describing your spellcasting creatively is a fun way to distinguish yourself from other spellcasters.",
+          "<h5 class='mb-0'>Cantrips</h5>",
+          "At 1st level, you know two cantrips of your choice from the artificer spell list. At higher levels, you learn additional artificer cantrips of your choice, as shown in the Cantrips Known column of the Artificer table.",
+          "When you gain a level in this class, you can replace one of the artificer cantrips you know with another cantrip from the artificer spell list.",
+          "<h5 class='mb-0'>Preparing and Casting Spells</h5>",
+          "The Artificer table shows how many spell slots you have to cast your artificer spells. To cast one of your artificer spells of 1st level or higher, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.",
+          "You prepare the list of artificer spells that are available for you to cast, choosing from the artificer spell list. When you do so, choose a number of artificer spells equal to your Intelligence modifier + half your artificer level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.",
+          "You can change your list of prepared spells when you finish a long rest. Preparing a new list of artificer spells requires time spent tinkering with your spellcasting focuses: at least 1 minute per spell level for each spell on your list.",
+          "<h5 class='mb-0'>Spellcasting Ability</h5>",
+          "Intelligence is your spellcasting ability for your artificer spells; your understanding of the theory behind magic allows you to wield these spells with superior skill. ",
+          {
+            "type": "list",
+            "items": [
+              "Spell save DC = 8 + proficiency + INT",
+              "Spell attack modifier = proficiency + INT"
+            ]
+          },
+          "<h5 class='mb-0'>Ritual Casting</h5>",
+          "You can cast an artificer spell as a ritual if that spell has the ritual tag and you have the spell prepared."
+        ]
+      },
+      {
+        "level": 2,
+        "subclass": "base",
+        "name": "infuse-item",
+        "title": "Infuse Item",
+        "text": [
+          "At 2nd level, you gain the ability to imbue mundane items with certain magical infusions. The magic items you create with this feature are effectively prototypes of permanent items.",
+          "<h5 class='mb-0'>Infusion Known</h5>",
+          "When you gain this feature, pick four artificer infusions to learn, choosing from the type 'Artificer Infusions' on the {@other-features/arcane-propulsion-armor other features} section of the site. You learn additional infusions of your choice when you reach certain levels in this class, as shown in the Infusions Known column of the Artificer table. Whenever you gain a level in this class, you can replace one of the artificer infusions you learned with a new one.",
+          "<h5 class='mb-0'>Infusing an Item</h5>",
+          "Whenever you finish a long rest, you can touch a nonmagical object and imbue it with one of your artificer infusions, turning it into a magic item. An infusion works on only certain kinds of objects, as specified in the infusion's description. If the item requires attunement, you can attune yourself to it the instant you infuse the item. If you decide to attune to the item later, you must do so using the normal process for attunement.",
+          "Your infusion remains in an item indefinitely, but when you die, the infusion vanishes after a number of days have passed equal to your Intelligence modifier (minimum of 1 day). The infusion also vanishes if you give up your knowledge of the infusion for another one.",
+          "You can infuse more than one nonmagical object at the end of a long rest; the maximum number of objects appears in the Infused Items column of the Artificer table. You must touch each of the objects, and each of your infusions can be in only one object at a time. Moreover, no object can bear more than one of your infusions at a time. If you try to exceed your maximum number of infusions, the oldest infusion immediately ends, and then the new infusion applies.",
+          "If an infusion ends on an item that contains other things, like a bag of holding, its contents harmlessly appear in and around its space."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "base",
+        "name": "specialist",
+        "title": "Artificer Specialization",
+        "text": [
+          "At 3rd level, you choose the type of specialist you are, each of which is detailed at the end of the class's description. Your choice grants you features at 5th level and again at 9th and 15th level."
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "alchemist",
+        "name": "alchemist",
+        "title": "Specialization: Alchemist",
+        "source": "TCE",
+        "text": [
+          "An Alchemist is an expert at combining reagents to produce mystical effects. Alchemists use their creations to give life and to leech it away. Alchemy is the oldest of artificer traditions, and its versatility has long been valued during times of war and peace."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "alchemist",
+        "name": "alchemist-tools",
+        "title": "Alchemist: Tool Proficiency",
+        "text": [
+          "When you adopt this specialization at 3rd level, you gain proficiency with alchemist's supplies. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "alchemist",
+        "name": "alchemist-spells",
+        "title": "Alchemist: Alchemy Spells",
+        "text": [
+          "Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Alchemist Spells table. These spells count as artificer spells for you, but they don't count against the number of artificer spells you prepare.",
+          {
+            "type": "list",
+            "items": [
+              "3rd - {@spells/healing-word healing word}, {@spells/ray-of-sickness ray of sickness}",
+              "5rd - {@spells/flaming-sphere flaming sphere}, {@spells/melfs-acid-arrow Melf's acid arrow}",
+              "9rd - {@spells/gaseous-form gaseous form}, {@spells/mass-healing-word mass healing word}",
+              "13rd - {@spells/blight blight}, {@spells/death-ward death ward}",
+              "17rd - {@spells/cloudkill cloudkill}, {@spells/raise-dead raise dead}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "alchemist",
+        "name": "alchemist-elixer",
+        "title": "Alchemist: Experimental Elixer",
+        "text": [
+          "Beginning at 3rd level, whenever you finish a long rest, you can magically produce an experimental elixir in an empty flask you touch. Roll on the Experimental Elixir table for the elixir's effect, which is triggered when someone drinks the elixir. As an action, a creature can drink the elixir or administer it to an incapacitated creature.",
+          "Creating an experimental elixir requires you to have alchemist's supplies on your person, and any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.",
+          "When you reach certain levels in this class, you can make more elixirs at the end of a long rest: two at 6th level and three at 15th level. Roll for each elixir's effect separately. Each elixir requires its own flask.",
+          "You can create additional experimental elixirs by expending a spell slot of 1st level or higher for each one. When you do so, you use your action to create the elixir in an empty flask you touch, and you choose the elixir's effect from the Experimental Elixir table.",
+          {
+            "type": "table",
+            "colStyles": [
+              "text-center",
+              ""
+            ],
+            "colLabels": [
+              "d6",
+              "Effect"
+            ],
+            "rows": [
+              [
+                "1",
+                "<strong>Healing</strong>. The drinker regains a number of hit points equal to 2d4 + your Intelligence modifier."
+              ],
+              [
+                "2",
+                "<strong>Swiftness</strong>. The drinker's walking speed increases by 10 feet for 1 hour."
+              ],
+              [
+                "3",
+                "<strong>Resilience</strong>. The drinker gains a +1 bonus to AC for 10 minutes."
+              ],
+              [
+                "4",
+                "<strong>Boldness</strong>. The drinker can roll a d4 and add the number rolled to every attack roll and saving throw they make for the next minute."
+              ],
+              [
+                "5",
+                "<strong>Flight</strong>. The drinker gains a flying speed of 10 feet for 10 minutes."
+              ],
+              [
+                "6",
+                "<strong>Transformation</strong>. The drinker's body is transformed as if by the alter self spell. The drinker determines the transformation caused by the spell, the effects of which last for 10 minutes."
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "armorer",
+        "name": "armorer",
+        "title": "Specialization: Armorer",
+        "source": "TCE",
+        "text": [
+          "An artificer who specializes as an Armorer modifies armor to function almost like a second skin. The armor is enhanced to hone the artificer's magic, unleash potent attacks, and generate a formidable defense. The artificer bonds with this armor, becoming one with it even as they experiment with it and refine its magical capabilities."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "armorer",
+        "name": "armorer-tools",
+        "title": "Armorer: Tools of the Trade",
+        "text": [
+          "You gain proficiency with heavy armor. You also gain proficiency with smith's tools. If you already have this tool proficiency, you gain proficiency with one other type of artisan's tools of your choice."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "armorer",
+        "name": "armorer-spells",
+        "title": "Armorer: Armorer Spells",
+        "text": [
+          "Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Armorer Spells table. These spells count as artificer spells for you, but they don't count against the number of artificer spells you prepare.",
+          {
+            "type": "list",
+            "items": [
+              "3rd - {@spells/magic-missile magic missile}, {@spells/thunderwave thunderwave}",
+              "5rd - {@spells/mirror-image mirror image}, {@spells/shatter shatter}",
+              "9rd - {@spells/hypnotic-pattern hypnotic pattern}, {@spells/lightning-bolt lightning bolt}",
+              "13rd - {@spells/fire-shield fire shield}, {@spells/greater-invisibility greater invisibillity}",
+              "17rd - {@spells/passwall passwall}, {@spells/wall-of-force wall of force}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "armorer",
+        "name": "armorer-armor",
+        "title": "Armorer: Arcane Armor",
+        "text": [
+          "Your metallurgical pursuits have led to you making armor a conduit for your magic. As an action, you can turn a suit of armor you are wearing into Arcane Armor, provided you have smith's tools in hand. You gain the following benefits while wearing this armor:",
+          {
+            "type": "list",
+            "items": [
+              "If the armor normally has a Strength requirement, the arcane armor lacks this requirement for you.",
+              "You can use the arcane armor as a spellcasting focus for your artificer spells.",
+              "The armor attaches to you and can't be removed against your will. It also expands to cover your entire body, although you can retract or deploy the helmet as a bonus action. The armor replaces any missing limbs, functioning identically to a limb it replaces.",
+              "You can doff or don the armor as an action. The armor continues to be Arcane Armor until you don another suit of armor or you die."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "armorer",
+        "name": "armorer-armor-model",
+        "title": "Armorer: Armor Model",
+        "text": [
+          "You can customize your Arcane Armor. When you do so, choose one of the following armor models: Guardian or Infiltrator. The model you choose gives you special benefits while you wear it.Each model includes a special weapon. When you attack with that weapon, you can add your Intelligence modifier, instead of Strength or Dexterity, to the attack and damage rolls.",
+          "You can change the armor's model whenever you finish a short or long rest, provided you have smith's tools in hand.",
+          "<h5 class='mb-0'>Guardian Armor</h5>",
+          "You design your armor to be in the front line of conflict. It has the following features:",
+          {
+            "type": "list",
+            "items": [
+              "<strong>Thunder Gauntlets.</strong> Each of the armor's gauntlets counts as a simple melee weapon while you aren't holding anything in it, and it deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.",
+              "<strong>Defensive Field.</strong> As a bonus action, you can gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+
+            ]
+          },
+          "<h5 class='mb-0'>Infiltrator Armor</h5>",
+          "You customize your armor for subtle undertakings. It has the following features:",
+          {
+            "type": "list",
+            "items": [
+              "<strong>Lightning Launcher.</strong> A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.",
+              "<strong>Powered Steps.</strong> Your walking speed increases by 5 feet.",
+              "<strong>Dampening Field.</strong> You have advantage on Dexterity (Stealth) checks. If the armor normally imposes disadvantage on such checks, the advantage and disadvantage cancel each other, as normal."
+
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "artillerist",
+        "name": "artillerist",
+        "title": "Specialization: Artillerist",
+        "source": "TCE",
+        "text": [
+          "An Artillerist specializes in using magic to hurl energy, projectiles, and explosions on a battlefield. This destructive power is valued by armies in times of war, but some members of this specialization have sought to build a more peaceful world by using their powers to fight strife instead of cause it."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "artillerist",
+        "name": "artillerist-tools",
+        "title": "Artillerist: Tool Proficiency",
+        "text": [
+          "When you adopt this specialization at 3rd level, you gain proficiency with woodcarver's tools. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "artillerist",
+        "name": "artillerist-spells",
+        "title": "Artillerist: Artillerist Spells",
+        "text": [
+          "Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Artillerist Spells table. These spells count as artificer spells for you, but they don't count against the number of artificer spells you prepare.",
+          {
+            "type": "list",
+            "items": [
+              "3rd - {@spells/shield shield}, {@spells/thunderwave thunderwave}",
+              "5rd - {@spells/scorching-ray scorching ray}, {@spells/shatter shatter}",
+              "9rd - {@spells/fireball fireball}, {@spells/wind-wall wind wall}",
+              "13rd - {@spells/ice-storm ice storm}, {@spells/wall-of-fire wall of fire}",
+              "17rd - {@spells/cone-of-cold cone of cold}, {@spells/wall-of-force wall of force}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "artillerist",
+        "name": "artillerist-cannon",
+        "title": "Artillerist: Arcane Cannon",
+        "text": [
+          "At 3rd level, you learn how to create a magical cannon. Using woodcarver's tools or smith's tools, you can take an action to magically create a Small or Tiny arcane cannon in an unoccupied space on a horizontal surface within 5 feet of you. A Small cannon occupies its space, and a Tiny one can be held in one hand.",
+          "Once you create a cannon, you can't do so again until you finish a long rest or until you expend a spell slot of 1st level or higher. You can have only one cannon at a time and can't create one while your cannon is present.",
+          "The cannon is a magical object. Regardless of size, the cannon has an AC of 18 and a number of hit points equal to five times your artificer level. It is immune to poison damage and psychic damage, and all conditions. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+0). If the mending spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action.",
+          "When you create the cannon, you determine its appearance and whether it has legs. You also decide which type it is, choosing from the options on the Arcane Cannons table. On each of your turns, you can take a bonus action to cause the cannon to activate if you are within 60 feet of it. As part of the same bonus action, you can direct the cannon to walk or climb up to 15 feet to an unoccupied space, provided it has legs.",
+          {
+            "type": "table",
+            "colStyles": [
+              "text-center",
+              ""
+            ],
+            "colLabels": [
+              "Cannon",
+              "Activation"
+            ],
+            "rows": [
+              [
+                "Flamer",
+                "The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren't being worn or carried."
+              ],
+              [
+                "Force Shot",
+                "Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon."
+              ],
+              [
+                "Protector",
+                "The cannon emits a burst of positive energy that grants itself and each creature of your choice within 10 feet of it a number of temporary hit points equal to 1d8 + INT (minimum of +1)."
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "battlesmith",
+        "name": "battlesmith",
+        "title": "Specialization: Battlesmith",
+        "source": "TCE",
+        "text": [
+          "Armies require protection, and someone has to put things back together if defenses fail. A combination of protector and medic, a Battlesmith is an expert at defending others and repairing both material and personnel. To aid in their work, Battlesmiths are usually accompanied by a steel defender, a protective companion of their own creation. Many soldiers tell stories of nearly dying before being saved by a Battlesmith and a steel defender."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "battlesmith",
+        "name": "battlesmith-tools",
+        "title": "Battlesmith: Tool Proficiency",
+        "text": [
+          "When you adopt this specialization at 3rd level, you gain proficiency with smith's tools. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "battlesmith",
+        "name": "battlesmith-spells",
+        "title": "Battlesmith: Battlesmith Spells",
+        "text": [
+          "Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Battlesmith Spells table. These spells count as artificer spells for you, but they don't count against the number of artificer spells you prepare.",
+          {
+            "type": "list",
+            "items": [
+              "3rd - {@spells/shield shield}, {@spells/heroism heroism}",
+              "5rd - {@spells/branding-smite branding smite}, {@spells/warding-bond warding bond}",
+              "9rd - {@spells/aura-of-vitality aura of vitality}, {@spells/conjure-barrage conjure barrage}",
+              "13rd - {@spells/aura-of-purity aura of purity}, {@spells/fire-shield fire shield}",
+              "17rd - {@spells/banishing-smite banishing smite}, {@spells/mass-cure-wounds mass cure wounds}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "battlesmith",
+        "name": "battlesmith-cannon",
+        "title": "Battlesmith: Arcane Cannon",
+        "text": [
+          "When you reach 3rd level, your combat training and your experiments with magic have paid off in two ways:",
+          {
+            "type": "list",
+            "items": [
+              "You gain proficiency with martial weapons.",
+              "When you attack with a magic weapon, you can use your Intelligence modifier, instead of Strength or Dexterity modifier, for the attack and damage rolls."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "battlesmith",
+        "name": "battlesmith-defender",
+        "title": "Battlesmith: Steel Defender",
+        "text": [
+          "By 3rd level, your tinkering has borne you a faithful companion, a {@beastiary/steel-defender steel defender}. It is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the steel defender stat block, which uses your proficiency bonus (PB) in several places. You determine the creature's appearance and whether it has two legs or four; your choice has no effect on its game statistics.",
+          "In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge.",
+          "If the {@spells/mending mending} spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith's tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.",
+          "At the end of a long rest, you can create a new steel defender if you have your smith's tools with you. If you already have a steel defender from this feature, the first one immediately perishes. The defender also perishes if you die."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "base",
+        "name": "right-tool-for-the-job",
+        "title": "The Right Tool for the Job",
+        "text": [
+          "At 3rd level, you learn how to produce exactly the tool you need: with thieves' tools or artisan's tools in hand, you can magically create one set of artisan's tools in an unoccupied space within 5 feet of you. This creation requires 1 hour of uninterrupted work, which can coincide with a short or long rest. Though the product of magic, the tools are nonmagical, and they vanish when you use this feature again."
+        ]
+      },
+      {
+        "level": 4,
+        "subclass": "base",
+        "name": "asi-1",
+        "title": "Ability Score Improvement 1",
+        "text": [
+          "When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. You may instead take a feat."
+        ]
+      },
+      {
+        "level": 5,
+        "subclass": "base",
+        "name": "sp-feature-2",
+        "title": "2nd Specialization Feature",
+        "text": [
+          "At 5th level, you gain a feature granted by your Artificer Specialization choice."
+        ]
+      },
+      {
+        "level": 5,
+        "subclass": "alchemist",
+        "name": "alchemist-savant",
+        "title": "Alchemist: Alchemical Savant",
+        "text": [
+          "At 5th level, you develop masterful command of magical chemicals, enhancing the healing and damage you create through them. Whenever you cast a spell using your alchemist's supplies as the spellcasting focus, you gain a bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage, and the bonus equals your INT (minimum of +1)."
+        ]
+      },
+      {
+        "level": 5,
+        "subclass": "armorer",
+        "name": "armorer-extra-attack",
+        "title": "Armorer: Extra Attack",
+        "text": [
+          "You can attack twice, rather than once, whenever you take the Attack action on your turn."
+        ]
+      },
+      {
+        "level": 5,
+        "subclass": "artillerist",
+        "name": "artillerist-arcane-firearm",
+        "title": "Artillerist: Arcane Firearm",
+        "text": [
+          "At 5th level, you know how to turn a wand, staff, or rod into an arcane firearm, a conduit for your destructive spells. When you finish a long rest, you can use woodcarver's tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely.",
+          "You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell's damage rolls equal to the number rolled."
+        ]
+      },
+      {
+        "level": 5,
+        "subclass": "battlesmith",
+        "name": "battlesmith-extra-attack",
+        "title": "Battlesmith: Extra Attack",
+        "text": [
+          "You can attack twice, rather than once, whenever you take the Attack action on your turn."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "base",
+        "name": "tool-expertise",
+        "title": "Tool Expertise",
+        "text": [
+          "Starting at 6th level, your proficiency bonus is doubled for any ability check you make that uses your proficiency with a tool."
+        ]
+      },
+      {
+        "level": 7,
+        "subclass": "base",
+        "name": "flash-of-genius",
+        "title": "Flash of Genius",
+        "text": [
+          "Starting at 7th level, you gain the ability to come up with solutions under pressure. When you or another creature you can see within 30 feet of you makes an ability check or a saving throw, you can use your reaction to add your Intelligence modifier to the roll.",
+          "You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "level": 8,
+        "subclass": "base",
+        "name": "asi-2",
+        "title": "Ability Score Improvement 2",
+        "text": [
+          "When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. You may instead take a feat."
+        ]
+      },
+      {
+        "level": 9,
+        "subclass": "base",
+        "name": "sp-feature-3",
+        "title": "3rd Specialization Feature",
+        "text": [
+          "At 9th level, you gain a feature granted by your Artificer Specialization choice."
+        ]
+      },
+      {
+        "level": 9,
+        "subclass": "alchemist",
+        "name": "alchemist-reagents",
+        "title": "Alchemist: Restorative Reagents",
+        "text": [
+          "Starting at 9th level, you can incorporate restorative reagents into some of your works:",
+          {
+            "type": "list",
+            "items": [
+              "Whenever a creature drinks an experimental elixir you created, the creature gains temporary hit points equal to 2d6 + INT (minimum of 1 temporary hit point).",
+              "You can cast lesser restoration without expending a spell slot and without preparing the spell, provided you use alchemist's supplies as the spellcasting focus. You can do so a number of times equal to INT (minimum of once), and you regain all expended uses when you finish a long rest."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "subclass": "armorer",
+        "name": "armorer-armor-mods",
+        "title": "Armorer: Armor Modifications",
+        "text": [
+          "You learn how to use your artificer infusions to specially modify your Arcane Armor. That armor now counts as separate items for the purposes of your Infuse Items feature: armor (the chest piece), boots, helmet, and the armor's special weapon. Each of those items can bear one of your infusions, and the infusions transfer over if you change your armor's model with the Armor Model feature. In addition, the maximum number of items you can infuse at once increases by 2, but those extra items must be part of your Arcane Armor."
+        ]
+      },
+      {
+        "level": 9,
+        "subclass": "artillerist",
+        "name": "artillerist-explosive-cannon",
+        "title": "Artillerist: Explosive Cannon",
+        "text": [
+          "Starting at 9th level, every arcane cannon you create is more destructive:",
+          {
+            "type": "list",
+            "items": [
+              "The cannon's damage rolls all increase by 1d8.",
+              "As an action, you can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d8 force damage on a failed save or half as much damage on a successful one."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "subclass": "battlesmith",
+        "name": "battlesmith-arcane-jolt",
+        "title": "Battlesmith: Arcane Jolt",
+        "text": [
+          "At 9th level, you learn new ways to channel arcane energy to harm or heal. When either you hit a target with a magic weapon attack or your steel defender hits a target, you can channel magical energy through the strike to create one of the following effects:",
+          {
+            "type": "list",
+            "items": [
+              "The target takes an extra 2d6 force damage.",
+              "Choose one creature or object you can see within 30 feet of the target. Healing energy flows into the chosen recipient, restoring 2d6 hit points to it."
+            ]
+          },
+          "You can use this energy a number of times equal to your Intelligence modifier (minimum of once), but you can do so no more than once on a turn. You regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "level": 10,
+        "subclass": "base",
+        "name": "item-adept",
+        "title": "Magical Item Adept",
+        "text": [
+          "When you reach 10th level, you achieve a profound understanding of how to use and make magic items:",
+          {
+            "type": "list",
+            "items": [
+              "You can attune to up to four magic items at once.",
+              "If you craft a magic item with a rarity of common or uncommon, it takes you a quarter of the normal time, and it costs you half as much of the usual gold."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 11,
+        "subclass": "base",
+        "name": "spell-store-item",
+        "title": "Spell Storing Item",
+        "text": [
+          "At 11th level, you learn how to store a spell in an object. Whenever you finish a long rest, you can touch one simple or martial weapon or one item that you can use as a spellcasting focus, and you store a spell in it, choosing a 1st- or 2nd-level spell from the artificer spell list that requires 1 action to cast (you needn't have it prepared).",
+          "While holding the object, a creature can take an action to produce the spell's effect from it, using your spellcasting ability modifier. If the spell requires concentration, the creature must concentrate. The spell stays in the object until it's been used a number of times equal to twice your Intelligence modifier (minimum of twice) or until you use this feature again to store a spell in an object."
+        ]
+      },
+      {
+        "level": 12,
+        "subclass": "base",
+        "name": "asi-3",
+        "title": "Ability Score Improvement 3",
+        "text": [
+          "When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. You may instead take a feat."
+        ]
+      },
+      {
+        "level": 14,
+        "subclass": "base",
+        "name": "magic-item-savant",
+        "title": "Magic Item Savant",
+        "text": [
+          "At 14th level, your skill with magic items deepens more:",
+          {
+            "type": "list",
+            "items": [
+              "You can attune to up to five magic items at once.",
+              "You ignore all class, race, spell, and level requirements on attuning to or using a magic item."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "base",
+        "name": "sp-feature-4",
+        "title": "4th Specialization Feature",
+        "text": [
+          "At 15th level, you gain a feature granted by your Artificer Specialization choice."
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "alchemist",
+        "name": "alchemist-mastery",
+        "title": "Alchemist: Chermical Mastery",
+        "text": [
+          "By 15th level, you have been exposed to so many chemicals that they pose little risk to you, and you can use them to quickly end certain ailments:",
+          {
+            "type": "list",
+            "items": [
+              "You gain resistance to acid damage and poison damage, and you are immune to the poisoned condition.",
+              "You can cast {@spells/greater-restoration greater restoration} and {@spells/heal heal} without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist's supplies as the spellcasting focus. Once you cast either spell with this feature, you can't cast that spell with it again until you finish a long rest."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "armorer",
+        "name": "armorer-perfected armor",
+        "title": "Armorer: Perfected Armor",
+        "text": [
+          "Your Arcane Armor gains additional benefits based on its model, as shown below:",
+          "<h5 class='mb-0'>Guardian Armor</h5>",
+          "When a Huge or smaller creature you can see ends its turn within 30 feet of you, you can use your reaction to magically force the creature to make a Strength saving throw against your spell save DC, pulling the creature up to 30 feet toward you to an unoccupied space. If you pull the target to a space within 5 feet of you, you can make a melee weapon attack against it as part of this reaction.",
+          "You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest.",
+          "<h5 class='mb-0'>Infiltrator Armor</h5>",
+          "Any creature that takes lightning damage from your Lightning Launcher glimmers with magical light until the start of your next turn. The glimmering creature sheds dim light in a 5-foot radius, and it has disadvantage on attack rolls against you, as the light jolts it if it attacks you. In addition, the next attack roll against it has advantage, and if that attack hits, the target takes an extra 1d6 lightning damage."
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "artillerist",
+        "name": "artillerist-fortified-position",
+        "title": "Artillerist: Fortified Position",
+        "text": [
+          "Starting at 15th level, you're a master at forming well-defended emplacements using Arcane Cannon:",
+          {
+            "type": "list",
+            "items": [
+              "You and your allies have half cover while within 10 feet of a cannon, as a result of a shimmering field of magical protection that the cannon emits.",
+              "You can now have two cannons at the same time. You can create two with the same action (but not the same spell slot), and you can activate both of them with the same bonus action. You determine whether the cannons are identical to each other or different. You can't create a third cannon while you have two."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "battlesmith",
+        "name": "battlesmith-improved-defender",
+        "title": "Battlesmith: Improved Defender",
+        "text": [
+          "At 15th level, your Arcane Jolt and steel defender become more powerful:",
+          {
+            "type": "list",
+            "items": [
+              "The extra damage and the healing of your Arcane Jolt both increase to 4d6.",
+              "Your steel defender gains a +2 bonus to Armor Class.",
+              "Whenever your steel defender uses its Deflect Attack, the attacker takes force damage equal to 1d4 + your Intelligence modifier."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 16,
+        "subclass": "base",
+        "name": "asi-4",
+        "title": "Ability Score Improvement 4",
+        "text": [
+          "When you reach 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. You may instead take a feat."
+        ]
+      },
+      {
+        "level": 18,
+        "subclass": "base",
+        "name": "magic-item-master",
+        "title": "Magic Item Master",
+        "text": [
+          "Starting at 18th level, you can attune to up to six magic items at once."
+        ]
+      },
+      {
+        "level": 19,
+        "subclass": "base",
+        "name": "asi-5",
+        "title": "Ability Score Improvement 5",
+        "text": [
+          "When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. You may instead take a feat."
+        ]
+      },
+      {
+        "level": 20,
+        "subclass": "base",
+        "name": "soul-of-artifice",
+        "title": "Soul of Artifice",
+        "text": [
+          "At 20th level, you develop a mystical connection to your magic items, which you can draw on for protection:",
+          {
+            "type": "list",
+            "items": [
+              "You gain a +1 bonus to all saving throws per magic item you are currently attuned to.",
+              "If you're reduced to 0 hit points but not killed outright, you can use your reaction to end one of your artificer infusions, causing you to drop to 1 hit point instead of 0."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Barbarian",
     "id": "barbarian",
+    "source": "PHB",
     "description": "Primal warriors defined by an unquenchable and unthinking rage. They use their battle fury to improve reflexes, gain resilience, and perform extraordinary feats of strength.",
     "hd": "12",
     "stat": "CON",
@@ -773,6 +1571,7 @@
   {
     "name": "Bard",
     "id": "bard",
+    "source": "PHB",
     "description": "Versatile adventurers defined by their use of artistic talents to induce magical effects. They can use powers of music and art to cast spells, inspire allies, and empower their attacks.",
     "hd": "8",
     "stat": "CHA",
@@ -1494,6 +2293,7 @@
   {
     "name": "Cleric",
     "id": "cleric",
+    "source": "PHB",
     "description": "Divine casters defined by their powerful spells and devotion to a deity. Clerics use the power of their god to heal friends, fight undead, and smite foes.",
     "hd": "8",
     "stat": "WIS",
@@ -2782,6 +3582,7 @@
   {
     "name": "Druid",
     "id": "druid",
+    "source": "PHB",
     "description": "Arcane casters defined by their strong connection to nature and wildlife. They can use powers of the natural world to cast spells, summon allies, and even transform themselves in beasts.",
     "hd": "8",
     "stat": "WIS",
@@ -3603,6 +4404,7 @@
   {
     "name": "Fighter",
     "id": "fighter",
+    "source": "PHB",
     "description": "Highly trained warriors defined by their martial prowess and battlefield command abilities. They hone their skills to stand head and shoulders above others on the field of battle.",
     "hd": "10",
     "stat": "CON",
@@ -4621,6 +5423,7 @@
   {
     "name": "Monk",
     "id": "monk",
+    "source": "PHB",
     "description": "Specialized warriors defined by their unique combat style and their reserve of internal power called ki. They use this ki to empower their attacks, bolster their defense, and create spell-like effects.",
     "hd": "8",
     "stat": "WIS",
@@ -5531,6 +6334,7 @@
   {
     "name": "Paladin",
     "id": "paladin",
+    "source": "PHB",
     "description": "Divine warriors defined by their martial prowess and unbreakable oath. Paladins use their strength of devotion to power their attacks and serve a god according to their oath.",
     "hd": "10",
     "stat": "CHA",
@@ -6611,6 +7415,7 @@
   {
     "name": "Ranger",
     "id": "ranger",
+    "source": "PHB",
     "description": "Versatile fighters defined by their stance as a bastion protecting civilization from encroaching danger. Rangers use their martial powers, ingenuity, and limited nature magic to survive at any costs.",
     "hd": "10",
     "stat": "WIS",
@@ -7403,6 +8208,7 @@
   {
     "name": "Rogue",
     "id": "rogue",
+    "source": "PHB",
     "description": "Stealthy killers who are defined by their ability to hit enemies where it will cause the most damage. Rogues used honed skill and quick hands to approach, kill, and retreat before the target can respond.",
     "hd": "8",
     "stat": "INT",
@@ -8331,6 +9137,7 @@
   {
     "name": "Sorcerer",
     "id": "sorcerer",
+    "source": "PHB",
     "description": "Arcane casters defined by their ability to alter the effects of spells they cast. Sorcerers use their own inborn talents and power to create a wide variety of magic effects.",
     "hd": "6",
     "stat": "CHA",
@@ -8637,6 +9444,164 @@
         ]
       },
       {
+        "level": 1,
+        "filter": "yes",
+        "subclass": "aberrant",
+        "name": "aberrant mind",
+        "title": "Aberrant Mind",
+        "source": "TCE",
+        "text": [
+          "An alien influence has wrapped its tendrils around your mind, giving you psionic power. You can now touch other minds with that power and alter the world around you by using it to control the magical energy of the multiverse. Will this power shine from you as a hopeful beacon to others? Or will you be a source of terror to those who feel the stab of your mind and witness the strange manifestations of your might?",
+          "As an Aberrant Mind sorcerer, you decide how you acquired your powers. Were you born with them? Or did an event later in life leave you shining with psionic awareness? Consult the Aberrant Origins table for a possible origin of your power.",
+          {
+            "type": "table",
+            "colStyles": [
+              "text-center",
+              ""
+            ],
+            "colLabels": [
+              "d6",
+              "Origin"
+            ],
+            "rows": [
+              [
+                "1",
+                "You were exposed to the Far Realm's warping influence. You are convinced that a tentacle is now growing on you, but no one else can see it."
+              ],
+              [
+                "2",
+                "A psychic wind from the Astral Plane carried psionic energy to you. When you use your powers, faint motes of light sparkle around you."
+              ],
+              [
+                "3",
+                "You once suffered the dominating powers of an aboleth, leaving a psychic splinter in your mind."
+              ],
+              [
+                "4",
+                "You were implanted with a mind flayer tadpole, but the ceremorphosis never completed. And now its psionic power is yours. When you use it, your flesh shines with a strange mucus."
+              ],
+              [
+                "5",
+                "As a child, you had an imaginary friend that looked like a flumph or a strange platypus-like creature. One day, it gifted you with psionic powers, which have ended up being not so imaginary."
+              ],
+              [
+                "6",
+                "Your nightmares whisper the truth to you: your psionic powers are not your own. You draw them from your parasitic twin!"
+              ]
+            ]
+          },
+          "At each indicated sorcerer level, add the listed spells to your list of known spells. They do not count towards your limit.",
+          {
+            "type": "list",
+            "items": [
+              "1st - {@spells/arms-of-hadar arms of Hadar}, {@spells/dissonant-whispers dissonant whispers}, {@spells/mind-sliver mind sliver}",
+              "3rd - {@spells/calm-emotions calm emotions}, {@spells/detect-thoughts detect thoughts}",
+              "5th - {@spells/hunger-of-hadar hunger of Hadar}, {@spells/sending sending}",
+              "7th - {@spells/evards-black-tentacles Evard's black tentacles}, {@spells/summon-aberration summon aberration}",
+              "9th - {@spells/rarys-telepathic-bond Rary's telepathic bond}, {@spells/telekinesis telekinesis}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "aberrant",
+        "name": "aberrant-spells",
+        "title": "Psionic Spells",
+        "text": [
+          "Whenever you gain a sorcerer level, you can replace one spell you gained from your subclass spell list with another spell of the same level. The new spell must be a <span class='color-divination'>divination</span> or an <span class='color-enchantment'>enchantment</span> spell from the sorcerer, warlock, or wizard spell list."
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "aberrant",
+        "name": "aberrant-speech",
+        "title": "Telepathic Speech",
+        "text": [
+          "You can form a telepathic connection between your mind and the mind of another. As a bonus action, choose one creature you can see within 30 feet of you. You and the chosen creature can speak telepathically with each other while the two of you are within a number of miles of each other equal to your Charisma modifier (minimum of 1 mile). To understand each other, you each must speak mentally in a language the other knows.",
+          "The telepathic connection lasts for a number of minutes equal to your sorcerer level. It ends early if you are incapacitated or die or if you use this ability to form a connection with a different creature."
+        ]
+      },
+      {
+        "level": 1,
+        "filter": "yes",
+        "subclass": "clockwork",
+        "name": "clockwork soul",
+        "title": "Clockwork Soul",
+        "source": "TCE",
+        "text": [
+          "The cosmic force of order has suffused you with magic. That power arises from Axiom - the plane of existence shaped entirely by clockwork efficiency. You, or someone from your lineage, might have become entangled in the machinations of the modrons, the orderly beings who inhabit Axiom. Perhaps your ancestor even took part in the Great Modron March. Whatever its origin within you, the power of order can seem strange to others, but for you, it is part of a vast and glorious system.",
+          "At each indicated sorcerer level, add the listed spells to your list of known spells. They do not count towards your limit.",
+          {
+            "type": "list",
+            "items": [
+              "1st - {@spells/alarm alarm}, {@spells/protection-from-evil-and-good protection from evil and good}",
+              "3rd - {@spells/aid aid}, {@spells/lesser-restoration lesser restoration}",
+              "5th - {@spells/dispel-magic dispel magic}, {@spells/protection-from-energy protection from energy}",
+              "7th - {@spells/freedom-of-movement freedom of movement}, {@spells/summon-construct summon construct}",
+              "9th - {@spells/greater-restoration greater restoration}, {@spells/wall-of-force wall of force}"
+            ]
+          },
+          "In addition, consult the Manifestations of Order table and choose or randomly determine a way your connection to order manifests while you are casting any of your sorcerer spells.",
+          {
+            "type": "table",
+            "colStyles": [
+              "text-center",
+              ""
+            ],
+            "colLabels": [
+              "d6",
+              "Manifestation"
+            ],
+            "rows": [
+              [
+                "1",
+                "Spectral cogwheels hover behind you."
+              ],
+              [
+                "2",
+                "The hands of a clock spin in your eyes."
+              ],
+              [
+                "3",
+                "Your skin glows with a brassy sheen."
+              ],
+              [
+                "4",
+                "Floating equations and geometric objects overlay your body."
+              ],
+              [
+                "5",
+                "Your spellcasting focus temporarily takes the form of a Tiny clockwork mechanism."
+              ],
+              [
+                "6",
+                "The ticking of gears or ringing of a clock can be heard by you and those affected by your magic."
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "clockwork",
+        "name": "clockwork-spells",
+        "title": "Clockwork Magic",
+        "text": [
+          "Whenever you gain a sorcerer level, you can replace one spell you gained from your subclass spell list with another spell of the same level. The new spell must be a <span class='color-abjuration'>abjuration</span> or an <span class='color-transmutation'>transmutation</span> spell from the sorcerer, warlock, or wizard spell list."
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "clockwork",
+        "name": "clockwork-balance",
+        "title": "Restore Balance",
+        "text": [
+          "Your connection to the plane of absolute order allows you to equalize chaotic moments. When a creature you can see within 60 feet of you is about to roll a d20 with advantage or disadvantage, you can use your reaction to prevent the roll from being affected by advantage and disadvantage.",
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
         "level": 2,
         "subclass": "base",
         "name": "font-of-magic",
@@ -8728,9 +9693,37 @@
         "name": "gravity-concentrated",
         "title": "Gravity Wielder: Concentrated Cosmos",
         "text": [
-
-          "At 6th level, you gain the ability to create powerful nodes of gravity. As an action, you can spend 1 sorcery point and choose a point within 60 feet of you where a node is created. Each creature within 30 feet of the node must succeed on a Strength saving throw or be pulled up to 15 feet towards it. Huge or larger creatures have advantage on this saving throw, while Small or smaller creatures, as well as any creature not touching the ground, have disadvantage",
+          "At 6th level, you gain the ability to create powerful nodes of gravity. As an action, you can spend 1 sorcery point and choose a point within 60 feet of you where a node is created. Each creature within 30 feet of the node must succeed on a Strength saving throw or be pulled up to 15 feet towards it. Huge or larger creatures have advantage on this saving throw, while small or smaller creatures, as well as any creature not touching the ground, have disadvantage.",
           "Alternatively, you may spend 1 sorcery point to increase your movement speed by 10 feet for 10 minutes."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "aberrant",
+        "name": "aberrant-sorcery",
+        "title": "Aberrant Mind: Psionic Sorcery",
+        "text": [
+          "When you cast any spell of 1st level or higher from your Psionic Spells feature, you can cast it by expending a spell slot as normal or by spending a number of sorcery points equal to the spell's level.",
+          "If you cast the spell using sorcery points, it requires no verbal or somatic components, and it requires no material components, unless they are consumed by the spell."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "aberrant",
+        "name": "aberrant-defenses",
+        "title": "Aberrant Mind: Psychic Defenses",
+        "text": [
+          "You gain resistance to psychic damage, and you have advantage on saving throws against being charmed or frightened."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "clockwork",
+        "name": "clockwork-bastion",
+        "title": "Clockwork Soul: Bastion of Law",
+        "text": [
+          "You can tap into the grand equation of existence to imbue a creature with a shimmering shield of order. As an action, you can expend 1 to 5 sorcery points to create a magical ward around yourself or another creature you can see within 30 feet of you. The ward lasts until you finish a long rest or until you use this feature again.",
+          "The ward is represented by a number of d8s equal to the number of sorcery points spent to create it. When the warded creature takes damage, it can expend a number of those dice, roll them, and reduce the damage taken by the total rolled on those dice."
         ]
       },
       {
@@ -8813,9 +9806,36 @@
         "name": "gravity-afloat",
         "title": "Gravity Wielder: Afloat in the Currents",
         "text": [
-
           "At 14th level, you gain the ability to hover. You can start to hover as a bonus action. While hovering you can move in any direction, but you can't be higher than your base movement speed from the ground. You hover until you lose consiousness or use a bonus action to stop.",
           "Additionally, you can use a reaction and 1 sorcery point to cast {@spells/feather-fall feather fall}"
+        ]
+      },
+      {
+        "level": 14,
+        "subclass": "aberrant",
+        "name": "aberrant-defenses",
+        "title": "Aberrant Mind: Psychic Defenses",
+        "text": [
+          "You can unleash the aberrant truth hidden within yourself. As a bonus action, you can spend 1 or more sorcery points to magically transform your body for 10 minutes. For each sorcery point you spend, you can gain one of the following benefits of your choice, the effects of which last until the transformation ends:",
+          {
+            "type": "list",
+            "items": [
+              "You can see any invisible creature within 60 feet of you, provided it isn't behind total cover. Your eyes also turn black or become writhing sensory tendrils.",
+              "You gain a flying speed equal to your walking speed, and you can hover. As you fly, your skin glistens with mucus or shines with an otherworldly light.",
+              "You gain a swimming speed equal to twice your walking speed, and you can breathe underwater. Moreover, gills grow from your neck or fan out from behind your ears, your fingers become webbed, or you grow writhing cilia that extend through your clothing.",
+              "Your body, along with any equipment you are wearing or carrying, becomes slimy and pliable. You can move through any space as narrow as 1 inch without squeezing, and you can spend 5 feet of movement to escape from nonmagical restraints or being grappled."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 14,
+        "subclass": "clockwork",
+        "name": "clockwork-trance",
+        "title": "Clockwork Soul: Trance of Order",
+        "text": [
+          "You gain the ability to align your consciousness to the endless calculations of Mechanus. As a bonus action, you can enter this state for 1 minute. For the duration, attack rolls against you can't benefit from advantage, and whenever you make an attack roll, an ability check, or a saving throw, you can treat a roll of 9 or lower on the d20 as a 10.",
+          "Once you use this bonus action, you can't use it again until you finish a long rest, unless you spend 5 sorcery points to use it again."
         ]
       },
       {
@@ -8889,7 +9909,6 @@
         "name": "gravity-master",
         "title": "Gravity Wielder: Master of Gravity",
         "text": [
-
           "Beginning at 18th level, you can alther the gravity around you on a larger scale. As an action, you can spend 5 sorcery points to change the gravity in a 60-foot-radius, 60-foot high-cylinder, centered on you, for 1 minute or until you lose concentration (as if you were concentrating on a spell). You can create one of the following effects:",
           {
             "type": "list",
@@ -8899,9 +9918,36 @@
               "Gravity is halved: A creature moving through the area can move twice as fast and jump twice as high."
             ]
           },
-
           "No matter which option you choose if a projectile from a ranged attack would travel through the affected area that attack is made at disadvantage.",
           "When you take this action, you can choose a number of creatures equal to your Charisma modifier that are unaffected by it."
+        ]
+      },
+      {
+        "level": 18,
+        "subclass": "aberrant",
+        "name": "aberrant-implosion",
+        "title": "Aberrant Mind: Warping Implosion",
+        "text": [
+          "You can unleash your aberrant power as a space-warping anomaly. As an action, you can teleport to an unoccupied space you can see within 120 feet of you. Immediately after you disappear, each creature within 30 feet of the space you left must make a Strength saving throw. On a failed save, a creature takes 3d10 force damage and is pulled straight toward the space you left, ending in an unoccupied space as close to your former space as possible. On a successful save, the creature takes half as much damage and isn't pulled.",
+          "Once you use this feature, you can't do so again until you finish a long rest, unless you spend 5 sorcery points to use it again."
+        ]
+      },
+      {
+        "level": 18,
+        "subclass": "clockwork",
+        "name": "clockwork-cavalcade",
+        "title": "Clockwork Soul: Clockwork Cavalcade",
+        "text": [
+          "You summon spirits of order to expunge disorder around you. As an action, you summon the spirits in a 30-foot cube originating from you. The spirits look like modrons or other constructs of your choice. The spirits are intangible and invulnerable, and they create the following effects within the cube before vanishing:",
+          {
+            "type": "list",
+            "items": [
+              "The spirits restore up to 100 hit points, divided as you choose among any number of creatures of your choice in the cube.",
+              "Any damaged objects entirely in the cube are repaired instantly.",
+              "Every spell of 6th level or lower ends on creatures and objects of your choice in the cube."
+            ]
+          },
+          "Once you use this action, you can't use it again until you finish a long rest, unless you spend 7 sorcery points to use it again."
         ]
       },
       {
@@ -8927,6 +9973,7 @@
   {
     "name": "Warlock",
     "id": "warlock",
+    "source": "PHB",
     "description": "Arcane casters defined by their pact with a powerful patron. Warlocks use unique powers granted by their pact to cause damage, control the battlefield, and further their patrons aims on the material plane.",
     "hd": "8",
     "stat": "CHA",
@@ -9245,6 +10292,223 @@
         ]
       },
       {
+        "level": 1,
+        "filter": "yes",
+        "subclass": "fathomless",
+        "name": "fathomless",
+        "title": "Patron: The Fathomless",
+        "source": "TCE",
+        "text": [
+          "You have plunged into a pact with the deeps. An entity of the ocean, the Elemental Plane of Water, or another otherworldly sea now allows you to draw on its thalassic power. Is it merely using you to learn about terrestrial realms, or does it want you to open cosmic floodgates and drown the world?",
+          "Perhaps you were born into a generational cult that venerates the Fathomless and its spawn. Or you might have been shipwrecked and on the brink of drowning when your patron's grasp offered you a chance at life. Whatever the reason for your pact, the sea and its unknown depths call to you. Entities of the deep that might empower a warlock include krakens, ancient water elementals, merfolk demigods, ancient dreaming horrors, and sea hag covens.",
+          "The Fathomless lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.",
+          {
+            "type": "list",
+            "items": [
+              "1st - {@spells/create-or-destroy-water create or destroy water}, {@spells/thunderwave thunderwave}",
+              "3rd - {@spells/gust-of-wind gust of wind}, {@spells/silence silence}",
+              "5th - {@spells/lightning-bolt lightning bolt}, {@spells/sleet-storm sleet storm}",
+              "7th - {@spells/control-water control water}, {@spells/summon-elemental summon elemental} (water only)",
+              "9th - {@spells/bigbys-hand Bigby's hand} (as a tentacle), {@spells/cone-of-cold cone of cole}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "fathomless",
+        "name": "fathomless-tentacle",
+        "title": "The Fathomless: Tentacle of the Deeps",
+        "text": [
+          "You can magically summon a spectral tentacle that strikes at your foes. As a bonus action, you create a 10-foot-long tentacle at a point you can see within 60 feet of you. The tentacle lasts for 1 minute or until you use this feature to create another tentacle.",
+          "When you create the tentacle, you can make a melee spell attack against one creature within 10 feet of it. On a hit, the target takes 1d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn. When you reach 10th level in this class, the damage increases to 2d8.",
+          "As a bonus action on your turn, you can move the tentacle up to 30 feet and repeat the attack.",
+          "You can summon the tentacle a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "fathomless",
+        "name": "fathomless-gift",
+        "title": "The Fathomless: Gift of the Sea",
+        "text": [
+          "You gain a swimming speed of 40 feet, and you can breathe underwater."
+        ]
+      },
+      {
+        "level": 1,
+        "filter": "yes",
+        "subclass": "genie",
+        "name": "genie",
+        "title": "Patron: The Genie",
+        "source": "TCE",
+        "text": [
+          "You have made a pact with one of the rarest kinds of genie, a noble genie. Such entities rule vast fiefs on the Elemental Planes and have great influence over lesser genies and elemental creatures. Noble genies are varied in their motivations, but most are arrogant and wield power that rivals that of lesser deities. They delight in turning the table on mortals, who often bind genies into servitude, and readily enter into pacts that expand their reach.",
+          "You choose your patron's kind or determine it randomly, using the Genie Kind table:",
+          {
+            "type": "table",
+            "colStyles": [
+              "text-center",
+              "",
+              ""
+            ],
+            "colLabels": [
+              "d4",
+              "Kind",
+              "Element"
+            ],
+            "rows": [
+              [
+                "1",
+                "Dao",
+                "Earth"
+              ],
+              [
+                "1",
+                "Djinn",
+                "Air"
+              ],
+              [
+                "1",
+                "Efreet",
+                "Fire"
+              ],
+              [
+                "1",
+                "Marid",
+                "Water"
+              ]
+            ]
+          },
+          "The Genie lets you choose from an expanded list of spells when you learn a warlock spell. The Genie Expanded Spells table shows the genie spells that are added to the warlock spell list for you, along with the spells associated in the table with your patron's kind: dao, djinni, efreeti, or marid.",
+          {
+            "type": "table",
+            "colStyles": [
+              "text-center",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "colLabels": [
+              "Spell Level",
+              "All Geneies",
+              "Dao",
+              "Djinn",
+              "Efreet",
+              "Marid"
+            ],
+            "rows": [
+              [
+                "1st",
+                "{@spells/detect-evil-and-good detect evil and good},",
+                "{@spells/sanctuary sanctuary},",
+                "{@spells/thunderwave thunderwave},",
+                "{@spells/burning-hands burning hands},",
+                "{@spells/fog-cloud fog cloud},"
+              ],
+              [
+                "2nd",
+                "{@spells/phantasmal-force phantasmal force},",
+                "{@spells/spike-growth spike growth},",
+                "{@spells/gust-of-wind gust of wind},",
+                "{@spells/scorching-ray scorching ray},",
+                "{@spells/blur blur},"
+              ],
+              [
+                "3rd",
+                "{@spells/create-food-and-water create food and water},",
+                "{@spells/meld-into-stone meld into stone},",
+                "{@spells/wind-wall wind wall},",
+                "{@spells/fireball fireball},",
+                "{@spells/sleet-storm sleet storm},"
+              ],
+              [
+                "4th",
+                "{@spells/phantasmal-killer phantasmal killer},",
+                "{@spells/stone-shape stone shape},",
+                "{@spells/greater-invisibility greater invisibility},",
+                "{@spells/fire-shield fire shield},",
+                "{@spells/control-water control water},"
+              ],
+              [
+                "5th",
+                "{@spells/creation creation},",
+                "{@spells/wall-of-stone wall of stone},",
+                "{@spells/seeming seeming},",
+                "{@spells/flame-strike flame strike},",
+                "{@spells/cone-of-cold cone of cold},"
+              ],
+              [
+                "9th",
+                "{@spells/wish wish},",
+                "-",
+                "-",
+                "-",
+                "-"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "genie",
+        "name": "genie-vessel",
+        "title": "The Genie: Genie's Vessel",
+        "text": [
+          "Your patron gifts you a magical vessel that grants you a measure of the genie's power. The vessel is a Tiny object, and you can use it as a spellcasting focus for your warlock spells. You decide what the object is, or you can determine what it is randomly by rolling on the Genie's Vessel table.",
+          {
+            "type": "table",
+            "colStyles": [
+              "text-center",
+              ""
+            ],
+            "colLabels": [
+              "d6",
+              "Vessel"
+            ],
+            "rows": [
+              [
+                "1",
+                "Lamp"
+              ],
+              [
+                "2",
+                "Urn"
+              ],
+              [
+                "3",
+                "Ring"
+              ],
+              [
+                "4",
+                "Stoppered bottle"
+              ],
+              [
+                "5",
+                "Hollow statue"
+              ],
+              [
+                "6",
+                "Lantern"
+              ]
+            ]
+          },
+          "While you are touching the vessel, you can use it in the following ways:",
+          {
+            "type": "list",
+            "items": [
+              "<strong>Bottled Respite</strong> As an action, you can magically vanish and enter your vessel, which remains in the space you left. The interior of the vessel is an extradimensional space in the shape of a 20-foot-radius cylinder, 20 feet high, and resembles your vessel. The interior is appointed with cushions and low tables and is a comfortable temperature. While inside, you can hear the area around your vessel as if you were in its space. You can remain inside the vessel up to a number of hours equal to twice your proficiency bonus. You exit the vessel early if you use a bonus action to leave, if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel's former space. Once you enter the vessel, you can't enter again until you finish a long rest.",
+              "<strong>Genie's Wrath.</strong> Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinn), fire (efreet), or cold (marid)."
+            ]
+          },
+          "The vessel's AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus, and it is immune to poison and psychic damage.",
+          "If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die."
+        ]
+      },
+      {
         "level": 2,
         "subclass": "base",
         "name": "eldritch-invocations",
@@ -9332,7 +10596,6 @@
         "name": "hexblade-curse",
         "title": "The Hexblade: Accursed Specter",
         "text": [
-
           "Starting at 6th level, when you kill a person you can temporarily bind their soul to your service. When you slay a humanoid, you can cause its spirit to rise from its corpse as a <a>specter</a>. When the specter appears, it gains temporary hit points equal to half your warlock level. It obeys your verbal commands, takes it's actions on your turns in initiative, and gains a special bonus to its attack rolls equal to your Charisma modifier.",
           "The specter remains in your service until the end of your next long rest, at which point it vanishes to the afterlife. Once you bind a specter with this feature, you can't use the feature again until you finish a long rest."
         ]
@@ -9343,9 +10606,36 @@
         "name": "undying-defy-death",
         "title": "The Undying: Defy Death",
         "text": [
-
           "Starting at 6th level, you can give yourself vitality when you cheat death or when you help someone else cheat it. You can regain hit points equal to 1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed on a death saving throw or when you stabilize a creature with spare the dying.",
           "Once you use this feature, you can't use it again until you finish a long rest."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "fathomless",
+        "name": "fathomless-oceanic",
+        "title": "The Fathomless: Oceanic Soul",
+        "text": [
+          "You are now even more at home in the depths. You gain resistance to cold damage. In addition, when you are fully submerged, any creature that is also fully submerged can understand your speech, and you can understand theirs."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "fathomless",
+        "name": "fathomless-guardian",
+        "title": "The Fathomless: Guardian Coil",
+        "text": [
+          "Your Tentacle of the Deeps can defend you and others, interposing itself between them and harm. When you or a creature you can see takes damage while within 10 feet of the tentacle, you can use your reaction to choose one of those creatures and reduce the damage to that creature by 1d8. When you reach 10th level in this class, the damage reduced by the tentacle increases to 2d8."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "genie",
+        "name": "genie-elemental-gift",
+        "title": "The Genie: Elemental Gift",
+        "text": [
+          "You begin to take on characteristics of your patron's kind. You now have resistance to a damage type determined by your patron's kind: bludgeoning (dao), thunder (djinn), fire (efreet), or cold (marid).",
+          "In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
         ]
       },
       {
@@ -9431,6 +10721,27 @@
 
           "Beginning at 10th level, you can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests.",
           "In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged."
+        ]
+      },
+      {
+        "level": 10,
+        "subclass": "fathomless",
+        "name": "fathomless-grasping",
+        "title": "The Fathomless: Grasping Tentacles",
+        "text": [
+          "You learn the {@spells/evards-black-tentacles Evard's black tentacles}. It counts as a warlock spell for you, but it doesn't count against the number of spells you know. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
+          "Whenever you cast this spell, your patron's magic bolsters you, granting you a number of temporary hit points equal to your warlock level. Moreover, damage can't break your concentration on this spell."
+        ]
+      },
+      {
+        "level": 10,
+        "subclass": "genie",
+        "name": "genie-sanctuary",
+        "title": "The Genie: Sanctuary Vessel",
+        "text": [
+          "When you enter your Genie's Vessel via the Bottled Respite feature, you can now choose up to five willing creatures that you can see within 30 feet of you, and the chosen creatures are drawn into the vessel with you.",
+          "As a bonus action, you can eject any number of creatures from the vessel, and everyone is ejected if you leave or die or if the vessel is destroyed.",
+          "In addition, anyone (including you) who remains within the vessel for at least 10 minutes gains the benefit of finishing a short rest, and anyone can add your proficiency bonus to the number of hit points they regain if they spend any Hit Dice as part of a short rest there."
         ]
       },
       {
@@ -9537,6 +10848,26 @@
         ]
       },
       {
+        "level": 14,
+        "subclass": "fathomless",
+        "name": "fathomless-plunge",
+        "title": "The Fathomless: Fathomless Plunge",
+        "text": [
+          "You can magically open temporary conduits to watery destinations. As an action, you can teleport yourself and up to five other willing creatures that you can see within 30 feet of you. Amid a whirl of tentacles, you all vanish and then reappear up to 1 mile away in a body of water you've seen (pond size or larger) or within 30 feet of it, each of you appearing in an unoccupied space within 30 feet of the others.",
+          "Once you use this feature, you can't use it again until you finish a short or long rest."
+        ]
+      },
+      {
+        "level": 14,
+        "subclass": "genie",
+        "name": "genie-wish",
+        "title": "The Genie: Limited Wish",
+        "text": [
+          "You entreat your patron to grant you a small wish. As an action, you can speak your desire to your Genie's Vessel, requesting the effect of one spell that is 6th level or lower and has a casting time of 1 action. The spell can be from any class's spell list, and you don't need to meet the requirements in that spell, including costly components; the spell simply takes effect as part of this action.",
+          "Once you use this feature, you can't use it again until you finish 1d4 long rests."
+        ]
+      },
+      {
         "level": 15,
         "subclass": "base",
         "name": "mystic-arcanum-3",
@@ -9588,6 +10919,7 @@
   {
     "name": "Wizard",
     "id": "wizard",
+    "source": "PHB",
     "description": "Arcane casters defined by their powerful spells and devotion to studying magic. Wizard use their ingenuity and arcane power to create all manner of powerful spell effects.",
     "hd": "6",
     "stat": "INT",
@@ -9978,6 +11310,54 @@
         ]
       },
       {
+        "level": 2,
+        "filter": "yes",
+        "subclass": "scribes",
+        "name": "scribes",
+        "title": "Tradition: Order of Scribes",
+        "source": "TCE",
+        "text": [
+          "Magic of the book-that's what many folk call wizardry. The name is apt, given how much time wizards spend poring over tomes and penning theories about the nature of magic. It's rare to see wizards traveling without books and scrolls sprouting from their bags, and a wizard would go to great lengths to plumb an archive of ancient knowledge.",
+          "Among wizards, the Order of Scribes is the most bookish. It takes many forms in different worlds, but its primary mission is the same everywhere: recording magical discoveries so that wizardry can flourish. And while all wizards value spellbooks, a wizard in the Order of Scribes magically awakens their book, turning it into a trusted companion. All wizards study books, but a wizardly scribe talks to theirs!"
+        ]
+      },
+      {
+        "level": 2,
+        "subclass": "scribes",
+        "name": "scribes-quill",
+        "title": "Scribes: Wizardly Quill",
+        "text": [
+          "Beginning when you select this school at 2nd level, as a bonus action, you can magically create a Tiny quill in your free hand. The magic quill has the following properties:.",
+          {
+            "type": "list",
+            "items": [
+              "The quill doesn't require ink. When you write with it, it produces ink in a color of your choice on the writing surface.",
+              "The time you must spend to copy a spell into your spellbook equals 2 minutes per spell level if you use the quill for the transcription.",
+              "You can erase anything you write with the quill if you wave the feather over the text as a bonus action, provided the text is within 5 feet of you."
+            ]
+          },
+          "This quill disappears if you create another one or if you die."
+        ]
+      },
+      {
+        "level": 2,
+        "subclass": "scribes",
+        "name": "scribes-awakened-spellbook",
+        "title": "Scribes: Awakened Spellbook",
+        "text": [
+          "Using specially prepared inks and ancient incantations passed down by your wizardly order, you have awakened an arcane sentience within your spellbook. While you are holding the book, it grants you the following benefits:",
+          {
+            "type": "list",
+            "items": [
+              "You can use the book as a spellcasting focus for your wizard spells.",
+              "When you cast a wizard spell with a spell slot, you can temporarily replace its damage type with a type that appears in another spell in your spellbook, which magically alters the spell's formula for this casting only. The latter spell must be of the same level as the spell slot you expend.",
+              "When you cast a wizard spell as a ritual, you can use the spell's normal casting time, rather than adding 10 minutes to it. Once you use this benefit, you can't do so again until you finish a long rest."
+            ]
+          },
+          "If necessary, you can replace the book over the course of a short rest by using your Wizardly Quill to write arcane sigils in a blank book or a magic spellbook to which you're attuned. At the end of the rest, your spellbook's consciousness is summoned into the new book, which the consciousness transforms into your spellbook, along with all its spells. If the previous book still existed somewhere, all the spells vanish from its pages."
+        ]
+      },
+      {
         "level": 4,
         "subclass": "base",
         "name": "asi-1",
@@ -10096,6 +11476,20 @@
         ]
       },
       {
+        "level": 6,
+        "subclass": "scribes",
+        "name": "scribes-manifest-mind",
+        "title": "Scribes: Manifest Mind",
+        "text": [
+          "You can conjure forth the mind of your Awakened Spellbook. As a bonus action while the book is on your person, you can cause the mind to manifest as a Tiny spectral object, hovering in an unoccupied space of your choice within 60 feet of you. The spectral mind is intangible and doesn't occupy its space, and it sheds dim light in a 10-foot radius. It looks like a ghostly tome, a cascade of text, or a scholar from the past (your choice).",
+          "While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. The mind can telepathically share with you what it sees and hears (no action required).",
+          "Whenever you cast a wizard spell on your turn, you can cast it as if you were in the spectral mind's space, instead of your own, using its senses. You can do so a number of times per day equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects.",
+          "The spectral mind stops manifesting if it is ever more than 300 feet away from you, if someone casts {@spells/dispel-magic dispel magic} on it, if the Awakened Spellbook is destroyed, if you die, or if you dismiss the spectral mind as a bonus action.",
+          "Once you conjure the mind, you can't do so again until you finish a long rest, unless you expend a spell slot of any level to conjure it again."
+        ]
+      },
+      {
         "level": 8,
         "subclass": "base",
         "name": "asi-2",
@@ -10202,6 +11596,17 @@
         "title": "Necromancy: Inured to Undeath",
         "text": [
           "Beginning at 10th level, you have resistance to necrotic damage, and your hit point maximum can't be reduced. You have spent so much time dealing with undead and the forces that animate them that you have become inured to some of their worst effects."
+        ]
+      },
+      {
+        "level": 10,
+        "subclass": "scribes",
+        "name": "scribes-scrivener",
+        "title": "Scribes: Master Scrivener",
+        "text": [
+          "Whenever you finish a long rest, you can create one magic scroll by touching your Wizardly Quill to a blank piece of paper or parchment and causing one spell from your Awakened Spellbook to be copied onto the scroll. The spellbook must be within 5 feet of you when you make the scroll.",
+          "The chosen spell must be of 1st or 2nd level and must have a casting time of 1 action. Once in the scroll, the spell's power is enhanced, counting as one level higher than normal. You can cast the spell from the scroll by reading it as an action. The scroll is unintelligible to anyone else, and the spell vanishes from the scroll when you cast it or when you finish your next long rest.",
+          "You are also adept at crafting spell scrolls, which are described in the treasure chapter of the Dungeon Master's Guide. The gold and time you must spend to make such a scroll are halved if you use your Wizardly Quill."
         ]
       },
       {
@@ -10314,6 +11719,18 @@
         "text": [
           "Starting at 14th level, you can use magic to bring undead under your control, even those created by other wizards. As an action, you can choose one undead that you can see within 60 feet of you. That creature must make a Charisma saving throw against your wizard spell save DC. If it succeeds, you can't use this feature on it again. If it fails, it becomes friendly to you and obeys your commands until you use this feature again.",
           "Intelligent undead are harder to control in this way. If the target has an Intelligence of 8 or higher, it has advantage on the saving throw. If it fails the saving throw and has an Intelligence of 12 or higher, it can repeat the saving throw at the end of every hour until it succeeds and breaks free."
+        ]
+      },
+      {
+        "level": 14,
+        "subclass": "scribes",
+        "name": "scribes-one-with-the-word",
+        "title": "Scribes: One with the Word",
+        "text": [
+          "Your connection to your Awakened Spellbook has become so profound that your soul has become entwined with it. While the book is on your person, you have advantage on all Intelligence (Arcana) checks, as the spellbook helps you remember magical lore.",
+          "Moreover, if you take damage while your spellbook's mind is manifested, you can prevent all of that damage to you by using your reaction to dismiss the spectral mind, using its magic to save yourself. Then roll 3d6. The spellbook temporarily loses spells of your choice that have a combined spell level equal to that roll or higher. For example, if the roll's total is 9, spells vanish from the book that have a combined level of at least 9, which could mean one 9th-level spell, three 3rd-level spells, or some other combination. If there aren't enough spells in the book to cover this cost, you drop to 0 hit points.",
+          "Until you finish 1d6 long rests, you are incapable of casting the lost spells, even if you find them on a scroll or in another spellbook. After you finish the required number of rests, the spells reappear in the spellbook.",
+          "Once you use this reaction, you can't do so again until you finish a long rest."
         ]
       },
       {
