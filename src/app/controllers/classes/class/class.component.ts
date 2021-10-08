@@ -18,15 +18,20 @@ export class ClassComponent implements OnInit, OnChanges {
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
 
   archetypeChange: Subject<Array<String>> = new Subject<Array<String>>();
+  selectedChange: Subject<boolean> = new Subject<boolean>();
 
   prof: Proficiency;
   multi: Multiclass;
   selectedArchetypes: Array<String> = [];
+  allSelected: boolean = true;
   ccId: number = 0; //current class id
 
   constructor() {
     this.archetypeChange.subscribe((value) => {
       this.selectedArchetypes = value
+    });
+    this.selectedChange.subscribe((value) => {
+      this.allSelected = value
     });
   }
 
@@ -41,7 +46,7 @@ export class ClassComponent implements OnInit, OnChanges {
   }
 
   getFilteredFeatures() {
-    if (this.selectedArchetypes.length == 0) {
+    if (this.selectedArchetypes.length == 0 && this.allSelected) {
       return this.class.features
     } else {
       return this.class.features.filter(f => f.subclass == "base" || this.selectedArchetypes.includes(f.subclass));

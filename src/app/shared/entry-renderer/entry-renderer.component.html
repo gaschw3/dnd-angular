@@ -16,17 +16,17 @@
             </thead>
             <tbody>
                 <tr *ngFor="let row of entry.rows">
-                    <td *ngFor="let cell of row" [innerHtml]="cell | linkmaker | sanitizeHtml"></td>
+                    <td *ngFor="let cell of row; index as i" class={{entry.colStyles[i]}} [innerHtml]="cell | linkmaker | sanitizeHtml"></td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div class="row" *ngSwitchCase="'column'">
         <div class="col-sm-6">
-            <entry-renderer [list]=entry.column [parent]="'column'"></entry-renderer>
+            <entry-renderer [list]=entry.column [parent]="''"></entry-renderer>
         </div>
         <div class="col-sm-6">
-            <entry-renderer [list]=entry.column2 [parent]="'column'"></entry-renderer>
+            <entry-renderer [list]=entry.column2 [parent]="''"></entry-renderer>
         </div>
     </div>
     <div *ngSwitchCase="'entries'">
@@ -43,7 +43,6 @@
     </div>
     <ng-container *ngSwitchDefault>
         <p *ngIf="parent==''" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
-        <p *ngIf="parent=='column'" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
         <span class="pb-0 mb-1" *ngIf="parent=='entries'" [innerHtml]="entry | linkmaker | sanitizeHtml"></span>
         <li *ngIf="parent=='list'" [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
     </ng-container>

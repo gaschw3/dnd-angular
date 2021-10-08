@@ -34,8 +34,8 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   currPartyDifficulty: PartyDifficulty;
 
   //used for sorting on CR more complexly
-  min: number;
-  max: number;
+  min: number = null;
+  max: number = null;
 
   //toggle show/hide monster table to change button text
   showMonsterTable: boolean = true;
@@ -66,10 +66,10 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
     // Add a new search method to be used on the CR column for a range of numbers
     $.fn['dataTable'].ext.search.push((settings, data, dataIndex) => {
       const id = parseFloat(data[2]) || 0; // data[2] is the CR column, this should in unit tests
-      if ((isNaN(this.min) && isNaN(this.max)) ||
-        (isNaN(this.min) && id <= this.max) ||
-        (this.min <= id && isNaN(this.max)) ||
-        (this.min <= id && id <= this.max)) {
+      if ( (this.min == null && this.max == null)
+        || (this.min == null && id <= this.max)
+        || (this.min <= id && this.max == null)
+        || (this.min <= id && id <= this.max)) {
         return true;
       }
       return false;
@@ -112,8 +112,11 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
         api.columns().every(function() {
           const column = this;
           const $head = $(column.header());
-          const inputContainer = $head.parent().prev().children().get($head.index()+1);
-          $('table :input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
+          if ($head.index() === 0 || $head.index() === 2) {
+            return true;
+          }
+          const inputContainer = $head.parent().prev().children().get($head.index());
+          $(':input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
             const $this = $(this);
             const colIndex = $(column.header()).index();
             if (colIndex === 2) {
@@ -171,13 +174,13 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
     if (this.currEncounter[index].number < 1) {
       this.currEncounter.splice(index, 1);
     }
-    this.recalcEncounterXp()
+    this.recalcEncounterXp();
   }
 
   clearEncounter(): void {
     //reset current counter, is this okay?
     this.currEncounter = [];
-    this.recalcEncounterXp()
+    this.recalcEncounterXp();
   }
 
   //this function is so complex, why is D&D experience calculated this way? It's actually insane.
@@ -209,6 +212,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
       group: mediumXp / (4 * this.groupMultiplier),
       trivial: mediumXp / (8 * this.hordeMultiplier),
     }
+    this.recalcEncounterXp();
   }
 
   //this function is so complex, why is D&D experience calculated this way? It's actually insane.

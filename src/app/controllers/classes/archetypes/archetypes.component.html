@@ -1,8 +1,8 @@
 <div class="archetypes text-center p-3">
     <button class="btn btn-success p-2 m-1" [ngClass]="{'active': this.allSelected }" (click)="selectAll()">All</button>
-    <button class="btn btn-warning p-2 m-1" [ngClass]="{'active': selectedArchetypes.length == 0}" (click)="selectNone()">None</button>
+    <button class="btn btn-warning p-2 m-1" [ngClass]="{'active': (selectedArchetypes.length == 0 && selectedArchetypes.includes('none'))}" (click)="selectNone()">None</button>
     <ng-container *ngFor="let archetype of archetypes">
-        <button class="btn btn-primary p-2 m-1 btn-archetype" [ngClass]="{'active': selectedArchetypes.includes(archetype.subclass)}" (click)="clickArchetype(archetype.subclass)" [attr.data-name]="archetype.name">
+        <button class="btn btn-primary p-2 m-1 btn-archetype" [ngClass]="{'active': selectedArchetypes.includes(archetype.subclass)}" (click)="clickArchetype(archetype.subclass)" [attr.data-name]="archetype.subclass">
             {{archetype.title}}
             (<span [class]="'text-right color-'+archetype.source | lowercase">{{archetype.source}}</span>)
         </button>

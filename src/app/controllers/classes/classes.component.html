@@ -21,7 +21,7 @@
       <tbody>
         <tr *ngFor="let class of classes" (click)="setCurrClass(class)" [class.table-active]="currClass?.id == class.id">
           <td>{{class.name}}</td>
-          <td [class]="'text-right color-PHB' | lowercase" class="text-right">PHB</td>
+          <td [class]="'text-right color-'+class.source | lowercase" class="text-right">{{class.source}}</td>
         </tr>
       </tbody>
     </table>

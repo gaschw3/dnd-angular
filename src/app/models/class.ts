@@ -4,13 +4,14 @@ import { Proficiency } from './proficiency';
 export interface Class {
   name: string;
   id: string;
+  source: string;
   description: string;
   hd: number;
   stat: string;
   multiclassing: Multiclass;
   proficiencies: Proficiency;
   equipment: Equipment;
-  
+
   features: ClassFeature[];
 
   levelWidths: string[];
