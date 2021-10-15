@@ -34,7 +34,7 @@ export class LinkmakerPipe implements PipeTransform {
       } else {
         var href = splitArr.slice(0, 1).toString().replace('@', '/') + '/' + linkLocation;
       }
-      return `<a href="${href}">${linkText === '' ? linkPath : linkText}</a>`;
+      return `<a href=".${href}">${linkText === '' ? linkPath : linkText}</a>`;
     }
 
     if (value.includes('@')) {
