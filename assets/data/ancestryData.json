@@ -508,7 +508,7 @@
       },
       {
         "name": "Cantrip",
-        "text": ["You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."]
+        "text": ["You know one cantrip of your choice from the {@spells ?spell-class-filter=wizard&spell-level-filter=0|wizard spell list}. Intelligence is your spellcasting ability for it."]
       }
     ]
   },

@@ -281,7 +281,7 @@
         "range": "Self",
         "components": "S",
         "duration": "1 round",
-        "classes": ["Druid", "Ranger", "Sorcerer", "Sorcerer (Draconic)", "Wizard"],
+        "classes": ["Artificier", "Druid", "Ranger", "Sorcerer", "Sorcerer (Draconic)", "Wizard"],
         "entries": [
             "The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends."
         ],
@@ -297,7 +297,7 @@
         "range": "60 feet",
         "components": "V, S",
         "duration": "Instantaneous",
-        "classes": ["Sorcerer", "Wizard", "Fighter (E.Knight)", "Rogue (Trickster)"],
+        "classes": ["Artificier", "Sorcerer", "Wizard", "Fighter (E.Knight)", "Rogue (Trickster)"],
         "entries": [
             "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.",
             "This spells damage increases by 1d6 when you reach 5th Level (2d6), 11th level (3d6) and 17th level (4d6)."
@@ -329,7 +329,7 @@
         "range": "30 feet",
         "components": "V, S, M (a tiny strip of white cloth)",
         "duration": "8 hours",
-        "classes": ["Cleric", "Cleric (Peace)", "Paladin","Sorcerer (Clockwork)"],
+        "classes": ["Artificier", "Cleric", "Cleric (Peace)", "Paladin","Sorcerer (Clockwork)"],
         "entries": [
             "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration."
         ],
@@ -346,7 +346,7 @@
         "range": "30 feet",
         "components": "V, S, M (a tiny bell and a piece of fine silver wire)",
         "duration": "8 hours",
-        "classes": ["Paladin (Watchers)", "Ranger", "Sorcerer (Clockwork)", "Wizard", "Fighter (E.Knight)"],
+        "classes": ["Artificier", "Paladin (Watchers)", "Ranger", "Sorcerer (Clockwork)", "Wizard", "Fighter (E.Knight)"],
         "entries": [
             "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible.",
             "A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.",
@@ -363,7 +363,7 @@
         "range": "Self",
         "components": "V, S",
         "duration": "Concentration, up to 1 hour",
-        "classes": ["Sorcerer", "Wizard"],
+        "classes": ["Artificier", "Sorcerer", "Wizard"],
         "entries": [
             "You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.",
             {
@@ -468,7 +468,7 @@
         "range": "120 feet",
         "components": "V, S",
         "duration": "Concentration, up to 1 minute",
-        "classes": ["Bard", "Sorcerer", "Wizard", "Cleric (Forge)"],
+        "classes": ["Artificier", "Bard", "Sorcerer", "Wizard", "Cleric (Forge)"],
         "entries": [
             "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, Large targets count as four objects, Huge targets count as eight objects. You can't animate any object larger than Huge. Each target animates and becomes a creature under your control until the spell ends or until reduced to 0 hit points.",
             "As a bonus action, you can mentally command any creature you made with this spell if the creature is within 500 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.",
@@ -575,7 +575,7 @@
         "range": "60 feet",
         "components": "V, S, M (either a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect)",
         "duration": "10 days",
-        "classes": ["Druid", "Wizard"],
+        "classes": ["Artificier", "Druid", "Wizard"],
         "entries": [
             "This spell attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature, such as red dragons, goblins, or vampires. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura's effect.",
             {
@@ -612,7 +612,7 @@
         "range": "30 feet",
         "components": "V, S, M (a bit of bat fur)",
         "duration": "Concentration, up to 1 hour",
-        "classes": ["Cleric (Arcana)", "Cleric (Knowledge)", "Ranger (Swarmkeeper)", "Wizard"],
+        "classes": ["Artificier", "Cleric (Arcana)", "Cleric (Knowledge)", "Ranger (Swarmkeeper)", "Wizard"],
         "entries": [
             "You create an invisible, magical eye within range that hovers in the air for the duration.",
             "You mentally receive visual information from the eye, which has normal vision and darkvision out to 30 feet. The eye can look in every direction.",
@@ -646,7 +646,7 @@
         "range": "Touch",
         "components": "V, S, M (gold dust worth at least 25 gp, which the spell consumes)",
         "duration": "Until dispelled",
-        "classes": ["Wizard", "Fighter (E.Knight)"],
+        "classes": ["Artificier", "Wizard", "Fighter (E.Knight)"],
         "entries": [
             "You touch a closed door, window, gate, chest, or other entryway, and it becomes locked for the duration. You and the creatures you designate when you cast this spell can open the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute. Otherwise, it is impassable until it is broken or the spell is dispelled or suppressed. Casting knock on the object suppresses arcane lock for 10 minutes.",
             "While affected by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10."
@@ -715,7 +715,7 @@
         "range": "Self",
         "components": "V, S, M (specially marked sticks, bones, or similar tokens worth at least 25 gp)",
         "duration": "Instantaneous",
-        "classes": ["Cleric", "Cleric (Knowledge)"],
+        "classes": ["Artificier", "Cleric", "Cleric (Knowledge)"],
         "entries": [
             "By casting gem-inlaid sticks, rolling dragon bones, laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The DM chooses from the following possible omens.",
             {
@@ -741,7 +741,7 @@
         "range": "Self (30-foot radius)",
         "components": "V",
         "duration": "Concentration, up to 10 minutes",
-        "classes": ["Cleric (Twilight)", "Druid (Wildfire)", "Paladin"],
+        "classes": ["Artificier", "Cleric (Twilight)", "Druid (Wildfire)", "Paladin"],
         "entries": [
             "Life-preserving energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) has resistance to necrotic damage, and its hit point maximum can't be reduced. In addition, a non-hostile, living creature regains 1 hit point when it starts its turn in the aura with 0 hit points."
         ]
@@ -756,7 +756,7 @@
         "range": "Self (30-foot radius)",
         "components": "V",
         "duration": "Concentration, up to 10 minutes",
-        "classes": ["Cleric (Peace)", "Paladin", "Paladin (Watchers)"],
+        "classes": ["Artificier", "Cleric (Peace)", "Paladin", "Paladin (Watchers)"],
         "entries": [
             "Purifying energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) can't become diseased, has resistance to poison damage, and has advantage on saving throws against effects that cause any of the following conditions - blinded, charmed, deafened, frightened, paralyzed, poisoned, and stunned."
         ]
@@ -771,7 +771,7 @@
         "range": "Self (30-foot radius)",
         "components": "V",
         "duration": "Concentration, up to 1 minute",
-        "classes": ["Cleric (Twilight)", "Paladin", "Paladin (Crown)"],
+        "classes": ["Artificier", "Cleric (Twilight)", "Paladin", "Paladin (Crown)"],
         "entries":
         ["Healing energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. You can use a bonus action to cause one creature in the aura (including you) to regain 2d6 hit points."
         ]
