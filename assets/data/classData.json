@@ -1,7 +1,7 @@
 [
   {
-    "name": "Artificier",
-    "id": "artificier",
+    "name": "Artificer",
+    "id": "artificer",
     "source": "TCE",
     "description": "Masters of invention, artificers use ingenuity and magic to unlock extraordinary capabilities in objects. They see magic as a complex system waiting to be decoded and then harnessed in their spells and inventions.",
     "hd": "8",
@@ -9526,7 +9526,7 @@
         "level": 1,
         "filter": "yes",
         "subclass": "clockwork",
-        "name": "clockwork soul",
+        "name": "clockwork",
         "title": "Clockwork Soul",
         "source": "TCE",
         "text": [
@@ -10112,7 +10112,7 @@
             "type": "list",
             "items": [
               "1st - {@spells burning hands}, {@spells command}",
-              "3rd - <a href='#/spells/blindness/deafness'>blindness/deafness</a>, {@spells scorching ray}",
+              "3rd - {@spells blindness/deafness}, {@spells scorching ray}",
               "5th - {@spells fireball}, {@spells stinking cloud}",
               "7th - {@spells fire shield}, {@spells wall of fire}",
               "9th - {@spells flame strike}, {@spells hallow}"
