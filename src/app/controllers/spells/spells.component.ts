@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Subject } from 'angular-datatables/node_modules/rxjs';
 
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { SpellComponent } from './spell/spell.component';
 import { DataTableDirective } from 'angular-datatables';
 import { Spell } from 'src/app/models/spell';
@@ -28,7 +28,7 @@ export class SpellsComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(SpellComponent) child: SpellComponent ;
+  @ViewChild(SpellComponent) child: SpellComponent;
 
   // DataTables objects
   @ViewChild(DataTableDirective)
@@ -37,6 +37,7 @@ export class SpellsComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject();
 
   ngOnInit(): void {
+    let route = this.route.queryParams;
     this.dtOptions = {
       columnDefs: [
         { width: '45%', targets: 0 },
@@ -69,6 +70,12 @@ export class SpellsComponent implements OnInit {
       },
       initComplete: function(settings, json) {
         const api = this.api();
+
+        route.subscribe(params => {
+          for (var param in params) {
+            $(`#${param}`).val(params[param]); //fill in text boxes with query params
+          }
+        });
         api.columns().every(function() {
           const column = this;
           const $head = $(column.header());
@@ -77,7 +84,7 @@ export class SpellsComponent implements OnInit {
             const $this = $(this);
             const value = <string>$this.val();
             if (column.search() !== value) {
-              column.search(value).draw();
+              column.search(value,true,false).draw(); //text, regex, smartSearch
             }
           }).trigger('change');
         });
@@ -85,13 +92,13 @@ export class SpellsComponent implements OnInit {
     };
 
     this.getJSON().subscribe(spells => {
-        this.spells = spells;
-        this.route.paramMap.subscribe(params => {
-          this.currSpell = this.spells.find(f => f.id == this.route.snapshot.params.spellName);
-        });
-        setTimeout(() => {
-          this.dtTrigger.next();
-        });
+      this.spells = spells;
+      this.route.paramMap.subscribe(params => {
+        this.currSpell = this.spells.find(f => f.id == this.route.snapshot.params.spellName);
+      });
+      setTimeout(() => {
+        this.dtTrigger.next();
+      });
     });
   }
 

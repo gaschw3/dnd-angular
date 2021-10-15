@@ -9,7 +9,7 @@
          "benefits": [
             "Increase your Intelligence, Wisdom, or Charisma by 1, to a maximum of 20.",
             "You can speak telepathically to any creature you can see within 60 feet of you. Your telepathic utterances are in a language you know, and the creature understands you only if it knows that language. Your communication doesn't give the creature the ability to respond to you telepathically.",
-            "You can cast the {@spell/detect-thoughts detect thoughts} spell, requiring no spell slot or components, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for the spell is the ability increased by this feat. If you have spell slots of 2nd level or higher, you can cast this spell with them."
+            "You can cast the {@spells detect thoughts} spell, requiring no spell slot or components, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for the spell is the ability increased by this feat. If you have spell slots of 2nd level or higher, you can cast this spell with them."
          ]
       }
    },
@@ -22,7 +22,7 @@
          "description": "You learn to move things with your mind, granting you the following benefits:",
          "benefits": [
             "Increase your Intelligence, Wisdom, or Charisma by 1, to a maximum of 20.",
-            "You learn the {@spell/mage-hand mage hand} cantrip. You can cast it without verbal or somatic components, and you can make the spectral hand invisible. If you already know this spell, its range increases by 30 feet when you cast it. Its spellcasting ability is the ability increased by this feat.",
+            "You learn the {@spells mage hand} cantrip. You can cast it without verbal or somatic components, and you can make the spectral hand invisible. If you already know this spell, its range increases by 30 feet when you cast it. Its spellcasting ability is the ability increased by this feat.",
             "As a bonus action, you can try to telekinetically shove one creature you can see within 30 feet of you. When you do so, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + the ability modifier of the score increased by this feat) or be moved 5 feet toward you or away from you. A creature can willingly fail this save."
          ]
       }
@@ -50,7 +50,7 @@
          "description": "Your exposure to the Shadowfell's magic has changed you, granting you the following benefits:",
          "benefits": [
             "Increase your Intelligence, Wisdom, or Charisma by 1, to a maximum of 20.",
-            "You learn the {@spell/invisibility invisibility} spell and one 1st-level spell of your choice. The 1st-level spell must be from the illusion or necromancy school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can't cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is the ability increased by this feat."
+            "You learn the {@spells invisibility} spell and one 1st-level spell of your choice. The 1st-level spell must be from the illusion or necromancy school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can't cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is the ability increased by this feat."
          ]
       }
    },
@@ -63,7 +63,7 @@
          "description": "Your exposure to the Feywild's magic has changed you, granting you the following benefits:",
          "benefits": [
             "Increase your Intelligence, Wisdom, or Charisma by 1, to a maximum of 20.",
-            "You learn the {@spell/misty-step misty step} spell and one 1st-level spell of your choice. The 1st-level spell must be from the divination or enchantment school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can't cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is the ability increased by this feat."
+            "You learn the {@spells misty step} spell and one 1st-level spell of your choice. The 1st-level spell must be from the divination or enchantment school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can't cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is the ability increased by this feat."
          ]
       }
    },
@@ -109,7 +109,7 @@
       "text": {
          "description": "You've learned some of an artificer's inventiveness:",
          "benefits": [
-            "You learn one cantrip of your choice from the artificer spell list, and you learn one 1st-level spell of your choice from that list. Intelligence is your spellcasting ability for these spells.",
+            "You learn one cantrip of your choice from the {@spells ?spell-class-filter=artificier&spell-level-filter=0|artificier spell list}, and you learn one 1st-level spell of your choice from {@spells ?spell-class-filter=artificier&spell-level-filter=1|that list}. Intelligence is your spellcasting ability for these spells.",
             "You can cast this feat's 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.",
             "You gain proficiency with one type of artisan's tools of your choice, and you can use that type of tool as a spellcasting focus for any spell you cast that uses Intelligence as its spellcasting ability."
          ]
@@ -597,7 +597,7 @@
          "description": "You have learned a number of spells that you can cast as rituals. These spells are written in a ritual book, which you must have in hand while casting one of them.",
          "benefits": [
             "(BREW) Increase your Intelligence or Wisdom by 1, to a maximum of 20.",
-            "When you choose this feat, you acquire a ritual book holding two 1st-level spells of your choice. Choose one of the following classes: bard, cleric, druid, sorcerer, warlock, or wizard. You must choose your spells from that class's spell list, and the spells you choose must have the ritual tag. The class you choose also determines your spellcasting ability for these spells: Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid; or Intelligence for wizard.",
+            "When you choose this feat, you acquire a ritual book holding two 1st-level spells of your choice. Choose one of the following classes: bard, cleric, druid, sorcerer, warlock, or wizard. You must choose your spells from that class's spell list, and the {@spells ?spell-name-filter=(r)|spells must have the ritual tag}. The class you choose also determines your spellcasting ability for these spells: Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid; or Intelligence for wizard.",
             "If you come across a spell in written form, such as a magical spell scroll or a wizard's spellbook, you might be able to add it to your ritual book. The spell must be on the spell list for the class you chose, the spell's level can be no higher than half your level (rounded up), and it must have the ritual tag. The process of copying the spell into your ritual book takes 2 hours per level of the spell, and costs 50 gp per level. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it."
          ]
       }
@@ -679,7 +679,7 @@
          "benefits": [
             "When you cast a spell that requires you to make an attack roll, the spell's range is doubled.",
             "Your ranged spell attacks ignore half cover and three-quarters cover.",
-            "You learn one cantrip that requires an attack roll. Choose the cantrip from the bard, cleric, druid, sorcerer, warlock, or wizard spell list. Your spellcasting ability for this cantrip depends on the spell list you chose from: Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid; or Intelligence for wizard.",
+            "You learn {@spells ?spell-level-filter=0|one cantrip} that requires an attack roll. Choose the cantrip from the bard, cleric, druid, sorcerer, warlock, or wizard spell list. Your spellcasting ability for this cantrip depends on the spell list you chose from: Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid; or Intelligence for wizard.",
             "Being withing 5 feet of a hostile create doesn't impose disadvantage on your ranged spell attack rolls."
          ]
       }

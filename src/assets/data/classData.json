@@ -9,16 +9,16 @@
     "proficiencies": {
       "armor": "light armor, medium armor, shields",
       "weapons": "simple weapons, firearms",
-      "tools": "{@items/thieves-tools thieves' tools}, {@items/tinkers-tools tinker's tools}, one type of artisan's tolls of your choice",
+      "tools": "{@items thieves' tools}, {@items tinker's tools}, one type of artisan's tolls of your choice",
       "saves": "CON, INT",
       "skills": "Choose two from Arcana, History, Investigation, Medicine, Nature, Perception, and Sleight of Hand"
     },
     "equipment": {
       "default": [
         "any two simple weapons of your choice",
-        "a {@items/light-crossbow light crossbow} and 20 {@items/crossbow-bolt bolts}",
-        "(a) {@items/studded-leather-armor studded leather armor} or (b) {@items/scale-mail scale mail}",
-        "{@items/thieves-tools thieves' tools} and a {@items/dungeoneers-pack dungeoneer's pack}"
+        "a {@items light crossbow} and 20 {@items crossbow bolt}s",
+        "(a) {@items studded leather armor} or (b) {@items scale mail}",
+        "{@items thieves' tools} and a {@items dungeoneer's pack}"
       ],
       "alt": "5d4"
     },
@@ -180,11 +180,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/healing-word healing word}, {@spells/ray-of-sickness ray of sickness}",
-              "5rd - {@spells/flaming-sphere flaming sphere}, {@spells/melfs-acid-arrow Melf's acid arrow}",
-              "9rd - {@spells/gaseous-form gaseous form}, {@spells/mass-healing-word mass healing word}",
-              "13rd - {@spells/blight blight}, {@spells/death-ward death ward}",
-              "17rd - {@spells/cloudkill cloudkill}, {@spells/raise-dead raise dead}"
+              "3rd - {@spells healing word}, {@spells ray of sickness}",
+              "5rd - {@spells flaming sphere}, {@spells Melf's acid arrow}",
+              "9rd - {@spells gaseous form}, {@spells mass healing word}",
+              "13rd - {@spells blight}, {@spells death ward}",
+              "17rd - {@spells cloudkill}, {@spells raise dead}"
             ]
           }
         ]
@@ -268,11 +268,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/magic-missile magic missile}, {@spells/thunderwave thunderwave}",
-              "5rd - {@spells/mirror-image mirror image}, {@spells/shatter shatter}",
-              "9rd - {@spells/hypnotic-pattern hypnotic pattern}, {@spells/lightning-bolt lightning bolt}",
-              "13rd - {@spells/fire-shield fire shield}, {@spells/greater-invisibility greater invisibillity}",
-              "17rd - {@spells/passwall passwall}, {@spells/wall-of-force wall of force}"
+              "3rd - {@spells magic missile}, {@spells thunderwave}",
+              "5rd - {@spells mirror image}, {@spells shatter}",
+              "9rd - {@spells hypnotic pattern}, {@spells lightning bolt}",
+              "13rd - {@spells fire shield}, {@spells greater invisibillity}",
+              "17rd - {@spells passwall}, {@spells wall of force}"
             ]
           }
         ]
@@ -356,11 +356,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/shield shield}, {@spells/thunderwave thunderwave}",
-              "5rd - {@spells/scorching-ray scorching ray}, {@spells/shatter shatter}",
-              "9rd - {@spells/fireball fireball}, {@spells/wind-wall wind wall}",
-              "13rd - {@spells/ice-storm ice storm}, {@spells/wall-of-fire wall of fire}",
-              "17rd - {@spells/cone-of-cold cone of cold}, {@spells/wall-of-force wall of force}"
+              "3rd - {@spells shield}, {@spells thunderwave}",
+              "5rd - {@spells scorching ray}, {@spells shatter}",
+              "9rd - {@spells fireball}, {@spells wind wall}",
+              "13rd - {@spells ice storm}, {@spells wall of fire}",
+              "17rd - {@spells cone of cold}, {@spells wall of force}"
             ]
           }
         ]
@@ -432,11 +432,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/shield shield}, {@spells/heroism heroism}",
-              "5rd - {@spells/branding-smite branding smite}, {@spells/warding-bond warding bond}",
-              "9rd - {@spells/aura-of-vitality aura of vitality}, {@spells/conjure-barrage conjure barrage}",
-              "13rd - {@spells/aura-of-purity aura of purity}, {@spells/fire-shield fire shield}",
-              "17rd - {@spells/banishing-smite banishing smite}, {@spells/mass-cure-wounds mass cure wounds}"
+              "3rd - {@spells shield}, {@spells heroism}",
+              "5rd - {@spells branding smite}, {@spells warding bond}",
+              "9rd - {@spells aura of vitality}, {@spells conjure barrage}",
+              "13rd - {@spells aura of purity}, {@spells fire shield}",
+              "17rd - {@spells banishing smite}, {@spells mass cure wounds}"
             ]
           }
         ]
@@ -463,9 +463,9 @@
         "name": "battlesmith-defender",
         "title": "Battlesmith: Steel Defender",
         "text": [
-          "By 3rd level, your tinkering has borne you a faithful companion, a {@beastiary/steel-defender steel defender}. It is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the steel defender stat block, which uses your proficiency bonus (PB) in several places. You determine the creature's appearance and whether it has two legs or four; your choice has no effect on its game statistics.",
+          "By 3rd level, your tinkering has borne you a faithful companion, a {@beastiary steel defender}. It is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the steel defender stat block, which uses your proficiency bonus (PB) in several places. You determine the creature's appearance and whether it has two legs or four; your choice has no effect on its game statistics.",
           "In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge.",
-          "If the {@spells/mending mending} spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith's tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.",
+          "If the {@spells mending} spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith's tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.",
           "At the end of a long rest, you can create a new steel defender if you have your smith's tools with you. If you already have a steel defender from this feature, the first one immediately perishes. The defender also perishes if you die."
         ]
       },
@@ -699,7 +699,7 @@
             "type": "list",
             "items": [
               "You gain resistance to acid damage and poison damage, and you are immune to the poisoned condition.",
-              "You can cast {@spells/greater-restoration greater restoration} and {@spells/heal heal} without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist's supplies as the spellcasting focus. Once you cast either spell with this feature, you can't cast that spell with it again until you finish a long rest."
+              "You can cast {@spells greater restoration} and {@spells heal} without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist's supplies as the spellcasting focus. Once you cast either spell with this feature, you can't cast that spell with it again until you finish a long rest."
             ]
           }
         ]
@@ -812,10 +812,10 @@
     },
     "equipment": {
       "default": [
-        "(a) a {@items/greataxe greataxe} or (b) any martial melee weapon",
-        "(a) two {@items/handaxe handaxes} or (b) any simple weapon",
-        "An {@items/explorers-pack explorer's pack}",
-        "four {@items/javelin javelins}"
+        "(a) a {@items greataxe} or (b) any martial melee weapon",
+        "(a) two {@items handaxe|handaxes} or (b) any simple weapon",
+        "An {@items explorer's pack}",
+        "four {@items javelin|javelins}"
       ],
       "alt": "2d4"
     },
@@ -1341,7 +1341,7 @@
         "name": "totem-walker",
         "title": "Path of the Totem Warrior: Spirit Walker",
         "text": [
-          "At 10th level, you can cast the {@spells/commune-with-nature commune with nature} spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek."
+          "At 10th level, you can cast the {@spells commune with nature} spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek."
         ]
       },
       {
@@ -1584,11 +1584,11 @@
     },
     "equipment": {
       "default": [
-        "(a) a {@items/rapier rapier}, (b) a {@items/longsword longsword}, or (c) any simple weapon",
-        "(a) a a {@items/diplomats-pack diplomat's pack} or (b) an a {@items/entertainers-pack entertainer's pack}",
-        "(a) a {@items/lute lute} or (b) any other musical instrument",
-        "a {@items/leather-armor leather armor}",
-        "a {@items/dagger dagger}"
+        "(a) a {@items rapier}, (b) a {@items longsword}, or (c) any simple weapon",
+        "(a) a a {@items diplomat's pack} or (b) an a {@items entertainer's pack}",
+        "(a) a {@items lute} or (b) any other musical instrument",
+        "a {@items leather armor}",
+        "a {@items dagger}"
       ],
       "alt": "5d4"
     },
@@ -2040,7 +2040,7 @@
         "name": "glamour-majesty",
         "title": "College of Glamour: Mantle of Majesty",
         "text": [
-          "At 6th level, you gain the ability to cloak yourself in a fey magic that makes others want to serve you. As a bonus action, you cast command, without expending a spell slot, and you take on an appearance of unearthly beauty for 1 minute or until your concentration ends (as if you were concentrating on a spell). During this time, you can cast {@spells/command command} as a bonus action on each of your turns, without expending a spell slot.",
+          "At 6th level, you gain the ability to cloak yourself in a fey magic that makes others want to serve you. As a bonus action, you cast command, without expending a spell slot, and you take on an appearance of unearthly beauty for 1 minute or until your concentration ends (as if you were concentrating on a spell). During this time, you can cast {@spells command} as a bonus action on each of your turns, without expending a spell slot.",
           "Any creature charmed by you automatically fails its saving throw against the command you cast with this feature.",
           "Once you use this feature, you can't use it again until you finish a long rest."
         ]
@@ -2064,7 +2064,7 @@
         "name": "creation-animating",
         "title": "College of Creation: Animating Performance",
         "text": [
-          "As an action, you can target a Large or smaller nonmagical item you can see within 30 feet of you and animate it. The animate item uses the {@beastiary/dancing-item Dancing Item} stat block, which uses your proficiency bonus (PB). The item is friendly to you and your companions and obeys your commands. It lives for 1 hour, until it is reduced to 0 hit points, or until you die.",
+          "As an action, you can target a Large or smaller nonmagical item you can see within 30 feet of you and animate it. The animate item uses the {@beastiary Dancing Item} stat block, which uses your proficiency bonus (PB). The item is friendly to you and your companions and obeys your commands. It lives for 1 hour, until it is reduced to 0 hit points, or until you die.",
           "In combat, the item shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the item can take any action of its choice, not just Dodge.",
           "When you use your Bardic Inspiration feature, you can command the item as part of the same bonus action you use for Bardic Inspiration.",
           "Once you animate an item with this feature, you can't do so again until you finish a long rest, unless you expend a spell slot of 3rd level or higher to use this feature again. You can have only one item animated by this feature at a time; if you use this action and already have a dancing item from this feature, the first one immediately becomes inanimate."
@@ -2306,11 +2306,11 @@
     },
     "equipment": {
       "default": [
-        "(a) a {@items/mace mace} or (b) a {@items/warhammer warhammer} (if proficient)",
-        "(a) a {@items/scale-mail scale mail}, (b) a {@items/leather-armor leather armor}, or (c) chain mail (if proficient)",
-        "(a) a {@items/light-crossbow light crossbow} and 20 bolts or (b) any simple weapon",
-        "a {@items/shield shield}",
-        "a {@items/amulet holy symbol}"
+        "(a) a {@items mace} or (b) a {@items warhammer} (if proficient)",
+        "(a) a {@items scale mail}, (b) a {@items leather armor}, or (c) chain mail (if proficient)",
+        "(a) a {@items light crossbow} and 20 bolts or (b) any simple weapon",
+        "a {@items shield}",
+        "a {@items amulet|holy symbol}"
       ],
       "alt": "5d4"
     },
@@ -2413,11 +2413,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/detect-magic detect magic}, {@spells/magic-missile magic missile}",
-              "3rd - {@spells/magic-weapon magic weapon}, {@spells/nystuls-magic-aura Nystul's magic aura}",
-              "5th - {@spells/dispel-magic dispel magic}, {@spells/magic-circle magic circle}",
-              "7th - {@spells/arcane-eye arcane eye}, {@spells/leomunds-secret-chest Leomund's secret chest}",
-              "9th - {@spells/planar-binding planar binding}, {@spells/teleportation-circle teleportation circle}"
+              "1st - {@spells detect magic}, {@spells magic missile}",
+              "3rd - {@spells magic weapon}, {@spells Nystul's magic aura}",
+              "5th - {@spells dispel magic}, {@spells magic circle}",
+              "7th - {@spells arcane eye}, {@spells Leomund's secret chest}",
+              "9th - {@spells planar binding}, {@spells teleportation circle}"
             ]
           }
         ]
@@ -2428,7 +2428,7 @@
         "name": "arcana-initiate",
         "title": "Arcana Domain: Arcane Initiate",
         "text": [
-          "When you choose this domain at 1st level, you gain proficiency in the Arcana skill, and you gain two cantrips of your choice from the wizard spell list. For you, these cantrips count as cleric cantrips."
+          "When you choose this domain at 1st level, you gain proficiency in the Arcana skill, and you gain two cantrips of your choice from the {@spells ?spell-class-filter=wizard&spell-level-filter=0|wizard spell list}. For you, these cantrips count as cleric cantrips."
         ]
       },
       {
@@ -2444,11 +2444,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/false-life false life}, {@spells/ray-of-sickness ray of sickness}",
-              "3rd - {@spells/blindness-deafness blindness/deafness}, {@spells/ray-of-enfeeblement ray of enfeeblement}",
-              "5th - {@spells/animate-dead animate dead}, {@spells/vampiric-touch vampiric touch}",
-              "7th - {@spells/blight blight}, {@spells/death-ward death ward}",
-              "9th - {@spells/antilife-shell antilife shell}, {@spells/cloudkill cloudkill}"
+              "1st - {@spells false life}, {@spells ray of sickness}",
+              "3rd - {@spells blindness/deafness}, {@spells ray of enfeeblement}",
+              "5th - {@spells animate dead}, {@spells vampiric touch}",
+              "7th - {@spells blight}, {@spells death ward}",
+              "9th - {@spells antilife shell}, {@spells cloudkill}"
             ]
           }
         ]
@@ -2486,11 +2486,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/command command}, {@spells/heroism heroism}",
-              "3rd - {@spells/hold-person hold person}, {@spells/zone-of-truth zone of truth}",
-              "5th - {@spells/mass-healing-word mass healing word}, {@spells/slow slow}",
-              "7th - {@spells/compulsion compulsion}, {@spells/locate-creature locate creature}",
-              "9th - {@spells/commuine commune}, {@spells/dominate-person dominate person}"
+              "1st - {@spells command}, {@spells heroism}",
+              "3rd - {@spells hold person}, {@spells zone of truth}",
+              "5th - {@spells mass healing word}, {@spells slow}",
+              "7th - {@spells compulsion}, {@spells locate creature}",
+              "9th - {@spells commune}, {@spells dominate person}"
             ]
           }
         ]
@@ -2527,11 +2527,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/command command}, {@spells/identify identify}",
-              "3rd - {@spells/augury augury}, {@spells/suggestion suggestion}",
-              "5th - {@spells/nondetection nondetection}, {@spells/speak-with-dead speak with dead}",
-              "7th - {@spells/arcane-eye arcane eye}, {@spells/confusion confusion}",
-              "9th - {@spells/legend-lore legend lore}, {@spells/scrying scrying}"
+              "1st - {@spells command}, {@spells identify}",
+              "3rd - {@spells augury}, {@spells suggestion}",
+              "5th - {@spells nondetection}, {@spells speak with dead}",
+              "7th - {@spells arcane eye}, {@spells confusion}",
+              "9th - {@spells legend lore}, {@spells scrying}"
             ]
           }
         ]
@@ -2559,11 +2559,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/bless bless}, {@spells/cure-wounds cure wounds}",
-              "3rd - {@spells/lesser-restoration lesser restoration}, {@spells/spiritual-weapon spiritual weapon}",
-              "5th - {@spells/beacon-of-hope beacon of hope}, {@spells/revivify revivify}",
-              "7th - {@spells/death-ward death ward}, {@spells/guardian-of-faith guardian of faith}",
-              "9th - {@spells/mass-cure-wounds mass cure wounds}, {@spells/raise-dead raise dead}"
+              "1st - {@spells bless}, {@spells cure wounds}",
+              "3rd - {@spells lesser restoration}, {@spells spiritual weapon}",
+              "5th - {@spells beacon of hope}, {@spells revivify}",
+              "7th - {@spells death ward}, {@spells guardian of faith}",
+              "9th - {@spells mass cure wounds}, {@spells raise dead}"
             ]
           }
         ]
@@ -2599,11 +2599,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/burning-hands burning hands}, {@spells/faerie-fire faerie fire}",
-              "3rd - {@spells/flaming-sphere flaming sphere}, {@spells/scorching-ray scorching ray}",
-              "5th - {@spells/daylight daylight}, {@spells/fireball fireball}",
-              "7th - {@spells/guardian-of-faith guardian of faith}, {@spells/wall-of-fire wall of fire}",
-              "9th - {@spells/flame-strike flame strike}, {@spells/scrying scrying}"
+              "1st - {@spells burning hands}, {@spells faerie fire}",
+              "3rd - {@spells flaming sphere}, {@spells scorching ray}",
+              "5th - {@spells daylight}, {@spells fireball}",
+              "7th - {@spells guardian of faith}, {@spells wall of fire}",
+              "9th - {@spells flame strike}, {@spells scrying}"
             ]
           }
         ]
@@ -2640,11 +2640,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/animal-friendship animal friendship}, {@spells/speak-with-animals speak with animals}",
-              "3rd - {@spells/barkskin barkskin}, {@spells/spike-growth spike growth}",
-              "5th - {@spells/plant-growth plant growth}, {@spells/wind-wall wind wall}",
-              "7th - {@spells/dominate-beast dominate beast}, {@spells/grasping-vine grasping vine}",
-              "9th - {@spells/insect-plague insect plague}, {@spells/tree-stride tree stride}"
+              "1st - {@spells animal friendship}, {@spells speak with animals}",
+              "3rd - {@spells barkskin}, {@spells spike growth}",
+              "5th - {@spells plant growth}, {@spells wind wall}",
+              "7th - {@spells dominate beast}, {@spells grasping vine}",
+              "9th - {@spells insect plague}, {@spells tree stride}"
             ]
           }
         ]
@@ -2680,11 +2680,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/fog-cloud fog cloud}, {@spells/thunderwave thunderwave}",
-              "3rd - {@spells/gust-of-wind gust of wind}, {@spells/shatter shatter}",
-              "5th - {@spells/call-lightning call lightning}, {@spells/sleet-storm sleet storm}",
-              "7th - {@spells/control-water control water}, {@spells/ice-storm ice storm}",
-              "9th - {@spells/destructive-wave destructive wave}, {@spells/insect-plague insect plague}"
+              "1st - {@spells fog cloud}, {@spells thunderwave}",
+              "3rd - {@spells gust of wind}, {@spells shatter}",
+              "5th - {@spells call lightning}, {@spells sleet storm}",
+              "7th - {@spells control water}, {@spells ice storm}",
+              "9th - {@spells destructive wave}, {@spells insect plague}"
             ]
           }
         ]
@@ -2721,11 +2721,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/charm-person charm person}, {@spells/disguise-self disguise self}",
-              "3rd - {@spells/mirror-image mirror image}, {@spells/pass-without-trace pass without trace}",
-              "5th - {@spells/blink blink}, {@spells/dispel-magic dispel magic}",
-              "7th - {@spells/dimension-door dimension door}, {@spells/polymorph polymorph}",
-              "9th - {@spells/dominate-person dominate person}, {@spells/modify-memory modify memory}"
+              "1st - {@spells charm person}, {@spells disguise self}",
+              "3rd - {@spells mirror image}, {@spells pass without trace}",
+              "5th - {@spells blink}, {@spells dispel magic}",
+              "7th - {@spells dimension door}, {@spells polymorph}",
+              "9th - {@spells dominate person}, {@spells modify memory}"
             ]
           }
         ]
@@ -2761,11 +2761,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/divine-favor divine favor}, {@spells/shield-of-faith shield of faith}",
-              "3rd - {@spells/magic-weapon magic weapon}, {@spells/spiritual-weapon spiritual weapon}",
-              "5th - {@spells/crusaders-mantle crusader's mantle}, {@spells/spirit-guardians spirit guardians}",
-              "7th - {@spells/freedom-of-movement freedom of movement}, {@spells/stoneskin stoneskin}",
-              "9th - {@spells/flame-strike flame strike}, {@spells/hold-monster hold monster}"
+              "1st - {@spells divine favor}, {@spells shield of faith}",
+              "3rd - {@spells magic weapon}, {@spells spiritual weapon}",
+              "5th - {@spells crusader's mantle}, {@spells spirit guardians}",
+              "7th - {@spells freedom of movement}, {@spells stoneskin}",
+              "9th - {@spells flame strike}, {@spells hold monster}"
             ]
           }
         ]
@@ -2801,11 +2801,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/heroism heroism}, {@spells/sanctuary sanctuary}",
-              "3rd - {@spells/aid aid}, {@spells/warding-bond warding bond}",
-              "5th - {@spells/beacon-of-hope beacon of hope}, {@spells/sending sending}",
-              "7th - {@spells/aura-of-purity aura of purity}, {@spells/resilient-sphere resilient sphere}",
-              "9th - {@spells/greater-restoration greater restoration}, {@spells/telepathic-bond telepathic-bond}"
+              "1st - {@spells heroism}, {@spells sanctuary}",
+              "3rd - {@spells aid}, {@spells warding bond}",
+              "5th - {@spells beacon of hope}, {@spells sending}",
+              "7th - {@spells aura of purity}, {@spells resilient sphere}",
+              "9th - {@spells greater restoration}, {@spells telepathic-bond}"
             ]
           }
         ]
@@ -2841,11 +2841,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/faerie-fire faerie fire}, {@spells/sleep sleep}",
-              "3rd - {@spells/moonbeam moonbeam}, {@spells/see-invisibility see invisibility}",
-              "5th - {@spells/aura-of-vitality aura of vitality}, {@spells/leomnuds-tiny-hut tiny hut}",
-              "7th - {@spells/aura-of-life aura of life}, {@spells/greater-invisibility greater invisibility}",
-              "9th - {@spells/circle-of-power circle of power}, {@spells/mislead mislead}"
+              "1st - {@spells faerie fire}, {@spells sleep}",
+              "3rd - {@spells moonbeam}, {@spells see invisibility}",
+              "5th - {@spells aura of vitality}, {@spells tiny hut}",
+              "7th - {@spells aura of life}, {@spells greater invisibility}",
+              "9th - {@spells circle of power}, {@spells mislead}"
             ]
           }
         ]
@@ -2891,11 +2891,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/searing-smite searing smite}, {@spells/identify identify}",
-              "3rd - {@spells/heat-metal heat metal}, {@spells/magic-weapon magic weapon}",
-              "5th - {@spells/elemental-weapon elemental weapon}, {@spells/protection-from-energy protection from energy}",
-              "7th - {@spells/fabricate fabricate}, {@spells/wall-of-fire wall of fire}",
-              "9th - {@spells/animate-objects animate objects}, {@spells/creation creation}"
+              "1st - {@spells searing smite}, {@spells identify}",
+              "3rd - {@spells heat metal}, {@spells magic weapon}",
+              "5th - {@spells elemental weapon}, {@spells protection from energy}",
+              "7th - {@spells fabricate}, {@spells wall of fire}",
+              "9th - {@spells animate objects}, {@spells creation}"
             ]
           }
         ]
@@ -2931,11 +2931,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/bane bane}, {@spells/false-life false life}",
-              "3rd - {@spells/gentle-repose gentle repose}, {@spells/ray-of-enfeeblement ray of enfeeblement}",
-              "5th - {@spells/revivify revivify}, {@spells/vampiric-touch vampiric touch}",
-              "7th - {@spells/blight blight}, {@spells/death-ward death ward}",
-              "9th - {@spells/antilife-shell antilife shell}, {@spells/raise-dead raise dead}"
+              "1st - {@spells bane}, {@spells false life}",
+              "3rd - {@spells gentle repose}, {@spells ray of enfeeblement}",
+              "5th - {@spells revivify}, {@spells vampiric touch}",
+              "7th - {@spells blight}, {@spells death ward}",
+              "9th - {@spells antilife shell}, {@spells raise dead}"
             ]
           }
         ]
@@ -3588,18 +3588,18 @@
     "stat": "WIS",
     "proficiencies": {
       "armor": "light armor, medium armor, shields (most druids will not wear armor or use shields made of metal)",
-      "weapons": "clubs, daggers, darts, {@items/javelin javelins}, maces, quarterstaffs, scimitars, sickles, slings, spears",
+      "weapons": "clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears",
       "tools": "herbalism kit",
       "saves": "INT, WIS",
       "skills": "Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival"
     },
     "equipment": {
       "default": [
-        "(a) a wooden {@items/shield shield} or (b) any simple weapon",
-        "(a) a {@items/scimitar scimitar} or (b) any simple melee weapon",
-        "a {@items/leather-armor leather armor}",
-        "an {@items/explorers-pack explorer's pack}",
-        "a {@items/yew-wand duidic focus}"
+        "(a) a wooden {@items shield} or (b) any simple weapon",
+        "(a) a {@items scimitar} or (b) any simple melee weapon",
+        "a {@items leather armor}",
+        "an {@items explorer's pack}",
+        "a {@items yew-wand|duidic focus}"
       ],
       "alt": "2d4"
     },
@@ -3763,40 +3763,40 @@
               {
                 "type": "list",
                 "items": [
-                  "3rd - {@spells/hold-person hold person}, {@spells/spike-growth spike growth}",
-                  "5th - {@spells/sleet-storm sleet storm}, {@spells/slow slow}",
-                  "7th - {@spells/freedom-of-movement freedom of movement}, {@spells/ice-storm ice storm}",
-                  "9th - {@spells/commune-with-nature commune with nature}, {@spells/cone-of-cold cone of cold}"
+                  "3rd - {@spells hold person}, {@spells spike growth}",
+                  "5th - {@spells sleet storm}, {@spells slow}",
+                  "7th - {@spells freedom of movement}, {@spells ice storm}",
+                  "9th - {@spells commune with nature}, {@spells cone of cold}"
                 ]
               },
               "<h5 class='mb-0'>Circle Spells: Coast</h5>",
               {
                 "type": "list",
                 "items": [
-                  "3rd - {@spells/mirror-image mirror image}, {@spells/misty-step misty step}",
-                  "5th - {@spells/water-breathing water breathing}, {@spells/water-walk water walk}",
-                  "7th - {@spells/control-water control water}, {@spells/freedom-of-movement freedom of movement}",
-                  "9th - {@spells/conjure-elemental conjure elemental}, {@spells/scrying scrying}"
+                  "3rd - {@spells mirror image}, {@spells misty step}",
+                  "5th - {@spells water breathing}, {@spells water walk}",
+                  "7th - {@spells control water}, {@spells freedom of movement}",
+                  "9th - {@spells conjure elemental}, {@spells scrying}"
                 ]
               },
               "<h5 class='mb-0'>Circle Spells: Desert</h5>",
               {
                 "type": "list",
                 "items": [
-                  "3rd - {@spells/blur blur}, {@spells/silence silence}",
-                  "5th - {@spells/create-food-and-water create food and water}, {@spells/protection-from-energy protection from energy}",
-                  "7th - {@spells/blight blight}, {@spells/hallucinatory-terrain hallucinatory terrain}",
-                  "9th - {@spells/insect-plague insect plague}, {@spells/wall-of-stone wall of stone}"
+                  "3rd - {@spells blur}, {@spells silence}",
+                  "5th - {@spells create food and water}, {@spells protection from energy}",
+                  "7th - {@spells blight}, {@spells hallucinatory terrain}",
+                  "9th - {@spells insect plague}, {@spells wall of stone}"
                 ]
               },
               "<h5 class='mb-0'>Circle Spells: Forest</h5>",
               {
                 "type": "list",
                 "items": [
-                  "3rd - {@spells/barkskin barkskin}, {@spells/spider-climb spider climb}",
-                  "5th - {@spells/call-lightning call lightning}, {@spells/plant-growth plant growth}",
-                  "7th - {@spells/divination divination}, {@spells/freedom-of-movement freedom of movement}",
-                  "9th - {@spells/dream dream}, {@spells/insect-plague insect plague}"
+                  "3rd - {@spells barkskin}, {@spells spider climb}",
+                  "5th - {@spells call lightning}, {@spells plant growth}",
+                  "7th - {@spells divination}, {@spells freedom of movement}",
+                  "9th - {@spells dream}, {@spells insect plague}"
                 ]
               }
             ],
@@ -3805,40 +3805,40 @@
               {
                 "type": "list",
                 "items": [
-                  "3rd - {@spells/invisibility invisibility}, {@spells/pass-without-trace pass without trace}",
-                  "5th - {@spells/daylight daylight}, {@spells/haste haste}",
-                  "7th - {@spells/divination divination}, {@spells/freedom-of-movement freedom of movement}",
-                  "9th - {@spells/dream dream}, {@spells/insect-plague insect plague}"
+                  "3rd - {@spells invisibility}, {@spells pass without trace}",
+                  "5th - {@spells daylight}, {@spells haste}",
+                  "7th - {@spells divination}, {@spells freedom of movement}",
+                  "9th - {@spells dream}, {@spells insect plague}"
                 ]
               },
               "<h5 class='mb-0'>Circle Spells: Mountain</h5>",
               {
                 "type": "list",
                 "items": [
-                  "3rd - {@spells/spider-climb spider climb}, {@spells/spike-growth spike growth}",
-                  "5th - {@spells/lightning-bolt lightning bolt}, {@spells/meld-into-stone meld into stone}",
-                  "7th - {@spells/stone-shape stone shape}, {@spells/stoneskin stoneskin}",
-                  "9th - {@spells/passwall passwall}, {@spells/wall-of-stone wall of stone}"
+                  "3rd - {@spells spider climb}, {@spells spike growth}",
+                  "5th - {@spells lightning bolt}, {@spells meld into stone}",
+                  "7th - {@spells stone shape}, {@spells stoneskin}",
+                  "9th - {@spells passwall}, {@spells wall of stone}"
                 ]
               },
               "<h5 class='mb-0'>Circle Spells: Swamp</h5>",
               {
                 "type": "list",
                 "items": [
-                  "3rd - {@spells/darkness darkness}, {@spells/melfs-acid-arrow Melf's acid arrow}",
-                  "5th - {@spells/water-walk water walk}, {@spells/stinking-cloud stinking cloud}",
-                  "7th - {@spells/freedom-of-movement freedom of movement}, {@spells/locate-creature locate creature}",
-                  "9th - {@spells/insect-plague insect plague}, {@spells/scrying scrying}"
+                  "3rd - {@spells darkness}, {@spells Melf's acid arrow}",
+                  "5th - {@spells water walk}, {@spells stinking cloud}",
+                  "7th - {@spells freedom of movement}, {@spells locate creature}",
+                  "9th - {@spells insect plague}, {@spells scrying}"
                 ]
               },
               "<h5 class='mb-0'>Circle Spells: Underdark</h5>",
               {
                 "type": "list",
                 "items": [
-                  "3rd - {@spells/spider-climb spider climb}, {@spells/web web}",
-                  "5th - {@spells/gaseous-form gaseous form}, {@spells/stinking-cloud stinking cloud}",
-                  "7th - {@spells/greater-invisibility greater invisibility}, {@spells/stone-shape stone shape}",
-                  "9th - {@spells/cloudkill cloudkill}, {@spells/insect-plague insect plague}</li></<h5 class='mb-0'></div></div>"
+                  "3rd - {@spells spider climb}, {@spells web}",
+                  "5th - {@spells gaseous form}, {@spells stinking cloud}",
+                  "7th - {@spells greater invisibility}, {@spells stone shape}",
+                  "9th - {@spells cloudkill}, {@spells insect plague}</li></<h5 class='mb-0'></div></div>"
                 ]
               }
             ]
@@ -3914,14 +3914,14 @@
         "name": "spores-spells",
         "title": "Circle of Spores: Circle Spells",
         "text": [
-          "Your symbiotic link to fungus and your ability to tap into the cycle of life and death grants you access to certain spells. At 2nd level, you learn the {@spells/spectral-grasp spectral grasp} cantrip. At 3rd, 5th, 7th, and 9th level you gain access to the spells listed for that level in the Circle of Spores Spells table.",
+          "Your symbiotic link to fungus and your ability to tap into the cycle of life and death grants you access to certain spells. At 2nd level, you learn the {@spells spectral grasp} cantrip. At 3rd, 5th, 7th, and 9th level you gain access to the spells listed for that level in the Circle of Spores Spells table.",
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/blindness-deafness blindness/deafness}, {@spells/gentle-repose gentle repose}",
-              "5th - {@spells/animate-dead animate dead}, {@spells/gaseous-form gaseous form}",
-              "7th - {@spells/blight blight}, {@spells/confusion confusion}",
-              "9th - {@spells/cloudkill cloudkill}, {@spells/contagion contagion}"
+              "3rd - {@spells blindness/deafness}, {@spells gentle repose}",
+              "5th - {@spells animate dead}, {@spells gaseous form}",
+              "7th - {@spells blight}, {@spells confusion}",
+              "9th - {@spells cloudkill}, {@spells contagion}"
             ]
           }
         ]
@@ -4017,9 +4017,9 @@
           {
             "type": "list",
             "items": [
-              "You know the {@spells/guidance guidance} cantrip.",
-              "You have the {@spells/guiding-bolt guiding-bolt} spell prepared. It counts as a druid spell for you, and it doesn't count against the number of spells you can have prepared.",
-              "You can cast {@spells/guiding-bolt guiding-bolt} without expending a spell slot. You can do so a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+              "You know the {@spells guidance} cantrip.",
+              "You have the {@spells guiding-bolt} spell prepared. It counts as a druid spell for you, and it doesn't count against the number of spells you can have prepared.",
+              "You can cast {@spells guiding-bolt} without expending a spell slot. You can do so a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
             ]
           },
           "If you lose the map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map."
@@ -4064,11 +4064,11 @@
           {
             "type": "list",
             "items": [
-              "2rd - {@spells/burning-hands burning hands}, {@spells/cure-wounds cure wounds}",
-              "3th - {@spells/flaming-sphere flaming sphere}, {@spells/scorching-ray scorching ray}",
-              "5th - {@spells/plant-growth plant growth}, {@spells/revivify revivify}",
-              "7th - {@spells/aura-of-life aura of life}, {@spells/fire-shield fire shield}",
-              "9th - {@spells/flame-strike flame strike}, {@spells/mass-cure-wounds mass cure wounds}"
+              "2rd - {@spells burning hands}, {@spells cure wounds}",
+              "3th - {@spells flaming sphere}, {@spells scorching ray}",
+              "5th - {@spells plant growth}, {@spells revivify}",
+              "7th - {@spells aura of life}, {@spells fire shield}",
+              "9th - {@spells flame strike}, {@spells mass cure wounds}"
             ]
           }
         ]
@@ -4080,7 +4080,7 @@
         "title": "Circle of Wildfire: Summon Fire Spirit",
         "text": [
           "You can summon the primal spirit bound to your soul. As an action, you can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form. The spirit appears in an unoccupied space of your choice that you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take 2d6 fire damage.",
-          "The spirit is friendly to you and your companions and obeys your commands. See this creature's game statistics in the {@beastiary/wilfire-spirit Wildfire Spirit} stat block, which uses your proficiency bonus (PB) in several places. You determine the spirit's appearance. Some spirits take the form of a humanoid figure made of gnarled branches covered in flame, while others look like beasts wreathed in fire.",
+          "The spirit is friendly to you and your companions and obeys your commands. See this creature's game statistics in the {@beastiary Wildfire Spirit} stat block, which uses your proficiency bonus (PB) in several places. You determine the spirit's appearance. Some spirits take the form of a humanoid figure made of gnarled branches covered in flame, while others look like beasts wreathed in fire.",
           "In combat, the spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the spirit can take any action of its choice, not just Dodge.",
           "The spirit manifests for 1 hour, until it is reduced to 0 hit points, until you use this feature to summon the spirit again, or until you die."
         ]
@@ -4321,7 +4321,7 @@
         "name": "moon-thousand-forms",
         "title": "Circle of the Moon: Thousand Forms",
         "text": [
-          "By 14th level, you have learned to use magic to alter your physical form in more subtle ways. You can cast the {@spells/alter-self alter self} spell at will."
+          "By 14th level, you have learned to use magic to alter your physical form in more subtle ways. You can cast the {@spells alter self} spell at will."
         ]
       },
       {
@@ -4417,10 +4417,10 @@
     },
     "equipment": {
       "default": [
-        "(a) {@items/chain-mail chain mail} or (b) {@items/leather-armor leather armor}, a {@items/longbow longbow}, and 20 arrows",
-        "(a) a martial weapon and a {@items/shield shield} or (b) two martial weapons",
-        "(a) a {@items/light-crossbow light crossbow} and 20 bolts or (b) two {@items/handaxe handaxes}",
-        "(a) a {@items/dungeoneers-pack dungeoneer's pack} or (b) an {@items/explorers-pack explorer's pack}"
+        "(a) {@items chain mail} or (b) {@items leather armor}, a {@items longbow}, and 20 arrows",
+        "(a) a martial weapon and a {@items shield} or (b) two martial weapons",
+        "(a) a {@items light crossbow} and 20 bolts or (b) two {@items handaxe|handaxes}",
+        "(a) a {@items dungeoneer's pack} or (b) an {@items explorer's pack}"
       ],
       "alt": "5d4"
     },
@@ -4635,7 +4635,7 @@
         "title": "Eldritch Knight: Spellcasting",
         "text": [
           "When you reach 3rd level, you augment your martial prowess with the ability to cast spells.",
-          "<h5 class='mb-0'>Cantrips</h5><p class='pad-left'>You learn two cantrips of your choice from the wizard spell list. You learn an additional wizard cantrip of your choice at 10th level.<h5 class='mb-0'>Preparing and Casting Spells</h5><p class='pad-left'>The Fighter table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.<p class='pad-left'>You know three 1st-level wizard spells of your choice, two of which you must choose from the abjuration and evocation spells on the wizard spell list.<p class='pad-left'>The Spells Known column of the Eldritch Knight Spellcasting table shows when you learn more wizard spells of 1st level or higher. Each of these spells must be an abjuration or evocation spell of your choice, and must be of a level for which you have spell slots.<p class='pad-left'>The spells you learn at 8th, 14th, and 20th level can come from any school of magic.<p class='pad-left'>Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must be of a level for which you have spell slots, and it must be an abjuration or evocation spell, unless you're replacing the spell you gained at 8th, 14th, or 20th level.<h5 class='mb-0'>Spellcasting Ability</h5><p class='pad-left'>Intelligence is your spellcasting ability for your Eldritch Knight spells since you learn your spells through study and memorization",
+          "<h5 class='mb-0'>Cantrips</h5><p class='pad-left'>You learn two cantrips of your choice from the {@spells ?spell-class-filter=wizard&spell-level-filter=0|wizard spell list}. You learn an additional wizard cantrip of your choice at 10th level.<h5 class='mb-0'>Preparing and Casting Spells</h5><p class='pad-left'>The Fighter table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.<p class='pad-left'>You know three 1st-level wizard spells of your choice, two of which you must choose from the abjuration and evocation spells on the {@spells ?spell-class-filter=wizard&spell-level-filter=1&spell-school-filter=Abj%7CEvo|wizard spell list}.<p class='pad-left'>The Spells Known column of the Eldritch Knight Spellcasting table shows when you learn more wizard spells of 1st level or higher. Each of these spells must be an abjuration or evocation spell of your choice, and must be of a level for which you have spell slots.<p class='pad-left'>The spells you learn at 8th, 14th, and 20th level can come from any school of magic.<p class='pad-left'>Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the {@spells ?spell-class-filter=wizard&spell-school-filter=Abj%7CEvo|wizard spell list}. The new spell must be of a level for which you have spell slots, and it must be an abjuration or evocation spell, unless you're replacing the spell you gained at 8th, 14th, or 20th level.<h5 class='mb-0'>Spellcasting Ability</h5><p class='pad-left'>Intelligence is your spellcasting ability for your Eldritch Knight spells since you learn your spells through study and memorization",
           {
             "type": "list",
             "items": [
@@ -5436,9 +5436,9 @@
     },
     "equipment": {
       "default": [
-        "(a) a {@items/shortsword shortsword} or (b) any simple weapon",
-        "(a) a {@items/dungeoneers-pack dungeoneer's pack} or (b) an {@items/explorers-pack explorer's pack}",
-        "10 {@items/dart darts}"
+        "(a) a {@items shortsword} or (b) any simple weapon",
+        "(a) a {@items dungeoneer's pack} or (b) an {@items explorer's pack}",
+        "10 {@items dart|darts}"
       ],
       "alt": "5d4"
     },
@@ -6347,11 +6347,11 @@
     },
     "equipment": {
       "default": [
-        "(a) a martial weapon and a {@items/shield shield} or (b) two martial weapons",
-        "(a) five {@items/javelin javelins} or (b) any simple melee weapon",
-        "(a) a {@items/priests-pack priest's pack} or (b) an {@items/explorers-pack explorer's pack}",
-        "{@items/chain-mail chain mail}",
-        "a {@items/amulet holy symbol}"
+        "(a) a martial weapon and a {@items shield} or (b) two martial weapons",
+        "(a) five {@items javelin|javelins} or (b) any simple melee weapon",
+        "(a) a {@items priest's pack} or (b) an {@items explorer's pack}",
+        "{@items chain mail}",
+        "a {@items amulet|holy symbol}"
       ],
       "alt": "5d4"
     },
@@ -6509,11 +6509,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/ensnaring-strike ensnaring strike}, {@spells/speak-with-animals speak with animals}",
-              "5th - {@spells/moonbeam moonbeam}, {@spells/misty-step misty step}",
-              "9th - {@spells/plant-growth plant growth}, {@spells/protection-from-energy protection from energy}",
-              "13th - {@spells/ice-storm ice storm}, {@spells/stoneskin stoneskin}",
-              "17th - {@spells/commune-with-nature commune with nature}, {@spells/tree-stride tree stride}"
+              "3rd - {@spells ensnaring strike}, {@spells speak with animals}",
+              "5th - {@spells moonbeam}, {@spells misty step}",
+              "9th - {@spells plant growth}, {@spells protection from energy}",
+              "13th - {@spells ice storm}, {@spells stoneskin}",
+              "17th - {@spells commune with nature}, {@spells tree stride}"
             ]
           }
         ]
@@ -6553,11 +6553,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/protection-from-evil-and-good protection from evil and good}, {@spells/sanctuary sanctuary}",
-              "5th - {@spells/lesser-restoration lesser restoration}, {@spells/zone-of-truth zone of truth}",
-              "9th - {@spells/beacon-of-hope beacon of hope}, {@spells/dispel-magic dispel magic}",
-              "13th - {@spells/freedom-of-movement freedom of movement}, {@spells/guardian-of-faith guardian of faith}",
-              "17th - {@spells/commune commune}, {@spells/flame-strike flame strike}"
+              "3rd - {@spells protection from evil and good}, {@spells sanctuary}",
+              "5th - {@spells lesser restoration}, {@spells zone of truth}",
+              "9th - {@spells beacon of hope}, {@spells dispel magic}",
+              "13th - {@spells freedom of movement}, {@spells guardian of faith}",
+              "17th - {@spells commune}, {@spells flame strike}"
             ]
           }
         ]
@@ -6597,11 +6597,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/bane bane}, {@spells/hunters-mark hunter's mark}",
-              "5th - {@spells/hold-person hold person}, {@spells/misty-step misty step}",
-              "9th - {@spells/haste haste}, {@spells/protection-from-energy protection from energy}",
-              "13th - {@spells/banishment banishment}, {@spells/dimension-door dimension door}",
-              "17th - {@spells/hold-monster hold monster}, {@spells/scrying scrying}"
+              "3rd - {@spells bane}, {@spells hunter's mark}",
+              "5th - {@spells hold person}, {@spells misty step}",
+              "9th - {@spells haste}, {@spells protection from energy}",
+              "13th - {@spells banishment}, {@spells dimension door}",
+              "17th - {@spells hold monster}, {@spells scrying}"
             ]
           }
         ]
@@ -6640,11 +6640,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/command command}, {@spells/compelled-duel compelled duel}",
-              "5th - {@spells/warding-bond warding bond}, {@spells/zone-of-truth zone of truth}",
-              "9th - {@spells/aura-of-vitality aura of vitality}, {@spells/spirit-guardians spirit guardians}",
-              "13th - {@spells/banishment banishment}, {@spells/guardian-of-faith guardian of faith}",
-              "17th - {@spells/circle-of-power circle of power}, {@spells/geas geas}"
+              "3rd - {@spells command}, {@spells compelled duel}",
+              "5th - {@spells warding bond}, {@spells zone of truth}",
+              "9th - {@spells aura of vitality}, {@spells spirit guardians}",
+              "13th - {@spells banishment}, {@spells guardian of faith}",
+              "17th - {@spells circle of power}, {@spells geas}"
             ]
           }
         ]
@@ -6681,11 +6681,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/command command}, {@spells/armor-of-agathys armor of agathys}",
-              "5th - {@spells/hold-person hold person}, {@spells/spiritual-weapon spiritual weapon}",
-              "9th - {@spells/bestow-curse bestow curse}, {@spells/fear fear}",
-              "13th - {@spells/dominate-beast dominate beast}, {@spells/stoneskin stoneskin}",
-              "17th - {@spells/cloudkill cloudkill}, {@spells/dominate-person dominate person}"
+              "3rd - {@spells command}, {@spells armor of agathys}",
+              "5th - {@spells hold person}, {@spells spiritual weapon}",
+              "9th - {@spells bestow curse}, {@spells fear}",
+              "13th - {@spells dominate beast}, {@spells stoneskin}",
+              "17th - {@spells cloudkill}, {@spells dominate person}"
             ]
           }
         ]
@@ -6722,11 +6722,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/sanctuary sanctuary}, {@spells/sleep sleep}",
-              "5th - {@spells/hold-person hold person}, {@spells/calm-emotions calm emotions}",
-              "9th - {@spells/counterspell counterspell}, {@spells/hypnotic-pattern hypnotic pattern}",
-              "13th - {@spells/resilient-sphere resilient sphere}, {@spells/stoneskin stoneskin}",
-              "17th - {@spells/hold-monster hold monster}, {@spells/wall-of-force wall of force}"
+              "3rd - {@spells sanctuary}, {@spells sleep}",
+              "5th - {@spells hold person}, {@spells calm emotions}",
+              "9th - {@spells counterspell}, {@spells hypnotic pattern}",
+              "13th - {@spells resilient sphere}, {@spells stoneskin}",
+              "17th - {@spells hold monster}, {@spells wall of force}"
             ]
           }
         ]
@@ -6763,11 +6763,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/hellish-rebuke hellish rebuke}, {@spells/inflict-wounds inflict wounds}",
-              "5th - {@spells/crown-of-madness crown of madness}, {@spells/darkness darkness}",
-              "9th - {@spells/animate-dead animate dead}, {@spells/bestow-curse bestow curse}",
-              "13th - {@spells/blight blight}, {@spells/confusion confusion}",
-              "17th - {@spells/contagion contagion}, {@spells/dominate-person dominate person}"
+              "3rd - {@spells hellish rebuke}, {@spells inflict wounds}",
+              "5th - {@spells crown of madness}, {@spells darkness}",
+              "9th - {@spells animate dead}, {@spells bestow curse}",
+              "13th - {@spells blight}, {@spells confusion}",
+              "17th - {@spells contagion}, {@spells dominate person}"
             ]
           }
         ]
@@ -6804,11 +6804,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/tashas-hideous-laughter tasha's hideous laughter}, {@spells/ensnaring-strike ensnaring strike}",
-              "5th - {@spells/crown-of-madness crown of madness}, {@spells/detect-thoughts detect thoughts}",
-              "9th - {@spells/hunger-of-hadar hunger of hadar}, {@spells/major-image major image}",
-              "13th - {@spells/dimension-door dimension door}, {@spells/confusion confusion}",
-              "17th - {@spells/telekinesis telekinesis}, {@spells/dream dream}"
+              "3rd - {@spells tasha's hideous laughter}, {@spells ensnaring strike}",
+              "5th - {@spells crown of madness}, {@spells detect thoughts}",
+              "9th - {@spells hunger of hadar}, {@spells major image}",
+              "13th - {@spells dimension door}, {@spells confusion}",
+              "17th - {@spells telekinesis}, {@spells dream}"
             ]
           }
         ]
@@ -6850,11 +6850,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/alarm alarm}, {@spells/detect-magic detect magic}",
-              "5th - {@spells/moonbeam moonbeam}, {@spells/see-invisibility see invisibility}",
-              "9th - {@spells/counterspell counterspell}, {@spells/nondetection nondetection}",
-              "13th - {@spells/aura-of-purity aura of purity}, {@spells/banishment banishment}",
-              "17th - {@spells/hold-monster hold monster}, {@spells/scryin scrying}"
+              "3rd - {@spells alarm}, {@spells detect magic}",
+              "5th - {@spells moonbeam}, {@spells see invisibility}",
+              "9th - {@spells counterspell}, {@spells nondetection}",
+              "13th - {@spells aura of purity}, {@spells banishment}",
+              "17th - {@spells hold monster}, {@spells scrying}"
             ]
           }
         ]
@@ -6896,11 +6896,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/guiding-bolt guiding bolt}, {@spells/heroism heroism}",
-              "5th - {@spells/enhance-agility enhance agility}, {@spells/magic-weapon magic weapon}",
-              "9th - {@spells/haste haste}, {@spells/protection-from-energy protection from energy}",
-              "13th - {@spells/compulsion compulsion}, {@spells/freedom-of-movement freedom of movement}",
-              "17th - {@spells/commune commune}, {@spells/flame-strike flame strike}"
+              "3rd - {@spells guiding bolt}, {@spells heroism}",
+              "5th - {@spells enhance agility}, {@spells magic weapon}",
+              "9th - {@spells haste}, {@spells protection from energy}",
+              "13th - {@spells compulsion}, {@spells freedom of movement}",
+              "17th - {@spells commune}, {@spells flame strike}"
             ]
           }
         ]
@@ -7428,10 +7428,10 @@
     },
     "equipment": {
       "default": [
-        "(a) a {@items/scale-mail scale mail} or (b) a {@items/leather-armor leather armor}",
-        "(a) two {@items/shortsword shortswords} or (b) two simple melee weapons",
-        "(a) a {@items/dungeoneers-pack dungeoneer's pack} or (b) an {@items/explorers-pack explorer's pack}",
-        "a {@items/longbow longbow} and a quiver of 20 arrows"
+        "(a) a {@items scale mail} or (b) a {@items leather armor}",
+        "(a) two {@items shortswords} or (b) two simple melee weapons",
+        "(a) a {@items dungeoneer's pack} or (b) an {@items explorer's pack}",
+        "a {@items longbow} and a quiver of 20 arrows"
       ],
       "alt": "5d4"
     },
@@ -7570,11 +7570,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/speak-with-animals speak with animals}",
-              "5th - {@spells/beast-sense beast sense}",
-              "9th - {@spells/speak-with-plants speak with plants}",
-              "13th - {@spells/locate-creature locate creature}",
-              "17th - {@spells/commune-with-naute commune with nature}"
+              "3rd - {@spells speak with animals}",
+              "5th - {@spells beast sense}",
+              "9th - {@spells speak with plants}",
+              "13th - {@spells locate creature}",
+              "17th - {@spells commune with nature}"
             ]
           },
           "You can cast each of these spells once without expending a spell slot. Once you cast a spell in this way, you can't do so again until you finish a long rest."
@@ -7607,7 +7607,7 @@
         "title": "Beast Conclave: Animal Companion",
         "text": [
           "At 3rd level, you learn to use your magic to create a powerful bond with a creature of the natural world.",
-          "With 8 hours of work and the expenditure of 50 gp worth of rare herbs and fine food, you call forth an animal from the wilderness to serve as your faithful companion. You normally select you companion from among the following animals: an {@beastiary/ape ape}, a {@beastiary/black-bear black bear}, a {@beastiary/boar boar}, a {@beastiary/giant-badger giant badger}, a {@beastiary/giant-weasel giant weasel}, a {@beastiary/mule mule}, a {@beastiary/panther panther}, or a {@beastiary/wolf wolf}. However, your DM might pick one of these animals for you, based on the surrounding terrain and on what types of creatures would logically be present in the area.",
+          "With 8 hours of work and the expenditure of 50 gp worth of rare herbs and fine food, you call forth an animal from the wilderness to serve as your faithful companion. You normally select you companion from among the following animals: an {@beastiary ape}, a {@beastiary black bear}, a {@beastiary boar}, a {@beastiary giant badger}, a {@beastiary giant weasel}, a {@beastiary mule}, a {@beastiary panther}, or a {@beastiary wolf}. However, your DM might pick one of these animals for you, based on the surrounding terrain and on what types of creatures would logically be present in the area.",
           "At the end of the 8 hours, your animal companion appears and gains all the benefits of your Companion's Bond ability. You can have only one animal companion at a time.",
           "If your animal companion is ever slain, the magical bond you share allows you to return it to life. With 8 hours of work and the expenditure of 25 gp worth of rare herbs and fine food, you call forth your companion's spirit and use your magic to create a new body for it. You can return an animal companion to life in this manner even if you do not possess any part of its body.",
           "If you use this ability to return a former animal companion to life while you have a current animal companion, your current companion leaves you and is replaced by the restored companion."
@@ -7680,11 +7680,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/disguise-self disguise self}",
-              "5th - {@spells/rope-trick rope trick}",
-              "9th - {@spells/fear fear}",
-              "13th - {@spells/greater-invisibility greater invisibility}",
-              "17th - {@spells/seeming seeming}"
+              "3rd - {@spells disguise self}",
+              "5th - {@spells rope trick}",
+              "9th - {@spells fear}",
+              "13th - {@spells greater invisibility}",
+              "17th - {@spells seeming}"
             ]
           }
         ]
@@ -7732,11 +7732,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/protection-from-good-and-evil protection from evil and good}",
-              "5th - {@spells/misty-step misty step}",
-              "9th - {@spells/haste haste}",
-              "13th - {@spells/banishment banishment}",
-              "17th - {@spells/teleportation-circle teleportation circle}"
+              "3rd - {@spells protection from evil and good}",
+              "5th - {@spells misty step}",
+              "9th - {@spells haste}",
+              "13th - {@spells banishment}",
+              "17th - {@spells teleportation circle}"
             ]
           }
         ]
@@ -7783,11 +7783,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/charm-person charm person}",
-              "5th - {@spells/misty-step misty step}",
-              "9th - {@spells/dispel-magic dispel magic}",
-              "13th - {@spells/dimension-door dimension door}",
-              "17th - {@spells/mislead mislead}"
+              "3rd - {@spells charm person}",
+              "5th - {@spells misty step}",
+              "9th - {@spells dispel magic}",
+              "13th - {@spells dimension door}",
+              "17th - {@spells mislead}"
             ]
           },
           "You also possess a preternatural blessing from a fey ally or a place of fey power. Choose your blessing from the Feywild Gifts table or determine it randomly.",
@@ -7835,11 +7835,11 @@
           {
             "type": "list",
             "items": [
-              "3rd - {@spells/faerie-fire faerie fire}",
-              "5th - {@spells/web web}",
-              "9th - {@spells/gaseous-form gaseous form}",
-              "13th - {@spells/arcne-eye arcane eye}",
-              "17th - {@spells/insect-plague insect plague}"
+              "3rd - {@spells faerie fire}",
+              "5th - {@spells web}",
+              "9th - {@spells gaseous form}",
+              "13th - {@spells arcane eye}",
+              "17th - {@spells insect plague}"
             ]
           }
         ]
@@ -7943,7 +7943,7 @@
         "title": "Horizon Walker: Ethereal Step",
         "text": [
 
-          "At 7th level, you learn to step through the Ethereal Plane. As a bonus action, you can cast the {@spells/etherealness etherealness} spell with this feature, without expending a spell slot, but the spell ends at the end of the current turn.",
+          "At 7th level, you learn to step through the Ethereal Plane. As a bonus action, you can cast the {@spells etherealness} spell with this feature, without expending a spell slot, but the spell ends at the end of the current turn.",
           "Once you use this feature, you can't use it again until you finish a short or long rest."
         ]
       },
@@ -8055,7 +8055,7 @@
         "name": "fey-reinforcements",
         "title": "Fey Wanderer: Fey Reinforcements",
         "text": [
-          "The royal courts of the Feywild have blessed you with the assistance of fey beings: you know the spell {@spells/summon-fey summon fey}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
+          "The royal courts of the Feywild have blessed you with the assistance of fey beings: you know the spell {@spells summon fey}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
           "Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting."
         ]
       },
@@ -8153,7 +8153,7 @@
         "name": "fey-misty-wanderer",
         "title": "Fey Wanderer: Misty Wanderer",
         "text": [
-          "You can slip in and out of the Feywild to move in a blink of an eye: you can cast {@spells/misty-step misty step} without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
+          "You can slip in and out of the Feywild to move in a blink of an eye: you can cast {@spells misty step} without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
           "In addition, whenever you cast misty step, you can bring along one willing creature you can see within 5 feet of you. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space."
         ]
       },
@@ -8221,12 +8221,12 @@
     },
     "equipment": {
       "default": [
-        "(a) a {@items/rapier rapier} or (b) a {@items/shortsword shortsword}",
-        "(a) a {@items/shortbow shortbow} and quiver of 20 arrows or (b) a {@items/shortsword shortsword}",
-        "(a) a {@items/burglars-pack burglar's pack}, (b) a {@items/dungeoneers-pack dungeoneer's pack}, or (c) an {@items/explorers-pack explorer's pack}",
-        "a {@items/leather-armor leather armor}",
-        "two {@items/dagger daggers}",
-        "{@items/thieves-tools thieves' tools}"
+        "(a) a {@items rapier} or (b) a {@items shortsword}",
+        "(a) a {@items shortbow} and quiver of 20 arrows or (b) a {@items shortsword}",
+        "(a) a {@items burglar's pack}, (b) a {@items dungeoneer's pack}, or (c) an {@items explorer's pack}",
+        "a {@items leather armor}",
+        "two {@items daggers}",
+        "{@items thieves' tools}"
       ],
       "alt": "4d4"
     },
@@ -8366,7 +8366,7 @@
         "title": "Arcane Trickster: Spellcasting",
         "text": [
           "When you reach 3rd level, you augment your martial prowess with the ability to cast spells.",
-          "<h5 class='mb-0'>Cantrips</h5><p class='pad-left'>At 3rd level, you learn three cantrips: mage hand and two other cantrips of your choice from the wizard spell list. You learn another wizard cantrip of your choice at 10th level.<h5 class='mb-0'>Spell Slots</h5><p class='pad-left'>The Arcane Trickster Spellcasting table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.<h5 class='mb-0'>Spells Known of 1st-Level and Higher</h5><p class='pad-left'>You know three 1st-level wizard spells of your choice, two of which you must choose from the enchantment and illusion spells on the wizard spell list.<p class='pad-left'>The Spells Known column of the Arcane Trickster Spellcasting table shows when you learn more wizard spells of 1st level or higher. Each of these spells must be an enchantment or illusion spell of your choice, and must be of a level for which you have spell slots.<p class='pad-left'>The spells you learn at 8th, 14th, and 20th level can come from any school of magic.<p class='pad-left'>Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must be of a level for which you have spell slots, and it must be an enchantment or illusion spell, unless you're replacing the spell you gained at 8th, 14th, or 20th level.<h5 class='mb-0'>Spellcasting Ability</h5><p class='pad-left'>Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization.",
+          "<h5 class='mb-0'>Cantrips</h5><p class='pad-left'>At 3rd level, you learn three cantrips: mage hand and two other cantrips of your choice from the {@spells ?spell-class-filter=wizard&spell-level-filter=0|wizard spell list}. You learn another wizard cantrip of your choice at 10th level.<h5 class='mb-0'>Spell Slots</h5><p class='pad-left'>The Arcane Trickster Spellcasting table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.<h5 class='mb-0'>Spells Known of 1st-Level and Higher</h5><p class='pad-left'>You know three 1st-level wizard spells of your choice, two of which you must choose from the enchantment and illusion spells on the {@spells ?spell-class-filter=wizard&spell-level-filter=1&spell-school-filter=Ench%7CIllu|wizard spell list}.<p class='pad-left'>The Spells Known column of the Arcane Trickster Spellcasting table shows when you learn more wizard spells of 1st level or higher. Each of these spells must be an enchantment or illusion spell of your choice, and must be of a level for which you have spell slots.<p class='pad-left'>The spells you learn at 8th, 14th, and 20th level can come from any school of magic.<p class='pad-left'>Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the {@spells ?spell-class-filter=wizard&spell-level-filter=1&spell-school-filter=Ench%7CIllu|wizard spell list}. The new spell must be of a level for which you have spell slots, and it must be an enchantment or illusion spell, unless you're replacing the spell you gained at 8th, 14th, or 20th level.<h5 class='mb-0'>Spellcasting Ability</h5><p class='pad-left'>Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization.",
           {
             "type": "list",
             "items": [
@@ -9150,10 +9150,10 @@
     },
     "equipment": {
       "default": [
-        "(a)a {@items/light-crossbow light crossbow} and 20 bolts or (b) any simple weapon",
-        "(a) a {@items/component-pouch component pouch} or (b) an arcane focus",
-        "(a) a {@items/dungeoneers-pack dungeoneer's pack} or (b) an {@items/explorers-pack explorer's pack}",
-        "two {@items/dagger daggers}"
+        "(a)a {@items light crossbow} and 20 bolts or (b) any simple weapon",
+        "(a) a {@items component pouch} or (b) an arcane focus",
+        "(a) a {@items dungeoneer's pack} or (b) an {@items explorer's pack}",
+        "two {@items daggers}"
       ],
       "alt": "3d4"
     },
@@ -9247,12 +9247,12 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/chaos-bolt chaos bolt}",
-              "3rd - {@spells/nystuls-magic-aura nystul's magic aura}",
-              "5th - {@spells/dispel-magic dispel magic}",
-              "7th - {@spells/confusion confusion}",
-              "9th - {@spells/wall-of-force wall of force}",
-              "11th - {@spells/globe-of-invulnerability globe of invulnerability}"
+              "1st - {@spells chaos bolt}",
+              "3rd - {@spells nystul's magic aura}",
+              "5th - {@spells dispel magic}",
+              "7th - {@spells confusion}",
+              "9th - {@spells wall of force}",
+              "11th - {@spells globe of invulnerability}"
             ]
           }
         ]
@@ -9279,12 +9279,12 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/absorb-elements absorb elements}",
-              "3rd - {@spells/aganazzars-scorcher aganazzar's scorcher}",
-              "5th - {@spells/fear fear}",
-              "7th - {@spells/elemental-bane elemental bane}",
-              "9th - {@spells/cone-of-cold cone of cold}",
-              "11th - {@spells/true-seeing true seeing}"
+              "1st - {@spells absorb elements}",
+              "3rd - {@spells aganazzar's scorcher}",
+              "5th - {@spells fear}",
+              "7th - {@spells elemental bane}",
+              "9th - {@spells cone of cold}",
+              "11th - {@spells true seeing}"
             ]
           }
         ]
@@ -9333,12 +9333,12 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/fog-cloud fog cloud}",
-              "3rd - {@spells/gust-of-wind gust of wind}",
-              "5th - {@spells/call-lightning call lightning}",
-              "7th - {@spells/storm-sphere storm sphere}",
-              "9th - {@spells/control-winds control winds}",
-              "11th - {@spells/chain-lightning chain lightning}"
+              "1st - {@spells fog cloud}",
+              "3rd - {@spells gust of wind}",
+              "5th - {@spells call lightning}",
+              "7th - {@spells storm sphere}",
+              "9th - {@spells control winds}",
+              "11th - {@spells chain lightning}"
             ]
           }
         ]
@@ -9373,12 +9373,12 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/bless bless}",
-              "3rd - {@spells/prayer-of-healing prayer of healing}",
-              "5th - {@spells/revivify revivify}",
-              "7th - {@spells/guardian-of-faith guardian of faith}",
-              "9th - {@spells/greater-restoration greater restoration}",
-              "11th - {@spells/heal heal}"
+              "1st - {@spells bless}",
+              "3rd - {@spells prayer of healing}",
+              "5th - {@spells revivify}",
+              "7th - {@spells guardian of faith}",
+              "9th - {@spells greater restoration}",
+              "11th - {@spells heal}"
             ]
           }
         ]
@@ -9389,7 +9389,7 @@
         "name": "divine-powers",
         "title": "Divine Powers",
         "text": [
-          "Your link to the divine gives you rudimentary access to clerical powers. You know the spell {@spells/cure-wounds cure wounds}, which doesn't count against your spells known. In addition, you can read, speak, and write Celestial."
+          "Your link to the divine gives you rudimentary access to clerical powers. You know the spell {@spells cure wounds}, which doesn't count against your spells known. In addition, you can read, speak, and write Celestial."
         ]
       },
       {
@@ -9415,12 +9415,12 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/jump jump}",
-              "3rd - {@spells/levitate levitate}",
-              "5th - {@spells/fly fly}",
-              "7th - {@spells/freedom-of-movement freedom of movement}",
-              "9th - {@spells/telekinesis telekinesis}",
-              "11th - {@spells/move-earth move earth}"
+              "1st - {@spells jump}",
+              "3rd - {@spells levitate}",
+              "5th - {@spells fly}",
+              "7th - {@spells freedom of movement}",
+              "9th - {@spells telekinesis}",
+              "11th - {@spells move earth}"
             ]
           }
         ]
@@ -9494,11 +9494,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/arms-of-hadar arms of Hadar}, {@spells/dissonant-whispers dissonant whispers}, {@spells/mind-sliver mind sliver}",
-              "3rd - {@spells/calm-emotions calm emotions}, {@spells/detect-thoughts detect thoughts}",
-              "5th - {@spells/hunger-of-hadar hunger of Hadar}, {@spells/sending sending}",
-              "7th - {@spells/evards-black-tentacles Evard's black tentacles}, {@spells/summon-aberration summon aberration}",
-              "9th - {@spells/rarys-telepathic-bond Rary's telepathic bond}, {@spells/telekinesis telekinesis}"
+              "1st - {@spells arms of Hadar}, {@spells dissonant whispers}, {@spells mind sliver}",
+              "3rd - {@spells calm emotions}, {@spells detect thoughts}",
+              "5th - {@spells hunger of Hadar}, {@spells sending}",
+              "7th - {@spells Evard's black tentacles}, {@spells summon aberration}",
+              "9th - {@spells Rary's telepathic bond}, {@spells telekinesis}"
             ]
           }
         ]
@@ -9509,7 +9509,7 @@
         "name": "aberrant-spells",
         "title": "Psionic Spells",
         "text": [
-          "Whenever you gain a sorcerer level, you can replace one spell you gained from your subclass spell list with another spell of the same level. The new spell must be a <span class='color-divination'>divination</span> or an <span class='color-enchantment'>enchantment</span> spell from the sorcerer, warlock, or wizard spell list."
+          "Whenever you gain a sorcerer level, you can replace one spell you gained from your subclass spell list with another spell of the same level. The new spell must be a <span class='color-divination'>divination</span> or an <span class='color-enchantment'>enchantment</span> spell from the {@spells ?spell-class-filter=wizard%7Csorcerer%7Cwarlock&spell-level-filter=1&spell-school-filter=Divi%7CEnch|wizard, sorcerer, or warlock spell list}"
         ]
       },
       {
@@ -9535,11 +9535,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/alarm alarm}, {@spells/protection-from-evil-and-good protection from evil and good}",
-              "3rd - {@spells/aid aid}, {@spells/lesser-restoration lesser restoration}",
-              "5th - {@spells/dispel-magic dispel magic}, {@spells/protection-from-energy protection from energy}",
-              "7th - {@spells/freedom-of-movement freedom of movement}, {@spells/summon-construct summon construct}",
-              "9th - {@spells/greater-restoration greater restoration}, {@spells/wall-of-force wall of force}"
+              "1st - {@spells alarm}, {@spells protection from evil and good}",
+              "3rd - {@spells aid}, {@spells lesser restoration}",
+              "5th - {@spells dispel magic}, {@spells protection from energy}",
+              "7th - {@spells freedom of movement}, {@spells summon construct}",
+              "9th - {@spells greater restoration}, {@spells wall of force}"
             ]
           },
           "In addition, consult the Manifestations of Order table and choose or randomly determine a way your connection to order manifests while you are casting any of your sorcerer spells.",
@@ -9588,7 +9588,7 @@
         "name": "clockwork-spells",
         "title": "Clockwork Magic",
         "text": [
-          "Whenever you gain a sorcerer level, you can replace one spell you gained from your subclass spell list with another spell of the same level. The new spell must be a <span class='color-abjuration'>abjuration</span> or an <span class='color-transmutation'>transmutation</span> spell from the sorcerer, warlock, or wizard spell list."
+          "Whenever you gain a sorcerer level, you can replace one spell you gained from your subclass spell list with another spell of the same level. The new spell must be a <span class='color-abjuration'>abjuration</span> or an <span class='color-transmutation'>transmutation</span> spell from the {@spells ?spell-class-filter=wizard%7Csorcerer%7Cwarlock&spell-level-filter=1&spell-school-filter=Abj%7CTrans|wizard, sorcerer, or warlock spell list}."
         ]
       },
       {
@@ -9807,7 +9807,7 @@
         "title": "Gravity Wielder: Afloat in the Currents",
         "text": [
           "At 14th level, you gain the ability to hover. You can start to hover as a bonus action. While hovering you can move in any direction, but you can't be higher than your base movement speed from the ground. You hover until you lose consiousness or use a bonus action to stop.",
-          "Additionally, you can use a reaction and 1 sorcery point to cast {@spells/feather-fall feather fall}"
+          "Additionally, you can use a reaction and 1 sorcery point to cast {@spells feather fall}"
         ]
       },
       {
@@ -9914,7 +9914,7 @@
             "type": "list",
             "items": [
               "Gravity is tripled: A creature moving through the area must spend 3 feet of movement for every 1 foot it moves.",
-              "Gravity is reversed: Per the spell {@spells/reverse-gravity reverse gravity}",
+              "Gravity is reversed: Per the spell {@spells reverse gravity}",
               "Gravity is halved: A creature moving through the area can move twice as fast and jump twice as high."
             ]
           },
@@ -9986,12 +9986,12 @@
     },
     "equipment": {
       "default": [
-        "(a)a {@items/light-crossbow light crossbow} and 20 bolts or (b) any simple weapon",
-        "(a) a {@items/component-pouch component pouch} or (b) an arcane focus",
-        "(a) a {@items/scholars-pack scholar's pack} or (b) a {@items/dungeoneers-pack dungeoneer's pack}",
-        "a {@items/leather-armor leather armor}",
+        "(a)a {@items light crossbow} and 20 bolts or (b) any simple weapon",
+        "(a) a {@items component pouch} or (b) an arcane focus",
+        "(a) a {@items scholar's pack} or (b) a {@items dungeoneer's pack}",
+        "a {@items leather armor}",
         "any simple weapon",
-        "two {@items/dagger daggers}"
+        "two {@items daggers}"
       ],
       "alt": "4d4"
     },
@@ -10079,11 +10079,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/faerie-fire faerie fire}, {@spells/sleep sleep}",
-              "3rd - {@spells/calm-emotions calm emotions}, {@spells/phantasmal-force phantasmal force}",
-              "5th - {@spells/blink blink}, {@spells/plant-growth plant growth}",
-              "7th - {@spells/dominate-beast dominate beast}, {@spells/greater-invisibility greater invisibility}",
-              "9th - {@spells/dominate-person dominate person}, {@spells/seeming seeming}"
+              "1st - {@spells faerie fire}, {@spells sleep}",
+              "3rd - {@spells calm emotions}, {@spells phantasmal force}",
+              "5th - {@spells blink}, {@spells plant growth}",
+              "7th - {@spells dominate beast}, {@spells greater invisibility}",
+              "9th - {@spells dominate person}, {@spells seeming}"
             ]
           }
         ]
@@ -10111,11 +10111,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/burning-hands burning hands}, {@spells/command command}",
-              "3rd - <a href='#/spells/blindness/deafness'>blindness/deafness</a>, {@spells/scorching-ray scorching ray}",
-              "5th - {@spells/fireball fireball}, {@spells/stinking-cloud stinking cloud}",
-              "7th - {@spells/fire-shield fire shield}, {@spells/wall-of-fire wall of fire}",
-              "9th - {@spells/flame-strike flame strike}, {@spells/hallow hallow}"
+              "1st - {@spells burning hands}, {@spells command}",
+              "3rd - <a href='#/spells/blindness/deafness'>blindness/deafness</a>, {@spells scorching ray}",
+              "5th - {@spells fireball}, {@spells stinking cloud}",
+              "7th - {@spells fire shield}, {@spells wall of fire}",
+              "9th - {@spells flame strike}, {@spells hallow}"
             ]
           }
         ]
@@ -10142,11 +10142,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/dissonant-whispers dissonant whispers}, {@spells/tashas-hideous-laughter Tasha's hideous laughter}",
-              "3rd - {@spells/detect-thoughts detect thoughts}, {@spells/phantasmal-force phantasmal force}",
-              "5th - {@spells/clairvoyance clairvoyance}, {@spells/sending sending}",
-              "7th - {@spells/dominate-beast dominate beast}, {@spells/evards-black-tentacles evard's black tentacles}",
-              "9th - {@spells/dominate-person dominate person}, {@spells/telekinesis telekinesis}"
+              "1st - {@spells dissonant whispers}, {@spells Tasha's hideous laughter}",
+              "3rd - {@spells detect thoughts}, {@spells phantasmal force}",
+              "5th - {@spells clairvoyance}, {@spells sending}",
+              "7th - {@spells dominate beast}, {@spells evard's black tentacles}",
+              "9th - {@spells dominate person}, {@spells telekinesis}"
             ]
           }
         ]
@@ -10175,11 +10175,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/guiding-bolt guiding bolt}, {@spells/command command}",
-              "3rd - {@spells/flaming-sphere flaming sphere}, {@spells/lesser-restoration lesser restoration}",
-              "5th - {@spells/daylight daylight}, {@spells/revivify revivify}",
-              "7th - {@spells/guardian-of-faith guardian of faith}, {@spells/wall-of-fire wall of fire}",
-              "9th - {@spells/flame-strike flame strike}, {@spells/greater-restoration greater restoration}"
+              "1st - {@spells guiding bolt}, {@spells command}",
+              "3rd - {@spells flaming sphere}, {@spells lesser restoration}",
+              "5th - {@spells daylight}, {@spells revivify}",
+              "7th - {@spells guardian of faith}, {@spells wall of fire}",
+              "9th - {@spells flame strike}, {@spells greater restoration}"
             ]
           }
         ]
@@ -10219,11 +10219,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/shield shield}, {@spells/wrathful-smite wrathful smite}",
-              "3rd - {@spells/blur blur}, {@spells/branding-smite branding smite}",
-              "5th - {@spells/blink blink}, {@spells/elemental-weapon elemental weapon}",
-              "7th - {@spells/phantasmal-killer phantasmal killer}, {@spells/staggering-smite staggering smite}",
-              "9th - {@spells/banishing-smite banishing smite}, {@spells/cone-of-cold cone of cold}"
+              "1st - {@spells shield}, {@spells wrathful smite}",
+              "3rd - {@spells blur}, {@spells branding smite}",
+              "5th - {@spells blink}, {@spells elemental weapon}",
+              "7th - {@spells phantasmal killer}, {@spells staggering smite}",
+              "9th - {@spells banishing smite}, {@spells cone of cold}"
             ]
           }
         ]
@@ -10271,11 +10271,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/false-life false life}, {@spells/ray-of-sickness ray of sickness}",
-              "3rd - {@spells/blindness-deafness blindness/deafness}, {@spells/silence silence}",
-              "5th - {@spells/feign-death feign death}, {@spells/speak-with-dead speak with dead}",
-              "7th - {@spells/aura-of-life aura of life}, {@spells/death-ward death ward}",
-              "9th - {@spells/contagion contagion}, {@spells/legend-lore legend lore}"
+              "1st - {@spells false life}, {@spells ray of sickness}",
+              "3rd - {@spells blindness/deafness}, {@spells silence}",
+              "5th - {@spells feign death}, {@spells speak with dead}",
+              "7th - {@spells aura of life}, {@spells death ward}",
+              "9th - {@spells contagion}, {@spells legend lore}"
             ]
           }
         ]
@@ -10305,11 +10305,11 @@
           {
             "type": "list",
             "items": [
-              "1st - {@spells/create-or-destroy-water create or destroy water}, {@spells/thunderwave thunderwave}",
-              "3rd - {@spells/gust-of-wind gust of wind}, {@spells/silence silence}",
-              "5th - {@spells/lightning-bolt lightning bolt}, {@spells/sleet-storm sleet storm}",
-              "7th - {@spells/control-water control water}, {@spells/summon-elemental summon elemental} (water only)",
-              "9th - {@spells/bigbys-hand Bigby's hand} (as a tentacle), {@spells/cone-of-cold cone of cole}"
+              "1st - {@spells create or destroy water}, {@spells thunderwave}",
+              "3rd - {@spells gust of wind}, {@spells silence}",
+              "5th - {@spells lightning bolt}, {@spells sleet storm}",
+              "7th - {@spells control water}, {@spells summon elemental} (water only)",
+              "9th - {@spells Bigby's hand} (as a tentacle), {@spells cone of cole}"
             ]
           }
         ]
@@ -10402,47 +10402,47 @@
             "rows": [
               [
                 "1st",
-                "{@spells/detect-evil-and-good detect evil and good},",
-                "{@spells/sanctuary sanctuary},",
-                "{@spells/thunderwave thunderwave},",
-                "{@spells/burning-hands burning hands},",
-                "{@spells/fog-cloud fog cloud},"
+                "{@spells detect evil and good},",
+                "{@spells sanctuary},",
+                "{@spells thunderwave},",
+                "{@spells burning hands},",
+                "{@spells fog cloud},"
               ],
               [
                 "2nd",
-                "{@spells/phantasmal-force phantasmal force},",
-                "{@spells/spike-growth spike growth},",
-                "{@spells/gust-of-wind gust of wind},",
-                "{@spells/scorching-ray scorching ray},",
-                "{@spells/blur blur},"
+                "{@spells phantasmal force},",
+                "{@spells spike growth},",
+                "{@spells gust of wind},",
+                "{@spells scorching ray},",
+                "{@spells blur},"
               ],
               [
                 "3rd",
-                "{@spells/create-food-and-water create food and water},",
-                "{@spells/meld-into-stone meld into stone},",
-                "{@spells/wind-wall wind wall},",
-                "{@spells/fireball fireball},",
-                "{@spells/sleet-storm sleet storm},"
+                "{@spells create food and water},",
+                "{@spells meld into stone},",
+                "{@spells wind wall},",
+                "{@spells fireball},",
+                "{@spells sleet storm},"
               ],
               [
                 "4th",
-                "{@spells/phantasmal-killer phantasmal killer},",
-                "{@spells/stone-shape stone shape},",
-                "{@spells/greater-invisibility greater invisibility},",
-                "{@spells/fire-shield fire shield},",
-                "{@spells/control-water control water},"
+                "{@spells phantasmal killer},",
+                "{@spells stone shape},",
+                "{@spells greater invisibility},",
+                "{@spells fire shield},",
+                "{@spells control water},"
               ],
               [
                 "5th",
-                "{@spells/creation creation},",
-                "{@spells/wall-of-stone wall of stone},",
-                "{@spells/seeming seeming},",
-                "{@spells/flame-strike flame strike},",
-                "{@spells/cone-of-cold cone of cold},"
+                "{@spells creation},",
+                "{@spells wall of stone},",
+                "{@spells seeming},",
+                "{@spells flame strike},",
+                "{@spells cone of cold},"
               ],
               [
                 "9th",
-                "{@spells/wish wish},",
+                "{@spells wish},",
                 "-",
                 "-",
                 "-",
@@ -10517,7 +10517,7 @@
 
           "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability. At 2nd level, you gain two eldritch invocations from below. When you gain certain warlock levels, you gain additional invocations of your choice.",
           "Additionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level. A level prerequisite in an invocation refers to warlock level, not character level.",
-          "<div class='row'><div class='col-sm-6'><h5 class='mb-0'><strong>All Warlocks</strong></h5><h5 class='mb-0'>Agonizing Blast</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you cast {@spells/eldritch-blast eldritch blast}, add your Charisma modifier to the damage it deals on a hit.<h5 class='mb-0'>Eldritch Spear</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you cast {@spells/eldritch-blast eldritch blast}, its range is 300 feet.<h5 class='mb-0'>Repelling Blast</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you hit a creature with {@spells/eldritch-blast eldritch blast}, you can push the creature up to 10 feet away from you in a straight line.<h5 class='mb-0'>Lance of Lethargy (XGE)</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>Once on each of your turns when you hit a creature with your {@spells/eldritch-blast eldritch blast}, you can reduce that creature's speed by 10 feet until the end of your next turn.<h5 class='mb-0'>Armor of Shadows</h5><p class='pad-left'>You can cast {@spells/mage-armor mage armor} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Beast Speech</h5><p class='pad-left'>You can cast {@spells/speak-with-animals speak with animals} at will, without expending a spell slot.<h5 class='mb-0'>Beguiling Influence</h5><p class='pad-left'>You gain proficiency in the Deception and Persuasion skills.<h5 class='mb-0'>Devil's Sight</h5><p class='pad-left'>You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.<h5 class='mb-0'>Eldritch Sight</h5><p class='pad-left'>You can cast {@spells/detect-magic detect magic} at will, without expending a spell slot.<h5 class='mb-0'>Eyes of the Rune Keeper</h5><p class='pad-left'>You can read all writing.<h5 class='mb-0'>Fiendish Vigor</h5><p class='pad-left'>You can cast {@spells/false-life false life} on yourself at will as a 1st-level spell, without expending a spell slot or material components.<h5 class='mb-0'>Gaze of Two Minds</h5><p class='pad-left'>You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.<h5 class='mb-0'>Mask of Many Faces</h5><p class='pad-left'>You can cast {@spells/disguise-self disguise self} at will, without expending a spell slot.<h5 class='mb-0'>Misty Visions</h5><p class='pad-left'>You can cast {@spells/silent-image silent image} at will, without expending a spell slot or material components.<h5 class='mb-0'>Thief of Five Fates</h5><p class='pad-left'>You learn the spell {@spells/bane bane}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Mire the Mind</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You learn the spell {@spells/slow slow}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>One with Shadows</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>When you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction.<h5 class='mb-0'>Signs of Ill Omen</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You learn the spell {@spells/bestow-curse bestow curse}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Gift of the Depths (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You can breathe underwater, and you gain a swimming speed equal to your walking speed. You can also cast water breathing once without expending a spell slot. You regain the ability to do so when you finish a long rest.<h5 class='mb-0'>Bewitching Whispers</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells/compulsion compulsion}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Dreadful Word</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells/confusion confusion}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Sculptor of Flesh</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells/polymorph polymorph}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Ghostly Gaze (XGE)</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>As an action, you gain the ability to see through solid objects to a range of 30 feet. Within that range, you have darkvision if you don't already have it. This special sight lasts for 1 minute or until your concentration ends (as if you were concentrating on a spell). During that time, you perceive objects as ghostly, transparent images. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Ascendant Step</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells/levitate levitate} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Minions of Chaos</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You learn the spell {@spells/conjure-elemental conjure elemental}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest. At your DMs discretion you may be able to conjure creatures of a different type (depending on your patron) as long as they meet the other criteria for the spell.<h5 class='mb-0'>Otherworldly Leap</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells/jump jump} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Whispers of the Grave</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells/speak-with-dead speak with dead} at will, without expending a spell slot.<h5 class='mb-0'>Lifedrinker</h5><p class='pad-left'><em>Prerequisite: 12th level</em><p class='pad-left'>When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum of 1).<h5 class='mb-0'>Master of Myriad Forms</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can cast {@spells/alter-self alter self} at will, without expending a spell slot.<h5 class='mb-0'>Witch Sight</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.<h5 class='mb-0'>Visions of Distant Realms</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can cast {@spells/arcane-eye arcane eye} at will, without expending a spell slot.</div><div class='col-sm-6'><h5 class='mb-0'><strong>Pact Based</strong></h5><h5 class='mb-0'>Thirsting Blade</h5><p class='pad-left'><em>Prerequisite: 5th level, Pact of the Blade feature</em><p class='pad-left'>You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.<h5 class='mb-0'>Improved Pact Weapon (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Blade feature</em><p class='pad-left'>You can use any weapon you summon with your Pact of the Blade feature as a spellcasting focus for your warlock spells. In addition, the weapon gains a +1 bonus to its attack and damage rolls, unless it is a magic weapon that already has a bonus to those rolls. Finally, the weapon you conjure can be a shortbow, longbow, light crossbow, or heavy crossbow.<h5 class='mb-0'>Eldritch Smite (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Pact of the Blade feature</em><p class='pad-left'>Once per turn when you hit a creature with your pact weapon, you can expend a warlock spell slot to deal an extra 1d8 force damage to the target, plus another 1d8 per level of the spell slot.<h5 class='mb-0'>Book of Ancient Secrets</h5><p class='pad-left'><em>Prerequisite: Pact of the Tome feature</em><p class='pad-left'>You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list. The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag.<p class='pad-left'>On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.<h5 class='mb-0'>Eternal Waking (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Tome feature</em><p class='pad-left'>You no longer need to sleep and can't be forced to sleep by any means. To gain the benefits of a long rest, you can spend all 8 hours doing light activity, such as reading your Book of Shadows and keeping watch.<h5 class='mb-0'>Voice of the Chain Master</h5><p class='pad-left'><em>Prerequisite: Pact of the Chain feature</em><p class='pad-left'>You can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.<h5 class='mb-0'>Gift of the Ever-Living Ones (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Chain feature</em><p class='pad-left'>Whenever you regain hit points while your familiar is within 100 feet of you, treat any dice rolled to determine the hit points you regain as having rolled their maximum value for you.</div><div class='col-sm-6'><h5 class='mb-0'><strong>Patron Based</strong></h5><h5 class='mb-0'>Grasp of Hadar (XGE)</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip, Great Old One patron</em><p class='pad-left'>Once on each of your turns when you hit a creature with your {@spells/eldritch-blast eldritch blast}, you can move that creature in a straight line 10 feet closer to you.<h5 class='mb-0'>Shroud of Ulban (XGE)</h5><p class='pad-left'><em>Prerequisite: 15th level, Great Old One patron</em><p class='pad-left'>As an action, you can turn invisible for 1 minute. If you attack, deal damage, or force a creature to make a saving throw, you become visible at the end of the current turn.<h5 class='mb-0'>Tomb of Levistus (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Fiend patron</em><p class='pad-left'>As a reaction when you take damage, you can entomb yourself in ice, which melts away at the end of your next turn. You gain 10 temporary hit points per warlock level, which take as much of the triggering damage as possible. Immediately after you take the damage, you gain vulnerability to fire damage, your speed is reduced to 0, and you are incapacitated. These effects, including any remaining temporary hit points, all end when the ice melts. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Cloak of Baal (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Fiend patron</em><p class='pad-left'>As a bonus action, you can surround yourself with a magical aura that looks like buzzing flies. The aura extends 5 feet from you in every direction, but not through total cover. It lasts until you're incapacitated or you dismiss it as a bonus action. The aura grants you advantage on Charisma (Intimidation) checks but disadvantage on all other Charisma checks. Any other creature that starts its turn in the aura takes poison damage equal to your Charisma modifier. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Divine Utterance (HB)</h5><p class='pad-left'><em>Prerequisite: Celestial patron</em><p class='pad-left'>You understand all spoken languages. Moreover, any creature that can understand a language can understand what you say.<h5 class='mb-0'>Angelic Step (HB)</h5><p class='pad-left'><em>Prerequisite: 15th level, Celestial patron</em><p class='pad-left'>As a bonus action you can manifest glowing angelic wings, you gain a flying speed of 30 feet, you can dismiss the wings as a bonus action.<h5 class='mb-0'>Maddening Hex (HB)</h5><p class='pad-left'><em>Prerequisite: 5th level, Hexblade patron</em><p class='pad-left'>As a bonus action, you cause a psychic disturbance around the target cursed by your Hexblade's Curse. When you do so, you deal psychic damage to the cursed target and each creature of your choice that you can see within 5 feet of it. The psychic damage equals your Charisma modifier. To use this invocation, you must be able to see the cursed target, and it must be within 30 feet of you.</div></div>"
+          "<div class='row'><div class='col-sm-6'><h5 class='mb-0'><strong>All Warlocks</strong></h5><h5 class='mb-0'>Agonizing Blast</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you cast {@spells eldritch blast}, add your Charisma modifier to the damage it deals on a hit.<h5 class='mb-0'>Eldritch Spear</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you cast {@spells eldritch blast}, its range is 300 feet.<h5 class='mb-0'>Repelling Blast</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you hit a creature with {@spells eldritch blast}, you can push the creature up to 10 feet away from you in a straight line.<h5 class='mb-0'>Lance of Lethargy (XGE)</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>Once on each of your turns when you hit a creature with your {@spells eldritch blast}, you can reduce that creature's speed by 10 feet until the end of your next turn.<h5 class='mb-0'>Armor of Shadows</h5><p class='pad-left'>You can cast {@spells mage armor} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Beast Speech</h5><p class='pad-left'>You can cast {@spells speak with animals} at will, without expending a spell slot.<h5 class='mb-0'>Beguiling Influence</h5><p class='pad-left'>You gain proficiency in the Deception and Persuasion skills.<h5 class='mb-0'>Devil's Sight</h5><p class='pad-left'>You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.<h5 class='mb-0'>Eldritch Sight</h5><p class='pad-left'>You can cast {@spells detect magic} at will, without expending a spell slot.<h5 class='mb-0'>Eyes of the Rune Keeper</h5><p class='pad-left'>You can read all writing.<h5 class='mb-0'>Fiendish Vigor</h5><p class='pad-left'>You can cast {@spells false life} on yourself at will as a 1st-level spell, without expending a spell slot or material components.<h5 class='mb-0'>Gaze of Two Minds</h5><p class='pad-left'>You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.<h5 class='mb-0'>Mask of Many Faces</h5><p class='pad-left'>You can cast {@spells disguise self} at will, without expending a spell slot.<h5 class='mb-0'>Misty Visions</h5><p class='pad-left'>You can cast {@spells silent image} at will, without expending a spell slot or material components.<h5 class='mb-0'>Thief of Five Fates</h5><p class='pad-left'>You learn the spell {@spells bane}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Mire the Mind</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You learn the spell {@spells slow}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>One with Shadows</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>When you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction.<h5 class='mb-0'>Signs of Ill Omen</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You learn the spell {@spells bestow curse}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Gift of the Depths (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You can breathe underwater, and you gain a swimming speed equal to your walking speed. You can also cast water breathing once without expending a spell slot. You regain the ability to do so when you finish a long rest.<h5 class='mb-0'>Bewitching Whispers</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells compulsion}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Dreadful Word</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells confusion}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Sculptor of Flesh</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells polymorph}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Ghostly Gaze (XGE)</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>As an action, you gain the ability to see through solid objects to a range of 30 feet. Within that range, you have darkvision if you don't already have it. This special sight lasts for 1 minute or until your concentration ends (as if you were concentrating on a spell). During that time, you perceive objects as ghostly, transparent images. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Ascendant Step</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells levitate} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Minions of Chaos</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You learn the spell {@spells conjure elemental}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest. At your DMs discretion you may be able to conjure creatures of a different type (depending on your patron) as long as they meet the other criteria for the spell.<h5 class='mb-0'>Otherworldly Leap</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells jump} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Whispers of the Grave</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells speak with dead} at will, without expending a spell slot.<h5 class='mb-0'>Lifedrinker</h5><p class='pad-left'><em>Prerequisite: 12th level</em><p class='pad-left'>When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum of 1).<h5 class='mb-0'>Master of Myriad Forms</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can cast {@spells alter self} at will, without expending a spell slot.<h5 class='mb-0'>Witch Sight</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.<h5 class='mb-0'>Visions of Distant Realms</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can cast {@spells arcane eye} at will, without expending a spell slot.</div><div class='col-sm-6'><h5 class='mb-0'><strong>Pact Based</strong></h5><h5 class='mb-0'>Thirsting Blade</h5><p class='pad-left'><em>Prerequisite: 5th level, Pact of the Blade feature</em><p class='pad-left'>You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.<h5 class='mb-0'>Improved Pact Weapon (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Blade feature</em><p class='pad-left'>You can use any weapon you summon with your Pact of the Blade feature as a spellcasting focus for your warlock spells. In addition, the weapon gains a +1 bonus to its attack and damage rolls, unless it is a magic weapon that already has a bonus to those rolls. Finally, the weapon you conjure can be a shortbow, longbow, light crossbow, or heavy crossbow.<h5 class='mb-0'>Eldritch Smite (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Pact of the Blade feature</em><p class='pad-left'>Once per turn when you hit a creature with your pact weapon, you can expend a warlock spell slot to deal an extra 1d8 force damage to the target, plus another 1d8 per level of the spell slot.<h5 class='mb-0'>Book of Ancient Secrets</h5><p class='pad-left'><em>Prerequisite: Pact of the Tome feature</em><p class='pad-left'>You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list. The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag.<p class='pad-left'>On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.<h5 class='mb-0'>Eternal Waking (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Tome feature</em><p class='pad-left'>You no longer need to sleep and can't be forced to sleep by any means. To gain the benefits of a long rest, you can spend all 8 hours doing light activity, such as reading your Book of Shadows and keeping watch.<h5 class='mb-0'>Voice of the Chain Master</h5><p class='pad-left'><em>Prerequisite: Pact of the Chain feature</em><p class='pad-left'>You can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.<h5 class='mb-0'>Gift of the Ever-Living Ones (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Chain feature</em><p class='pad-left'>Whenever you regain hit points while your familiar is within 100 feet of you, treat any dice rolled to determine the hit points you regain as having rolled their maximum value for you.</div><div class='col-sm-6'><h5 class='mb-0'><strong>Patron Based</strong></h5><h5 class='mb-0'>Grasp of Hadar (XGE)</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip, Great Old One patron</em><p class='pad-left'>Once on each of your turns when you hit a creature with your {@spells eldritch blast}, you can move that creature in a straight line 10 feet closer to you.<h5 class='mb-0'>Shroud of Ulban (XGE)</h5><p class='pad-left'><em>Prerequisite: 15th level, Great Old One patron</em><p class='pad-left'>As an action, you can turn invisible for 1 minute. If you attack, deal damage, or force a creature to make a saving throw, you become visible at the end of the current turn.<h5 class='mb-0'>Tomb of Levistus (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Fiend patron</em><p class='pad-left'>As a reaction when you take damage, you can entomb yourself in ice, which melts away at the end of your next turn. You gain 10 temporary hit points per warlock level, which take as much of the triggering damage as possible. Immediately after you take the damage, you gain vulnerability to fire damage, your speed is reduced to 0, and you are incapacitated. These effects, including any remaining temporary hit points, all end when the ice melts. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Cloak of Baal (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Fiend patron</em><p class='pad-left'>As a bonus action, you can surround yourself with a magical aura that looks like buzzing flies. The aura extends 5 feet from you in every direction, but not through total cover. It lasts until you're incapacitated or you dismiss it as a bonus action. The aura grants you advantage on Charisma (Intimidation) checks but disadvantage on all other Charisma checks. Any other creature that starts its turn in the aura takes poison damage equal to your Charisma modifier. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Divine Utterance (HB)</h5><p class='pad-left'><em>Prerequisite: Celestial patron</em><p class='pad-left'>You understand all spoken languages. Moreover, any creature that can understand a language can understand what you say.<h5 class='mb-0'>Angelic Step (HB)</h5><p class='pad-left'><em>Prerequisite: 15th level, Celestial patron</em><p class='pad-left'>As a bonus action you can manifest glowing angelic wings, you gain a flying speed of 30 feet, you can dismiss the wings as a bonus action.<h5 class='mb-0'>Maddening Hex (HB)</h5><p class='pad-left'><em>Prerequisite: 5th level, Hexblade patron</em><p class='pad-left'>As a bonus action, you cause a psychic disturbance around the target cursed by your Hexblade's Curse. When you do so, you deal psychic damage to the cursed target and each creature of your choice that you can see within 5 feet of it. The psychic damage equals your Charisma modifier. To use this invocation, you must be able to see the cursed target, and it must be within 30 feet of you.</div></div>"
         ]
       },
       {
@@ -10729,7 +10729,7 @@
         "name": "fathomless-grasping",
         "title": "The Fathomless: Grasping Tentacles",
         "text": [
-          "You learn the {@spells/evards-black-tentacles Evard's black tentacles}. It counts as a warlock spell for you, but it doesn't count against the number of spells you know. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
+          "You learn the {@spells Evard's black tentacles}. It counts as a warlock spell for you, but it doesn't count against the number of spells you know. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
           "Whenever you cast this spell, your patron's magic bolsters you, granting you a number of temporary hit points equal to your warlock level. Moreover, damage can't break your concentration on this spell."
         ]
       },
@@ -10932,10 +10932,10 @@
     },
     "equipment": {
       "default": [
-        "(a) a {@items/quarterstaff quarterstaff} or (b) a {@items/dagger dagger}",
-        "(a) a {@items/component-pouch component pouch} or (b) an arcane focus",
-        "(a) a {@items/scholars-pack scholar's pack} or (b) an {@items/explorers-pack explorer's pack}",
-        "a {@items/spellbook spellbook}"
+        "(a) a {@items quarterstaff} or (b) a {@items dagger}",
+        "(a) a {@items component pouch} or (b) an arcane focus",
+        "(a) a {@items scholar's pack} or (b) an {@items explorer's pack}",
+        "a {@items spellbook}"
       ],
       "alt": "4d4"
     },
@@ -10994,7 +10994,7 @@
         "title": "Spellcasting",
         "text": [
           "As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power. ",
-          "<h5 class='mb-0'>Cantrips</h5>At 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.",
+          "<h5 class='mb-0'>Cantrips</h5>At 1st level, you know three cantrips of your choice from the {@spells ?spell-class-filter=wizard&spell-level-filter=0|wizard spell list}. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.",
           "<h5 class='mb-0'>Preparing and Casting Spells</h5><p class='pad-left'>The Wizard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.<p class='pad-left'>You prepare the list of wizard spells that are available for you to cast. To do so, choose a number of wizard spells from your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.<p class='pad-left'>You can change your list of prepared spells when you finish a long rest.<h5 class='mb-0'>Spellcasting Ability</h5><p class='pad-left'>Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization.<ul><li>Spell save DC = 8 + proficiency + INT",
           "Spell attack modifier = proficiency + INT</li></ul><h5 class='mb-0'>Ritual Casting</h5><p class='pad-left'>You can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don't need to have the spell prepared.<h5 class='mb-0'>Spellcasting Focus</h5><p class='pad-left'>You can use an arcane focus as a spellcasting focus for your wizard spells.<h5 class='mb-0'>Learning Spells of 1st Level and Higher</h5><p class='pad-left'>Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook (see the 'Spellbook' below)."
         ]
@@ -11485,7 +11485,7 @@
           "While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. The mind can telepathically share with you what it sees and hears (no action required).",
           "Whenever you cast a wizard spell on your turn, you can cast it as if you were in the spectral mind's space, instead of your own, using its senses. You can do so a number of times per day equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
           "As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects.",
-          "The spectral mind stops manifesting if it is ever more than 300 feet away from you, if someone casts {@spells/dispel-magic dispel magic} on it, if the Awakened Spellbook is destroyed, if you die, or if you dismiss the spectral mind as a bonus action.",
+          "The spectral mind stops manifesting if it is ever more than 300 feet away from you, if someone casts {@spells dispel magic} on it, if the Awakened Spellbook is destroyed, if you die, or if you dismiss the spectral mind as a bonus action.",
           "Once you conjure the mind, you can't do so again until you finish a long rest, unless you expend a spell slot of any level to conjure it again."
         ]
       },
@@ -11585,7 +11585,7 @@
         "name": "transmutation-shapechanger",
         "title": "Transmutation: Shapechanger",
         "text": [
-          "At 10th level, you add the polymorph spell to your spellbook, if it is not there already. You can cast {@spells/polymorph polymorph} without expending a spell slot. When you do so, you can target only yourself and transform into a beast whose challenge rating is 1 or lower.",
+          "At 10th level, you add the polymorph spell to your spellbook, if it is not there already. You can cast {@spells polymorph} without expending a spell slot. When you do so, you can target only yourself and transform into a beast whose challenge rating is 1 or lower.",
           "Once you cast polymorph in this way, you can't do so again until you finish a short or long rest, though you can still cast it normally using an available spell slot."
         ]
       },

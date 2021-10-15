@@ -216,7 +216,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/soldier soldier} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity as a member of the city watch.",
+            "Use the tables for the {@backgrounds soldier} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity as a member of the city watch.",
             "Your bond is likely associated with your fellow watch members or the watch organization itself and almost certainly concerns your community. Your ideal probably involves the fostering of peace and safety. An investigator is likely to have an ideal connected to achieving justice by successfully solving crimes."
           ]
         }
@@ -262,7 +262,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/guild-artisan guild artisan} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds guild artisan} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "Your bond is almost certainly related to the master or the clan that taught you, or else to the work that you produce. Your ideal might have to do with maintaining the high quality of your work or preserving the dwarven traditions of craftsmanship."
           ]
         }
@@ -304,7 +304,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/sage sage} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds sage} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "Your bond is almost certainly associated either with the place where you grew up or with the knowledge you hope to acquire through adventuring. Your ideal is no doubt related to how you view the quest for knowledge and truth - perhaps as a worthy goal in itself, or maybe as a means to a desirable end."
           ]
         }
@@ -344,7 +344,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/guild-artisan guild artisan} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds guild artisan} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "The noble court or bureaucratic organization where you got your start is directly or indirectly associated with your bond (which could pertain to certain individuals in the group, such as your sponsor or mentor). Your ideal might be concerned with the prevailing philosophy of your court or organization."
           ]
         }
@@ -578,7 +578,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/criminal criminal} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds criminal} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "Although your capabilities are not much different from those of a burglar or smuggler, you learned and practiced them in a very different context: as an espionage agent. You might have been an officially sanctioned agent of the crown, or perhaps you sold the secrets you uncovered to the highest bidder."
           ]
         }
@@ -819,7 +819,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/entertainer entertainer} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds entertainer} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "A gladiator is as much an entertainer as any minstrel or circus performer trained to make the arts of combat into a spectacle the crowd can enjoy. This kind of flashy combat is your entertainer routine, though you might also have some skills as a tumbler or actor. You can replace the musical instrument in your equipment package with an inexpensive but unusual weapon, such as a trident or net."
           ]
         }
@@ -1558,7 +1558,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/soldier soldier} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds soldier} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "Your bond is likely associated with your fellow watch members or the investigation organization itself and almost certainly concerns your community. Your ideal probably involves the fostering of peace and safety. An investigator is likely to have an ideal connected to achieving justice by successfully solving crimes."
           ]
         }
@@ -1684,7 +1684,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/soldier soldier} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds soldier} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "Your bond almost always involves the order to which you belong (or at least key members of it), and it is highly unusual for a knight's ideal not to reflect the agenda, sentiment, or philosophy of one's order."
           ]
         }
@@ -1809,7 +1809,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/soldier soldier} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds soldier} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "Your bond could be associated with the company you traveled with previously, or with some of the comrades you served with. The ideal you embrace largely depends on your worldview and your motivation for fighting."
           ]
         }
@@ -1947,7 +1947,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/noble noble} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds noble} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "A knighthood is among the lowest noble titles in most societies, but it can be a path to higher status. As an emblem of chivalry and the ideals of courtly love, you might include among your equipment a banner or other token from a noble lord or lady to whom you have given your heart-in a chaste sort of devotion."
           ]
         }
@@ -2278,7 +2278,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/sailor sailor} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds sailor} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "You spent your youth under the sway of a dread pirate, a ruthless cutthroat who taught you how to survive in a world of sharks and savages. You've indulged in larceny on the high seas and sent more than one deserving soul to a briny grave. Fear and bloodshed are no strangers to you, and you've garnered a somewhat unsavory reputation in many a port town."
           ]
         }
@@ -2417,7 +2417,7 @@
         {
           "name": "Suggested Characteristics",
           "text": [
-            "Use the tables for the {@backgrounds/criminal criminal} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
+            "Use the tables for the {@backgrounds criminal} background as the basis for your traits and motivations, modifying the entries when appropriate to suit your identity.",
             "For instance, your bond might involve other bounty hunters or the organizations or individuals that employ you. Your ideal could be associated with your determination always to catch your quarry or your desire to maintain your reputation for being dependable."
           ]
         }
