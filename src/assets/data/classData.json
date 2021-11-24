@@ -1831,7 +1831,6 @@
         "name": "glamour-mantle",
         "title": "College of Glamour: Mantle of Inspiration",
         "text": [
-
           "When you join the College of Glamour at 3rd level, you gain the ability to weave a song of fey magic that imbues your allies with vigor and speed. As a bonus action, you can expend a use of Bardic Inspiration to grant yourself a wondrous, otherworldly appearance. When you do so, choose a number of allies you can see and who can see you within 60 feet of you, up to a number of them equal to your Charisma modifier (minimum of one).  Each of them gains 6 temporary hit points. When a creature gains these temporary hit points, it can immediately use its reaction to move up to its speed, without provoking opportunity attacks.",
           "The number of temporary hit points increases alongside your bardic inspiration die (eg. to 8 at level 5)."
         ]
@@ -1843,10 +1842,58 @@
         "name": "glamour-enthrall",
         "title": "College of Glamour: Enthralling Performance",
         "text": [
-
           "Also at 3rd level, you can charge your performance with seductive, fey magic. if you perform for at least 1 minute, you can attempt to inspire wonder in your audience by singing, reciting a poem, or dancing. At the end of the performance, choose a number of humanoids within 60 feet of you who watched and listened to all of it, up to a number of them equal to your Charisma modifier (minimum of one). Each target must succeed on a Wisdom saving throw against your spell save DC or be charmed by you. While charmed in this way, the target idolizes you, it speaks glowingly of you to anyone who speaks to it, and it hinders anyone who opposes you, avoiding violence unless it was already inclined to fight on your behalf. This effect ends on a target after 1 hour, if it takes any damage, if you attack it, or if it witnesses you attacking or damaging any of its allies.",
           "If a target succeeds on its save against this effect, the target has no hint that you tried to charm it.",
           "Once you use this feature, you can't use it again until you finish a short or long rest."
+        ]
+      },
+      {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "swords",
+        "name": "swords",
+        "title": "Bard College: College of Swords",
+        "source": "XGE",
+        "text": [
+          "Bards of the College of Swords are called blades, and they entertain through daring feats of weapon prowess. Blades perform stunts such as sword swallowing, knife throwing and juggling, and mock combats. Though they use their weapons to entertain, they are also highly trained and skilled warriors in their own right.",
+          "Their talent with weapons inspires many blades to lead double lives. One blade might use a circus troupe as cover for nefarious deeds such as assassination, robbery, and blackmail. Other blades strike at the wicked, bringing justice to bear against the cruel and powerful. Most troupes are happy to accept a blade's talent for the excitement it adds to a performance, but few entertainers fully trust a blade in their ranks."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "swords",
+        "initial": "yes",
+        "name": "swords-proficiencies",
+        "title": "College of Swords: Bonus Proficiencies",
+        "text": [
+          "When you join the College of Swords at 3rd level, you gain proficiency with medium armor and all bladed weapons.",
+          "If you're proficient with a simple or martial melee weapon, you can use it as a spellcasting focus for your bard spells."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "swords",
+        "initial": "yes",
+        "name": "swords-style",
+        "title": "College of Swords: Fighting Style",
+        "text": [
+          "At 3rd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if something in the game lets you choose again.",
+          "<strong>Dueling.</strong> When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.",
+          "<strong>Two-Weapon Fighting.</strong> When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "swords",
+        "initial": "yes",
+        "name": "swords-flourish",
+        "title": "College of Swords: Blade Flourish",
+        "text": [
+          "At 3rd level, you learn to perform impressive displays of martial prowess and speed.",
+          "Whenever you take the Attack action on your turn, your walking speed increases by 10 feet until the end of the turn, and if a weapon attack that you make as part of this action hits a creature, you can use one of the following Blade Flourish options of your choice. You can use only one Blade Flourish option per turn.",
+          "<strong>Defensive Flourish.</strong> You can expend one use of your Bardic Inspiration to cause the weapon to deal extra damage to the target you hit. The damage equals the number you roll on the Bardic Inspiration die. You also add the number rolled to your AC until the start of your next turn.",
+          "<strong>Mobile Flourish.</strong> You can expend one use of your Bardic Inspiration to cause the weapon to deal extra damage to the target you hit. The damage equals the number you roll on the Bardic Inspiration die. You can also push the target up to 5 feet away from you, plus a number of feet equal to the number you roll on that die. You can then immediately use your reaction to move up to your walking speed to an unoccupied space within 5 feet of the target.",
+          "<strong>Slashing Flourish.</strong> You can expend one use of your Bardic Inspiration to cause the weapon to deal extra damage to the target you hit and to any other creature of your choice that you can see within 5 feet of you. The damage equals the number you roll on the Bardic Inspiration die."
         ]
       },
       {
@@ -2047,6 +2094,15 @@
       },
       {
         "level": 6,
+        "subclass": "swords",
+        "name": "swords-attack",
+        "title": "College of Swords: Extra Attack",
+        "text": [
+          "Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+        ]
+      },
+      {
+        "level": 6,
         "subclass": "whispers",
         "name": "whispers-mantle",
         "title": "College of Whispers: Mantle of Whispers",
@@ -2197,6 +2253,15 @@
         "text": [
           "At 14th level, your appearance permanently gains an otherworldly aspect that makes you look more lovely and fierce.In addition, as a bonus action, you can assume a magically majestic presence for 1 minute or until you are incapacitated. For the duration, whenever any creature tries to attack you for the first time on a turn, the attacker must make a Charisma saving throw against your spell save DC. On a failed save, it can't attack you on this turn, and it must choose a new target for its attack or the attack is wasted. On a successful save, it can attack you on this turn, but it has disadvantage on any saving throw it makes against your spells on your next turn.",
           "Once you assume this majestic presence, you can't do so again until you finish a short or long rest."
+        ]
+      },
+      {
+        "level": 14,
+        "subclass": "swords",
+        "name": "swords-master",
+        "title": "College of Swords: Master's Flourish",
+        "text": [
+          "Starting at 14th level, whenever you use a Blade Flourish option, you can roll a d6 and use it instead of expending a Bardic Inspiration die."
         ]
       },
       {
@@ -9404,6 +9469,85 @@
       {
         "level": 1,
         "filter": "yes",
+        "subclass": "shadow",
+        "name": "shadow",
+        "title": "Shadow",
+        "source": "XGE",
+        "text": [
+          "You are a creature of shadow, for your innate magic comes from the Shadowfell itself. You might trace your lineage to an entity from that place, or perhaps you were exposed to its fell energy and transformed by it. The power of shadow magic casts a strange pall over your physical presence. The spark of life that sustains you is muffled, as if it struggles to remain viable against the dark energy that imbues your soul. At your option, you can pick from or roll on the Shadow Sorcerer Quirks table to create a quirk for your character.",
+          {
+            "type": "table",
+            "colStyles": [
+              "text-center",
+              ""
+            ],
+            "colLabels": [
+              "d6",
+              "Quirk"
+            ],
+            "rows": [
+              [
+                "1",
+                "You are always icy cold to the touch."
+              ],
+              [
+                "2",
+                "When you are asleep, you don't appear to breathe (though you must still breathe to survive)."
+              ],
+              [
+                "3",
+                "You barely bleed, even when badly injured."
+              ],
+              [
+                "4",
+                "Your heart beats once per minute. This event sometimes surprises you."
+              ],
+              [
+                "5",
+                "You have trouble remembering that living creatures and corpses should be treated differently."
+              ],
+              [
+                "6",
+                "You blinked. Once. Last week."
+              ]
+            ]
+          },
+          "At each indicated sorcerer level, add the listed spells to your list of known spells. They do not count towards your limit.",
+          {
+            "type": "list",
+            "items": [
+              "1st - {@spells false life}",
+              "3rd - {@spells pass without trace}",
+              "5th - {@spells fear}",
+              "7th - {@spells shadow of moil}",
+              "9th - {@spells dream}",
+              "11th - {@spells circle of death}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "shadow",
+        "name": "shadow-eyes",
+        "title": "Eyes of the Dark",
+        "text": [
+          "Starting at 1st level, you have darkvision with a range of 120 feet. When you reach 3rd level in this class, you learn the darkness spell, which doesn't count against your number of sorcerer spells known. In addition, you can cast it by spending 2 sorcery points or by expending a spell slot. If you cast it with sorcery points, you can see through the darkness created by the spell."
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "shadow",
+        "name": "shadow-strength",
+        "title": "Strength of the Grave",
+        "text": [
+          "Starting at 1st level, your existence in a twilight state between life and death makes you difficult to defeat. When damage reduces you to 0 hit points, you can make a Charisma saving throw (DC 5 + the damage taken). On a success, you instead drop to 1 hit point. You can't use this feature if you are reduced to 0 hit points by radiant damage or by a critical hit.",
+          "After the saving throw succeeds, you can't use this feature again until you finish a long rest."
+        ]
+      },
+      {
+        "level": 1,
+        "filter": "yes",
         "subclass": "gravity",
         "name": "gravity wielder",
         "title": "Gravity Wielder",
@@ -9689,6 +9833,25 @@
       },
       {
         "level": 6,
+        "subclass": "shadow",
+        "name": "shadow-hound",
+        "title": "Shadow: Hound of Ill Omen",
+        "text": [
+          "At 6th level, you gain the ability to call forth a howling creature of darkness to harass your foes. As a bonus action, you can spend 3 sorcery points to magically summon a hound of ill omen to target one creature you can see within 120 feet of you. The hound uses {@beastiary dire wolf} statistics, with the following changes:",
+          {
+            "type": "list",
+            "items": [
+              "The hound is size Medium, not Large, and it counts as a monstrosity, not a beast.",
+              "It appears with a number of temporary hit points equal to half your sorcerer level.",
+              "It can move through other creatures and objects as if they were difficult terrain. The hound takes 5 force damage if it ends its turn inside an object.",
+              "At the start of its turn, the hound automatically knows its target's location. If the target was hidden, it is no longer hidden from the hound."
+            ]
+          },
+          "The hound appears in an unoccupied space of your choice within 30 feet of the target and takes its turn at the same time as yours. On its turn, it can move only toward its target by the most direct route, and it can use its action only to attack its target. The hound can make opportunity attacks, but only against its target. Additionally, while the hound is within 5 feet of the target, the target has disadvantage on saving throws against spells you cast. The hound disappears if it is reduced to 0 hit points, if its target is reduced to 0 hit points, or after 5 minutes."
+        ]
+      },
+      {
+        "level": 6,
         "subclass": "gravity",
         "name": "gravity-concentrated",
         "title": "Gravity Wielder: Concentrated Cosmos",
@@ -9802,6 +9965,15 @@
       },
       {
         "level": 14,
+        "subclass": "shadow",
+        "name": "shadow walk",
+        "title": "Shadow: SHadow Walk",
+        "text": [
+          "At 14th level, you gain the ability to step from one shadow into another. When you are in dim light or darkness, as a bonus action, you can magically teleport up to 120 feet to an unoccupied space you can see that is also in dim light or darkness."
+        ]
+      },
+      {
+        "level": 14,
         "subclass": "gravity",
         "name": "gravity-afloat",
         "title": "Gravity Wielder: Afloat in the Currents",
@@ -9901,6 +10073,16 @@
         "text": [
           "At 18th level, you gain the ability to overcome grievous injuries. As a bonus action when you have fewer than half of your hit points remaining, you can regain a number of hit points equal to half your hit point maximum.",
           "Once you use this feature, you can't use it again until you finish a long rest."
+        ]
+      },
+      {
+        "level": 18,
+        "subclass": "shadow",
+        "name": "shadow-form",
+        "title": "Shadow: Umbral Form",
+        "text": [
+          "Starting at 18th level, you can spend 6 sorcery points as a bonus action to magically transform yourself into a shadowy form. In this form, you have resistance to all damage except force and radiant damage, and you can move through other creatures and objects as if they were difficult terrain. You take 5 force damage if you end your turn inside an object.",
+          "You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action."
         ]
       },
       {

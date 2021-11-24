@@ -18,18 +18,23 @@ export class HexmapComponent implements AfterViewInit {
   constructor() {
     this.continents = [
       ['Ilia', 50, -77],
+      ['Ischia', 41, 15],
     ];
     this.countries = [
       ['Denari', 30, -120],
       ['Florin', 29, -105],
       ['Pfennig', 19, -105],
+      ['Arkhos', 25, 20],
     ];
     this.seas = [
       ['Starfall Sea', 28, -88],
       ['Illian Sea', 30, -113.5],
       ['Devil\'s Eye', 36, -101],
       ['The Darkslick', 24.5,-103],
-      ['Shimmerbay', 19.5, -95]
+      ['Shimmerbay', 19.5, -95],
+
+      ['Cerulean Sea', 23, 20],
+      ['Siren Sea', 21.5, 22.5],
     ];
     this.cities = [
       ['Avon', 30, -120.6],
@@ -43,7 +48,12 @@ export class HexmapComponent implements AfterViewInit {
 
       ['Reliqa', 28.4, -110.5],
       ['Kintalla', 31.6, -106.4],
-      ['Hieraxa', 25.5, -104.79]
+      ['Hieraxa', 25.5, -104.79],
+
+      ['Scythia', 23.7, 22],
+      ['Melos', 24.3, 20.5],
+      ['Pylea', 27, 17.8],
+      ['Themis', 25.2, 18.7]
     ]
     this.towns = [
       ['Borderland Keep', 30.2, -119.7],
@@ -83,11 +93,17 @@ export class HexmapComponent implements AfterViewInit {
       ["Empty Mountain", 30.83, -110.42],
       ["Caer Kaan", 28.5, -103.4],
       ["Endless Stairs", 31.8, -104.17],
+
+      ["Zodanii", 26, 19.8],
+      ["Olynthos", 27, 23],
+      ["Kydonia", 21.8, 19.6],
+      ["Megara", 24.6, 21.7],
+      ["Mount Pantheus", 25.7, 23],
     ]
    }
 
   private initMap(): void {
-    let map = L.map('map').setView([30, -120.0], 4.0);
+    let map = L.map('map').setView([20, 20.0], 5.0);
     let textLabel = L.icon({
       iconUrl: 'my-icon.png',
       iconSize: [0, 0],

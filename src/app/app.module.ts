@@ -15,6 +15,7 @@ import { PointBuyModule } from './controllers/point-buy/point-buy.module';
 import { SharedModule } from './shared/shared.module';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParticlesComponent } from './controllers/particles/particles.component';
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
@@ -24,6 +25,7 @@ import { OtherFeaturesModule } from './controllers/other-features/other-features
 import { SpellbookComponent } from './controllers/spellbook/spellbook.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { NameGenComponent } from './controllers/name-gen/name-gen.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { environment } from '../environments/environment';
     EncounterBuilderComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    SpellbookComponent
+    SpellbookComponent,
+    NameGenComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { environment } from '../environments/environment';
     PointBuyModule,
     OtherFeaturesModule,
     NgxScrollTopModule,
+    NgxSliderModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
