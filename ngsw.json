@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1637505212767,
+  "timestamp": 1637955587667,
   "index": "https://gaschw3.github.io/dnd-angular/index.html",
   "assetGroups": [
     {
@@ -15,13 +15,13 @@
         "https://gaschw3.github.io/dnd-angular/903.16ee100ab8ac160a99f1.js",
         "https://gaschw3.github.io/dnd-angular/favicon.ico",
         "https://gaschw3.github.io/dnd-angular/index.html",
-        "https://gaschw3.github.io/dnd-angular/main.0553d46a2059a61c2aa3.js",
+        "https://gaschw3.github.io/dnd-angular/main.cf8049cd0f6838b2508e.js",
         "https://gaschw3.github.io/dnd-angular/manifest.json",
         "https://gaschw3.github.io/dnd-angular/polyfills-es5.90872eba365086520f11.js",
         "https://gaschw3.github.io/dnd-angular/polyfills.b554df4e45974f14f312.js",
-        "https://gaschw3.github.io/dnd-angular/runtime.0fbbe18f70ee000db8a1.js",
+        "https://gaschw3.github.io/dnd-angular/runtime.202c42dc1ee2853756a6.js",
         "https://gaschw3.github.io/dnd-angular/scripts.bce11b3e70a2fd316cad.js",
-        "https://gaschw3.github.io/dnd-angular/styles.1cb9a535d10b849e5165.css"
+        "https://gaschw3.github.io/dnd-angular/styles.6a2065dfeb1d8ab3f044.css"
       ],
       "patterns": []
     },
@@ -52,6 +52,7 @@
         "https://gaschw3.github.io/dnd-angular/layers-2x.8f2c4d11474275fbc161.png",
         "https://gaschw3.github.io/dnd-angular/layers.416d91365b44e4b4f477.png",
         "https://gaschw3.github.io/dnd-angular/marker-icon.2b3e1faf89f94a483539.png",
+        "https://gaschw3.github.io/dnd-angular/meander.b1e8f99736752f02118d.svg",
         "https://gaschw3.github.io/dnd-angular/sort_asc.4bba59196d7ce2619696.png",
         "https://gaschw3.github.io/dnd-angular/sort_asc_disabled.27ac5d1bc294b1fae056.png",
         "https://gaschw3.github.io/dnd-angular/sort_both.8b117faa9d4dd934d6bb.png",
@@ -82,22 +83,23 @@
     "https://gaschw3.github.io/dnd-angular/favicon.ico": "863d5aec8cd33fb144b94c2251bfb56de043d43c",
     "https://gaschw3.github.io/dnd-angular/icon_x192.png": "b2909ba733e66d1d66794c050be27601554c0cf4",
     "https://gaschw3.github.io/dnd-angular/icon_x512.png": "c6f45c946f9cb98f5633da0839e304e2096333a2",
-    "https://gaschw3.github.io/dnd-angular/index.html": "e72387236acac4a7e54772976ba20efa9d58db7e",
+    "https://gaschw3.github.io/dnd-angular/index.html": "550f777463e4c86b9338bc0bf577fd9cbb34d5bb",
     "https://gaschw3.github.io/dnd-angular/layers-2x.8f2c4d11474275fbc161.png": "152a162333e46d24f9d89f566312fc0c64011dee",
     "https://gaschw3.github.io/dnd-angular/layers.416d91365b44e4b4f477.png": "c9e7528e491a39232ba24a2706c6c739d6fb0f06",
-    "https://gaschw3.github.io/dnd-angular/main.0553d46a2059a61c2aa3.js": "7235456223144ba78167773daebe0153f60f7cc4",
+    "https://gaschw3.github.io/dnd-angular/main.cf8049cd0f6838b2508e.js": "3ad7e7fdf6a3731bd1fc1e1f396ff49004282a1b",
     "https://gaschw3.github.io/dnd-angular/manifest.json": "47772832102a402aa8d301434f850ac04406c3e3",
     "https://gaschw3.github.io/dnd-angular/marker-icon.2b3e1faf89f94a483539.png": "60a90bcbb2b42b7ddb4556db94eb7c1084b0e5da",
+    "https://gaschw3.github.io/dnd-angular/meander.b1e8f99736752f02118d.svg": "65df32b47ac05d660c17d023bdabbe64afb30d2f",
     "https://gaschw3.github.io/dnd-angular/polyfills-es5.90872eba365086520f11.js": "d2e4061e1eb2e2b4ba1f5a121f4bd9e3b8343288",
     "https://gaschw3.github.io/dnd-angular/polyfills.b554df4e45974f14f312.js": "dae7cda0dde51191379fd57734ea3220977669d5",
-    "https://gaschw3.github.io/dnd-angular/runtime.0fbbe18f70ee000db8a1.js": "0d3cbffad48127ae73c3f579fc368525fac3a13f",
+    "https://gaschw3.github.io/dnd-angular/runtime.202c42dc1ee2853756a6.js": "aed417d09e780cccecb3bfc4aa26536fa62fb970",
     "https://gaschw3.github.io/dnd-angular/scripts.bce11b3e70a2fd316cad.js": "da91dfa276d922edfb8bf49ccf2eddf6c2c91407",
     "https://gaschw3.github.io/dnd-angular/sort_asc.4bba59196d7ce2619696.png": "4ed7eba22e4258db81fd79761ed5fc6d00c7dab7",
     "https://gaschw3.github.io/dnd-angular/sort_asc_disabled.27ac5d1bc294b1fae056.png": "ae170a833b6f5d6344570061c60291b5b45e6004",
     "https://gaschw3.github.io/dnd-angular/sort_both.8b117faa9d4dd934d6bb.png": "96e499eff491eac39508e1696686712df94108aa",
     "https://gaschw3.github.io/dnd-angular/sort_desc.c4196d3286cc33244c83.png": "5d17b4a1cd4c5d92df1adc190a9292674e2a3ab0",
     "https://gaschw3.github.io/dnd-angular/sort_desc_disabled.07c018ae0160704a3290.png": "960aafb94a313744af3b6b5cfaced54024a429bf",
-    "https://gaschw3.github.io/dnd-angular/styles.1cb9a535d10b849e5165.css": "827789d7eedae6d883788979b49454772ae005ca"
+    "https://gaschw3.github.io/dnd-angular/styles.6a2065dfeb1d8ab3f044.css": "0b27db165fd9b999c8eb7f28a4cf69a1a35804fb"
   },
   "navigationUrls": [
     {
