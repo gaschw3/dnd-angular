@@ -147,7 +147,7 @@ body {
         background-color: inherit;
     }
     table .table-active {
-        background-color: themed("navColor")!important;
+        background-color: themed("tableActiveColor")!important;
         color: themed("textLinkColor");
     }
     .table td, .table th {

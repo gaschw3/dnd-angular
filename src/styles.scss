@@ -24,6 +24,25 @@
 
 .theme-container {
   @include themify($themes) {
+    //hacky thing for bgimages, most themes don'e have one
+    @media (min-width: 768px) {
+      background-image: themed("bgImage"), themed("bgImage")!important;
+      background-repeat: repeat-y!important;
+      background-size: 45px 40px!important;
+      background-position-x: left, right!important;
+    }
+    @media (min-width: 300px) {
+      background-image: themed("bgImage");
+      background-repeat: repeat-y;
+      background-size: 40px 35px;
+      background-position-x: left;
+    }
+
+
+  .navbar-brand {
+    padding-left: 5px;
+    color: themed("colorTertiary");
+  }
 
   .navbar-nav a {
       color: themed("navText");

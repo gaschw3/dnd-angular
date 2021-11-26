@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
+    <style type="text/css">
+        line, polyline { fill: none; stroke: #815741; stroke-width: 2.5; }
+    </style>
+    <line x1="0" y1="18" x2="0" y2="0" id="border"/>
+    <use xlink:href="#border" transform="translate(15.5 0)"/>
+    <polyline points="16.7,1.25 4,1.25 4,9.9 9.4,9.9" id="wave"/>
+    <use xlink:href="#wave" transform="rotate(180 8 7.75)"/>
+</svg>

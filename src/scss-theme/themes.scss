@@ -5,6 +5,7 @@ $themes: (
     headerFallbackFont: cursive,
     background: auto,
     navColor: #fff59b,
+    tableActiveColor: #fff59b,
     navText: #000,
     cardColor: #fff,
     textColor: auto,
@@ -20,12 +21,35 @@ $themes: (
     paginateSelected: auto,
     tableHover: rgba(0, 0, 0, 0.075)
   ),
+  greek: (
+    bgImage: url(meander.svg),
+    backgroundColor: #FCDEC2,
+    headerFont: 'Mate SC',
+    headerFallbackFont: serif,
+    background: auto,
+    navColor: #946B44,
+    navText: #fff,
+    cardColor: #ebd4c1,
+    textColor: auto,
+    textLinkColor: #E0A267,
+    textLinkBackground: inherit,
+    linkColor: #946B44,
+    colorPrimary: #E0A267, //most headers on site
+    colorSecondary: #e06767, //feature headers in class, features outline, button clicked
+    colorTertiary: #67b4e0, //feature usbheaders for stuff like fighting styles
+    headerColor: #E0A267,
+    classButtonGradient: linear-gradient(#946B44,#805b39 60%,#68482b),
+    classButtonGradientActive: linear-gradient(#68482b, #553a20 40%, #462f19),
+    paginateSelected: rgba(121, 175, 255, 0.514),
+    tableHover: rgba(255, 255, 255, 0.075)
+  ),
   dark: (
     backgroundColor: #272b30,
     headerFont: "Segoe UI",
     headerFallbackFont: sans-serif,
     background: auto,
     navColor: #3a3f44,
+    tableActiveColor: #3a3f44,
     navText: #fff,
     cardColor: #32383e,
     textColor: #aaa,
@@ -41,7 +65,7 @@ $themes: (
     paginateSelected: rgba(121, 175, 255, 0.514),
     tableHover: rgba(255,255,255,.075)
   ),
-  rainbow: (
+  /*rainbow: (
     backgroundColor: #272b30,
     headerFont: Monoton,
     headerFallbackFont: sans-serif,
@@ -151,5 +175,5 @@ $themes: (
     classButtonGradient: linear-gradient(50deg,  #29286b 0%, #316770 74%),
     paginateSelected: rgba(184, 255, 216, 0.514),
     tableHover: rgba(255,255,255,.075)
-  )
+  )*/
 );

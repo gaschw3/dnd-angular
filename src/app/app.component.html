@@ -2,7 +2,8 @@
 <div [ngClass]="'theme-'+theme"><div class="theme-container">
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" class="d-inline-block align-top" href="#"><img src="./favicon.ico" width="30" height="30" alt=""> EotCC 5e</a>
+      <img src="./favicon.ico" width="30" height="30">
+      <a class="d-inline-block align-top navbar-brand" href="#">EotCC 5e</a>
       <button  class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
       <span  class="navbar-toggler-icon"></span>
       </button>
@@ -61,10 +62,8 @@
                   <div class="form-group">
                     <label for="theme"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label> <span class="ml-1 badge badge-warning">WIP</span>
                     <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
+                      <option value="greek">Arkhos</option>
                       <option value="dark">Material Realm</option>
-                      <option value="dark">Interpolating weave...</option>
-                      <option value="dark">Stailizing tears...</option>
-                      <option value="dark">Channeling divinity...</option>
                       <!--
                       <option value="light">Celestia</option>
                       <option value="hell">The Abyss</option>
