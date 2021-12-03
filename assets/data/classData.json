@@ -6518,7 +6518,9 @@
         "title": "Spellcasting",
         "text": [
           "By 2nd level, you have learned to draw on divine magic through meditation and prayer to cast spells as a cleric does.",
-          "<h5 class='mb-0'>Preparing and Casting Spells</h5><p class='pad-left'>The Paladin table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.<p class='pad-left'>You prepare the list of paladin spells that are available for you to cast, choosing from the paladin spell list. When you do so, choose a number of paladin spells equal to your Wisdom modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.<p class='pad-left'>You can change your list of prepared spells when you finish a long rest.<h5 class='mb-0'>Spellcasting Ability</h5><p class='pad-left'>Charisma is your spellcasting ability for your paladin spells. The power of your spells comes from your conviction to your oath.",
+          "<h5 class='mb-0'>Preparing and Casting Spells</h5><p class='pad-left'>The Paladin table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.<p class='pad-left'>You prepare the list of paladin spells that are available for you to cast, choosing from the paladin spell list. When you do so, choose a number of paladin spells equal to your Charisma modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.",
+          "You can change your list of prepared spells when you finish a long rest.",
+          "<h5 class='mb-0'>Spellcasting Ability</h5><p class='pad-left'>Charisma is your spellcasting ability for your paladin spells. The power of your spells comes from your conviction to your oath.",
           {
             "type": "list",
             "items": [
@@ -6989,6 +6991,54 @@
         ]
       },
       {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "revelry",
+        "name": "revelry",
+        "title": "Oath of Revelry",
+        "source": "BREW",
+        "text": [
+          "Those who take the Oath of Revelry value pleasure and beauty above all else. Such paladins are often avid hedonists, believing personal pleasure and satisfaction to be the most moral path. Those who have chosen this path are the center of attention and bring pleasure and celebration to the masses. They often travel the world to experience everything life has to offer - usually trying to entice other to pursue luxuries with enchantments, illusion, or good old-fashioned charm.",
+          "Not all such paladins are bon vivants, however; some serve darker agendas. Making a pact with a dark deity is not unheard of, especially in pursuit of one's own perfection. They use their powers to corrupt others by twisting desires and dreams into acts of violence and self-destruction.",
+          "Regardless of their intentions, the Oath of Revelry leads creatures to experience as much in life as possible; destroying your enemies should bring as much elation as the celebrations of your victories.",
+          "<h5 class='mb-0'>Tenets of Revelry</h5> The details might vary, but all focus on living a life of pleasure and extending it to others.",
+          "<strong>Work Hard, Play Hard.</strong> You must fight for your right to party. All revelry is grander when you have earned it.",
+          "<strong>Pass the Wine.</strong> Everyone deserves to smile and laugh. Share the wine, the feast, and the joy with all, even in the face of adversity. ",
+          "<strong>Enjoy the View.</strong> Beauty, whether personal or environmental, fans the flames of pleasure. Always strive to be beautiful and create beauty.",
+          "<strong>You Only Live Once.</strong> This is your life. It may be the only one you get, and may end at any time. Do not waste it.",
+          "<h5 class='mb-0'>Oath Spells</h5>You gain oath spells at the paladin levels listed.",
+          {
+            "type": "list",
+            "items": [
+              "3rd - {@spells tasha's hideous laughter}, {@spells charm person}",
+              "5th - {@spells detect thoughs}, {@spells healing spirit}",
+              "9th - {@spells major image}, {@spells crusader's mantle}",
+              "13th - {@spells freedom of movement}, {@spells charm monster}",
+              "17th - {@spells seeming}, {@spells skill empowerment}"
+            ]
+          }
+        ]
+      },
+            {
+        "level": 3,
+        "subclass": "revelry",
+        "name": "revelry-channel-1",
+        "title": "Oath of Revelry Channel Divinity: Raucous Cheer",
+        "text": [
+          "You can use your action and your Channel Divinity to let loose a boisterous yell. Each creature within 300 feet of you that can hear you can use its reaction to join your shout. If a creature does so, it gains temporary hit points equal to your Charisma modifier (minimum 1) + your paladin level and is charmed by you until it loses those temporary hit points."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "revelry",
+        "name": "revelry-channel-2",
+        "title": "Oath of Revelry Channel Divinity: Join the Dance",
+        "text": [
+          "You can spend your Channel Divinity as an action to dance a catchy jig. Each creature you choose within 15 feet must make a Wisdom saving throw. Creatures that fail the save continue to dance as long as you dance. An affected creature can make another Wisdom saving throw at the end of each of its turn, and each time it takes damage. The creature has advantage on the saving throw if it's triggered by damage. On a successful save, the effect ends.",
+          "A creature that is dancing spends all its movement tapping its feet and shuffling about without leaving its space and is incapacitated (can't use actions or reactions)."
+        ]
+      },
+      {
         "level": 4,
         "subclass": "base",
         "name": "asi-1",
@@ -7097,7 +7147,7 @@
         ]
       },
       {
-        "level": 6,
+        "level": 7,
         "subclass": "watchers",
         "name": "watchers-aura",
         "title": "Oath of the Watchers: Aura of Alacrity",
@@ -7106,12 +7156,21 @@
         ]
       },
       {
-        "level": 6,
+        "level": 7,
         "subclass": "glory",
         "name": "glory-aura",
         "title": "Oath of Glory: Aura of the Sentinel",
         "text": [
           "You emanate an aura that fills you and your companions with supernatural speed, allowing you to race across a battlefield in formation. Your walking speed increases by 10 feet. In addition, if you aren't incapacitated, the walking speed of any ally who starts their turn within 5 feet of you increases by 10 feet until the end of that turn. When you reach 18th level in this class, the range of the aura increases to 10 feet."
+        ]
+      },
+      {
+        "level": 7,
+        "subclass": "revelry",
+        "name": "revelry-aura",
+        "title": "Oath of Revelry: Aura of Comradery",
+        "text": [
+          "You and your allies fight better together. While you you are adjacent to one or more allies, you, as well any allies within 10 feet of you gain a bonus to weapon damage rolls equal to your Charisma modifier (minimum 1). At 18th level, the range of this aura increases to 30 feet and the aura is always active with or without an adjacent ally."
         ]
       },
       {
@@ -7258,6 +7317,15 @@
         "title": "Oath of Glory: Glorious Defense",
         "text": [
           "You can turn defense into a sudden strike. When you or another creature you can see within 10 feet of you is hit by an attack roll, you can use your reaction to grant a bonus to the target's AC against that attack, potentially causing it to miss. The bonus equals your Charisma modifier (minimum of +1). If the attack misses, you can make one weapon attack against the attacker as part of this reaction, provided the attacker is within your weapon's range. You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "revelry",
+        "name": "revelry-ultimate-self",
+        "title": "Oath of Revelry: Ultimate Self",
+        "text": [
+          "Starting at 15th level, you body is your perfected temple - no creature can defile it. You have advantage on saving throws against being charmed, poisoned, petrified, or cursed and you are immune to any spell or effect that would alter your form against your will."
         ]
       },
       {
@@ -7473,6 +7541,23 @@
             ]
           },
           "Once you use this feature, you can't use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again."
+        ]
+      },
+      {
+        "level": 20,
+        "subclass": "revelry",
+        "name": "revelry-life-of-the-party",
+        "title": "Oath of Revelry: Life of the Party",
+        "text": [
+          "At 20th level, you finally reach the peak of partying perfection, granting the following benefits:",
+          {
+            "type": "list",
+            "items": [
+              "<strong>Party Starter.</strong> When you roll initiative, you can replace the final result of your roll with a 20 if it was lower.",
+              "<strong>Entertainer.</strong> Whenever you make a Charisma check, you can treat a d20 roll of 9 or lower as a 10.",
+              "<strong>Gracious Host.</strong> Creatures that are charmed by your don't turn hostile or know they were charmed by a spell when that spell or effect expires."
+            ]
+          }
         ]
       }
     ]
