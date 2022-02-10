@@ -2,9 +2,8 @@ import { MonsterHelperService } from '../../shared/helpers/monster/monster-helpe
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { DataTableDirective } from 'angular-datatables';
-import { Subject } from 'angular-datatables/node_modules/rxjs';
 
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Monster } from 'src/app/models';
 import { HelperService } from '../../shared/helpers/helper.service';
 import { crXpMap, levelXp } from 'src/app/shared/helpers/monster/experienceMaps';
