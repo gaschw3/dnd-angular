@@ -1,0 +1,288 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "Paranoid",
+				"abbreviation": "BREW",
+				"full": "Paranoid Homebrew",
+				"authors": [
+					"Paranoid"
+				],
+				"version": "1.0.0",
+				"targetSchema": "1.0.0"
+			}
+		],
+		"dateAdded": 1540936360,
+		"dateLastModified": 1540936360
+	},
+	"background": [
+		{
+			"name": "Lost",
+			"source": "Paranoid",
+			"page": 150,
+			"skillProficiencies": [
+				{
+					"stealth": true,
+					"deception": true
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Skill Proficiencies",
+							"entry": "{@skill Perception}, {@skill Deception}"
+						},
+						{
+							"type": "item",
+							"name": "Languages",
+							"entry": "Two languages of your choice"
+						},
+						{
+							"type": "item",
+							"name": "Equipment",
+							"entry": "A {@item trinket|phb} that feels familiar to you but you don't know why, a set of {@item traveler's clothes|phb}, a cloak, and a {@item pouch|phb} containing 15 gp"
+						}
+					]
+				},
+				{
+					"name": "Overview:",
+					"type": "entries",
+					"entries": [
+						"You recently awoke, lost, confused, and without a personal history you can remember. You have skills, and a grasp on factual information about the world around you (often to your surprise), but no real idea of who you are or where you came from.",
+						"You start with the 'Deja Vu' feature. If you later remember your former life or develop new abilities or abilities, you can choose a different background feature as apppropriate."
+					]
+				},
+        {
+					"name": "Quirks and Impulses",
+					"type": "entries",
+					"entries": [
+						"Although you have no memory, you are not a blank slate. Certain mannerisms and behaviours persist, even though you don't remember their point of origin.",
+						{
+							"type": "table",
+							"colLabels": [
+								"d6",
+								"Behavior"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
+							"rows": [
+								[
+									"1",
+									"{@b Formal Attitude.} You speak extremely formally at all times, especially to those you see as superiors."
+								],
+								[
+									"2",
+									"{@b Wanderlust.} You feel a compulsion to travel. When in one place for too long, you grow physically restless. Over time, you might choose to curb this instinct."
+								],
+								[
+									"3",
+									"{@b Driven to Learn.} For some reason you are compelled to the library and colleges of the world. The urge to absorb and learn as much as you can is deeply rooted in you."
+								],
+								[
+									"4",
+									"{@b Religious Thinking.} You find yourself easily convinced by religious figures and messages."
+								],
+								[
+									"5",
+									"{@b Mistrusting.} Even when you have no concrete reason, you have a strong feeling that you shouldn't let your guard down around people."
+								],
+								[
+									"6",
+									"{@b Physical.} You don't remember why, but you're very strong and you findd comfort in excercising your body."
+								]
+							]
+						}
+					]
+        },
+        {
+					"name": "Suggested Characteristics",
+					"type": "entries",
+					"entries": [
+						"Being Lost is defined by the unknown. At any moment you might stumble upon a person who recognizes you, but appears to be a total stranger. Will it be friend or foe? Suspicion and confusion are daily experiences for the Lost, and friends are hard to make and keep.",
+						{
+							"type": "table",
+							"colLabels": [
+								"d8",
+								"Personality Trait"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
+							"rows": [
+								[
+									"1",
+									"I like to do something to capture the current moment, be it writing down a poem or drawing a picture."
+								],
+								[
+									"2",
+									"I keep a notebook of all the things I'm supposed to know so I won't forget it."
+								],
+								[
+									"3",
+									"I get constant headaches when I want to think about my past."
+								],
+								[
+									"4",
+									"I come up with a new story of who I was every time I am asked."
+								],
+								[
+									"5",
+									"I don't want to pay close attention to my past."
+								],
+								[
+									"6",
+									"Whoever I was, I am me now. I am actually excited to start fresh."
+								],
+								[
+									"7",
+									"I often hum, whistle, or play a song that I am unsure how I know. The song itself has an ill effect on those around me."
+								],
+								[
+									"8",
+									"I don’t really know how the world works."
+								]
+							]
+						},
+						{
+							"type": "table",
+							"colLabels": [
+								"d6",
+								"Ideal"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
+							"rows": [
+								[
+									"1",
+									"{@b Beginning.} This is a new, fresh start for me! (Any)"
+								],
+								[
+									"2",
+									"{@b Freedom.} No one can or should tell me who I am supposed to be. (Chaotic)"
+								],
+								[
+									"3",
+									"{@b Destiny.} I believe that everything happens for a reason and that all we can do is accept it. (Lawful)"
+								],
+								[
+									"4",
+									"{@b Ambition.} I will do whatever it takes to remember who I was. (Evil)"
+								],
+								[
+									"5",
+									"{@b Apathy.} Why bother searching for my past? It's in the past, after all. (Neutral)"
+								],
+								[
+									"6",
+									"{@b Open.} I have so much to learn. I can’t reject any opinions out of hand. (Good)"
+								]
+							]
+						},
+						{
+							"type": "table",
+							"colLabels": [
+								"d5",
+								"Bond"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
+							"rows": [
+								[
+									"1",
+									"The people I am with saved me."
+								],
+								[
+									"2",
+									"The trinket I possess is more valuable than life itself."
+								],
+								[
+									"3",
+									"The afflicted of the world should be protected."
+								],
+								[
+									"4",
+									"The home I live in right now is the only home that matters to me."
+								],
+								[
+									"5",
+									"There is a place that I feel drawn or connected to."
+								]
+							]
+						},
+						{
+							"type": "table",
+							"colLabels": [
+								"d6",
+								"Flaw"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
+							"rows": [
+								[
+									"1",
+									"Every time I hit a dead end in learning of my past, I mentally shut down for a bit."
+								],
+								[
+									"2",
+									"I am much too quick to believe people who say they know me."
+								],
+								[
+									"3",
+									"I tend to forget what I was doing."
+								],
+								[
+									"4",
+									"My morals are extremely malleable."
+								],
+								[
+									"5",
+									"I can’t stand when people take pity on me."
+								],
+								[
+									"6",
+									"I am almost certain that what I did in the past was bad, and the guilt eats me up even though I don't know what it was."
+								]
+							]
+						}
+					]
+        }
+			],
+			"startingEquipment": [
+				{
+					"_": [
+						{
+							"item": "trinket|phb",
+							"displayName": "a trinket that feels familiar to you but you don't know why,"
+						},
+            {
+							"item": "traveler's clothes|phb"
+						},
+						{
+							"special": "the tool you choose for this background's tool proficiency (artisan's tools)"
+						},
+            {
+							"special": "a cloak"
+						},
+						{
+							"item": "pouch|phb",
+							"containsValue": 1500
+						}
+					]
+				}
+			]
+		}
+	]
+}

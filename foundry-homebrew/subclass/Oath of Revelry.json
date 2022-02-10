@@ -1,0 +1,276 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "OathofRevelry",
+				"abbreviation": "Revelry",
+				"full": "Oath of Revelry",
+				"authors": [
+					"Paranoid"
+				],
+				"convertedBy": [
+					"Paranoid"
+				],
+				"version": "2021.11",
+				"targetSchema": "1.5.0"
+			}
+		],
+		"dateAdded": 1633230529,
+		"dateLastModified": 1633230529
+	},
+	"subclass": [
+		{
+			"name": "Oath of Revelry",
+			"shortName": "Revelry",
+			"source": "OathofRevelry",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"tasha's hideous laughter",
+							"charm person"
+						],
+						"5": [
+							"healing spirit",
+							"detect thoughts"
+						],
+						"9": [
+							"crusader's mantle",
+							"major image"
+						],
+						"13": [
+							"freedom of movement",
+							"charm monster"
+						],
+						"17": [
+							"seeming",
+							"skill empowerment"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Oath of Revelry|Paladin||Revelry|OathofRevelry|3",
+				"Aura of Comradery|Paladin||Revelry|OathofRevelry|7",
+				"Ultimate Self|Paladin||Revelry|OathofRevelry|15",
+				"Life of the Party|Paladin||Revelry|OathofRevelry|20"
+			],
+			"className": "Paladin",
+			"classSource": "PHB"
+		}
+	],
+	"subclassFeature": [
+		{
+			"name": "Oath of Revelry",
+			"source": "OathofRevelry",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Revelry",
+			"subclassSource": "OathofRevelry",
+			"level": 3,
+			"entries": [
+				"Those who take the Oath of Revelry value pleasure and beauty above all else. Such paladins are often avid hedonists, believing personal pleasure and satisfaction to be the most moral path. Those who have chosen this path are the center of attention and bring pleasure and celebration to the masses. They often travel the world to experience everything life has to offer - usually trying to entice other to pursue luxuries with enchantments, illusion, or good old-fashioned charm.",
+        "Not all such paladins are bon vivants, however; some serve darker agendas. Making a pact with a dark deity is not unheard of, especially in pursuit of one's own perfection. They use their powers to corrupt others by twisting desires and skill empowerments into acts of violence and self-destruction.",
+				"Regardless of their intentions, the Oath of Revelry leads creatures to experience as much in life as possible; destroying your enemies should bring as much elation as the celebrations of your victories.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Tenets of Revelry|Paladin||Revelry|OathofRevelry|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Oath Spells|Paladin||Revelry|OathofRevelry|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Channel Divinity: Raucous Cheer|Paladin||Revelry|OathofRevelry|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Channel Divinity: Join the Dance|Paladin||Revelry|OathofRevelry|3"
+				}
+			]
+		},
+		{
+			"name": "Channel Divinity: Raucous Cheer",
+			"source": "OathofRevelry",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Revelry",
+			"subclassSource": "OathofRevelry",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You can use your action and your Channel Divinity to let loose a boisterous yell. Each creature within 300 feet of you that can hear you can use its reaction to join your shout. If a creature does so, it gains temporary hit points equal to your Charisma modifier (minimum 1) + your paladin level and is charmed by you until it loses those temporary hit points."
+			]
+		},
+		{
+			"name": "Channel Divinity: Join the Dance",
+			"source": "OathofRevelry",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Revelry",
+			"subclassSource": "OathofRevelry",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You can spend your Channel Divinity as an action to dance a catchy jig. Each creature you choose within 15 feet must make a Wisdom saving throw. Creatures that fail the save continue to dance as long as you dance. An affected creature can make another Wisdom saving throw at the end of each of its turn, and each time it takes damage. The creature has advantage on the saving throw if it's triggered by damage. On a successful save, the effect ends.",
+				"A creature that is dancing spends all its movement tapping its feet and shuffling about without leaving its space and is incapacitated (can't use actions or reactions)."
+			]
+		},
+		{
+			"name": "Oath Spells",
+			"source": "OathofRevelry",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Revelry",
+			"subclassSource": "OathofRevelry",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You gain oath spells at the paladin levels listed.",
+				{
+					"type": "table",
+					"caption": "Oath of Revelry Spells",
+					"colLabels": [
+						"Paladin Level",
+						"Spells"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"3rd",
+							"{@spell tasha's hideous laughter}, {@spell charm person}"
+						],
+						[
+							"5th",
+							"{@spell healing spirit}, {@spell detect thoughts}"
+						],
+						[
+							"9th",
+							"{@spell crusader's mantle}, {@spell major image}"
+						],
+						[
+							"13th",
+							"{@spell freedom of movement}, {@spell charm monster}"
+						],
+						[
+							"17th",
+							"{@spell seeming}, {@spell skill empowerment}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Tenets of Revelry",
+			"source": "OathofRevelry",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Revelry",
+			"subclassSource": "OathofRevelry",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"The details might vary, but all focus on living a life of pleasure and extending it to others.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Work Hard, Play Hard",
+							"entries": [
+								"You must fight for your right to party. All revelry is grander when you have earned it."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Pass the Wine",
+							"entries": [
+								"Everyone deserves to smile and laugh. Share the wine, the feast, and the joy with all, even in the face of adversity."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Enjoy the View",
+							"entries": [
+								"Beauty, whether personal or environmental, fans the flames of pleasure. Always strive to be beautiful and create beauty."
+							]
+						}
+					]
+				},
+        {
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "You Only Live Once",
+							"entries": [
+								"This is your life. It may be the only one you get, and may end at any time. Do not waste it."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Aura of Comradery",
+			"source": "OathofRevelry",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Revelry",
+			"subclassSource": "OathofRevelry",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"You and your allies fight better together. While you you are adjacent to one or more allies, you, as well any allies within 10 feet of you gain a bonus to weapon damage rolls equal to your Charisma modifier (minimum 1). At 18th level, the range of this aura increases to 30 feet and the aura is always active with or without an adjacent ally."
+			]
+		},
+		{
+			"name": "Ultimate Self",
+			"source": "OathofRevelry",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Revelry",
+			"subclassSource": "OathofRevelry",
+			"level": 15,
+			"header": 2,
+			"entries": [
+				"Starting at 15th level, you body is your perfected temple - no creature can defile it. You have advantage on saving throws against being charmed, poisoned, petrified, or cursed and you are immune to any spell or effect that would alter your form against your will."
+			]
+		},
+		{
+			"name": "Life of the Party",
+			"source": "OathofRevelry",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Revelry",
+			"subclassSource": "OathofRevelry",
+			"level": 20,
+			"header": 2,
+			"entries": [
+				"At 20th level, you finally reach the peak of partying perfection, granting the following benefits:",
+				{
+					"type": "list",
+					"items": [
+						"<strong>Party Starter.</strong> When you roll initiative, you can replace the final result of your roll with a 20 if it was lower.",
+						"<strong>Entertainer.</strong> Whenever you make a Charisma check, you can treat a d20 roll of 9 or lower as a 10.",
+						"<strong>Gracious Host.</strong> Creatures that are charmed by your don't turn hostile or know they were charmed by a spell when that spell or effect expires."
+					]
+				}
+			]
+		}
+	]
+}

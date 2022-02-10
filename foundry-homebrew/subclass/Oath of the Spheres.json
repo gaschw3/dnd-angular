@@ -1,0 +1,277 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "BREW",
+				"abbreviation": "Spheres",
+				"full": "Oath of the Spheres",
+				"authors": [
+					"Paranoid"
+				],
+				"convertedBy": [
+					"Paranoid"
+				],
+				"version": "2021.10",
+				"url": "https://www.gmbinder.com/share/-L5oAy_T_ctmQlovjjAp",
+				"targetSchema": "1.5.0"
+			}
+		],
+		"dateAdded": 1633230529,
+		"dateLastModified": 1633230529
+	},
+	"subclass": [
+		{
+			"name": "Oath of the Spheres",
+			"shortName": "Spheres",
+			"source": "BREW",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"tasha's hideous laughter",
+							"ensnaring strike"
+						],
+						"5": [
+							"crown of madness",
+							"detect thoughts"
+						],
+						"9": [
+							"hunger of hadar",
+							"major image"
+						],
+						"13": [
+							"dimension door",
+							"confusion"
+						],
+						"17": [
+							"telekinesis",
+							"dream"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Oath of the Spheres|Paladin||Spheres|BREW|3",
+				"Acamar's Beckoning|Paladin||Spheres|BREW|7",
+				"Unknowable Mind|Paladin||Spheres|BREW|15",
+				"Emissary of the Spheres|Paladin||Spheres|BREW|20"
+			],
+			"className": "Paladin",
+			"classSource": "PHB"
+		}
+	],
+	"subclassFeature": [
+		{
+			"name": "Oath of the Spheres",
+			"source": "BREW",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Spheres",
+			"subclassSource": "BREW",
+			"level": 3,
+			"entries": [
+				"The Oath of Spheres is sometimes taken by warriors who serve otherworldly entities and quest to release them into the material plane, but other adherents are incidental devotees. Some were trying to prevent otherworldly incursion and lost their way. Some simply allowed their studies or imagination to roam too widely. Whatever the cause, many who find themselves brushing too close to incomprehensible truth eventually take this oath and become singly devoted to showing others the joy of unrestrained consciousness found in the ever-widening gyre of the stars.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Tenets of the Spheres|Paladin||Spheres|BREW|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Oath Spells|Paladin||Spheres|BREW|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Channel Divinity: Ihbar's Void|Paladin||Spheres|BREW|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Channel Divinity: Khirad's Gaze|Paladin||Spheres|BREW|3"
+				}
+			]
+		},
+		{
+			"name": "Channel Divinity: Ihbar's Void",
+			"source": "BREW",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Spheres",
+			"subclassSource": "BREW",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You can use your channel divinity to open a rift to the darkness between the stars. As an action you can create a 15-foot radius sphere of magical darkness centered on a point within 20ft that lasts for 1 minute. The void emits soft murmuring voices and distant tinkling music. Your vision is unaffected by the darkness created in this way but other creatures are blinded within the area.",
+        "Any creature other than yourself that spends the full minute within the Void must make a Wisdom save or roll on the long-term madness table."
+			]
+		},
+		{
+			"name": "Channel Divinity: Khirad's Gaze",
+			"source": "BREW",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Spheres",
+			"subclassSource": "BREW",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"As an action, you can open your mind and reveal it’s eldritch nature to an enemy, using your Channel Divinity. Choose one creature within 50 feet of you that you can see and that can see you. That creature must succeed on a Wisdom saving throw.",
+        "On a failed save the creature is frightened and its speed is set to zero while it laughs, cries, or gibbers uncontrollably for 1 minute. On a successful save the creature’s speed is halved for 1 minute. Either effect ends whenever the creature takes damage from any source."
+			]
+		},
+		{
+			"name": "Oath Spells",
+			"source": "BREW",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Spheres",
+			"subclassSource": "BREW",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You gain oath spells at the paladin levels listed.",
+				{
+					"type": "table",
+					"caption": "Oath of the Spheres Spells",
+					"colLabels": [
+						"Paladin Level",
+						"Spells"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"3rd",
+							"{@spell tasha's hideous laughter}, {@spell ensnaring strike}"
+						],
+						[
+							"5th",
+							"{@spell crown of madness}, {@spell detect thoughts}"
+						],
+						[
+							"9th",
+							"{@spell hunger of hadar}, {@spell major image}"
+						],
+						[
+							"13th",
+							"{@spell dimension door}, {@spell Otiluke's confusion}"
+						],
+						[
+							"17th",
+							"{@spell telekinesis}, {@spell dream}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Tenets of the Spheres",
+			"source": "BREW",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Spheres",
+			"subclassSource": "BREW",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"The tenets of the Oath of Spheres vary as widely as its followers, but generally emphasize the following tenets.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Whisper the Truths",
+							"entries": [
+								"Normalcy is a curse. You must find hidden knowledge and share its truths to unburden the afflicted."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Write the Books",
+							"entries": [
+								"There is no point only speaking -- spoken word exists for mere seconds. Write the gospel wherever you go, with whatever tools and surfaces are available."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Assist the Envoys",
+							"entries": [
+								"Those touched with madness have seen the patterns in the stars. You are the protector of the mad, wild, and forgotten; do not allow them to be harmed."
+							]
+						}
+					]
+				},
+        {
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Open the Way",
+							"entries": [
+								"Doors and windows must be open and uncovered as much as possible so that you might look to the stars -- and so that the stars might look back."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Acamar's Beckoning",
+			"source": "BREW",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Spheres",
+			"subclassSource": "BREW",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"At 7th level, your knowledge of forbidden geometries imparts the ability to create a small but powerful gravity well around yourself. Creatures of your choice moving away from you treat the area within 10 feet of you as difficult terrain. At 18th level, the range of this aura increases to 30 feet. Additionally, you can choose up to three tiny objects and concentrate to hold them in orbit around yourself."
+			]
+		},
+		{
+			"name": "Unknowable Mind",
+			"source": "BREW",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Spheres",
+			"subclassSource": "BREW",
+			"level": 15,
+			"header": 2,
+			"entries": [
+				"Starting at 15th level, your mind becomes so warped and strange that you have resistance to psychic damage and advantage on saving throws against effects that would read your thoughts or control your actions."
+			]
+		},
+		{
+			"name": "Emissary of the Spheres",
+			"source": "BREW",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Spheres",
+			"subclassSource": "BREW",
+			"level": 20,
+			"header": 2,
+			"entries": [
+				"At 20th level, you can assume the form of a tentacled otherworldly horror. You can use your action to gain the following benefits for 1 minute:",
+				{
+					"type": "list",
+					"items": [
+						"Enemy creatures within 10 feet of you have disadvantage on Intelligence, Wisdom, and Charisma saving throws against your paladin spells and Channel Divinity Options.",
+						"If a creature damages you on its turn, you may use your reaction to channel your Insane Regard without expending a use of your Channel Divinity.",
+						"As a bonus action on each of your turns you can use your control of geometries of teleport 10ft. to any location you can see"
+					]
+				},
+				"Once you use this feature, you can't use it again until you finish a long rest."
+			]
+		}
+	]
+}
