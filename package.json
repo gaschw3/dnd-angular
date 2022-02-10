@@ -30,7 +30,6 @@
     "invariant": "^2.2.4",
     "jquery": "^3.5.1",
     "leaflet": "^1.6.0",
-    "ngx-scrolltop": "^0.5.8",
     "pouchdb": "^7.2.2",
     "rxjs": "^6.5.4",
     "tslib": "^2.0.0",
