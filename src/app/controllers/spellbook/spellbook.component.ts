@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataTableDirective } from 'angular-datatables';
-import { forkJoin, Observable } from 'rxjs';
-import { Subject } from 'angular-datatables/node_modules/rxjs';
+import { forkJoin, Observable, Subject } from 'rxjs';
 
 import { Class, Spell } from 'src/app/models';
 import { HelperService } from 'src/app/shared/helpers/helper.service';

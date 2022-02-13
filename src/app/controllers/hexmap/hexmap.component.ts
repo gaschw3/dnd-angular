@@ -105,11 +105,11 @@ export class HexmapComponent implements AfterViewInit {
   private initMap(): void {
     let map = L.map('map').setView([20, 20.0], 5.0);
     let textLabel = L.icon({
-      iconUrl: 'my-icon.png',
+      iconUrl: 't',
       iconSize: [0, 0],
       iconAnchor: [0, 0],
       popupAnchor: [0, 0],
-      shadowUrl: 'my-icon-shadow.png',
+      shadowUrl: '',
       shadowSize: [0, 0],
       shadowAnchor: [0, 0]
     });
@@ -118,7 +118,7 @@ export class HexmapComponent implements AfterViewInit {
       iconSize: [20, 20],
       iconAnchor: [10, 10],
       popupAnchor: [0, 25],
-      shadowUrl: 'my-icon-shadow.png',
+      shadowUrl: '',
       shadowSize: [0, 0],
       shadowAnchor: [0, 0]
     });
@@ -127,7 +127,7 @@ export class HexmapComponent implements AfterViewInit {
       iconSize: [25, 25],
       iconAnchor: [10, 10],
       popupAnchor: [0, 0],
-      shadowUrl: 'my-icon-shadow.png',
+      shadowUrl: '',
       shadowSize: [0, 0],
       shadowAnchor: [0, 0]
     });

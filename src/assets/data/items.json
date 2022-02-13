@@ -16,7 +16,7 @@
         "name": "Bottom Feeder",
         "type": "entries",
         "entries": [
-          "While attuned to this coar you can breate underwater and you have a swim speed equal to you walking speed. Additionally you can expend a full turn of movement to ascend or descend 90 ft in a straight vertical line."
+          "While attuned to this coat you can breate underwater and you have a swim speed equal to you walking speed. Additionally you can expend a full turn of movement to ascend or descend 90 ft in a straight vertical line."
         ]
       },
       {
@@ -65,11 +65,11 @@
     "reqAttune": true,
     "wondrous": true,
     "entries": [
-      "This beautiful cloak is covered in enormous red, yellow, and blue iridescent feathers. The captain who had it claimed they belonged to parrots ho found on an island in teh Shackles, but in reality they are coatl feathers. While attuned to it, you gain the following benefits:",
+      "This beautiful cloak is covered in enormous red, yellow, and blue iridescent feathers. The captain who had it claimed they belonged to parrots found on an island in the Shackles, but in reality they are coatl feathers. While attuned to it, you gain the following benefits:",
       {
         "type": "list",
         "items": [
-          "As a reaction you can slow your rate of descent to 60 ft per round. When you land after useing this reaction you take no damage and you can always land on your feet..",
+          "As a reaction you can slow your rate of descent to 60 ft per round. When you land after using this reaction you take no damage and you can always land on your feet.",
           "While attuned to this cloak you can mimic sounds you have heard. If you are mimicing a voice in this way you can only use the exact phrase and words as they were spoken.",
           "You can use an action to turn the cloak into brightly colored wings and cast the {@spells fly} spell targeting yourself. Once used, this property of the cloak can't be used again until you finish a short rest."
         ]
@@ -102,7 +102,7 @@
         "name": "Coin Ammunition",
         "type": "entries",
         "entries": [
-          "Instead of bullets this pistol uses bold coins for ammunition. A coin can be loaded into the gun through a slot on the top. The coin is magically tuned into a bullet when the trigger is pulled.",
+          "Instead of bullets this pistol uses gold coins for ammunition. A coin can be loaded into the gun through a slot on the top. The coin is magically tuned into a bullet when the trigger is pulled.",
           "You can also load a platinum coin into the gun instead of a gold coin. When you do, you receive a +5 bonues to your attack roll and deal and extra 1d10 damage. You can shoot two platinum coins per day. The pistol malfunctions if you try to shoota third platinum coin or any type of currency less valuable than gold."
         ]
       }
@@ -128,7 +128,7 @@
     "weapon": true,
     "reqAttune": true,
     "entries": [
-      "According to legend this enormous salted steel weapon was once the anchor for the merchant vessel <i>Windfall</i>. When the vessel failed to pay proper respect to the ocean a vengeful spirt rose from teh waves, ripped off the anchor and used to to sink the <i>Windfall</i>. It has since been pased down through the ages as a fearsome weapon of the Depths, appearing from time to time in history to destroy enemies of the open sea.",
+      "According to legend this enormous salted steel weapon was once the anchor for the merchant vessel <i>Windfall</i>. When the vessel failed to pay proper respect to the ocean a vengeful spirt rose from the waves, ripped off the anchor and used to to sink the <i>Windfall</i>. It has since been pased down through the ages as a fearsome weapon of the Depths, appearing from time to time in history to destroy enemies of the open sea.",
       {
         "type": "entries",
         "name": "Dormant",
@@ -139,7 +139,7 @@
             "items": [
               "You can breate in water and have a swim speed equal to your walking speed.",
               "You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
-              "<b>Dredge Line.</b> As can use the attack action to throw the arnchor at a target within 40 ft of you that isn't in the air. If this attack hits the target must make a DC 15 Strength saving throw. On a failure the target and attacker are pulled towards one another, meeting halfway. This action can be used once per long rest in the dormant state, twice in the awakened state, and three times in the exalted state. This attack can also be used against solid terrain (walls, columns, etc.) to pull the attacker towards the location. Using the Drredge Line on terrain doesn't expend a use."
+              "<b>Dredge Line.</b> As can use the attack action to throw the arnchor at a target within 40 ft of you that isn't in the air. If this attack hits the target must make a DC 15 Strength saving throw. On a failure the target and attacker are pulled towards one another, meeting halfway. This action can be used once per long rest in the dormant state, twice in the awakened state, and three times in the exalted state. This attack can also be used against solid terrain (walls, columns, etc.) to pull the attacker towards the location. Using the Dredge Line on terrain doesn't expend a use."
             ]
           }
         ]
@@ -148,13 +148,13 @@
         "type": "entries",
         "name": "Awakened",
         "entries": [
-          "When the anchir reaches an awakened state, it gains the following properties:",
+          "When the anchor reaches an awakened state, it gains the following properties:",
           {
             "type": "list",
             "items": [
               "The weapon's bonus to attack and damage rolls increases to +2.",
               "You can use your <b>Dredge Line</b> attack against enemies twice per long rest.",
-              "<b>Whelming Wave.</b> As an action you can now use the anchor to smash the ground, and explode a magical wave outward in a 15 ft spehere surrounded the wielder. Each creature within that sphere has its movement reduced to half for one round, and the must make a DC 15 Dexterity save, taking 16 (3d10) damage on a failed save or half as much no a success. This action can be used once per long rest in the awakened state, and twice times in the exalted state."
+              "<b>Whelming Wave.</b> As an action you can now use the anchor to smash the ground, and explode a magical wave outward in a 15 ft sphere. Each creature within that sphere has its movement reduced to half for one round, and the must make a DC 15 Dexterity save, taking 16 (3d10) damage on a failed save or half as much no a success. This action can be used once per long rest in the awakened state, and twice in the exalted state."
             ]
           }
         ]
@@ -170,7 +170,7 @@
               "The weapon's bonus to attack and damage rolls increases to +3.",
               "You can use your <b>Dredge Line</b> attack against enemies three times per long rest.",
               "You can use your <b>Whelming Wave</b> action against twice per long rest.",
-              "<b>Hullbreacher.</b> Choose a target within 60 ft. that isn't airbourne. As an action you can slam the anchors head into the ground, sending a 10 ft. rolling surge towards the chosen target. The charge takes until the beginning your next turn to travel to the selected target. Any creature the charge passes under make a DC 18 Dexterity savw, taking 19 (3d12) bludgeoning damage and 19 (3d12) cold damage and falling prone on a failure. A success results in taking half damage and not being knocked prone. Once the charge reaches underneath the target, it detonates, causing a 15 ft. high column of water to spring up under the target. They then make a DC 20 Dexterity save, taking 32 (5d12) bludgeoning damage and 32 (5d12) cold damage and falling prone on a failed save. A success results in taking half damage and not being knocked prone."
+              "<b>Hullbreacher.</b> Choose a target within 60 ft. that isn't airbourne. As an action you can slam the anchors head into the ground, sending a 10 ft. rolling surge towards the chosen target. The charge takes until the beginning your next turn to travel to the selected target. Any creature the charge passes under make a DC 18 Dexterity savw, taking 19 (3d12) bludgeoning damage and 19 (3d12) cold damage and falling prone on a failure. A success results in taking half damage and not being knocked prone. Once the charge reaches the target, it detonates, causing a 15 ft. high column of water to spring up under the target. They then make a DC 20 Dexterity save, taking 32 (5d12) bludgeoning damage and 32 (5d12) cold damage and falling prone on a failed save. A success results in taking half damage and not being knocked prone."
             ]
           }
         ]
@@ -186,8 +186,8 @@
     "reqAttune": true,
     "wondrous": true,
     "entries": [
-      "This aged brass compass has a small compartment under the dial which can be filled with earth, sand, dirt, or pebbles. The compass features two needles. The large, regular needle always points towards magnetic north (per a standard compass), but the thing golden needle always points towards the location from where material in the compartment was taken.",
-      "If the compartment is empty, filled with some other material, or filled with material taken from another plane, the golden needle spins and stop erratically with no obvious pattern."
+      "This aged brass compass has a small compartment under the dial which can be filled with earth, sand, dirt, or pebbles. The compass features two needles. The large, regular needle always points towards magnetic north (as a standard compass), but the thin golden needle always points towards the location from where material in the compartment was taken.",
+      "If the compartment is empty, filled with some other material, or filled with material taken from another plane, the golden needle spins and stops erratically with no obvious pattern."
     ]
   },
   {
@@ -200,12 +200,12 @@
     "reqAttune": true,
     "wondrous": true,
     "entries": [
-      "While attuned to this ring, you can bond it to the rigging of a ship of which you are the captain. It takes 30 minutes to bond the ship to the rinf. WHen the ring is bonded to a ship, you can adjust teh sails and steering wheel of that ship by shouting command words as long as you are within 300ft of the ship. When comandeering a ship this way you do not need any crew to perform those tasks.",
+      "While attuned to this ring, you can bond it to the rigging of a ship of which you are the captain. It takes 30 minutes to bond the ship to the ring. WHen the ring is bonded to a ship, you can adjust the sails and steering wheel of that ship by shouting command words as long as you are within 300ft of the ship. When comandeering a ship this way you do not need any crew to perform those tasks.",
       {
         "name": "Open Fire",
         "type": "entries",
         "entries": [
-          "Additionally, you can use an action to point to a target you can see withing 300ft and speak a command word. A dark cannonball appears in front of you and shoots toward your target. All creatres within 10 ft of the target must make a DC 15 Dexterity save. On a failed save they take 27 (5d10) force damage. On a successful save they take half damage. This damage is doubled against structures. You can use this feature once per long rest."
+          "Additionally, you can use an action to point to a target you can see withing 300ft and speak a command word. A dark cannonball appears in front of you and shoots toward your target. All creatures within 10 ft of the target must make a DC 15 Dexterity save. On a failed save they take 27 (5d10) force damage. On a successful save they take half damage. This damage is doubled against structures. You can use this feature once per long rest."
         ]
       }
     ]
@@ -6456,7 +6456,7 @@
     "weight": 0.02,
     "value": 1000000,
     "entries": [
-      "<span class='text--op'>Occultum</span> is raw, stabilized magic that (very) slowly accretes into tiny translucent gold-purple grains. On the surface, you'll be lucky to find a few grains. In the Veins, water and time concentrate particles of <span class='text--op'>occultum</span> and some long-dead civilizations now subsumed by the endless churning of the earth forged them into coins that can be used to buy, or do, impossible things.",
+      "<span class='text--op'>Occultum</span> is raw, stabilized magic that (very) slowly accretes into tiny translucent gold-purple grains. On the surface, you'll be lucky to find a few grains. In the Veins, water and time concentrated particles of <span class='text--op'>occultum</span> and some long-dead civilization now subsumed by the endless churning of the earth forged them into coins that can be used to buy, or do, impossible things.",
       "If you want to build a deep planar observatory, use <span class='text--op'>occultum</span> to hold the lens. If you want to build a time machine, use <span class='text--op'>occultum</span> to power the chronometric lever. If you want to cast a spell that shouldn't exist, focus your magic through <span class='text--op'>occultum</span>. It's a malleable, stable, and resistant material. Where inferior metals fail, explode, melt, or change into goats, <span class='text--op'>occultum</span> will persevere. It's the unsung hero of a thousand doomsday projects. If you want to do something insane, you wouldn't go awry in acquiring some."
     ]
   },
@@ -9050,10 +9050,15 @@
       "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
       "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions.",
       "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
-      "Chester",
-      "This wood and iron statuette is of a chest with legs and a lolling tongue. It can be activated and deactivated as often as necessary but Chester himself is cowardly and reluctant to fight for any reason except self-defense.",
-      "While active, Chester will happily give and receive items like a Bag of Holding except Chester will not allow himself to overfill and will resist being put into some other extradimensional space.",
-      "If Chester is reduced to 0HP, he immediately reverts back to a figurine and spills all his contained items out onto the ground. If destroyed in this way he can't be used again for 12 hours."
+      {
+        "name": "Chester.",
+        "type": "entries",
+        "entries": [
+          "This wood and iron statuette is of a chest with legs and a lolling tongue. It can be activated and deactivated as often as necessary but Chester himself is cowardly and reluctant to fight for any reason except self-defense.",
+          "While active, Chester will happily give and receive items like a Bag of Holding except Chester will not allow himself to overfill and will resist being put into some other extradimensional space.",
+          "If Chester is reduced to 0HP, he immediately reverts back to a figurine and spills all his contained items out onto the ground. If destroyed in this way he can't be used again for 12 hours."
+        ]
+      }
     ],
     "lootTables": [
       "Magic Item Table G"
@@ -10848,7 +10853,7 @@
     ]
   },
   {
-    "name": "Holy Symbol of Arowen",
+    "name": "Pfennig - Holy Symbol of Arowen",
     "id": "holy-symbol-of-arowen",
     "source": "BREW",
     "page": 222,
@@ -24763,7 +24768,7 @@
     ]
   },
   {
-    "name": "Hacrobat's Balance",
+    "name": "Pfennig - Hacrobat's Balance",
     "id": "hacrobats-balance",
     "type": "M",
     "weight": 6,
@@ -24786,11 +24791,10 @@
     ]
   },
   {
-    "name": "Demonchain",
+    "name": "Denari - Demonchain",
     "id": "demonchain",
     "type": "M",
     "weight": 3,
-    "value": 200,
     "weaponCategory": "martial",
     "baseItem": "whip",
     "source": "BREW",
@@ -24805,7 +24809,7 @@
     "reqAttune": true,
     "entries": [
       "The mishapen blade at the end of this weapon makes it almost as much a flail as a whip. You have a +1 bonus to attack and damage rolls made with this weapon and your successful attacks do 1d6 damage instead of 1d4.",
-      "This wicked chain's lingering connection to the abyss rewards death and punishes celestials. If you incapacitate or kill a creature with this whip you feel invigorated and gain temporary hit points equal to CHA + your level. Additionally, if you hit a celestial with an attack that creature takes an additional 2d8 necrotic damage and you gain that many temporary hit points.",
+      "This wicked chain's lingering connection to the abyss rewards death and punishes celestials. If you incapacitate or kill a creature with this whip you feel invigorated and gain temporary hit points equal to double your CHA bonus. Additionally, if you hit a celestial with an attack that creature takes an additional 2d8 necrotic damage and you gain that many temporary hit points.",
       "Once you attune to this weapon, its normally blistering handle feels cool to the touch."
     ]
   },
@@ -24820,7 +24824,7 @@
     "entries": [
       "The monks of the Relentless Dragon practice a martial arts style that emphasizes unstoppable offense as the superior method of fighting. These hand wraps are worn by their finest warriors, manifesting their fiery ki to annihilate their enemies before there can be any retaliation.",
       "While wearing these handwraps, you gain a +1 bonus to damage rolls you make with unarmed strikes. Such attacks are considered magical.",
-      "Each time you hit a hostile creature with an unarmed strike, you gain 1 flame charge. When you have 4 flame charges, your attacks deal an extra 1d4 fire damage. You can expend 8 charges to cast burning hands as a bonus action. You lose all charges when you take damage or if your turn ends without attacking a hostile creature."
+      "Each time you hit a hostile creature with an unarmed strike, you gain 1 flame charge. When you have 4 flame charges, your attacks deal an extra 1d4 fire damage. You can expend 8 charges to cast burning hands at 2nd level as a bonus action. You lose all charges when you take damage or if your turn ends without attacking a hostile creature."
     ]
   },
   {
@@ -25104,7 +25108,7 @@
     ]
   },
   {
-    "name": "Gold Dragon Fire Whiskey",
+    "name": "Denari - Gold Dragon Fire Whiskey",
     "id": "gold-dragon-fire-whiskey",
     "value": 3000,
     "source": "BREW",
@@ -25114,11 +25118,11 @@
     "weight": 0.5,
     "entries": [
       "This drink from a legendary brewing Monastery in Denari smells strongly of pepper and fainly of ash.",
-      "After drinking a shot of this drink, make a DC 12 Constitution saving throw. On a successful save, smoke pours out of your ears and any time in the next our you can use an action to exhale fire. Creatures in a 15-foot cone must make a DC 13 Dexterity saving throw, taking 3d6 fire damage on a failed save, or half as much damage on a successful one. If you fail your save after taking the drink, you instead immediately belch fire, take 1d6 fire damage, and do not gain the fire breath action."
+      "After drinking a shot of this drink, make a DC 12 Constitution saving throw. On a successful save, smoke pours out of your ears and any time in the next hour you can use an action to exhale fire. Creatures in a 15-foot cone must make a DC 13 Dexterity saving throw, taking 3d6 fire damage on a failed save, or half as much damage on a successful one. If you fail your save after taking the drink, you instead immediately belch fire, take 1d6 fire damage, and do not gain the fire breath action."
     ]
   },
   {
-    "name": "Gold Dragon Riot Juice",
+    "name": "Denari - Gold Dragon Riot Juice",
     "id": "gold-dragon-riot-juice",
     "value": 5000,
     "source": "BREW",
@@ -25132,7 +25136,7 @@
     ]
   },
   {
-    "name": "Gold Dragon Honeyed Whiskey",
+    "name": "Denari - Gold Dragon Honeyed Whiskey",
     "id": "gold-dragon-honeyed-whiskey",
     "value": 2000,
     "source": "BREW",
@@ -25146,7 +25150,7 @@
     ]
   },
   {
-    "name": "Gold Dragon Glory Whiskey",
+    "name": "Denari - Gold Dragon Glory Whiskey",
     "id": "gold-dragon-honeyed-whiskey",
     "value": 20000,
     "source": "BREW",
