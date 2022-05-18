@@ -2,7 +2,7 @@
 @import "./scss-theme/functions.scss";
 @import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Cinzel+Decorative&family=Monoton&family=Iceberg&display=swap');
 
-// TODO: should need this, but I'm seeing a tiny y-scroll bar show up sometimes
+// TODO: shouldn't need this, but I'm seeing a tiny y-scroll bar show up sometimes
 body {
   overflow-x:hidden;
   min-width: auto!important;

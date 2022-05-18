@@ -1,5 +1,5 @@
-/*general sytles used on multiple pages
-  Mostly color relates, also some stuff for navbars, tables, and map labels*/
+/*general styles used on multiple pages
+  Mostly color related, also some stuff for cardsm navbars, tables, and map*/
 @use "sass:color";
 @import './scss-theme/themes.scss';
 @import "./scss-theme/colors.scss";
@@ -8,7 +8,7 @@
 //fix for number of card columns displayed at certain breakpoints
 @media (min-width: 576px) {
     .card-columns {
-        column-count: 2!important;
+        column-count: 1!important;
     }
 }
 @media (min-width: 768px) {
@@ -16,7 +16,7 @@
         column-count: 2!important;
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 2000px) {
     .card-columns {
         column-count: 3!important;
     }
@@ -24,7 +24,7 @@
 
 .theme-container {
   @include themify($themes) {
-    //hacky thing for bgimages, most themes don'e have one
+    //hacky thing for bgimages, most themes don't have one
     @media (min-width: 768px) {
       background-image: themed("bgImage"), themed("bgImage")!important;
       background-repeat: repeat-y!important;
