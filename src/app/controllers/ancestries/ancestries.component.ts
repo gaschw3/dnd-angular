@@ -37,22 +37,19 @@ export class AncestriesComponent implements OnInit {
   ngOnInit(): void {
     this.dtOptions = {
       columnDefs: [
-        { width: '60%', targets: 0 },
-        { width: '20%', targets: 1 },
-        { width: '20%', targets: 2 },
+        { width: '70%', targets: 0 },
+        { width: '30%', targets: 1 },
       ],
       autoWidth: false,
       scrollX: true,
       dom: 'trlp',
       orderMulti: true,
+      pageLength: 20,
       pagingType: "full_numbers",
       searching: true,
       language: {
         lengthMenu: 'Show <select>'+
-        '<option value="10">10</option>'+
-        '<option value="15">15</option>'+
-        '<option value="20">30</option>'+
-        '<option value="60">60</option>'+
+        '<option value="20">20</option>'+
         '<option value="-1">All</option>'+
         '</select> ancestries',
         paginate: {

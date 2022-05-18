@@ -17,11 +17,9 @@
           <div class="col">
             <p class="pb-1 m-0">{{feat.text.description}}</p>
           </div>
-          <ul *ngIf="feat.text.benefits">
-            <li *ngFor="let text of feat.text.benefits">
-                <span [innerHtml]="text |linkmaker"></span>
-            </li>
-          </ul>
+          <ng-container *ngIf="feat.text.benefits">
+            <entry-renderer [list]=feat.text.benefits [parent]="''"></entry-renderer>
+          </ng-container>
           <div *ngIf="feat.text.extraDescription" class="col">
             <p class="pb-1 m-0">{{feat.text.extraDescription}}</p>
           </div>

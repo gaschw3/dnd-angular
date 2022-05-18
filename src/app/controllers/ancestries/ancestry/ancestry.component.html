@@ -13,7 +13,7 @@
           </div>
           <div class="row border-bottom-primary">
             <div class="col-sm-6">
-              <p class="pb-0 m-0"><strong>Size</strong> {{ancestry.size}}</p>
+              <p class="pb-0 m-0"><strong>Size</strong> {{renderSize(ancestry.size)}}</p>
             </div>
             <div class="col-sm-6">
               <p class="pb-0 m-0"><strong>Speed</strong> {{ancestry.speed}} ft.<ng-container *ngIf=ancestry.extraspeed>, {{ancestry.extraspeed}}</ng-container></p>
@@ -37,9 +37,7 @@
                 <div class="card border-0">
                   <div class="card-body pb-0">
                     <h4 [class]="'color-primary' | lowercase">{{trait.name}}</h4>
-                    <ng-container class="" *ngFor="let entry of trait.text">
-                      <p class="card-text mb-1" [innerHtml]="entry | linkmaker"></p>
-                    </ng-container>
+                    <entry-renderer [list]=trait.text [parent]="''"></entry-renderer>
                   </div>
                 </div>
               </ng-container>

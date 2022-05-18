@@ -1,7 +1,7 @@
 <h1>D&D 5e Ancestries</h1>
 
 <div class="row">
-  <div *ngIf="ancestries" class="col ancestries-table">
+  <div *ngIf="ancestries" class="col-sm-4 ancestries-table">
     <table id="tbl-ancestries" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-condensed">
       <thead>
         <tr>
@@ -15,29 +15,24 @@
           </th>
           <th class="ancestry-filter" colspan="1">
             <div class="input-group input-group-sm">
-              <input id="ancestry-prof-filter" class="form-control" type="search" placeholder="Ability">
-            </div>
-          </th>
-          <th class="ancestry-filter" colspan="1">
-            <div class="input-group input-group-sm">
               <input id="ancestry-source-filter" class="form-control" type="search" placeholder="Source">
             </div>
           </th>
         </tr>
         <tr>
           <th>Name</th>
-          <th>Abilities</th>
           <th class="text-right">Source</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let ancestry of ancestries" (click)="setCurrAncestry(ancestry)" [class.table-active]="currAncestry?.id == ancestry.id">
           <td>{{ancestry.name}}</td>
-          <td>{{ancestry.ability}}</td>
           <td [class]="'text-right color-'+ancestry.source | lowercase" class="text-right">{{ancestry.source}}</td>
         </tr>
       </tbody>
     </table>
   </div>
+  <div class="col-sm-8">
+    <app-ancestry *ngIf="currAncestry" [ancestry]="currAncestry"></app-ancestry>
+  </div>
 </div>
-<app-ancestry *ngIf="currAncestry" [ancestry]="currAncestry"></app-ancestry>
