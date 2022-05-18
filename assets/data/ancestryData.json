@@ -1,13 +1,51 @@
 [
   {
-    "name": "Aasimar (Protector)",
+    "name": "Aarakocra",
+    "id": "aarakocra",
+    "source": "MPMM",
+    "size": "M",
+    "speed": "30",
+    "extraspeed": "fly equal to your walking speed",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Aarakocra reach maturity by age 3. Compared to humans, aarakocra live very short lives, rearely longer than 30 years."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Most aarakocra are good and rarely choose sides when it comes to law and chaos. Tribal leaders and warriors might be lawful, while explorers and adventurers might tend toward chaotic."]
+      },
+      {
+        "name": "Size",
+        "text": ["Aarakocra are about 5 feet tall. They have thin, lightweight bodies that weigh between 80 and 100 pounds."]
+      },
+      {
+        "name": "Flight",
+        "text": ["Because of your wings, you have a flying speed equal to your walking speed. To use this flying speed, your hands must be free and you can't be wearing medium or heavy armor."]
+      },
+      {
+        "name": "Talons",
+        "text": ["You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + STR slashing damage."]
+      },
+      {
+        "name": "Wind Caller",
+        "text": ["Starting at 3rd level, you can cast the {@spells gust of wind} spell with this trait, without requiring a material component. Once you cast the spell with this trait, you can't do so again until you finish a long rest. You can also cast the spell using any spell slots you have of 2nd level or higher.",
+        "Intelligence, Wisdom, or Charisma is your spellcasting ability for when you cast gust of wind with this trait (choose when you select this race)."]
+      },
+      {
+        "name": "Languages",
+        "text": ["You can speak, read, and write Common and one other language of your choice."]
+      }
+    ]
+  },
+  {
+    "name": "Aasimar",
     "id": "aasimar-protector",
-    "source": "VGM",
-    "size": "M",
+    "source": "MPMM",
+    "size": "S/M",
     "speed": "30",
-    "cha": 2,
-    "wis": 1,
-    "ability": "Cha +2, Wis +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -15,7 +53,7 @@
       },
       {
         "name": "Alignment",
-        "text": ["Protector Aasimar are imbued with Positive energy and often tend towards Lawful and Good."]
+        "text": ["Aasimar are imbued with positive energy and tend towards Lawful and Good, but some have Fallen from their path, or forsaken a positive/negative duality altogether."]
       },
       {
         "name": "Size",
@@ -31,7 +69,7 @@
       },
       {
         "name": "Healing Hands",
-        "text": ["As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest."]
+        "text": ["As an action, you can touch a creature and roll a number of d4s equal to your proficiency bonus. The creature regains a number of hit points equal to the total rolled. Once you use this trait, you can't use it again until you finish a long rest."]
       },
       {
         "name": "Light Bearer",
@@ -39,118 +77,38 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Celestial."]
+        "text": ["You can speak, read, and write Common and Celestial (Celestial could be replaced with one other language appropriate for your character)."]
       },
       {
-        "name": "Radiant Soul",
+        "name": "Celestial Revelation",
         "text": [
-          "Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes to glimmer and two luminous, incorporeal wings to sprout from your back.",
-          "Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you have a flysing speed of 30 feet, and once on each of your turns, you can deal extra radiant damageto one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
-          "Once you use this trait, you can't use it again until you finish a long rest."
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Aasimar (Fallen)",
-    "id": "aasimar-fallen",
-    "source": "VGM",
-    "size": "M",
-    "speed": "30",
-    "cha": 2,
-    "str": 1,
-    "ability": "Cha +2, Str +1",
-    "traits": [
-      {
-        "name": "Age",
-        "text": ["Aasimar mature at the same rate as humans, but they can live up to 160 years."]
-      },
-      {
-        "name": "Alignment",
-        "text": ["Fallen Aasimar are imbued with Negative energy and often tend towards Chaotic and Evil."]
-      },
-      {
-        "name": "Size",
-        "text": ["Aasimar have the same range of height and weight as humans."]
-      },
-      {
-        "name": "Darkvision",
-        "text": ["Blessed with a radiant soul, your vision can easily cut through darkness. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."]
-      },
-      {
-        "name": "Celestial Resistance",
-        "text": ["You have resistance to necrotic damage and radiant damage."]
-      },
-      {
-        "name": "Healing Hands",
-        "text": ["As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest."]
-      },
-      {
-        "name": "Light Bearer",
-        "text": ["You know the light cantrip. Charisma is your spellcasting ability for it."]
-      },
-      {
-        "name": "Languages",
-        "text": ["You can speak, read, and write Common and Celestial."]
-      },
-      {
-        "name": "Necrotic Shroud",
-        "text": [
-          "Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes to turn into pools of darkness and two skeletal, ghostly, flightless wings to sprout from your back. The instant you transform, other creatures within 10 feet of you that can see you must succed on a Charisma saving throw (DC 8 + your proficiency bonus + your Charisma modifier) or become frightened of you until the end of your next turn.",
-          "Your transformation lasts for 1 minute or until you end it as a bonus action. During it, once on each of your turns, you can deal extra necrotic damage to one target when you deal damage to it with an attack or a spell. The extra necrotic damage equals your level.",
-          "Once you use this trait, you can't use it again until you finish a long rest."
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Aasimar (Scourge)",
-    "id": "aasimar-scourge",
-    "source": "VGM",
-    "size": "M",
-    "speed": "30",
-    "cha": 2,
-    "con": 1,
-    "ability": "Cha +2, Con +1",
-    "traits": [
-      {
-        "name": "Age",
-        "text": ["Aasimar mature at the same rate as humans, but they can live up to 160 years."]
-      },
-      {
-        "name": "Alignment",
-        "text": ["Scourge Aasimar are often imbued with an unstable duality of divine energy. Most have little concern for Good or Evil but they are unilaterally Lawful"]
-      },
-      {
-        "name": "Size",
-        "text": ["Aasimar have the same range of height and weight as humans."]
-      },
-      {
-        "name": "Darkvision",
-        "text": ["Blessed with a radiant soul, your vision can easily cut through darkness. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."]
-      },
-      {
-        "name": "Celestial Resistance",
-        "text": ["You have resistance to necrotic damage and radiant damage."]
-      },
-      {
-        "name": "Healing Hands",
-        "text": ["As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest."]
-      },
-      {
-        "name": "Light Bearer",
-        "text": ["You know the light cantrip. Charisma is your spellcasting ability for it."]
-      },
-      {
-        "name": "Languages",
-        "text": ["You can speak, read, and write Common and Celestial."]
-      },
-      {
-        "name": "Radiant Consumption",
-        "text": [
-          "Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing a searing light to radiate from you, pour out of your eyes and mouth, and threaten to char you.",
-          "Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take radiant damage equal to half your level (rounded up). In addition, once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
-          "Once you use this trait, you can't use it again until you finish a long rest."
+          "When you reach 3rd level, choose one of the revelation options below. Thereafter, you can use a bonus action to unleash the celestial energy within yourself. Your transformation lasts for 1 minute or until you end it as a bonus action. Once you transform using your revelation below, you can't use it again until you finish a long rest.",
+          {
+            "type": "list",
+            "items": [
+              {
+                  "name": "Necrotic Shroud",
+                  "type": "entries",
+                  "entries": [
+                    "Your eyes briefly become pools of darkness, and ghostly wings sprout from your back. Creatures within 10 feet of you that can see you must succeed on a Charisma save (DC 8 + prof + CHA) or become frightened of you until the end of your next turn. Until the transformation ends, once on each of your turns, you can deal necrotic damage equal to your proficiency bonus to one target when you deal damage to it."
+                  ]
+              },
+              {
+                  "name": "Radiant Consumption",
+                  "type": "entries",
+                  "entries": [
+                    "Searing light temporarily radiates from your eyes and mouth. For the duration, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, each creature within 10 feet of you takes radiant damage equal to your proficiency bonus.  Until the transformation ends, once on each of your turns, you can deal radiant damage equal to your proficiency bonus to one target when you deal damage to it."
+                  ]
+              },
+              {
+                  "name": "Radiant Soul",
+                  "type": "entries",
+                  "entries": [
+                    "Two luminous, spectral wings sprout from your back temporarily. Until the transformation ends, you have a flying speed equal to your walking speed, and once on each of your turns, you can deal radiant damage equal to your proficiency bonus to one target when you deal damage to it."
+                  ]
+              }
+            ]
+          }
         ]
       }
     ]
@@ -158,12 +116,10 @@
   {
     "name": "Centaur",
     "id": "centaur",
-    "source": "GGR",
+    "source": "MPMM",
     "size": "M",
     "speed": "40",
-    "str": 2,
-    "wis": 1,
-    "ability": "Str +2, Wis +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -189,7 +145,7 @@
       },
       {
         "name": "Hooves",
-        "text": ["Your hooves are natural melee weapons, which you can use to make unarmed strikes. If you hit with them, you deal bludgeoning damage equal to 1d4+STR, instead of the bludgeoning damage normal for an unarmed strike."]
+        "text": ["You have hooves that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + STR bludgeoning damage, instead of the bludgeoning damage normal for an unarmed strike."]
       },
       {
         "name": "Equine Build",
@@ -199,24 +155,26 @@
         ]
       },
       {
-        "name": "Survivor",
-        "text": ["You have proficiency in one of the following skills of your choice: Animal Handling, Medicine, Nature, or Survival."]
+        "name": "Natural Affinity",
+        "text": [
+          "Your fey connection to nature gives you an intuitive connection to the natural world and the animals within it. You therefore have proficiency in one of the following skills of your choice: Animal Handling, Medicine, Nature, or Survival."
+        ]
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Sylvan."]
+        "text": ["You can speak, read, and write Common and Sylvan (Sylvan could be replaced with one other language appropriate for your character)."]
       }
     ]
   },
   {
     "name": "Changeling",
     "id": "changeling",
-    "source": "ERLW",
-    "size": "M",
+    "source": "MPMM",
+    "size": "S/M",
     "speed": "30",
     "cha": 2,
     "choose": 1,
-    "ability": "Cha +2, Choose One +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -228,12 +186,12 @@
       },
       {
         "name": "Size",
-        "text": ["Your size is Medium."]
+        "text": ["Changelings in their notural state are usually slightly smaller than humans."]
       },
       {
         "name": "Shapechanger",
         "text": [
-          "As an action, you can change your appearance and your voice. You determine the specifics of the changes, including your coloration, hair length, and sex. You can also adjust your height and weight, but not so much that your size changes. You can make yourself appear as a member of another ancestry, though none of your game statistics change. You can't duplicate the appearance of a creature you've never seen, and you must adopt a form that has the same basic arrangement of limbs that you have. Your clothing and equipment aren't changed by this trait.",
+          "As an action, you can change your appearance and your voice. You determine the specifics of the changes, including your coloration, hair length, and sex. You can also adjust your height between Medium and Small. You can make yourself appear as a member of another ancestry, though none of your game statistics change. You can't duplicate the appearance of a creature you've never seen, and you must adopt a form that has the same basic arrangement of limbs that you have. Your clothing and equipment aren't changed by this trait.",
           "You stay in the new form until you use an action to revert to your true form or until you die."
         ]
       },
@@ -253,15 +211,13 @@
     "name": "Dragonborn",
     "id": "dragonborn",
     "size": "M",
-    "source": "PHB",
+    "source": "FTD",
     "speed": "30",
-    "str": 2,
-    "cha": 1,
-    "ability": "Str +2, Cha +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
-        "text": ["Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80."]
+        "text": ["Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 150."]
       },
       {
         "name": "Alignment",
@@ -275,21 +231,54 @@
         "name": "Draconic Ancestry",
         "text": [
           "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in this table. Chromatic breath weapons are 15ft. cones while metallic breath weapons are 30ft x 5ft lines.",
-          "Violet/Platinum: radiant",
-          "Black/Lead: necrotic",
-          "Blue/Mercury: lightning",
-          "Red/Gold: fire",
-          "White/Silver: cold",
-          "Green/Iron: acid",
-          "Orange/Iridium: psychic"
+          {
+            "type": "table",
+            "colLabels": [
+              "Dragon",
+              "Type"
+            ],
+            "colStyles": [
+              "col-2 text-center",
+              "col-8"
+            ],
+            "rows": [
+              [
+                "Violet/Platinum/Amethyst",
+                "Radiant"
+              ],
+              [
+                "Black/Lead/Obsidian",
+                "Necrotic"
+              ],
+              [
+                "Blue/Mercury/Sapphire",
+                "Lightning"
+              ],
+              [
+                "Red/Gold/Ruby",
+                "Fire"
+              ],
+              [
+                "White/Silver/Crystal",
+                "Cold"
+              ],
+              [
+                "Green/Iron/Emerald",
+                "Acid"
+              ],
+              [
+                "Orange/Iridium/Topaz",
+                "Psychic"
+              ]
+            ]
+          }
         ]
       },
       {
         "name": "Breath Weapon",
         "text": [
-          "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.",
-          "When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8+CON+proficiency. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 4d6 at 5th level, 6d6 at 11th level, and 8d6 at 17th level.",
-          "After you use your breath weapon, you can't use it again until you complete a short or long rest."
+          "When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in a 30-ft line that is 5-ft wide or a 15-ft cone. Each creature in that area must make a Dexterity save (DC = 8+prof+CON). On a failed save, the creature takes 1d10 damage of the type associated with your Ancestry. On a successful save, it takes half as much damage. This damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
+          "You can use your Breath Weapon a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
         ]
       },
       {
@@ -297,20 +286,34 @@
         "text": ["You have resistance to the damage type associated with your draconic ancestry."]
       },
       {
+        "name": "Gem Ancestry - Psionic Mind",
+        "text": ["Starting at 3rd level, you can chennel you draconic energy to send telepathic messages to any creature you can see within 30 feet of you. You don't need to share a language with the creature for it to understand these messages, but it must be able to understand at least one language to comprehend them."]
+      },
+      {
+        "name": "Chroatic Ancestry - Chromatic Warding",
+        "text": ["Starting at 3rd level, as an action, you can channel your draconic energy to protect yourself. For 1 minute, you become immune to the damage type associated with your Chromatic Ancestry. Once you use this trait, you can't do so again until you finish a long rest."]
+      },
+      {
+        "name": "Metallic Ancestry - Forceful Presence",
+        "text": ["Starting at 3rd level, you can use your understanding of diplomacy or intimidation to guide a conversation in your favor. When you make a Charisma (Intimidation or Persuasion) check, you can do so with advantage. Once you use this trait, you can't do so again until you finish a short or long rest."]
+      },
+      {
+        "name": "Dragon Flight",
+        "text": ["Starting at 5th level, you can use a bonus action to manifest spectral wings on your body. These wings last for 1 minute. For the duration, you gain a flying speed equal to your walking speed and can hover. Once you use this trait, you can't do so again until you finish a long rest."]
+      },
+      {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants."]
+        "text": ["You can speak, read, and write Common and Draconic."]
       }
     ]
   },
   {
-    "name": "Dwarf (Hill)",
-    "id": "dwarf-hill",
+    "name": "Dwarf",
+    "id": "dwarf",
     "size": "M",
     "source": "PHB",
-    "speed": "25",
-    "con": 2,
-    "wis": 1,
-    "ability": "Con +2, Wis +1",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -322,7 +325,7 @@
       },
       {
         "name": "Size",
-        "text": ["Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium."]
+        "text": ["Dwarves stand between 4 and 5 feet tall and average about 150 pounds."]
       },
       {
         "name": "Stout Build",
@@ -334,11 +337,11 @@
       },
       {
         "name": "Dwarven Combat Training",
-        "text": ["You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."]
+        "text": ["You have proficiency with the {@items battleaxe}, {@items handaxe}, {@items light hammer}, and {@items warhammer}."]
       },
       {
         "name": "Tool Proficiency",
-        "text": ["You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."]
+        "text": ["You gain proficiency with the artisan's tools of your choice: {@items smith's tools}, {@items brewer's supplies}, or {@items mason's tools}."]
       },
       {
         "name": "Stonecunning",
@@ -346,59 +349,11 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak."]
+        "text": ["You can speak, read, and write Common and Dwarvish."]
       },
       {
         "name": "Dwarven Toughness",
         "text": ["Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."]
-      }
-    ]
-  },
-  {
-    "name": "Dwarf (Mountain)",
-    "id": "dwarf-mountain",
-    "size": "M",
-    "source": "PHB",
-    "speed": "25",
-    "con": 2,
-    "str": 2,
-    "ability": "Con +2, Str +2",
-    "traits": [
-      {
-        "name": "Age",
-        "text": ["Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years."]
-      },
-      {
-        "name": "Alignment",
-        "text": ["Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order."]
-      },
-      {
-        "name": "Size",
-        "text": ["Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium."]
-      },
-      {
-        "name": "Stout Build",
-        "text": ["You speed is not reduced by wearing heavy armor."]
-      },
-      {
-        "name": "Dwarven Resilience",
-        "text": ["You have advantage on saving throws against poison, and you have resistance against poison damage."]
-      },
-      {
-        "name": "Dwarven Combat Training",
-        "text": ["You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."]
-      },
-      {
-        "name": "Tool Proficiency",
-        "text": ["You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."]
-      },
-      {
-        "name": "Stonecunning",
-        "text": ["Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."]
-      },
-      {
-        "name": "Languages",
-        "text": ["You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak."]
       },
       {
         "name": "Dwarven Armor Training",
@@ -412,9 +367,7 @@
     "size": "M",
     "source": "PHB",
     "speed": "30",
-    "dex": 2,
-    "cha": 1,
-    "ability": "Dex +2, Cha +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "proficiency": "Perception",
     "traits": [
       {
@@ -427,7 +380,7 @@
       },
       {
         "name": "Size",
-        "text": ["Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium."]
+        "text": ["Elves range from under 5 to over 6 feet tall and have slender builds."]
       },
       {
         "name": "Superior Darkvision",
@@ -447,7 +400,7 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous even outside their societies. Many bards learn their language so they can add Elvish ballads to their repertoires."]
+        "text": ["You can speak, read, and write Common and Elvish."]
       },
       {
         "name": "Sunlight Sensitivity",
@@ -455,7 +408,7 @@
       },
       {
         "name": "Drow Magic",
-        "text": ["You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once per day; you must finish a long rest in order to cast the spell again using this trait. When you reach 5th level, you can also cast the darkness spell once per day; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells."]
+        "text": ["You know the {@spells dancing lights} cantrip. When you reach 3rd level, you can cast the {@spells faerie fire} spell once per day; you must finish a long rest in order to cast the spell again using this trait. When you reach 5th level, you can also cast the {@spells darkness} spell once per day; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells."]
       },
       {
         "name": "Drow Weapon Training",
@@ -469,9 +422,7 @@
     "size": "M",
     "source": "PHB",
     "speed": "30",
-    "dex": 2,
-    "int": 1,
-    "ability": "Dex +2, Int +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "proficiency": "Perception",
     "traits": [
       {
@@ -518,9 +469,7 @@
     "size": "M",
     "source": "PHB",
     "speed": "35",
-    "dex": 2,
-    "wis": 1,
-    "ability": "Dex +2, Wis +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "proficiency": "Perception",
     "traits": [
       {
@@ -549,7 +498,7 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous even outside their societies. Many bards learn their language so they can add Elvish ballads to their repertoires."]
+        "text": ["You can speak, read, and write Common and Elvish."]
       },
       {
         "name": "Elf Weapon Training",
@@ -566,14 +515,135 @@
     ]
   },
   {
+    "name": "Elf (Eladrin)",
+    "id": "elf-eladrin",
+    "size": "M",
+    "source": "PHB",
+    "speed": "35",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
+    "proficiency": "Perception",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and are not known to die of old age."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own, and they are more often good than not."]
+      },
+      {
+        "name": "Size",
+        "text": ["Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium."]
+      },
+      {
+        "name": "Keen Senses",
+        "text": ["You have proficiency in the Perception skill."]
+      },
+      {
+        "name": "Fey Ancestry",
+        "text": ["You have advantage on saving throws against being charmed, and magic can't put you to sleep."]
+      },
+      {
+        "name": "Trance",
+        "text": ["Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."]
+      },
+      {
+        "name": "Languages",
+        "text": ["You can speak, read, and write Common and Elvish."]
+      },
+      {
+        "name": "Elf Weapon Training",
+        "text": ["You have proficiency with the longsword, shortsword, shortbow, and longbow."]
+      },
+      {
+        "name": "Seasonal",
+        "text": [
+          "Eladrin are elves native to the Feywild, a realm of beauty, unpredictable emotion, and boundless magic. An eladrin is associated with one of the four seasons of the Feywild and has coloration reminiscent of that season, which can also affect the eladrin's mood.",
+          "Some eladrin remain associated with a particular season for their entire lives, whereas other eladrin transform, adopting characteristics of a new season. When finishing a long rest, any eladrin can change their season.",
+          {
+            "type": "list",
+            "items": [
+              {
+                  "name": "Spring",
+                  "type": "entries",
+                  "entries": [
+                    "The season of cheerfulness and celebration, marked by merriment as winter's sorrow passes."
+                  ]
+              },
+              {
+                  "name": "Summer",
+                  "type": "entries",
+                  "entries": [
+                    "The season of boldness and aggression, a time of unfettered energy."
+                  ]
+              },
+              {
+                  "name": "Fall",
+                  "type": "entries",
+                  "entries": [
+                    "The season of peace and goodwill, when summer's harvest is shared with all."
+                  ]
+              },
+              {
+                  "name": "Winter",
+                  "type": "entries",
+                  "entries": [
+                    "The season of contemplation and dolor, when the vibrant energy of the world slumbers."
+                  ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fey Step",
+        "text": [
+          "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a short or long rest.",
+          "When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + prof + CHA:",
+          {
+            "type": "list",
+            "items": [
+              {
+                  "name": "Spring",
+                  "type": "entries",
+                  "entries": [
+                    "You can teleport one willing creature you touch instead of yourself."
+                  ]
+              },
+              {
+                  "name": "Summer",
+                  "type": "entries",
+                  "entries": [
+                    "Immediately after you use your Fey Step, each creature of your choice within 5 feet of you takes fire damage equal to CHA"
+                  ]
+              },
+              {
+                  "name": "Fall",
+                  "type": "entries",
+                  "entries": [
+                    "Immediately after you use your Fey Step, up to two creatures of your choice within 10 feet of you must succeed on a Wisdom save or be charmed for 1 minute, or until damage is dealt to it."
+                  ]
+              },
+              {
+                  "name": "Winter",
+                  "type": "entries",
+                  "entries": [
+                    "Immediately before you use your Fey Step, one creature of your choice within 5 feet of you must succeed on a Wisdom save or be frightened until the end of your next turn."
+                  ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Firbolg",
     "id": "firbolg",
     "size": "M",
-    "source": "VGM",
+    "source": "MPMM",
     "speed": "30",
-    "wis": 2,
-    "str": 1,
-    "ability": "Wis +2, Str +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -585,15 +655,18 @@
       },
       {
         "name": "Size",
-        "text": ["Firbolg are between 7 and 8 feet tall and weigh between 240 and 300 pounds. Your size is Medium."]
+        "text": ["Firbolg are between 7 and 8 feet tall and weigh between 240 and 300 pounds."]
       },
       {
         "name": "Firbolg Magic",
-        "text": ["You can cast detect magic and disguise self with this trait, using Wisdom as your spellcasting ability for them. Once you cast either spell, you can't cast it again with this trait until you finish a short or long rest. When you use this version of disguise self, you can seem up to 3 feet shorter than normal, allowing you to more easily blend in with humans and elves."]
+        "text": [
+          "You can cast {@spells detect magic} and {@spells disguise self} with this trait. When you use this version of disguise self, you can seem up to 3 feet shorter or taller. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these spells using any spell slots you have.",
+          "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this ancestry)."
+        ]
       },
       {
         "name": "Hidden Step",
-        "text": ["As a bonus action, you can magically turn invisible until the start of your next turn ot until you attack, make a damage roll, or force someone to make a saving throw. Once you use this trait, you can't use it again until you finish a short or long rest."]
+        "text": ["As a bonus action, you can magically turn invisible until the start of your next turn or until you attack, make a damage roll, or force someone to make a saving throw. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."]
       },
       {
         "name": "Powerful Build",
@@ -605,19 +678,17 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common, Elvish, and Giant."]
+        "text": ["You can speak, read, and write Common, Elvish, and Giant. (Elvish and/or Giant could be replaced with other languages appropriate for your character)"]
       }
     ]
   },
   {
     "name": "Genasi (Air)",
     "id": "genasi-air",
-    "size": "M",
-    "source": "EE",
+    "size": "S/M",
+    "source": "MPMM",
     "speed": "30",
-    "con": 2,
-    "dex": 1,
-    "ability": "Con +2, Dex +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -629,15 +700,22 @@
       },
       {
         "name": "Size",
-        "text": ["Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall. Your size is Medium."]
+        "text": ["Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall."]
       },
       {
         "name": "Unending Breath",
         "text": ["You can hold your breath indefinitely while you're not incapacitated."]
       },
       {
+        "name": "Lightning Resistance",
+        "text": ["You have resistance to lightning damage."]
+      },
+      {
         "name": "Mingle with the Wind",
-        "text": ["You can cast the levitate spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."]
+        "text": [
+          "You know the {@spells shocking grasp} cantrip. Starting at 3rd level, you can cast the {@spells feather fall} spell with this trait, without requiring a material component. Starting 5th level, you can also cast the {@spells levitate} spell with this trait, without requiring a material component. Once you cast feather fall or levitate with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.",
+          "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this ancestry)."
+        ]
       },
       {
         "name": "Languages",
@@ -649,11 +727,9 @@
     "name": "Genasi (Earth)",
     "id": "genasi-earth",
     "size": "M",
-    "source": "EE",
+    "source": "MPMM",
     "speed": "30",
-    "con": 2,
-    "str": 1,
-    "ability": "Con +2, Str +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -669,11 +745,14 @@
       },
       {
         "name": "Earth Walk",
-        "text": ["You can move across difficult terrain made of earth or stone without expending extra movement."]
+        "text": ["You can move across difficult terrain without expending extra movement if you are using your walking speed on the ground or a floor."]
       },
       {
         "name": "Merge with Stone",
-        "text": ["You can cast the pass without trace spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."]
+        "text": [
+          "You know the {@spells blade ward} cantrip. You can cast it as normal, and you can also cast it as a bonus action a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest.",
+          "Starting at 5th level, you can cast the {@spells pass without trace} spell with this trait, without requiring a material component. Once you cast that spell with this trait, you can't do so again until you finish a long rest. You can also cast it using any spell slots you have of 2nd level or higher.",
+          "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this ancestry)."]
       },
       {
         "name": "Languages",
@@ -685,11 +764,11 @@
     "name": "Genasi (Fire)",
     "id": "genasi-fire",
     "size": "M",
-    "source": "EE",
+    "source": "MPMM",
     "speed": "30",
     "con": 2,
     "int": 1,
-    "ability": "Con +2, Int +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -708,8 +787,11 @@
         "text": ["You have resistance to fire damage."]
       },
       {
-        "name": "Reath to teh Blaze",
-        "text": ["You know the produce flame cantrip. Once you reach 3rd level, you can cast the burning hands spell once with this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."]
+        "name": "Reach to the Blaze",
+        "text": [
+          "You know the {@spells produce flame} cantrip. Starting at 3rd level, you can cast the {@spells burning hands} spell with this trait. Starting at 5th level, you can also cast the {@spells flame blade} spell with this trait, without a material component. Once you cast burning hands or flame blade with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.",
+          "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        ]
       },
       {
         "name": "Languages",
@@ -721,11 +803,11 @@
     "name": "Genasi (Water)",
     "id": "genasi-water",
     "size": "M",
-    "source": "EE",
+    "source": "MPMM",
     "speed": "30",
     "con": 2,
     "wis": 1,
-    "ability": "Con +2, Wis +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -740,8 +822,8 @@
         "text": ["Genasi are as varied as their mortal parents but are generally built like humans, standing anywhere from 5 feet to over 6 feet tall. Your size is Medium."]
       },
       {
-        "name": "Born to Swim",
-        "text": ["You have a swimming speed of 30 feet and you can both air and water."]
+        "name": "Amphibious",
+        "text": ["You can breathe air and water and you have a swimming speed equal to your walking speed."]
       },
       {
         "name": "Acid Resistance",
@@ -749,7 +831,8 @@
       },
       {
         "name": "Call to the Wave",
-        "text": ["You know the shape water cantrip. When you reach 3rd level, you can cast the create or destroy water spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."]
+        "text": ["You know the {@spells acid splash} cantrip. Starting at 3rd level, you can cast the {@spells create or destroy water} spell with this trait. Starting at 5th level, you can also cast the {@spells water walk} spell with this trait, without requiring a material component. Once you cast create or destroy water or water walk with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.",
+        "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."]
       },
       {
         "name": "Languages",
@@ -762,10 +845,8 @@
     "id": "gnome-forest",
     "size": "S",
     "source": "PHB",
-    "speed": "25",
-    "int": 2,
-    "dex": 1,
-    "ability": "Int +2, Dex +1",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -777,7 +858,7 @@
       },
       {
         "name": "Size",
-        "text": ["Gnomes are between 3 and 4 feet tall and average about 40 pounds. Your size is Small."]
+        "text": ["Gnomes are between 3 and 4 feet tall and average about 40 pounds."]
       },
       {
         "name": "Gnome Cunning",
@@ -785,11 +866,11 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Gnomish. The Gnomish language, which uses the Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about the natural world."]
+        "text": ["You can speak, read, and write Common and Gnomish."]
       },
       {
         "name": "Natural Illusionist",
-        "text": ["You know the minor illusion cantrip. Intelligence is your spellcasting ability for it."]
+        "text": ["You know the {@spells minor illusion} cantrip. Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell (choose when you select this race)."]
       },
       {
         "name": "Speak with Small Beasts",
@@ -802,10 +883,8 @@
     "id": "gnome-rock",
     "source": "PHB",
     "size": "S",
-    "speed": "25",
-    "int": 2,
-    "con": 1,
-    "ability": "Int +2, Con +1",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -825,7 +904,7 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Gnomish. The Gnomish language, which uses the Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about the natural world."]
+        "text": ["You can speak, read, and write Common and Gnomish."]
       },
       {
         "name": "Artificer's Lore",
@@ -847,11 +926,9 @@
     "name": "Goliath",
     "id": "goliath",
     "size": "M",
-    "source": "VGM",
+    "source": "MPMM",
     "speed": "30",
-    "str": 2,
-    "con": 1,
-    "ability": "Str +2, Con +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "proficiency": "Athletics",
     "traits": [
       {
@@ -864,27 +941,24 @@
       },
       {
         "name": "Size",
-        "text": ["Goliaths are between 7 and 8 feet tall and weigh between 280 and 340 pounds. Your size is Medium."]
+        "text": ["Goliaths are between 7 and 8 feet tall and weigh between 280 and 340 pounds."]
       },
       {
-        "name": "Natural Athlete",
-        "text": ["You have proficiency in the Athletics skill."]
+        "name": "Little Giant",
+        "text": ["You have proficiency in the Athletics skill, and you count as one size larger when determining your carrying weight and the weight you can push, drag, or lift."]
       },
       {
         "name": "Stone's Endurance",
-        "text": ["You can focus yourself to occasionally shrug off injury. When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled, and reduce the damage by that total. After you use this trait, you can't use it again until you finish a short or long rest."]
-      },
-      {
-        "name": "Powerful Build",
-        "text": ["You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."]
+        "text": ["You can supernaturally draw on unyielding stone to shrug off harm. When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled and reduce the damage by that total.",
+        "You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."]
       },
       {
         "name": "Mountain Born",
-        "text": ["You're acclimated to high altitude, including elevations above 20,000 feet. You're also naturally adapted to cold climates, as described in chapter 5 of the Dungeon Master's Guide."]
+        "text": ["You have resistance to cold damage. You also naturally acclimate to high altitudes, even if you've never been to one. This includes elevations above 20,000 feet."]
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Giant."]
+        "text": ["You can speak, read, and write Common and Giant. (Giant could be replaced with another language appropriate for your character)"]
       }
     ]
   },
@@ -894,9 +968,7 @@
     "source": "PHB",
     "size": "M",
     "speed": "30",
-    "cha": 2,
-    "choose": 2,
-    "ability": "Cha +2, Choose Two +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -912,7 +984,7 @@
       },
       {
         "name": "Ability Score Increase",
-        "text": ["Two different ability scores of your choice increase by 1."]
+        "text": ["An ability score of your choice increase by 1."]
       },
       {
         "name": "Fey Ancestry",
@@ -934,9 +1006,7 @@
     "size": "M",
     "source": "PHB",
     "speed": "30",
-    "str": 2,
-    "con": 1,
-    "ability": "Str +2, Con +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "proficiency": "Intimidation",
     "traits": [
       {
@@ -949,7 +1019,7 @@
       },
       {
         "name": "Size",
-        "text": ["Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well over 6 feet tall. Your size is Medium."]
+        "text": ["Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well over 6 feet tall."]
       },
       {
         "name": "Menacing",
@@ -974,10 +1044,8 @@
     "id": "halfling-ghostwise",
     "size": "S",
     "source": "SCAG",
-    "speed": "25",
-    "dex": 2,
-    "wis": 1,
-    "ability": "Dex +2, Wis +1",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -989,7 +1057,7 @@
       },
       {
         "name": "Size",
-        "text": ["Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small."]
+        "text": ["Halflings average about 3 feet tall and weigh about 40 pounds."]
       },
       {
         "name": "Lucky",
@@ -1005,7 +1073,7 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling."]
+        "text": ["You can speak, read, and write Common and Halfling."]
       },
       {
         "name": "Silent Speech",
@@ -1018,10 +1086,8 @@
     "id": "halfling-lightfoot",
     "size": "S",
     "source": "PHB",
-    "speed": "25",
-    "dex": 2,
-    "cha": 1,
-    "ability": "Dex +2, Cha +1",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -1049,7 +1115,7 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling."]
+        "text": ["You can speak, read, and write Common and Halfling."]
       },
       {
         "name": "Naturally Stealthy",
@@ -1062,10 +1128,8 @@
     "id": "halfling-stout",
     "size": "S",
     "source": "PHB",
-    "speed": "25",
-    "dex": 2,
-    "con": 1,
-    "ability": "Dex +2, Con +1",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -1093,7 +1157,7 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling."]
+        "text": ["You can speak, read, and write Common and Halfling."]
       },
       {
         "name": "Stout Resilience",
@@ -1104,43 +1168,10 @@
   {
     "name": "Human",
     "id": "human",
-    "size": "M",
-    "source": "PHB",
-    "speed": "30",
-    "str": 1,
-    "dex": 1,
-    "con": 1,
-    "wis": 1,
-    "int": 1,
-    "cha": 1,
-    "ability": "Str,Dex,Con,Int,Wis +1",
-    "traits": [
-      {
-        "name": "Age",
-        "text": ["Humans reach adulthood in their late teens and live less than a century."]
-      },
-      {
-        "name": "Alignment",
-        "text": ["Humans tend toward no particular alignment."]
-      },
-      {
-        "name": "Size",
-        "text": ["Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium."]
-      },
-      {
-      "name": "Languages",
-      "text": ["You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on."]
-      }
-    ]
-  },
-  {
-    "name": "Human (Variant)",
-    "id": "human-variant",
     "source": "PHB",
     "size": "M",
     "speed": "30",
-    "choose": 2,
-    "ability": "Choose Two +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -1171,12 +1202,10 @@
   {
     "name": "Kenku",
     "id": "kenku",
-    "source": "VGM",
-    "size": "M",
+    "source": "MPMM",
+    "size": "S/M",
     "speed": "30",
-    "dex": 2,
-    "wis": 1,
-    "ability": "Dex +2, Wis +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -1188,23 +1217,26 @@
       },
       {
         "name": "Size",
-        "text": ["Kenku are around 5 feet tall and weigh between 90 and 120 pounds. Your size is Medium."]
+        "text": ["Kenku are usually between 4 and 5 feet tall and weigh between 70 and 120 pounds."]
       },
       {
       "name": "Languages",
-      "text": ["You can read and write Common and Auran, but you can only speak using your Mimicry trait."]
+      "text": ["You can read and write Common and one other language of your choice, but you can only speak using your Mimicry trait."]
       },
       {
-      "name": "Expert Forgery",
-      "text": ["You can duplicate other creatures' handwriting and craftwork. You have advantage on all checks made to produce forgeries or duplicates of existing objects."]
+      "name": "Expert Duplication",
+      "text": ["When you copy writing or craftwork produced by yourself or someone else, you have advantage on any ability checks you make to produce an exact duplicate."]
       },
       {
-      "name": "Kenku Training",
-      "text": ["You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand."]
+      "name": "Kenku Recall",
+      "text": [
+        "Thanks to your supernaturally good memory, you have proficiency in two skills of your choice.",
+        "Moreover, when you make an ability check using any skill in which you have proficiency, you can give yourself advantage on the check before rolling the d20. You can give yourself advantage in this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+      ]
       },
       {
         "name": "Mimicry",
-        "text": ["You can mimic sounds you have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check."]
+        "text": ["You can accurately mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are imitations only with a successful Wisdom (Insight) check against a DC of 8 + prof + CHA."]
       }
     ]
   },
@@ -1216,7 +1248,7 @@
     "speed": "30",
     "cha": 2,
     "int": 1,
-    "ability": "Cha +2, Int +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -1243,33 +1275,85 @@
         "text": ["You can speak, read, and write Common and Infernal."]
       },
       {
-        "name": "Variant Features (Choose 1)",
+        "name": "Devilish Heritages",
         "text": [
           "Tieflings can be born of a variety of devilish heritages. Choose one from below. ",
-          "You start with the listed cantrip. When you reach 3rd level, you can cast the listed spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest.  When you reach 5th level, you can cast the listed spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells",
-          "<strong>Avernian</strong> cantrip: thaumaturgy. 3rd level: searing smite, 5th level: branding smite",
-          "<strong>Canian</strong> cantrip: mage hand. 3rd level: burning hands, 5th level: flame blade",
-          "<strong>Infernal</strong> cantrip: thaumaturgy. 3rd level: hellish rebuke, 5th level: darkness",
-          "<strong>Malbolgian</strong> cantrip: minor illusion. 3rd level: disguise self, 5th level: invisibility",
-          "<strong>Phlegethan</strong> cantrip: friends. 3rd level: charm person, 5th level: suggestion",
-          "<strong>Stygian</strong> cantrip: ray of frost cantrip.3rd level: armor of Agathys spell,  5th level: darkness"
+          "You learn the listed cantrip. Starting at 3rd level, you can cast the 1st level spell with this trait. Starting at 5th level, you can also cast the 2nd level spell with this trait. Once you cast the 1st or 2nd level spell with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.",
+          "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          {
+            "type": "table",
+            "colLabels": [
+              "Hell",
+              "Cantrip",
+              "1st",
+              "2nd"
+            ],
+            "colStyles": [
+              "col-3",
+              "col-3",
+              "col-3",
+              "col-3"
+            ],
+            "rows": [
+              [
+                "Avernian",
+                "thaumaturgy",
+                "searing smite",
+                "branding smite"
+              ],
+              [
+                "Canian",
+                "mage hand",
+                "burning hands",
+                "flame blade"
+              ],
+              [
+                "Stygian",
+                "ray of frost",
+                "armor of agathys",
+                "darkness"
+              ],
+              [
+                "Malbolgian",
+                "minor illusion",
+                "disguise self",
+                "invisibility"
+              ],
+              [
+                "Phlegethan",
+                "friends",
+                "charm person",
+                "suggestion"
+              ],
+              [
+                "Disan",
+                "thaumaturgy",
+                "disguise self",
+                "detect thoughts"
+              ],
+              [
+                "Nessian",
+                "thaumaturgy",
+                "hellish rebuke",
+                "darkness"
+              ]
+            ]
+          }
         ]
       },
       {
-        "name": "Appearance (Variant)",
-        "text": ["Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose 1d4 + 1 of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone"]
+        "name": "Appearance",
+        "text": ["Your tiefling might not look like other tieflings. You might choose 1d4 + 1 of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone"]
       }
     ]
   },
   {
-    "name": "Shifter (Beasthide)",
-    "id": "shifter-hide",
-    "source": "ERLW",
+    "name": "Shifter",
+    "id": "shifter",
+    "source": "MPMM",
     "size": "M",
     "speed": "30",
-    "con": 2,
-    "str": 1,
-    "ability": "Con +2, Str +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -1281,7 +1365,7 @@
       },
       {
         "name": "Size",
-        "text": ["Your size is Medium."]
+        "text": ["Shinters are human-sized, often growing slightly larger when shifting"]
       },
       {
         "name": "Darkvision",
@@ -1290,183 +1374,39 @@
       {
         "name": "Shifting",
         "text": [
-          "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
-          "Once you shift, you can't do so again until you finish a short or long rest."
+          "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 2 times your proficiency bonus. You can shift a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
         ]
       },
       {
-        "name": "Natural Athlete",
+        "name": "Shifting Feature",
         "text": [
-          "You have proficiency in the Athletics skill."
+          "Whenever you shift, you gain an additional benefit based on one of the following options (choose when you select this race):",
+          "Beasthide. You gain 1d6 additional temporary hit points. While shifted, you have a +1 bonus to your Armor Class.",
+          "Longtooth. When you shift and as a bonus action on your turn while shifted, you can use your elongated fangs to make an unarmed strike. If you hit with your fangs, you can deal piercing damage equal to 1d6 + STR.",
+          "Swiftstride. While shifted, your walking speed increases by 10 feet. Additionally, you can move up to 10 feet as a reaction when a creature ends its turn within 5 feet of you without provoking opportunity attacks.",
+          "Wildhunt. While shifted, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll with advantage against you unless you're incapacitated."
+        ]
+      },
+      {
+        "name": "Bestial Instincts",
+        "text": [
+          "Channeling the beast within, you have proficiency in one of the following skills of your choice: Acrobatics, Athletics, Intimidation, or Survival."
         ]
       },
       {
         "name": "Languages",
         "text": ["You can speak, read, and write Common."]
-      },
-      {
-        "name": "Shifting Feature",
-        "text": ["Whenever you shift, you gain 1d6 additional temporary hit points. While shifted, you have a +1 bonus to your Armor Class."]
-      }
-    ]
-  },
-  {
-    "name": "Shifter (Longtooth)",
-    "id": "shifter-tooth",
-    "source": "ERLW",
-    "size": "M",
-    "speed": "30",
-    "str": 2,
-    "dex": 1,
-    "ability": "Str +2, Dex +1",
-    "traits": [
-      {
-        "name": "Age",
-        "text": ["Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old."]
-      },
-      {
-        "name": "Alignment",
-        "text": ["Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments."]
-      },
-      {
-        "name": "Size",
-        "text": ["Your size is Medium."]
-      },
-      {
-        "name": "Darkvision",
-        "text": ["You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."]
-      },
-      {
-        "name": "Shifting",
-        "text": [
-          "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
-          "Once you shift, you can't do so again until you finish a short or long rest."
-        ]
-      },
-      {
-        "name": "Fierce",
-        "text": [
-          "You have proficiency in the Intimidation skill."
-        ]
-      },
-      {
-        "name": "Languages",
-        "text": ["You can speak, read, and write Common."]
-      },
-      {
-        "name": "Shifting Feature",
-        "text": ["While shifted, you can use your elongated fangs to make an unarmed strike as a bonus action. If you hit with your fangs, you can deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."]
-      }
-    ]
-  },
-  {
-    "name": "Shifter (Swiftstride)",
-    "id": "shifter-stride",
-    "source": "ERLW",
-    "size": "M",
-    "speed": "30",
-    "dex": 2,
-    "cha": 1,
-    "ability": "Dex +2, Cha +1",
-    "traits": [
-      {
-        "name": "Age",
-        "text": ["Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old."]
-      },
-      {
-        "name": "Alignment",
-        "text": ["Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments."]
-      },
-      {
-        "name": "Size",
-        "text": ["Your size is Medium."]
-      },
-      {
-        "name": "Darkvision",
-        "text": ["You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."]
-      },
-      {
-        "name": "Shifting",
-        "text": [
-          "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
-          "Once you shift, you can't do so again until you finish a short or long rest."
-        ]
-      },
-      {
-        "name": "Graceful",
-        "text": [
-          "You have proficiency in the Acrobatics skill."
-        ]
-      },
-      {
-        "name": "Languages",
-        "text": ["You can speak, read, and write Common."]
-      },
-      {
-        "name": "Shifting Feature",
-        "text": ["While shifted, your walking speed increases by 10 feet. Additionally, you can move up to 10 feet as a reaction when a creature ends its turn within 5 feet of you. This reactive movement doesn't provoke opportunity attacks."]
-      }
-    ]
-  },
-  {
-    "name": "Shifter (Wildhunt)",
-    "id": "shifter-hunt",
-    "source": "ERLW",
-    "size": "M",
-    "speed": "30",
-    "wis": 2,
-    "dex": 1,
-    "ability": "Wis +2, Dex +1",
-    "traits": [
-      {
-        "name": "Age",
-        "text": ["Shifters are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old."]
-      },
-      {
-        "name": "Alignment",
-        "text": ["Shifters tend toward neutrality, being more focused on survival than concepts of good and evil. A love of personal freedom can drive shifters toward chaotic alignments."]
-      },
-      {
-        "name": "Size",
-        "text": ["Your size is Medium."]
-      },
-      {
-        "name": "Darkvision",
-        "text": ["You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."]
-      },
-      {
-        "name": "Shifting",
-        "text": [
-          "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1 temporary hit point). You also gain additional benefits that depend on your shifter subrace, described below.",
-          "Once you shift, you can't do so again until you finish a short or long rest."
-        ]
-      },
-      {
-        "name": "Natural Tracker",
-        "text": [
-          "You have proficiency in the Survival skill."
-        ]
-      },
-      {
-        "name": "Languages",
-        "text": ["You can speak, read, and write Common."]
-      },
-      {
-        "name": "Shifting Feature",
-        "text": ["While shifted, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll with advantage against you, unless you're incapacitated."]
       }
     ]
   },
   {
     "name": "Tabaxi",
     "id": "tabaxi",
-    "source": "VGM",
+    "source": "MPMM",
     "size": "M",
     "speed": "30",
-    "extraspeed": "20 ft. climbing",
-    "dex": 2,
-    "cha": 1,
-    "ability": "Dex +2, Cha +1",
+    "extraspeed": "climb equal to your walking speed",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -1478,7 +1418,7 @@
       },
       {
         "name": "Size",
-        "text": ["Tabaxi are taller on average than humans and relatively slender. Your size is Medium."]
+        "text": ["Tabaxi are taller on average than humans and relatively slender."]
       },
       {
         "name": "Darkvision",
@@ -1486,7 +1426,7 @@
       },
       {
         "name": "Cat's Claws",
-        "text": ["Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."]
+        "text": ["Because of your claws,  you have a climbing speed equal to your walking speed. In addition, you can use your claws to make unarmed strikes. When you hit with them, the strike deals 1d6 + STR slashing damage."]
       },
       {
         "name": "Feline Agility",
@@ -1505,16 +1445,14 @@
   {
     "name": "Tortle",
     "id": "tortle",
-    "source": "OTHER",
+    "source": "MPMM",
     "size": "M",
     "speed": "30",
-    "str": 2,
-    "wis": 1,
-    "ability": "Str +2, Wis +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
-        "text": ["Young tortles crawl for a few weeks after birth before learning to walk on two legs. They reach adulthood by the age of 15 and live an average of 50 years."]
+        "text": ["Young tortles crawl for a few weeks after birth before learning to walk on two legs. They reach adulthood by the age of 15 and live an average of 120 years."]
       },
       {
         "name": "Alignment",
@@ -1522,11 +1460,11 @@
       },
       {
         "name": "Size",
-        "text": ["Tortle adults stand 5 to 6 feet tall and average 450 pounds. Their shells account for roughly one-third of their weight. Your size is Medium"]
+        "text": ["Tortle adults stand 5 to 6 feet tall and average 450 pounds. Their shells account for roughly one-third of their weight."]
       },
       {
         "name": "Claws",
-        "text": ["Your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of bludgeoning damage normal for an unarmed strike."]
+        "text": ["You have claws that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + STR slashing damage."]
       },
       {
         "name": "Hold Breath",
@@ -1534,7 +1472,7 @@
       },
       {
         "name": "Natural Armor",
-        "text": ["Due to your shell and the shape of your body, you are ill-suited to wearing armor. Your shell provides ample protection, however; it gives you a base AC of 17 (your Dexterity modifier doesn't affect this number). You gain no benefit from wearing armor, but if you are using a shield, you can apply the shield's bonus as normal."]
+        "text": ["Your shell provides you a base AC of 17 (your Dexterity modifier doesn't affect this number). Your shell and the shape of your body means you can't wear light, medium, or heavy armor, but if you are using a shield, you can apply the shield's bonus as normal."]
       },
       {
         "name": "Shell Defense",
@@ -1543,9 +1481,9 @@
         ]
       },
       {
-        "name": "Survival Instinct",
+        "name": "Nature's Intuition",
         "text": [
-          "You gain proficiency in the Survival skill. Tortles have finely honed survival instincts."
+          "Thanks to your mystical connection to nature, you gain proficiency with one of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival."
         ]
       },
       {
@@ -1563,7 +1501,7 @@
     "extraspeed": "25 ft. climbing",
     "dex": 2,
     "con": 1,
-    "ability": "Dex +2, Con +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
@@ -1618,9 +1556,7 @@
     "source": "ERLW",
     "size": "M",
     "speed": "30",
-    "con": 2,
-    "choose": 1,
-    "ability": "Con +2, Choose One +1",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
     "traits": [
       {
         "name": "Age",
