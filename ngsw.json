@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1654570632957,
+  "timestamp": 1654571257741,
   "index": "https://gaschw3.github.io/dnd-angular/index.html",
   "assetGroups": [
     {
@@ -66,7 +66,7 @@
     "https://gaschw3.github.io/dnd-angular/693.20fd72ec03f4051b.js": "acf645a7e53159430dd85d3597b35c2c952ca02d",
     "https://gaschw3.github.io/dnd-angular/assets/city-marker.png": "4b4ff7cfc47b443df35817abf6feaa78e377aea0",
     "https://gaschw3.github.io/dnd-angular/assets/current-map-no-labels.png": "357f375e9bba778ac67133a2915a1087dd101804",
-    "https://gaschw3.github.io/dnd-angular/assets/data/ancestryData.json": "28cb46b38b949dae8ca4c0618006cf3d0cc2209b",
+    "https://gaschw3.github.io/dnd-angular/assets/data/ancestryData.json": "f37ff9bab7320cd7eeb986fbe5e7992422302240",
     "https://gaschw3.github.io/dnd-angular/assets/data/backgroundData.json": "889069de287726e649b04a87abb9dde8ecfd055e",
     "https://gaschw3.github.io/dnd-angular/assets/data/beastiary.json": "53f34c7d54c65dc495351394102bd8d626fd44bd",
     "https://gaschw3.github.io/dnd-angular/assets/data/classData.json": "075a84de5a1590d5be27350177b3fd65c5434be6",
