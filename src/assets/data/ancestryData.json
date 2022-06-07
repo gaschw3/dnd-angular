@@ -22,7 +22,7 @@
       },
       {
         "name": "Flight",
-        "text": ["Because of your wings, you have a flying speed equal to your walking speed. To use this flying speed, your hands must be free and you can't be wearing medium or heavy armor."]
+        "text": ["Because of your wings, you have a flying speed equal to your walking speed. If you are wearing medium or heavy armor or both of your hands are occupied you can only fly in short bursts; you fall if you end your turn in the air with nothing else holding you aloft."]
       },
       {
         "name": "Talons",
@@ -1602,6 +1602,128 @@
       {
         "name": "Languages",
         "text": ["You can speak, read, and write Common and one other language of your choice."]
+      }
+    ]
+  },
+  {
+    "name": "Harengon",
+    "id": "harengon",
+    "source": "MPMM",
+    "size": "S/M",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Harengon are quick to mature both physically and emotionally, reaching young adulthood at age 10. They rarely live to be more than 70 years old."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Harengon originated in the Feywild, and so they towards choas, with little preference on the good vs evil spectrum."]
+      },
+      {
+        "name": "Size",
+        "text": ["Harengon range between 3 and 4 feet tall and average about 50 pounds. Most are Small, but some cross the line to Medium."]
+      },
+      {
+        "name": "Hare-Trigger",
+        "text": ["You can add your proficiency bonus to your initiative rolls."]
+      },
+      {
+        "name": "Leporine Senses",
+        "text": ["You have proficiency in the Perception skill."]
+      },
+      {
+        "name": "Lucky Footwork",
+        "text": ["When you fail a Dexterity saving throw, you can use your reaction to roll a d4 and add it to the save, potentially turning the failure into a success. You can't use this reaction if you're prone or your speed is 0."]
+      },
+      {
+        "name": "Languages",
+        "text": ["You can speak, read, and write Common, Sylvan, and one language of your choice."]
+      },
+      {
+        "name": "Rabbit Hop",
+        "text": ["As a bonus action, you can jump a number of feet equal to five times your proficiency bonus, without provoking opportunity attacks. You can use this trait only if your speed is greater than 0. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."]
+      }
+    ]
+  },
+  {
+    "name": "Faerie",
+    "id": "faerie",
+    "source": "BREW",
+    "size": "T",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Faeries have a unique life-cycle and view of aging. For all intents and purposes they are immortal and show only the signs of aging that they wish to."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Faeries' good nature and happy-go-lucky attitude mean most tend towards neutral good, however those with a more devious sense of humor might lean chaotic and those with ties to the Unseelie Court might even be evil."]
+      },
+      {
+        "name": "Size",
+        "text": ["Faeries are Tiny and average between 6 and 12 inches in height. They typically only weigh a few pounds."]
+      },
+      {
+        "name": "Fey",
+        "text": ["Your creature type is fey, rather than humanoid. Additionally, you have advantage on saving throws against being charmed, and magic can't put you to sleep."]
+      },
+      {
+        "name": "Flight",
+        "text": ["You have a flying speed equal to your walking speed. If you are wearing medium or heavy armor or both of your hands are occupied you can only fly in short bursts; you fall if you end your turn in teh air with nothing else holding you aloft."]
+      },
+      {
+        "name": "Faerie Magic",
+        "text": [
+          "You know the {@spells druidcraft} cantrip. Starting at 3rd level, you can cast the {@spells faerie fire} spell with this trait, without requiring a material component. Starting 5th level, you can also cast the {@spells enlarge/reduce} spell with this trait, without requiring a material component. Once you cast faerie fire or enlarge/reduce with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.",
+          "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this ancestry)."
+        ]
+      },
+      {
+        "name": "Languages",
+        "text": ["You can speak, read, and write Common,and Slyvan."]
+      },
+      {
+        "name": "Tiny",
+        "text": [
+          "As a tiny character you have the following adjustments to normal PC stats and requirements:",
+          {
+            "type": "list",
+            "items": [
+              {
+                  "name": "Tiny Appetite",
+                  "type": "entries",
+                  "entries": [
+                    "You require 1/10th as much food and water. A single ration can last you 10 days."
+                  ]
+              },
+              {
+                  "name": "Tiny Armor",
+                  "type": "entries",
+                  "entries": [
+                    "You have a natural +1 bonus to AC and can only wear armor for tiny creatures. Though potentially rare, it costs 1/2 as much and weighs 1/8 as mch."
+                  ]
+              },
+              {
+                  "name": "Tiny Build",
+                  "type": "entries",
+                  "entries": [
+                    "Your hit die are one size smaller than the size listed in your class. For example, Faerie Barbarians have d10 hit die and Faerie Wizards have d4 hit die."
+                  ]
+              },
+              {
+                  "name": "Tiny Weapons",
+                  "type": "entries",
+                  "entries": [
+                    "Tiny weapons are scaled for tiny creatures. Their damage dice are reduced by one size (eg. tiny daggers use a d2, and tiny rapiers use a d6), and their weight is 1/4 normal weapon weight. Heavy weapons do not have a tiny equivalent."
+                  ]
+              }
+            ]
+          }
+        ]
       }
     ]
   }

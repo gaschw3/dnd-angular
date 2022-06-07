@@ -11,6 +11,7 @@ export class AncestryComponent implements OnInit {
   @Input() ancestry: Ancestry;
 
   sizeTable = {
+    "T": "Tiny",
     "S": "Small",
     "M": "Medium",
     "L": "Large",

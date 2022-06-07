@@ -70,12 +70,12 @@ body {
       }
     }
 
-    /*.ice &:nth-child(#{$i}) {
+    .ice &:nth-child(#{$i}) {
       filter: drop-shadow(0 0 10px white);
       opacity: random(100) * 0.01;
-      background: rgb(255,255,255);
+      background: rgb(255, 255, 255);
       transform: translate($random-x, -10px) scale(random(10)*0.1);
-      animation: ice-#{$i} $fall-duration $fall-delay linear infinite;
+      animation: ice-#{$i} $fall-duration ($fall-delay*4s) linear infinite;
     }
 
     @keyframes ice-#{$i} {
@@ -88,7 +88,7 @@ body {
       }
     }
 
-    .hell &:nth-child(#{$i}) {
+    /*.hell &:nth-child(#{$i}) {
       opacity: random(1000) * 0.1;
       filter: drop-shadow(0 0 50px rgb(255, random(200), 0));
       background: rgb(255, random(200), 0);

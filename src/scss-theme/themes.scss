@@ -65,6 +65,26 @@ $themes: (
     paginateSelected: rgba(121, 175, 255, 0.514),
     tableHover: rgba(255,255,255,.075)
   ),
+  ice: (
+    backgroundColor: #2e0505,
+    headerFont: 'Iceberg',
+    headerFallbackFont: cursive,
+    background: linear-gradient(15deg, #140220 0%, #0a0046 74%),
+    navColor: #192970,
+    navText: #fff,
+    cardColor: #35377c,
+    textColor: #eee,
+    textLinkColor: #c4fff7,
+    textLinkBackground: #073942,
+    linkColor: #15e2fd,
+    colorPrimary: #4671ff, //most headers on site
+    colorSecondary: #d294e6, //feature headers in class, features outline,
+    colorTertiary: #ffcc80, //feature usbheaders for stuff like fighting styles
+    headerColor: linear-gradient(1deg, rgb(217, 251, 255) 0%, rgb(0, 162, 255) 30%, rgb(205, 129, 255) 95%),
+    classButtonGradientActive: linear-gradient(315deg, #35338b 0%, #4193a1 74%),
+    classButtonGradient: linear-gradient(50deg, #29286b 0%, #316770 74%),
+    paginateSelected: rgba(184, 255, 216, 0.514),
+    tableHover: rgba(255, 255, 255, .075))
   /*rainbow: (
     backgroundColor: #272b30,
     headerFont: Monoton,
@@ -153,27 +173,6 @@ $themes: (
     classButtonGradientActive: linear-gradient(315deg,  #f5a020 0%, #ac2500 74%),
     classButtonGradient: linear-gradient(50deg,  #b16a00 0%, #5c1400 74%),
     paginateSelected: rgba(255, 121, 121, 0.514),
-    tableHover: rgba(255,255,255,.075)
-  ),
-  ice: (
-    backgroundColor: #2e0505,
-    headerFont: 'Iceberg',
-    headerFallbackFont: cursive,
-    background: linear-gradient(15deg,  #140220 0%, #0a0046 74%),
-    navColor: #192970,
-    navText: #fff,
-    cardColor: #35377c,
-    textColor: #eee,
-    textLinkColor: #c4fff7,
-    textLinkBackground: #073942,
-    linkColor: #15e2fd,
-    colorPrimary: #4671ff, //most headers on site
-    colorSecondary: #d294e6, //feature headers in class, features outline,
-    colorTertiary: #ffcc80, //feature usbheaders for stuff like fighting styles
-    headerColor: linear-gradient(1deg, rgb(217, 251, 255) 0%, rgb(0, 162, 255) 30%, rgb(205, 129, 255) 95%),
-    classButtonGradientActive: linear-gradient(315deg,  #35338b 0%, #4193a1 74%),
-    classButtonGradient: linear-gradient(50deg,  #29286b 0%, #316770 74%),
-    paginateSelected: rgba(184, 255, 216, 0.514),
     tableHover: rgba(255,255,255,.075)
   )*/
 );
