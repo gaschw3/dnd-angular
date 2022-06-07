@@ -920,6 +920,16 @@
       {
         "level": 3,
         "subclass": "base",
+        "name": "primal-knowledge",
+        "title": "Primal Knowledge",
+        "text": [
+          "<em>As of TCoE release, barbarians gain this additional feature at level 3.</em>",
+          "When you reach 3rd level and again at 10th level, you gain proficiency in one skill of your choice from the list of skills available to barbarians at 1st level."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "base",
         "name": "primal-path",
         "title": "Primal Path",
         "text": [
@@ -1287,6 +1297,16 @@
         "title": "Feral Instinct",
         "text": [
           "You have advantage on initiative rolls. Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
+        ]
+      },
+      {
+        "level": 7,
+        "subclass": "base",
+        "name": "instinctive-pounce",
+        "title": "Instinctive Pounce",
+        "text": [
+          "<em>As of TCoE release, barbarians gain this additional feature at level 7.</em>",
+          "As part of the bonus action you take to enter your rage, you can move up to half your speed."
         ]
       },
       {
@@ -3034,6 +3054,16 @@
           "At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.",
           "When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.",
           "Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC."
+        ]
+      },
+      {
+        "level": 2,
+        "subclass": "base",
+        "name": "channel-divinity-harness",
+        "title": "Channel Divinity: Harness Divine Power",
+        "text": [
+          "<em>As of TCoE release, clerics gain this additional feature at level 2.</em>",
+          "You can expend a use of your Channel Divinity to fuel your spells. As a bonus action, you touch your holy symbol, utter a prayer, and regain one expended spell slot, the level of which can be no higher than half your proficiency bonus (rounded up). The number of times you can use this feature is based on the level you've reached in this class: 2nd level, once; 6th level, twice; and 18th level, thrice. You regain all expended uses when you finish a long rest."
         ]
       },
       {
@@ -7639,39 +7669,29 @@
       {
         "level": 1,
         "subclass": "base",
-        "name": "favored-enemy",
-        "title": "Favored Enemy",
+        "name": "favored-for",
+        "title": "Favored Foe",
         "text": [
-          "Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy commonly encountered in the wilds.",
-          "Choose a type of favored enemy: beasts, fey, humanoids, monstrosities, or undead. You gain a +2 bonus to damage rolls with weapon attacks against creatures of the chosen type. Additionally, you have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them.",
-          "When you gain this feature, you also learn one language of your choice, typically one spoken by your favored enemy or creatures associated with it. However, you are free to pick any language you wish to learn."
+          "<em>As of TCoE release, this feature replaces the Favored Enemy feature and works alongside the Foe Slayer feature</em>",
+          "When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your concentration (as if you were concentrating on a spell).",
+          "The first time on each of your turns that you hit the favored enemy and deal damage to it, including when you mark it, you can increase that damage by 1d4.",
+          "You can use this feature to mark a favored enemy a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. This feature's extra damage increases when you reach certain levels in this class: to 1d6 at 6th level and to 1d8 at 14th level."
         ]
       },
       {
         "level": 1,
         "subclass": "base",
-        "name": "natural-explorer",
-        "title": "Natural Explorer",
+        "name": "deft-explorer",
+        "title": "Deft Explorer",
         "text": [
-          "You are a master of navigating the natural world, and you react with swift and decisive action when attacked. This grants you the following benefits:",
+          "<em>As of TCoE release, this feature replaces the Natural Explorer feature.</em>",
+          "You are an unsurpassed explorer and survivor, both in the wilderness and in dealing with others on your travels. You gain the Canny benefit, and you gain an additional benefit below when you reach 6th level and 10th level in this class.",
           {
-            "type": "list",
-            "items": [
-              "You ignore difficult terrain.",
-              "You have advantage on initiative rolls.",
-              "On your first turn during combat, you have advantage on attack rolls against creatures that have not yet acted."
-            ]
-          },
-          "In addition, you are skilled at navigating the wilderness. You gain the following benefits when traveling for an hour or more:",
-          {
-            "type": "list",
-            "items": [
-              "Difficult terrain doesn't slow your group's travel.",
-              "You have advantage on checks to navigate the wilds.",
-              "Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.",
-              "If you are traveling alone, you can move stealthily at a normal pace.",
-              "When you forage, you find twice as much food as you normally would.",
-              "While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area."
+            "name": "Canny",
+            "type": "entries",
+            "entries": [
+              "Choose one of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses the chosen skill.",
+              "You can also speak, read, and write two additional languages of your choice."
             ]
           }
         ]
@@ -7716,6 +7736,7 @@
         "name": "primeval-awareness",
         "title": "Primeval Awareness",
         "text": [
+          "<em>As of TCoE release, this feature replaces the original Primeval Awareness Feature.</em>",
           "Beginning at 3rd level, You can focus your awareness through the interconnections of nature: you learn additional spells when you reach certain levels in this class if you don't already know them, as shown in the Primal Awareness Spells table. These spells don't count against the number of ranger spells you know.",
           {
             "type": "list",
@@ -8035,11 +8056,17 @@
       {
         "level": 6,
         "subclass": "base",
-        "name": "greater-favored-enemy",
-        "title": "Greater Favored Enemy",
+        "name": "deft-explorer-improvement",
+        "title": "Deft Explorer Improvement",
         "text": [
-          "At 6th level, you are ready to hunt even deadlier game. Choose a type of greater favored enemy: aberrations, celestials, constructs, dragons, elementals, fiends, or giants. You gain all the benefits against this chosen enemy that you normally gain against your favored enemy, including an additional language. Your bonus to damage rolls against all your favored enemies increases to +4.",
-          "Additionally, you have advantage on saving throws against the spells and abilities used by a greater favored enemy."
+          "You gain an additional benefit when you reach 6th level in this class.",
+          {
+            "name": "Roving",
+            "type": "entries",
+            "entries": [
+              "Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
+            ]
+          }
         ]
       },
       {
@@ -8136,11 +8163,29 @@
         ]
       },
       {
+        "level": 6,
+        "subclass": "base",
+        "name": "deft-explorer-improvement-2",
+        "title": "Deft Explorer Improvement 2",
+        "text": [
+          "You gain an additional benefit when you reach 10th level in this class.",
+          {
+            "name": "Tireless",
+            "type": "entries",
+            "entries": [
+              "As an action, you can give yourself a number of temporary hit points equal to 1d8 + your Wisdom modifier (minimum of 1 temporary hit point). You can use this action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+              "In addition, whenever you finish a short rest, your exhaustion level, if any, is decreased by 1."
+            ]
+          }
+        ]
+      },
+      {
         "level": 10,
         "subclass": "base",
         "name": "natures-veil",
         "title": "Nature's Veil",
         "text": [
+          "<em>As of TCoE release, this feature replaces Hide in Plain Sight.</em>",
           "Starting at 10th level, you can draw on the powers of nature to hide yourself from view briefly. As a bonus action, you can magically become invisible, along with any equipment you are wearing or carrying, until the start of your next turn.",
           "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
         ]
@@ -8469,6 +8514,16 @@
         "title": "Cunning Action",
         "text": [
           "Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "base",
+        "name": "steady-aim",
+        "title": "Steady Aim",
+        "text": [
+          "<em>As of TCoE release, rogues gain this additional feature at level 3.</em>",
+          "As a bonus action, you give yourself advantage on your next attack roll on the current turn. You can use this bonus action only if you haven't moved during this turn, and after you use the bonus action, your speed is 0 until the end of the current turn."
         ]
       },
       {
