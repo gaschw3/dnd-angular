@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1652893628795,
+  "timestamp": 1654562693047,
   "index": "https://gaschw3.github.io/dnd-angular/index.html",
   "assetGroups": [
     {
@@ -15,12 +15,12 @@
         "https://gaschw3.github.io/dnd-angular/693.20fd72ec03f4051b.js",
         "https://gaschw3.github.io/dnd-angular/favicon.ico",
         "https://gaschw3.github.io/dnd-angular/index.html",
-        "https://gaschw3.github.io/dnd-angular/main.239c9aeef3f1ea9d.js",
+        "https://gaschw3.github.io/dnd-angular/main.a424baabe33d6917.js",
         "https://gaschw3.github.io/dnd-angular/manifest.json",
         "https://gaschw3.github.io/dnd-angular/polyfills.4fb6c0c06e68f176.js",
         "https://gaschw3.github.io/dnd-angular/runtime.d4577106153c8ef6.js",
         "https://gaschw3.github.io/dnd-angular/scripts.8727fc265b86888c.js",
-        "https://gaschw3.github.io/dnd-angular/styles.cdcd76e3345b2e9e.css"
+        "https://gaschw3.github.io/dnd-angular/styles.c2d430b1d505f8fb.css"
       ],
       "patterns": []
     },
@@ -66,8 +66,8 @@
     "https://gaschw3.github.io/dnd-angular/693.20fd72ec03f4051b.js": "acf645a7e53159430dd85d3597b35c2c952ca02d",
     "https://gaschw3.github.io/dnd-angular/assets/city-marker.png": "4b4ff7cfc47b443df35817abf6feaa78e377aea0",
     "https://gaschw3.github.io/dnd-angular/assets/current-map-no-labels.png": "357f375e9bba778ac67133a2915a1087dd101804",
-    "https://gaschw3.github.io/dnd-angular/assets/data/ancestryData.json": "2fe7c50c53ad21e27faa56903fb89be759ce813f",
-    "https://gaschw3.github.io/dnd-angular/assets/data/backgroundData.json": "6da62c1799d401ab795fdcd3b06f5f8c6f7d63db",
+    "https://gaschw3.github.io/dnd-angular/assets/data/ancestryData.json": "28cb46b38b949dae8ca4c0618006cf3d0cc2209b",
+    "https://gaschw3.github.io/dnd-angular/assets/data/backgroundData.json": "889069de287726e649b04a87abb9dde8ecfd055e",
     "https://gaschw3.github.io/dnd-angular/assets/data/beastiary.json": "53f34c7d54c65dc495351394102bd8d626fd44bd",
     "https://gaschw3.github.io/dnd-angular/assets/data/classData.json": "7c6ffb0dbd44b0f48bfa7ad444389d4935c065e1",
     "https://gaschw3.github.io/dnd-angular/assets/data/featData.json": "31ab94f4e9e64ecc13ac438fa289b57fec75fe06",
@@ -80,10 +80,10 @@
     "https://gaschw3.github.io/dnd-angular/favicon.ico": "863d5aec8cd33fb144b94c2251bfb56de043d43c",
     "https://gaschw3.github.io/dnd-angular/icon_x192.png": "b2909ba733e66d1d66794c050be27601554c0cf4",
     "https://gaschw3.github.io/dnd-angular/icon_x512.png": "c6f45c946f9cb98f5633da0839e304e2096333a2",
-    "https://gaschw3.github.io/dnd-angular/index.html": "a375c799e3927089e06e1b843fd34ec4c5df6f9f",
+    "https://gaschw3.github.io/dnd-angular/index.html": "35602f02d8f4e16f7a9023854d35465318983342",
     "https://gaschw3.github.io/dnd-angular/layers-2x.9859cd1231006a4a.png": "152a162333e46d24f9d89f566312fc0c64011dee",
     "https://gaschw3.github.io/dnd-angular/layers.ef6db8722c2c3f9a.png": "c9e7528e491a39232ba24a2706c6c739d6fb0f06",
-    "https://gaschw3.github.io/dnd-angular/main.239c9aeef3f1ea9d.js": "e76f5fcc77c7284f0a70aaf4e30d43e184db23cd",
+    "https://gaschw3.github.io/dnd-angular/main.a424baabe33d6917.js": "ca8ab348ac3ca813e733f62a9f62cd22a04b0fac",
     "https://gaschw3.github.io/dnd-angular/manifest.json": "47772832102a402aa8d301434f850ac04406c3e3",
     "https://gaschw3.github.io/dnd-angular/marker-icon.d577052aa271e13f.png": "60a90bcbb2b42b7ddb4556db94eb7c1084b0e5da",
     "https://gaschw3.github.io/dnd-angular/meander.3e98e53b1d7d4d76.svg": "65df32b47ac05d660c17d023bdabbe64afb30d2f",
@@ -95,7 +95,7 @@
     "https://gaschw3.github.io/dnd-angular/sort_both.6fd8419533890e82.png": "96e499eff491eac39508e1696686712df94108aa",
     "https://gaschw3.github.io/dnd-angular/sort_desc.c37fa59a243f7bae.png": "5d17b4a1cd4c5d92df1adc190a9292674e2a3ab0",
     "https://gaschw3.github.io/dnd-angular/sort_desc_disabled.9bc2b585ee3874c8.png": "ae170a833b6f5d6344570061c60291b5b45e6004",
-    "https://gaschw3.github.io/dnd-angular/styles.cdcd76e3345b2e9e.css": "dc1d7cf8bab8e4ec89b07fcf2a870be9d7d6602c"
+    "https://gaschw3.github.io/dnd-angular/styles.c2d430b1d505f8fb.css": "798ec237acdaf834dee30ff6899a3d20256b5135"
   },
   "navigationUrls": [
     {
