@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1654571257741,
+  "timestamp": 1655580045909,
   "index": "https://gaschw3.github.io/dnd-angular/index.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
         "https://gaschw3.github.io/dnd-angular/693.20fd72ec03f4051b.js",
         "https://gaschw3.github.io/dnd-angular/favicon.ico",
         "https://gaschw3.github.io/dnd-angular/index.html",
-        "https://gaschw3.github.io/dnd-angular/main.a424baabe33d6917.js",
+        "https://gaschw3.github.io/dnd-angular/main.1ee0fb3cdcaa4730.js",
         "https://gaschw3.github.io/dnd-angular/manifest.json",
         "https://gaschw3.github.io/dnd-angular/polyfills.4fb6c0c06e68f176.js",
         "https://gaschw3.github.io/dnd-angular/runtime.d4577106153c8ef6.js",
@@ -80,10 +80,10 @@
     "https://gaschw3.github.io/dnd-angular/favicon.ico": "863d5aec8cd33fb144b94c2251bfb56de043d43c",
     "https://gaschw3.github.io/dnd-angular/icon_x192.png": "b2909ba733e66d1d66794c050be27601554c0cf4",
     "https://gaschw3.github.io/dnd-angular/icon_x512.png": "c6f45c946f9cb98f5633da0839e304e2096333a2",
-    "https://gaschw3.github.io/dnd-angular/index.html": "35602f02d8f4e16f7a9023854d35465318983342",
+    "https://gaschw3.github.io/dnd-angular/index.html": "99899cf5aae66c8513179b10a5757a687306f5b3",
     "https://gaschw3.github.io/dnd-angular/layers-2x.9859cd1231006a4a.png": "152a162333e46d24f9d89f566312fc0c64011dee",
     "https://gaschw3.github.io/dnd-angular/layers.ef6db8722c2c3f9a.png": "c9e7528e491a39232ba24a2706c6c739d6fb0f06",
-    "https://gaschw3.github.io/dnd-angular/main.a424baabe33d6917.js": "ca8ab348ac3ca813e733f62a9f62cd22a04b0fac",
+    "https://gaschw3.github.io/dnd-angular/main.1ee0fb3cdcaa4730.js": "f4071f57c034864d7927e42f6e87785a144fae94",
     "https://gaschw3.github.io/dnd-angular/manifest.json": "47772832102a402aa8d301434f850ac04406c3e3",
     "https://gaschw3.github.io/dnd-angular/marker-icon.d577052aa271e13f.png": "60a90bcbb2b42b7ddb4556db94eb7c1084b0e5da",
     "https://gaschw3.github.io/dnd-angular/meander.3e98e53b1d7d4d76.svg": "65df32b47ac05d660c17d023bdabbe64afb30d2f",
