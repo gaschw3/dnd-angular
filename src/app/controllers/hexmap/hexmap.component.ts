@@ -25,6 +25,7 @@ export class HexmapComponent implements AfterViewInit {
       ['Florin', 29, -105],
       ['Pfennig', 19, -105],
       ['Arkhos', 25, 20],
+      ['Seven Cities', 65, -90],
     ];
     this.seas = [
       ['Starfall Sea', 28, -88],
@@ -35,6 +36,8 @@ export class HexmapComponent implements AfterViewInit {
 
       ['Cerulean Sea', 23, 20],
       ['Siren Sea', 21.5, 22.5],
+
+      ['Sea of Moving Ice', 66.13, -93.01],
     ];
     this.cities = [
       ['Avon', 30, -120.6],
@@ -53,7 +56,10 @@ export class HexmapComponent implements AfterViewInit {
       ['Scythia', 23.7, 22],
       ['Melos', 24.3, 20.5],
       ['Pylea', 27, 17.8],
-      ['Themis', 25.2, 18.7]
+      ['Themis', 25.2, 18.7],
+
+      ['Bryn Sturgis', 64.82, -89.65],
+      ["Bryn Nonig", 65.216, -86.29]
     ]
     this.towns = [
       ['Borderland Keep', 30.2, -119.7],
@@ -99,11 +105,19 @@ export class HexmapComponent implements AfterViewInit {
       ["Kydonia", 21.8, 19.6],
       ["Megara", 24.6, 21.7],
       ["Mount Pantheus", 25.7, 23],
+
+      ["Wile's Home", 65.08, -90.42],
+      ["Tamerlaine", 65.18, -89.1],
+      ["Lostwood", 65.595, -87.7],
+      ["Cold Mead", 64.77, -88.07],
+      ["Targon", 64.86, -86.915],
+      ["Estwall", 64.95, -88.77],
+      ["Ymir's Cairn", 65.48, -86.5],
     ]
    }
 
   private initMap(): void {
-    let map = L.map('map').setView([20, 20.0], 5.0);
+    let map = L.map('map').setView([65, -90], 6.0);
     let textLabel = L.icon({
       iconUrl: 't',
       iconSize: [0, 0],
@@ -125,7 +139,7 @@ export class HexmapComponent implements AfterViewInit {
     let townLabel = L.icon({
       iconUrl: 'assets/town-marker.png',
       iconSize: [25, 25],
-      iconAnchor: [10, 10],
+      iconAnchor: [15, 15],
       popupAnchor: [0, 0],
       shadowUrl: '',
       shadowSize: [0, 0],
@@ -177,8 +191,8 @@ export class HexmapComponent implements AfterViewInit {
     }
 
     this.changeZoom(map, ".country-label", 4, 5);
-    this.changeZoom(map, ".water-label", 5, 8);
-    this.changeZoom(map, ".city-label", 5, 8);
+    this.changeZoom(map, ".water-label", 6, 8);
+    this.changeZoom(map, ".city-label", 6, 8);
     this.changeZoom(map, ".town-label", 7, 8);
     this.changeZoom(map, ".leaflet-marker-icon", 6, 8);
   }
