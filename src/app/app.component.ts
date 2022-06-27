@@ -23,7 +23,6 @@ export class AppComponent {
     navEndEvent$.subscribe((e: NavigationEnd) => {
       gtag('config', 'G-BKMXZP7BG0', {'page_path':e.urlAfterRedirects});
     });
-
   }
 
   setCookie (name, value, days) {

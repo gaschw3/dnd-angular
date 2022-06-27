@@ -22,8 +22,6 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
 import { OtherFeaturesModule } from './controllers/other-features/other-features.module';
 import { SpellbookComponent } from './controllers/spellbook/spellbook.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import { NameGenComponent } from './controllers/name-gen/name-gen.component';
 
 @NgModule({
@@ -52,13 +50,7 @@ import { NameGenComponent } from './controllers/name-gen/name-gen.component';
     PointBuyModule,
     OtherFeaturesModule,
     NgxScrollTopModule,
-    NgxSliderModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
+    NgxSliderModule
   ],
   exports: [],
   providers: [],

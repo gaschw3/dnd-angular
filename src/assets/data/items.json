@@ -22108,6 +22108,233 @@
     ]
   },
   {
+    "name": "Trinket (Seven Cities)",
+    "id": "trinket",
+    "source": "BREW",
+    "value": 500,
+    "weight": 1,
+    "page": 2,
+    "type": "G",
+    "rarity": "none",
+    "entries": [
+      "When you make your character, you can roll once on the Trinkets table to gain a trinket, a simple item lightly touched by mystery. The DM might also use this table. It can help stock a room in a dungeon or fill a creatures pockets.",
+      {
+        "type": "table",
+        "caption": "Frozen Trinket Table",
+        "colLabels": [
+          "d100",
+          "Trinket"
+        ],
+        "colStyles": [
+          "col-1 text-center",
+          "col-11"
+        ],
+        "rows": [
+          [
+            "01-02",
+            "A small wooden figurine of a yawning walrus, painted in red and black"
+          ],
+          [
+            "03-04",
+            "A pair of scrimshaw cufflinks with an image of a fisherman on a boat engraved on them"
+          ],
+          [
+            "05-06",
+            "A small iron key with a frayed blue and gold cord tied to it"
+          ],
+          [
+            "07-08",
+            "A small illustrated book of Northlander myths that has pages missing"
+          ],
+          [
+            "09-10",
+            "A damaged scrimshaw cameo depicting a merfolk"
+          ],
+          [
+            "11-12",
+            "A stone from a burial cairn with a tiny Dwarvish rune carved into it"
+          ],
+          [
+            "13-14",
+            "A ripped cloth sail with a symbol you don't recognize"
+          ],
+          [
+            "15-16",
+            "An Ulu knife with a scrimshaw handle"
+          ],
+          [
+            "17-18",
+            "A jar containing an unidentifiable, sweet, sticky substance"
+          ],
+          [
+            "19-20",
+            "A delicate glass ball painted with snowflakes, capped by a metal loop with a tiny hook attached to it"
+          ],
+          [
+            "21-22",
+            "An expedition log with missing pages and a pressed flower used as a bookmark"
+          ],
+          [
+            "23-24",
+            "An owl figurine carved from whalebone"
+          ],
+          [
+            "25-26",
+            "A sewing box that smells of old wood and has three spools of blue thread inside"
+          ],
+          [
+            "27-28",
+            "A scrimshaw-handled ink pen with black runic designs along its length"
+          ],
+          [
+            "29-30",
+            "A brooch made from a small insect encased in amber"
+          ],
+          [
+            "31-32",
+            "A scrimshaw pepper shaker etched with the letter W"
+          ],
+          [
+            "33-34",
+            "An old, wooden-handled ice pick stained with blood that won't wash off"
+          ],
+          [
+            "35-36",
+            "A fabric doll bearing an angry expression"
+          ],
+          [
+            "37-38",
+            "A set of wind chimes made from seashells"
+          ],
+          [
+            "39-40",
+            "A beautiful silver tin that, when opened, emits the smell of rotting fish"
+          ],
+          [
+            "41-42",
+            "A bloodstained dreamcatcher made from fishing line, gold wire, and snowy owlbear feathers"
+          ],
+          [
+            "43-44",
+            "A figurine of a polar bear made of ice that never melts"
+          ],
+          [
+            "45-46",
+            "A snow globe that doesn't need to be shaken"
+          ],
+          [
+            "47-48",
+            "A piece of sea glass shaped like a unicorn's horn"
+          ],
+          [
+            "49-50",
+            "A dark blue scarf that gets lighter in shade the higher the altitude of the wearer"
+          ],
+          [
+            "51-52",
+            "A rusted iron coin, depicting a dwarf lord and the worlds 'Five Rex Undra'"
+          ],
+          [
+            "53-54",
+            "A pair of eight-sided dice carved from ice that doesn't melt"
+          ],
+          [
+            "55-56",
+            "A swatch of silvery fur that's cold to the touch, possibly from a winter wolf"
+          ],
+          [
+            "57-58",
+            "A snowball; it doesn't melt and can't be compressed into ice"
+          ],
+          [
+            "59-60",
+            "A key carved from ice that doesn't melt"
+          ],
+          [
+            "61-62",
+            "A single scale from a white dragon"
+          ],
+          [
+            "63-64",
+            "A spoon that, when used to stir a drink, makes the beverage piping hot"
+          ],
+          [
+            "65-66",
+            "A small compass that never points north, and sometimes points at strangers"
+          ],
+          [
+            "67-68",
+            "A stuffed jackdaw that occasionally blinks or cocks its head"
+          ],
+          [
+            "69-70",
+            "A piece of black gem that glows faintly in the presense of a spell being cast"
+          ],
+          [
+            "71-72",
+            "A set of ivory runes believed to aid in fortune-telling"
+          ],
+          [
+            "73-74",
+            "A small stone cow, when placed in a jar of water it transmutes the liquid to milk"
+          ],
+          [
+            "75-76",
+            "A leather pouch containing a handful of salt with a strange black colouration"
+          ],
+          [
+            "77-78",
+            "A fishing lure that moves in the owners hand when held near a body of water where fish are plentiful"
+          ],
+          [
+            "79-80",
+            "A hand-sized ivory carving of a seal that floats to the surface when dropped into any liquid"
+          ],
+          [
+            "81-82",
+            "A small metal coin on a piece of leather thonging, when allowed to swing free it points towards Ymir's Cairn"
+          ],
+          [
+            "83-84",
+            "A small bone eye mask that protects the wearer's vision from the effects of heavy snow"
+          ],
+          [
+            "85-86",
+            "An arrow flight that creates the sound of a roaring bear when fired"
+          ],
+          [
+            "87-88",
+            "An ice-breaking spear than grows warm to the touch when it's user gets near thin ice"
+          ],
+          [
+            "89-90",
+            "A whetstone that can be used to give a razor edge to weapons in half the normal time"
+          ],
+          [
+            "91-92",
+            "A white stone that changes colour, turning darker when placed on food the less fresh it is"
+          ],
+          [
+            "93-94",
+            "An animal fat candle that produces light invisible to creatures of animal intelligence or lower"
+          ],
+          [
+            "95-96",
+            "A fishing line that never tangles or snags"
+          ],
+          [
+            "97-98",
+            "A charm made from animal bones and feathers believed to ward off Draugr"
+          ],
+          [
+            "99-00",
+            "A pair of magically linked bits of gemstone, holding one lets you sense the direction of the other"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "name": "Trinket (Elemental)",
     "id": "trinket-elemental",
     "value": 500,
@@ -24743,6 +24970,131 @@
         "name": "Curse",
         "entries": [
           "This cloak never regains the 8th charge by resting, it is only able to regain the unique 8th charge by killing a creature to protect an innocent in danger and dripping the cloak with its blood."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Livre - Woodcutter's Axe",
+    "id": "woodcutters-axe",
+    "weight": "7",
+    "rarity": "rare",
+    "baseItem": "greataxe",
+    "type": "M",
+    "weaponCategory": "martial",
+    "property": [
+      "H",
+      "2H"
+    ],
+    "dmg1": "1d12",
+    "dmgType": "S",
+    "weapon": true,
+    "source": "BREW",
+    "bonusWeapon": "+1",
+    "entries": [
+      "You have a +1 bonus to attack and damage rolls made with this magic weapon.",
+      "When you use this axe to make an attack against a plant (an ordinary plant or a creature with the Plant type) or a wooden object that isn't being worn or carried, the attack deals an extra 2d6 slashing damage on a hit."
+    ]
+  },
+  {
+    "name": "Livre - Snicker-Snack",
+    "id": "snicker-snack",
+    "weight": "6",
+    "rarity": "legendary",
+    "baseItem": "greatsword",
+    "type": "M",
+    "weaponCategory": "martial",
+    "property": [
+      "H",
+      "2H"
+    ],
+    "dmg1": "2d6",
+    "dmgType": "S",
+    "sword": true,
+    "weapon": true,
+    "reqAttune": "by a non-evil creature",
+    "source": "BREW",
+    "bonusWeapon": "+3",
+    "entries": [
+      "You gain a +3 bonus to attack and damage rolls made with this magic vorpal sword. In addition, the weapon ignores resistance to slashing damage.",
+      "While attuned to Snicker-Snack, you have proficiency with greatswords, and you can use your Charisma modifier instead of your Strength modifier for attack and damage rolls made with the weapon.",
+      {
+        "type": "entries",
+        "name": "Vorpal",
+        "entries": [
+          "When you use this weapon to attack a creature that has at least one head and roll a 20 on the attack roll, you cut off one of the creature's heads. The creature dies if it can't survive without the lost head. A creature is immune to this effect if it is immune to slashing damage, it doesn't have or need a head, it has legendary actions, or the DM decides that the creature is too big for its head to be cut off with this weapon. Such a creature instead takes an extra 6d8 slashing damage from the hit."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Sentient",
+        "entries": [
+          "Snicker-Snack is a sentient, chaotic good greatsword with an Intelligence of 9, a Wisdom of 14, and a Charisma of 18. It has hearing and darkvision out to a range of 120 feet. It can speak, read, and understand Common, and its voice sounds silvery and melodic. Snicker-Snack craves the destruction of evil Dragons and urges you to seek out these creatures and slay them.",
+          "Snicker-Snack has a fickle personality. It ends its attunement to you if you miss on attack rolls with the weapon three times in a row. Each time you finish a long rest after that happens, you can attempt to regain the sword's trust by making a contested Charisma check against Snicker-Snack. If you win the contest, your attunement to the weapon is instantly restored. Your attunement to the weapon can't be restored in any other way."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Livre - Chromatic Rose",
+    "id": "chromatic-rose",
+    "source": "BREW",
+    "tier": "minor",
+    "rarity": "rare",
+    "wondrous": true,
+    "weight": 0.5,
+    "entries": [
+      "The magic roses of the Red Queen's Court come in one of seven colors, as noted in the table. While a rose is held, it gains a harmless visual effect as indicated on the table.",
+      "While holding the rose by its stem, you gain resistance to damage of the type associated with the rose's color. If you would take more than 10 damage of this type from a single source (after applying the resistance), the rose disintegrates, and you take no damage instead.",
+      "As an action, you can blow the petals from the rose to produce a 20-foot cone of acid, lightning, poisonous gas, fire, or cold, as dictated by the rose's damage type. Each creature in the cone must make a DC 15 Constitution saving throw, taking 3d10 damage of the appropriate type on a failed save, or half as much damage on a successful one. Using this property destroys the rose.",
+      {
+        "type": "table",
+        "colLabels": [
+          "Color",
+          "Visual Effect",
+          "Damage Type"
+        ],
+        "colStyles": [
+          "col-2",
+          "col-5",
+          "col-5"
+        ],
+        "rows": [
+          [
+            "White",
+            "Covered in forst",
+            "Cold"
+          ],
+          [
+            "Orange",
+            "Swirls with sand",
+            "Thunder"
+          ],
+          [
+            "Blue",
+            "Cracles with lightning",
+            "Lightning"
+          ],
+          [
+            "Black",
+            "Drips acid",
+            "Acid"
+          ],
+          [
+            "Purple",
+            "Heats hand from inside",
+            "Radiant"
+          ],
+          [
+            "Red",
+            "Wreathed in fire",
+            "Fire"
+          ],
+          [
+            "Green",
+            "Sprouts thorns",
+            "Poison"
+          ]
         ]
       }
     ]
