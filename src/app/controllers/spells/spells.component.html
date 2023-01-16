@@ -44,7 +44,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let spell of spells" (click)="setCurrSpell(spell)" [class.table-active]="currSpell?.id == spell.id">
-          <td>{{spell.name}}</td>
+          <td>{{spell.name}}{{spell.ritual ? ' (r)' : ''}}</td>
           <td class="text-center">{{spell.level}}</td>
           <td [class]="'color-'+spell.school | lowercase" class="text-center">{{spell.school}}</td>
           <td>{{spell.classes.join(", ")}}</td>

@@ -1,3 +1,4 @@
+import { SplitInterpolation } from '@angular/compiler';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -29,12 +30,19 @@ export class LinkmakerPipe implements PipeTransform {
       var splitArr = cleanString.split(" ");
       var linkPath = splitArr.slice(1).join(" ");
       var linkLocation = linkPath.replace(/[\s\/]/g, "-").replace(/[^\w-]/g, '').toLowerCase();
+      var linkRoot = splitArr.slice(0, 1).toString().replace('creature', 'beastiary').replace('spell', 'spells').replace('item', 'tems').replace('@', '/');
       if (queryText !== '') {
-        var href = splitArr.slice(0, 1).toString().replace('@', '/') + '?' + queryText;
+        var href = linkRoot + '?' + queryText;
       } else {
-        var href = splitArr.slice(0, 1).toString().replace('@', '/') + '/' + linkLocation;
+        var href = linkRoot + '/' + linkLocation;
       }
-      return `<a href=".${href}">${linkText === '' ? linkPath : linkText}</a>`;
+      // a bunch of these are used in Foundry but I don't really want to make handler pages for all of them
+      // just ignore those and print no-op links
+      if (splitArr.slice(0,1).toString() == '@damage' || splitArr.slice(0,1).toString() == '@scaledamage' || splitArr.slice(0,1).toString() == '@dice' || splitArr.slice(0,1).toString() == '@scaledice' || splitArr.slice(0,1).toString() == '@condition' || splitArr.slice(0,1).toString() == '@skill' || splitArr.slice(0,1).toString() == '@hit' || splitArr.slice(0,1).toString() == '@sense' || splitArr.slice(0,1).toString() == '@chance') {
+        return `<a href="javascript:void(0);">${linkText === '' ? linkPath : linkText}</a>`;
+      } else {
+        return `<a href=".${href}">${linkText === '' ? linkPath : linkText}</a>`;
+      }
     }
 
     if (value.includes('@')) {

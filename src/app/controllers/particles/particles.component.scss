@@ -31,6 +31,7 @@ body {
 
   @for $i from 1 through $total {
     $random-x: random(1000) * 0.1vw;
+    $random-y: random(1000) * 0.1vh;
     $random-offset: random_range(-100, 100) * 0.1vw;
     $random-x-end: $random-x + $random-offset;
     $random-x-end-yoyo: $random-x + ($random-offset / 2);
@@ -85,6 +86,33 @@ body {
 
       to {
         transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+      }
+    }
+
+    .rainbow &:nth-child(#{$i}) {
+      animation: rainbow-#{$i} 20s infinite;
+      filter: drop-shadow(0 0 15px hsl(random(360), 90%, 90%));
+      $size: random(10) * 12px;
+      height: $size;
+      width: 1px;
+      animation-delay: -$i * .2s;
+      transform: translate($random-x, $random-y);
+      background: hsl(random_range(130,300), 70%, 50%);
+    }
+
+         @keyframes rainbow-#{$i} {
+      0%,
+      50%,
+      100% {
+        transform: translate($random-x, $random-y);
+      }
+
+      25% {
+        transform: translate($random-x, 100%);
+      }
+
+      75% {
+        transform: translate($random-x, -100%);
       }
     }
 

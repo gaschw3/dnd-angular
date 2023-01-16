@@ -86,6 +86,7 @@ export class BeastiaryComponent implements OnInit {
 
     this.getJSON().subscribe(beastiary => {
         this.monsters = beastiary.monsters;
+        this.monsters.forEach(monster => monster.id ? null : monster.id = monster.name.toLowerCase().replace(/['\/]/g,'').replace(/\W/g, '-')); //TODO: this is yucky, should be done in monster.ts class Monster
         this.route.paramMap.subscribe(params => {
           this.currMonster = this.monsters.find(f => f.id == this.route.snapshot.params.monsterName);
         });
@@ -105,12 +106,16 @@ export class BeastiaryComponent implements OnInit {
   }
 
   getType(type): String {
-    if (type.tags) {
-      return `${type.type} (${type.tags[0]})`;
-    } else if (type.swarmSize) {
-      return `swarm of ${sizeMap[type.swarmSize]} ${type.type}`;
-    } else {
-      return type;
+    if (type) {
+      if (type.tags) {
+        return `${type.type} (${type.tags[0]})`;
+      } else if (type.swarmSize) {
+        return `swarm of ${sizeMap[type.swarmSize]} ${type.type}`;
+      } else if (type.type) {
+        return type.type;
+      } else {
+        return type;
+      }
     }
   }
 

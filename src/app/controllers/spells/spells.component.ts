@@ -15,7 +15,7 @@ import { Spell } from 'src/app/models/spell';
 })
 export class SpellsComponent implements OnInit {
 
-  spells: Spell[];
+  spells: Spell[] = [];
   currSpell: Spell;
   spellName: string;
 
@@ -91,7 +91,7 @@ export class SpellsComponent implements OnInit {
     };
 
     this.getJSON().subscribe(spells => {
-      this.spells = spells;
+      spells.spell.forEach(spell => this.spells.push(new Spell(spell)));
       this.route.paramMap.subscribe(params => {
         this.currSpell = this.spells.find(f => f.id == this.route.snapshot.params.spellName);
       });

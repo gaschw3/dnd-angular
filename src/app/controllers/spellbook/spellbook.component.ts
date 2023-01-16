@@ -13,7 +13,7 @@ import { HelperService } from 'src/app/shared/helpers/helper.service';
 })
 export class SpellbookComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  spells: Spell[];
+  spells: Spell[] = [];
   currSpells: Spell[];
 
   level: number = 4;
@@ -106,7 +106,7 @@ export class SpellbookComponent implements OnInit, AfterViewInit, OnDestroy {
     combined.subscribe((response) => {
         let spells = response[0];
         let classes = response[1];
-        this.spells = spells;
+        spells.spell.forEach(spell => this.spells.push(new Spell(spell)));
         this.classes = classes.filter(c => c.name != "Barbarian" && c.name != "Monk");
         this.currClass = this.classes[0];
         this.levelKey = this.currClass.levelTable[0];

@@ -1,4 +1,9 @@
 <ng-container *ngFor="let entry of list" [ngSwitch]="getEntryType(entry)">
+    <div *ngSwitchCase="'inset'">
+        <div class="alert alert-dark" role="alert">
+            <strong>{{entry.name}} - </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+        </div>
+    </div>
     <div *ngSwitchCase="'list'">
         <ul>
             <entry-renderer [list]=entry.items [parent]="'list'"></entry-renderer>

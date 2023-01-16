@@ -39,7 +39,11 @@
         background-position-x: left;
       }
     }
-
+    @if (themed("wholeBgImage")) {
+      background-image: themed("wholeBgImage"), themed("wholeBgImage") !important;
+      background-repeat: no-repeat !important;
+      background-size: 150% !important;
+    }
 
   .navbar-brand {
     padding-left: 5px;

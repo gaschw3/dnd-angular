@@ -11,10 +11,10 @@ declare var gtag
 })
 export class AppComponent {
   title = 'dnd-angular';
-  defaultTheme = "ice";
+  defaultTheme = "rainbow";
   particles = false;
 
-  theme= this.getCookie("theme");
+  theme = this.getCookie("theme");
 
   constructor(router: Router) {
     const navEndEvent$ = router.events.pipe(
@@ -41,13 +41,21 @@ export class AppComponent {
     for(var i=0;i < ca.length;i++) {
         var c = ca[i];
         while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        if (c.indexOf(nameEQ) == 0) {
+          var themeName = c.substring(nameEQ.length,c.length);
+          if (themeName == 'ice') {
+            return 'rainbow'
+          }
+          else {
+            return themeName;
+          }
+        }
     }
     return this.defaultTheme; //use dark mode if no cookie is set
   }
 
   changeTheme() {
-    this.setCookie("theme", this.theme,30); //set "user_email" cookie, expires in 30 days
+    this.setCookie("theme", this.theme, 7); //set "user_email" cookie, expires in 7 days
   }
 
 }
