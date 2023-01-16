@@ -1,7 +1,7 @@
 [
   {
-    "name": "Aarakocra",
-    "id": "aarakocra",
+    "name": "Birdfolk",
+    "id": "birdfolk",
     "source": "MPMM",
     "size": "M",
     "speed": "30",
@@ -10,32 +10,56 @@
     "traits": [
       {
         "name": "Age",
-        "text": ["Aarakocra reach maturity by age 3. Compared to humans, aarakocra live very short lives, rearely longer than 30 years."]
+        "text": ["Birdfolk reach maturity by age 10. Compared to humans, birdfolk live very short lives, rearely longer than 50 years."]
       },
       {
         "name": "Alignment",
-        "text": ["Most aarakocra are good and rarely choose sides when it comes to law and chaos. Tribal leaders and warriors might be lawful, while explorers and adventurers might tend toward chaotic."]
+        "text": ["Most birdfolk are good and rarely choose sides when it comes to law and chaos. Tribal leaders and warriors might be lawful, while explorers and adventurers might tend toward chaotic."]
       },
       {
         "name": "Size",
-        "text": ["Aarakocra are about 5 feet tall. They have thin, lightweight bodies that weigh between 80 and 100 pounds."]
+        "text": ["Birdfolk are about 5 feet tall. They have thin, lightweight bodies that weigh between 80 and 100 pounds."]
       },
       {
         "name": "Flight",
-        "text": ["Because of your wings, you have a flying speed equal to your walking speed. If you are wearing medium or heavy armor or both of your hands are occupied you can only fly in short bursts; you fall if you end your turn in the air with nothing else holding you aloft."]
-      },
-      {
-        "name": "Talons",
-        "text": ["You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + STR slashing damage."]
-      },
-      {
-        "name": "Wind Caller",
-        "text": ["Starting at 3rd level, you can cast the {@spells gust of wind} spell with this trait, without requiring a material component. Once you cast the spell with this trait, you can't do so again until you finish a long rest. You can also cast the spell using any spell slots you have of 2nd level or higher.",
-        "Intelligence, Wisdom, or Charisma is your spellcasting ability for when you cast gust of wind with this trait (choose when you select this race)."]
+        "text": ["Because of your wings, you have a flying speed equal to your walking speed. If you are wearing armor you can only fly in short bursts. The same is true if one (or both) of your hands are occupied or if you are carrying more your Stregnth score * 3 pounds of gear. You fall if you end your turn in the air with nothing else holding you aloft."]
       },
       {
         "name": "Languages",
         "text": ["You can speak, read, and write Common and one other language of your choice."]
+      },
+      {
+        "name": "Avian Ancestrey",
+        "text": [
+          "Birdfolk come in many  shapes and sizes. Choose one of the features below based on your type of birdfolk. More options may be available at DM discretion.",
+          {
+            "type": "list",
+            "items": [
+              {
+                  "name": "Specialization",
+                  "type": "entries",
+                  "entries": [
+                    "You are specially adapted for a certain task because of your ancestry. You gain proficiency in one related skill. For example, an Raven might have stealth or deception proficiency, a Peacock might have performance proficiency, an Eagle might have acrobatics or perception proficiency, etc."
+                  ]
+              },
+              {
+                  "name": "Talons",
+                  "type": "entries",
+                  "entries": [
+                    "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+                  ]
+              },
+              {
+                  "name": "Wind Caller",
+                  "type": "entries",
+                  "entries": [
+                    "You know the {@spells gust} cantrip. Starting at 3rd level, you can cast the {@spells gust of wind} spell with this trait, without requiring a material component. Starting at 5th level, you can cast the {@spells warding wind} spell with this trait, without requiring a material component. Once you cast cust of wind or warding wind with this trait, you can't cast that spell again until you finish a long rest. You can also cast those spells using any spell slots you have of 2nd level or higher.",
+                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for when you cast spells with this trait (choose when you select this race)."
+                  ]
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -459,7 +483,7 @@
       },
       {
         "name": "Cantrip",
-        "text": ["You know one cantrip of your choice from the {@spells ?spell-class-filter=wizard&spell-level-filter=0|wizard spell list}. Intelligence is your spellcasting ability for it."]
+        "text": ["You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."]
       }
     ]
   },
@@ -1690,7 +1714,7 @@
       },
       {
         "name": "Languages",
-        "text": ["You can speak, read, and write Common,and Slyvan."]
+        "text": ["You can speak, read, and write Common and Slyvan."]
       },
       {
         "name": "Tiny",
@@ -1730,6 +1754,52 @@
             ]
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Nezumi",
+    "id": "nezumi",
+    "source": "BREW",
+    "size": "S",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2; any other +1 (b) Any +1; any other +1; any other +1",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Half-orcs mature somewhat faster than humans, reaching adulthood around age 10. They age noticeably faster and rarely live longer than 65 years."]
+      },
+      {
+        "name": "Alignment",
+        "text": [" Nezumi tend not to be lawful, following their own survival instinct rather than any code of honor, though some can show remarkable discipline. Altruistic nezumi are also rare, though this is not a result of innate leanings as much as a life of mistrust."]
+      },
+      {
+        "name": "Size",
+        "text": ["Nezumi standing at full height average around 5 ft tall, though some slouch to about 4 ft. Your size is small."]
+      },
+      {
+        "name": "Swampborn",
+        "text": ["You have advantage on saving throws against poison, and you have resistance against poison damage."]
+      },
+      {
+        "name": "Darkvision",
+        "text": ["Dwelling in twilight swamps and acting under the shadow of darkness, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."]
+      },
+      {
+        "name": "Murine Talents",
+        "text": [
+          "Nezumi are crafty, and often devote much training to a single skill or trade. You gain proficiency in one type of artisan tools of your choice. Double your proficiency bonus on any skill checks you make using the chosen tools."
+        ]
+      },
+      {
+        "name": "Shadow Skulker",
+        "text": [
+          "You have proficiency in the Stealth skill."
+        ]
+      },
+      {
+        "name": "Languages",
+        "text": ["You can speak, read, and write Common and one other language of your choice."]
       }
     ]
   }
