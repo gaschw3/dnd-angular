@@ -15,6 +15,8 @@ export class HexmapComponent implements AfterViewInit {
   private towns;
   private seas;
 
+  private shizomi;
+
   constructor() {
     this.continents = [
       ['Ilia', 50, -77],
@@ -26,6 +28,7 @@ export class HexmapComponent implements AfterViewInit {
       ['Pfennig', 19, -105],
       ['Arkhos', 25, 20],
       ['Seven Cities', 65, -90],
+      ['Hokai', 37, -212],
     ];
     this.seas = [
       ['Starfall Sea', 28, -88],
@@ -59,8 +62,10 @@ export class HexmapComponent implements AfterViewInit {
       ['Themis', 25.2, 18.7],
 
       ['Bryn Sturgis', 64.82, -89.65],
-      ["Bryn Nonig", 65.216, -86.29]
-    ]
+      ["Bryn Nonig", 65.216, -86.29],
+
+      ['Shizomi', 34.23, -211.59],
+    ];
     this.towns = [
       ['Borderland Keep', 30.2, -119.7],
       ['Norton\'s Point', 30.6, -120.8],
@@ -113,11 +118,19 @@ export class HexmapComponent implements AfterViewInit {
       ["Targon", 64.86, -86.915],
       ["Estwall", 64.95, -88.77],
       ["Ymir's Cairn", 65.48, -86.5],
+    ];
+    this.shizomi = [
+      ['Imperial Palace', 29.71, -210.63],
+      ['World Tree', 30.22, -211.42],
+      ['Zudun Jade', 27.66, -211.305],
+      ['Tori Dam', 31.33, -208.855],
+      ['Yokai Forest', 31.39, -212.5],
+      ['Old City', 29.88, -211.997],
     ]
    }
 
   private initMap(): void {
-    let map = L.map('map').setView([65, -90], 6.0);
+    let map = L.map('map', {zoomSnap: 0.25}).setView([31, -211], 5.5);
     let textLabel = L.icon({
       iconUrl: 't',
       iconSize: [0, 0],
@@ -179,22 +192,30 @@ export class HexmapComponent implements AfterViewInit {
     }
     for (let i = 0; i < this.cities.length; i++) {
       let city = this.cities[i];
-      let marker = new L.marker([city[1], city[2]], { opacity: 0, icon: cityLabel, className: "cityLabel" });
-      marker.bindTooltip(city[0], { permanent: true, className: "city-label", direction: "center", opacity: 0, offset: [0, 20] });
+      let marker = new L.marker([city[1], city[2]], { opacity: 1, icon: cityLabel, className: "cityLabel" });
+      marker.bindTooltip(city[0], { permanent: true, className: "city-label", direction: "center", opacity: 1, offset: [0, 20] });
       marker.addTo(map);
     }
     for (let i = 0; i < this.towns.length; i++) {
       let town = this.towns[i];
-      let marker = new L.marker([town[1], town[2]], { opacity: 0, icon: townLabel, className: "townLabel" });
+      let marker = new L.marker([town[1], town[2]], { opacity: 1, icon: townLabel, className: "townLabel" });
       marker.bindTooltip(town[0], { permanent: true, className: "town-label", direction: "center", opacity: 0, offset: [0, 8] });
+      marker.addTo(map);
+    }
+    for (let i = 0; i < this.shizomi.length; i++) {
+      let town = this.shizomi[i];
+      let marker = new L.marker([town[1], town[2]], { opacity: 1, icon: townLabel, className: "shizomiLabel" });
+      marker.bindTooltip(town[0], { permanent: true, className: "shizomi-label", direction: "center", opacity: 0, offset: [0, 8] });
       marker.addTo(map);
     }
 
     this.changeZoom(map, ".country-label", 4, 5);
     this.changeZoom(map, ".water-label", 6, 8);
-    this.changeZoom(map, ".city-label", 6, 8);
+    this.changeZoom(map, ".city-label", 5, 8);
     this.changeZoom(map, ".town-label", 7, 8);
+    this.changeZoom(map, ".shizomi-label", 6, 8);
     this.changeZoom(map, ".leaflet-marker-icon", 6, 8);
+    map.zoomIn();
   }
 
   ngAfterViewInit(): void {
@@ -205,9 +226,9 @@ export class HexmapComponent implements AfterViewInit {
     map.on('zoom', function () {
       let zoom = map.getZoom();
       if (zoom > zoomMax || zoom < zoomMin) {
-        $(targetLayer).fadeTo(1000, 0, function () {  });
+        $(targetLayer).fadeTo(500, 0, function () {  });
       } else if (zoom <= zoomMax && zoom >= zoomMin) {
-        $(targetLayer).fadeTo(1000, 1, function () { });
+        $(targetLayer).fadeTo(500, 1, function () { });
       }
     });
   }
