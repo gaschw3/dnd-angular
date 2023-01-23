@@ -998,7 +998,7 @@
             ],
             "entries": [
                 "Until the spell ends, your speed is doubled, you gain a +2 bonus to AC, you have advantage on Dexterity saving throws, and you gain an additional action. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.",
-                "If you are under the effect of { haste}, you gain no benefit from this spell."
+                "If you are under the effect of {@spell haste}, you gain no benefit from this spell."
             ],
             "savingThrow": [
                 "dexterity"
@@ -2038,14 +2038,14 @@
                     "type": "entries",
                     "name": "Targeted Effects",
                     "entries": [
-                        "Spells and other magical effects, such as { magic missile} and { charm person}, that target a creature or an object in the sphere have no effect on that target."
+                        "Spells and other magical effects, such as {@spell magic missile} and {@spell charm person}, that target a creature or an object in the sphere have no effect on that target."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Areas of Magic",
                     "entries": [
-                        "The area of another spell or magical effect, such as { fireball}, can't extend into the sphere. If the sphere overlaps an area of magic, the part of the area that is covered by the sphere is suppressed. For example, the flames created by a wall of fire are suppressed within the sphere, creating a gap in the wall if the overlap is large enough."
+                        "The area of another spell or magical effect, such as {@spell fireball}, can't extend into the sphere. If the sphere overlaps an area of magic, the part of the area that is covered by the sphere is suppressed. For example, the flames created by a wall of fire are suppressed within the sphere, creating a gap in the wall if the overlap is large enough."
                     ]
                 },
                 {
@@ -2081,7 +2081,7 @@
                     "type": "entries",
                     "name": "Dispel Magic",
                     "entries": [
-                        "Spells and magical effects such as { dispel magic} have no effect on the sphere. Likewise, the spheres created by different { antimagic field} spells don't nullify each other."
+                        "Spells and magical effects such as {@spell dispel magic} have no effect on the sphere. Likewise, the spheres created by different {@spell antimagic field} spells don't nullify each other."
                     ]
                 }
             ],
@@ -2466,13 +2466,13 @@
                 }
             ],
             "entries": [
-                "You touch a closed door, window, gate, chest, or other entryway, and it becomes locked for the duration. You and the creatures you designate when you cast this spell can open the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute. Otherwise, it is impassable until it is broken or the spell is dispelled or suppressed. Casting { knock} on the object suppresses { arcane lock} for 10 minutes.",
+                "You touch a closed door, window, gate, chest, or other object or bit of technology that could be considered to have a 'lock', and it becomes locked for the duration. You and the creatures you designate when you cast this spell can open the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute. Otherwise, it is impassable until it is broken or the spell is dispelled or suppressed. Casting {@spell knock} on the object suppresses {@spell arcane lock} for 10 minutes.",
                 "While affected by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff - ",
                     "entries": [
-                        "Can now be cast as a ritual."
+                        "Can now be cast as a ritual. Also added wording around other lockable objects and technology"
                     ]
                 }
             ],
@@ -2942,7 +2942,7 @@
                 "Your astral body resembles your mortal form in almost every way, replicating your game statistics and possessions. The principal difference is the addition of a silvery cord that extends from between your shoulder blades and trails behind you, fading to invisibility after 1 foot. This cord is your tether to your material body. As long as the tether remains intact, you can find your way home. If the cord is cut-something that can happen only when an effect specifically states that it does-your soul and body are separated, killing you instantly.",
                 "Your astral form can freely travel through the Astral Plane and can pass through portals there leading to any other plane. If you enter a new plane or return to the plane you were on when casting this spell, your body and possessions are transported along the silver cord, allowing you to re-enter your body as you enter the new plane. Your astral form is a separate incarnation. Any damage or other effects that apply to it have no effect on your physical body, nor do they persist when you return to it.",
                 "The spell ends for you and your companions when you use your action to dismiss it. When the spell ends, the affected creature returns to its physical body, and it awakens.",
-                "The spell might also end early for you or one of your companions. A successful { dispel magic} spell used against an astral or physical body ends the spell for that creature. If a creature's original body or its astral form drops to 0 hit points, the spell ends for that creature. If the spell ends and the silver cord is intact, the cord pulls the creature's astral form back to its body, ending its state of suspended animation.",
+                "The spell might also end early for you or one of your companions. A successful {@spell dispel magic} spell used against an astral or physical body ends the spell for that creature. If a creature's original body or its astral form drops to 0 hit points, the spell ends for that creature. If the spell ends and the silver cord is intact, the cord pulls the creature's astral form back to its body, ending its state of suspended animation.",
                 "If you are returned to your body prematurely, your companions remain in their astral forms and must find their own way back to their bodies, usually by dropping to 0 hit points."
             ],
             "conditionInflict": [
