@@ -4,12 +4,10 @@ import { AncestryComponent } from './../controllers/ancestries/ancestry/ancestry
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataTablesModule } from 'angular-datatables';
-import { ArchetypeFilterPipe } from '../pipes/archetype-filter.pipe';
 import { LinkmakerPipe } from '../pipes/linkmaker.pipe';
 import { SanitizeHtmlPipe } from '../pipes/sanitize-html.pipe';
 import { BackButtonDirective } from '../directives/back-button.directive';
 import { ItemTypePipe } from '../pipes/item-type.pipe';
-import { OrdinalPipe } from '../pipes/ordinal.pipe';
 import { EntryRendererComponent } from './entry-renderer/entry-renderer.component';
 import { HelperService } from './helpers/helper.service';
 import { IdToNamePipe } from '../pipes/id-to-name.pipe';
@@ -20,12 +18,10 @@ import { IdToNamePipe } from '../pipes/id-to-name.pipe';
     MonsterHelperService
   ],
   declarations: [
-    ArchetypeFilterPipe,
     LinkmakerPipe,
     SanitizeHtmlPipe,
     ItemTypePipe,
     BackButtonDirective,
-    OrdinalPipe,
     AncestryComponent,
     MonsterComponent,
     EntryRendererComponent,
@@ -38,7 +34,6 @@ import { IdToNamePipe } from '../pipes/id-to-name.pipe';
   exports: [
     CommonModule,
     DataTablesModule,
-    ArchetypeFilterPipe,
     LinkmakerPipe,
     SanitizeHtmlPipe,
     ItemTypePipe,

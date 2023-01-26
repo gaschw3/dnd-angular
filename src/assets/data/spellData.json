@@ -38771,35 +38771,35 @@
                     "type": "entries",
                     "name": "Red",
                     "entries": [
-                        "The creature takes {@damage 10d6} fire damage on a failed save, or half as much damage on a successful one. While this layer is in place, nonmagical ranged attacks can't pass through the wall. The layer can be destroyed by dealing at least 25 cold damage to it."
+                        "The creature takes {@damage 10d6} fire damage on a failed save, or half as much damage on a successful one. While this layer is in place, any non-magical object passed through the wall is incinerated. The layer can be destroyed by dealing at least 25 cold damage to it."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Orange",
                     "entries": [
-                        "The creature takes {@damage 10d6} acid damage on a failed save, or half as much damage on a successful one. While this layer is in place, magical ranged attacks can't pass through the wall. The layer is destroyed by a strong wind."
+                        "The creature takes {@damage 10d6} acid damage on a failed save, or half as much damage on a successful one. While this layer is in place, magical objects passed through the wall are transmuted to lead while the wall remains in place. The layer is destroyed by strong wind or pressure."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Yellow",
                     "entries": [
-                        "The creature takes {@damage 10d6} lightning damage on a failed save, or half as much damage on a successful one. This layer can be destroyed by dealing at least 60 force damage to it."
+                        "The creature takes {@damage 10d6} lightning damage on a failed save, or half as much damage on a successful one. While this layer is in place, magic (in the form of spells attacks or spell effects) passed through the wall is scattered off as rainbow light. This layer can be destroyed by dealing at least 60 force damage to it."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Green",
                     "entries": [
-                        "The creature takes {@damage 10d6} poison damage on a failed save, or half as much damage on a successful one. A {@spell passwall} spell, or another spell of equal or greater level that can open a portal on a solid surface, destroys this layer."
+                        "On a failed save, the creature is  blinded. It must then make a Wisdom saving throw at the start of its next turn. A successful save ends the blindness. If it fails that save, the creature is transported to another plane of the DM's choosing and is no longer  blinded. While this layer is in place, magic (in the form of conjuration or transportation magic) passed through the wall is scattered off as rainbow light. This layer is destroyed by a  dispel magic spell or a similar effect that can nullify magic."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Blue",
                     "entries": [
-                        "The creature takes {@damage 10d6} cold damage on a failed save, or half as much damage on a successful one. This layer can be destroyed by dealing at least 25 fire damage to it."
+                        "The creature takes {@damage 10d6} psychic damage on a failed save, or half as much damage on a successful one. This layer cannot be destroyed but can be bypassed if a person passing throughit truly *believes* they found a working solution."
                     ]
                 },
                 {
@@ -38812,17 +38812,24 @@
                 },
                 {
                     "type": "entries",
-                    "name": "Violet",
+                    "name": "Black",
                     "entries": [
-                        "On a failed save, the creature is {@condition blinded}. It must then make a Wisdom saving throw at the start of your next turn. A successful save ends the blindness. If it fails that save, the creature is transported to another plane of the DM's choosing and is no longer {@condition blinded}. (Typically, a creature that is on a plane that isn't its home plane is banished home, while other creatures are usually cast into the Astral or Ethereal planes.) This layer is destroyed by a {@spell dispel magic} spell or a similar spell of equal or higher level that can end spells and magical effects."
+                        "The creature takes {@damage 10d6} necrotic damage on a failed save, or half as much damage on a successful one. While this layer is in place, magic (in the form of healing or other beneficial effects) passed through the wall is scattered off as rainbow light. This layer can be destroyed by applying 25 HP of healing to it."
+                    ]
+                },
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change - ",
+                    "entries": [
+                        "Altered colors and effects slightly to make them correctly line up with the magical prism."
                     ]
                 }
             ],
             "damageInflict": [
                 "acid",
-                "cold",
+                "necrotic",
                 "fire",
-                "force",
+                "psychic",
                 "lightning",
                 "poison"
             ],

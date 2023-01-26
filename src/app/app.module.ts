@@ -22,7 +22,6 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
 import { OtherFeaturesModule } from './controllers/other-features/other-features.module';
 import { SpellbookComponent } from './controllers/spellbook/spellbook.component';
-import { NameGenComponent } from './controllers/name-gen/name-gen.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { NameGenComponent } from './controllers/name-gen/name-gen.component';
     EncounterBuilderComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    SpellbookComponent,
-    NameGenComponent
+    SpellbookComponent
   ],
   imports: [
     BrowserModule,

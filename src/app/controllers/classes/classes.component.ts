@@ -26,7 +26,7 @@ export class ClassesComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-  @ViewChild(ClassComponent) child: ClassComponent ;
+  @ViewChild(ClassComponent) child: ClassComponent;
 
   // DataTables objects
   @ViewChild(DataTableDirective)
