@@ -43,11 +43,18 @@
           </div>
           <div class="col-md-2 col-sm-1"><!-- empty spacing column --></div>
         </div>
-        <div *ngIf="this.choose > 0" class="container pb-2">
+        <div *ngIf="this.selectedAncestry" class="container pb-2">
           <div class="row justify-content-center">
-            <div *ngFor="let stat of stats" class="col-md-1 col form-check form-check-inline">
-              <input class="form-check-input" [disabled]="selectedAncestry[stat.name] > 0" type="checkbox" id="{{stat.name}}Choose" value="{{stat.name}}" (change)="this.chooseStats($event)">
-              <label class="form-check-label" for="{{stat.name}}Choose">{{stat.name | uppercase}}</label>
+              <div *ngFor="let stat of stats" class="col-md-1 col form-check form-check-inline">
+              <input class="form-check-input" [disabled]="this.anChoose > 3 && !stat.topChosen" type="checkbox" id="{{stat.name}}TopChoose" value="{{stat.name}}" [(ngModel)]="stat.topChosen" (change)="this.chooseStats($event)">
+              <label class="form-check-label" for="{{stat.name}}TopChoose">{{stat.name | uppercase}}</label>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+              <div *ngFor="let stat of stats" class="col-md-1 col form-check form-check-inline">
+              <input class="form-check-input" [disabled]="this.anChoose > 3 && !stat.botChosen" type="checkbox"
+                id="{{stat.name}}BotChoose" value="{{stat.name}}" [(ngModel)]="stat.botChosen" (change)="this.chooseStats($event)">
+              <label class="form-check-label" for="{{stat.name}}BotChoose">{{stat.name | uppercase}}</label>
             </div>
           </div>
         </div>

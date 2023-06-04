@@ -196,7 +196,7 @@
                             <h3 class="color-primary beastiary-border">Special Traits</h3>
                             <ng-container *ngFor="let trait of monster.trait">
                                 <div class="col">
-                                    <strong>{{trait.name}}</strong>
+                                    <strong>{{trait.name | linkmaker}}</strong>
                                     <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
                                 </div>
                             </ng-container>

@@ -1,5 +1,19 @@
 [
    {
+      "name": "Elven Accuracy",
+      "source": "XGE",
+      "asi": "Dex, Int, Wis, or Cha +1",
+      "entries": [
+         "The accuracy of elves is legendary, especially that of elf archers and spellcasters. You might be an elf, or you might have learned from them. Either way, you have uncanny aim with attacks that rely on precision rather than brute force. You gain the following benefits:",
+         {
+            "type": "list",
+            "items": [
+               "Whenever you have advantage on an attack roll using Dexterity, Intelligence, Wisdom, or Charisma, you can reroll one of the dice once."
+            ]
+         }
+      ]
+   },
+   {
       "name": "Gift of the Metallic Dragon",
       "id": "gift-metallic-dragon",
       "source": "FTD",

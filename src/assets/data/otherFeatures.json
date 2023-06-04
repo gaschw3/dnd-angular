@@ -1,5 +1,619 @@
 [
 	{
+		"name": "Mark of Handling",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Handling grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell animal friendship}, {@spell speak with animals}"
+					],
+					[
+						"2nd",
+						"{@spell beast sense}, {@spell calm emotions}"
+					],
+					[
+						"3rd",
+						"{@spell beacon of hope}, {@spell conjuire animals}"
+					],
+					[
+						"4th",
+						"{@spell aura of life}, {@spell dominate beast}"
+					],
+					[
+						"5th",
+						"{@spell awaken}"
+					]
+				]
+			},
+			{
+				"name": "Wild Intuition",
+				"type": "entries",
+				"entries": [
+					"When you make a Wisdom (Animal Handling) or Intelligence (Nature) check, you can roll a d4 and add the number rolled to the ability check."
+				]
+			},
+			{
+				"name": "The Bigger They Are",
+				"type": "entries",
+				"entries": [
+					"Starting at 3rd level, you can target a beast or monstrosity when you cast animal friendship or speak with animals, provided the creature's Intelligence score is 3 or lower."
+				]
+			},
+			{
+				"name": "Primal Connection",
+				"type": "entries",
+				"entries": [
+					"You can cast the {@spell animal friendship} and {@spell speak with animals} spells with this trait, requiring no material component. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a short or long rest. Wisdom is your spellcasting ability for these spells.."
+				]
+			}
+		]
+	},
+	{
+		"name": "Mark of Making",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Making grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell identify}, {@spell floating disk}"
+					],
+					[
+						"2nd",
+						"{@spell continual flame}, {@spell magic weapon}"
+					],
+					[
+						"3rd",
+						"{@spell conjure barrage}, {@spell elemental weapon}"
+					],
+					[
+						"4th",
+						"{@spell fabricate}, {@spell stone shape}"
+					],
+					[
+						"5th",
+						"{@spell creation}"
+					]
+				]
+			},
+			{
+				"name": "Artisan's Intuition",
+				"type": "entries",
+				"entries": [
+					"When you make an Arcana check or an ability check involving artisan's tools, you can roll a d4 and add the number rolled to the ability check."
+				]
+			},
+			{
+				"name": "Maker's Gift",
+				"type": "entries",
+				"entries": [
+					"You gain proficiency with one type of artisan's tools of your choice."
+				]
+			},
+			{
+				"name": "Spellsmith",
+				"type": "entries",
+				"entries": [
+					"You know the {@spell mending} cantrip. You can cast the {@spell magic weapon} spell with this trait - when you do, the spell lasts for 1 hour and doesn't require concentration. Once you cast the spell with this trait, you can't cast do so again until you finish a long rest. Intelligence is your spellcasting ability for these spells."
+				]
+			}
+		]
+	},
+	{
+		"name": "Mark of Healing",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Healing grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell cure wounds}, {@spell healing word}"
+					],
+					[
+						"2nd",
+						"{@spell lesser restoration}, {@spell prayer of healing}"
+					],
+					[
+						"3rd",
+						"{@spell aura of vitality}, {@spell mass healing word}"
+					],
+					[
+						"4th",
+						"{@spell aura of purity}, {@spell aura of life}"
+					],
+					[
+						"5th",
+						"{@spell greater restoration}"
+					]
+				]
+			},
+			{
+				"name": "Medical Intuition",
+				"type": "entries",
+				"entries": [
+					"When you make a Wisdom (Medicine) check or an ability check using an herbalism kit, you can roll a d4 and add the number rolled to the ability check"
+				]
+			},
+			{
+				"name": "Healing Touch",
+				"type": "entries",
+				"entries": [
+					"You can cast the {@spell cure wounds} spell with this trait. Starting at 3rd level, you can also cast the {@spell lesser restoration} spell with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells."
+				]
+			}
+		]
+	},
+	{
+		"name": "Mark of Finding",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Finding grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell faerie fire}, {@spell longstrider}"
+					],
+					[
+						"2nd",
+						"{@spell locate animals or plants}, {@spell locate object}"
+					],
+					[
+						"3rd",
+						"{@spell clairvoyance}, {@spell speak with plants}"
+					],
+					[
+						"4th",
+						"{@spell divination}, {@spell locate creature}"
+					],
+					[
+						"5th",
+						"{@spell commune with nature}"
+					]
+				]
+			},
+			{
+				"name": "Hunter's Intuition",
+				"type": "entries",
+				"entries": [
+					"When you make a Wisdom (Perception) or Wisdom (Survival) check, you can roll a d4 and add the number rolled to the ability check."
+				]
+			},
+			{
+				"name": "Finder's Magic",
+				"type": "entries",
+				"entries": [
+					"You can cast the {@spell hunter's mark} spell with this trait. Starting at 3rd level, you can also cast the {@spell locate object} spell with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells."
+				]
+			}
+		]
+	},
+	{
+		"name": "Mark of Storm",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Storm grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell feather fall}, {@spell fog cloud}"
+					],
+					[
+						"2nd",
+						"{@spell gust of wind}, {@spell levitate}"
+					],
+					[
+						"3rd",
+						"{@spell sleet storm}, {@spell wind wall}"
+					],
+					[
+						"4th",
+						"{@spell conjure minor elementals}, {@spell control water}"
+					],
+					[
+						"5th",
+						"{@spell conjure elemental}"
+					]
+				]
+			},
+			{
+				"name": "Storm's Boon",
+				"type": "entries",
+				"entries": [
+					"You have resistance to lightning damage."
+				]
+			},
+			{
+				"name": "Tailwinds",
+				"type": "entries",
+				"entries": [
+					"You know the {@spell gust} cantrip. Starting at 3rd level, you can cast the {@spell gust of wind} spell once with this trait, and you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells."
+				]
+			}
+		]
+	},
+	{
+		"name": "Mark of Detection",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Detection grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell detect good and evil}, {@spell detect poison and disease}"
+					],
+					[
+						"2nd",
+						"{@spell detect thoughts}, {@spell find traps}"
+					],
+					[
+						"3rd",
+						"{@spell clairvoyance}, {@spell nondetection}"
+					],
+					[
+						"4th",
+						"{@spell arcane eye}, {@spell divination}"
+					],
+					[
+						"5th",
+						"{@spell legend lore}"
+					]
+				]
+			},
+			{
+				"name": "Deductive Intuition",
+				"type": "entries",
+				"entries": [
+					"When you make an Intelligence (Investigation) or a Wisdom (Insight) check, you can roll a d4 and add the number rolled to the ability check."
+				]
+			},
+			{
+				"name": "Magical Detection",
+				"type": "entries",
+				"entries": [
+					"You can cast the {@spell detect magic} and {@spell detect poison and disease} spells with this trait. Starting at 3rd level, you can also cast the {@spell see invisibility} spell with it. Once you cast any of these spells with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells, and you don't require material components for them."
+				]
+			}
+		]
+	},
+	{
+		"name": "Mark of Scribing",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Scribing grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell comprehend languages}, {@spell illusory script}"
+					],
+					[
+						"2nd",
+						"{@spell animal messenger}, {@spell silence}"
+					],
+					[
+						"3rd",
+						"{@spell sending}, {@spell tongues}"
+					],
+					[
+						"4th",
+						"{@spell arcane eye}, {@spell confusion}"
+					],
+					[
+						"5th",
+						"{@spell dream}"
+					]
+				]
+			},
+			{
+				"name": "Gifted Scribe",
+				"type": "entries",
+				"entries": [
+					"When you make an Intelligence (History) check or an ability check using calligrapher's supplies, you can roll a d4 and add the number rolled to the ability check."
+				]
+			},
+			{
+				"name": "Scribe's Insight",
+				"type": "entries",
+				"entries": [
+					"You know the {@spell message} or {@spell origami} cantrip. You can also cast {@spell comprehend languages} once with this trait, and you regain the ability to cast it when you finish a short or long rest. Starting at 3rd level, you can cast the {@spell magic mouth} spell with this trait, and you regain the ability to cast it when you finish a long rest. Intelligence is your spellcasting ability for these spells."
+				]
+			}
+		]
+	},
+	{
+		"name": "Mark of Shadow",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Shadow grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell disguise self}, {@spell silent image}"
+					],
+					[
+						"2nd",
+						"{@spell darkness}, {@spell pass without trace}"
+					],
+					[
+						"3rd",
+						"{@spell clairvoyance}, {@spell major image}"
+					],
+					[
+						"4th",
+						"{@spell greater invisibility}, {@spell hallucinatory terrain}"
+					],
+					[
+						"5th",
+						"{@spell mislead}"
+					]
+				]
+			},
+			{
+				"name": "Cunning Intuition",
+				"type": "entries",
+				"entries": [
+					"When you make a Charisma (Performance) or Dexterity (Stealth) check, you can roll a d4 and add the number rolled to the ability check."
+				]
+			},
+			{
+				"name": "Shape Shadows",
+				"type": "entries",
+				"entries": [
+					"You know the {@spell minor illusion} or {@spell umbraturgy} cantrip. Starting at 3rd level, you can cast the {@spell invisibility} spell once with this trait, and you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells."
+				]
+			}
+		]
+	},
+	{
+		"name": "Mark of Warding",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Warding grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell alarm}, {@spell armor of agathys}"
+					],
+					[
+						"2nd",
+						"{@spell arcane lock}, {@spell knock}"
+					],
+					[
+						"3rd",
+						"{@spell glyph of warding}, {@spell magic circle}"
+					],
+					[
+						"4th",
+						"{@spell secret chest}, {@spell faithful hound}"
+					],
+					[
+						"5th",
+						"{@spell antilife shell}"
+					]
+				]
+			},
+			{
+				"name": "Warder's Intuition",
+				"type": "entries",
+				"entries": [
+					"When you make an Intelligence (Investigation) check or an ability check using thieves' tools, you can roll a d4 and add the number rolled to the ability check."
+				]
+			},
+			{
+				"name": "Wards and Seals",
+				"type": "entries",
+				"entries": [
+					"You can cast the {@spell alarm} and {@spell mage armor} spells with this trait. Starting at 3rd level, you can also cast the arcane lock spell with it. Once you cast any of these spells with this trait, you can't cast that spell with it again until you finish a long rest. Intelligence is your spellcasting ability for these spells, and you don't need material components for them when you cast them with this trait"
+				]
+			}
+		]
+	},
+	{
+		"name": "Mark of Passage",
+		"source": "BREW",
+		"featureType": [
+			"DM"
+		],
+		"entries": [
+			"Marks are a strange magical marks that appear on people of Hokai who are born or live near the spiritual Otherworld of the Kami. You can't buy or choose to develop a Mark, though a persons mark is often tied to their profession or the kind of Kami they normally interact with. ",
+			"Each Mark grants a set of abilities and traits derived from the magic of that mark. If you are a spellcaster, your Mark also fuels or channels some of your spells. If you play a character with a Spellcasting class feature, your Mark spells are added to the spell list for each of your spellcasting classes, thereby expanding the spell options available to you.",
+			"The Mark of Passage grants the following benefits:",
+			{
+				"type": "table",
+				"caption": "Spells of the Mark",
+				"colLabels": [
+					"Spell Level",
+					"Spells"
+				],
+				"colStyles": [
+					"col-3 text-center",
+					"col-9"
+				],
+				"rows": [
+					[
+						"1st",
+						"{@spell expeditious retreat}, {@spell jump}"
+					],
+					[
+						"2nd",
+						"{@spell misty step}, {@spell pass without trace}"
+					],
+					[
+						"3rd",
+						"{@spell blink}, {@spell phantom steed}"
+					],
+					[
+						"4th",
+						"{@spell dimension door}, {@spell freedom of movement}"
+					],
+					[
+						"5th",
+						"{@spell teleportation circle}"
+					]
+				]
+			},
+			{
+				"name": "Intuitive Motion",
+				"type": "entries",
+				"entries": [
+					"When you make a Dexterity (Acrobatics) check or any ability check to operate or maintain a land vehicle, you can roll a d4 and add the number rolled to the ability check."
+				]
+			},
+			{
+				"name": "Magical Passage",
+				"type": "entries",
+				"entries": [
+					"You can cast the {@spell misty step} spell once with this trait, and you regain the ability to cast it when you finish a long rest. Dexterity is your spellcasting ability for this spell."
+				]
+			}
+		]
+	},
+	{
 		"name": "Agonizing Blast",
 		"source": "PHB",
 		"page": 110,
