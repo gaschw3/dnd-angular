@@ -2006,7 +2006,7 @@
         "name": "spheres-proficiencies",
         "title": "College of Spheres: Eldritch Mind",
         "text": [
-          "When you join the College of Spheres at 3rd level, your experience depicting and worshipping beings that defy mortal sanity grants you proficiency in the Arcana skill and Wisdom saving throws."
+          "When you join the College of Spheres at 3rd level, your experience depicting and worshipping beings that defy mortal sanity grants you proficiency in the Arcana skill and Intelligence saving throws."
         ]
       },
       {
@@ -2016,7 +2016,7 @@
         "name": "spheres-madness",
         "title": "College of Spheres: Maestro of Madness",
         "text": [
-          "Also at 3rd level, you learn how to use your mind's alien nature to disorient, scare, and weaken the mental resolve of others. When a creature that you can see within 60 feet of you makes a skill check or saving throw you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting half the number rolled from the creature's roll. The creature is immune if it's immune to being charmed."
+          "Also at 3rd level, you learn how to use your mind's alien nature to disorient, scare, and weaken the mental resolve of others. As a bonus action, you can expend one use of your Bardic Inspiration and choose one creature you can see within 60 feet of you. Roll the Bardic Inspiration die. The creature must subtract the number rolled from the next saving throw it makes before the start of your next turn."
         ]
       },
       {
@@ -2152,8 +2152,8 @@
         "name": "spheres-requiem",
         "title": "College of Spheres: Sanity's Requiem",
         "text": [
-          "Beginning at 6th level, and creature that inflicts psychic damage or tries to read your thoughts or control your actions finds their mind recoiling from the strange patterns of your own. They must make a save against your bard spell save DC or immediately roll on the short term madness table.",
-          "In addition, when you deal psychic damage to another creature you add your CHA modifier to the damage dealt and you add the spell Phantasmal Force to your list of known Bard spells."
+          "Beginning at 6th level, and creature that inflicts psychic damage or tries to read your thoughts or control your actions finds their mind recoiling from the strange patterns of your own. They must make a save against your bard spell save DC or take damage equal to 1 roll of your Bardic Inspiration die.",
+          "In addition, when you deal psychic damage to another creature you add your CHA modifier to the damage dealt."
         ]
       },
       {
@@ -2313,10 +2313,10 @@
         "name": "spheres-aesthetic",
         "title": "College of Spheres: Incomprehensible Aesthetic",
         "text": [
-          "At 14th level, your soul warps past the point of mortal understanding. The artist becomes the subject and you are considered a humanoid aberration.",
-          "You may use your reaction to offer a true glimpse of your hidden self to a creature that targets you with an spell or weapon attack. They must immediately make a Wisdom save as if they had tried to read your thoughts. Creatures who were unaware of your true nature are also frightened until the end of their next turn.",
-          "Fellow aberrations are charmed rather than frightened and you may allow them to automatically pass the Wisdom save.",
-          "You can use this feature up to 3 times per day and regain all expended uses on a long rest"
+          "At 14th level, your soul warps past the point of mortal understanding. The artist becomes the subject and you are considered an aberration in addition to your other creature type(s).",
+          "You may use your reaction to offer a true glimpse of your hidden self to a creature that targets you with an spell or weapon attack. They must immediately make a Wisdom save as if they had tried to read your thoughts. Creatures that fail the save and were unaware of your true nature are frightened until the end of their next turn.",
+          "Aberrations are charmed rather than frightened.",
+          "You can use this feature a number of times per day equal to your proficiency bonus and regain all expended uses on a long rest"
         ]
       },
       {
