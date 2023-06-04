@@ -26,16 +26,13 @@
     "bootswatch": "^4.4.1",
     "core-js": "^3.6.4",
     "datatables.net": "^1.13.4",
-    "datatables.net-dt": "^1.10.20",
-    "g": "^2.0.1",
-    "invariant": "^2.2.4",
+    "datatables.net-dt": "^1.13.4",
     "jquery": "^3.5.1",
     "leaflet": "^1.6.0",
     "ngx-scrolltop": "^4.1.0",
     "node-fetch": "^3.2.10",
     "rxjs": "^7.8.1",
     "tslib": "^2.0.0",
-    "uuid": "^8.3.2",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
