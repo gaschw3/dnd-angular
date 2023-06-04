@@ -10,6 +10,7 @@ export interface ISpell {
   duration:   string;
   classes:    string[];
   entries:    string[];
+  change?:    string;
   higher?:    any;
   ritual?:    string;
   roll?:      string[] | string;
@@ -27,6 +28,7 @@ export class Spell implements ISpell {
   duration:   string;
   classes:    string[] = [];
   entries:    string[];
+  change?:    string;
   higher?:    any;
   ritual?:    string;
   roll?:      string[] | string;
@@ -98,6 +100,7 @@ export class Spell implements ISpell {
         }
         this.classes = [...new Set(this.classes)]; //remove potential dupes from classes/variantClasses
         this.entries = spellJson.entries;
+        this.change = spellJson.change;
         this.higher = spellJson.entriesHigherLevel ? spellJson.entriesHigherLevel[0] : '';
         this.ritual = spellJson.meta?.ritual;
     }
