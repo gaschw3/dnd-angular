@@ -68,8 +68,7 @@ const routerOptions: ExtraOptions = {
     useHash: false,
     anchorScrolling: 'enabled',
     onSameUrlNavigation: 'reload',
-    scrollOffset: [0, 80],
-    relativeLinkResolution: 'legacy'
+    scrollOffset: [0, 80]
 };
 
 @NgModule({
