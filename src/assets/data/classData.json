@@ -9504,13 +9504,13 @@
           {
             "type": "list",
             "items": [
-              "Violet/Platinum: radiant",
-              "Black/Lead: necrotic",
-              "Blue/Mercury: lightning",
-              "Red/Gold: fire",
               "White/Silver: cold",
+              "Blue/Mercury: lightning",
+              "Black/Lead: necrotic",
+              "Red/Gold: fire",
               "Green/Iron: acid",
-              "Orange/Iridium: psychic"
+              "Orange/Platinum: psychic",
+              "Violet/Antimony: radiant"
             ]
           },
           "You can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your Proficiency bonus is doubled if it applies to the check."
