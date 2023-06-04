@@ -1204,12 +1204,13 @@
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "No longer requires concentration."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "bludgeoning",
                 "piercing",
@@ -1709,8 +1710,7 @@
                 }
             ],
             "entries": [
-                "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, Large targets count as four objects, Huge targets count as eight objects. You can't animate any object larger than Huge. Each target animates and becomes a creature under your control until the spell ends or until reduced to 0 hit points.",
-                "As a bonus action, you can mentally command any creature you made with this spell if the creature is within 500 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.",
+                "You magically animate nearby objects, bending them to your will. Choose up to six nonmagical objects within range that are not being worn or carried. All objects must be the same size, and you can animate six Tiny, four Small, three Medium, two Large, or one Huge object(s). Each object animates until the spell ends or until reduced to 0 hit points; when an object drops to 0 hit points, any remaining damage carries over to its original object form.",
                 {
                     "type": "table",
                     "caption": "Animated Object Statistics",
@@ -1718,7 +1718,7 @@
                         "Size",
                         "HP",
                         "AC",
-                        "Attack",
+                        "Damage",
                         "Str",
                         "Dex"
                     ],
@@ -1732,59 +1732,69 @@
                     ],
                     "rows": [
                         [
-                            "{@creature animated object (tiny)|Tiny}",
-                            "20",
+                            "Tiny",
+                            "5",
+                            "19",
+                            "{@damage 1d4 + 1} damage",
+                            "12",
+                            "28"
+                        ],
+                        [
+                            "Small",
+                            "10",
                             "18",
-                            "{@hit +8} to hit, {@damage 1d4 + 4} damage",
-                            "{@dice 1d20 - 3|4}",
-                            "{@dice 1d20 + 4|18}"
-                        ],
-                        [
-                            "{@creature animated object (small)|Small}",
-                            "25",
+                            "{@damage 1d6 + 3} damage",
                             "16",
-                            "{@hit +6} to hit, {@damage 1d8 + 2} damage",
-                            "{@dice 1d20 - 2|6}",
-                            "{@dice 1d20 + 2|14}"
+                            "24"
                         ],
                         [
-                            "{@creature animated object (medium)|Medium}",
-                            "40",
-                            "13",
-                            "{@hit +5} to hit, {@damage 2d6 + 1} damage",
-                            "{@dice 1d20|10}",
-                            "{@dice 1d20 + 1|12}"
+                            "Medium",
+                            "20",
+                            "17",
+                            "{@damage 1d10 + 5} damage",
+                            "20",
+                            "20"
                         ],
                         [
-                            "{@creature animated object (large)|Large}",
-                            "50",
-                            "10",
-                            "{@hit +6} to hit, {@damage 2d10 + 2} damage",
-                            "{@dice 1d20 + 2|14}",
-                            "{@dice 1d20|10}"
+                            "Large",
+                            "30",
+                            "16",
+                            "{@damage 2d10 + 7} damage",
+                            "24",
+                            "16"
                         ],
                         [
-                            "{@creature animated object (huge)|Huge}",
-                            "80",
-                            "10",
-                            "{@hit +8} to hit, {@damage 2d12 + 4} damage",
-                            "{@dice 1d20 + 4|18}",
-                            "{@dice 1d20 - 3|6}"
+                            "Huge",
+                            "60",
+                            "15",
+                            "{@damage 5d12 + 9} damage",
+                            "28",
+                            "12"
                         ]
                     ]
                 },
-                "An animated object is a construct with AC, hit points, attacks, Strength, and Dexterity determined by its size. Its Constitution is 10 and its Intelligence and Wisdom are 3, and its Charisma is 1. Its speed is 30 feet; if the object lacks legs or other appendages it can use for locomotion, it instead has a flying speed of 30 feet and can hover. If the object is securely attached to a surface or a larger object, such as a chain bolted to a wall, its speed is 0. It has blindsight with a radius of 30 feet and is blind beyond that distance. When the animated object drops to 0 hit points, it reverts to its original object form, and any remaining damage carries over to its original object form.",
-                "If you command an object to attack, it can make a single melee attack against a creature within 5 feet of it. It makes a slam attack with an attack bonus and bludgeoning damage determined by its size. The DM might rule that a specific object inflicts slashing or piercing damage based on its form."
+                "An animated object has 30 feet of blindsight and statistics as shown in the table above. The DM might rule an object has immunities, resistances, and vulnerabilities to specific damage types based on its form. If an object is securely attached to a surface or a larger object, such as a chain bolted to a wall, its speed is 0.",
+                "In combat, an object shares your initiative count, but take its turn immediately after yours.",
+                "As a bonus action, you can issue one command to any number of objects within the spell's range, otherwise, the only action an object takes on its turn is the Dodge action. An object may also be commanded to attempt an action available to all creatures, such as grapple or shove, if its form permits it to do so.",
+                "If commanded to attack, an object makes one melee attack against the target you specify within 5 feet of it. Its attack bonus is equal to your spellcasting modifier. An object usually deals bludgeoning damage, but the DM might rule it inflicts slashing or piercing based on its form.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Was too strong in a specific case (10 tiny objects) and a pain to run. This nerfs that scenario, but generally improves all the others so you now have actual reasonable choices while cutting out a bunch of worthless math and unnecessary rolls."
+                    ]
+                }
             ],
             "entriesHigherLevel": [
                 {
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "If you cast this spell using a spell slot of 6th level or higher, you can animate two additional objects for each slot level above 5th."
+                        "If you cast this spell using a spell slot of 8th level or higher, you can animate twice as many objects (12 Tiny, eight Small, six Medium, four Large, or two Huge objects)."
                     ]
                 }
             ],
+            "change": "change",
             "damageInflict": [
                 "bludgeoning",
                 "piercing",
@@ -2470,12 +2480,13 @@
                 "While affected by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Can now be cast as a ritual. Also added wording around other lockable objects and technology"
                     ]
                 }
             ],
+            "change": "buff",
             "classes": {
                 "fromClassList": [
                     {
@@ -2586,7 +2597,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: The Lost True Version",
                     "entries": [
-                        "The true version of mordenkainen's sword. Tragically most sources of the spell list an incomplete version copied by an apprentice unable to fully understand the spell. Flaws in the more widely known versions makes them unstable enough to require concentration, and lacks interesting alternate functionality of the true version."
+                        "The true version of Mordenkainen's Sword. Tragically most sources of the spell list an incomplete version copied by an apprentice unable to fully understand the spell. Flaws in the more widely known versions makes them unstable enough to require concentration, and lack interesting alternate functionality of the true version."
                     ]
                 }
             ],
@@ -2770,12 +2781,13 @@
                 "You invoke the power of Hadar, the Dark Hunger. Tendrils of dark energy erupt from you and batter all creatures within 10 feet of you. Each creature in that area must make a Strength saving throw. On a failed save, a target takes {@damage 2d8} necrotic damage and can't take reactions until its next turn. On a successful save, the creature takes half damage, but suffers no other effect.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "2d6 -> 2d8 damage and 1d8 scaling."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -2862,12 +2874,13 @@
                 "When you move within 5 feet of a creature or an object that isn't being worn or carried, it takes {@damage 1d6} fire damage from your trail of heat. A creature or object can take this damage only once during a turn.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Moved down to level 2 so that being a slight buff over longstrider is sensical."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -3956,10 +3969,18 @@
                 }
             ],
             "entries": [
-                "You attempt to send one creature that you can see within range to another plane of existence. The target must succeed on a Charisma saving throw or be banished.",
-                "If the target is native to the plane of existence you're on, you banish the target to a harmless demiplane. While there, the target is {@condition incapacitated}. The target remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
-                "If the target is native to a different plane of existence than the one you're on, the target is banished with a faint popping noise, returning to its home plane. If the spell ends before 1 minute has passed, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied. Otherwise, the target doesn't return."
+                "You brandish a repellent item at a creature you can see within range and attempt to expel them from this plane. The target must make a Charisma saving throw. On a failure, they are partly wrenched off their current plane. For the duration, they become incapacitated and gain resistance to all damage.",
+                "The target makes another Charisma save at the end of each of their turns, ending the spell on a success. Extraplanar creatures make these saves at disadvantage. Extraplanar creatures failing the third Charisma save are fully returned to their home plane and stop attempting saving throws. If you maintain concentration for the full duration, this banishment becomes permanent.",
+                "A target that returns reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Nerf",
+                    "entries": [
+                        "This spell is especially stupid at high levels against extraplanar threats, or when used on players. This version is still very strong against creatures from other planes, but does at least provide some saves and not immediately end some fights."
+                    ]
+                }
             ],
+            "change": "nerf",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -4186,12 +4207,13 @@
                 "You touch a willing creature. Until the spell ends, the target's skin has a rough, bark-like appearance, and the target's AC can't be less than 18, regardless of what kind of armor it is wearing.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "AC from 16 -> 18 to make it an actual improvement outside of wildshape."
                     ]
                 }
             ],
+            "change": "buff",
             "miscTags": [
                 "MAC"
             ],
@@ -4476,12 +4498,13 @@
                 "You touch a beast. For the duration of the spell, you can use your action to see through the beast's eyes and hear what it hears, and continue to do so until you use your action to return to your normal senses. While perceiving through the beast's senses, you gain the benefits of any special senses possessed by that creature, though you are {@condition blinded} and {@condition deafened} to your own surroundings.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Beast no longer has to be willing."
                     ]
                 }
             ],
+            "change": "buff",
             "areaTags": [
                 "ST"
             ],
@@ -4572,12 +4595,13 @@
                 "A {@spell remove curse} spell ends this effect. At the DM's option, you may choose an alternative curse effect, but it should be no more powerful than those described above. The DM has final say on such a curse's effect.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Distance up from touch to 30 ft."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -4987,12 +5011,13 @@
                 "You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Now works against all b/p/s damage (especially relevant for teeth, claws, etc)."
                     ]
                 }
             ],
+            "change": "buff",
             "damageResist": [
                 "bludgeoning",
                 "piercing",
@@ -5237,12 +5262,13 @@
                 "If the spells targets a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw, it simply withers and dies.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Now a 30-foot area instead of a single target to make it something of a Druid fireball."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -5454,12 +5480,13 @@
                 "You can only be affected by one smite spell at a time.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Smite spells no longer use concentration, but only one can be used at a time."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "radiant"
             ],
@@ -5700,12 +5727,13 @@
                 "While on the Ethereal Plane, you can see and hear the plane you originated from, which is cast in shades of gray, and you can't see anything there more than 60 feet away. You can only affect and be affected by other creatures on the Ethereal Plane. Creatures that aren't there can't perceive you or interact with you, unless they have the ability to do so.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Cast as a bonus action to make it potentially usable for gishes."
                     ]
                 }
             ],
+            "change": "buff",
             "miscTags": [
                 "SGT"
             ],
@@ -6254,12 +6282,13 @@
                 "You can only be affected by one smite spell at a time.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Smite spells no longer use concentration, but only one can be used at a time."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -6392,12 +6421,13 @@
                 "The fire ignites any flammable objects in the area that aren't being worn or carried.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damge increased from 3d6 -> 4d6 to give clear tradoff with Tunderwave (damage vs push)"
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -6617,12 +6647,13 @@
                 "If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell's damage increases by {@dice 1d10}.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Use your bonus action to do more lightning instead of your action."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -6867,12 +6898,13 @@
                 "Choose one object weighing up to 50 pounds within range that isn't being worn or carried. The object flies in a straight line up to 90 feet in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the target and stops moving. When the object strikes something, the object and what it strikes each take {@damage 3d8} bludgeoning damage.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Change - ",
+                    "name": "DM Note: Change",
                     "entries": [
                         "50lbs starting weight and +50/level scaling, mostly just a for fun change."
                     ]
                 }
             ],
+            "change": "change",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -7510,12 +7542,13 @@
                 "You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is {@condition charmed} by you until the spell ends or until you or your companions do anything harmful to it. The {@condition charmed} creature regards you and your companions as friendly acquaintances. When the spell ends, the creature knows it was {@condition charmed} by you.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "The target now considers you <i>and your companions</i> as friendly."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -7778,12 +7811,13 @@
                 "This spell's damage increases by {@dice 1d8} when you reach 5th level ({@damage 2d8}), 11th level ({@damage 3d8}), and 17th level ({@damage 4d8}).",
                 {
                     "type": "inset",
-                    "name": "DM Note: Note - ",
+                    "name": "DM Note: Note",
                     "entries": [
                         "Nothing about this spell is changed, Chill Touch is just a stupid name for a spell that neither deals cold damage nor is touch range."
                     ]
                 }
             ],
+            "change": "change",
             "scalingLevelDice": {
                 "label": "necrotic damage",
                 "scaling": {
@@ -7977,12 +8011,13 @@
                 "A sphere of negative energy ripples out in a 60-foot-radius sphere from a point within range. Each creature in that area must make a Constitution saving throw. A target takes {@damage 10d6} necrotic damage on a failed save, or half as much damage on a successful one.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damage increased from 8d6 -> 10d6. Doing so much less than fireball with a worse save was silly, but the huge area compensates some. Competes with Freezing Sphere now."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -8323,12 +8358,13 @@
                 "On subsequent turns you can use your action to move the cloud of daggers 20 feet in any direction.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Can now move the cloud 20 feet with your action. Makes it possible for grapplers or choke-y hallways to really power up the spell."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -8595,12 +8631,13 @@
                 "A creature can use their action to clear their head and end the blinded condition on themselves.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Now lasts up to a minute and can be ended by an action to at least compete a little with sleep."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -9555,12 +9592,13 @@
                 "A creature killed by this spell becomes a frozen statue until it thaws.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Initial damage up from 8d8 -> 10d8 at least improve on Fireball cast at same level."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -9800,12 +9838,13 @@
                 "At the end of each of its turns, an affected target can make a Wisdom saving throw. If it succeeds, this effect ends for that target.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Increase from 10-foot -> 20-foot radius, and altered the ranges so that creautres attack allies more often and move normally less often."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -10078,12 +10117,22 @@
                 }
             ],
             "entries": [
-                "You throw a nonmagical weapon or fire a piece of nonmagical ammunition into the air to create a cone of identical weapons that shoot forward and then disappear. Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A creature takes {@damage 6d8} damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the weapon or ammunition used as a component.",
+                "You throw a nonmagical weapon or fire a piece of nonmagical ammunition into the air to create a cone of identical weapons that shoot forward and then disappear. Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A creature takes {@damage 5d8} damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the weapon or ammunition used as a component.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Damage up from 3d8 -> 6d8; wasting a whole action for less damage than Burning Hands is sad and bad."
+                        "Damage up from 3d8 -> 5d8; wasting a whole action for less damage than Burning Hands is sad and bad. Also added an upcast."
+                    ]
+                }
+            ],
+            "change": "buff",
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 7th level or higher, the damage increases by {@damage 1d8} for each slot level above 6th."
                     ]
                 }
             ],
@@ -10711,52 +10760,59 @@
                 }
             ],
             "entries": [
-                "Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is {@condition poisoned}.",
-                "At the end of each of the {@condition poisoned} target's turns, the target must make a Constitution saving throw. If the target succeeds on three of these saves, it is no longer {@condition poisoned}, and the spell ends. If the target fails three of these saves, the target is no longer {@condition poisoned}, but choose one of the diseases below. The target is subjected to the chosen disease for the spell's duration.",
-                "Since this spell induces a natural disease in its target, any effect that removes a disease or otherwise ameliorates a disease's effects apply to it.",
+                "Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is afflicted with one of the diseases listed below (your choice). The spell has no effect on constructs, undead, or creatures immune to disease. The disease is magical, and can only be cured by the heal spell or equivalent magic.",
+                "At the end of each of the target’s turns, they must make another Constitution saving throw. If they succeed on the saving throw, they suffer no effects from the disease until the end of their next turn. When the target has succeeded on three of these saving throws, they are no longer diseased. When they have failed on three of these saving throws, the disease sets in, and lasts for 7 days unless treated by an appropriate means. Once the target has either three successes or three failures on these saving throws, they stop making saves for this spell.",
                 {
                     "type": "entries",
-                    "name": "Blinding Sickness",
+                    "name": "Muscle Weakness",
                     "entries": [
-                        "Pain grips the creature's mind, and its eyes turn milky white. The creature has disadvantage on Wisdom checks and Wisdom saving throws and is {@condition blinded}."
+                        "The creature's arms become unbearably weak. They have disadvantage on Strength checks, Strength saving throws, and attack rolls that use Strength. Their attacks using Strength deal half damage."
                     ]
                 },
                 {
                     "type": "entries",
-                    "name": "Filth Fever",
+                    "name": "Trembling Spasms",
                     "entries": [
-                        "A raging fever sweeps through the creature's body. The creature has disadvantage on Strength checks, Strength saving throws, and attack rolls that use Strength."
+                        "The creature is overcome with terrible tremors. They have disadvantage on Dexterity checks, Dexterity saving throws, and attack rolls that use Dexterity. Their attacks using Dexterity do half damage."
                     ]
                 },
                 {
                     "type": "entries",
-                    "name": "Flesh Rot",
+                    "name": "Skinslough",
                     "entries": [
-                        "The creature's flesh decays. The creature has disadvantage on Charisma checks and vulnerability to all damage."
+                        "The creature's skin becomes paper-thin and causes agonizing pain when it tears. They have disadvantage on Constitution checks and Constitution saving throws, except those caused by this spell. In addition, when the creature takes damage, its movement speed is reduced to 10 feet until the end of its next turn."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Mindfire",
                     "entries": [
-                        "The creature's mind becomes feverish. The creature has disadvantage on Intelligence checks and Intelligence saving throws, and the creature behaves as if under the effects of the {@spell confusion} spell during combat."
+                        "The creature becomes disoriented and confused. The creature has disadvantage on Intelligence checks and Intelligence saving throws, and cannot tell friend from foe in combat."
                     ]
                 },
                 {
                     "type": "entries",
-                    "name": "Seizure",
+                    "name": "Fire-eyes Fever",
                     "entries": [
-                        "The creature is overcome with shaking. The creature has disadvantage on Dexterity checks, Dexterity saving throws, and attack rolls that use Dexterity."
+                        "The creature's eyes turn milky white and are searingly painful. They have disadvantage on Wisdom checks and Wisdom saving throws, and are blinded."
                     ]
                 },
                 {
                     "type": "entries",
-                    "name": "Slimy Doom",
+                    "name": "Flesh Rot",
                     "entries": [
-                        "The creature begins to bleed uncontrollably. The creature has disadvantage on Constitution checks and Constitution saving throws. In addition, whenever the creature takes damage, it is {@condition stunned} until the end of its next turn."
+                        "The creature's flesh decays. They have disadvantage on Charisma checks and Charisma saving throws, and take 5 additional points of damage when they suffer bludgeoning, piercing, or slashing damage."
+                    ]
+                },
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "This spell has a bizzarre history of misprints, errata, and sage advice that have left it in a bad place. The changes here basically restore the original version with rebalanced disease options."
                     ]
                 }
             ],
+            "change": "change",
             "conditionInflict": [
                 "blinded",
                 "stunned",
@@ -10929,12 +10985,13 @@
                 "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A continual flame can be covered or hidden but not smothered or quenched.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Can now be cast as a ritual."
                     ]
                 }
             ],
+            "change": "buff",
             "classes": {
                 "fromClassList": [
                     {
@@ -11389,12 +11446,13 @@
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Casting time down from 10 minutes -> 1 action to make this something you might use in a fight or tense chase or etc."
                     ]
                 }
             ],
+            "change": "buff",
             "classes": {
                 "fromClassList": [
                     {
@@ -11542,12 +11600,13 @@
                 "When you cast this spell, you can designate any creatures you choose, and the spell ignores them.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damage up form 1d6 -> 1d8 to match normal ammunition damage"
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -12010,12 +12069,13 @@
                 "The creature is under your control for 24 hours, after which it stops obeying any command you have given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating new ones.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "From 3 corpses -> 4 corpses. To improve power vs. equivalent Animate Dead upcast."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -12234,12 +12294,13 @@
                 "Using any material created by this spell as another spell's material component causes that spell to fail.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Can now be cast as a ritual."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -12372,12 +12433,22 @@
             "entries": [
                 "One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become {@condition charmed} by you for the duration. While the target is {@condition charmed} in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes.",
                 "The {@condition charmed} target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if none are within its reach.",
-                "Tthe target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.",
+                "The target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "No longer requires an action to keep effect up."
+                        "No longer requires an action to keep effect up. Unique upcasting for multiattack targets."
+                    ]
+                }
+            ],
+            "change": "buff",
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "If you cast this spell using a spell slot of 4th level or higher, the target makes 2 attacks if they possess an ability that would normally allow them to make more than one attack on their turn."
                     ]
                 }
             ],
@@ -12716,12 +12787,13 @@
                 "A creature you touch regains a number of hit points equal to {@dice 2d6} + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Healing up form 1d8 -> 2d6 and scaling up from 1d8 -> 2d6 to make this a more powerful option compared to Healing Word. Still worse, but more usable."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -12886,14 +12958,21 @@
                     "duration": {
                         "type": "minute",
                         "amount": 1
-                    },
-                    "concentration": true
+                    }
                 }
             ],
             "entries": [
-                "You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius.",
-                "As a bonus action on your turn, you can move the lights up to 60 feet to a new spot within range. A light must be within 20 feet of another light created by this spell, and a light winks out if it exceeds the spell's range."
+                "You create up to four small lights within range that hover in the air for the duration. Each light may appear as you wish (torch, lantern, glowing orb, etc.) and can be colored as you like. Whichever form you choose, each light sheds dim light in a 15-foot radius.",
+                "As a bonus action on your turn, you can move the lights up to 60 feet to a new space within range. A light must be within 30 feet of another light created by this spell, and a light winks out if it exceeds the spell's range. If you cast this spell again, any current lights you created with this spell instantly wink out.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "This spell was mostly just a flavor change from light, so it now sheds light such that it might be able to have some tactical use to create dark zones and as multicolor party lights. Also removed concentration, which was stupid. "
+                    ]
+                }
             ],
+            "change": "change",
             "miscTags": [
                 "LGT",
                 "UBA"
@@ -13474,17 +13553,27 @@
                 }
             ],
             "entries": [
-                "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet. The light is sunlight.",
-                "If you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.",
-                "If any of this spell's area overlaps with an area of darkness created by a spell of 2nd level or lower, the spell that created the darkness is dispelled.",
+                "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet. It is not sunlight.",
+                "If you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.", "If any of this spell's area overlaps with an area of darkness created by a spell of its own level, or an equivalent magical effect, the light in that area is converted to dim light.",
+                "Forthermore, if any of this spell's area overlaps with an area of darkness created by a spell of a lower level, or an equivalent magical effect, the spell or effect that created the darkness is dispelled.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Down from 3rd to 2nd level, to complement Darkness. Also actually creates sunlight and not just bright light for vampires and such."
+                        "Down from 3rd to 2nd level, to complement Darkness. Also actually creates sunlight when upcast, for use against vampires and such."
                     ]
                 }
             ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 4th level or higher, the light it creates is sunlight."
+                    ]
+                }
+            ],
+            "change": "buff",
             "miscTags": [
                 "LGT"
             ],
@@ -15742,12 +15831,13 @@
                 "Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal an extra {@damage 1d6} radiant damage on a hit.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damage up from 1d4 -> 1d6. Matches up better to Hunter's Mark / Hex"
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "radiant"
             ],
@@ -16568,12 +16658,13 @@
                 "If you have a body part, lock of hair, clipping from a nail, or similar portion of the target's body, the target makes its saving throw with disadvantage.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damge up from 3d6 -> 6d6"
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "psychic"
             ],
@@ -16861,16 +16952,17 @@
             ],
             "entries": [
                 "Choose an unoccupied 5-foot cube of air that you can see within range. An elemental force that resembles a dust devil appears in the cube and lasts for the spell's duration.",
-                "Any creature that ends its turn within 5 feet of the dust devil must make a Strength saving throw. On a failed save, the creature takes {@damage 1d8} bludgeoning damage and is pushed 10 feet away from the dust devil. On a successful save, the creature takes half as much damage and isn't pushed.",
+                "Any creature that ends its turn within 5 feet of the dust devil must make a Strength saving throw. On a failed save, the creature takes {@damage 1d10} bludgeoning damage and is pushed 10 feet away from the dust devil. On a successful save, the creature takes half as much damage and isn't pushed.",
                 "As a bonus action, you can move the dust devil up to 30 feet in any direction. If the dust devil runs into a creature, that creature must make the saving throw against the sphere's damage and push, and the dust devil stops moving this turn. If the dust devil moves over sand, dust, loose dirt, or light gravel, it sucks up the material and forms a 10-foot-radius cloud of debris around itself that lasts until the start of your next turn. The cloud heavily obscures its area.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Give Dust Devil the ram effect from Flaming Sphere to make it a sidegrade instead of strictly worse."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -16946,12 +17038,12 @@
                 "You cause a tremor in the ground within range. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes {@damage 2d6} bludgeoning damage and is knocked {@condition prone}. If the ground in that area is loose earth or stone, it becomes difficult terrain until cleared, with each 5-foot-diameter portion requiring at least 1 minute to clear by hand.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Damge up from 1d6 -> 2d6, prone+difficult terrain makes it comparable to Thunderwave."
+                        "Damge up from 1d6 -> 2d6, prone + difficult terrain makes it comparable to Thunderwave."
                     ]
                 }
-            ],
+            ],"change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -17033,7 +17125,24 @@
                 }
             ],
             "entries": [
-                "Choose one creature you can see within range. Yellow strips of magical energy loop around the creature. The target must succeed on a Strength saving throw, or its flying speed (if any) is reduced to 0 feet for the spell's duration. An airborne creature affected by this spell safely descends at 60 feet per round until it reaches the ground or the spell ends."
+                "You point at one creature you can see within range, and send a lashing tentacle of earth to haul them to the ground. The target must succeed on a Strength saving throw, or immediately fall prone. Its flying speed (if any) is reduced to 0 feet for the spell's duration, and a flying creature falls even if it has hover. An airborne creature takes normal falling damage up to a maximum of 4d6 points of bludgeoning damage. A creature that makes the saving throw suffers no effects.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Still situational, but at least now it will knock a grounded target prone for a turn, and do a little damage in it's normal use case. Also added an upcast for potential use against flocks."
+                    ]
+                }
+            ],
+            "change": "change",
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 3rd level or higher, the number of targets increases by 1 for each slot level above 2nd, and the maximum damage increases by 1d6 for each level above 2nd."
+                    ]
+                }
             ],
             "savingThrow": [
                 "strength"
@@ -17339,15 +17448,16 @@
                 }
             ],
             "entries": [
-                "A nonmagical weapon you touch becomes a magic weapon. Choose one of the following damage types: acid, cold, fire, lightning, or thunder. For the duration, the weapon has a +1 bonus to attack rolls and deals an extra {@damage 2d4} damage of the chosen type when it hits.",
+                "A nonmagical weapon you touch becomes a magic weapon. Choose one of the following damage types: acid, cold, fire, or lightning. For the duration, the weapon has a +1 bonus to attack rolls and deals an extra {@damage 2d4} damage of the chosen type when it hits, and the weapon's base damage is of the chosen type.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damge up from 1d4 -> 2d4 so that it's at ~equal to Divine Favor + Magic Weapon (which are 1st and 2nd level)."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -17697,12 +17807,13 @@
                 ,
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damge up from 4d8 -> 6d8 (and success damage up from 2d8 -> 4d8, to at least give you something on a bad cast)"
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -18145,12 +18256,13 @@
                 "You can only be affected by one smite spell at a time.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Smite spells no longer use concentration, but only one can be used at a time."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -18352,7 +18464,24 @@
                 }
             ],
             "entries": [
-                "You weave a distracting string of words, causing creatures of your choice that you can see within range and that can hear you to make a Wisdom saving throw. Any creature that can't be {@condition charmed} succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom ({@skill Perception}) checks made to perceive any creature other than you until the spell ends or until the target can no longer hear you. The spell ends if you are {@condition incapacitated} or can no longer speak."
+                "You weave a distracting string of words, causing creatures of your choice that you can see within range and that can hear you to make a Wisdom saving throw or be charmed by you. If you or your companions are fighting a creature, it has advantage on the save. While charmed by you in this way, a creature has disadvantage on Dexterity (Initiative) rolls as well as Wisdom (Perception) checks made to perceive any creature other than you until the spell ends or until the target can no longer see or hear you. The spell ends if you are incapacitated or you can no longer speak. Creatures do not realize that you used magic to influence them.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Increase and clarify effects a little, add an 'At Higher Levels' for larger, longer performances."
+                    ]
+                }
+            ],
+            "change": "buff",
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 3rd level or higher, the duration increases by 1 minute and the radius increases by 10 feet for each slot level above 2nd."
+                    ]
+                }
             ],
             "savingThrow": [
                 "wisdom"
@@ -18744,12 +18873,13 @@
                 "This spell allows you to move at an incredible pace. When you cast this spell, and then as a bonus action on each of your turns until the spell ends, you can take the Dash action. On the turn you cast this spell, your movement doens't provoke attacks of opportunity.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Add a free 'disengage' so that you can actually retreat after casting this."
                     ]
                 }
             ],
+            "change": "buff",
             "miscTags": [
                 "UBA"
             ],
@@ -19376,12 +19506,13 @@
 
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Can now take someone else along to make it comparable to Dimension Door and open up some fun tactical options."
                     ]
                 }
             ],
+            "change": "buff",
             "miscTags": [
                 "SGT",
                 "TP",
@@ -19713,7 +19844,7 @@
                     "type": "timed",
                     "duration": {
                         "type": "hour",
-                        "amount": 24
+                        "amount": 8
                     }
                 }
             ],
@@ -19721,16 +19852,20 @@
                 "ritual": true
             },
             "entries": [
-                "You touch a willing creature and put it into a cataleptic state that is indistinguishable from death.",
-                "For the spell's duration, or until you use an action to touch the target and dismiss the spell, the target appears dead to all outward inspection and to spells used to determine the target's status. The target is {@condition blinded} and {@condition incapacitated}, and its speed drops to 0. The target has resistance to all damage except psychic damage. If the target is diseased or {@condition poisoned} when you cast the spell, or becomes diseased or {@condition poisoned} while under the spell's effect, the disease and poison have no effect until the spell ends.",
+                "You touch a willing creature, charging it with necrotic magic and allowing it to mimic death. The target gains 10 temporary hit points for the duration.",
+                "As an action, or as a reaction to being hit with an attack or taking damage, the target can appear dead to all outward inspection and to spells used to determine the target's status. If the target breathes, its respiration is undetectable.",
+                "While in this false state, the target drops prone, can see and hear normally, and has resistance to all damage except psychic damage. The false state ends if the target moves or takes an action, bonus action or reaction.",
+                "The spell ends once the target has left the false state. Additionally, you can use an action to touch the target and dismiss the spell.",
+                "If the target is diseased or poisoned when you cast the spell, or becomes diseased or poisoned while under the spell's effect, the disease and poison have no effect until the spell ends.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Boost duration from 1 hour -> 24 hours. Might give it some more niche applications for fake burials and the like."
+                        "The original's role is so specific that it's basically just a plot spell. Buffed it into a bit of a higher-level False Life with added utility for the spell's original functions."
                     ]
                 }
             ],
+            "change": "buff",
             "damageResist": [
                 "acid",
                 "bludgeoning",
@@ -20006,16 +20141,18 @@
                 }
             ],
             "entries": [
-                "You sense the presence of any trap within range that is within line of sight. A trap, for the purpose of this spell, includes anything that would inflict a sudden or unexpected effect you consider harmful or undesirable, which was specifically intended as such by its creator. Thus, the spell would sense an area affected by the {@spell alarm} spell, a {@spell glyph of warding}, or a mechanical pit trap, but it would not reveal a natural weakness in the floor, an unstable ceiling, or a hidden sinkhole.",
-                "This spell reveals the location of traps, the location of the triggers of those traps, and the general nature of danger posed by each trap you detect.",
+                "You sense the presence of any trap within range that is within line of sight. A trap, for the purpose of this spell, includes anything that would inflict a sudden or unexpected effect you consider harmful or undesirable, which was specifically intended as such by its creator. Thus, the spell would sense an area affected by the {@spell alarm} spell, a {@spell glyph of warding}, or a mechanical pit trap, but it would not reveal a natural weakness in the floor, an unstable ceiling, or a creature lying in ambush.",
+                "The spell reveals the general presence and vague direction of a trap within its 120-foot range, but not its specific location. If you come within 15 feet of the trap, you detect its presence exactly, and any ability checks you or your companions make to examine it are made with advantage.",
+                "The spell is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Now will actually *find* traps and not just vaguely motion at the area of traps."
                     ]
                 }
             ],
+            "change": "buff",
             "classes": {
                 "fromClassList": [
                     {
@@ -20077,7 +20214,7 @@
                 "v": true,
                 "s": true,
                 "m": {
-                    "text": "a set of divinatory tools—such as bones, ivory sticks, cards, teeth, or carved runes—worth 100 gp and an object from the location you wish to find",
+                    "text": "a divinatory tool to indicate direction (eg. pendulum, bones, cards, etc) and a divinitory tool to display an image (eg. crystal ball, mirror)",
                     "cost": 10000
                 }
             },
@@ -20092,9 +20229,38 @@
                 }
             ],
             "entries": [
-                "This spell allows you to find the shortest, most direct physical route to a specific fixed location that you are familiar with on the same plane of existence. If you name a destination on another plane of existence, a destination that moves (such as a mobile fortress), or a destination that isn't specific (such as \"a green dragon's lair\"), the spell fails.",
-                "For the duration, as long as you are on the same plane of existence as the destination, you know how far it is and in what direction it lies. While you are traveling there, whenever you are presented with a choice of paths along the way, you automatically determine which path is the shortest and most direct route (but not necessarily the safest route) to the destination."
+                "You name a specific location on the same plane of existence, receiving supernatural knowledge regarding the way between you and the destination. If the destination moves to another plane, the spell fails.",
+                "When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one:",
+                {
+                    "type": "list",
+                    "style": "list-hang-notitle",
+                    "items": [
+                        {
+                            "type": "item",
+                            "name": "Dowsing",
+                            "entry": "The pendulum tugs in a direction with increasing urgency as you near your destination, informing you of its distance and direction."
+                        },
+                        {
+                            "type": "item",
+                            "name": "Ascertainment",
+                            "entry": "Whenever you are presented with a choice of paths along the way to the destination, the pendulum points towards the shortest and most direct route (ignoring safety)."
+                        },
+                        {
+                            "type": "item",
+                            "name": "Forecast",
+                            "entry": "The mirror displays images of the next 30 miles on the path to the destination, granting a general awareness of natural hazards or obstacles, such as decaying bridges or cliffs."
+                        }
+                    ]
+                },
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "This was a plot spell that didn't work unless you already had something from where you were going and it wasn't mobile in any way. It now works better in a wider range of scenarios."
+                    ]
+                }
             ],
+            "change": "change",
             "classes": {
                 "fromClassList": [
                     {
@@ -20147,9 +20313,19 @@
                 "A humanoid killed by this spell rises at the start of your next turn as a {@creature zombie} that is permanently under your command, following your verbal orders to the best of its ability.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Damage up from 7d8 -> 9d8 to make it comparable to 7th level Disintegrate. Still worse, since you get the zombie, but not so much worse anymore."
+                        "Damage up from 7d8 -> 9d8 to make it comparable to 7th level Disintegrate. Still worse, since you get the zombie, but not so much worse anymore. Also has an upcast now."
+                    ]
+                }
+            ],
+            "change": "buff",
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 8th level or higher, the damage increases by 2d8 for each level above 7th."
                     ]
                 }
             ],
@@ -20524,12 +20700,13 @@
                 "The fire damages objects in the area and ignites flammable objects that aren't being worn or carried. If you choose, plant life in the area is unaffected by this spell.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damage up from 7d10 -> 10d10."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "fire"
             ],
@@ -20592,12 +20769,13 @@
                 "The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Nerf - ",
+                    "name": "DM Note: Nerf",
                     "entries": [
-                        "Damage down from 8d6 -> 7d6. This spell was so far off the damage curve, pulling it back in line makes lots of other spells instantly better."
+                        "Damage down from 8d6 -> 7d6. This spell was off the damage curve, pulling it back in line makes lots of other spells instantly better."
                     ]
                 }
             ],
+            "change": "nerf",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -20860,12 +21038,13 @@
                 "A flammable object hit by these arrows ignites if it isn't being worn or carried.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Remove concentration, specifically call out that it can ignite flammable objects, down to level 2 (from 3) to make it more usable by Rangers and Artificers. Jesus this spell was bad."
+                        "Remove concentration, specifically call out that it can ignite flammable objects, down to level 2 (from 3) to make it more usable by Rangers and Artificers. God this spell was bad."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -20923,7 +21102,7 @@
             "range": {
                 "type": "point",
                 "distance": {
-                    "type": "touch"
+                    "type": "self"
                 }
             },
             "components": {
@@ -20942,23 +21121,24 @@
                 }
             ],
             "entries": [
-                "You evoke a fiery blade in a free hand of the touched creature. The blade is similar in size and shape to a scimitar, and it lasts for the duration. If the blade is dropped or sheathed, it disappears and the spell ends.",
-                "The creature holding the blade can use its action to make a melee spell attack with the fiery blade. On a hit, the target takes {@damage 3d6} fire damage.",
-                "The flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.",
+                "You evoke a fiery blade in a free hand of the touched creature. The blade is similar in size and shape to a scimitar, and it lasts for the duration. It counts as a simple melee weapon with which the target is proficient, and provides bright light in a 20-foot radius and dim light for an additional 20 feet.",
+                "It deals 2d6 fire damage on a hit and has the finesse, light, and thrown properties (range 20/60). If you hit a flammable creature or object, it ignites, taking 1d6 fire damage at the start of each of its turns until a creature uses its action to douse the flames on itself or another creature.",
+                "If you drop the weapon or throw it, it dissipates at the end of the turn. Thereafter, while the spell persists, you can use a bonus action to cause the blade to reappear in your hand.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Range is now touch, so it can be given to another person who might make better use of it."
+                        "This spell was awful, basically changing it to match the template of Shadow Blade, which is a usable spell."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@scaledamage 3d6|2,4,6,8|1d6} for every two slot levels above 2nd."
+                        "When you cast this spell using a spell slot of 4th level or higher, the blade's damage increases by 1d6 for every two slot levels above 2nd."
                     ]
                 }
             ],
@@ -21037,20 +21217,22 @@
             ],
             "entries": [
                 "A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot-radius, 40-foot-high cylinder centered on a point within range must make a Dexterity saving throw. A creature takes {@damage 4d8} fire damage and {@damage 4d8} radiant damage on a failed save, or half as much damage on a successful one.",
+                "Targets gain no benefit from cover for this saving throw.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Damage up from 4d6+4d6 -> 4d8+4d8, scaling up from 1d6 -> 1d8."
+                        "Damage up from 4d6+4d6 -> 4d8+4d8, scaling up from 1d6 -> 1d8. Added a flavor rider to match it to Sacred Fire."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by {@damage 1d8} for each slot level above 5th."
+                        "When you cast this spell using a spell slot of 6th level or higher, the fire damage and radiant damage both increase by {@damage 1d8} for each slot level above 5th."
                     ]
                 }
             ],
@@ -21433,11 +21615,19 @@
                 }
             ],
             "entries": [
-                "You attempt to turn one creature that you can see within range into stone. If the target's body is made of flesh, the creature must make a Constitution saving throw. On a failed save, it is {@condition restrained} as its flesh begins to harden. On a successful save, the creature isn't affected.",
-                "A creature {@condition restrained} by this spell must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this spell three times, the spell ends. If it fails its saves three times, it is turned to stone and subjected to the {@condition petrified} condition for the duration. The successes and failures don't need to be consecutive; keep track of both until the target collects three of a kind.",
+                "You attempt to petrify a creature that you can see within range. If the target's body is made of flesh, the creature must make a Constitution saving throw. If the saving throw fails by 5 or more, the creature is instantly petrified; otherwise, a creature that fails the save begins to turn to stone and is restrained.",
+                "A creature restrained by this spell must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this spell three times, the spell ends; if it fails its save, it is petrified.",
                 "If the creature is physically broken while {@condition petrified}, it suffers from similar deformities if it reverts to its original state.",
-                "If you maintain your concentration on this spell for the entire possible duration, the creature is turned to stone until the effect is removed."
+                "The petrification lasts until the creature is freed by the greater restoration spell or other magic.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Too slow and weak for a 6th level slot. Now restrains after the first fail and fetrifies after the second. Added a rider that failure by 5 or more is instant petrification per medusa or cackatrice."
+                    ]
+                }
             ],
+            "change": "buff",
             "conditionInflict": [
                 "petrified",
                 "restrained"
@@ -21843,12 +22033,21 @@
             ],
             "entries": [
                 "An immobile, invisible, cube-shaped prison composed of magical force springs into existence around an area you choose within range. The prison can be a cage or a solid box as you choose.",
-                "A prison in the shape of a cage can be up to 20 feet on a side and is made from 1/2-inch diameter bars spaced 1/2 inch apart.",
+                "A prison in the shape of a cage can be up to 20 feet on a side and is made from 1/2-inch diameter bars spaced 1/2 inch apart, and provides half cover.",
                 "A prison in the shape of a box can be up to 10 feet on a side, creating a solid barrier that prevents any matter from passing through it and blocking any spells cast into or out from the area.",
-                "When you cast the spell, any creature that is completely inside the cage's area is trapped. Creatures only partially within the area, or those too large to fit inside the area, are pushed away from the center of the area until they are completely outside the area.",
-                "A creature inside the cage can't leave it by nonmagical means. If the creature tries to use teleportation or interplanar travel to leave the cage, it must first make a Charisma saving throw. On a success, the creature can use that magic to exit the cage. On a failure, the creature can't exit the cage and wastes the use of the spell or effect. The cage also extends into the Ethereal Plane, blocking ethereal travel.",
-                "This spell can't be dispelled by {@spell dispel magic}."
+                "When you cast the spell, any creature that is completely inside the prison's area is trapped. Creatures only partially within the area, or those too large to fit inside the area, are pushed away from the center of the area until they are completely outside the area.",
+                "A creature inside the prison can't leave it by nonmagical means. If the creature tries to use teleportation or interplanar travel to leave the prison, it must first make a Charisma saving throw. On a success, the creature can use that magic to exit the prison. On a failure, the creature can't exit the prison and wastes the use of the spell or effect. The prison also extends into the Ethereal Plane, blocking ethereal travel.",
+                "The prison has an AC of 10 + the spell's level (17), and has 40 hit points per spell level (280).",
+                "This spell can't be dispelled by {@spell dispel magic}.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Nerf",
+                    "entries": [
+                        "Like Wall of Force this was an uninteresting encounter ender. The prison can now be destroyed with concerted effort to give some semblance of counterplay."
+                    ]
+                }
             ],
+            "change": "nerf",
             "savingThrow": [
                 "charisma"
             ],
@@ -22287,12 +22486,13 @@
                 "For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn't hostile toward you. When the spell ends, the creature can make a wisdom saving throw. On a success the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM's discretion), depending on the nature of your interaction with it.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Now have a chance to get away without hostility pending a wisdom save"
                     ]
                 }
             ],
+            "change": "buff",
             "areaTags": [
                 "ST"
             ],
@@ -22562,12 +22762,13 @@
                 "While in the form of a misty cloud, the target can't talk or manipulate objects, and any objects it was carrying or holding can't be dropped, used, or otherwise interacted with. The target can't attack or cast spells.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Change resistance -> immunity to nonmagical damage so this can be an actual getaway spell."
                     ]
                 }
             ],
+            "change": "buff",
             "areaTags": [
                 "ST"
             ],
@@ -22846,12 +23047,13 @@
                 "You can end the spell early by using an action to dismiss it. A {@spell remove curse}, {@spell greater restoration}, or {@spell wish} spell also ends it.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Don't allow healing hte damage unless the creature is in compliance."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -22960,12 +23162,13 @@
                 "The spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don't count against the time limit of spells such as {@spell raise dead}.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Duration up from 10 days -> 1 month."
                     ]
                 }
             ],
+            "change": "buff",
             "classes": {
                 "fromClassList": [
                     {
@@ -23362,12 +23565,13 @@
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "It cheesable and probably broken, but I think this spell is much more interesting without the 'moved more than 10 feet' limit. Subject to reversal in game if it's causing a problem."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -23558,13 +23762,23 @@
                 }
             ],
             "entries": [
-                "You conjure a vine that sprouts from the ground in an unoccupied space of your choice that you can see within range. When you cast this spell, you can direct the vine to lash out at a creature within 30 feet of it that you can see. That creature must succeed on a Dexterity saving throw or fall prone and be pulled 20 feet directly toward the vine.",
-                "Until the spell ends, you can direct the vine to lash out at the same creature or another one as a bonus action on each of your turns.",
+                "You cause a magical vine to burst forth from the ground, wall, or ceiling in an unoccupied space of your choice that you can see within range. The vine has an AC and hit points equal to your spell save DC, and the spell ends if you cast it again while a vine remains. ",
+                "When you cast this spell, and then as a bonus action on each of your turns until the spell ends, you can direct the vine to pull a large or smaller creature within 30 feet of it that you can see. That creature must succeed on a Dexterity saving throw or be pulled 20 feet directly toward the vine.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "No longer requires concentration, now knocks the creature prone on a failed save."
+                        "Why was this spell so bad?! It was worse than many 1st level spells. Level down form 4th -> 2nd. No longer requires concentration, but vine can be destroyed. Added a little upcast."
+                    ]
+                }
+            ],
+            "change": "buff",
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 3rd level or higher, the range and distance the vine can pull a creature increases by 10 feet for each slot level above 2nd. If you cast this spell using a spell slot of 4th level or higher, the vine can attempt to pull huge or smaller creatures."
                     ]
                 }
             ],
@@ -24761,12 +24975,13 @@
                 "Once a creature rolls the die for this spell, that creature can't benefit from the spell again until the creature finished a short or long rest.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Change - ",
+                    "name": "DM Note: Change",
                     "entries": [
                         "Using a OneD&D playtest version instead of the old one. This is smoother and has a better play pattern."
                     ]
                 }
             ],
+            "change": "change",
             "areaTags": [
                 "ST"
             ],
@@ -25062,12 +25277,13 @@
                 "As a bonus action on each of your turns before the spell ends, you can change the direction in which the line blasts from you.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Widen the tunnel from 10ft -> 20ft and increase the pushback from 15ft -> 20ft so that you can actually push most creatures away from you and they can't just walk back up."
                     ]
                 }
             ],
+            "change": "buff",
             "savingThrow": [
                 "strength"
             ],
@@ -25239,12 +25455,13 @@
                 "The next time you hit a creature with a ranged weapon attack before the spell ends, this spell creates a rain of thorns that sprouts from your ranged weapon or ammunition. In addition to the normal effect of the attack, the target of the attack and each creature within 5 feet of it takes {@damage 1d10} piercing damage on a failed save",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "No longer has a DEX save, just get the damage. Useful as an AoE Hunter's Mark situation. Also less slow and fiddly."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -26200,12 +26417,13 @@
                 "You point your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes {@damage 3d6} fire damage on a failed save, or half as much damage on a successful one.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Change damage from 2d10 -> 3d6 and scaling from 1d10 -> 2d6. Just making it scale a little better for Warlock slots."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -27188,12 +27406,13 @@
                 "The void creates a warp in the fabric of space, and the area is difficult terrain. Any creature that starts its turn in the area takes {@damage 2d6} cold damage. Any creature that ends its turn in the area must succeed on a Dexterity saving throw or take {@damage 2d6} acid damage as milky, otherworldly tentacles rub against it.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Might I suggest instead {@spell Hungering Void}, which is the homebrew version of this that is cooler."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "acid",
                 "cold"
@@ -27576,12 +27795,13 @@
                 "You create a shard of ice and fling it at one creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d10} piercing damage. Hit or miss, the shard then explodes. The target and each creature within 10 feet of it must succeed on a Dexterity saving throw or take {@damage 2d6} cold damage.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Increase the splash damage radius out from 5 feet -> 10 feet."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -27654,21 +27874,23 @@
             ],
             "entries": [
                 "A hail of rock-hard ice pounds to the ground in a 20-foot-radius, 40-foot-high cylinder centered on a point within range. Each creature in the cylinder must make a Dexterity saving throw. A creature takes {@damage 2d8} bludgeoning damage and {@damage 4d8} cold damage on a failed save, or half as much damage on a successful one.",
-                "Hailstones turn the storm's area of effect into difficult terrain for the next minute.",
+                "Hailstones turn the storm's area of effect into difficult terrain until the end of your next turn.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Cold damage up from 4d6 -> 4d8 (why was this using 2 types of dice?), and difficult terrain hangs around for a minute. Now acts somewhere between Fireball and Erupting Earth."
+                        "Cold damage up from 4d6 -> 4d8 (why was this using 2 types of dice?), and scales up in area as well as damage. Now acts somewhere between Fireball and Erupting Earth with unique area scaling."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 5th level or higher, the bludgeoning damage increases by {@damage 1d8} for each slot level above 4th."
+                        "When you cast this spell using a spell slot of 5th level or higher, the bludgeoning damage increases by {@damage 1d8} for each slot level above 4th.",
+                        "Additionall, the radius and height increase by 5 feet for each slot level above 4th."
                     ]
                 }
             ],
@@ -28209,12 +28431,13 @@
                 "If damage from this spell kills a target, the target is turned to ash.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Bad Spell - ",
+                    "name": "DM Note: Bad Spell",
                     "entries": [
                         "This spell is bad and I don't know how to fix it really. Don't take it, probably."
                     ]
                 }
             ],
+            "change": "nerf",
             "damageInflict": [
                 "fire"
             ],
@@ -28607,8 +28830,17 @@
                 }
             ],
             "entries": [
-                "You cause a cloud of mites, fleas, and other parasites to appear momentarily on one creature you can see within range. The target must succeed on a Constitution saving throw, or it takes {@damage 1d6} poison damage and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a {@dice d4} for the direction: 1, north; 2, south; 3, east; or 4, west. This movement doesn't provoke opportunity attacks, and if the direction rolled is blocked, the target doesn't move.",
+                "You cause a cloud of mites, fleas, and other parasites to appear momentarily on one creature you can see within range. The target must succeed on a Constitution saving throw, or it takes {@damage 1d6} poison damage and moves 5 feet in a direction of your choice. This movement doesn't provoke opportunity attacks, and the creature won't move into obviously dangerous ground, such as a fire or a pit.",
                 "The spell's damage increases by {@dice 1d6} when you reach 5th level ({@damage 2d6}), 11th level ({@damage 3d6}), and 17th level ({@damage 4d6})."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "Random movement was fiddly and hard to adjudicate. Now does non-random movement."
+                    ]
+                }
             ],
             "scalingLevelDice": {
                 "label": "poison damage",
@@ -29188,12 +29420,13 @@
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "God these investitures were bad. Dropped from level 6 -> 5, and special effect from from action -> bonus action. Maybe good form some gishes and wildshaped druids now."
+                        "God these investitures were bad. Dropped from level 6 -> 5, and special effect from from action -> bonus action. Maybe good for some gishes and wildshaped druids now."
                     ]
                 }
             ],
+            "change": "buff",
             "damageResist": [
                 "cold"
             ],
@@ -29284,12 +29517,13 @@
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "God these investitures were bad. Dropped from level 6 -> 5, and special effect from from action -> bonus action. Maybe good form some gishes and wildshaped druids now."
+                        "God these investitures were bad. Dropped from level 6 -> 5, and special effect from from action -> bonus action. Maybe good for some gishes and wildshaped druids now."
                     ]
                 }
             ],
+            "change": "buff",
             "damageResist": [
                 "fire"
             ],
@@ -29377,12 +29611,13 @@
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "God these investitures were bad. Dropped from level 6 -> 5, and special effect from from action -> bonus action. Maybe good form some gishes and wildshaped druids now."
+                        "God these investitures were bad. Dropped from level 6 -> 5, and special effect from from action -> bonus action. Maybe good for some gishes and wildshaped druids now."
                     ]
                 }
             ],
+            "change": "buff",
             "damageResist": [
                 "bludgeoning",
                 "piercing",
@@ -29469,9 +29704,93 @@
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "God these investitures were bad. Dropped from level 6 -> 5, and special effect from from action -> bonus action. Maybe good form some gishes and wildshaped druids now."
+                    ]
+                }
+            ],
+            "change": "buff",
+            "damageInflict": [
+                "bludgeoning"
+            ],
+            "savingThrow": [
+                "constitution"
+            ],
+            "miscTags": [
+                "FMV",
+                "SGT"
+            ],
+            "areaTags": [
+                "C"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Druid",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Warlock",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Investiture of Water",
+            "source": "BREW",
+            "page": 160,
+            "otherSources": [
+                {
+                    "source": "EEPC",
+                    "page": 20
+                }
+            ],
+            "level": 6,
+            "school": "T",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "self"
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "timed",
+                    "duration": {
+                        "type": "minute",
+                        "amount": 10
+                    },
+                    "concentration": true
+                }
+            ],
+            "entries": [
+                "Until the spell ends, water surges around you, and you gain the following benefits:",
+                {
+                    "type": "list",
+                    "items": [
+                        "You have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks.",
+                        "You can move through the space of other creatures and ignore difficult terrain; the first time you move through a Large or smaller creature, it must pass a Strength saving throw or be knocked prone.",
+                        "You can use your action to unleash a blast of water 15 feet long and 5 feet wide extending from you in a direction your choice. Each creature in the line must make a Strength saving throw. A creature takes {@damage 4d6} bludgeoning damage and is knocked prone on a failed save, or half as much and isn't knocked prone on a successful one."
                     ]
                 }
             ],
@@ -29836,12 +30155,13 @@
                 "You touch a creature. The creature's jump distance is tripled until the spell ends.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Casting time from 1 action -> 1 bonus action. Maybe slightly more usable in fights and stuff."
                     ]
                 }
             ],
+            "change": "buff",
             "areaTags": [
                 "ST"
             ],
@@ -30004,7 +30324,7 @@
             },
             "time": [
                 {
-                    "number": 1,
+                    "number": 10,
                     "unit": "minute"
                 }
             ],
@@ -30018,26 +30338,31 @@
                 "v": true,
                 "s": true,
                 "m": {
-                    "text": "incense worth at least 250 gp, and four ivory strips worth at least 50 gp each",
+                    "text": "rare gems worth at least 250 gp, and a jeweled notebook worth at least 200 gp",
                     "cost": 25000
                 }
             },
             "duration": [
                 {
-                    "type": "instant"
+                    "type": "timed",
+                    "duration": {
+                        "type": "week",
+                        "amount": 1
+                    }
                 }
             ],
             "entries": [
                 "Name or describe a person, place, or object. The spell brings to your mind a brief summary of the significant lore about the thing you named. The lore might consist of current tales, forgotten stories, or even secret lore that has never been widely known. If the thing you named isn't of legendary importance, you gain no information. The more information you already have about the thing, the more precise and detailed the information you receive is.",
-                "The information you learn is accurate but might be couched in figurative language. For example, if you have a mysterious magic axe on hand, the spell might yield this information: \"Woe to the evildoer whose hand touches the axe, for even the haft slices the hand of the evil ones. Only a true Child of Stone, lover and beloved of Moradin, may awaken the true powers of the axe, and only with the sacred word Rudnogg on the lips.\"",
+                "After it is contacted, the entity researches the subject for up to 1 week. Its discoveries appear as writing in the jeweled notebook. It might learn obscure myths, forgotten legends, or even lost secrets. The more information you possess when you cast the spell, the faster and more detailed the results will be. The entity may not understand the information it finds, and so might impart unsolved riddles, confusing poems, or other puzzling communications. Once the entity has conveyed everything it can discover, the spell ends.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Cut cast time from 10 minutes -> 1 minute and added ritual casting, not reason to put lore dumps behind this many walls."
+                        "Added ritual casting, no reason to put non-combat lore dumps behind a bunch of walls. Also added a rider about additional information so that DMs can have a little time if they need it."
                     ]
                 }
             ],
+            "change": "buff",
             "classes": {
                 "fromClassList": [
                     {
@@ -30250,10 +30575,18 @@
                 "ritual": true
             },
             "entries": [
-                "A 10-foot-radius immobile dome of force springs into existence around and above you and remains stationary for the duration. The spell ends if you leave its area.",
-                "Nine creatures of Medium size or smaller can fit inside the dome with you. The spell fails if its area includes a larger creature or more than nine creatures. Creatures and objects within the dome when you cast this spell can move through it freely. All other creatures and objects are barred from passing through it. Spells and other magical effects can't extend through the dome or be cast through it. The atmosphere inside the space is comfortable and dry, regardless of the weather outside.",
-                "Until the spell ends, you can command the interior to become dimly lit or dark. The dome is opaque from the outside, of any color you choose, but it is transparent from the inside."
+                "You construct a 10-foot radius dome of arcane energy, centered on yourself. The dome is stationary and disappears if you exit its area. If you cast it in a location without enough space to accommodate it, the spell fails.",
+                "Ten Medium creatures can fit inside the dome; a Large creature takes as much space as four Medium creatures. You can designate up to ten creatures when you cast the spell who can freely pass in and out of the dome, taking 25 feet of movement to move through the dome. Other creatures cannot pass through. The atmosphere inside the space is comfortable and dry, regardless of the weather outside.",
+                "The dome is translucent, with only vague shapes visible through it. Projectiles that touch the dome are slowed to a stop, and spells and other magical effects can't pass through the dome or be cast through it.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Mostly just clarified wording and removed exploitable edge cases to keep this to it's intended purpose: safely taking rests in moderately hostile territory."
+                    ]
+                }
             ],
+            "change": "change",
             "areaTags": [
                 "H"
             ],
@@ -30584,8 +30917,17 @@
                 }
             ],
             "entries": [
-                "You sacrifice some of your health to mend another creature's injuries. You take {@damage 4d8} necrotic damage, which can't be reduced in any way, and one creature of your choice that you can see within range regains a number of hit points equal to twice the necrotic damage you take."
+                "You gesture at two creatures within range, redirecting the life force from one to heal another within range. One creature of your choice within 30 feet of you that you can see must make a Constitution saving throw. On a failure, the target takes 4d8 damage, which can't be reduced in any way, and another creature of your choice that you can see within 30 feet of your target regains an half that number of hit points. A creature can willingly fail this save.",
+                "The spell has no effect on constructs or the undead.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Spell was so niche. Now acts as a direct life conduit between any two valid targets so it can have combat application beyond just healing."
+                    ]
+                }
             ],
+            "change": "change",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -30797,12 +31139,13 @@
                 "The piece of ammunition or weapon then returns to its normal form.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Remove concentration, and allow regular weapon damage to also happen."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -31193,12 +31536,13 @@
                 "This spell can't locate a creature if running water at least 10 feet wide blocks a direct path between you and the creature.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Increase distance from 1000 feet -> 5 miles (like all the other 'Locale [x]' spells)."
+                        "Increase distance from 1000 feet -> 5 miles (like all the other 'Locate [x]' spells)."
                     ]
                 }
             ],
+            "change": "buff",
             "classes": {
                 "fromClassList": [
                     {
@@ -31360,12 +31704,13 @@
                 "This spell can't locate an object if any thickness of lead, even a thin sheet, blocks a direct path between you and the object.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Increade range from 1,000 ft -> 5 miles, make effect Instant instead of concentration for 10 minutes."
                     ]
                 }
             ],
+            "change": "buff",
             "classes": {
                 "fromClassList": [
                     {
@@ -31961,12 +32306,13 @@
                 "When you cast this spell, you can elect to cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the cylinder and protecting targets outside it.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Add ritual tag so that it can more reasonably be used during creature summoning or over longer periods of time with preperation."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -32918,12 +33264,13 @@
                 "A wave of healing energy washes out from a point of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to {@dice 5d8} + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Increase healing from 3d8 -> 5d8, giving at least some benefit compated to Prayer of Healing (which is 3 spells levels cheaper) and maybe buying more than a single attack worth of HP."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -33543,12 +33890,13 @@
                 "Minor physical damage to the stone doesn't harm you, but its partial destruction or a change in its shape (to the extent that you no longer fit within it) expels you and deals {@damage 6d6} bludgeoning damage to you. The stone's complete destruction (or transmutation into a different substance) expels you and deals 50 bludgeoning damage to you. If expelled, you fall {@condition prone} in an unoccupied space closest to where you first entered.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Allow you to hear and see outside the stone, giving it some interesting scouting applications instead of just blind hiding."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "bludgeoning"
             ],
@@ -33675,12 +34023,13 @@
                 "A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes {@damage 6d4} acid damage immediately and {@damage 2d4} acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damage up from 4d4 -> 6d4. Actually scale up to be stronger than Magic Missle on single targets."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -34370,15 +34719,24 @@
                 {
                     "type": "timed",
                     "duration": {
-                        "type": "hour",
+                        "type": "minute",
                         "amount": 1
                     },
                     "concentration": true
                 }
             ],
             "entries": [
-                "You reach into the mind of one creature you can see within range. The target must make a Wisdom saving throw, taking {@damage 3d8} psychic damage on a failed save, or half as much damage on a successful one. On a failed save, you also always know the target's location until the spell ends, but only while the two of you are on the same plane of existence. While you have this knowledge, the target can't become hidden from you, and if it's {@condition invisible}, it gains no benefit from that condition against you."
+                "You reach into the mind of one creature you can see within range. The target must make a Wisdom saving throw, taking {@damage 3d8} psychic damage on a failed save, or half as much damage on a successful one.  On a failed save, you psychically pin the target and link yourself to its mind. For the duration, you can use a bonus action to mentally twist the skewer, causing the creature to subtract 1d4 from the next saving throw it makes before the end of your next turn.",
+                "Additionally, you have perfect knowledge of the target's location as long as you are on the same plane of existence. The target can't be hidden from you and it gains no benefit from the invisible condition against you.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Can't be a good nuke because of diviniation subclass, but it can at least have a useful rider stolen from Mind Sliver in addition to the location/visibility ribbon."
+                    ]
+                }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -35445,16 +35803,17 @@
             ],
             "entries": [
                 "You conjure a phantom watchdog in an unoccupied space that you can see within range, where it remains for the duration, until you dismiss it as an action, or until you move more than 100 feet away from it.",
-                "The hound is {@condition invisible} to all creatures except you and can't be harmed. When a Small or larger creature comes within 30 feet of it without first speaking the password that you specify when you cast this spell, the hound starts barking loudly. The hound sees {@condition invisible} creatures and can see into the Ethereal Plane. It ignores illusions.",
-                "At the start of each of your turns, the hound can move up to 30 feet and attempt to bite one creature that is hostile to you. The hound's attack bonus is equal to your spellcasting ability modifier + your proficiency bonus. On a hit, it deals {@damage 4d8} piercing damage. The hound cannot move more than 100 feet from its initial location and moves back to its initial location when it is no longer in combat.",
+                "When you cast the spell, designate any number of creatures you can see as the sentry's allies. The sentry is invisible to everyone except its allies, and if any other creature of CR 1/4 or higher comes within 60 feet of it, it calls out an alarm. It can see invisible creatures, see into the Ethereal Plane, and cannot be deceived by illusions.",
+                "At the start of each of your turns, the hound can move up to 30 feet and attempt to bite one creature that is hostile to you. The hound's attack bonus is equal to your spell attack modifier. On a hit, it deals {@damage 4d8} piercing damage. The hound cannot move more than 100 feet from its initial location and moves back to its initial location when it is no longer in combat.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Allow the hound to move up to 30 feet before trying to bite a foe."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "piercing"
             ],
@@ -35940,7 +36299,145 @@
             ],
             "entries": [
                 "You send ribbons of negative energy at one creature you can see within range. Unless the target is undead, it must make a Constitution saving throw, taking {@damage 5d12} necrotic damage on a failed save, or half as much damage on a successful one. A target killed by this damage rises up as a {@creature zombie} at the start of your next turn. The zombie pursues whatever creature it can see that is closest to it. Statistics for the {@creature zombie} are in the Monster Manual.",
-                "If you target an undead with this spell, the target doesn't make a saving throw. Instead, roll {@dice 5d12}. The target gains half the total as temporary hit points."
+                "If you target an undead with this spell, the target doesn't make a saving throw. Instead, roll {@dice 5d12}. The target gains half the total as temporary hit points.",
+                {
+                    "type": "inset",
+                    "name": "Caius' Notes: Necromantic Drift",
+                    "entries": [
+                        "This unusual spell is actually the unfortunate fusion of two spells that had similar enough casting requirements to be combined in most spellbooks. I managed to find the unaltered version of both original spells in a lich's demense: {@spell necromantic storm} and {@spell necromantic infusion}."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "necrotic"
+            ],
+            "savingThrow": [
+                "constitution"
+            ],
+            "miscTags": [
+                "SGT",
+                "SMN",
+                "THP"
+            ],
+            "areaTags": [
+                "ST"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Warlock",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Necromantic Infusion",
+            "source": "BREW",
+            "page": 163,
+            "level": 3,
+            "school": "N",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 60
+                }
+            },
+            "components": {
+                "v": true,
+                "m": "a handful of bone chips"
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You open a conduit to a plane of death, infusing one creature you can see within range with a jolt of negative energy. A living target must make a Constitution saving throw, suffering 5d8 necrotic damage on a failure or half as much on a success. An undead target receives 5d8 temporary hit points. While it has these temporary hit points, all its attacks have advantage.",
+                {
+                    "type": "inset",
+                    "name": "Caius' Notes: Necromantic Drift",
+                    "entries": [
+                        "This spell is 1/2 of the spells that were wrongly combined and relisted as 'Negative Energy Flood' in most wizarding manuals, along with {@spell necromantic storm}."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "necrotic"
+            ],
+            "savingThrow": [
+                "constitution"
+            ],
+            "miscTags": [
+                "SGT",
+                "SMN",
+                "THP"
+            ],
+            "areaTags": [
+                "ST"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Warlock",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Necromantic Storm",
+            "source": "BREW",
+            "page": 163,
+            "level": 5,
+            "school": "N",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 60
+                }
+            },
+            "components": {
+                "v": true,
+                "m": "tattered black slik"
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You tear a rift to a plane of death, summoning forth a flood of negative energy. Choose a point within 60 feet to open the rift. All non-undead creatures within 10 feet must make a Constitution saving throw, taking 6d8 necrotic damage on a failure or half as much on a success. If a creature is killed by this spell, the blast spreads, affecting a 10-foot radius around that creature as well. A creature cannot be damaged twice by the spell, and the spell ends after damaging 10 creatures.",
+                "If a humanoid dies from this spell, they rise as a zombie at the start of your next turn and attack the closest living creature. You can assert control over the zombies by casting animate dead as if you were reasserting control over zombies created with that spell. Statistics for a zombie are in the Monster Manual. At the DM's discretion, other creature types may rise as different undead.",
+                {
+                    "type": "inset",
+                    "name": "Caius' Notes: Necromantic Drift",
+                    "entries": [
+                        "This spell is 1/2 of the spells that were wrongly combined and relisted as 'Negative Energy Flood' in most wizarding manuals, along with {@spell necromantic infusion}."
+                    ]
+                }
             ],
             "damageInflict": [
                 "necrotic"
@@ -37046,8 +37543,17 @@
                 }
             ],
             "entries": [
-                "You tap into the nightmares of a creature you can see within range and create an illusory manifestation of its deepest fears, visible only to that creature. The target must make a Wisdom saving throw. On a failed save, the target becomes {@condition frightened} for the duration. At the end of each of the target's turns before the spell ends, the target must succeed on a Wisdom saving throw or take {@damage 4d10} psychic damage. On a successful save, the spell ends."
+                "You tap into the nightmares of a creature you can see within range and create an illusory manifestation of its deepest fears, visible only to that creature. The target must make a Wisdom saving throw. On a failed save, the target becomes {@condition frightened} for the duration and takes {@damage 4d10} psychic damage. On a successful one, it takes half damage and the spell ends.",
+                "At the end of each of the target's turns before the spell ends, the target must succeed on a Wisdom saving throw or take {@damage 4d10} psychic damage. On a successful save, it takes half damage and the spell ends.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Add a little starting damage and some ending damage even on successful saves so it's not souch a do-nothing 4th level spell against good saves."
+                    ]
+                }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -37778,12 +38284,19 @@
                 }
             ],
             "entries": [
-                "This spell transforms a creature that you can see within range into a new form. An unwilling creature must make a Wisdom saving throw to avoid the effect. The spell has no effect on a shapechanger or a creature with 0 hit points.",
-                "The transformation lasts for the duration, or until the target drops to 0 hit points or dies. The new form can be {@filter any beast|creature|type=beast|miscellaneous=!swarm} whose challenge rating is equal to or less than the target's (or the target's level, if it doesn't have a challenge rating). The target's game statistics, including mental ability scores, are replaced by the statistics of the chosen beast. It retains its alignment and personality.",
-                "The target assumes the hit points of its new form. When it reverts to its normal form, the creature returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn't reduce the creature's normal form to 0 hit points, it isn't knocked unconscious.",
-                "The creature is limited in the actions it can perform by the nature of its new form, and it can't speak, cast spells, or take any other action that requires hands or speech.",
-                "The target's gear melds into the new form. The creature can't activate, use, wield, or otherwise benefit from any of its equipment."
+                "This spell transforms a creature that you can see within range into a new form. An unwilling creature must make a Charisma saving throw to avoid the effect. The spell has no effect on a shapechanger or a creature with 0 hit points.",
+                "The transformation lasts for the duration, or until the target drops to 0 hit points. The new form can be any beast whose challenge rating is 4 or lower, and equal to or less than the target's CR or character level. The target's game statistics are replaced by the statistics of the chosen beast. It retains its alignment, personality, allegiances, and broad plan of action.",
+                "The target assumes the hit points of its new form. When it reverts to its normal form, the creature returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form.",
+                "The creature is limited in the actions it can perform by the nature of its new form, and it can't speak, cast spells, or take any other action that requires hands or speech. Its items meld into the new form, and the creature can't activate, use, wield, or otherwise benefit from any of it.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Nerf",
+                    "entries": [
+                        "This spell was just too strong when using Giant Ape on allies. Some of the baleful polymorph features have been improved, but CR is now capped at target or spell level, whichever is lower."
+                    ]
+                }
             ],
+            "change": "nerf",
             "savingThrow": [
                 "wisdom"
             ],
@@ -37962,12 +38475,13 @@
                 "Otherwise, the target must make a Wisdom save at the end of each of its turns for the duration, ending the spell on a success. On a failure it takes {@damage 5d10} psychic damage and if it then has 100 hit points or fewer, it dies.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Add an ongoing small damage effect for up to a minute in the case of failure, since it's so hard to know for sure when a creature has less than 100 HP."
                     ]
                 }
             ],
+            "change": "buff",
             "miscTags": [
                 "SGT"
             ],
@@ -38028,12 +38542,13 @@
                 "A target suffering this pain can make a Constitution saving throw at the end of each of its turns. On a successful save, the pain ends.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Increase health threshold from 100HP -> 150HP, since this effect is really no better than Power Word: Stun."
                     ]
                 }
             ],
+            "change": "buff",
             "savingThrow": [
                 "constitution"
             ],
@@ -38225,12 +38740,13 @@
                 "Up to six creatures of your choice that you can see within range each regain hit points equal to {@dice 2d10} + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Increase dice from d8s -> d10s, slightly improving out of combat healing."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -38674,12 +39190,13 @@
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Down to level 6, the randomness can spike it higher, but on average this is still a bit worse than Chain Lightning."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "acid",
                 "cold",
@@ -38771,35 +39288,35 @@
                     "type": "entries",
                     "name": "Red",
                     "entries": [
-                        "The creature takes {@damage 10d6} fire damage on a failed save, or half as much damage on a successful one. While this layer is in place, nonmagical ranged attacks can't pass through the wall. The layer can be destroyed by dealing at least 25 cold damage to it."
+                        "The creature takes {@damage 10d6} fire damage on a failed save, or half as much damage on a successful one. While this layer is in place, any non-magical object passed through the wall is incinerated. The layer can be destroyed by dealing at least 25 cold damage to it."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Orange",
                     "entries": [
-                        "The creature takes {@damage 10d6} acid damage on a failed save, or half as much damage on a successful one. While this layer is in place, magical ranged attacks can't pass through the wall. The layer is destroyed by a strong wind."
+                        "The creature takes {@damage 10d6} acid damage on a failed save, or half as much damage on a successful one. While this layer is in place, magical objects passed through the wall are transmuted to lead while the wall remains in place. The layer is destroyed by strong wind or pressure."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Yellow",
                     "entries": [
-                        "The creature takes {@damage 10d6} lightning damage on a failed save, or half as much damage on a successful one. This layer can be destroyed by dealing at least 60 force damage to it."
+                        "The creature takes {@damage 10d6} lightning damage on a failed save, or half as much damage on a successful one. While this layer is in place, magic (in the form of spells attacks or spell effects) passed through the wall is scattered off as rainbow light. This layer can be destroyed by dealing at least 60 force damage to it."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Green",
                     "entries": [
-                        "The creature takes {@damage 10d6} poison damage on a failed save, or half as much damage on a successful one. A {@spell passwall} spell, or another spell of equal or greater level that can open a portal on a solid surface, destroys this layer."
+                        "On a failed save, the creature is  blinded. It must then make a Wisdom saving throw at the start of its next turn. A successful save ends the blindness. If it fails that save, the creature is transported to another plane of the DM's choosing and is no longer  blinded. While this layer is in place, magic (in the form of conjuration or transportation magic) passed through the wall is scattered off as rainbow light. This layer is destroyed by a  dispel magic spell or a similar effect that can nullify magic."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Blue",
                     "entries": [
-                        "The creature takes {@damage 10d6} cold damage on a failed save, or half as much damage on a successful one. This layer can be destroyed by dealing at least 25 fire damage to it."
+                        "The creature takes {@damage 10d6} psychic damage on a failed save, or half as much damage on a successful one. This layer cannot be destroyed but can be bypassed if a person passing throughit truly *believes* they found a working solution."
                     ]
                 },
                 {
@@ -38812,17 +39329,25 @@
                 },
                 {
                     "type": "entries",
-                    "name": "Violet",
+                    "name": "Black",
                     "entries": [
-                        "On a failed save, the creature is {@condition blinded}. It must then make a Wisdom saving throw at the start of your next turn. A successful save ends the blindness. If it fails that save, the creature is transported to another plane of the DM's choosing and is no longer {@condition blinded}. (Typically, a creature that is on a plane that isn't its home plane is banished home, while other creatures are usually cast into the Astral or Ethereal planes.) This layer is destroyed by a {@spell dispel magic} spell or a similar spell of equal or higher level that can end spells and magical effects."
+                        "The creature takes {@damage 10d6} necrotic damage on a failed save, or half as much damage on a successful one. While this layer is in place, magic (in the form of healing or other beneficial effects) passed through the wall is scattered off as rainbow light. This layer can be destroyed by applying 25 HP of healing to it."
+                    ]
+                },
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Altered colors and effects slightly to make them correctly line up with the magical prism."
                     ]
                 }
             ],
+            "change": "change",
             "damageInflict": [
                 "acid",
-                "cold",
+                "necrotic",
                 "fire",
-                "force",
+                "psychic",
                 "lightning",
                 "poison"
             ],
@@ -39903,30 +40428,37 @@
                 }
             ],
             "entries": [
-                "Choose an area of nonmagical flame that you can see and that fits within a 5-foot cube within range. You can extinguish the fire in that area, and you create either fireworks or smoke when you do so.",
+                "You summon up a fiery explosion, creating fireworks, smoke, or heat. You may conjure the explosion at any point within 60 feet, but it will have added effect if you conjure it atop an existing nonmagical flame (extinguishing up to a 5' cube of flame). Choose one of the following effects:",
                 {
                     "type": "entries",
                     "name": "Fireworks",
                     "entries": [
-                        "The target explodes with a dazzling display of colors. Each creature within 10 feet of the target is {@condition blinded}.",
-                        "At the end of each of the target's turns, it can make a Constitution saving throw against the spell. On a success, the spell ends."
+                        "The create a dazzling display of colors. Every creature in a 10-foot radius must make a Constitution saving throw or be blinded until the end of your next turn. Creatures within 5 feet of the targeted location automatically fail this save.  If you target an existing flame, the radius is 20 feet."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Smoke",
                     "entries": [
-                        "Thick black smoke spreads out from the target in a 30-foot radius, moving around corners. The area of the smoke is heavily obscured. The smoke persists for 1 minute or until a strong wind disperses it."
+                        "You create a 15-foot-radius cloud of thick, oily smoke. It spreads around corners, and its area is heavily obscured. If you target an existing flame, the radius is 30 feet. The cloud lasts for 1 minute or until dispersed by a strong breeze."
+                    ]
+                },
+                {
+                    "type": "entries",
+                    "name": "Heat",
+                    "entries": [
+                        "You conjure a blast of intense heat, causing every creature in a 10-foot radius to make a Constitution saving throw. On a failure they take 3d6 fire damage, or half as much on a successful save. If you target an existing flame, the damage increases to 4d6."
                     ]
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Make blind effect ongoing (save to end) and increase the smoke cloud size to slighty improve it vs FOg Cloud."
+                        "Make spell usable without any starting fire, and grant better effects when used with a starting fire. Also give guaranteed 1 turn of blind on a very small radius."
                     ]
                 }
             ],
+            "change": "buff",
             "conditionInflict": [
                 "blinded"
             ],
@@ -40393,12 +40925,13 @@
                 "At the end of each of the target's turns, it can make a Constitution saving throw against the spell. On a success, the spell ends.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "No ranged spell attack, just a save after every turn. Also half damage form all weapon attacks, not just the goofy strength attacks thing."
                     ]
                 }
             ],
+            "change": "buff",
             "spellAttack": [
                 "R"
             ],
@@ -40625,15 +41158,16 @@
                 }
             ],
             "entries": [
-                "A ray of sickening greenish energy lashes out toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 2d8} poison damage and is{@condition poisoned} until the end of your next turn.",
+                "A ray of sickening greenish energy lashes out toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 2d8} poison damage and is {@condition poisoned} until the end of your next turn.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Remove save vs the one turn of poison if the ray hits."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -41471,12 +42005,13 @@
                 "A burst of cold energy emanates from you in a 30-foot cone. Each creature in that area must make a Constitution saving throw. On a failed save, a creature takes {@damage 4d8} cold damage and is hindered by ice formations for 1 minute, or until it or another creature within reach of it uses an action to break away the ice. A creature hindered by ice has its speed reduced to 0. On a successful save, a creature takes half as much damage and isn't hindered by ice.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damage up from 3d8 -> 4d8."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -42425,12 +42960,13 @@
                 "You can only be affected by one smite spell at a time.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Smite spells no longer use concentration, but only one can be used at a time."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -42570,12 +43106,13 @@
                 "You touch a creature and for the duration, that creature can see {@condition invisible} creatures and objects as if they were visible, and can see into the Ethereal Plane. Ethereal creatures and objects appear ghostly and translucent.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Touch targeting instead of self."
                     ]
                 }
             ],
+            "change": "buff",
             "classes": {
                 "fromClassList": [
                     {
@@ -43542,8 +44079,25 @@
                 }
             ],
             "entries": [
-                "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from {@spell magic missile}."
+                "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, to a maximum of 22 AC, including against the triggering attack, and you take no damage from {@spell magic missile}.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Nerf",
+                    "entries": [
+                        "Though fine for its primary use case, shield is super disruptive when combined with already high-AC builds. Added upscaling as well, though it's not super good."
+                    ]
+                }
             ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 3rd level or higher, the bonus to AC and maximum AC increases by 1 for every two slot levels above 1st (eg. when cast at 5th level, you have a +7 bonus to AC, to a maximum of 24 AC)."
+                    ]
+                }
+            ],
+            "change": "nerf",
             "miscTags": [
                 "MAC"
             ],
@@ -43856,12 +44410,13 @@
                 "The spell's damage increases by {@dice 1d8} when you reach 5th level ({@damage 2d8}), 11th level ({@damage 3d8}), and 17th level ({@damage 4d8}).",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Always get the 'disengage' option, even when you miss."
                     ]
                 }
             ],
+            "change": "buff",
             "scalingLevelDice": {
                 "label": "lightning damage",
                 "scaling": {
@@ -45125,12 +45680,13 @@
                 "A flurry of magic snowballs erupts from 3 points you choose within range. Each creature in a 5-foot-radius sphere centered on any of those 3 points must make a Dexterity saving throw. A creature takes {@damage 3d6} cold damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one snowball swarm is affected only once.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Now has three 5-foot areas of effect instead of one, kind of a sidegrade on shatter depending on arrangement of enemies."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -46333,12 +46889,13 @@
                 "You can only be affected by one smite spell at a time.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Smite spells no longer use concentration, but only one can be used at a time."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "psychic"
             ],
@@ -46439,12 +46996,13 @@
                 },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Allow melee *weapon* attack in addition to melee spell attack."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "force"
             ],
@@ -46512,12 +47070,13 @@
                 "A moderate wind (at least 10 miles per hour) disperses the cloud after 4 rounds. A strong wind (at least 20 miles per hour) disperses it after 1 round.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Increase radius by 5 feet and force save when starting turn or entering cloud like other similar effects."
                     ]
                 }
             ],
+            "change": "buff",
             "savingThrow": [
                 "constitution"
             ],
@@ -47009,17 +47568,19 @@
                 }
             ],
             "entries": [
-                "A 20-foot-radius sphere of whirling air springs into existence, centered on a point you choose within range. The sphere remains for the spell's duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take {@damage 4d6} bludgeoning damage. The sphere's space is difficult terrain.",
+                "A 20-foot-radius sphere of whirling air springs into existence, centered on a point you choose within range. The sphere remains for the spell's duration. The sphere remains for the spell's duration; at the beginning of each of your turns, you can move the sphere up to 10 feet in a direction of your choice.",
+                "Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take {@damage 4d6} bludgeoning damage. The sphere's space is difficult terrain.",
                 "Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes {@damage 4d6} lightning damage.",
                 "Creatures within 30 feet of the sphere have disadvantage on Wisdom ({@skill Perception}) checks made to listen.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
-                        "Initial appearance damage up from 2d6 -> 4d6, ongoing effect stays the same."
+                        "Initial appearance damage up from 2d6 -> 4d6, ongoing effect stays the same. Added ability to (very) slowly move the sphere to differentiate it somewhat from sickening radiance."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -50086,7 +50647,7 @@
                 }
             ],
             "range": {
-                "type": "point",
+                "type": "radius",
                 "distance": {
                     "type": "feet",
                     "amount": 5
@@ -50101,9 +50662,17 @@
                 }
             ],
             "entries": [
-                "You create a burst of thunderous sound that can be heard up to 100 feet away. Each creature within range, other than you, must make a Constitution saving throw or take {@damage 1d6} thunder damage.",
-                "The spell's damage increases by {@dice 1d6} when you reach 5th level ({@damage 2d6}), 11th level ({@damage 3d6}), and 17th level ({@damage 4d6})."
+                "You create a burst of cracking sound that can be heard up to 100 feet away. All other creatures within 5 feet of you must succeed on a Constitution saving throw or take 1d6 thunder damage and be deafened until the end of their next turn.",
+                "The spell's damage increases by {@dice 1d6} when you reach 5th level ({@damage 2d6}), 11th level ({@damage 3d6}), and 17th level ({@damage 4d6}).",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Updated the wording to match Sword Burst and added a little deafness rider."
+                    ]
+                }
             ],
+            "change": "change",
             "scalingLevelDice": {
                 "label": "thunder damage",
                 "scaling": {
@@ -50194,12 +50763,13 @@
                 "You can only be affected by one smite spell at a time.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Smite spells no longer use concentration, but only one can be used at a time."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "thunder"
             ],
@@ -50494,12 +51064,13 @@
                 "You conjure up a wave of water that crashes down on an area within range. The area can be up to 30 feet long, up to 10 feet wide, and up to 10 feet tall. Each creature in that area must make a Dexterity saving throw. On a failed save, a creature takes {@damage 5d8} bludgeoning damage and is knocked {@condition prone}. On a successful save, a creature takes half as much damage and isn't knocked {@condition prone}. The water then spreads out across the ground in all directions, extinguishing unprotected flames in its area and within 30 feet of it, and then it vanishes.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Dame up from 4d8 -> 5d8, still worse than fireball and lightning bolt, but prone plus weirder area are commensurate."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "bludgeoning"
             ],
@@ -51441,12 +52012,13 @@
                 "You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target's defenses. You gain advantage on your first attack roll against the target, provided that this spell hasn't ended.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Remove contentration and increase duration until the attack to 1 minute."
                     ]
                 }
             ],
+            "change": "buff",
             "areaTags": [
                 "ST"
             ],
@@ -51488,7 +52060,7 @@
             "time": [
                 {
                     "number": 1,
-                    "unit": "minute"
+                    "unit": "action"
                 }
             ],
             "range": {
@@ -51512,11 +52084,19 @@
                 }
             ],
             "entries": [
-                "A wall of water springs into existence at a point you choose within range. You can make the wall up to 300 feet long, 300 feet high, and 50 feet thick. The wall lasts for the duration.",
+                "You create a giant, overwhelming wave at a point you choose within range, summoning a 50 foot long, 50 foot high, 10 foot thick wall of water. You can increase the casting time when casting the spell up to a maximum of 6 rounds; each round increases the wall's size by 50 feet in length and height, and 10 feet in thickness (up to a maximum of 300 feet long, 300 feet high, and 50 feet thick). The wall lasts for the duration.",
                 "When the wall appears, each creature within its area must make a Strength saving throw. On a failed save, a creature takes {@damage 6d10} bludgeoning damage, or half as much damage on a successful save.",
-                "At the start of each of your turns after the wall appears, the wall, along with any creatures in it, moves 50 feet away from you. Any Huge or smaller creature inside the wall or whose space the wall enters when it moves must succeed on a Strength saving throw or take {@damage 5d10} bludgeoning damage. A creature can take this damage only once per round. At the end of the turn, the wall's height is reduced by 50 feet, and the damage creatures take from the spell on subsequent rounds is reduced by {@dice 1d10}. When the wall reaches 0 feet in height, the spell ends.",
-                "A creature caught in the wall can move by swimming. Because of the force of the wave, though, the creature must make a successful Strength ({@skill Athletics}) check against your spell save DC in order to move at all. If it fails the check, it can't move. A creature that moves out of the area falls to the ground."
+                "At the start of each of your turns after the wall appears, the wall, along with any creatures in it, moves 50 feet along the ground in a direction of your choice. Any Huge or smaller creature inside the wall or whose space the wall enters when it moves must succeed on a Strength saving throw or take 5d10 bludgeoning damage. A creature can take this damage only once per round. At the end of the turn, the wall's height is reduced by 50 feet, and the damage creatures take from the spell on subsequent rounds is reduced by 1d10. When the wall reaches 0 feet in height, the spell ends.",
+                "A creature caught in the wall can move by swimming. Because of the force of the wave, though, the creature must make a successful Strength ({@skill Athletics}) check against your spell save DC in order to move at all. If it fails the check, it can't move. A creature that moves out of the area falls to the ground.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "This was just a weird narrative destruction spell, not it can be scaled up with time and attention to be useful in combat or other smaller scale destructive scenarios."
+                    ]
+                }
             ],
+            "change": "buff",
             "damageInflict": [
                 "bludgeoning"
             ],
@@ -51723,9 +52303,140 @@
                 "The touch of your shadow-wreathed hand can siphon life force from others to heal your wounds. Make a melee spell attack against a creature within your reach. On a hit, the target takes {@damage 4d6} necrotic damage, and you regain hit points equal to half the amount of necrotic damage dealt. Until the spell ends, you can make the attack again on each of your turns as an action.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Damage up from 3d6 -> 4d6."
+                    ]
+                }
+            ],
+            "change": "buff",
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@damage 1d6} for each slot level above 3rd."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "necrotic"
+            ],
+            "spellAttack": [
+                "M"
+            ],
+            "miscTags": [
+                "HL"
+            ],
+            "areaTags": [
+                "ST"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Warlock",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ],
+                "fromSubclass": [
+                    {
+                        "class": {
+                            "name": "Cleric",
+                            "source": "PHB"
+                        },
+                        "subclass": {
+                            "name": "Death",
+                            "source": "DMG"
+                        }
+                    },
+                    {
+                        "class": {
+                            "name": "Cleric",
+                            "source": "PHB"
+                        },
+                        "subclass": {
+                            "name": "Grave (UA)",
+                            "source": "UAClericDivineDomains"
+                        }
+                    },
+                    {
+                        "class": {
+                            "name": "Cleric",
+                            "source": "PHB"
+                        },
+                        "subclass": {
+                            "name": "Ambition (PSA)",
+                            "source": "PSA"
+                        }
+                    },
+                    {
+                        "class": {
+                            "name": "Cleric",
+                            "source": "PHB"
+                        },
+                        "subclass": {
+                            "name": "Grave",
+                            "source": "XGE"
+                        }
+                    }
+                ],
+                "fromClassListVariant": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB",
+                        "definedInSource": "UAClassFeatureVariants"
+                    },
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB",
+                        "definedInSource": "TCE"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Life Drain",
+            "source": "PHB",
+            "page": 285,
+            "srd": true,
+            "level": 3,
+            "school": "N",
+            "subschools": [
+                "hemomancy"
+            ],
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 20
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You send tendrils of necrotic energy out, sucking the life essence from your foes. Select up to three creatures within range. Make a ranged spell attack against each of them, dealing 3d6 necrotic damage on a hit. You regain hit points equal to half the damage dealt.",
+                {
+                    "type": "inset",
+                    "name": "Caius' Notes: Vampiric Touch",
+                    "entries": [
+                        "This spell is actually an ancient version of the vampiric touch spell with a much more sinister invocation used for a weaker, but more immediate effect. Against field of foes, this spell can make a necromancer even more fearsome."
                     ]
                 }
             ],
@@ -52246,8 +52957,16 @@
             ],
             "entries": [
                 "An invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick. It lasts for the duration. If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (your choice which side).",
-                "Nothing can physically pass through the wall. It is immune to all damage and can't be dispelled by {@spell dispel magic}. A {@spell disintegrate} spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane, blocking ethereal travel through the wall."
+                "Nothing can physically pass through the wall. Each panel has an AC of 10 + the spell's level (15), and has 20 hit points per level of spell (100). The wall can't be dispelled by {@spell dispel magic}, and is immune to psychic and nonmagical bludgeoning, piercing, and slashing damage. A {@spell disintegrate} spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane, blocking ethereal travel through the wall.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Nerf",
+                    "entries": [
+                        "Flat too strong. Debateably still too strong at 8th or even 9th level. Wall segments can now be destroyed by damage. Wall and burn is not a fun or interesting thing to do in battles for players or enemies."
+                    ]
+                }
             ],
+            "change": "nerf",
             "damageImmune": [
                 "force"
             ],
@@ -52464,12 +53183,13 @@
                 "Until the spell ends, you can use an action to launch a beam of radiance from the wall at one creature you can see within 60 feet of it. Make a ranged spell attack. On a hit, the target takes {@damage 4d8} radiant damage and is {@condition blinded} for 1 round. Whether you hit or miss, reduce the length of the wall by 10 feet. If the wall's length drops to 0 feet, the spell ends.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Change the blinded effect from an ongoing 1 minute effect with saves to a 1 round effect that occurs every time a creature is hit by the wall."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -52566,12 +53286,13 @@
                 "You create a wall of swirling sand on the ground at a point you can see within range. You can make the wall up to 30 feet long, 10 feet high, and 10 feet thick, and it vanishes when the spell ends. It blocks line of sight but not movement. A creature is {@condition blinded} while in the wall's space and must spend 4 feet of movement for every 1 foot it moves there.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Increase difficult movement from 3:1 to 4:1 so that a creature usually can't get all teh way through and still have a turn left."
                     ]
                 }
             ],
+            "change": "buff",
             "conditionInflict": [
                 "blinded"
             ],
@@ -52862,12 +53583,13 @@
                 "Any ranged weapon attack that enters the wall's space has disadvantage on the attack roll, and fire damage is halved if the fire effect passes through the wall to reach its target. Spells that deal cold damage that pass through the wall cause the area of the wall they pass through to freeze solid (at least a 5-foot-square section is frozen). Each 5-foot-square frozen section has AC 5 and 15 hit points. Reducing a frozen section to 0 hit points destroys it. When a section is destroyed, the wall's water doesn't fill it.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Down from level 3 -> level 2. Still a pretty bad spell most of the time, but the cold spell combo potential is cute."
                     ]
                 }
             ],
+            "change": "buff",
             "miscTags": [
                 "SGT"
             ],
@@ -53703,12 +54425,13 @@
                 "Drawing on the deepest fears of a group of creatures, you create illusory creatures in their minds, visible only to them. Each creature in a 30-foot-radius sphere centered on a point of your choice within range must make a Wisdom saving throw. On a failed save, a creature becomes {@condition frightened} for the duration. The illusion calls on the creature's deepest fears, manifesting its worst nightmares as an implacable threat. At the end of each of the {@condition frightened} creature's turns, it must succeed on a Wisdom saving throw or take {@damage 8d10} psychic damage. On a successful save, the spell ends for that creature.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "No longer requires concentration, damage increased from 4d10 -> 8d10. Still so bad for 9th level."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "psychic"
             ],
@@ -53922,12 +54645,13 @@
                 "The strong wind keeps fog, smoke, and other gases at bay. Small or smaller flying creatures or objects can't pass through the wall. Loose, lightweight materials brought into the wall fly upward. Arrows, bolts, and other ordinary projectiles launched at targets behind the wall are deflected upward and automatically miss. (Boulders hurled by giants or siege engines, and similar projectiles, are unaffected.) Creatures in gaseous form can't pass through it.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Down from level 3 -> level 2, let rangers have some wall fun at an earlier level."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "bludgeoning"
             ],
@@ -54166,12 +54890,13 @@
                 "A beam of crackling, blue energy lances out toward a creature within range, forming a sustained arc of lightning between you and the target. Make a ranged spell attack against that creature. On a hit, the target takes {@damage 1d8} lightning damage, and on each of your turns for the duration, you can use your bonus action to deal {@damage 1d8} lightning damage to the target automatically. The spell ends if you do not use your bonus action to do this damage, or if you cast another leveled spell with your action. The spell also ends if the target ever has total cover from you or moves more than 60 feet away from you.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Descrease initial and ongoing damage from 1d12 -> 1d8, but use bonus action to keep lightning going and scale both inital and ongoing damage with d8s."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -54241,12 +54966,13 @@
                 "In addition, one creature of your choice in that area regains hit points equal to {@damage 2d8} plus your spellcasting ability modifier.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Increase damage from 2d6 -> 2d8, change damage effect from a hit die to a flat 2d8 heal."
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -54529,12 +55255,13 @@
                 "You can only be affected by one smite spell at a time.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff - ",
+                    "name": "DM Note: Buff",
                     "entries": [
                         "Smite spells no longer use concentration, but only one can be used at a time."
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "psychic"
             ],
