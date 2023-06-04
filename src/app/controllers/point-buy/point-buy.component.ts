@@ -9,7 +9,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 interface Stat {
   name: string,
-  value: number
+  value: number,
+  topChosen?: boolean,
+  botChosen?: boolean
 }
 
 @Component({
@@ -34,12 +36,12 @@ export class PointBuyComponent implements OnInit {
 
   // stats start at 8 by default
   stats: Array<Stat> = [
-    {name: "str", value: 8},
-    {name: "dex", value: 8},
-    {name: "con", value: 8},
-    {name: "int", value: 8},
-    {name: "wis", value: 8},
-    {name: "cha", value: 8},
+    {name: "str", value: 8, topChosen: false, botChosen: false},
+    {name: "dex", value: 8, topChosen: false, botChosen: false},
+    {name: "con", value: 8, topChosen: false, botChosen: false},
+    {name: "int", value: 8, topChosen: false, botChosen: false},
+    {name: "wis", value: 8, topChosen: false, botChosen: false},
+    {name: "cha", value: 8, topChosen: false, botChosen: false},
   ]
 
   // storage for ancestry related boosts
@@ -54,7 +56,8 @@ export class PointBuyComponent implements OnInit {
 
   //starting values and store for races where you choose stat bonuses
   anChoose: number = 0;
-  choose: number = 0;
+  choose: number = 3;
+  pickTwo: boolean = false;
 
   constructor(private http: HttpClient,
     private fb: FormBuilder,
@@ -98,7 +101,7 @@ export class PointBuyComponent implements OnInit {
       for (let anStat of this.ancestryStats) {
         ancestry[anStat.name] ? anStat.value = ancestry[anStat.name] : anStat.value = 0;
       }
-      ancestry.choose ? this.choose = ancestry.choose : this.choose = 0;
+      ancestry.choose ? this.choose = ancestry.choose : this.choose = 3;
     }
   }
 
