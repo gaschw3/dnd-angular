@@ -4,7 +4,7 @@ import { Ancestry } from '../../models/ancestry';
 
 import { Subject, Observable } from "rxjs";
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 
 
 interface Stat {
@@ -21,7 +21,7 @@ interface Stat {
 })
 export class PointBuyComponent implements OnInit {
 
-  ancestryForm: FormGroup;
+  ancestryForm: UntypedFormGroup;
 
   ancestries: Ancestry[];
   selectedAncestry: Ancestry;
@@ -60,7 +60,7 @@ export class PointBuyComponent implements OnInit {
   pickTwo: boolean = false;
 
   constructor(private http: HttpClient,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     public helper: HelperService) { this.updatePercentage();}
 
   ngOnInit() {

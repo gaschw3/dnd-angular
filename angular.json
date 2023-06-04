@@ -160,8 +160,7 @@
 				}
 			}
 		}
-	},
-	"defaultProject": "dnd-angular",
+  },
 	"cli": {
 		"analytics": false
 	}
