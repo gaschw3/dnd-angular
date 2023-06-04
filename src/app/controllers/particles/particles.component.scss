@@ -34,11 +34,11 @@ body {
     $random-y: random(1000) * 0.1vh;
     $random-offset: random_range(-100, 100) * 0.1vw;
     $random-x-end: $random-x + $random-offset;
-    $random-x-end-yoyo: $random-x + ($random-offset / 2);
-    $random-yoyo-time: random_range(5, 8) / 10;
+    $random-x-end-yoyo: $random-x + calc($random-offset / 2);
+    $random-yoyo-time: calc(random_range(5, 8) / 10);
     $random-yoyo-y: $random-yoyo-time * 100vh;
     $random-scale: random(25) * 0.1;
-    $random-scale-wave: 1+ (1 / random(10));
+    $random-scale-wave: 1+ calc(1 / random(10));
     $fall-duration: random_range(5, 15) * 1s;
     $fall-delay: random(10) * .1;
     $ember-duration: random_range(8, 15) * 1s;

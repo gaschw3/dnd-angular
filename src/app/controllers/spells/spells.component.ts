@@ -33,7 +33,7 @@ export class SpellsComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
-  dtTrigger: Subject<any> = new Subject();
+  dtTrigger: Subject<void> = new Subject();
 
   ngOnInit(): void {
     let route = this.route.queryParams;

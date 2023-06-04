@@ -14,7 +14,6 @@ import { PointBuyModule } from './controllers/point-buy/point-buy.module';
 import { SharedModule } from './shared/shared.module';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParticlesComponent } from './controllers/particles/particles.component';
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
@@ -47,8 +46,7 @@ import { SpellbookComponent } from './controllers/spellbook/spellbook.component'
     AncestriesModule,
     PointBuyModule,
     OtherFeaturesModule,
-    NgxScrollTopModule,
-    NgxSliderModule
+    NgxScrollTopModule
   ],
   exports: [],
   providers: [],
