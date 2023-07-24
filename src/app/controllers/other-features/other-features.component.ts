@@ -7,6 +7,7 @@ import { Observable, Subject } from 'rxjs';
 import { FeatureComponent } from './feature/feature.component';
 import { featureType, OtherFeature, Prerequisite } from 'src/app/models/otherFeature';
 import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 
 @Component({
   selector: 'app-other-features',
@@ -38,7 +39,7 @@ export class OtherFeaturesComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -101,7 +102,7 @@ export class OtherFeaturesComponent implements OnInit {
           }
         });
         setTimeout(() => {
-          this.dtTrigger.next();
+          this.dtTrigger.next(this.dtOptions);
         });
     });
   }
@@ -135,7 +136,7 @@ export class OtherFeaturesComponent implements OnInit {
     this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
       // Destroy and redraw table with new filtered items
       dtInstance.destroy();
-      this.dtTrigger.next();
+      this.dtTrigger.next(this.dtOptions);
     });
   }
 

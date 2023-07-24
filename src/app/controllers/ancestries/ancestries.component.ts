@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { AncestryComponent } from './ancestry/ancestry.component';
 import { Ancestry } from 'src/app/models/ancestry';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 
 @Component({
   selector: 'app-ancestries',
@@ -32,7 +33,7 @@ export class AncestriesComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -82,7 +83,7 @@ export class AncestriesComponent implements OnInit {
         this.currAncestry = this.ancestries.find(f => f.id == this.route.snapshot.params.ancestryName);
       });
       setTimeout(() => {
-        this.dtTrigger.next();
+        this.dtTrigger.next(this.dtOptions);
       });
     });
   }

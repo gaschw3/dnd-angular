@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { DataTableDirective } from 'angular-datatables';
 import { ActivatedRoute } from '@angular/router';
 import { ClassComponent } from './class/class.component';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 
 @Component({
   selector: 'app-classes',
@@ -32,7 +33,7 @@ export class ClassesComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -66,7 +67,7 @@ export class ClassesComponent implements OnInit {
           this.currClass = this.classes.find(f => f.id == this.route.snapshot.params.className);
         });
         setTimeout(() => {
-          this.dtTrigger.next();
+          this.dtTrigger.next(this.dtOptions);
         });
     });
   }

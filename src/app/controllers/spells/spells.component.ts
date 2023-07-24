@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SpellComponent } from './spell/spell.component';
 import { DataTableDirective } from 'angular-datatables';
 import { Spell } from 'src/app/models/spell';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 
 @Component({
   selector: 'app-spells',
@@ -33,7 +34,7 @@ export class SpellsComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
     let route = this.route.queryParams;
@@ -96,7 +97,7 @@ export class SpellsComponent implements OnInit {
         this.currSpell = this.spells.find(f => f.id == this.route.snapshot.params.spellName);
       });
       setTimeout(() => {
-        this.dtTrigger.next();
+        this.dtTrigger.next(this.dtOptions);
       });
     });
   }

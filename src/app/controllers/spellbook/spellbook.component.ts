@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataTableDirective } from 'angular-datatables';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 import { forkJoin, Observable, Subject } from 'rxjs';
 
 import { Class, Spell } from 'src/app/models';
@@ -46,7 +47,7 @@ export class SpellbookComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -116,13 +117,13 @@ export class SpellbookComponent implements OnInit, AfterViewInit, OnDestroy {
         this.setSubclassOptions();
         this.setClassSpellList();
         setTimeout(() => {
-          this.dtTrigger.next();
+          this.dtTrigger.next(this.dtOptions);
         });
     });
   }
 
   ngAfterViewInit(): void {
-    this.dtTrigger.next();
+    this.dtTrigger.next(this.dtOptions);
   }
 
   ngOnDestroy(): void {
@@ -155,7 +156,7 @@ export class SpellbookComponent implements OnInit, AfterViewInit, OnDestroy {
       // This causes an annoying screen flash, but I can't find any other way to do it that works
       // ideally I'd 'pause' rendering, finish this, then actually redraw the screen but I can't figure out if that easily possible
       dtInstance.destroy(false);
-      this.dtTrigger.next();
+      this.dtTrigger.next(this.dtOptions);
     });
   }
 

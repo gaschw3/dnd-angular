@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { FeatComponent } from './feat/feat.component';
 import { Feat } from 'src/app/models/feat';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 
 @Component({
   selector: 'app-feats',
@@ -32,7 +33,7 @@ export class FeatsComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions: {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -87,7 +88,7 @@ export class FeatsComponent implements OnInit {
         this.currFeat = this.feats.find(f => f.id == this.route.snapshot.params.featName);
       });
       setTimeout(() => {
-        this.dtTrigger.next();
+        this.dtTrigger.next(this.dtOptions);
       });
     });
   }

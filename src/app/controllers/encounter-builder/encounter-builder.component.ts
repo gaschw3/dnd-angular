@@ -8,6 +8,7 @@ import { Monster } from 'src/app/models';
 import { HelperService } from '../../shared/helpers/helper.service';
 import { crXpMap, levelXp } from 'src/app/shared/helpers/monster/experienceMaps';
 import { ActivatedRoute } from '@angular/router';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 
 @Component({
   selector: 'app-encounter-builder',
@@ -58,7 +59,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
 
@@ -134,7 +135,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
     this.getJSON().subscribe(beastiary => {
         this.monsters = beastiary.monsters.filter(f => f.cr !== "N/A");
         setTimeout(() => {
-          this.dtTrigger.next();
+          this.dtTrigger.next(this.dtOptions);
         });
     });
     this.recalcPartyDifficulty();

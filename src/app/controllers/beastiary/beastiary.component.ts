@@ -8,6 +8,7 @@ import { MonsterComponent } from './monster/monster.component';
 import { DataTableDirective } from 'angular-datatables';
 import { Monster } from 'src/app/models/monster';
 import { sizeMap } from 'src/app/shared/helpers/monster/sizeMap';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 
 @Component({
   selector: 'app-beastiary',
@@ -34,7 +35,7 @@ export class BeastiaryComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -91,7 +92,7 @@ export class BeastiaryComponent implements OnInit {
           this.currMonster = this.monsters.find(f => f.id == this.route.snapshot.params.monsterName);
         });
         setTimeout(() => {
-          this.dtTrigger.next();
+          this.dtTrigger.next(this.dtOptions);
         });
     });
   }

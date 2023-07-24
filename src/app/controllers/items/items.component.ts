@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Item } from 'src/app/models/item';
 import { ItemComponent } from './item/item.component';
 import { typeTable } from '../../shared/itemTypes';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 
 @Component({
   selector: 'app-items',
@@ -39,7 +40,7 @@ export class ItemsComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions: {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -100,7 +101,7 @@ export class ItemsComponent implements OnInit {
         this.currItem = this.items.find(f => f.id == this.route.snapshot.params.itemName);
       });
       setTimeout(() => {
-        this.dtTrigger.next();
+        this.dtTrigger.next(this.dtOptions);
       });
     });
   }
@@ -134,7 +135,7 @@ export class ItemsComponent implements OnInit {
         // Destroy the table first
         dtInstance.destroy();
         // Call the dtTrigger to rerender again
-        this.dtTrigger.next();
+        this.dtTrigger.next(this.dtOptions);
       });
       this.selected = choice;
     }

@@ -7,6 +7,7 @@ import { DataTableDirective } from 'angular-datatables';
 import { ActivatedRoute } from '@angular/router';
 import { BackgroundComponent } from './background/background.component';
 import { Background } from 'src/app/models/background';
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 
 @Component({
   selector: 'app-backgrounds',
@@ -32,7 +33,7 @@ export class BackgroundsComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private dtElement: DataTableDirective;
   dtOptions:  {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -86,7 +87,7 @@ export class BackgroundsComponent implements OnInit {
           this.currBackground = this.backgrounds.find(f => f.id == this.route.snapshot.params.backgroundName);
         });
         setTimeout(() => {
-          this.dtTrigger.next();
+          this.dtTrigger.next(this.dtOptions);
         });
     });
   }
