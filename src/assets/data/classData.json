@@ -800,7 +800,7 @@
     "name": "Barbarian",
     "id": "barbarian",
     "source": "PHB",
-    "description": "Primal warriors defined by an unquenchable and unthinking rage. They use their battle fury to improve reflexes, gain resilience, and perform extraordinary feats of strength.",
+    "description": "Primal warriors defined by an unquenchable rage. They use their battle fury to improve reflexes, gain resilience, and perform extraordinary feats of strength.",
     "hd": "12",
     "stat": "CON",
     "proficiencies": {
@@ -2152,7 +2152,7 @@
         "name": "spheres-requiem",
         "title": "College of Spheres: Sanity's Requiem",
         "text": [
-          "Beginning at 6th level, and creature that inflicts psychic damage or tries to read your thoughts or control your actions finds their mind recoiling from the strange patterns of your own. They must make a save against your bard spell save DC or take damage equal to 1 roll of your Bardic Inspiration die.",
+          "Beginning at 6th level, and creature that inflicts psychic damage or tries to read your thoughts or control your actions finds their mind recoiling from the strange patterns of your own. They must make a save against your bard spell save DC or take damage equal to two rolls of your Bardic Inspiration die.",
           "In addition, when you deal psychic damage to another creature you add your CHA modifier to the damage dealt."
         ]
       },
@@ -2314,9 +2314,8 @@
         "title": "College of Spheres: Incomprehensible Aesthetic",
         "text": [
           "At 14th level, your soul warps past the point of mortal understanding. The artist becomes the subject and you are considered an aberration in addition to your other creature type(s).",
-          "You may use your reaction to offer a true glimpse of your hidden self to a creature that targets you with an spell or weapon attack. They must immediately make a Wisdom save as if they had tried to read your thoughts. Creatures that fail the save and were unaware of your true nature are frightened until the end of their next turn.",
-          "Aberrations are charmed rather than frightened.",
-          "You can use this feature a number of times per day equal to your proficiency bonus and regain all expended uses on a long rest"
+          "You may use your reaction to offer a true glimpse of your hidden self to a creature that targets you with an spell or weapon attack. They must immediately make a Wisdom save as if they had tried to read your thoughts. Creatures that fail the save and were unaware of your true nature are frightened until the end of their next turn. Aberrations are charmed rather than frightened.",
+          "Once Incomprehensible Aesthetic has been used on a target, that target is immune to it for the next 24 hours. You can use this feature a number of times per day equal to your proficiency bonus and regain all expended uses on a long rest"
         ]
       },
       {
@@ -2379,7 +2378,7 @@
     "name": "Cleric",
     "id": "cleric",
     "source": "PHB",
-    "description": "Divine casters defined by their powerful spells and devotion to a deity. Clerics use the power of their god to heal friends, fight undead, and smite foes.",
+    "description": "Divine casters defined by their powerful spells and devotion to a deity. Clerics use the power of their god to help allies and destroy foes.",
     "hd": "8",
     "stat": "WIS",
     "proficiencies": {
@@ -4931,7 +4930,7 @@
         "title": "Archetype: Commander",
         "source": "BREW",
         "text": [
-          "Also known as warlords, sergeants, or ----, commanders are leaders on the battlefield, commanding and inspiring their allies through their heroism. Commanders are not generals who sit and command from afar, they command from the front, fighting alongside their soldiers and allies in the midst of battle."
+          "Also known as warlords, sergeants, or bannerets, commanders are leaders on the battlefield, commanding and inspiring their allies through their heroism. Commanders are not generals who sit and command from afar, they command from the front, fighting alongside their soldiers and allies in the midst of battle."
         ]
       },
       {
