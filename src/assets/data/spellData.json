@@ -12832,11 +12832,11 @@
                     "items": [
                         "Hold the doll still, causing the creature to be {@condition Restrained} until start of your next turn.",
                         "Force the doll to move, causing the creature to move 15 feet in a direction of your choice that it can move.",
-                        "Stab the doll, causing the creature take {@damage 4d6} piercing damage.",
+                        "Stab the doll, causing the creature take {@damage 3d6} piercing damage.",
                         "Rip the doll in half, ending the spell, destroying the doll, and dealing {@damage 4d12} necrotic damage to the creature."
                     ]
                 },
-                "Each time after the first you use an action to manipulate the doll, after the effect takes place, the creature can repeat the Charisma with disadvantage, ending the effect on a successful save.",
+                "Each time after the first you use an action to manipulate the doll the creature can repeat the Charisma saving throw with disadvantage, ending the effect on a successful save.",
                 "Once a creature has been targeted by this spell, they cannot be targeted again for 24 hours."
             ],
             "entriesHigherLevel": [
@@ -12844,7 +12844,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When cast with a 5th level spell slot or above, the range of the spell becomes unlimited, as long as the target is on the same plane as the caster."
+                        "When cast with a 6th level spell slot or above, the range of the spell becomes unlimited, as long as the target is on the same plane as the caster."
                     ]
                 }
             ],
@@ -27441,7 +27441,7 @@
                 }
             ],
             "entries": [
-                "You place a helpful boon on a creature that you can see within range. Until the spell ends, whenever the target hits with an attack or casts a spell of 1st level or higher they regain 1d6 hit points.",
+                "You place a helpful boon on a creature that you can see within range. Until the spell ends, whenever the target uses an attack action or casts a spell of 1st level or higher they regain 1d6 hit points.",
                 "If the target drops to 0 hit points before this spell ends, You can use a bonus action on a subsequent turn of yours to move the boon to a new creature.",
                 "A {@spell hex} cast on the target ends this spell early."
             ],
