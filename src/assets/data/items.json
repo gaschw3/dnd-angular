@@ -140,7 +140,7 @@
             "Uncommon",
             "2d6 * 10 gp",
             "70 gp",
-            "50-90 gp",
+            "50 - 90 gp",
             "20 - 120 gp"
           ],
           [
@@ -197,6 +197,107 @@
           [
             "Common",
             "black sapphire, star ruby or emerald, jacinth, diamond"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Art Objects",
+    "id": "art-objects",
+    "source": "PHB",
+    "type": "$",
+    "rarity": "varies",
+    "entries": [
+      "A valuable is an object or collection of objects the heroes can sell in a civilized location. Unlike equipment, which sells for half its purchase price, valuables don't lose any value when they're sold. There are three types of valuables: trade goods, gemstones, and art objects.",
+      "Art objects are crafted items prized for their aesthetic or intrinsic value. Art objects can be functional items, but their materials, workmanship, or historical or religious significance enhance their value. They can also include ceremonial items and pure artistic creations. Art objects include tableware, musical instruments, clothing, containers, arms and armor, manuscripts, ceremonial objects, fine arts, and so on. Even entirely mundane items — a wooden cup, for example — might qualify as an art object if it's got special historical, religious, or archaeological significance.",
+      "An inferior valuable's worth less than similar treasures of their kind and rarity. Inferior art objects might be worn, damaged, made of low-quality materials, or with poor workmanship, or they might have negative historical or religious associations. Superior valuables are just the opposite. Compared to similar items of their rarity, they're exceptionally valuable.",
+      {
+        "type": "table",
+        "caption": "Art Object Valuation",
+        "colLabels": [
+          "Rarity",
+          "Value",
+          "Avg. Appraise",
+          "Tight Appraise",
+          "Loose Appraise"
+        ],
+        "colStyles": [
+          "col-2",
+          "col-2",
+          "col-2",
+          "col-2",
+          "col-2"
+        ],
+        "rows": [
+          [
+            "Common",
+            "3d6 * 10 gp",
+            "100 gp",
+            "80 - 130 gp",
+            "30 - 180 gp"
+          ],
+          [
+            "Uncommon",
+            "3d6 * 50 gp",
+            "500 gp",
+            "400 - 650 gp",
+            "150 - 900 gp"
+          ],
+          [
+            "Rare",
+            "3d6 * 100 gp",
+            "1000 gp",
+            "800 - 1300 gp",
+            "300 - 1800 gp"
+          ],
+          [
+            "Very Rare",
+            "3d6 * 500 gp",
+            "5000 gp",
+            "4000 - 6500 gp",
+            "1500 - 9000 gp"
+          ],
+          [
+            "Legendary",
+            "3d6 * 1000 gp",
+            "10000 gp",
+            "8000 - 13000 gp",
+            "3000 - 18000 gp"
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Example Art Objects",
+        "colLabels": [
+          "Rarity",
+          "Example"
+        ],
+        "colStyles": [
+          "col-2",
+          "col-10"
+        ],
+        "rows": [
+          [
+            "Common",
+            "normal materials with normal embellishments; cardved bone or ivory items, finely wrought silver of gold with little embellishment, velvet or silk inlaid with common gems"
+          ],
+          [
+            "Uncommon",
+            "larger pieces or those using uncommon embellishments or materials; tapestries, precious metal items with stone inlays, weapons with ornamented hilts or hafts, exquisite instruments, solid gold items"
+          ],
+          [
+            "Rare",
+            "rare materials or rare embellishments; ceremonial armor with rare gems, stylized gold tableware inlaid with opals, masterpiece paintings, embroidered silk or velvet with monstones"
+          ],
+          [
+            "Very Rare",
+            "rare materials and embellishemnts or unusual components; platinum bracelet set, string of perfect pearls, gold and ruby music box, electum or mithral jewelery, "
+          ],
+          [
+            "Legendary",
+            "extremely rare materials or embellishemnts with unusual components; solid gold jewelery box with platinum filigree, jeweled golden crown, exquisitely painted child's sarcophagus, obsidian game board with diamond playing pieces"
           ]
         ]
       }
@@ -395,7 +496,7 @@
   },
   {
     "name": "Shackles - Ring of the Lone Captain",
-    "id": "riong-of-the-lone-captain",
+    "id": "ring-of-the-lone-captain",
     "source": "BREW",
     "type": "RG",
     "tier": "major",
@@ -774,7 +875,7 @@
         "type": "list",
         "items": [
           "If you spend 1 minute studying the book, you can expend 1 charge to replace one of your prepared wizard spells with a different spell in the book. The new spell must be of the divination school.",
-          "When one creature you can see takes damage from an evocation spell you cast, you can use your reaction and expend 1 charge to deal an extra 2d6 force damage to the creature and knock the creature {@conditions prone} if it is Large or smaller."
+          "When one creature you can see takes damage from a divination spell you cast, you can use your reaction and expend 1 charge to deal an extra 2d6 force damage to the creature and knock the creature {@conditions prone} if it is Large or smaller."
         ]
       }
     ]
@@ -9181,7 +9282,7 @@
     "rarity": "uncommon",
     "age": "modern",
     "entries": [
-      "Dwarf experimentation hasa resulted in the creation of these small but deadly explosive devices in a few Thanes around the world. The recipe is a tightly protected secret and disseminating it would be considered high treason against the whole Dwarf civilization.",
+      "Dwarf experimentation has resulted in the creation of these small but deadly explosive devices in a few Thanes around the world. The recipe is a tightly protected secret and disseminating it would be considered high treason against the whole Dwarf civilization.",
       "As an action, a character can throw a grenade at a point up to 60 feet away.",
       "Each creature with 20 feet of an exploding fragmentation grenade must make a DC 15 Dexterity saving throw, taking 5d6 piercing damage on a failed save, or half as much damage on a successful one."
     ]
@@ -10415,7 +10516,7 @@
     "recharge": "dawn",
     "charges": 10,
     "entries": [
-      "The Holy Symbol of Arowen is a unique holy symbol sacred to the good-hearted faithful of Pfennig. It predates the establishment of any church in Pfennig. According to legend, it was delivered to a paladin named Lugdana by a giant raven - or an angel in the form of a giant raven. Lugdana used the holy symbol to root out and destroy nests of evil until her death. The high priests of Thraben kept and wore the holy symbol after Lugdana's passing.",
+      "The Holy Symbol of Arowen is a unique holy symbol sacred to the good-hearted faithful of Pfennig. It predates the establishment of any church in Pfennig. According to legend, it was delivered to a paladin named Lugdana by a giant raven - or an angel in the form of a giant raven. Lugdana used the holy symbol to root out and destroy nests of evil until her death. The high priests of Argent kept and wore the holy symbol after Lugdana's passing.",
       "The holy symbol is a platinum amulet shaped like the sun, with a large crystal embedded in its center.",
       "The holy symbol has 10 charges for the following properties. It regains 1d6 + 4 charges daily at dawn.",
       {
@@ -10732,7 +10833,7 @@
     "reqAttune": "by a spellcaster",
     "wondrous": true,
     "entries": [
-      "A powerful illusionist originally developed these bracers, which enabled her to create multiple minor illusions at once. The bracers' power, though, extends far beyond illusions.",
+      "A powerful illusionist originally developed these bracers, which enabled her to create multiple minor illusions at once. The bracers' power, though, extends far beyond illusion.",
       "While wearing the bracers, whenever you cast a cantrip, you can use a bonus action on the same turn to cast that cantrip a second time."
     ]
   },
@@ -17511,7 +17612,7 @@
     "reqAttune": true,
     "wondrous": true,
     "entries": [
-      "You can use this pen to write on any surface. You decide whether the writing is visible or {@conditions invisible}, but the writing is always visible to a person in the Scribe's Guilde.",
+      "You can use this pen to write on any surface. You decide whether the writing is visible or {@conditions invisible}, but the writing is always visible to a person in the Scribe's Guild.",
       "Any creature in the Scribe's Guild can use an action to touch the {@conditions invisible} writing, making it visible to all.",
       "If you use the pen to write on a creature that isn't a construct, the writing fades after 7 days."
     ]
@@ -18618,9 +18719,9 @@
     "tier": "major",
     "rarity": "legendary",
     "entries": [
-      "The 1st Age ended when Gods (or Elder Dragons, or Primordials, or maybe extremely powerful Archmages, depending on who you ask) created the Weave that binds and restricts magic. This blank scroll is constructed around an Occultum coin and allows magic well beyond those normal restrictions, if specific components and incantations are found and scribed onto it.",
-      "Only a few of instances are known of such scrolls being used and they almost always presage continent-shaking events like the permanent binding of the Tarrasque in Denari, the construction of the Pharoah's Wall in Shurima, or the cataclysmic creation of Vul'Kaan's Teeth in the Shackles.",
-      "10th-level spells demand legendarily rare components to cast. It could take an entire quest to find only one, and some 10th-level spells demand several. The only extant example of components were those used to create Vul'Kaan's Teeth. They included a stolen Dwarven Forge-heart, a boon from a Sea God, and elemental essense taken from deep within Plane of Earth."
+      "The 3rd Age ended when Gods (or Elder Dragons, or Primordials, or maybe extremely powerful Archmages, depending on who you ask) created the Weave that binds and restricts magic. This blank scroll is constructed around an Occultum coin and allows magic well beyond those normal restrictions, if specific components and incantations are found and scribed onto it.",
+      "Only a few of instances are known of such scrolls being used and they almost always presage continent-shaking events like the permanent binding of the Tarrasque in Denari, the construction of the Pharoah's Wall in Shurima, the cataclysmic creation of Vul'Kaan's Teeth in the Shackles, or (most recently) the sudden creation of second smaller red moon orbiting Aerth.",
+      "10th-level spells demand legendarily rare components to cast. It could take an entire quest to find only one, and some 10th-level spells demand several. The only extant example of components were those used to create the new moon. They included a stolen Dwarven Forge-heart, a planar anchor from an alien world, the soul of an angel, and elemental essense taken from deep within the quasi-Elemental plane of Vacuum."
     ]
   },
   {
@@ -19692,7 +19793,7 @@
     "dmg2": "1d10",
     "bonusWeapon": "+2",
     "entries": [
-      "The Sunsword is a unique blade once possessed by an angel since killed. In its original form, it had a platinum hilt and guard, and a thin crystal blade as strong as steel.",
+      "The Sunsword is a unique blade once possessed by an angel. In its original form, it had a platinum hilt and guard, and a thin crystal blade as strong as steel.",
       "Regina Adler employed a powerful wizard named Gaspard to destroy the weapon after the angel's death. The first part of the process required the hilt and the blade to be separated, which Gaspard accomplished. While Gaspard was busying himself destroying the blade, his apprentice stole the hilt and fled. Gaspard later located his apprentice's mutilated corpse in the Khosrov Woods, but the hilt was nowhere to be found. To avoid the prophet's wrath, Gaspard told Regina that the entire weapon had been destroyed.",
       "The hilt, which is sentient, knows that it can never be reunited with its original crystal blade. It has, however, gained several other special properties:",
       {
@@ -21287,7 +21388,7 @@
       "When you make your character, you can roll once on the Trinkets table to gain a trinket, a simple item lightly touched by mystery. The DM might also use this table. It can help stock a room in a dungeon or fill a creatures pockets.",
       {
         "type": "table",
-        "caption": "Elemental Evil Trinket Table",
+        "caption": "Elemental Trinket Table",
         "colLabels": [
           "d100",
           "Trinket"
@@ -23863,7 +23964,7 @@
         "type": "entries",
         "name": "Curse",
         "entries": [
-          "This cloak never regains the 8th charge by resting, it is only able to regain the unique 8th charge by killing a creature to protect an innocent in danger and dripping the cloak with its blood."
+          "This cloak never regains the 8th charge by resting, it is only able to regain the unique 8th charge by killing a creature to protect an innocent and dipping the cloak in its blood."
         ]
       }
     ]
@@ -23887,7 +23988,7 @@
     "bonusWeapon": "+1",
     "entries": [
       "You have a +1 bonus to attack and damage rolls made with this magic weapon.",
-      "When you use this axe to make an attack against a plant (an ordinary plant or a creature with the Plant type) or a wooden object that isn't being worn or carried, the attack deals an extra 2d6 slashing damage on a hit."
+      "When you use this axe to make an attack against a plant (an ordinary plant or a creature with the plant type) or a wooden object that isn't being worn or carried, the attack deals an extra 2d6 slashing damage on a hit."
     ]
   },
   {
@@ -23956,7 +24057,7 @@
         "rows": [
           [
             "White",
-            "Covered in forst",
+            "Covered in frost",
             "Cold"
           ],
           [
@@ -23966,7 +24067,7 @@
           ],
           [
             "Blue",
-            "Cracles with lightning",
+            "Crackles with lightning",
             "Lightning"
           ],
           [
@@ -24378,7 +24479,7 @@
     "weight": 0.5,
     "entries": [
       "This 'drink' from a legendary brewing Monastery in Denari is certainly not whiskey, but some do consider it <em>technically</em> potable. Legends say it was originally brewed by a long lost offshoot of mole-like Dwarves discovered in the Veins of the Earth, but there have never been confirmed sightings of such a creature.",
-      "After taking a drink of this liqud you must make a DC 18 Consitiution save. On a successful save, you may spend a single hit die to recove health equal to the maximum possible roll of that hit die and when you make a melee weapon attack using Strength, you gain a +2 bonus to the damage roll. On a failed save you enter a frenzy and use the next 18 seconds attempting to punch who or whatever is standing closest to you."
+      "After taking a drink of this liqud you must make a DC 18 Consitiution save. On a successful save, you may spend a single hit die to recove health equal to the maximum possible roll of that hit die and when you make your next melee attack using Strength, you gain a +2 bonus to the hit and damage roll of that attack. On a failed save you enter a frenzy and use the next 18 seconds attempting to punch who or whatever is standing closest to you."
     ]
   },
   {
@@ -24405,7 +24506,7 @@
     "rarity": "very rare",
     "weight": 0.5,
     "entries": [
-      "This drink from a legendary brewing Monastery in Denari is the most rare, and most fantastic of their products and is created in special small batches on one of the floating battle cubes of Acheron. Drinking a shot of this swirling amber liquid streaked with vibrant red empowers you with some small amout of the Glory competed for in the eternal combats of Acheron.",
+      "This drink from a legendary brewing Monastery in Denari is the most rare and fantastic of their products and is created in small batches on one of the floating battle cubes of Acheron. Drinking a shot of this swirling amber liquid streaked with vibrant red empowers you with some small amout of the Glory competed for in the eternal combats of Acheron.",
       "For 1 hour after you quaff a drink of this potion you are under the effects of the {@spells aid} spell cast at 3rd level and the {@spells bless} spell (no concentration required for either). When the effects wear off if you are not on the plane of Acheron with additional Glory to use, you must succeed on a DC 20 Charisma save or gain 2 levels of exhaustion as you descend into despondancy."
     ]
   }
