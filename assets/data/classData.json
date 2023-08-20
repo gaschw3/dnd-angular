@@ -800,7 +800,7 @@
     "name": "Barbarian",
     "id": "barbarian",
     "source": "PHB",
-    "description": "Primal warriors defined by an unquenchable and unthinking rage. They use their battle fury to improve reflexes, gain resilience, and perform extraordinary feats of strength.",
+    "description": "Primal warriors defined by an unquenchable rage. They use their battle fury to improve reflexes, gain resilience, and perform extraordinary feats of strength.",
     "hd": "12",
     "stat": "CON",
     "proficiencies": {
@@ -2006,7 +2006,7 @@
         "name": "spheres-proficiencies",
         "title": "College of Spheres: Eldritch Mind",
         "text": [
-          "When you join the College of Spheres at 3rd level, your experience depicting and worshipping beings that defy mortal sanity grants you proficiency in the Arcana skill and Wisdom saving throws."
+          "When you join the College of Spheres at 3rd level, your experience depicting and worshipping beings that defy mortal sanity grants you proficiency in the Arcana skill and Intelligence saving throws."
         ]
       },
       {
@@ -2016,7 +2016,7 @@
         "name": "spheres-madness",
         "title": "College of Spheres: Maestro of Madness",
         "text": [
-          "Also at 3rd level, you learn how to use your mind's alien nature to disorient, scare, and weaken the mental resolve of others. When a creature that you can see within 60 feet of you makes a skill check or saving throw you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting half the number rolled from the creature's roll. The creature is immune if it's immune to being charmed."
+          "Also at 3rd level, you learn how to use your mind's alien nature to disorient, scare, and weaken the mental resolve of others. As a bonus action, you can expend one use of your Bardic Inspiration and choose one creature you can see within 60 feet of you. Roll the Bardic Inspiration die. The creature must subtract the number rolled from the next saving throw it makes before the start of your next turn."
         ]
       },
       {
@@ -2152,8 +2152,8 @@
         "name": "spheres-requiem",
         "title": "College of Spheres: Sanity's Requiem",
         "text": [
-          "Beginning at 6th level, and creature that inflicts psychic damage or tries to read your thoughts or control your actions finds their mind recoiling from the strange patterns of your own. They must make a save against your bard spell save DC or immediately roll on the short term madness table.",
-          "In addition, when you deal psychic damage to another creature you add your CHA modifier to the damage dealt and you add the spell Phantasmal Force to your list of known Bard spells."
+          "Beginning at 6th level, and creature that inflicts psychic damage or tries to read your thoughts or control your actions finds their mind recoiling from the strange patterns of your own. They must make a save against your bard spell save DC or take damage equal to two rolls of your Bardic Inspiration die.",
+          "In addition, when you deal psychic damage to another creature you add your CHA modifier to the damage dealt."
         ]
       },
       {
@@ -2313,10 +2313,9 @@
         "name": "spheres-aesthetic",
         "title": "College of Spheres: Incomprehensible Aesthetic",
         "text": [
-          "At 14th level, your soul warps past the point of mortal understanding. The artist becomes the subject and you are considered a humanoid aberration.",
-          "You may use your reaction to offer a true glimpse of your hidden self to a creature that targets you with an spell or weapon attack. They must immediately make a Wisdom save as if they had tried to read your thoughts. Creatures who were unaware of your true nature are also frightened until the end of their next turn.",
-          "Fellow aberrations are charmed rather than frightened and you may allow them to automatically pass the Wisdom save.",
-          "You can use this feature up to 3 times per day and regain all expended uses on a long rest"
+          "At 14th level, your soul warps past the point of mortal understanding. The artist becomes the subject and you are considered an aberration in addition to your other creature type(s).",
+          "You may use your reaction to offer a true glimpse of your hidden self to a creature that targets you with an spell or weapon attack. They must immediately make a Wisdom save as if they had tried to read your thoughts. Creatures that fail the save and were unaware of your true nature are frightened until the end of their next turn. Aberrations are charmed rather than frightened.",
+          "Once Incomprehensible Aesthetic has been used on a target, that target is immune to it for the next 24 hours. You can use this feature a number of times per day equal to your proficiency bonus and regain all expended uses on a long rest"
         ]
       },
       {
@@ -2379,7 +2378,7 @@
     "name": "Cleric",
     "id": "cleric",
     "source": "PHB",
-    "description": "Divine casters defined by their powerful spells and devotion to a deity. Clerics use the power of their god to heal friends, fight undead, and smite foes.",
+    "description": "Divine casters defined by their powerful spells and devotion to a deity. Clerics use the power of their god to help allies and destroy foes.",
     "hd": "8",
     "stat": "WIS",
     "proficiencies": {
@@ -4931,7 +4930,7 @@
         "title": "Archetype: Commander",
         "source": "BREW",
         "text": [
-          "Also known as warlords, sergeants, or ----, commanders are leaders on the battlefield, commanding and inspiring their allies through their heroism. Commanders are not generals who sit and command from afar, they command from the front, fighting alongside their soldiers and allies in the midst of battle."
+          "Also known as warlords, sergeants, or bannerets, commanders are leaders on the battlefield, commanding and inspiring their allies through their heroism. Commanders are not generals who sit and command from afar, they command from the front, fighting alongside their soldiers and allies in the midst of battle."
         ]
       },
       {
@@ -8036,6 +8035,48 @@
         ]
       },
       {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "drakewarden",
+        "name": "drakewarden",
+        "title": "Archetype: Drakewarden",
+        "source": "FTD",
+        "text": [
+          "Your connection to the natural world takes the form of a draconic spirit, which can manifest in physical form as a drake. As your powers grow, your drake grows as well, blossoming from a small four-legged companion to a majestic winged creature large and strong enough for you to ride. Along the way, you gain an increasing share of the awe-inspiring power of dragons.",
+          "Consider the source of the draconic spirit you have bonded with. The Drakewarden Origin table offers examples:",
+          "<table class='table table-striped table-bordered table-sm'><thead><tr><th class='text-center'>d6</th><th>Origin</th></tr></thead><tbody><tr><td class='text-center'>1</td><td>You studied a dragon's scale or claw, or a trinket from a dragon's hoard, creating your bond through that token's lingering draconic magic.</td></tr><tr><td class='text-center'>2</td><td>A secret order of rangers who collect and guard draconic lore taught you their ways.</td></tr><tr><td class='text-center'>3</td><td>A dragon gave you a geode or gemstone to care for. To your surprise, the drake hatched from that stone.</td></tr><tr><td class='text-center'>4</td><td>You ingested a few drops of dragon blood, forever infusing your nature magic with draconic power.</td></tr><tr><td class='text-center'>5</td><td>An ancient Draconic inscription on a standing stone empowered you when you read it aloud.</td></tr><tr><td class='text-center'>6</td><td>You had a vivid dream of a mysterious figure accompanied by seven yellow canaries, who warned you of impending doom. When you awoke, your drake was there, watching you.</td></tr></tbody></table>"
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "drakewarden",
+        "name": "drakewarden-gift",
+        "title": "Drakewarden: Draconic Gift",
+        "text": [
+          "The bond you share with your drake creates a connection to dragonkind, granting you understanding and empowering your presence. You gain the following benefits:",
+          {
+            "type": "list",
+            "items": [
+              "<strong>Thaumaturgy.</strong> You learn the {@spell thaumaturgy} cantrip, which is a ranger spell for you.",
+              "<strong>Tongue of Dragons.</strong> You learn to speak, read, and write Draconic or one other language of your choice."
+            ]
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "drakewarden",
+        "name": "drakewarden-drake",
+        "title": "Drakewarden: Drake Companion",
+        "text": [
+          "As an action, you can magically summon the drake that is bound to you. It appears in an unoccupied space of your choice within 30 feet of you.",
+          "The drake is friendly to you and your companions, and it obeys your commands. See its game statistics in the accompanying {@creature Drake Companion} stat block, which uses your proficiency bonus (PB) in several places. Whenever you summon the drake, choose a damage type listed in its Draconic Essence trait. You can determine the cosmetic characteristics of the drake, such as its color, its scale texture, or any visible effect of its Draconic Essence; your choice has no effect on its game statistics.",
+          "In combat, the drake shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the drake can take any action of its choice, not just Dodge.",
+          "The drake remains until it is reduced to 0 hit points, until you use this feature to summon the drake again, or until you die. Anything the drake was wearing or carrying is left behind when the drake vanishes.",
+          "Once you summon the drake, you can't do so again until you finish a long rest, unless you expend a spell slot of 1st level or higher to summon it."
+        ]
+      },
+      {
         "level": 4,
         "subclass": "base",
         "name": "asi-1",
@@ -8142,6 +8183,23 @@
         "text": [
           "You can condense part of your swarm into a focused mass that lifts you up. As a bonus action, you gain a flying speed of 10 feet and can hover. This effect lasts for 1 minute or until you are incapacitated.",
           "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "level": 7,
+        "subclass": "drakewarden",
+        "name": "drakewarden-bond",
+        "title": "Drakewarden: Bond of Fang and Scale",
+        "text": [
+          "The bond you share with your drake intensifies, protecting you and stoking the drake's fury. When you summon your drake, it grows wings on its back and gains a flying speed equal to its walking speed. In addition, while your drake is summoned, you and the drake gain the following benefits:",
+          {
+            "type": "list",
+            "items": [
+              "<strong>Drake Mount.</strong> The drake grows to Medium size. Reflecting your special bond, you can use the drake as a mount if your size is Medium or smaller. While you are riding your drake, it can't use the flying speed of this feature.",
+              "<strong>Magic Fang.</strong> The drake's Bite attack deals an extra 1d6 damage of the type chosen for the drake's Draconic Essence.",
+              "<strong>Resistance.</strong> You gain resistance to the damage type chosen for the drake's Draconic Essence."
+            ]
+          }
         ]
       },
       {
@@ -8272,6 +8330,16 @@
         ]
       },
       {
+        "level": 11,
+        "subclass": "drakewarden",
+        "name": "drakewarden-breath",
+        "title": "Drakewarden: Drake's Breath",
+        "text": [
+          "As an action, you can exhale a 30-foot cone of damaging breath or cause your drake to exhale it. Choose acid, cold, fire, lightning, or poison damage (your choice doesn't have to match your drake's Draconic Essence). Each creature in the cone must make a Dexterity saving throw against your spell save DC, taking 8d6 damage on a failed save, or half as much damage on a successful one. This damage increases to 10d6 when you reach 15th level in this class.",
+          "Once you use this feature, you can't do so again until you finish a long rest, unless you expend a spell slot of 3rd level or higher to use it again."
+        ]
+      },
+      {
         "level": 12,
         "subclass": "base",
         "name": "asi-3",
@@ -8360,6 +8428,23 @@
         "text": [
           "You can discorporate into your swarm, avoiding danger. When you take damage, you can use your reaction to give yourself resistance to that damage. You vanish into your swarm and then teleport to an unoccupied space that you can see within 30 feet of you, where you reappear with the swarm.",
           "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "level": 15,
+        "subclass": "drakewarden",
+        "name": "drakewarden-perfected",
+        "title": "Drakewarden: Perfected Bond",
+        "text": [
+          "Your bond to your drake reaches the pinnacle of its power. While your drake is summoned, you and the drake gain the following benefits:",
+          {
+            "type": "list",
+            "items": [
+              "<strong>Empowered Bite.</strong> The drake's Bite attack deals an extra 1d6 damage of the type chosen for its Draconic Essence (for a total of 2d6 extra damage).",
+              "<strong>Large Drake.</strong> The drake grows to Large size. When you ride your drake, it is no longer prohibited from using the flying speed of Bond of Fang and Scale.",
+              "<strong>Reflexive Resistance.</strong> When either you or the drake takes damage while you're within 30 feet of each other, you can use your reaction to give yourself or the drake resistance to that instance of damage. You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+            ]
+          }
         ]
       },
       {
