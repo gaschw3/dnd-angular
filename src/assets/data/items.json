@@ -1,5 +1,208 @@
 [
   {
+    "name": "Trade Goods",
+    "id": "trade-goods",
+    "source": "PHB",
+    "type": "$",
+    "rarity": "varies",
+    "entries": [
+      "A valuable is an object or collection of objects the heroes can sell in a civilized location. Unlike equipment, which sells for half its purchase price, valuables don't lose any value when they're sold. There are three types of valuables: trade goods, gemstones, and art objects.",
+      "Trade goods are things that aren't useful to adventurers but are useful to normal people. They're things merchants will readily buy and sell - that people of the world consume. Trade goods include sacks of grain, casks of spirits, bundles of wood, stacks of hides or furs, skeins of fiber, bolts of cloth, ingots of non-precious metal, jars of spices, dyes, inks, oil, pitch, wax, dried herbs, and so on and so forth. The items that make every marketplace on Aerth go round.",
+      "All valuables — trade goods, gemstones, and art objects — are classified by rarity. Rarity determines how readily the item can be sold, how difficult it is to appraise, and — most importantly — how much the item is likely to sell for.",
+      " An inferior valuable's worth less than similar treasures of their kind and rarity. Inferior trade goods might be partially spoiled, damaged, or of particularly low-quality materials. Superior valuables are just the opposite. Compared to similar items of their rarity, they're exceptionally valuable.",
+      {
+        "type": "table",
+        "caption": "Trade Good Valuation",
+        "colLabels": [
+          "Rarity",
+          "Value",
+          "Avg. Appraise",
+          "Tight Appraise",
+          "Loose Appraise"
+        ],
+        "colStyles": [
+          "col-2",
+          "col-2",
+          "col-2",
+          "col-2",
+          "col-2"
+        ],
+        "rows": [
+          [
+            "Common",
+            "1d6 gp",
+            "3 gp",
+            "2 - 5 gp",
+            "1 - 6 gp"
+          ],
+          [
+            "Uncommon",
+            "1d6 * 5 gp",
+            "15 gp",
+            "10 - 25 gp",
+            "5 - 30 gp"
+          ],
+          [
+            "Rare",
+            "1d6 * 10 gp",
+            "35 gp",
+            "20 - 50 gp",
+            "10 - 60 gp"
+          ],
+          [
+            "Very Rare",
+            "1d6 * 50 gp",
+            "175 gp",
+            "100 - 250 gp",
+            "50 - 300 gp"
+          ],
+          [
+            "Legendary",
+            "1d6 * 100 gp",
+            "350 gp",
+            "200 - 500 gp",
+            "100 - 600 gp"
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Example Trade Goods",
+        "colLabels": [
+          "Rarity",
+          "Example"
+        ],
+        "colStyles": [
+          "col-2",
+          "col-10"
+        ],
+        "rows": [
+          [
+            "Common",
+            "salt, spices (pepper, dried herbs), base metals (copper, iron), small animals (chickens, pigs, goats), common materials (cotton, canvas, hemp, wool), basic foodstuff (ale, bread), structural stone, garden vegetables"
+          ],
+          [
+            "Uncommon",
+            "uncommon spices (turmeric, clove, cinnamon), large animals (cow, workhorse), furs, meat (game or farmed), dyes (orange, green, brown), uncommon materials (feathers, hide), cheese, specialty crops (tobacco, grapes, fruit), ink"
+          ],
+          [
+            "Rare",
+            "rare spices (tea leaves, exotic), monstrous creature parts (meat, hide, reagents), glass items, paper, hard alcohol, exotic animals (camel, elephant, draft horse), precious metals (silver and gold), fancy furs (mink, seal, monstrous), leather"
+          ],
+          [
+            "Very Rare",
+            "exotic versions of lesser goods, trained or war animals, carpets, silk, rare spices (dried chiles, cardomom, saffron, vanilla), perfume, furniture, bricks, mithral, adamantium"
+          ],
+          [
+            "Common",
+            "platinum, exotic building materials (ghostwood, ivory, coral), very fine wine, imported spirits, rare dyes (purple, magical), whale oil, occultum, aeturnum, caeleum"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gemstones",
+    "id": "gemstones",
+    "source": "PHB",
+    "type": "$",
+    "rarity": "varies",
+    "entries": [
+      "A valuable is an object or collection of objects the heroes can sell in a civilized location. Unlike equipment, which sells for half its purchase price, valuables don't lose any value when they're sold. There are three types of valuables: trade goods, gemstones, and art objects.",
+      "Gemstones are individual mineral specimens prized for their aesthetic, intrinsic, or occasionally magical properties. They're pretty rocks. The prettier and the rarer, the more valuable they are. Gemstones are usually cut and polished to enhance their appearance. Most are pretty small, ranging from the size of a fingernail to the size of a robin's egg.",
+      "An inferior valuable's worth less than similar treasures of their kind and rarity. Inferior gems might be undersized, flawed, uncut or poorly cut, or of inferior luster. Superior valuables are just the opposite. Compared to similar items of their rarity, they're exceptionally valuable.",
+      {
+        "type": "table",
+        "caption": "Gemstone Valuation",
+        "colLabels": [
+          "Rarity",
+          "Value",
+          "Avg. Appraise",
+          "Tight Appraise",
+          "Loose Appraise"
+        ],
+        "colStyles": [
+          "col-2",
+          "col-2",
+          "col-2",
+          "col-2",
+          "col-2"
+        ],
+        "rows": [
+          [
+            "Common",
+            "2d6 * 5 gp",
+            "35 gp",
+            "25 - 45 gp",
+            "10 - 60 gp"
+          ],
+          [
+            "Uncommon",
+            "2d6 * 10 gp",
+            "70 gp",
+            "50-90 gp",
+            "20 - 120 gp"
+          ],
+          [
+            "Rare",
+            "2d6 * 50 gp",
+            "350 gp",
+            "250 - 450 gp",
+            "100 - 600 gp"
+          ],
+          [
+            "Very Rare",
+            "2d6 * 100 gp",
+            "700 gp",
+            "500 - 900 gp",
+            "200 - 1200 gp"
+          ],
+          [
+            "Legendary",
+            "2d6 * 500 gp",
+            "3500 gp",
+            "2500 - 4500 gp",
+            "1000 - 6000 gp"
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "caption": "Example Gemstones",
+        "colLabels": [
+          "Rarity",
+          "Example"
+        ],
+        "colStyles": [
+          "col-2",
+          "col-10"
+        ],
+        "rows": [
+          [
+            "Common",
+            "moss or banded agate, common quartz, hematite, lapis lazuli, malachite, obsidian, tiger eye, turquoise"
+          ],
+          [
+            "Uncommon",
+            "bloodstone, carnelia, chrysoberyl, citrine, onyx, quartz, zircon, amethyst, amber, garnet, jade, jet, pearl"
+          ],
+          [
+            "Rare",
+            "alexandrite, spinel, tourmaline, squamarine, black pearl, exotic colored spinel, peridot, topaz, opal, corundum"
+          ],
+          [
+            "Very Rare",
+            "black or fire opal, sapphire, emerald, ruby"
+          ],
+          [
+            "Common",
+            "black sapphire, star ruby or emerald, jacinth, diamond"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "name": "Shackles - Brineheart's Coat",
     "id": "brinehearts-coat",
     "source": "BREW",
@@ -2086,16 +2289,6 @@
     ]
   },
   {
-    "name": "Adamantine Bar",
-    "id": "adamantine-bar",
-    "source": "WDH",
-    "page": 90,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 10,
-    "value": 100000
-  },
-  {
     "name": "Adjustable Stilts",
     "id": "adjustable-stilts",
     "source": "WDH",
@@ -2290,42 +2483,6 @@
     "type": "FD",
     "rarity": "none",
     "value": 4
-  },
-  {
-    "name": "Alexandrite",
-    "id": "alexandrite",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 50000,
-    "entries": [
-      "A transparent dark green gemstone."
-    ]
-  },
-  {
-    "name": "Amber",
-    "id": "amber",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "A transparent watery gold to rich gold gemstone."
-    ]
-  },
-  {
-    "name": "Amethyst",
-    "id": "amethyst",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "A transparent deep purple gemstone."
-    ]
   },
   {
     "name": "Holy Symbol, Amulet",
@@ -2560,18 +2717,6 @@
     ]
   },
   {
-    "name": "Aquamarine",
-    "id": "aquamarine",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 50000,
-    "entries": [
-      "A transparent pale blue-green gemstone."
-    ]
-  },
-  {
     "name": "Armor of Invulnerability",
     "id": "armor-of-invulnerability",
     "source": "DMG",
@@ -2790,18 +2935,6 @@
       "When you use an action to speak the item's command word and place the keyrune on the ground in an unoccupied space within 5 feet of you, the keyrune transforms into a creature. If there isn't enough space for the creature, the keyrune doesn't transform.",
       "The creature is friendly to you, your companions, and other members of your guild (unless those guild members are hostile to you). It understands your languages and obeys your spoken commands. If you issue no commands, the eagle takes the Dodge action and moves to avoid danger.",
       "At the end of the duration, the creature reverts to its keyrune form. It reverts early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature reverts to its keyrune form, it can't transform again until 36 hours have passed."
-    ]
-  },
-  {
-    "name": "Azurite",
-    "id": "azurite",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "An opaque mottled deep blue gemstone."
     ]
   },
   {
@@ -3108,18 +3241,6 @@
         "item": "ball bearing",
         "quantity": 1000
       }
-    ]
-  },
-  {
-    "name": "Banded Agate",
-    "id": "banded-agate",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "A translucent striped brown, blue, white, or red gemstone."
     ]
   },
   {
@@ -3545,15 +3666,6 @@
     "value": 100
   },
   {
-    "name": "Bejeweled ivory drinking horn with gold filigree",
-    "id": "bejeweled-ivory-drinking-horn-with-gold-filigree",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 750000
-  },
-  {
     "name": "Bell",
     "id": "bell",
     "source": "PHB",
@@ -3890,30 +4002,6 @@
     ]
   },
   {
-    "name": "Black Opal",
-    "id": "black-opal",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 100000,
-    "entries": [
-      "A translucent dark green with black mottling and golden flecks gemstone."
-    ]
-  },
-  {
-    "name": "Black Pearl",
-    "id": "black-pearl",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 50000,
-    "entries": [
-      "An opaque pure black gemstone."
-    ]
-  },
-  {
     "name": "Black Sap",
     "id": "black-sap",
     "source": "EGW",
@@ -3925,27 +4013,6 @@
       "This tarry substance harvested from the dark boughs of the death's head willow is a powerful intoxicant. It can be smoked as a concentrate or injected directly into the bloodstream. A creature subjected to a dose of black sap cannot be {@conditions charmed} or {@conditions frightened} for 1d6 hours.",
       "For each dose of black sap consumed, a creature must succeed on a DC 15 Constitution saving throw or become {@conditions poisoned} for 2d4 hours—an effect that is cumulative with multiple doses."
     ]
-  },
-  {
-    "name": "Black Sapphire",
-    "id": "black-sapphire",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 500000,
-    "entries": [
-      "A translucent lustrous black with glowing highlights gemstone."
-    ]
-  },
-  {
-    "name": "Black velvet mask stitched with silver thread",
-    "id": "black-velvet-mask-stitched-with-silver-thread",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
   },
   {
     "name": "Blackrazor",
@@ -4371,54 +4438,6 @@
     ]
   },
   {
-    "name": "Bloodstone",
-    "id": "bloodstone",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "An opaque dark gray with red flecks gemstone."
-    ]
-  },
-  {
-    "name": "Blue Quartz",
-    "id": "blue-quartz",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "A transparent pale blue gemstone."
-    ]
-  },
-  {
-    "name": "Blue Sapphire",
-    "id": "blue-sapphire",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 100000,
-    "entries": [
-      "A transparent blue-white to medium blue gemstone."
-    ]
-  },
-  {
-    "name": "Blue Spinel",
-    "id": "blue-spinel",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 50000,
-    "entries": [
-      "A transparent deep blue gemstone."
-    ]
-  },
-  {
     "name": "Book",
     "id": "book",
     "source": "PHB",
@@ -4750,15 +4769,6 @@
     ]
   },
   {
-    "name": "Bottle stopper cork embossed with gold leaf and set with amethysts",
-    "id": "bottle-stopper-cork-embossed-with-gold-leaf-and-set-with-amethysts",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
-  },
-  {
     "name": "Bottled Breath",
     "id": "bottled-breath",
     "source": "BREW",
@@ -4794,15 +4804,6 @@
     "lootTables": [
       "Magic Item Table G"
     ]
-  },
-  {
-    "name": "Box of turquoise animal figurines",
-    "id": "box-of-turquoise-animal-figurines",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
   },
   {
     "name": "Bracer of Flying Daggers",
@@ -4852,15 +4853,6 @@
     "lootTables": [
       "Magic Item Table G"
     ]
-  },
-  {
-    "name": "Brass mug with jade inlay",
-    "id": "brass-mug-with-jade-inlay",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
   },
   {
     "name": "Brazier of Commanding Fire Elementals",
@@ -4974,15 +4966,6 @@
         ]
       }
     ]
-  },
-  {
-    "name": "Bronze crown",
-    "id": "bronze-crown",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
   },
   {
     "name": "Brooch of Living Essence",
@@ -5311,16 +5294,6 @@
     ]
   },
   {
-    "name": "Canvas (1 sq. yd.)",
-    "id": "canvas-1-sq-yd",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 10
-  },
-  {
     "name": "Cap of Water Breathing",
     "id": "cap-of-water-breathing",
     "source": "DMG",
@@ -5353,18 +5326,6 @@
     ],
     "lootTables": [
       "Magic Item Table G"
-    ]
-  },
-  {
-    "name": "Carnelian",
-    "id": "carnelian",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "An opaque orange to red-brown gemstone."
     ]
   },
   {
@@ -5609,33 +5570,6 @@
     ]
   },
   {
-    "name": "Carved bone statuette",
-    "id": "carved-bone-statuette",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
-  },
-  {
-    "name": "Carved harp of exotic wood with ivory inlay and zircon gems",
-    "id": "carved-harp-of-exotic-wood-with-ivory-inlay-and-zircon-gems",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
-  },
-  {
-    "name": "Carved ivory statuette",
-    "id": "carved-ivory-statuette",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
-  },
-  {
     "name": "Censer of Controlling Air Elementals",
     "id": "censer-of-controlling-air-elementals",
     "source": "DMG",
@@ -5657,15 +5591,6 @@
     ]
   },
   {
-    "name": "Ceremonial electrum dagger with a black pearl in the pommel",
-    "id": "ceremonial-electrum-dagger-with-a-black-pearl-in-the-pommel",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
-  },
-  {
     "name": "Chain (10 feet)",
     "id": "chain-10-feet",
     "source": "PHB",
@@ -5677,18 +5602,6 @@
     "value": 500,
     "entries": [
       "A chain has 10 hit points. It can be burst with a successful DC 20 Strength check."
-    ]
-  },
-  {
-    "name": "Chalcedony",
-    "id": "chalcedony",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "An opaque white gemstone."
     ]
   },
   {
@@ -5755,16 +5668,6 @@
     ]
   },
   {
-    "name": "Chicken",
-    "id": "chicken",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 2
-  },
-  {
     "name": "Chime of Opening",
     "id": "chime-of-opening",
     "source": "DMG",
@@ -5821,30 +5724,6 @@
     ]
   },
   {
-    "name": "Chrysoberyl",
-    "id": "chrysoberyl",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "A transparent yellow-green to pale green gemstone."
-    ]
-  },
-  {
-    "name": "Chrysoprase",
-    "id": "chrysoprase",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "A translucent green gemstone."
-    ]
-  },
-  {
     "name": "Chunk of Meat",
     "id": "chunk-of-meat",
     "source": "PHB",
@@ -5853,17 +5732,6 @@
     "type": "FD",
     "rarity": "none",
     "value": 30
-  },
-  {
-    "name": "Cinnamon",
-    "id": "cinnamon",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 200
   },
   {
     "name": "Circlet of Blasting",
@@ -5882,18 +5750,6 @@
     ],
     "lootTables": [
       "Magic Item Table F"
-    ]
-  },
-  {
-    "name": "Citrine",
-    "id": "citrine",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "A transparent pale yellow-brown gemstone."
     ]
   },
   {
@@ -6122,15 +5978,6 @@
     ]
   },
   {
-    "name": "Cloth-of-gold vestments",
-    "id": "cloth-of-gold-vestments",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
-  },
-  {
     "name": "Clothes of Mending",
     "id": "clothes-of-mending",
     "source": "XGE",
@@ -6141,17 +5988,6 @@
     "entries": [
       "This elegant outfit of traveler's clothes magically mends itself to counteract daily wear and tear. Pieces of the outfit that are destroyed can't be repaired in this way."
     ]
-  },
-  {
-    "name": "Cloves",
-    "id": "cloves",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 300
   },
   {
     "name": "Cobbler's Tools",
@@ -6360,17 +6196,6 @@
     ]
   },
   {
-    "name": "Copper",
-    "id": "copper",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 50
-  },
-  {
     "name": "Copper (cp)",
     "id": "copper-cp",
     "source": "PHB",
@@ -6454,31 +6279,10 @@
     "type": "$",
     "rarity": "none",
     "weight": 0.02,
-    "value": 1000000,
+    "value": 10000000,
     "entries": [
       "<span class='text--op'>Occultum</span> is raw, stabilized magic that (very) slowly accretes into tiny translucent gold-purple grains. On the surface, you'll be lucky to find a few grains. In the Veins, water and time concentrated particles of <span class='text--op'>occultum</span> and some long-dead civilization now subsumed by the endless churning of the earth forged them into coins that can be used to buy, or do, impossible things.",
       "If you want to build a deep planar observatory, use <span class='text--op'>occultum</span> to hold the lens. If you want to build a time machine, use <span class='text--op'>occultum</span> to power the chronometric lever. If you want to cast a spell that shouldn't exist, focus your magic through <span class='text--op'>occultum</span>. It's a malleable, stable, and resistant material. Where inferior metals fail, explode, melt, or change into goats, <span class='text--op'>occultum</span> will persevere. It's the unsung hero of a thousand doomsday projects. If you want to do something insane, you wouldn't go awry in acquiring some."
-    ]
-  },
-  {
-    "name": "Copper chalice with silver filigree",
-    "id": "copper-chalice-with-silver-filigree",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
-  },
-  {
-    "name": "Coral",
-    "id": "coral",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "An opaque crimson gemstone."
     ]
   },
   {
@@ -6491,26 +6295,6 @@
     "rarity": "none",
     "weight": 4,
     "value": 500
-  },
-  {
-    "name": "Cotton Cloth (1 sq. yd.)",
-    "id": "cotton-cloth-1-sq-yd",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 50
-  },
-  {
-    "name": "Cow",
-    "id": "cow",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 1000
   },
   {
     "name": "Crossbow Bolt Case",
@@ -7678,18 +7462,6 @@
     ]
   },
   {
-    "name": "Diamond",
-    "id": "diamond",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 500000,
-    "entries": [
-      "A transparent blue-white, canary, pink, brown, or blue gemstone."
-    ]
-  },
-  {
     "name": "Dice Set",
     "id": "dice-set",
     "source": "PHB",
@@ -8582,45 +8354,6 @@
     "value": 500
   },
   {
-    "name": "Embroidered glove set with jewel chips",
-    "id": "embroidered-glove-set-with-jewel-chips",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
-  },
-  {
-    "name": "Embroidered silk and velvet mantle set with numerous moonstones",
-    "id": "embroidered-silk-and-velvet-mantle-set-with-numerous-moonstones",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
-  },
-  {
-    "name": "Embroidered silk handkerchief",
-    "id": "embroidered-silk-handkerchief",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
-  },
-  {
-    "name": "Emerald",
-    "id": "emerald",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 100000,
-    "entries": [
-      "A transparent deep bright green gemstone."
-    ]
-  },
-  {
     "name": "Enduring Spellbook",
     "id": "enduring-spellbook",
     "source": "XGE",
@@ -8793,18 +8526,6 @@
     ]
   },
   {
-    "name": "Eye Agate",
-    "id": "eye-agate",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "A translucent circles of gray, white, brown, blue, or green gemstone."
-    ]
-  },
-  {
     "name": "Eye of Vecna",
     "id": "eye-of-vecna",
     "source": "DMG",
@@ -8889,15 +8610,6 @@
       "dominate monster",
       "eyebite"
     ]
-  },
-  {
-    "name": "Eye patch with a mock eye set in blue sapphire and moonstone",
-    "id": "eye-patch-with-a-mock-eye-set-in-blue-sapphire-and-moonstone",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
   },
   {
     "name": "Eyes of Charming",
@@ -9250,15 +8962,6 @@
     "value": 1500
   },
   {
-    "name": "Fine gold chain set with a fire opal",
-    "id": "fine-gold-chain-set-with-a-fire-opal",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
-  },
-  {
     "name": "Fine Wine (Bottle)",
     "id": "fine-wine-bottle",
     "source": "PHB",
@@ -9267,18 +8970,6 @@
     "type": "FD",
     "rarity": "none",
     "value": 1000
-  },
-  {
-    "name": "Fire Opal",
-    "id": "fire-opal",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 100000,
-    "entries": [
-      "A translucent fiery red gemstone worth."
-    ]
   },
   {
     "name": "Fishing Tackle",
@@ -9307,17 +8998,6 @@
     "entries": [
       "A flask holds 1 pint of liquid."
     ]
-  },
-  {
-    "name": "Flour",
-    "id": "flour",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 2
   },
   {
     "name": "Flute",
@@ -9522,18 +9202,6 @@
     "capCargo": 150
   },
   {
-    "name": "Garnet",
-    "id": "garnet",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "A transparent red, brown-green, or violet gemstone."
-    ]
-  },
-  {
     "name": "Gauntlets of Ogre Power",
     "id": "gauntlets-of-ogre-power",
     "source": "DMG",
@@ -9659,17 +9327,6 @@
     "attachedSpells": [
       "mage hand"
     ]
-  },
-  {
-    "name": "Ginger",
-    "id": "ginger",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 100
   },
   {
     "name": "Glamour (enchantment)",
@@ -9875,16 +9532,6 @@
     ]
   },
   {
-    "name": "Goat",
-    "id": "goat",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 100
-  },
-  {
     "name": "Goggles of Night",
     "id": "goggles-of-night",
     "source": "DMG",
@@ -9915,89 +9562,6 @@
     "attachedSpells": [
       "identify"
     ]
-  },
-  {
-    "name": "Gold",
-    "id": "gold",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 5000
-  },
-  {
-    "name": "Gold bird cage with electrum filigree",
-    "id": "gold-bird-cage-with-electrum-filigree",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
-  },
-  {
-    "name": "Gold circlet set with four aquamarines",
-    "id": "gold-circlet-set-with-four-aquamarines",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
-  },
-  {
-    "name": "Gold cup set with emeralds",
-    "id": "gold-cup-set-with-emeralds",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 750000
-  },
-  {
-    "name": "Gold dragon comb set with red garnets as eyes",
-    "id": "gold-dragon-comb-set-with-red-garnets-as-eyes",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
-  },
-  {
-    "name": "Gold jewelry box with platinum filigree",
-    "id": "gold-jewelry-box-with-platinum-filigree",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 750000
-  },
-  {
-    "name": "Gold locket with a painted portrait inside",
-    "id": "gold-locket-with-a-painted-portrait-inside",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
-  },
-  {
-    "name": "Gold music box",
-    "id": "gold-music-box",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
-  },
-  {
-    "name": "Gold ring set with bloodstones",
-    "id": "gold-ring-set-with-bloodstones",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
   },
   {
     "name": "Grappling Hook",
@@ -10629,18 +10193,6 @@
     ],
     "lootTables": [
       "Magic Item Table G"
-    ]
-  },
-  {
-    "name": "Hematite",
-    "id": "hematite",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "An opaque gray-black gemstone."
     ]
   },
   {
@@ -11989,17 +11541,6 @@
     ]
   },
   {
-    "name": "Iron",
-    "id": "iron",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 10
-  },
-  {
     "name": "Iron Bands of Bilarro",
     "id": "iron-bands-of-bilarro",
     "source": "DMG",
@@ -12265,51 +11806,6 @@
     ]
   },
   {
-    "name": "Jacinth",
-    "id": "jacinth",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 500000,
-    "entries": [
-      "A transparent fiery orange gemstone."
-    ]
-  },
-  {
-    "name": "Jade",
-    "id": "jade",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "A translucent light green, deep green, or white gemstone."
-    ]
-  },
-  {
-    "name": "Jade game board with solid gold playing pieces",
-    "id": "jade-game-board-with-solid-gold-playing-pieces",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 750000
-  },
-  {
-    "name": "Jasper",
-    "id": "jasper",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "An opaque blue, black, or brown gemstone."
-    ]
-  },
-  {
     "name": "Javelin of Backbiting",
     "id": "javelin-of-backbiting",
     "source": "TftYP",
@@ -12366,45 +11862,6 @@
     "lootTables": [
       "Magic Item Table F"
     ]
-  },
-  {
-    "name": "Jet",
-    "id": "jet",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "An opaque deep black gemstone."
-    ]
-  },
-  {
-    "name": "Jeweled anklet",
-    "id": "jeweled-anklet",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
-  },
-  {
-    "name": "Jeweled gold crown",
-    "id": "jeweled-gold-crown",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 750000
-  },
-  {
-    "name": "Jeweled platinum ring",
-    "id": "jeweled-platinum-ring",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 750000
   },
   {
     "name": "Jeweler's Tools",
@@ -12601,36 +12058,6 @@
     "lootTables": [
       "Magic Item Table B"
     ]
-  },
-  {
-    "name": "Lapis Lazuli",
-    "id": "lapis-lazuli",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "An opaque light and dark blue with yellow flecks gemstone."
-    ]
-  },
-  {
-    "name": "Large gold bracelet",
-    "id": "large-gold-bracelet",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
-  },
-  {
-    "name": "Large well-made tapestry",
-    "id": "large-well-made-tapestry",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
   },
   {
     "name": "Lash of Shadows",
@@ -12873,16 +12300,6 @@
         ]
       }
     ]
-  },
-  {
-    "name": "Linen (1 sq. yd.)",
-    "id": "linen-1-sq-yd",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 500
   },
   {
     "name": "Loadstone",
@@ -13298,18 +12715,6 @@
     "value": 10000,
     "entries": [
       "This lens allows a closer look at small objects. It is also useful as a substitute for flint and steel when starting fires. Lighting a fire with a magnifying glass requires light as bright as sunlight to focus, tinder to ignite, and about 5 minutes for the fire to ignite. A magnifying glass grants advantage on any ability check made to appraise or inspect an item that is small or highly detailed."
-    ]
-  },
-  {
-    "name": "Malachite",
-    "id": "malachite",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "An opaque striated light and dark green gemstone."
     ]
   },
   {
@@ -14079,30 +13484,6 @@
     ]
   },
   {
-    "name": "Moonstone",
-    "id": "moonstone",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "A translucent white with pale blue glow gemstone."
-    ]
-  },
-  {
-    "name": "Moss Agate",
-    "id": "moss-agate",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "A translucent pink or yellow-white with mossy gray or green markings gemstone."
-    ]
-  },
-  {
     "name": "Mule",
     "id": "mule",
     "source": "PHB",
@@ -14330,15 +13711,6 @@
     ]
   },
   {
-    "name": "Necklace string of small pink pearls",
-    "id": "necklace-string-of-small-pink-pearls",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
-  },
-  {
     "name": "Needle of Mending",
     "id": "needle-of-mending",
     "source": "EGW",
@@ -14450,27 +13822,6 @@
     ]
   },
   {
-    "name": "Obsidian",
-    "id": "obsidian",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "An opaque black gemstone."
-    ]
-  },
-  {
-    "name": "Obsidian statuette with gold fittings and inlay",
-    "id": "obsidian-statuette-with-gold-fittings-and-inlay",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
-  },
-  {
     "name": "Oil (flask)",
     "id": "oil-flask",
     "source": "PHB",
@@ -14564,15 +13915,6 @@
     ]
   },
   {
-    "name": "Old masterpiece painting",
-    "id": "old-masterpiece-painting",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
-  },
-  {
     "name": "Olisuba Leaf",
     "id": "olisuba-leaf",
     "source": "EGW",
@@ -14582,30 +13924,6 @@
     "value": 5000,
     "entries": [
       "These dried leaves of the Olisuba tree, when steeped to make a tea, can help a body recover from strenuous activity. If you drink a dose of Olisuba tea during a long rest, your {@conditions exhaustion} level is reduced by 2 instead of 1 at the end of that long rest."
-    ]
-  },
-  {
-    "name": "Onyx",
-    "id": "onyx",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "An opaque black and white banded, or pure black or white gemstone."
-    ]
-  },
-  {
-    "name": "Opal",
-    "id": "opal",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 100000,
-    "entries": [
-      "A translucent pale blue with green and golden mottling gemstone."
     ]
   },
   {
@@ -14977,16 +14295,6 @@
     "ammoType": "arrow"
   },
   {
-    "name": "Ox",
-    "id": "ox",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 1500
-  },
-  {
     "name": "Pack Saddle",
     "id": "pack-saddle",
     "source": "PHB",
@@ -14996,24 +14304,6 @@
     "rarity": "none",
     "weight": 15,
     "value": 500
-  },
-  {
-    "name": "Painted gold child's sarcophagus",
-    "id": "painted-gold-childs-sarcophagus",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 750000
-  },
-  {
-    "name": "Painted gold war mask",
-    "id": "painted-gold-war-mask",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
   },
   {
     "name": "Painter's Supplies",
@@ -15082,15 +14372,6 @@
         ]
       }
     ]
-  },
-  {
-    "name": "Pair of engraved bone dice",
-    "id": "pair-of-engraved-bone-dice",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
   },
   {
     "name": "Pale Tincture",
@@ -15201,18 +14482,6 @@
     "value": 10
   },
   {
-    "name": "Pearl",
-    "id": "pearl",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "An opaque lustrous white, yellow, or pink gemstone."
-    ]
-  },
-  {
     "name": "Pearl of Power",
     "id": "pearl-of-power",
     "source": "DMG",
@@ -15304,17 +14573,6 @@
     ]
   },
   {
-    "name": "Pepper",
-    "id": "pepper",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 200
-  },
-  {
     "name": "Perfume (vial)",
     "id": "perfume-vial",
     "source": "PHB",
@@ -15389,18 +14647,6 @@
     ]
   },
   {
-    "name": "Peridot",
-    "id": "peridot",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 50000,
-    "entries": [
-      "A transparent rich olive green gemstone."
-    ]
-  },
-  {
     "name": "Philter of Love",
     "id": "philter-of-love",
     "source": "DMG",
@@ -15417,16 +14663,6 @@
     "lootTables": [
       "Magic Item Table B"
     ]
-  },
-  {
-    "name": "Pig",
-    "id": "pig",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 300
   },
   {
     "name": "Pipe of Smoke Monsters",
@@ -15521,17 +14757,6 @@
     ]
   },
   {
-    "name": "Platinum",
-    "id": "platinum",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 50000
-  },
-  {
     "name": "Platinum (pp)",
     "id": "platinum-pp",
     "source": "PHB",
@@ -15548,15 +14773,6 @@
       "In addition, unusual coins made of other precious metals sometimes appear in treasure hoards. The electrum piece (ep) and the platinum piece (pp) originate from fallen empires and lost kingdoms, and they sometimes arouse suspicion and skepticism when used in transactions. An electrum piece is worth five silver pieces, and a platinum piece is worth ten gold pieces.",
       "A standard coin weighs about a third of an ounce, so fifty coins weigh a pound."
     ]
-  },
-  {
-    "name": "Platinum bracelet set with a sapphire",
-    "id": "platinum-bracelet-set-with-a-sapphire",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 250000
   },
   {
     "name": "Playing Card Set",
@@ -16681,18 +15897,6 @@
     ]
   },
   {
-    "name": "Quartz",
-    "id": "quartz",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "A transparent white, smoky gray, or yellow gemstone."
-    ]
-  },
-  {
     "name": "Quiver",
     "id": "quiver",
     "source": "PHB",
@@ -16811,18 +16015,6 @@
     "rarity": "none",
     "weight": 2,
     "value": 500
-  },
-  {
-    "name": "Rhodochrosite",
-    "id": "rhodochrosite",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "An opaque light pink gemstone."
-    ]
   },
   {
     "name": "Riding Horse",
@@ -18071,18 +17263,6 @@
     ]
   },
   {
-    "name": "Ruby",
-    "id": "ruby",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 500000,
-    "entries": [
-      "A transparent clear red to deep crimson gemstone."
-    ]
-  },
-  {
     "name": "Ruby of the War Mage",
     "id": "ruby-of-the-war-mage",
     "source": "XGE",
@@ -18245,17 +17425,6 @@
     "value": 400
   },
   {
-    "name": "Saffron",
-    "id": "saffron",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 1500
-  },
-  {
     "name": "Sailing Ship",
     "id": "sailing-ship",
     "source": "DMG",
@@ -18270,29 +17439,6 @@
     "vehSpeed": 2,
     "capPassenger": 20,
     "capCargo": 100
-  },
-  {
-    "name": "Salt",
-    "id": "salt",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 5
-  },
-  {
-    "name": "Sardonyx",
-    "id": "sardonyx",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "An opaque bands of red and white gemstone."
-    ]
   },
   {
     "name": "Scarab of Protection",
@@ -18635,16 +17781,6 @@
     ]
   },
   {
-    "name": "Sheep",
-    "id": "sheep",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 200
-  },
-  {
     "name": "Shield of Expression",
     "id": "shield-of-expression",
     "source": "XGE",
@@ -18779,25 +17915,6 @@
     "value": 500
   },
   {
-    "name": "Silk (1 sq. yd.)",
-    "id": "silk-1-sq-yd",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "value": 1000
-  },
-  {
-    "name": "Silk robe with gold embroidery",
-    "id": "silk-robe-with-gold-embroidery",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
-  },
-  {
     "name": "Silk Rope (50 feet)",
     "id": "silk-rope-50-feet",
     "source": "PHB",
@@ -18910,35 +18027,6 @@
     ]
   },
   {
-    "name": "Silver",
-    "id": "silver",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 500
-  },
-  {
-    "name": "Silver and gold brooch",
-    "id": "silver-and-gold-brooch",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
-  },
-  {
-    "name": "Silver chalice set with moonstones",
-    "id": "silver-chalice-set-with-moonstones",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
-  },
-  {
     "name": "Silver Dragon Scale Mail",
     "id": "silver-dragon-scale-mail",
     "source": "DMG",
@@ -18957,33 +18045,6 @@
       "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to cold damage.",
       "Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest silver dragon within 30 miles of you. This special action can't be used again until the next dawn."
     ]
-  },
-  {
-    "name": "Silver ewer",
-    "id": "silver-ewer",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
-  },
-  {
-    "name": "Silver necklace with a gemstone pendant",
-    "id": "silver-necklace-with-a-gemstone-pendant",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 25000
-  },
-  {
-    "name": "Silver-plated steel longsword with jet set in hilt",
-    "id": "silver-plated-steel-longsword-with-jet-set-in-hilt",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
   },
   {
     "name": "Sinda berries (10)",
@@ -19138,42 +18199,6 @@
     "lootTables": [
       "Magic Item Table F"
     ]
-  },
-  {
-    "name": "Small gold bracelet",
-    "id": "small-gold-bracelet",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
-  },
-  {
-    "name": "Small gold idol",
-    "id": "small-gold-idol",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 75000
-  },
-  {
-    "name": "Small gold statuette set with rubies",
-    "id": "small-gold-statuette-set-with-rubies",
-    "source": "DMG",
-    "page": 135,
-    "type": "$",
-    "rarity": "none",
-    "value": 750000
-  },
-  {
-    "name": "Small mirror set in a painted wooden frame",
-    "id": "small-mirror-set-in-a-painted-wooden-frame",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 2500
   },
   {
     "name": "Smith's Tools",
@@ -19718,18 +18743,6 @@
     "wondrous": true,
     "entries": [
       "This headpiece, crafted from dark metal, is worn curved around the ear. If you know a creature wearing another Spies' Murmur and that creature is within 1 mile of you, you can communicate telepathically with each other. As a bonus action, you can allow that creature to hear everything you hear for 1 hour. You can end this effect as a bonus action, and it ends if you're {@conditions incapacitated}."
-    ]
-  },
-  {
-    "name": "Spinel",
-    "id": "spinel",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "A transparent red, red-brown, or deep green gemstone."
     ]
   },
   {
@@ -20504,42 +19517,6 @@
     ],
     "lootTables": [
       "Magic Item Table G"
-    ]
-  },
-  {
-    "name": "Star rose quartz",
-    "id": "star-rose-quartz",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "A translucent rosy stone with white star-shaped center gemstone."
-    ]
-  },
-  {
-    "name": "Star Ruby",
-    "id": "star-ruby",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 100000,
-    "entries": [
-      "A translucent ruby with white star-shaped center gemstone."
-    ]
-  },
-  {
-    "name": "Star Sapphire",
-    "id": "star-sapphire",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 100000,
-    "entries": [
-      "A translucent blue sapphire with white star-shaped center gemstone."
     ]
   },
   {
@@ -21490,18 +20467,6 @@
     "value": 100
   },
   {
-    "name": "Tiger Eye",
-    "id": "tiger-eye",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "A translucent brown with golden center gemstone."
-    ]
-  },
-  {
     "name": "Timepiece of Travel",
     "id": "timepiece-of-travel",
     "source": "AI",
@@ -21771,18 +20736,6 @@
     ]
   },
   {
-    "name": "Topaz",
-    "id": "topaz",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 50000,
-    "entries": [
-      "A transparent golden yellow gemstone."
-    ]
-  },
-  {
     "name": "Torch",
     "id": "torch",
     "source": "PHB",
@@ -21823,18 +20776,6 @@
     "scfType": "druid",
     "rarity": "none",
     "value": 100
-  },
-  {
-    "name": "Tourmaline",
-    "id": "tourmaline",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 10000,
-    "entries": [
-      "A transparent pale green, blue, brown, or red gemstone."
-    ]
   },
   {
     "name": "Traveler's Clothes",
@@ -23208,18 +22149,6 @@
     ]
   },
   {
-    "name": "Turquoise",
-    "id": "turquoise",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 1000,
-    "entries": [
-      "An opaque light blue-green gemstone."
-    ]
-  },
-  {
     "name": "Two-Birds Sling",
     "id": "two-birds-sling",
     "source": "MOT",
@@ -24253,17 +23182,6 @@
     ]
   },
   {
-    "name": "Wheat",
-    "id": "wheat",
-    "source": "PHB",
-    "page": 157,
-    "srd": true,
-    "type": "TG",
-    "rarity": "none",
-    "weight": 1,
-    "value": 1
-  },
-  {
     "name": "Wheel of Stars",
     "id": "wheel-of-stars",
     "source": "AI",
@@ -24893,18 +23811,6 @@
     ]
   },
   {
-    "name": "Yellow Sapphire",
-    "id": "yellow-sapphire",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 100000,
-    "entries": [
-      "A transparent fiery yellow or yellow-green gemstone."
-    ]
-  },
-  {
     "name": "Druidic Focus, Yew Wand",
     "id": "yew-wand",
     "source": "PHB",
@@ -24927,18 +23833,6 @@
     "value": 1000,
     "entries": [
       "Zabou mushrooms feed on offal and the rotting wood of dead trees. If handled carefully, a zabou can be picked or uprooted without causing it to release its spores. If crushed or struck, a zabou releases its spores in a 10-foot-radius sphere. A zabou can also be hurled up to 30 feet away or dropped like a grenade, releasing its cloud of spores on impact. Any creature in that area must succeed on a DC 10 Constitution saving throw or be {@conditions poisoned} for 1 minute. The {@conditions poisoned} creature's skin itches for the duration. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
-    ]
-  },
-  {
-    "name": "Zircon",
-    "id": "zircon",
-    "source": "DMG",
-    "page": 134,
-    "type": "$",
-    "rarity": "none",
-    "value": 5000,
-    "entries": [
-      "A transparent pale blue-green gemstone."
     ]
   },
   {

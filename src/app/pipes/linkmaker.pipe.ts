@@ -30,7 +30,7 @@ export class LinkmakerPipe implements PipeTransform {
       var splitArr = cleanString.split(' ');
       var linkPath = splitArr.slice(1).join(' ');
       var linkLocation = linkPath.replace(/[\s\/]/g, '-').replace(/[^\w-]/g, '').toLowerCase();
-      var linkRoot = splitArr.slice(0, 1).toString().replace('creature', 'beastiary').replace('spells', 'spell').replace('spell', 'spells').replace('item', 'tems').replace('@', '/');
+      var linkRoot = splitArr.slice(0, 1).toString().replace('creature', 'beastiary').replace('spells', 'spell').replace('spell', 'spells').replace('items', 'item').replace('item', 'items').replace('@', '/');
       if (queryText !== '') {
         var href = linkRoot + '?' + queryText;
       } else {
