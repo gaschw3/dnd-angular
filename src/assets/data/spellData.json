@@ -6236,16 +6236,26 @@
                 }
             ],
             "entries": [
-                "You cause up to six pillars of stone to burst from places on the ground that you can see within range. Each pillar is a cylinder that has a diameter of 5 feet and a height of up to 30 feet. The ground where a pillar appears must be wide enough for its diameter, and you can target the ground under a creature if that creature is Medium or smaller. Each pillar has AC 5 and 30 hit points. When reduced to 0 hit points, a pillar crumbles into rubble, which creates an area of difficult terrain with a 10-foot radius that lasts until the rubble is cleared. Each 5-foot-diameter portion of the area requires at least 1 minute to clear by hand.",
-                "If a pillar is created under a creature, that creature must succeed on a Dexterity saving throw or be lifted by the pillar. A creature can choose to fail the save.",
-                "If a pillar is prevented from reaching its full height because of a ceiling or other obstacle, a creature on the pillar takes {@damage 6d6} bludgeoning damage and is {@condition restrained}, pinched between the pillar and the obstacle. The {@condition restrained} creature can use an action to make a Strength or Dexterity check (the creature's choice) against the spell's save DC. On a success, the creature is no longer {@condition restrained} and must either move off the pillar or fall off it."
+                "You haul up to six mighty spire of rock out of the ground, erupting at locations you can see within range. Each spire occupies a 5-foot space, is up to 30 feet tall, is AC 11 and has 30 hit points. ",
+                "If a spires is created under a creature, you can choose pillar or spike.",
+                "If you choose pillar that creature must succeed on a Dexterity saving throw or be lifted by the pillar. A creature can choose to fail the save.",
+                "If you choose spike that creature it takes {@damage 5d10} piercing damage and is impaled if it is Large or smaller, becoming restrained at the top of the spike. Huge creatures can be restrained if targeted with two or more spikes, and Gargantuan creatures with six or more. On a success, targets suffer half as much damage and no other effects. A creature can only be damaged by the spell once.",
+                "An impaled target can use its action to attempt an Athletics or Acrobatics check to free themselves, rolling against your spell save DC. On a success, they are no longer restrained and fall. Targets are also freed if their spike is destroyed.",
+                "If a creature is slammed into a ceiling or other obstacle when it gets impaled, it takes an additional {@damage 2d10} bludgeoning damage, and attempts to free itself are made at disadvantage. The spikes crumble back into the earth after 1 hour.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Make this into a much more metal spell that isn't hamstrung into total uselessnessby certain environments. Also allow it to be used on bery large creatures, which is a fantastic image."
+                    ]
+                }
             ],
             "entriesHigherLevel": [
                 {
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 7th level or higher, you can create two additional pillars for each slot level above 6th."
+                        "When you cast this spell using a spell slot of 7th level or higher, you can create two additional spires for each slot level above 6th."
                     ]
                 }
             ],
@@ -17839,19 +17849,45 @@
                 }
             ],
             "entries": [
-                "A nonmagical weapon you touch becomes a magic weapon. Choose one of the following damage types: cold, fire, or lightning. For the duration, the weapon has a +1 bonus to attack rolls and deals an extra {@damage 2d4} damage of the chosen type when it hits, and the weapon's base damage is of the chosen type.",
+                "You touch a melee weapon and enhance it with elemental power. Choose one of the following damage types: acid, cold, fire, or lightning. For the duration, the weapon deals 1d6 bonus damage per hit, and the weapon's base damage is of the chosen type. In addition, once per round after a creature takes damage from the weapon, they suffer an effect based on the damage type chosen:",
+                {
+                    "type": "list",
+                    "style": "list-hang-notitle",
+                    "items": [
+                        {
+                            "type": "item",
+                            "name": "Acid",
+                            "entry": "The target takes 2d4 acid damage at the end of their next turn."
+                        },
+                        {
+                            "type": "item",
+                            "name": "Fire",
+                            "entry": "The target takes 1d6 additional fire damage."
+                        },
+                        {
+                            "type": "item",
+                            "name": "Cold",
+                            "entry": "The target's movement speed is reduced by half."
+                        },
+                        {
+                            "type": "item",
+                            "name": "Lightning",
+                            "entry": "The target takes 1d8 lightning damage if they willingly move 5 feet or more before the end of their next turn."
+                        }
+                    ]
+                },
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff",
+                    "name": "DM Note: Change",
                     "entries": [
-                        "Damge up from 1d4 -> 2d4 so that it's at ~equal to Divine Favor + Magic Weapon (which are 1st and 2nd level)."
+                        "Generally just a buff, but also allows some interesting/thematic applications of the various elements."
                     ]
                 },
                 {
                     "type": "inset",
                     "name": "3rd Ecumenical Spell Council of Capital",
                     "entries": [
-                        "Though you are doing some small amount of transmutation to attach the effect to a weapon, the effects themselves are evocation magic."
+                        "Though you are doing some small amount of abjuration and transmutation to attach the effect to a weapon, the effects themselves are evocation magic."
                     ]
                 }
             ],
@@ -42042,7 +42078,7 @@
             "page": 271,
             "srd": true,
             "level": 2,
-            "school": "N",
+            "school": "T",
             "time": [
                 {
                     "number": 1,
@@ -48362,7 +48398,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Steel Wind Strike",
                     "entries": [
-                        "I have long been confused by {@spell Steel Wind Strike} - clearly a spell meant for Martials but one that they cannot seemingly use. As usual, the culprit was meddlesome Wizards, who have tweaked the spell to suit them, leaving it rather unsuitable for its intended audience. Fortunately, I have been able to reconstruct it's true form."
+                        "I have long been confused by Steel Wind Strike - clearly a spell meant for martials but one that they cannot seemingly use. As usual, the culprit was meddlesome Wizards, who have tweaked the spell to suit them, leaving it rather unsuitable for its intended audience. Fortunately, I have been able to reconstruct it's true form."
                     ]
                 },
                 {
@@ -52498,7 +52534,7 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Dame up from 4d8 -> 5d8, still worse than fireball and lightning bolt, but prone plus weirder area are commensurate."
+                        "Damage up from 4d8 -> 5d8, still worse than fireball and lightning bolt, but prone plus weirder area are commensurate."
                     ]
                 }
             ],
