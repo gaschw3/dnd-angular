@@ -6259,6 +6259,7 @@
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "bludgeoning"
             ],
@@ -7631,6 +7632,7 @@
                     ]
                 }
             ],
+            "change": "change",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -14653,6 +14655,7 @@
                     ]
                 }
             ],
+            "change": "buff",
             "affectsCreatureType": [
                 "aberration",
                 "celestial",
@@ -17762,10 +17765,11 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "From CON -> CHA save to make it more likely to take hold. Once per turn -> Twice per turn to boost stuff like Scorching Ray or Twinned Cantrips"
+                        "From CON -> CHA save to make it more likely to take hold. Once per turn -> twice per turn to boost stuff like Scorching Ray or Twinned Cantrips"
                     ]
                 }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -38490,6 +38494,7 @@
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "psychic"
             ],
@@ -49126,6 +49131,7 @@
                     ]
                 }
             ],
+            "change": "buff",
             "damageInflict": [
                 "acid",
                 "bludgeoning",
