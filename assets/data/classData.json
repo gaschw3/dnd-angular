@@ -10667,35 +10667,44 @@
       {
         "level": 1,
         "filter": "yes",
-        "subclass": "undying",
-        "name": "undying",
-        "title": "Patron: The Undying",
-        "source": "SCAG",
+        "subclass": "worldbreaker",
+        "name": "worldbreaker",
+        "title": "Patron: The Worldbreaker",
+        "source": "BREW",
         "text": [
-
-          "Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize—like all power—comes at a price. Once mortal, the Undying has seen mortal lifetimes pass like the seasons, like the flicker of endless days and nights. It has the secrets of the ages to share, secrets of life and death. Beings of this sort include Vecna, Lord of the Hand and the Eye; the dread Iuz; the lich-queen Vol; the Undying Court of Aerenal; Vlaakith, lich-queen of the githyanki; and the deathless wizard Fistandantalus.",
-          "The Undying lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.",
+          "Your patron is an agent of absolute destruction. It seeks to bring all life as you know it to ruin, wanting nothing more than to collapse the universe to dust. Examples of patrons you might entreat include Tharizdun, Ygorl, Jormundangr, or one of the trapped Arkhosan Titans. This pact might even be made with a sentient sphere of annihilation or particularly destructive nature spirit.",
+          "While a hunger for power might have drawn you to your patron, you might act against its interests now that you know its true desires. In these cases, your patron sees no reason to revoke the boons its granted you, seeing you as nothing more than a vessel through which its power can reach out and destroy, regardless of your intentions.",
           {
             "type": "list",
             "items": [
-              "1st - {@spells false life}, {@spells ray of sickness}",
-              "3rd - {@spells blindness/deafness}, {@spells silence}",
-              "5th - {@spells feign death}, {@spells speak with dead}",
-              "7th - {@spells aura of life}, {@spells death ward}",
-              "9th - {@spells contagion}, {@spells legend lore}"
+              "1st - {@spells catapult}, {@spells earth tremor}",
+              "3rd - {@spells earthen grasp}, {@spells spike growth}",
+              "5th - {@spells erupting earth}, {@spells tidal wave}",
+              "7th - {@spells storm sphere}, {@spells wall of fire}",
+              "9th - {@spells maelstrom}, {@spells immolation}"
             ]
           }
         ]
       },
       {
         "level": 1,
-        "subclass": "undying",
-        "name": "undying-among-the-dead",
-        "title": "The Undying: Among the Dead",
+        "subclass": "worldbreaker",
+        "name": "worldbreaker-emissary",
+        "title": "The Worldbreaker: Emissary of the Apocalypse",
         "text": [
-
-          "Starting at 1st level, you learn the spare the dying cantrip, which counts as a warlock cantrip for you. You also have advantage on saving throws against any disease.",
-          "Additionally, undead have difficulty harming you. If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw against your spell save DC (an undead needn't make the save when it includes you in an area effect, such as the explosion of fireball). On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this effect for 24 hours if you target it with an attack or a harmful spell."
+          "You can cause any non-magical item thats less than 10 pounds to crumble under the weight of your gaze as an action on your turn; if the item has a gold cost equal to or less than twice your warlock level, it's immediately destroyed and turns to dust.",
+          "When you reduce a creature larger than size tiny to 0 hit points, you can scar the earth as a marker of your devastation. The ground within 10 feet of the creature becomes corrupted as plants wither and rock erodes. This ground becomes difficult terrain for 1 year, or until it's removed by dispel magic or physical labor."
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "worldbreaker",
+        "name": "worldbreaker-ruin",
+        "title": "The Worldbreaker: Fall to Ruin",
+        "text": [
+          "When an allied creature deals damage to a creature or object you can see within 60 feet of you, you can use your reaction to inflict ruin upon it. The target takes an additional 2d6 force damage. This damage increases to 4d6 at 10th level.",
+          "If you reduce a creature to 0 hit points with this feature, you don't expend a use of it. At 10th level, you can have the creature and any non-magical equipment it's wearing or carrying is immediately destroyed, turning to dust.",
+          "You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
         ]
       },
       {
@@ -10716,7 +10725,7 @@
               "3rd - {@spells gust of wind}, {@spells silence}",
               "5th - {@spells lightning bolt}, {@spells sleet storm}",
               "7th - {@spells control water}, {@spells summon elemental} (water only)",
-              "9th - {@spells Bigby's hand} (as a tentacle), {@spells cone of cole}"
+              "9th - {@spells Bigby's hand} (as a tentacle), {@spells cone of cold}"
             ]
           }
         ]
@@ -10740,6 +10749,48 @@
         "title": "The Fathomless: Gift of the Sea",
         "text": [
           "You gain a swimming speed of 40 feet, and you can breathe underwater."
+        ]
+      },
+      {
+        "level": 1,
+        "filter": "yes",
+        "subclass": "undead",
+        "name": "undead",
+        "title": "Patron: The Undead",
+        "source": "VRGR",
+        "text": [
+          "You've made a pact with a deathless being, a creature that defies the cycle and life and death, forsaking its mortal shell so it might eternally pursue its unfathomable ambitions. For such beings, time and morality are fleeting things, the concerns of those for whom grains of sand still rush through life's hourglass. Having once been mortal themselves, these ancient undead know firsthand the paths of ambition and the routes past the doors of death. They eagerly share this profane knowledge, along with other secrets, with those who work their will among the living.",
+          "Beings of this type include the demilich Acererak, the vampire tyrant Kas the Bloody-Handed, the githyanki lich-queen Vlaakith, the dracolich Dragotha, the undead pharaoh Ankhtepot, and the elusive Darklord, Azalin Rex.",
+          "The Undead lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.",
+          {
+            "type": "list",
+            "items": [
+              "1st - {@spells bane}, {@spells false life}",
+              "3rd - {@spells blindness/deafness}, {@spells phantasmal force}",
+              "5th - {@spells phantom steed}, {@spells speak with dead}",
+              "7th - {@spells death ward}, {@spells greater invisibility}",
+              "9th - {@spells antilife shell}, {@spells cloudkill}"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 1,
+        "subclass": "undead",
+        "name": "undead-form-of-dread",
+        "title": "The Undead: Form of Dread",
+        "text": [
+          "You manifest an aspect of your patron's dreadful power. As a bonus action, you transform for 1 minute. You gain the following benefits while transformed:",
+          {
+            "type": "list",
+            "items": [
+              "You gain temporary hit points equal to 1d10 + your warlock level.",
+              "Once during each of your turns, when you hit a creature with an attack roll, you can force it to make a Wisdom saving throw, and if the saving throw fails, the target is frightened of you until the end of your next turn.",
+              "You are immune to the frightened condition."
+            ]
+          },
+          "You can transform a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "The appearance of your Form of Dread reflects some aspect of your patron. For example, your form could be a shroud of shadows forming the crown and robes of your lich patron, or your body might glow with glyphs from ancient funerary rites and be surrounded by desert winds, suggesting your mummy patron."
         ]
       },
       {
@@ -10964,9 +11015,8 @@
         "title": "Eldritch Invocations",
         "text": [
 
-          "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability. At 2nd level, you gain two eldritch invocations from below. When you gain certain warlock levels, you gain additional invocations of your choice.",
-          "Additionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level. A level prerequisite in an invocation refers to warlock level, not character level.",
-          "<div class='row'><div class='col-sm-6'><h5 class='mb-0'><strong>All Warlocks</strong></h5><h5 class='mb-0'>Agonizing Blast</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you cast {@spells eldritch blast}, add your Charisma modifier to the damage it deals on a hit.<h5 class='mb-0'>Eldritch Spear</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you cast {@spells eldritch blast}, its range is 300 feet.<h5 class='mb-0'>Repelling Blast</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>When you hit a creature with {@spells eldritch blast}, you can push the creature up to 10 feet away from you in a straight line.<h5 class='mb-0'>Lance of Lethargy (XGE)</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip</em><p class='pad-left'>Once on each of your turns when you hit a creature with your {@spells eldritch blast}, you can reduce that creature's speed by 10 feet until the end of your next turn.<h5 class='mb-0'>Armor of Shadows</h5><p class='pad-left'>You can cast {@spells mage armor} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Beast Speech</h5><p class='pad-left'>You can cast {@spells speak with animals} at will, without expending a spell slot.<h5 class='mb-0'>Beguiling Influence</h5><p class='pad-left'>You gain proficiency in the Deception and Persuasion skills.<h5 class='mb-0'>Devil's Sight</h5><p class='pad-left'>You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.<h5 class='mb-0'>Eldritch Sight</h5><p class='pad-left'>You can cast {@spells detect magic} at will, without expending a spell slot.<h5 class='mb-0'>Eyes of the Rune Keeper</h5><p class='pad-left'>You can read all writing.<h5 class='mb-0'>Fiendish Vigor</h5><p class='pad-left'>You can cast {@spells false life} on yourself at will as a 1st-level spell, without expending a spell slot or material components.<h5 class='mb-0'>Gaze of Two Minds</h5><p class='pad-left'>You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.<h5 class='mb-0'>Mask of Many Faces</h5><p class='pad-left'>You can cast {@spells disguise self} at will, without expending a spell slot.<h5 class='mb-0'>Misty Visions</h5><p class='pad-left'>You can cast {@spells silent image} at will, without expending a spell slot or material components.<h5 class='mb-0'>Thief of Five Fates</h5><p class='pad-left'>You learn the spell {@spells bane}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Mire the Mind</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You learn the spell {@spells slow}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>One with Shadows</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>When you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction.<h5 class='mb-0'>Signs of Ill Omen</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You learn the spell {@spells bestow curse}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Gift of the Depths (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level</em><p class='pad-left'>You can breathe underwater, and you gain a swimming speed equal to your walking speed. You can also cast water breathing once without expending a spell slot. You regain the ability to do so when you finish a long rest.<h5 class='mb-0'>Bewitching Whispers</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells compulsion}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Dreadful Word</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells confusion}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Sculptor of Flesh</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>You learn the spell {@spells polymorph}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest.<h5 class='mb-0'>Ghostly Gaze (XGE)</h5><p class='pad-left'><em>Prerequisite: 7th level</em><p class='pad-left'>As an action, you gain the ability to see through solid objects to a range of 30 feet. Within that range, you have darkvision if you don't already have it. This special sight lasts for 1 minute or until your concentration ends (as if you were concentrating on a spell). During that time, you perceive objects as ghostly, transparent images. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Ascendant Step</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells levitate} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Minions of Chaos</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You learn the spell {@spells conjure elemental}. You may cast this spell once without using a spell slot. Once you cast it this way, you can't do so again until you finish a long rest. At your DMs discretion you may be able to conjure creatures of a different type (depending on your patron) as long as they meet the other criteria for the spell.<h5 class='mb-0'>Otherworldly Leap</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells jump} on yourself at will, without expending a spell slot or material components.<h5 class='mb-0'>Whispers of the Grave</h5><p class='pad-left'><em>Prerequisite: 9th level</em><p class='pad-left'>You can cast {@spells speak with dead} at will, without expending a spell slot.<h5 class='mb-0'>Lifedrinker</h5><p class='pad-left'><em>Prerequisite: 12th level</em><p class='pad-left'>When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum of 1).<h5 class='mb-0'>Master of Myriad Forms</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can cast {@spells alter self} at will, without expending a spell slot.<h5 class='mb-0'>Witch Sight</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.<h5 class='mb-0'>Visions of Distant Realms</h5><p class='pad-left'><em>Prerequisite: 15th level</em><p class='pad-left'>You can cast {@spells arcane eye} at will, without expending a spell slot.</div><div class='col-sm-6'><h5 class='mb-0'><strong>Pact Based</strong></h5><h5 class='mb-0'>Thirsting Blade</h5><p class='pad-left'><em>Prerequisite: 5th level, Pact of the Blade feature</em><p class='pad-left'>You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.<h5 class='mb-0'>Improved Pact Weapon (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Blade feature</em><p class='pad-left'>You can use any weapon you summon with your Pact of the Blade feature as a spellcasting focus for your warlock spells. In addition, the weapon gains a +1 bonus to its attack and damage rolls, unless it is a magic weapon that already has a bonus to those rolls. Finally, the weapon you conjure can be a shortbow, longbow, light crossbow, or heavy crossbow.<h5 class='mb-0'>Eldritch Smite (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Pact of the Blade feature</em><p class='pad-left'>Once per turn when you hit a creature with your pact weapon, you can expend a warlock spell slot to deal an extra 1d8 force damage to the target, plus another 1d8 per level of the spell slot.<h5 class='mb-0'>Book of Ancient Secrets</h5><p class='pad-left'><em>Prerequisite: Pact of the Tome feature</em><p class='pad-left'>You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list. The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag.<p class='pad-left'>On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.<h5 class='mb-0'>Eternal Waking (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Tome feature</em><p class='pad-left'>You no longer need to sleep and can't be forced to sleep by any means. To gain the benefits of a long rest, you can spend all 8 hours doing light activity, such as reading your Book of Shadows and keeping watch.<h5 class='mb-0'>Voice of the Chain Master</h5><p class='pad-left'><em>Prerequisite: Pact of the Chain feature</em><p class='pad-left'>You can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.<h5 class='mb-0'>Gift of the Ever-Living Ones (XGE)</h5><p class='pad-left'><em>Prerequisite: Pact of the Chain feature</em><p class='pad-left'>Whenever you regain hit points while your familiar is within 100 feet of you, treat any dice rolled to determine the hit points you regain as having rolled their maximum value for you.</div><div class='col-sm-6'><h5 class='mb-0'><strong>Patron Based</strong></h5><h5 class='mb-0'>Grasp of Hadar (XGE)</h5><p class='pad-left'><em>Prerequisite: eldritch blast cantrip, Great Old One patron</em><p class='pad-left'>Once on each of your turns when you hit a creature with your {@spells eldritch blast}, you can move that creature in a straight line 10 feet closer to you.<h5 class='mb-0'>Shroud of Ulban (XGE)</h5><p class='pad-left'><em>Prerequisite: 15th level, Great Old One patron</em><p class='pad-left'>As an action, you can turn invisible for 1 minute. If you attack, deal damage, or force a creature to make a saving throw, you become visible at the end of the current turn.<h5 class='mb-0'>Tomb of Levistus (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Fiend patron</em><p class='pad-left'>As a reaction when you take damage, you can entomb yourself in ice, which melts away at the end of your next turn. You gain 10 temporary hit points per warlock level, which take as much of the triggering damage as possible. Immediately after you take the damage, you gain vulnerability to fire damage, your speed is reduced to 0, and you are incapacitated. These effects, including any remaining temporary hit points, all end when the ice melts. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Cloak of Baal (XGE)</h5><p class='pad-left'><em>Prerequisite: 5th level, Fiend patron</em><p class='pad-left'>As a bonus action, you can surround yourself with a magical aura that looks like buzzing flies. The aura extends 5 feet from you in every direction, but not through total cover. It lasts until you're incapacitated or you dismiss it as a bonus action. The aura grants you advantage on Charisma (Intimidation) checks but disadvantage on all other Charisma checks. Any other creature that starts its turn in the aura takes poison damage equal to your Charisma modifier. Once you use this invocation, you can't use it again until you finish a short or long rest.<h5 class='mb-0'>Divine Utterance (HB)</h5><p class='pad-left'><em>Prerequisite: Celestial patron</em><p class='pad-left'>You understand all spoken languages. Moreover, any creature that can understand a language can understand what you say.<h5 class='mb-0'>Angelic Step (HB)</h5><p class='pad-left'><em>Prerequisite: 15th level, Celestial patron</em><p class='pad-left'>As a bonus action you can manifest glowing angelic wings, you gain a flying speed of 30 feet, you can dismiss the wings as a bonus action.<h5 class='mb-0'>Maddening Hex (HB)</h5><p class='pad-left'><em>Prerequisite: 5th level, Hexblade patron</em><p class='pad-left'>As a bonus action, you cause a psychic disturbance around the target cursed by your Hexblade's Curse. When you do so, you deal psychic damage to the cursed target and each creature of your choice that you can see within 5 feet of it. The psychic damage equals your Charisma modifier. To use this invocation, you must be able to see the cursed target, and it must be within 30 feet of you.</div></div>"
+          "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability. At 2nd level, you gain two eldritch invocations from the {@other-features EI/agonizing-blast|table on this page}. When you gain certain warlock levels, you gain additional invocations of your choice.",
+          "Additionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level. A level prerequisite in an invocation refers to warlock level, not character level"
         ]
       },
       {
@@ -11051,16 +11101,6 @@
       },
       {
         "level": 6,
-        "subclass": "undying",
-        "name": "undying-defy-death",
-        "title": "The Undying: Defy Death",
-        "text": [
-          "Starting at 6th level, you can give yourself vitality when you cheat death or when you help someone else cheat it. You can regain hit points equal to 1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed on a death saving throw or when you stabilize a creature with spare the dying.",
-          "Once you use this feature, you can't use it again until you finish a long rest."
-        ]
-      },
-      {
-        "level": 6,
         "subclass": "fathomless",
         "name": "fathomless-oceanic",
         "title": "The Fathomless: Oceanic Soul",
@@ -11075,6 +11115,26 @@
         "title": "The Fathomless: Guardian Coil",
         "text": [
           "Your Tentacle of the Deeps can defend you and others, interposing itself between them and harm. When you or a creature you can see takes damage while within 10 feet of the tentacle, you can use your reaction to choose one of those creatures and reduce the damage to that creature by 1d8. When you reach 10th level in this class, the damage reduced by the tentacle increases to 2d8."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "undead",
+        "name": "undead-grave-touched",
+        "title": "The Undead: Grave Touched",
+        "text": [
+          "Your patron's powers have a profound effect on your body and magic. You don't need to eat, drink, or breathe.",
+          "In addition, once during each of your turns, when you hit a creature with an attack roll and roll damage against the creature, you can replace the damage type with necrotic damage. While you are using your Form of Dread, you can roll one additional damage die when determining the necrotic damage the target takes."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "worldbreaker",
+        "name": "worldbreaker-elevated",
+        "title": "The Worldbreaker: Elevated Destruction",
+        "text": [
+          "You gain half cover while you're in or above any area of difficult terrain created by one of your warlock features or spells. As a bonus action, you can grant yourself a flying speed equal to your walking speed, which lasts for 10 minutes.",
+          "Once you use this feature to grant yourself a flying speed, you can't do so again until you finish a short or long rest."
         ]
       },
       {
@@ -11166,20 +11226,8 @@
         "name": "hexblade-armor",
         "title": "The Hexblade: Armor of Hexes",
         "text": [
-
           "At 10th level, your hex grows more powerful. If the target cursed by your Hexblade's Curse hits you with an attack roll, you can use your reaction to roll a d6. On a 5 or higher, the attack instead misses you, regardless of its roll.",
           "You can use this feature a number of times equal to your Charisma modifier, regaining any expened uses when you finish a long rest."
-        ]
-      },
-      {
-        "level": 10,
-        "subclass": "undying",
-        "name": "undying-nature",
-        "title": "The Undying: Undying Nature",
-        "text": [
-
-          "Beginning at 10th level, you can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests.",
-          "In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged."
         ]
       },
       {
@@ -11190,6 +11238,26 @@
         "text": [
           "You learn the {@spells Evard's black tentacles}. It counts as a warlock spell for you, but it doesn't count against the number of spells you know. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
           "Whenever you cast this spell, your patron's magic bolsters you, granting you a number of temporary hit points equal to your warlock level. Moreover, damage can't break your concentration on this spell."
+        ]
+      },
+      {
+        "level": 10,
+        "subclass": "undead",
+        "name": "undead-husk",
+        "title": "The Undead: Necrotic Husk",
+        "text": [
+          "Your connection to undeath and necrotic energy now saturates your body. You have resistance to necrotic damage. If you are transformed using your Form of Dread, you instead become immune to necrotic damage.",
+          "In addition, when you would be reduced to 0 hit points, you can use your reaction to drop to 1 hit point instead and cause your body to erupt with deathly energy. Each creature of your choice that is within 30 feet of you takes necrotic damage equal to 2d10 + your warlock level. You then gain 1 level of exhaustion. Once you use this reaction, you can't do so again until you finish 1d4 long rests."
+        ]
+      },
+      {
+        "level": 10,
+        "subclass": "worldbreaker",
+        "name": "worldbreaker-desecration",
+        "title": "The Worldbreaker: Desecration",
+        "text": [
+          "Creatures in areas of difficult terrain have disadvantage on saving throws against your warlock spells. A creature that is unaffected by difficult terrain it's in is immune to this effect.",
+          "Your magic lingers and permanently corrupts the land around it. Any area of difficult terrain you create with your warlock features or warlock spells of 1st-level or higher remains as difficult terrain indefinitely. Difficult terrain that lingers this way can be removed with a dispel magic or similar spell cast at 5th-level or higher. You can also dismiss any lingering difficult terrain you've created that you can see as an action on your turn."
         ]
       },
       {
@@ -11306,17 +11374,6 @@
       },
       {
         "level": 14,
-        "subclass": "undying",
-        "name": "undying-indestructible",
-        "title": "The Undying: Indestructible Life",
-        "text": [
-
-          "When you reach 14th level, you partake some of the true secrets of the Undying. On your turn, you can use a bonus action to regain hit points equal to 1d8 + your warlock level. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.",
-          "Once you use this feature, you can't use it again until you finish a short or long rest."
-        ]
-      },
-      {
-        "level": 14,
         "subclass": "fathomless",
         "name": "fathomless-plunge",
         "title": "The Fathomless: Fathomless Plunge",
@@ -11326,7 +11383,39 @@
         ]
       },
       {
-        "level": 10,
+        "level": 14,
+        "subclass": "undead",
+        "name": "undead-husk",
+        "title": "The Undead: Spirit Protection",
+        "text": [
+          "Your spirit can become untethered from your physical form. As an action, you can project your spirit from your body. The body you leave behind is unconscious and in a state of suspended animation.",
+          "Your spirit resembles your mortal form in almost every way, replicating your game statistics but not your possessions. Any damage or other effects that apply to your spirit or physical body affects the other. Your spirit can remain outside your body for up to 1 hour or until your concentration is broken (as if concentrating on a spell). When your projection ends, your spirit returns to your body or your body magically teleports to your spirit's space (your choice).",
+          "While projecting your spirit, you gain the following benefits:",
+          {
+            "type": "list",
+            "items": [
+              "Your spirit and body gain resistance to bludgeoning, piercing, and slashing damage.",
+              "When you cast a spell of the conjuration or necromancy school, the spell doesn't require verbal or somatic components or material components that lack a gold cost.",
+              "You have a flying speed equal to your walking speed and can hover. You can move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or an object.",
+              "While you are using your Form of Dread, once during each of your turns when you deal necrotic damage to a creature, you regain hit points equal to half the amount of necrotic damage dealt"
+            ]
+          },
+          "Once you use this feature, you can't do so again until you finish a long rest."
+        ]
+      },
+      {
+        "level": 14,
+        "subclass": "worldbreaker",
+        "name": "worldbreaker-end",
+        "title": "The Worldbreaker: End of Days",
+        "text": [
+          "As an action on your turn, you can choose a point you can see within 300 feet of you on the ground. A 40-foot cube of magical force appears at the point, tearing the earth apart. Non-magical objects and structures in the area that aren't being worn or carried take 300 force damage; any object or structure inside the area that isn't immediately destroyed becomes vulnerable to all damage until properly repaired.",
+          "Creatures in the area must make a Strength saving throw against your warlock spell save DC, taking 4d12 force damage and becoming stunned until the end of your next turn on a failed save, or take half as much damage and not becoming stunned on a success. If you reduce a creature to 0 hit points with this feature, it and any non-magical equipment it's wearing or carrying is immediately destroyed, turning to dust.",
+          "Once you use this feature, you can't do so again until you finish a long rest."
+        ]
+      },
+      {
+        "level": 14,
         "subclass": "ghost",
         "name": "ghost-technovirus",
         "title": "Ghost in the Machine: Technovirus",

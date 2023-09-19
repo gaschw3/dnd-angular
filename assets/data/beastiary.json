@@ -3,6 +3,7 @@
 		{
 			"name": "Drake Companion",
 			"source": "FTD",
+			"cr": "N/A",
 			"page": 15,
 			"summonedByClass": "Ranger|PHB",
 			"alignment": [
