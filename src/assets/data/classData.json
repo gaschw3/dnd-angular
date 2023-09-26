@@ -11615,7 +11615,8 @@
         "name": "abjuration-savant",
         "title": "Abjuration: Savant",
         "text": [
-          "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an abjuration spell into your spellbook is halved."
+          "When you select this school, choose one level 1 and one level 2 abjuration spell from the wizard spell list and add them to your spellbook.",
+          "In addition, whenever you gain access to a new level of spell slots in this class, you can add one abjuration spell from the Wizard spell list into your spellbook for free."
         ]
       },
       {
@@ -11687,7 +11688,8 @@
         "name": "conjuration-savant",
         "title": "Conjuration: Savant",
         "text": [
-          "Beginning when you select this school at 2nd level, the gold and time you must spend to copy a conjuration spell into your spellbook is halved."
+          "When you select this school, choose one level 1 and one level 2 conjuration spell from the wizard spell list and add them to your spellbook.",
+          "In addition, whenever you gain access to a new level of spell slots in this class, you can add one conjuration spell from the Wizard spell list into your spellbook for free."
         ]
       },
       {
@@ -11716,7 +11718,8 @@
         "name": "divination-savant",
         "title": "Divination: Savant",
         "text": [
-          "Beginning when you select this school at 2nd level, the gold and time you must spend to copy a divination spell into your spellbook is halved."
+          "When you select this school, choose one level 1 and one level 2 divination spell from the wizard spell list and add them to your spellbook.",
+          "In addition, whenever you gain access to a new level of spell slots in this class, you can add one divination spell from the Wizard spell list into your spellbook for free."
         ]
       },
       {
@@ -11745,7 +11748,8 @@
         "name": "enchantment-savant",
         "title": "Enchantment: Savant",
         "text": [
-          "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an enchantment spell into your spellbook is halved."
+          "When you select this school, choose one level 1 and one level 2 enchantment spell from the wizard spell list and add them to your spellbook.",
+          "In addition, whenever you gain access to a new level of spell slots in this class, you can add one enchantment spell from the Wizard spell list into your spellbook for free."
         ]
       },
       {
@@ -11776,7 +11780,8 @@
         "name": "evocation-savant",
         "title": "Evocation: Savant",
         "text": [
-          "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an evocation spell into your spellbook is halved."
+          "When you select this school, choose one level 1 and one level 2 evocation spell from the wizard spell list and add them to your spellbook.",
+          "In addition, whenever you gain access to a new level of spell slots in this class, you can add one evocation spell from the Wizard spell list into your spellbook for free."
         ]
       },
       {
@@ -11805,7 +11810,8 @@
         "name": "illusion-savant",
         "title": "Illusion: Savant",
         "text": [
-          "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an illusion spell into your spellbook is halved."
+          "When you select this school, choose one level 1 and one level 2 illusion spell from the wizard spell list and add them to your spellbook.",
+          "In addition, whenever you gain access to a new level of spell slots in this class, you can add one illusion spell from the Wizard spell list into your spellbook for free."
         ]
       },
       {
@@ -11835,7 +11841,8 @@
         "name": "transmutation-savant",
         "title": "Transmutation: Savant",
         "text": [
-          "Beginning when you select this school at 2nd level, the gold and time you must spend to copy a transmutation spell into your spellbook is halved."
+          "When you select this school, choose one level 1 and one level 2 transmutation spell from the wizard spell list and add them to your spellbook.",
+          "In addition, whenever you gain access to a new level of spell slots in this class, you can add one transmutation spell from the Wizard spell list into your spellbook for free."
         ]
       },
       {
@@ -11865,7 +11872,8 @@
         "name": "necromancy-savant",
         "title": "Necromancy: Savant",
         "text": [
-          "Beginning when you select this school at 2nd level, the gold and time you must spend to copy a necromancy spell into your spellbook is halved."
+          "When you select this school, choose one level 1 and one level 2 necromancy spell from the wizard spell list and add them to your spellbook.",
+          "In addition, whenever you gain access to a new level of spell slots in this class, you can add one necromancy spell from the Wizard spell list into your spellbook for free."
         ]
       },
       {

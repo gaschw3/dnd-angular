@@ -272,17 +272,16 @@
 				{
 					"type": "timed",
 					"duration": {
-						"type": "minute",
+						"type": "hour",
 						"amount": 1
-					},
-					"concentration": true
+					}
 				}
 			],
 			"meta": {
 				"technomagic": true
 			},
 			"entries": [
-				"Four creatures of your choice within range become undetectable to sensors and cameras for the duration of the spell. Anything a target is wearing or carrying is likewise undetectable as long as it is on the target's person. The targets remain visible to vision."
+				"Four creatures of your choice within range become undetectable to sensors and cameras for the duration of the spell. Anything a target is wearing or carrying is likewise undetectable as long as it is on the target's person. The targets remain visible to normal vision."
 			],
 			"areaTags": [
 				"MT"
@@ -703,8 +702,16 @@
                 }
             ],
             "entries": [
-                "A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes {@damage 3d8} fire damage on a failed save, or half as much damage on a successful one."
+                "A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes {@damage 4d8} fire damage on a failed save, or half as much damage on a successful one.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "A consistent underpreformer. Add a little damage to compensate for how hard lining up 3 enemies is vs catching 3 enemies in a {@spell shatter}."
+                    ]
+                }
             ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -6649,7 +6656,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d6} the range of the cone increases by 5 feet for each slot level above 1st."
+                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d6} and the range of the cone increases by 5 feet for each slot level above 1st."
                     ]
                 }
             ],
@@ -10078,12 +10085,12 @@
             ],
             "entries": [
                 "This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled action. Each creature in a 20-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.",
-                "An affected target can't take reactions and must roll a {@dice d10} at the start of each of its turns to determine its behavior for that turn.",
+                "An affected target can't take reactions. At the start of each of its turns, it spends half its movement to travel in a random (d8) direction. It then must roll a d4 to determine its actions, with any conditions lasting until the start of its next turn.",
                 {
                     "type": "table",
                     "caption": "Confusion Behavior",
                     "colLabels": [
-                        "d10",
+                        "d4",
                         "Behavior"
                     ],
                     "colStyles": [
@@ -10093,28 +10100,28 @@
                     "rows": [
                         [
                             "1",
-                            "The creature uses all its movement to move in a random direction. The creature doesn't take an action this turn."
+                            "The creature is stunned."
                         ],
                         [
-                            "2-5",
-                            "The creature doesn't move or take actions this turn."
+                            "2",
+                            "The creature treats every other creature as its enemy and fights them with its typical tactics."
                         ],
                         [
-                            "6-9",
-                            "The creature uses its action to make a melee attack against a creature within its reach, prefering enemies hostile to the caster of this spell. If there is no creature within its reach, the creature does nothing this turn."
+                            "3",
+                            "The creature becomes frightened of every other creature it can see, then takes its turn as normal."
                         ],
                         [
-                            "10",
-                            "The creature can act and move normally."
+                            "4",
+                            "The creature drops any weapons or items it is holding and takes no actions.."
                         ]
                     ]
                 },
-                "At the end of each of its turns, an affected target can make a Wisdom saving throw. If it succeeds, this effect ends for that target.",
+                "At the end of each of its turns, an affected target can repeat its saving throw, ending the effect on itself on a success. A creature can also repeat its saving throw anytime it takes damage.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Increase from 10-foot -> 20-foot radius, and altered the ranges so that creautres attack allies more often and move normally less often."
+                        "Increase from 10-foot -> 20-foot radius, and altered the posible behaviors to eliminate the possibility that the spell does nothing and reduce DM mental load."
                     ]
                 }
             ],
@@ -10396,14 +10403,14 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Damage up from 3d8 -> 5d8; wasting a whole action for less damage than Burning Hands is sad and bad. Also added an upcast."
+                        "Damage up from 3d8 -> 5d8; using a 3rd level spell and full action for less damage than Burning Hands is silly. Also added an upcast."
                     ]
                 },
                 {
                     "type": "inset",
                     "name": "3rd Ecumenical Spell Council of Capital",
                     "entries": [
-                        "A badly named spell, that is actually replicating the same arrow over and over, not conjuring more from nowhere. A motion has been forwarded to the Academy Unseen to change the name moving forward."
+                        "A badly named spell, that is actually replicating the same arrow over and over, not conjuring more from nowhere. A motion has been forwarded to the Academy Unseen to change the name to 'Spreadshot' moving forward."
                     ]
                 }
             ],
@@ -11606,7 +11613,7 @@
             "source": "PHB",
             "page": 228,
             "srd": true,
-            "level": 8,
+            "level": 6,
             "school": "V",
             "time": [
                 {
@@ -11631,46 +11638,53 @@
                     "type": "timed",
                     "duration": {
                         "type": "hour",
-                        "amount": 8
+                        "amount": 1
                     },
                     "concentration": true
                 }
             ],
             "entries": [
-                "You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell. Moving to a place where you don't have a clear path to the sky ends the spell early.",
-                "When you cast the spell, you change the current weather conditions, which are determined by the DM based on the climate and season. You can change precipitation, temperature, and wind. It takes {@dice 1d4 × 10} minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal.",
-                "When you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction.",
+                "You seize the air currents above you, taking control of the local weather. You must be aboveground, with sight of the sky, to cast or maintain this spell.",
+                "When you cast the spell, can choose to shift the precipitation, temperature, and wind each by one level on the charts below. It takes 30 minutes for the conditions to change, after which you can change them again. The charts suggest weather effects effects, and your DM may determine any additional effects resulting from the change in weather.",
+                "After the spell ends, the weather returns to its original state, changing at the same rate. If you cast the spell again, it ends..",
                 {
                     "type": "table",
                     "caption": "Precipitation",
                     "colLabels": [
                         "Stage",
-                        "Condition"
+                        "Condition",
+                        "Effects"
                     ],
                     "colStyles": [
                         "col-1 text-center",
-                        "col-11"
+                        "col-3",
+                        "col-8"
                     ],
                     "rows": [
                         [
                             "1",
-                            "Clear"
+                            "Clear",
+                            "--"
                         ],
                         [
                             "2",
-                            "Light clouds"
+                            "Light clouds",
+                            "--"
                         ],
                         [
                             "3",
-                            "Overcast or ground fog"
+                            "Overcast or ground fog",
+                            "The area is no longer consider to be in sunlight."
                         ],
                         [
                             "4",
-                            "Rain, hail, or snow"
+                            "Rain, hail, or snow",
+                            "Objects and creatures more than 60 feet away are lightly obscured."
                         ],
                         [
                             "5",
-                            "Torrential rain, driving hail, or blizzard"
+                            "Torrential rain, driving hail, or blizzard",
+                            "Objects and creatures more than 30 feet away are heavily obscured. All terrain is difficult terrain."
                         ]
                     ]
                 },
@@ -11679,36 +11693,49 @@
                     "caption": "Temperature",
                     "colLabels": [
                         "Stage",
-                        "Condition"
+                        "Condition",
+                        "Effects"
                     ],
                     "colStyles": [
                         "col-1 text-center",
-                        "col-11"
+                        "col-3",
+                        "col-8"
                     ],
                     "rows": [
                         [
                             "1",
-                            "Unbearable heat"
+                            "Unbearable heat",
+                            "Creatures must make a DC 10 Constitution saving throw every hours or suffer one level of exhaustion."
                         ],
                         [
                             "2",
-                            "Hot"
+                            "Hot",
+                            "Creatures suffer disadvantage on Constitution saves except against weather effects."
                         ],
                         [
                             "3",
-                            "Warm"
+                            "Warm",
+                            "--"
                         ],
                         [
                             "4",
-                            "Cool"
+                            "Pleasant",
+                            "--"
                         ],
                         [
                             "5",
-                            "Cold"
+                            "Cool",
+                            "--"
                         ],
                         [
                             "6",
-                            "Arctic cold"
+                            "Cold",
+                            "Creatures suffer disadvantage against Dexterity checks."
+                        ],
+                        [
+                            "7",
+                            "Arctic cold",
+                            "Creatures must make a DC 10 Constitution saving throw every hours or suffer one level of exhaustion."
                         ]
                     ]
                 },
@@ -11717,32 +11744,39 @@
                     "caption": "Wind",
                     "colLabels": [
                         "Stage",
-                        "Condition"
+                        "Condition",
+                        "Effects"
                     ],
                     "colStyles": [
                         "col-1 text-center",
-                        "col-11"
+                        "col-3",
+                        "col-8"
                     ],
                     "rows": [
                         [
                             "1",
-                            "Calm"
+                            "Calm",
+                            "--"
                         ],
                         [
                             "2",
-                            "Moderate wind"
+                            "Moderate wind",
+                            "--"
                         ],
                         [
                             "3",
-                            "Strong wind"
+                            "Strong wind",
+                            "Ranged attacks are made at disadvantage."
                         ],
                         [
                             "4",
-                            "Gale"
+                            "Gale",
+                            "Creatures have resistance to damage from ranged attacks."
                         ],
                         [
                             "5",
-                            "Storm"
+                            "Hurricane",
+                            "Ranged attacks are impossible, and all movement against the winds costs twice as much movement."
                         ]
                     ]
                 },
@@ -11750,7 +11784,7 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Casting time down from 10 minutes -> 1 action to make this something you might use in a fight or tense chase or etc."
+                        "Casting time down from 10 minutes -> 1 action to make this something you might use in a fight or tense chase or etc. Spell level down to 6 with duration and area reduced as well, but with upcasting to match then exceed the original for a truly monstrous storm at very high levels."
                     ]
                 },
                 {
@@ -11758,6 +11792,15 @@
                     "name": "3rd Ecumenical Spell Council of Capital",
                     "entries": [
                         "All weather related effects are evocation - either expressive or suppressive. Weather is just an application of energy into a system of air and water."
+                    ]
+                }
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 7th level, the duration goes up to 8 hours, and the area increases to a 5-mile radius. When you cast this spell using a spell slot of 8th level, the duration goes up to 24 hours, and the area increases to a 10-mile radius. When you cast this spell using a spell slot of 9th level, the duration goes up to 1 week, and the area increases to a 25-mile radius."
                     ]
                 }
             ],
@@ -12775,14 +12818,13 @@
                 }
             ],
             "entries": [
-                "One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become {@condition charmed} by you for the duration. While the target is {@condition charmed} in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes.",
-                "The {@condition charmed} target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if none are within its reach.",
-                "The target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.",
+                "One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become {@condition charmed} by you for the duration. While the target is {@condition charmed} in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes. When you cast the spell, or as an action on subsequent turns, you may activate this madness.",
+                "If their madness is activated, at the beginning of the target's turn, they must move up to their speed towards the closest other creature and use their action to make 1 melee attack against them. If their madness is not activated or they cannot reach another creature, the target may take their turn as normal. Regardless, they may attempt a Wisdom saving throw at the end of their turn, ending the spell on a success.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "No longer requires an action to keep effect up. Unique upcasting for multiattack targets."
+                        "Spell doesn't end of save when going unactivated, allow some movement before the attack to remove extremely trivial counterplay. Unique upcasting for multiattack targets."
                     ]
                 }
             ],
@@ -14652,6 +14694,13 @@
                     "name": "DM Note: Buff",
                     "entries": [
                         "Allow ritual casting, might get some clerics to cast it in some scenarios?"
+                    ]
+                },
+                {
+                    "type": "inset",
+                    "name": "3rd Ecumenical Spell Council of Capital",
+                    "entries": [
+                        "It is the ultimately purview of the clergy to rename this spell, but the wizards of this counci have submitted 'Detect Otherworldly Influence' as a suggestion to reduce stigmatization of non-humanoind creatures as 'evil'."
                     ]
                 }
             ],
@@ -17050,7 +17099,7 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Damge up from 3d6 -> 6d6"
+                        "Damage up from 3d6 -> 6d6"
                     ]
                 }
             ],
@@ -17432,12 +17481,12 @@
                 }
             ],
             "entries": [
-                "You cause a tremor in the ground within range. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes {@damage 2d6} bludgeoning damage and is knocked {@condition prone}. On a success, they suffer half as much damage and no other effects. If the ground in that area is loose earth or stone, it becomes difficult terrain it becomes difficult terrain for all other creatures besides you until cleared, with each 5-foot-diameter portion requiring at least 1 minute to clear by hand.",
+                "You cause a tremor in the ground within range. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes {@damage 2d6} bludgeoning damage and is knocked {@condition prone}. On a success, they suffer half as much damage and no other effects. If the ground in that area is loose earth or stone, it becomes difficult terrain for all other creatures besides you until cleared, with each 5-foot-diameter portion requiring at least 1 minute to clear by hand.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Damge up from 1d6 -> 2d6 (save for half), prone + difficult terrain makes it comparable to Thunderwave. Let caster ignore terrain to use as an escape."
+                        "Damage up from 1d6 -> 2d6 (save for half), prone + difficult terrain makes it comparable to {@spell thunderwave}. Let caster ignore terrain to use as an escape."
                     ]
                 }
             ],"change": "buff",
@@ -23263,7 +23312,7 @@
             },
             "components": {
                 "s": true,
-                "m": "a small amount of makeup applied to the face as this spell is cast"
+                "m": "1 cp, which is consumed in the casting"
             },
             "duration": [
                 {
@@ -23276,7 +23325,7 @@
                 }
             ],
             "entries": [
-                "For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn't hostile toward you. When the spell ends, the creature can make a wisdom saving throw. On a success the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM's discretion), depending on the nature of your interaction with it.",
+                "For the duration, you have advantage on Charisma (Persuasion) or Charisma (Deception) checks directed at one creature of your choice that isn't hostile toward you. When the spell ends, the creature can make a wisdom saving throw. On a success the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM's discretion), depending on the nature of your interaction with it.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -23389,7 +23438,7 @@
                 }
             ],
             "entries": [
-                "Freezing cold blasts from your fingertips in a 15-foot cone. Each creature in that area must make a Constitution saving throw, taking {@damage 4d6} cold damage on a failed save, or half as much damage on a successful one.",
+                "Freezing cold blasts from your fingertips in a 15-foot cone. Each creature in that area must make a Constitution saving throw, taking {@damage 3d6} cold damage on a failed save, or half as much damage on a successful one.",
                 "The cold freezes nonmagical liquids in the area that aren't being worn or carried.",
                 {
                     "type": "inset",
@@ -23404,7 +23453,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6} for each slot level above 1st."
+                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d6} and the range of the cone increases by 5 feet for each slot level above 1st."
                     ]
                 }
             ],
@@ -24494,17 +24543,28 @@
             "components": {
                 "v": true,
                 "s": true,
-                "m": "a sprig of mistletoe"
+                "m": "up to 10 pieces of freshly-picked fruit"
             },
             "duration": [
                 {
-                    "type": "instant"
+                    "type": "timed",
+                    "duration": {
+                        "type": "hour",
+                        "amount": 24
+                    }
                 }
             ],
             "entries": [
-                "Up to ten berries appear in your hand and are infused with magic for the duration. A creature can use its action to eat one berry. Eating a berry restores 1 hit point, and the berry provides enough nourishment to sustain a creature for one day.",
-                "The berries lose their potency if they have not been consumed within 24 hours of the casting of this spell."
+                "You infuse the components used in the spell's casting with magic. The fruit gains minor healing properties for the duration. A creature can use its action to eat one fruit. Eating a fruit restores 1 hit point. If a creature eats 10 infused fruits, the magic combines to provide enough nourishment to sustain a creature for one day.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Nerf",
+                    "entries": [
+                        "For a tiny cost, this spell used to trivialize a huge range of low-level survival challenges. THe changes to nourishment and material components fix that."
+                    ]
+                }
             ],
+            "change":"nerf",
             "miscTags": [
                 "HL"
             ],
@@ -28739,12 +28799,12 @@
                 }
             ],
             "entries": [
-                "You create a shard of ice and fling it at one creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d10} piercing damage. Hit or miss, the shard then explodes. The target and each creature within 10 feet of it must succeed on a Dexterity saving throw or take {@damage 2d6} cold damage.",
+                "You create a shard of ice and fling it at one creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d8} piercing damage. Hit or miss, the shard then explodes. The target and each creature within 10 feet of it must succeed on a Dexterity saving throw or take {@damage 2d8} cold damage.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Increase the splash damage radius out from 5 feet -> 10 feet."
+                        "Increase the splash damage radius out from 5 feet -> 10 feet. Changed the damage use d8s, normalizing total damage since a successful attack and a failed save are required for full effect."
                     ]
                 },
                 {
@@ -28761,7 +28821,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 2nd level or higher, the cold damage increases by {@damage 1d6} for each slot level above 1st."
+                        "When you cast this spell using a spell slot of 2nd level or higher, the cold damage increases by {@damage 1d8} for each slot level above 1st."
                     ]
                 }
             ],
@@ -29091,7 +29151,7 @@
                 }
             ],
             "entries": [
-                "You create and shoot an illusory shot at a creature you can see within range with the ranged weapon used as the material component for this spell. Make a ranged spell attack. On hit, they take {@damage 1d8} psychic damage. If damage form this spell reduces a creature to 0 hit points, the creature is knocked it. It falls unconscious and is stable.",
+                "You create and shoot an illusory shot at a creature you can see within range with the ranged weapon used as the material component for this spell. Make a ranged spell attack. On hit, they take {@damage 1d8} psychic damage. If damage form this spell reduces a creature to 0 hit points, the creature is knocked out. It falls unconscious and is stable.",
                 "The number of darts you can fire with this spell increases when you reach 5th level (2 darts), 11th (3 darts), and 17th level (4 darts). You can direct the dart at the same target or at different ones. Make a separate attack roll for each dart."
             ],
             "damageInflict": [
@@ -34082,153 +34142,6 @@
             ]
         },
         {
-            "name": "Manipulate Fate",
-            "source": "BREW",
-            "page": 25,
-            "level": 9,
-            "school": "D",
-            "time": [
-                {
-                    "number": 1,
-                    "unit": "action"
-                }
-            ],
-            "range": {
-                "type": "point",
-                "distance": {
-                    "type": "self"
-                }
-            },
-            "components": {
-                "v": true,
-                "s": true,
-                "m": "a spool of silk thread"
-            },
-            "duration": [
-                {
-                    "type": "timed",
-                    "duration": {
-                        "type": "minute",
-                        "amount": 1
-                    },
-                    "concentration": true
-                }
-            ],
-            "entries": [
-                "You reach out and grasp the imperceptible threads of fate, subtly manipulating them. Whenever a creature within 60 feet of you makes an attack roll, saving throw, or ability check, you can use your reaction to tweak their fate, altering the value of the roll. You can choose to manipulate fate after the die is rolled, but before the outcome is determined.",
-                "You can alter the roll of the die to an adjacent number to the number rolled (outcomes listed on the table below).",
-                {
-                    "type": "table",
-                    "colLabels": [
-                        "{@dice d20}",
-                        "Tweaked Fates"
-                    ],
-                    "colStyles": [
-                        "col-4 text-center",
-                        "col-8 text-left"
-                    ],
-                    "rows": [
-                        [
-                            "1",
-                            "7, 13, or 19"
-                        ],
-                        [
-                            "2",
-                            "12, 18, or 20"
-                        ],
-                        [
-                            "3",
-                            "17, 16, or 19"
-                        ],
-                        [
-                            "4",
-                            "11, 14, or 18"
-                        ],
-                        [
-                            "5",
-                            "13, 15, or 18"
-                        ],
-                        [
-                            "6",
-                            "9, 14, or 16"
-                        ],
-                        [
-                            "7",
-                            "1, 15, or 17"
-                        ],
-                        [
-                            "8",
-                            "10, 16, or 20"
-                        ],
-                        [
-                            "9",
-                            "6, 11, or 19"
-                        ],
-                        [
-                            "10",
-                            "8, 12, or 17"
-                        ],
-                        [
-                            "11",
-                            "4, 9, or 13"
-                        ],
-                        [
-                            "12",
-                            "2, 10, or 15"
-                        ],
-                        [
-                            "13",
-                            "1, 5, or 11"
-                        ],
-                        [
-                            "14",
-                            "4, 6, or 20"
-                        ],
-                        [
-                            "15",
-                            "5, 7, 12"
-                        ],
-                        [
-                            "16",
-                            "3, 6, or 8"
-                        ],
-                        [
-                            "17",
-                            "3, 7, or 10"
-                        ],
-                        [
-                            "18",
-                            "2, 4, or 5"
-                        ],
-                        [
-                            "19",
-                            "1, 3, or 9"
-                        ],
-                        [
-                            "20",
-                            "2, 8, or 14"
-                        ]
-                    ]
-                },
-                "When you alter a roll, you can choose to cast aside subtlety and yank the thread of fate, and select any value of the {@dice d20} as the outcome of the result, but the backlash causes you to take a number {@dice d6} equal to the difference in the value selected from the value rolled in necrotic damage. The spell immediately ends after the result is changed in this more drastic way.",
-                {
-                    "type": "inset",
-                    "name": "Editor's Note",
-                    "entries": [
-                        "The numbers you can pick are the adjacent sides of a d20 to the number rolled. This represents literally nudging the die of fate."
-                    ]
-                }
-            ],
-            "classes": {
-                "fromClassList": [
-                    {
-                        "name": "Wizard",
-                        "source": "PHB"
-                    }
-                ]
-            }
-        },
-        {
             "name": "Mass Cure Wounds",
             "source": "PHB",
             "page": 258,
@@ -35044,7 +34957,7 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Damage up from 4d4 -> 6d4. Actually scale up to be stronger than Magic Missle on single targets."
+                        "Damage up from 4d4 -> 6d4. Actually scale up to be stronger than Magic Missle on single targets. let Sorcerers cast it (especially acid dragonborn)."
                     ]
                 },
                 {
@@ -35078,6 +34991,10 @@
                 "fromClassList": [
                     {
                         "name": "Wizard",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Sorcerer",
                         "source": "PHB"
                     }
                 ],
@@ -35774,7 +35691,7 @@
             ],
             "entries": [
                 "You reach into the mind of one creature you can see within range. The target must make a Wisdom saving throw, taking {@damage 3d8} psychic damage on a failed save, or half as much damage on a successful one.  On a failed save, you psychically pin the target and link yourself to its mind. For the duration, you can use a bonus action to mentally twist the skewer, causing the creature to subtract 1d4 from the next saving throw it makes before the end of your next turn.",
-                "Additionally, you have perfect knowledge of the target's location as long as you are on the same plane of existence. The target can't be hidden from you and it gains no benefit from the invisible condition against you.",
+                "Additionally, you have perfect knowledge of the target's location as long as you are on the same plane of existence. The target can't be hidden from you and it gains no benefit from the invisible condition against you. If you maintain concentration for the full duration, this knowledge lasts for 1 hour after the spell ends.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -36858,12 +36775,12 @@
             "entries": [
                 "You conjure a phantom watchdog in an unoccupied space that you can see within range, where it remains for the duration, until you dismiss it as an action, or until you move more than 100 feet away from it.",
                 "When you cast the spell, designate any number of creatures you can see as the sentry's allies. The sentry is invisible to everyone except its allies, and if any other creature of CR 1/4 or higher comes within 60 feet of it, it calls out an alarm. It can see invisible creatures, see into the Ethereal Plane, and cannot be deceived by illusions.",
-                "At the start of each of your turns, the hound can move up to 30 feet and attempt to bite one creature that is hostile to you. The hound's attack bonus is equal to your spell attack modifier. On a hit, it deals {@damage 4d8} piercing damage. The hound cannot move more than 100 feet from its initial location and moves back to its initial location when it is no longer in combat.",
+                "At the start of each of your turns, the hound can move up to 30 feet and attempt to bite one creature that is hostile to you. The hound's attack bonus is equal to your spell attack modifier. On a hit, it deals {@damage 4d8} piercing damage. The hound cannot move more than 100 feet from its initial location and moves back to its initial location when it is no longer in combat. If you are incapacitated, unconscious, or otherwise unable to direct the sentry, then at the end of your turn it attacks the nearest creature of CR 1/4 or higher that is not its ally.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Allow the hound to move up to 30 feet before trying to bite a foe."
+                        "Allow the hound to move up to 30 feet before trying to bite a foe. Add a clause for casters who are unable to command the hound."
                     ]
                 }
             ],
@@ -38212,8 +38129,16 @@
                 }
             ],
             "entries": [
-                "A veil of shadows and silence radiates from you, masking you and your companions from detection. For the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity ({@skill Stealth}) checks and can't be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage."
+                "A veil of shadows and silence radiates from you, masking you and your companions from detection. Until the spell ends, whenever you or a creature you choose within 30 feet of you must make a Dexterity ({@skill Stealth}) check, the creature can treat a d20 roll lower than the caster's spell save DC as if the roll was equal to the caster's spell save DC instead. A chosen creature leaves no trace of its passage and cannot be tracked except by magical means.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Nerf",
+                    "entries": [
+                        "PWT nullifies too many stealth challenges (especially at low levels), and almost insures that characters with already high stealth to soar above 30. Switching it to an aura of reliable talent where good sneaks benefit more strongly fixes some of that issue."
+                    ]
+                }
             ],
+            "change": "nerf",
             "areaTags": [
                 "MT"
             ],
@@ -42328,6 +42253,73 @@
             ]
         },
         {
+            "name": "Minor Drain",
+            "source": "BREW",
+            "level": 1,
+            "school": "N",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 30
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You send a pulse of necrotic energy towards a target, sucking its life essence away. Make a ranged spell attack. On a hit, the target takes {@damage 3d6} necrotic damage, and you gain one quarter the damage dealt as temporary hit points (minimum 1). These temporary hit points fade at the beginning of your next turn."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d6} for each slot level above 1st."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "poison"
+            ],
+            "conditionInflict": [
+                "poisoned"
+            ],
+            "spellAttack": [
+                "R"
+            ],
+            "savingThrow": [
+                "constitution"
+            ],
+            "areaTags": [
+                "ST"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
             "name": "Ray of Sickness",
             "source": "PHB",
             "page": 271,
@@ -42356,12 +42348,12 @@
                 }
             ],
             "entries": [
-                "A ray of sickening greenish energy lashes out toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 2d8} poison damage and is {@condition poisoned} until the end of your next turn.",
+                "A ray of sickening greenish energy lashes out toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d12} poison damage and is {@condition poisoned}. At the end of each of their turns, they can make a Constitution saving throw, ending the poison on a success.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff",
+                    "name": "DM Note: Change",
                     "entries": [
-                        "Remove save vs the one turn of poison if the ray hits."
+                        "Remove save vs poison if the ray hits and change damage from 2d8 -> 1d12. This spell has been commuted over to a control effect while the new {@spell minor drain} spell acts as a level 1 damage spell (nice for the necromancy subclass)."
                     ]
                 },
                 {
@@ -42372,7 +42364,7 @@
                     ]
                 }
             ],
-            "change": "buff",
+            "change": "change",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -47265,8 +47257,8 @@
                 {
                     "type": "timed",
                     "duration": {
-                        "type": "minute",
-                        "amount": 10
+                        "type": "hour",
+                        "amount": 1
                     }
                 }
             ],
@@ -47289,7 +47281,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 2nd level or higher, you imbue plants with limited sentience, allowing you to communicate with them like beasts. When you cast this spell using a spell slot of 3rd level or higher, you imbue plants with limited animation, allowing them to freely move branches, tendrils, and stalks. You can command plants to release a restrained creature, to turn ordinary terrain into difficult terrain (or the opposite), or to perform other tasks at the DM's discretion."
+                        "When you cast this spell using a spell slot of 2nd level or higher, you imbue plants or size small or larger with limited sentience, allowing you to communicate with them like beasts. When you cast this spell using a spell slot of 3rd level or higher, you imbue plants or size medium or larger with limited animation, allowing them to freely move branches, tendrils, and stalks. You can ask plants to release a restrained creature, to turn ordinary terrain into difficult terrain (or the opposite), or to perform other tasks at the DM's discretion."
                     ]
                 }
             ],
@@ -47340,8 +47332,8 @@
                 {
                     "type": "timed",
                     "duration": {
-                        "type": "minute",
-                        "amount": 10
+                        "type": "hour",
+                        "amount": 1
                     }
                 }
             ],
@@ -47458,6 +47450,9 @@
                     }
                 }
             ],
+            "meta": {
+                "ritual": true
+            },
             "entries": [
                 "You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days.",
                 "Until the spell ends, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, and the corpse is under no compulsion to offer a truthful answer if you are hostile to it or it recognizes you as an enemy. This spell doesn't return the creature's soul to its body, only its animating spirit. Thus, the corpse can't learn new information, doesn't comprehend anything that has happened since it died, and can't speculate about future events.",
@@ -47466,6 +47461,13 @@
                     "name": "3rd Ecumenical Spell Council of Capital",
                     "entries": [
                         "Though working on the dead is the usual realm of necromancy, this spell actually only speak with an animating spirit and pulls information like other arcane knowledge divination spells (eg. augury, legend lore)."
+                    ]
+                },
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "This spell is now a ritual, like it always should have been. More usable, and more fun, and the info is locked behind a DM gate anyway. Might alter it in specific campaigns."
                     ]
                 }
             ],
