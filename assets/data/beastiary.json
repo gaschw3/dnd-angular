@@ -5737,7 +5737,7 @@
 							"{@spells hunter's mark}",
 							"{@spells jump}",
 							"{@spells pass without trace}",
-							"{@spells speak with animals}",
+							"{@spells speak with nature}",
 							"{@spells speak with plants}"
 						]
 					},
@@ -12708,13 +12708,13 @@
 						"The archdruid casts one of the following spells, using Wisdom as the spellcasting ability (spell save DC 17):"
 					],
 					"will": [
-						"{@spells beast sense}",
+						"{@spells beast ally}",
 						"{@spells entangle}",
-						"{@spells speak with animals}"
+						"{@spells speak with nature}"
 					],
 					"daily": {
 						"thrice": [
-							"{@spells animal messenger}",
+							"{@spells animal friend}",
 							"{@spells dominate beast}",
 							"{@spells faerie fire}",
 							"{@spells tree stride}"
@@ -17364,7 +17364,7 @@
 					],
 					"daily": {
 						"once": [
-							"{@spells animal friendship}",
+							"{@spells animal friend}",
 							"{@spells goodberry}"
 						]
 					},
@@ -17498,7 +17498,7 @@
 					],
 					"daily": {
 						"once": [
-							"{@spells animal friendship}",
+							"{@spells animal friend}",
 							"{@spells goodberry}",
 							"{@spells pass without trace}"
 						]
@@ -17643,7 +17643,7 @@
 					],
 					"daily": {
 						"once": [
-							"{@spells animal friendship}",
+							"{@spells animal friend}",
 							"{@spells freedom of movement}",
 							"{@spells goodberry}",
 							"{@spells pass without trace}",
@@ -45938,7 +45938,7 @@
 						"first": {
 							"slots": 4,
 							"spells": [
-								"{@spells animal friendship}",
+								"{@spells animal friend}",
 								"{@spells cure wounds}",
 								"{@spells detect poison and disease}",
 								"{@spells ray of sickness}"
@@ -46832,14 +46832,14 @@
 							"spells": [
 								"{@spells entangle}",
 								"{@spells longstrider}",
-								"{@spells speak with animals}",
+								"{@spells speak with nature}",
 								"{@spells thunderwave}"
 							]
 						},
 						"second": {
 							"slots": 3,
 							"spells": [
-								"{@spells animal messenger}",
+								"{@spells animal friend}",
 								"{@spells barkskin}"
 							]
 						}
@@ -46962,7 +46962,7 @@
 						"second": {
 							"slots": 3,
 							"spells": [
-								"{@spells beast sense}",
+								"{@spells beast ally}",
 								"{@spells flame blade}",
 								"{@spells pass without trace}"
 							]
@@ -52794,7 +52794,7 @@
 				{
 					"name": "Evil Eye (Recharges after a Short or Long Rest)",
 					"entries": [
-						"Ezmerelda targets one creature that she can see within 10 feet of her and casts one of the following spells on the target (save DC 14), requiring neither somatic nor material components to do so: animal friendship, charm person, or hold person. If the target succeeds on the initial saving throw, Ezmerelda is {@conditions blinded} until the end of her next turn. Once a target succeeds on a saving throw against this effect, it is immune to the Evil Eye power of all Vistani for 24 hours."
+						"Ezmerelda targets one creature that she can see within 10 feet of her and casts one of the following spells on the target (save DC 14), requiring neither somatic nor material components to do so: animal friend, charm person, or hold person. If the target succeeds on the initial saving throw, Ezmerelda is {@conditions blinded} until the end of her next turn. Once a target succeeds on a saving throw against this effect, it is immune to the Evil Eye power of all Vistani for 24 hours."
 					]
 				}
 			],
@@ -58112,15 +58112,15 @@
 						"1": {
 							"slots": 4,
 							"spells": [
-								"{@spells animal friendship}",
+								"{@spells animal friend}",
 								"{@spells fog cloud}",
-								"{@spells speak with animals}"
+								"{@spells speak with nature}"
 							]
 						},
 						"2": {
 							"slots": 3,
 							"spells": [
-								"{@spells animal messenger}",
+								"{@spells animal friend}",
 								"{@spells moonbeam}",
 								"{@spells pass without trace}"
 							]
@@ -94588,7 +94588,7 @@
 				{
 					"name": "Evil Eye (Recharges after a Short or Long Rest)",
 					"entries": [
-						"Madam Eva targets one creature that she can see within 10 feet of her and casts one of the following spells on the target (save DC 17), requiring neither somatic nor material components to do so: {@spells animal friendship}, {@spells charm person}, or {@spells hold person}. If the target succeeds on the initial saving throw, Madam Eva is {@conditions blinded} until the end of her next turn. Once a target succeeds on a saving throw against this effect, it is immune to the Evil Eye power of all Vistani for 24 hours."
+						"Madam Eva targets one creature that she can see within 10 feet of her and casts one of the following spells on the target (save DC 17), requiring neither somatic nor material components to do so: {@spells animal friend}, {@spells charm person}, or {@spells hold person}. If the target succeeds on the initial saving throw, Madam Eva is {@conditions blinded} until the end of her next turn. Once a target succeeds on a saving throw against this effect, it is immune to the Evil Eye power of all Vistani for 24 hours."
 					]
 				}
 			],
@@ -101025,14 +101025,14 @@
 							"spells": [
 								"{@spells entangle}",
 								"{@spells longstrider}",
-								"{@spells speak with animals}",
+								"{@spells speak with nature}",
 								"{@spells thunderwave}"
 							]
 						},
 						"2": {
 							"slots": 3,
 							"spells": [
-								"{@spells animal messenger}",
+								"{@spells animal friend}",
 								"{@spells barkskin}"
 							]
 						}
@@ -119896,7 +119896,7 @@
 						"Ras Nsi's innate spellcasting ability is Charisma (spell save DC 16). He can innately cast the following spells, requiring no material components:"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)"
+						"{@spells animal friend} (snakes only)"
 					],
 					"daily": {
 						"thrice": [
@@ -121397,14 +121397,14 @@
 							"spells": [
 								"{@spells entangle}",
 								"{@spells longstrider}",
-								"{@spells speak with animals}",
+								"{@spells speak with nature}",
 								"{@spells thunderwave}"
 							]
 						},
 						"2": {
 							"slots": 3,
 							"spells": [
-								"{@spells animal messenger}",
+								"{@spells animal friend}",
 								"{@spells barkskin}"
 							]
 						}
@@ -145582,7 +145582,7 @@
 						"twice": [
 							"{@spells cure wounds}",
 							"{@spells hold person}",
-							"{@spells speak with animals}",
+							"{@spells speak with nature}",
 							"{@spells thunderwave}"
 						]
 					},
@@ -152052,7 +152052,7 @@
 					],
 					"daily": {
 						"once": [
-							"{@spells animal messenger}",
+							"{@spells animal friend}",
 							"{@spells fog cloud}",
 							"{@spells freedom of movement}",
 							"{@spells pass without trace}",
@@ -153754,7 +153754,7 @@
 						"{@spells mage hand}",
 						"{@spells minor illusion}",
 						"{@spells prestidigitation}",
-						"{@spells speak with animals}"
+						"{@spells speak with nature}"
 					],
 					"daily": {
 						"once": [
@@ -162852,7 +162852,7 @@
 						"The yuan-ti's innate spellcasting ability is Charisma (spell save DC 15). The yuan-ti can innately cast the following spells, requiring no material components:"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)"
+						"{@spells animal friend} (snakes only)"
 					],
 					"daily": {
 						"once": [
@@ -163038,7 +163038,7 @@
 						"The anathema casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save DC 17):"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)"
+						"{@spells animal friend} (snakes only)"
 					],
 					"daily": {
 						"thrice": [
@@ -163362,7 +163362,7 @@
 						"The yuan-ti's innate spellcasting ability is Charisma (spell save DC 13). The yuan-ti can innately cast the following spells, requiring no material components:"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)"
+						"{@spells animal friend} (snakes only)"
 					],
 					"daily": {
 						"thrice": [
@@ -163555,7 +163555,7 @@
 						"The yuan-ti's innate spellcasting ability is Charisma (spell save DC 13). The yuan-ti can innately cast the following spells, requiring no material components:"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)"
+						"{@spells animal friend} (snakes only)"
 					],
 					"daily": {
 						"thrice": [
@@ -163733,7 +163733,7 @@
 						"The yuan-ti's innate spellcasting ability is Charisma (spell save DC 13). The yuan-ti can innately cast the following spells, requiring no material components:"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)"
+						"{@spells animal friend} (snakes only)"
 					],
 					"daily": {
 						"thrice": [
@@ -163931,7 +163931,7 @@
 						"The yuan-ti's innate spellcasting ability is Charisma (spell save DC 13). The yuan-ti can innately cast the following spells, requiring no material components:"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)"
+						"{@spells animal friend} (snakes only)"
 					],
 					"daily": {
 						"thrice": [
@@ -164110,7 +164110,7 @@
 						"The yuan-ti's innate spellcasting ability is Charisma (spell save DC 13). The yuan-ti can innately cast the following spells, requiring no material components:"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)"
+						"{@spells animal friend} (snakes only)"
 					],
 					"daily": {
 						"thrice": [
@@ -164298,7 +164298,7 @@
 						"The yuan-ti casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save DC 13):"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)",
+						"{@spells animal friend} (snakes only)",
 						"{@spells message}",
 						"{@spells minor illusion}",
 						"{@spells prestidigitation}"
@@ -164489,7 +164489,7 @@
 						"The yuan-ti casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save DC 13):"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)",
+						"{@spells animal friend} (snakes only)",
 						"{@spells mage hand}",
 						"{@spells message}",
 						"{@spells prestidigitation}"
@@ -164688,7 +164688,7 @@
 						"The yuan-ti casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save DC 14):"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)",
+						"{@spells animal friend} (snakes only)",
 						"{@spells guidance}",
 						"{@spells mage hand}",
 						"{@spells message}"
@@ -164878,7 +164878,7 @@
 						"The yuan-ti's spellcasting ability is Charisma (spell save DC 12). The yuan-ti can innately cast the following spells, requiring no material components:"
 					],
 					"will": [
-						"{@spells animal friendship} (snakes only)"
+						"{@spells animal friend} (snakes only)"
 					],
 					"daily": {
 						"thrice": [

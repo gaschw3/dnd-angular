@@ -1,0 +1,388 @@
+{
+    "_meta": {
+		"sources": [
+			{
+				"json": "BREW-A",
+				"abbreviation": "BREW-A",
+				"full": "Avalon Spells",
+				"authors": [
+					"Paranoid"
+				],
+				"convertedBy": [
+					"Paranoid"
+				],
+				"version": "1.0.0",
+				"targetSchema": "1.0.0"
+			}
+		],
+		"dateAdded": 1600868694,
+		"dateLastModified": 1600868694,
+		"_dateLastModifiedHash": "38c75dbc7d"
+	},
+	"spell": [
+        {
+            "name": "Starstone Pebble",
+            "source": "BREW-A",
+            "level": 0,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 60
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You create one glowing dart of magical force. That dart hits a creature of your choice that you can see within range. A dart deals {@damage 1d4 + 1} force damage to its target.",
+                "The spell creates more than one dart when you reach higher levels: two at 5th level, three at 11th level, and four at 17th level. The darts all strike simultaneously, and you can direct them to hit one creature or several."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "force"
+            ],
+            "miscTags": [
+                "SGT"
+            ],
+            "areaTags": [
+                "ST",
+                "MT"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Starstone Arc",
+            "source": "BREW-A",
+            "level": 1,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "cone",
+                "distance": {
+                    "type": "feet",
+                    "amount": 25
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You fire a horizontal arc of magic that spreads outward. Each creature in a 25-foot cone must make a Dexterity saving throw. A creature takes {@damage 3d4} force damage on a failed save, or half as much damage on a successful one."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d4} for each slot level above 1st."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "force"
+            ],
+            "savingThrow": [
+                "dexterity"
+            ],
+            "areaTags": [
+                "N"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Starstone Barrage",
+            "source": "BREW-A",
+            "level": 2,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 90
+                }
+            },
+            "components": {
+                "m": "one marble or pebble per projectile",
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You fire three magic shooting stars that pursue a creature within range. Make a ranged spell attack for each star. On a hit, the target takes 2d4 force damage."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 2nd level or higher, you create one additional star for each slot level above 1st."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "force"
+            ],
+            "miscTags": [
+                "SGT"
+            ],
+            "areaTags": [
+                "ST",
+                "MT"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Blade of the Last Dahlia",
+            "source": "BREW-A",
+            "level": 0,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "radius",
+                "distance": {
+                    "type": "feet",
+                    "amount": 5
+                }
+            },
+            "components": {
+                "s": true,
+                "m": {
+                    "text": "a melee weapon worth at least 1 sp",
+                    "cost": 10
+                }
+            },
+            "duration": [
+                {
+                    "type": "timed",
+                    "duration": {
+                        "type": "round",
+                        "amount": 1
+                    }
+                }
+            ],
+            "entries": [
+                "You conjure a glittering rapier of sapphire energy and make a melee spell attack with it against one creature within 5 feet of you. On a hit, the target takes 1d10 piercing damage and and then becomes sheathed in arcane energy until the start of your next turn. If the target casts a spell before then, the target takes {@damage 1d10} slashing damage, and the spell ends.",
+                "This spell's damage increases when you reach certain levels. Both damage rolls increase by {@dice 1d10} when you reach 5th level ({@damage 2d10}), 11th level ({@damage 3d10}), and 17th level ({@damage 4d10})."
+            ],
+            "damageInflict": [
+                "piercing",
+                "slashing"
+            ],
+            "miscTags": [
+                "SCL"
+            ],
+            "areaTags": [
+                "ST"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Dahlian Slicer",
+            "source": "BREW-A",
+            "level": 1,
+            "school": "C",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "self"
+                }
+            },
+            "components": {
+                "m": "metal powder or shavings",
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You conjure a magic sword and deliver a swift slash. Make a melee spell attack against a creature within 5 feet of you. On a hit, the creature takes 2d10 + your spellcasting ability modifier slashing damage."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 3rd level or higher, you can make an additional attack for every 2 slot levels above 1st."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "slashing"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Dahlian Retaliation",
+            "source": "BREW-A",
+            "level": 2,
+            "school": "A",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "reaction",
+                    "condition": "which you take in response to being damaged by a spell from a creature within 120 feet of you that you can see"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 30
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true,
+                "m": "a polished silver knife"
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "As a reaction to being damaged by a spell, you can quickly gesture and attempt to redirect some of the incoming magic.",
+                "You reduce the damage (if any) of the spell by 1d10 + your spellcasting ability modifier, and can retaliate with summoned blades by making up to two ranged spell attacks against any creature within 30 feet of you. The blades deal 1d6 + your spellcasting modifier slashing damage on a hit."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 3rd level or higher, the damage reduced increases by 1d10 for every 2 slot levels above 2nd and you can make summon one additional blade to make a counter attack."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "slashing"
+            ],
+            "savingThrow": [
+                "dexterity"
+            ],
+            "miscTags": [
+                "SGT"
+            ],
+            "areaTags": [
+                "ST"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        }
+    ]
+}

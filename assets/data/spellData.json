@@ -1328,7 +1328,7 @@
             ]
         },
         {
-            "name": "Befriend Beast",
+            "name": "Animal Friend",
             "source": "BREW",
             "level": 1,
             "school": "E",
@@ -1393,84 +1393,6 @@
                         "name": "Ranger",
                         "source": "PHB"
                     }
-                ]
-            }
-        },
-        {
-            "name": "Animal Friendship",
-            "source": "PHB",
-            "page": 212,
-            "srd": true,
-            "level": 1,
-            "school": "E",
-            "time": [
-                {
-                    "number": 1,
-                    "unit": "action"
-                }
-            ],
-            "range": {
-                "type": "point",
-                "distance": {
-                    "type": "feet",
-                    "amount": 30
-                }
-            },
-            "components": {
-                "v": true,
-                "s": true,
-                "m": "a morsel of food"
-            },
-            "duration": [
-                {
-                    "type": "timed",
-                    "duration": {
-                        "type": "hour",
-                        "amount": 24
-                    }
-                }
-            ],
-            "entries": [
-                "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be {@condition charmed} by you for the spell's duration. If you or one of your companions harms the target, the spell ends."
-            ],
-            "entriesHigherLevel": [
-                {
-                    "type": "entries",
-                    "name": "At Higher Levels",
-                    "entries": [
-                        "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional beast for each slot level above 1st."
-                    ]
-                }
-            ],
-            "conditionInflict": [
-                "charmed"
-            ],
-            "savingThrow": [
-                "wisdom"
-            ],
-            "affectsCreatureType": [
-                "beast"
-            ],
-            "miscTags": [
-                "SGT"
-            ],
-            "areaTags": [
-                "ST"
-            ],
-            "classes": {
-                "fromClassList": [
-                    {
-                        "name": "Bard",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Druid",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Ranger",
-                        "source": "PHB"
-                    }
                 ],
                 "fromSubclass": [
                     {
@@ -1495,91 +1417,7 @@
                     "source": "ERLW",
                     "baseName": "Human",
                     "baseSource": "PHB"
-                }
-            ],
-            "backgrounds": [
-                {
-                    "name": "Selesnya Initiate",
-                    "source": "GGR"
-                }
-            ]
-        },
-        {
-            "name": "Animal Messenger",
-            "source": "PHB",
-            "page": 212,
-            "srd": true,
-            "level": 2,
-            "school": "E",
-            "time": [
-                {
-                    "number": 1,
-                    "unit": "action"
-                }
-            ],
-            "range": {
-                "type": "point",
-                "distance": {
-                    "type": "feet",
-                    "amount": 30
-                }
-            },
-            "components": {
-                "v": true,
-                "s": true,
-                "m": "a morsel of food"
-            },
-            "duration": [
-                {
-                    "type": "timed",
-                    "duration": {
-                        "type": "hour",
-                        "amount": 24
-                    }
-                }
-            ],
-            "meta": {
-                "ritual": true
-            },
-            "entries": [
-                "By means of this spell, you use an animal to deliver a message. Choose a Tiny beast you can see within range, such as a squirrel, a blue jay, or a bat. You specify a location, which you must have visited, and a recipient who matches a general description, such as \"a man or woman dressed in the uniform of the town guard\" or \"a red-haired dwarf wearing a pointed hat.\" You also speak a message of up to twenty-five words. The target beast travels for the duration of the spell toward the specified location, covering about 50 miles per 24 hours for a flying messenger, or 25 miles for other animals.",
-                "When the messenger arrives, it delivers your message to the creature that you described, replicating the sound of your voice. The messenger speaks only to a creature matching the description you gave. If the messenger doesn't reach its destination before the spell ends, the message is lost, and the beast makes its way back to where you cast this spell."
-            ],
-            "entriesHigherLevel": [
-                {
-                    "type": "entries",
-                    "name": "At Higher Levels",
-                    "entries": [
-                        "If you cast this spell using a spell slot of 3rd level or higher, the duration of the spell increases by 48 hours for each slot level above 2nd."
-                    ]
-                }
-            ],
-            "affectsCreatureType": [
-                "beast"
-            ],
-            "miscTags": [
-                "SGT"
-            ],
-            "areaTags": [
-                "ST"
-            ],
-            "classes": {
-                "fromClassList": [
-                    {
-                        "name": "Bard",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Druid",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Ranger",
-                        "source": "PHB"
-                    }
-                ]
-            },
-            "races": [
+                },
                 {
                     "name": "Gnome (Mark of Scribing)",
                     "source": "ERLW",
@@ -3998,7 +3836,7 @@
                 }
             ],
             "entries": [
-                "The next time you hit a creature with a weapon attack before this spell ends, your weapon crackles with force, and the attack deals an extra {@damage 5d10} force damage to the target. Additionally, if this attack reduces the target to 50 hit points or fewer, you banish it. If the target is native to a different plane of existence than the one you're on, the target disappears, returning to its home plane. If the target is native to the plane you're on, the creature vanishes into a harmless demiplane. While there, the target is {@condition incapacitated}. It remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
+                "The next time you hit a creature with a melee weapon attack before this spell ends, your weapon crackles with force, and the attack deals an extra {@damage 5d10} force damage to the target. Additionally, if this attack reduces the target to 50 hit points or fewer, you banish it. If the target is native to a different plane of existence than the one you're on, the target disappears, returning to its home plane. If the target is native to the plane you're on, the creature vanishes into a harmless demiplane. While there, the target is {@condition incapacitated}. It remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
                 {
                     "type": "inset",
                     "name": "3rd Ecumenical Spell Council of Capital",
@@ -4431,7 +4269,16 @@
                 }
             ],
             "entries": [
-                "This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.",
+                "You create a tiny symbol above you, which radiates hope in a 30-foot radius until the spell ends. The symbol can take whatever form you choose, such as that of your deity. As a bonus action on your turn, you can move the symbol up to 30 feet.",
+                "Each nonhostile, living creature in the symbol's radius (including you) has advantage on Wisdom saving throws, adds your spellcasting ability modifier to its death saving throws (treating rolls equal to or above 20 as a natural 20), and regains the maximum number of hit points possible from any healing.",
+                "The first time a nonhostile, living creature starts its turn in the symbol's radius, it can use a bonus action to gains a number of temporary hit points equal to 2 rolls of it's highest hit die until the spell ends.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Make it a movable beacon with the same benefits as before, and add added an ability to get temporary HP when the becon triggers to create a 'tide-turning' spell, especially for mass combat."
+                    ]
+                },
                 {
                     "type": "inset",
                     "name": "3rd Ecumenical Spell Council of Capital",
@@ -4440,6 +4287,7 @@
                     ]
                 }
             ],
+            "change":"buff",
             "areaTags": [
                 "MT"
             ],
@@ -4529,7 +4377,7 @@
             ]
         },
         {
-            "name": "Animal Ally",
+            "name": "Beast Ally",
             "source": "BREW",
             "level": 2,
             "school": "D",
@@ -4580,122 +4428,6 @@
             "miscTags": [
                 "SGT"
             ],
-            "areaTags": [
-                "ST"
-            ],
-            "classes": {
-                "fromClassList": [
-                    {
-                        "name": "Druid",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Ranger",
-                        "source": "PHB"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Beast Bond",
-            "source": "XGE",
-            "page": 150,
-            "otherSources": [
-                {
-                    "source": "EEPC",
-                    "page": 15
-                }
-            ],
-            "level": 1,
-            "school": "D",
-            "time": [
-                {
-                    "number": 1,
-                    "unit": "action"
-                }
-            ],
-            "range": {
-                "type": "point",
-                "distance": {
-                    "type": "touch"
-                }
-            },
-            "components": {
-                "v": true,
-                "s": true,
-                "m": "a bit of fur wrapped in a cloth"
-            },
-            "duration": [
-                {
-                    "type": "timed",
-                    "duration": {
-                        "type": "minute",
-                        "amount": 10
-                    },
-                    "concentration": true
-                }
-            ],
-            "entries": [
-                "You establish a telepathic link with one beast you touch that is friendly to you or {@condition charmed} by you. The spell fails if the beast's Intelligence score is 4 or higher. Until the spell ends, the link is active while you and the beast are within line of sight of each other. Through the link, the beast can understand your telepathic messages to it, and it can telepathically communicate simple emotions and concepts back to you. While the link is active, the beast gains advantage on attack rolls against any creature within 5 feet of you that you can see."
-            ],
-            "classes": {
-                "fromClassList": [
-                    {
-                        "name": "Druid",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Ranger",
-                        "source": "PHB"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Beast Sense",
-            "source": "PHB",
-            "page": 217,
-            "level": 2,
-            "school": "D",
-            "time": [
-                {
-                    "number": 1,
-                    "unit": "action"
-                }
-            ],
-            "range": {
-                "type": "point",
-                "distance": {
-                    "type": "touch"
-                }
-            },
-            "components": {
-                "s": true
-            },
-            "duration": [
-                {
-                    "type": "timed",
-                    "duration": {
-                        "type": "hour",
-                        "amount": 1
-                    },
-                    "concentration": true
-                }
-            ],
-            "meta": {
-                "ritual": true
-            },
-            "entries": [
-                "You touch a beast. For the duration of the spell, you can use your action to see through the beast's eyes and hear what it hears, and continue to do so until you use your action to return to your normal senses. While perceiving through the beast's senses, you gain the benefits of any special senses possessed by that creature, though you are {@condition blinded} and {@condition deafened} to your own surroundings.",
-                {
-                    "type": "inset",
-                    "name": "DM Note: Buff",
-                    "entries": [
-                        "Beast no longer has to be willing."
-                    ]
-                }
-            ],
-            "change": "buff",
             "areaTags": [
                 "ST"
             ],
@@ -6253,7 +5985,7 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Make this into a much more metal spell that isn't hamstrung into total uselessnessby certain environments. Also allow it to be used on bery large creatures, which is a fantastic image."
+                        "Make this into a much more metal spell that isn't hamstrung into total uselessness by certain environments. Also allow it to be used on very large creatures, which is a fantastic image."
                     ]
                 }
             ],
@@ -6656,7 +6388,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d6} the range of the cone increases by 5 feet for each slot level above 1st."
+                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d6} and the range of the cone increases by 5 feet for each slot level above 1st."
                     ]
                 }
             ],
@@ -7214,8 +6946,16 @@
                 }
             ],
             "entries": [
-                "You make a calming gesture, and up to three willing creatures of your choice that you can see within range fall {@condition unconscious} for the spell's duration. The spell ends on a target early if it takes damage or someone uses an action to shake or slap it awake. If a target remains {@condition unconscious} for the full duration, that target gains the benefit of a short rest, and it can't be affected by this spell again until it finishes a long rest."
+                "You command up to three willing prone creatures of your choice that you can see within range to sleep.The spell ends for a target if they wake up, such as through damage or being shaken awake as an action. If a target remains {@condition unconscious} for the full duration, that target gains the benefit of a short rest, and it can't be affected by this spell again until it finishes a long rest. The spell's duration is one-fifth the time normally required for a short rest (e.g. 12 minutes for a one-hour rest).",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Just added a small tag to make the spell workable in games that use alternative resting times."
+                    ]
+                }
             ],
+            "change": "change",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -10112,7 +9852,7 @@
                         ],
                         [
                             "4",
-                            "The creature drops any weapons or items it is holding and takes no actions.."
+                            "The creature drops any weapons or items it is holding and takes no actions."
                         ]
                     ]
                 },
@@ -11862,26 +11602,33 @@
                 }
             ],
             "entries": [
-                "You take control of the air in a 100-foot cube that you can see within range. Choose one of the following effects when you cast the spell. The effect lasts for the spell's duration, unless you use your action on a later turn to switch to a different effect. You can also use your action to temporarily halt the effect or to restart one you've halted.",
+                "You take control of the air in a 300-foot cube that you can see within range. Choose one of the following effects when you cast the spell. The effect lasts for the spell's duration, unless you use your action on a later turn to switch to a different effect. You can also use your action to temporarily halt the effect or to restart one you've halted.",
                 {
                     "type": "entries",
-                    "name": "Gusts",
+                    "name": "Gale",
                     "entries": [
-                        "A wind picks up within the cube, continually blowing in a horizontal direction you designate. You choose the intensity of the wind: calm, moderate, or strong. If the wind is moderate or strong, ranged weapon attacks that pass through it or that are made against targets within the cube have disadvantage on their attack rolls. If the wind is strong, any creature moving against the wind must spend 1 extra foot of movement for each foot moved."
+                        "A steady wind blows in a horizontal direction of your choice. Creatures moving against the wind must spend 3 feet of movement for each foot, and ranged attacks made against the wind are impossible. Creatures moving with the wind cover an additional foot for each foot of movement spent. As a bonus action, you can create a gust, forcing all creatures within the area to make a Strength saving throw or be pushed 30 feet in the wind's direction."
                     ]
                 },
                 {
                     "type": "entries",
-                    "name": "Downdraft",
+                    "name": "Turbulence",
                     "entries": [
-                        "You cause a sustained blast of strong wind to blow downward from the top of the cube. Ranged weapon attacks that pass through the cube or that are made against targets within it have disadvantage on their attack rolls. A creature must make a Strength saving throw if it flies into the cube for the first time on a turn or starts its turn there flying. On a failed save, the creature is knocked {@condition prone}."
+                        "You whip the wind into a chaotic vortex. Ranged attacks passing through the the wind are made at disadvantage. Creatures that fly into the wind's area, start their turn flying there, or start flying there have their fly speed reduced by half, and must succeed on a Strength saving throw or be knocked {@condition prone}."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Updraft",
                     "entries": [
-                        "You cause a sustained updraft within the cube, rising upward from the cube's bottom side. Creatures that end a fall within the cube take only half damage from the fall. When a creature in the cube makes a vertical jump, the creature can jump up to 10 feet higher than normal."
+                        "You cause a sustained updraft within the cube, rising upward from the cube's bottom side. Creatures that end a fall within the cube take only half damage from the fall. When a creature in the cube makes a vertical jump, their jump height is tripled."
+                    ]
+                },
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Still pretty niche/bad, but it now at least a huge area and can be used as a movement control option."
                     ]
                 },
                 {
@@ -11892,6 +11639,7 @@
                     ]
                 }
             ],
+            "change": "buff",
             "conditionInflict": [
                 "prone"
             ],
@@ -13368,7 +13116,7 @@
                     "type": "inset",
                     "name": "DM Note: Change",
                     "entries": [
-                        "This spell was mostly just a flavor change from light, so it now sheds light such that it might be able to have some tactical use to create dark zones and as multicolor party lights. Also removed concentration, which was stupid. "
+                        "This spell was mostly just a flavor change from light, so it now sheds light such that it might be able to have some tactical use to create dark zones and as multicolor party lights. Also removed concentration, which was stupid."
                     ]
                 }
             ],
@@ -13463,7 +13211,7 @@
             ],
             "entries": [
                 "Threads of dark power leap from your fingers to pierce up to five Small or Medium corpses you can see within range. Each corpse immediately stands up and becomes undead. You decide whether it is a {@creature zombie} or a {@creature skeleton} (the statistics for {@creature zombie|zombies} and {@creature skeleton|skeletons} are in the Monster Manual), and it gains a bonus to its attack and damage rolls equal to your spellcasting ability modifier.",
-                "You can use a bonus action to mentally command the creatures you make with this spell, issuing the same command to all of them. To receive the command, a creature must be within 60 feet of you. You decide what action the creatures will take and where they will move during their next turn, or you can issue a general command, such as to guard a chamber or passageway against your foes. If you issue no commands, the creatures do nothing except defend themselves against hostile creatures. Once given an order, the creatures continue to follow it until their task is complete.",
+                "The creatures are allies to you and your companions. In combat, the creatures share your initiative count, but they take their turns immediately after yours. As a bonus action, you can issue one command to any number of puppets within the spell's range. You can issue a specific command about the actions the creatures will take during their next turn, or you can issue a general command, such as to guard a chamber or passageway against your foes. If you don't issue a command, they take the Dodge action and use their move to avoid danger. Once given an order, the creatures continue to follow it until their task is complete.",
                 "The creatures are under your control until the spell ends, after which they become inanimate once more."
             ],
             "entriesHigherLevel": [
@@ -14700,7 +14448,7 @@
                     "type": "inset",
                     "name": "3rd Ecumenical Spell Council of Capital",
                     "entries": [
-                        "It is the ultimately purview of the clergy to rename this spell, but the wizards of this counci have submitted 'Detect Otherworldly Influence' as a suggestion to reduce stigmatization of non-humanoind creatures as 'evil'."
+                        "It is the ultimately purview of the clergy to rename this spell, but the wizards of this council have submitted 'Detect Otherworldly Influence' as a suggestion to reduce stigmatization of non-humanoind creatures as 'evil'."
                     ]
                 }
             ],
@@ -16247,7 +15995,7 @@
                     "type": "timed",
                     "duration": {
                         "type": "minute",
-                        "amount": 1
+                        "amount": 10
                     },
                     "concentration": true
                 }
@@ -17784,7 +17532,7 @@
             "time": [
                 {
                     "number": 1,
-                    "unit": "action"
+                    "unit": "bonus"
                 }
             ],
             "range": {
@@ -20562,7 +20310,7 @@
             ]
         },
         {
-            "name": "Feeblemind",
+            "name": "Shatter Mind",
             "source": "PHB",
             "page": 239,
             "srd": true,
@@ -20594,7 +20342,7 @@
             "entries": [
                 "You blast the mind of a creature that you can see within range, attempting to shatter its intellect and personality. The target takes {@damage 4d6} psychic damage and must make an Intelligence saving throw.",
                 "On a failed save, the creature's Intelligence and Charisma scores become 1. The creature can't cast spells, activate magic items, understand language, or communicate in any intelligible way. The creature can, however, identify its friends, follow them, and even protect them.",
-                "At the end of every 30 days, the creature can repeat its saving throw against this spell. If it succeeds on its saving throw, the spell ends.",
+                "After 1 day has passed, a creature can reattempt its saving throw, ending the spell on a success. Every time they fail the saving throw, they add one additional day onto the time interval before they can reattempt their save.",
                 "The spell can also be ended by {@spell greater restoration}, {@spell heal}, or {@spell wish}."
             ],
             "damageInflict": [
@@ -21510,13 +21258,13 @@
                 }
             ],
             "entries": [
-                "A storm made up of sheets of roaring flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes {@damage 10d10} fire damage on a failed save, or half as much damage on a successful one.",
-                "The fire damages objects in the area and ignites flammable objects that aren't being worn or carried. If you choose, plant life in the area is unaffected by this spell.",
+                "You create a whirling storm of fire in the air, calling down destruction upon your enemies. The firestorm appears at a height of your choice between 20 and 300 feet above you, centered above your current location. When you cast the spell, and as a bonus action on subsequent turns, you can call down a 5-foot radius column of fire on five locations you can see within 120 feet. Creatures within the fire must make a Dexterity saving throw, taking {@damage 8d6} fire damage on a failure or half as much on a success. A creature can't be hit more than once in the same turn. The fire ignites flammable objects that aren't being worn or carried.",
+                "If you choose, plant life in the area is unaffected by this spell.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Damage up from 7d10 -> 10d10."
+                        "Altered to be a higher level more deadly version of Call Lightning. Damage is still not great unless you're fighting a lot of creature, but in some scenarios this becomes very powerful."
                     ]
                 }
             ],
@@ -21565,7 +21313,7 @@
                 "type": "point",
                 "distance": {
                     "type": "feet",
-                    "amount": 150
+                    "amount": 120
                 }
             },
             "components": {
@@ -23438,7 +23186,7 @@
                 }
             ],
             "entries": [
-                "Freezing cold blasts from your fingertips in a 15-foot cone. Each creature in that area must make a Constitution saving throw, taking {@damage 4d6} cold damage on a failed save, or half as much damage on a successful one.",
+                "Freezing cold blasts from your fingertips in a 15-foot cone. Each creature in that area must make a Constitution saving throw, taking {@damage 3d6} cold damage on a failed save, or half as much damage on a successful one.",
                 "The cold freezes nonmagical liquids in the area that aren't being worn or carried.",
                 {
                     "type": "inset",
@@ -23453,7 +23201,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6} for each slot level above 1st."
+                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d6} and the range of the cone increases by 5 feet for each slot level above 1st."
                     ]
                 }
             ],
@@ -23901,7 +23649,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 7th or 8th level, the duration is 1 year. When you cast this spell using a spell slot of 9th level, the spell lasts until it is ended by one of the spells mentioned above."
+                        "When you cast this spell using a spell slot of 7th or 8th level, the duration is 1 year and 1 day. When you cast this spell using a spell slot of 9th level, the spell lasts until it is ended by one of the spells mentioned above."
                     ]
                 }
             ],
@@ -29368,11 +29116,18 @@
                 "ritual": true
             },
             "entries": [
-                "You write on parchment, paper, or some other suitable writing material and imbue it with a potent illusion that lasts for the duration.",
-                "To you and any creatures you designate when you cast the spell, the writing appears normal, written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing appears as if it were written in an unknown or magical script that is unintelligible. Alternatively, you can cause the writing to appear to be an entirely different message, written in a different hand and language, though the language must be one you know.",
-                "Should the spell be dispelled, the original script and the illusion both disappear.",
-                "A creature with {@sense truesight} can read the hidden message."
+                "You pen a secret message on a parchment, paper, or other writing material. When you write the message, choose a password or passphrase; when a creature speaks this code while holding the parchment, the secret message appears for 10 minutes before fading again. Alternatively, you can specify a creature. The message automatically appears when they hold the parchment. You can write any other text on the parchment, which becomes invisible anytime the secret message is displayed. When the spell ends, the secret message disappears forever.",
+                "A creature with {@sense truesight} can read the hidden message. A {@spell dispel magic} cast on the parchment ends the spell without revealing the secret message.",
+                "The spell's duration is related to the quality of ink used. Magical ink worth 10gp gives it a duration of 10 days. More expensive ink lasts an additional day for each 1gp spent; if 100gp worth of magical ink is used, the duration becomes permanent.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Add some passphrase and usualy upcasting stuff - mostly this is still a DM spell, but now a player might use it in some campaigns (or from a scroll)."
+                    ]
+                }
             ],
+            "change": "change",
             "classes": {
                 "fromClassList": [
                     {
@@ -29563,7 +29318,7 @@
             "page": 252,
             "srd": true,
             "basicRules": true,
-            "level": 9,
+            "level": 8,
             "school": "A",
             "time": [
                 {
@@ -29595,58 +29350,31 @@
                 }
             ],
             "entries": [
-                "You create a magical restraint to hold a creature that you can see within range. The target must succeed on a Wisdom saving throw or be bound by the spell; if it succeeds, it is immune to this spell if you cast it again. While affected by this spell, the creature doesn't need to breathe, eat, or drink, and it doesn't age. Divination spells can't locate or perceive the target.",
-                "When you cast the spell, you choose one of the following forms of imprisonment.",
+                "You prepare a magical prison, trapping a creature you can see within range for eternity. The target must make a Wisdom saving throw or be imprisoned. On a success, it is immune to this spell for 1 year. While imprisoned in this way, the target does not age, does not need to eat, breathe, or drink, and cannot be found by any divination magic.",
                 {
                     "type": "entries",
-                    "name": "Burial",
+                    "name": "Types of Imprisonment",
                     "entries": [
-                        "The target is entombed far beneath the earth in a sphere of magical force that is just large enough to contain the target. Nothing can pass through the sphere, nor can any creature teleport or use planar travel to get into or out of it."
+                        "You select the form of the prison when you cast the spell. Common options would be a sealed demiplane (eg. a labyrinth, cage, tower, etc.), eternal slumber, unbreakable chains, miniaturized within a gemstone, or buried in a cavity deep below the ground."
                     ]
                 },
-                "The special component for this version of the spell is a small mithral orb.",
-                {
-                    "type": "entries",
-                    "name": "Chaining",
-                    "entries": [
-                        "Heavy chains, firmly rooted in the ground, hold the target in place. The target is {@condition restrained} until the spell ends, and it can't move or be moved by any means until then."
-                    ]
-                },
-                "The special component for this version of the spell is a fine chain of precious metal.",
-                {
-                    "type": "entries",
-                    "name": "Hedged Prison",
-                    "entries": [
-                        "The spell transports the target into a tiny demiplane that is warded against teleportation and planar travel. The demiplane can be a labyrinth, a cage, a tower, or any similar confined structure or area of your choice."
-                    ]
-                },
-                "The special component for this version of the spell is a miniature representation of the prison made from jade.",
-                {
-                    "type": "entries",
-                    "name": "Minimus Containment",
-                    "entries": [
-                        "The target shrinks to a height of 1 inch and is imprisoned inside a gemstone or similar object. Light can pass through the gemstone normally (allowing the target to see out and other creatures to see in), but nothing else can pass through, even by means of teleportation or planar travel. The gemstone can't be cut or broken while the spell remains in effect."
-                    ]
-                },
-                "The special component for this version of the spell is a large, transparent gemstone, such as a corundum, diamond, or ruby.",
-                {
-                    "type": "entries",
-                    "name": "Slumber",
-                    "entries": [
-                        "The target falls asleep and can't be awoken."
-                    ]
-                },
-                "The special component for this version of the spell consists of rare soporific herbs.",
                 {
                     "type": "entries",
                     "name": "Ending the Spell",
                     "entries": [
-                        "During the casting of the spell, in any of its versions, you can specify a condition that will cause the spell to end and release the target. The condition can be as specific or as elaborate as you choose, but the DM must agree that the condition is reasonable and has a likelihood of coming to pass. The conditions can be based on a creature's name, identity, or deity but otherwise must be based on observable actions or qualities and not based on intangibles such as level, class, or hit points."
+                        "During the casting of the spell, in any of its versions, you must specify a condition that will cause the spell to end and release the target. The condition can be as specific or as elaborate as you choose, but the DM must agree that the condition is reasonable and has a likelihood of coming to pass. The conditions can be based on a creature's name, identity, or deity but otherwise must be based on observable actions or qualities and not based on game concepts such as level, class, or hit points."
                     ]
                 },
-                "A {@spell dispel magic} spell can end the spell only if it is cast as a 9th-level spell, targeting either the prison or the special component used to create it.",
-                "You can use a particular special component to create only one prison at a time. If you cast the spell again using the same component, the target of the first casting is immediately freed from its binding."
+                "A {@spell dispel magic} cannot free the target. If the condition comes to pass, the target is instantly freed.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Down from 9th -> 8th level. Some cleanup done on the wording, there was just too much useless/silly stuff on this spell. Made it un-dispellable. It's <em>wish</em> or meeting the special condition."
+                    ]
+                }
             ],
+            "change":"buff",
             "conditionInflict": [
                 "restrained"
             ],
@@ -33499,13 +33227,29 @@
                 }
             ],
             "entries": [
-                "Your body falls into a catatonic state as your soul leaves it and enters the container you used for the spell's material component. While your soul inhabits the container, you are aware of your surroundings as if you were in the container's space. You can't move or use reactions. The only action you can take is to project your soul up to 100 feet out of the container, either returning to your living body (and ending the spell) or attempting to possess a humanoid's body.",
-                "You can attempt to possess any humanoid within 100 feet of you that you can see (creatures warded by a {@spell protection from evil and good} or {@spell magic circle} spell can't be possessed). The target must make a Charisma saving throw. On a failure, your soul moves into the target's body, and the target's soul becomes trapped in the container. On a success, the target resists your efforts to possess it, and you can't attempt to possess it again for 24 hours.",
-                "Once you possess a creature's body, you control it. Your game statistics are replaced by the statistics of the creature, though you retain your alignment and your Intelligence, Wisdom, and Charisma scores. You retain the benefit of your own class features. If the target has any class levels, you can't use any of its class features.",
-                "Meanwhile, the possessed creature's soul can perceive from the container using its own senses, but it can't move or take actions at all.",
-                "While possessing a body, you can use your action to return from the host body to the container if it is within 100 feet of you, returning the host creature's soul to its body. If the host body dies while you're in it, the creature dies, and you must make a Charisma saving throw against your own spellcasting DC. On a success, you return to the container if it is within 100 feet of you. Otherwise, you die.",
-                "If the container is destroyed or the spell ends, your soul immediately returns to your body. If your body is more than 100 feet away from you or if your body is dead when you attempt to return to it, you die. If another creature's soul is in the container when it is destroyed, the creature's soul returns to its body if the body is alive and within 100 feet. Otherwise, that creature dies.",
-                "When the spell ends, the container is destroyed."
+                "Your body falls into a catatonic state as your soul leaves it and enters the container you used for the spell's material component. You perceive from the component using your senses, but can't move or use reactions. You can only use your action to project your soul up to 100 feet, either to return to your living body (ending the spell) or to try to possess a humanoid's body that you can see (creatures warded by a {@spell protection from evil and good} or {@spell magic circle} spell can't be possessed).",
+                "The target must make a Charisma saving throw. On a failure, its soul is trapped in the component, and you take control of its body. You use its physical statistics and features, but retain your alignment and mental ability scores, and your DM determines which mental features you may use. You can use your action to return to the component if it is within 100 feet, returning the target creature's soul to its body. If the target succeeds at its Charisma saving throw, you can't attempt to possess it again for 24 hours.",
+                "The possessed creature can perceive from the component using its senses and can repeat its saving throw as an action after every hour. It can take no other actions. On a success, the target returns to its body and you return to the component if it is within 100 feet; otherwise, you die.",
+                "If the target's body dies while you possess it, the creature dies, and you must make a Charisma saving throw against your spellcasting DC. On a success, you return to the component if it is within 100 feet; otherwise, you die.",
+                "If the spell ends or the container is destroyed, each affected soul attempts to return to its body if it is alive and within 100 feet; otherwise, it dies.",
+                "When the spell ends, the container is destroyed.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Cleaned up wording and gave an ongoing save (reduced by upcasting) so that this can maybe be used by a DM without feeling very unfair."
+                    ]
+                }
+            ],
+            "change":"buff",
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 8th level or higher, the possessed creature can repeat its saving throw once per day. When you cast this spell using a spell slot of 9th level, the possessed creature can repeat its saving throw once per year."
+                    ]
+                }
             ],
             "savingThrow": [
                 "charisma"
@@ -34957,7 +34701,7 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Damage up from 4d4 -> 6d4. Actually scale up to be stronger than Magic Missle on single targets. let Sorcerers cast it (especially acid dragonborn)."
+                        "Damage up from 4d4 -> 6d4. Actually scale up to be stronger than Magic Missle on single targets. Let Sorcerers cast it (especially acid dragonborn)."
                     ]
                 },
                 {
@@ -36112,16 +35856,23 @@
                 {
                     "type": "timed",
                     "duration": {
-                        "type": "hour",
-                        "amount": 1
+                        "type": "minute",
+                        "amount": 10
                     },
                     "concentration": true
                 }
             ],
             "entries": [
-                "You become {@condition invisible} at the same time that an illusory double of you appears where you are standing. The double lasts for the duration, but the invisibility ends if you attack or cast a spell.",
-                "You can use your action to move your illusory double up to twice your speed and make it gesture, speak, and behave in whatever way you choose.",
-                "You can see through its eyes and hear through its ears as if you were located where it is. On each of your turns as a bonus action, you can switch from using its senses to using your own, or back again. While you are using its senses, you are {@condition blinded} and {@condition deafened} in regard to your own surroundings."
+                "As an action, or as a reaction when you are hit by an attack, you become invisible and hidden and create an illusory double of yourself in your space. The double can move at your speed, can gesture or speak as you choose, and mimics any action you take (your attacks or spells appear to originate from the double). The double has the same armor class as you.",
+                "Any time a creature would damage the double, or perceives the double making an attack or casting a spell, they may make an Intelligence (Investigation) check against your spell save DC. If the check succeeds, they realize the double is an illusion and you are no longer invisible to that creature.",
+                "As an action, you can use the double's senses instead of your own until you use your action to return to your normal senses. While you do so, you are blinded and deafened to your own surroundings.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Shortened duration, but improved combat uses to make it almost entirely for tricky use there, since lots of lower level spells work much better for scoutin and invisibility over time."
+                    ]
+                }
             ],
             "conditionInflict": [
                 "blinded",
@@ -36663,7 +36414,7 @@
             "entries": [
                 "A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high cylinder centered on a point within range. Until the spell ends, dim light fills the cylinder.",
                 "When a creature enters the spell's area for the first time on a turn or starts its turn there, it is engulfed in ghostly flames that cause searing pain, and it must make a Constitution saving throw. It takes {@damage 2d10} radiant damage on a failed save, or half as much damage on a successful one.",
-                "A shapechanger makes its saving throw with disadvantage. If it fails, it also instantly reverts to its original form and can't assume a different form until it leaves the spell's light.",
+                "A shapechanger or other creature susceptible to silver makes its saving throw with disadvantage. If it fails, it also instantly reverts to its original form and can't assume a different form until it leaves the spell's light.",
                 "On each of your turns after you cast this spell, you can use an action to move the beam up to 60 feet in any direction."
             ],
             "entriesHigherLevel": [
@@ -37853,7 +37604,7 @@
             ],
             "entries": [
                 "A frigid globe of cold energy streaks from your fingertips to a point of your choice within range, where it explodes in a 60-foot-radius sphere. Each creature within the area must make a Constitution saving throw. On a failed save, a creature takes {@damage 10d6} cold damage. On a successful save, it takes half as much damage.",
-                "If the globe strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area 30 feet square. This ice lasts for 1 minute. Creatures that were swimming on the surface of frozen water are trapped in the ice. A trapped creature can use an action to make a Strength check against your spell save DC to break free.",
+                "Water in the area instantly freezes to a depth of 6 inches. This ice lasts for 1 minute. Creatures that were more than 30% submerged are trapped in the ice. A trapped creature can use an action to make a Strength check against your spell save DC to break free.",
                 "You can refrain from firing the globe after completing the spell, if you wish. A small globe about the size of a sling stone, cool to the touch, appears in your hand. At any time, you or a creature you give the globe to can throw the globe (to a range of 40 feet) or hurl it with a sling (to the sling's normal range). It shatters on impact, with the same effect as the normal casting of the spell. You can also set the globe down without shattering it. After 1 minute, if the globe hasn't already shattered, it explodes."
             ],
             "entriesHigherLevel": [
@@ -38134,7 +37885,7 @@
                     "type": "inset",
                     "name": "DM Note: Nerf",
                     "entries": [
-                        "PWT nullifies too many stealth challenges (especially at low levels), and almost insures that characters with already high stealth to soar above 30. Switching it to an aura of reliable talent where good sneaks benefit more strongly fixes some of that issue."
+                        "PWT nullifies too many stealth challenges (especially at low levels), and almost insures that characters with already high stealth soar above 30 on checks. Switching it to an aura of reliable talent where good sneaks benefit more strongly fixes some of that issue."
                     ]
                 }
             ],
@@ -38380,10 +38131,7 @@
                 }
             ],
             "entries": [
-                "You craft an illusion that takes root in the mind of a creature that you can see within range. The target must make an Intelligence saving throw. On a failed save, you create a phantasmal object, creature, or other visible phenomenon of your choice that is no larger than a 10-foot cube and that is perceivable only to the target for the duration. This spell has no effect on undead or constructs.",
-                "The phantasm includes sound, temperature, and other stimuli, also evident only to the creature.",
-                "The target can use its action to examine the phantasm with an Intelligence ({@skill Investigation}) check against your spell save DC. If the check succeeds, the target realizes that the phantasm is an illusion, and the spell ends.",
-                "While a target is affected by the spell, the target treats the phantasm as if it were real and capable of hindering or harming them. The target rationalizes any illogical outcomes from interacting with the phantasm. When you cast the spell, select one of the following options:",
+                "You plant a debilitating phantasm into the mind of a creature you can see within range. The target must make a Wisdom saving throw or they believe the phantasm to be real and capable of hindering and harming the target. When you cast the spell, select one of the following options:",
                 {
                     "type": "list",
                     "style": "list-hang-notitle",
@@ -38531,6 +38279,76 @@
                             "name": "Undead",
                             "source": "VRGR"
                         }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Hallucination",
+            "source": "BREW",
+            "level": 2,
+            "school": "I",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 60
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true,
+                "m": "a small glass bottle"
+            },
+            "duration": [
+                {
+                    "type": "timed",
+                    "duration": {
+                        "type": "minute",
+                        "amount": 1
+                    },
+                    "concentration": true
+                }
+            ],
+            "entries": [
+                "You afflict a creature you can see within range with an illusory phantasm. The target immediately perceives an object, creature, or other phenomenon which you specify. The phantasm lasts for the duration, must be smaller than a 10-foot cube, and is imperceptible except to the target. It seems real, including sound, smell, and any other properties as needed. The spell has no effect on undead or constructs. It can't cause damage or inflict conditions. The target behaves as if the phantasm is real, and can inspect the phantasm as an action, making an Intelligence (Investigation) check against your spell save DC. If it is close enough to touch the phantasm, it has advantage on this check. On a success, the spell ends.",
+                "As a bonus action while you are within range, you can adjust the phantasm (for instance, moving a creature up to 30 feet, opening a door, or shattering a window.)",
+                {
+                    "type": "inset",
+                    "name": "Caius' Notes: Phantasmal Force Variant",
+                    "entries": [
+                        "The spell Phantasmal Force is more concerned with dealing damage or restricting targets with illusion. I found this interesting variant in a Shuriman school of mirage that acts as a single-target stepping stone on the way to {@spell major image}"
+                    ]
+                }
+            ],
+            "savingThrow": [
+                "intelligence"
+            ],
+            "abilityCheck": [
+                "intelligence"
+            ],
+            "miscTags": [
+                "SGT"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Bard",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
                     }
                 ]
             }
@@ -38807,12 +38625,17 @@
                 }
             ],
             "entries": [
-                "You beseech an otherworldly entity for aid. The being must be known to you: a god, a primordial, a demon prince, or some other being of cosmic power. That entity sends a {@filter celestial|creature|type=celestial|miscellaneous=!swarm}, an {@filter elemental|creature|type=elemental|miscellaneous=!swarm}, or a {@filter fiend|creature|type=fiend|miscellaneous=!swarm} loyal to it to aid you, making the creature appear in an unoccupied space within range. If you know a specific creature's name, you can speak that name when you cast this spell to request that creature, though you might get a different creature anyway (DM's choice).",
-                "When the creature appears, it is under no compulsion to behave in any particular way. You can ask the creature to perform a service in exchange for payment, but it isn't obliged to do so. The requested task could range from simple (fly us across the chasm, or help us fight a battle) to complex (spy on our enemies, or protect us during our foray into the dungeon). You must be able to communicate with the creature to bargain for its services.",
-                "Payment can take a variety of forms. A celestial might require a sizable donation of gold or magic items to an allied temple, while a fiend might demand a living sacrifice or a gift of treasure. Some creatures might exchange their service for a quest undertaken by you.",
-                "As a rule of thumb, a task that can be measured in minutes requires a payment worth 100 gp per minute. A task measured in hours requires 1,000 gp per hour. And a task measured in days (up to 10 days) requires 10,000 gp per day. The DM can adjust these payments based on the circumstances under which you cast the spell. If the task is aligned with the creature's ethos, the payment might be halved or even waived. Nonhazardous tasks typically require only half the suggested payment, while especially dangerous tasks might require a greater gift. Creatures rarely accept tasks that seem suicidal.",
+                "You beseech an otherworldly entity for aid. The being must be known to you: a god, a primordial, a demon prince, or some other being of cosmic power. They send one of their loyal servants to aid you, which appears in an unoccupied space within range.",
+                "When the creature appears, it is friendly but under no obligation to help you. It speaks at least one language you speak. It typically demands payment for its aid, in a form appropriate to the creature (e.g. tithes for a celestial or sacrifices for a fiend). When payment has monetary value, it's usually around 5gp per minute, 500 gp per hour, or 5,000 gp per day. It may be discounted or increased as much as 50% depending on whether the extraplanar being endorses the task, or on the danger of the task. The cost also usually increases with repeat summonings from the same extraplanar being, and may be free the first time if the being favors you.",
+                "The requested task could range from simple (fly us across the chasm, or help us fight a battle) to complex (spy on our enemies, or protect us during our foray into the dungeon) and can be anything appropriate to the creature summoned. Creatures will rarely agree to tasks that are suicidal, impossible, abhorrent, or especially lengthy.",
                 "After the creature completes the task, or when the agreed-upon duration of service expires, the creature returns to its home plane after reporting back to you, if appropriate to the task and if possible. If you are unable to agree on a price for the creature's service, the creature immediately returns to its home plane.",
-                "A creature enlisted to join your group counts as a member of it, receiving a full share of experience points awarded."
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Clarified wording and made it less onerous to request simple tasks. Remove the weird shared experience line from the original."
+                    ]
+                }
             ],
             "miscTags": [
                 "SMN"
@@ -42037,7 +41860,7 @@
                 }
             ],
             "entries": [
-                "A black beam of enervating energy springs from your finger toward a creature within range. The target deals only half damage with weapon attacks until the spell ends.",
+                "A black beam of enervating energy springs from your finger toward a creature within range. The target has disadvantage on Strength checks and Strength saving throws and deals only half damage with weapon attacks until the spell ends.",
                 "At the end of each of the target's turns, it can make a Constitution saving throw against the spell. On a success, the spell ends.",
                 {
                     "type": "inset",
@@ -45816,7 +45639,26 @@
             ],
             "entries": [
                 "Dim, greenish light spreads within a 30-foot-radius sphere centered on a point you choose within range. The light spreads around corners, and it lasts until the spell ends.",
-                "When a creature moves into the spell's area for the first time on a turn or starts its turn there, that creature must succeed on a Constitution saving throw or take {@damage 4d10} radiant damage, and it suffers one level of {@condition exhaustion} and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being {@condition invisible}. The light and any levels of {@condition exhaustion} caused by this spell go away when the spell ends."
+                "When a creature moves into the spell's area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. Constructs automatically succeed on saving throws against this spell.",
+                "On a failure the creature takes {@damage 4d10} radiant damage, its speed lowers by 5 feet, and it receives a -1 penalty to attack rolls, ability checks, saving throws, and DCs. A creature suffers cumulative effects with each failed saving throw. If a creature fails its saving throw five times, it dies.",
+                "Additionally on a failure, the creature emits light in a 5-foot radius and cannot benefit from being invisible. Each failed save increases the radius by 5 feet.",
+                "All effects caused by this spell (except death) remain until a creature takes a short rest.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Change exhaustion to a scaling debuff that has mostly the same effect, but does more on odd numbered turns where exhaustion doesn't really do anything."
+                    ]
+                }
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 7th or higher, the duration increases to Concentration, up to 8 hours. If concentration is maintained for 8 hours, the effect within the sphere becomes permanent until Dispel Magic of an equal or higher level is cast upon it."
+                    ]
+                }
             ],
             "damageInflict": [
                 "radiant"
@@ -46162,7 +46004,7 @@
             "name": "Silvery Barbs",
             "source": "SCC",
             "page": 38,
-            "level": 1,
+            "level": 2,
             "school": "E",
             "time": [
                 {
@@ -46188,7 +46030,14 @@
             ],
             "entries": [
                 "You magically distract the triggering creature and turn its momentary uncertainty into encouragement for another creature. The triggering creature must reroll the {@dice d20} and use the lower roll.",
-                "You can then choose a different creature you can see within range (you can choose yourself). The chosen creature has advantage on the next attack roll, ability check, or saving throw it makes within 1 minute. A creature can be empowered by only one use of this spell at a time."
+                "You can then choose a different creature you can see within range (you can choose yourself). The chosen creature has advantage on the next attack roll, ability check, or saving throw it makes within 1 minute. A creature can be empowered by only one use of this spell at a time.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Nerf",
+                    "entries": [
+                        "Another spell that is simply too strong for its level. Moved to level 2, where it is still probably the best spell."
+                    ]
+                }
             ],
             "miscTags": [
                 "SGT"
@@ -46343,17 +46192,10 @@
             }
         },
         {
-            "name": "Skywrite",
-            "source": "XGE",
-            "page": 165,
-            "otherSources": [
-                {
-                    "source": "EEPC",
-                    "page": 22
-                }
-            ],
-            "level": 2,
-            "school": "T",
+            "name": "Sky Omen",
+            "source": "BREW",
+            "level": 6,
+            "school": "I",
             "time": [
                 {
                     "number": 1,
@@ -46384,7 +46226,45 @@
                 "ritual": true
             },
             "entries": [
-                "You cause up to ten words to form in a part of the sky you can see. The words are made of cloud and remain in place for the spell's duration. The words dissipate when the spell ends. A strong wind can disperse the clouds and end the spell early."
+                "You create a gigantic stationary symbol in a part of the sky you can see. You control the appearance of this omen, which displays animations up to 10 minutes in length. The image is visible for a radius of 1 mile. It is obviously unnatural and cannot be mistaken for a real object.",
+                "The first time a creature sees the omen, it must make a Wisdom saving throw. A creature can choose to fail its saving throw if it interprets the omen positively. On a failure, it suffers one of the following effects (or another appropriate effect upon its confidence or morale, as determined by the DM). At the end of every day, a creature can repeat its saving throw against this spell.",
+                {
+                    "type": "list",
+                    "style": "list-hang-notitle",
+                    "items": [
+                        {
+                            "type": "item",
+                            "name": "Terror",
+                            "entry": "A creature failing the save is frightened of the omen."
+                        },
+                        {
+                            "type": "item",
+                            "name": "Awe",
+                            "entry": "A creature failing the save is charmed and will not willingly move anywhere it cannot see the omen except to do things like eat or sleep that are required for living."
+                        },
+                        {
+                            "type": "item",
+                            "name": "Courage",
+                            "entry": "A creature has advantage on saving throws against fear and charm effects while they can see the omen."
+                        }
+                    ]
+                },
+                {
+                    "type": "inset",
+                    "name": "Caius' Notes: Skywrite for Wartime",
+                    "entries": [
+                        "Found this one mouldering in archives underneath a Concordat castle abandoned in some succession war or another. The spell Skywrite is largely useless except for parades and city-wide notifications - <em>this</em> spell is an older much more powerful version that can truly turn the tides of of large scale battle."
+                    ]
+                }
+            ],
+            "entriesHigherLevel": [
+                {
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "If you cast this spell using a 7th-level spell slot, the radius is 6 miles and the duration is concentration, up to 8 hours. If you use an 8th-level spell slot, the radius is 12 miles and the duration is concentration, up to 24 hours. If you use a 9th-level spell slot, the radius is 18 miles, the spell no longer requires concentration, and it lasts until dispelled."
+                    ],
+                    "type": "entries"
+                }
             ],
             "miscTags": [
                 "SGT"
@@ -46402,14 +46282,6 @@
                     {
                         "name": "Wizard",
                         "source": "PHB"
-                    },
-                    {
-                        "name": "Artificer (Revisited)",
-                        "source": "UAArtificerRevisited"
-                    },
-                    {
-                        "name": "Artificer",
-                        "source": "TCE"
                     }
                 ]
             }
@@ -46917,10 +46789,17 @@
             "entries": [
                 "As you cast this spell, you use the rope to create a circle with a 5-foot radius on the ground or the floor. When you finish casting, the rope disappears and the circle becomes a magic trap.",
                 "This trap is nearly invisible, requiring a successful Intelligence ({@skill Investigation}) check against your spell save DC to be discerned.",
-                "The trap triggers when a Small, Medium, or Large creature moves onto the ground or the floor in the spell's radius. That creature must succeed on a Dexterity saving throw or be magically hoisted into the air, leaving it hanging upside down 3 feet above the ground or the floor. The creature is {@condition restrained} there until the spell ends.",
-                "A {@condition restrained} creature can make a Dexterity saving throw at the end of each of its turns, ending the effect on itself on a success. Alternatively, the creature or someone else who can reach it can use an action to make an Intelligence ({@skill Arcana}) check against your spell save DC. On a success, the {@condition restrained} effect ends.",
-                "After the trap is triggered, the spell ends when no creature is {@condition restrained} by it."
+                "The trap triggers when a Small, Medium, or Large creature moves onto the ground or the floor in the spell's radius. That creature must succeed on a Dexterity saving throw or be magically hoisted into the air, leaving it hanging upside down 10 feet above the ground or the floor. The creature is {@condition restrained} there until the spell ends.",
+                "A {@condition restrained} creature or someone else who can reach it can use an action to make an Intelligence ({@skill Arcana}), Strength ({@skill Athletics}), or Dexterity ({@skill Acrobatics}) check against your spell save DC. On a success, the {@condition restrained} effect ends.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Increase lift distance to add a tiny bit fo fall damage, and allow more skill checkes to escape but not a repeated save."
+                    ]
+                }
             ],
+            "change": "change",
             "conditionInflict": [
                 "restrained"
             ],
@@ -47302,64 +47181,6 @@
                         "name": "Ranger",
                         "source": "PHB"
                     }
-                ]
-            }
-        },
-        {
-            "name": "Speak with Animals",
-            "source": "PHB",
-            "page": 277,
-            "srd": true,
-            "level": 1,
-            "school": "D",
-            "time": [
-                {
-                    "number": 1,
-                    "unit": "action"
-                }
-            ],
-            "range": {
-                "type": "point",
-                "distance": {
-                    "type": "self"
-                }
-            },
-            "components": {
-                "v": true,
-                "s": true
-            },
-            "duration": [
-                {
-                    "type": "timed",
-                    "duration": {
-                        "type": "hour",
-                        "amount": 1
-                    }
-                }
-            ],
-            "meta": {
-                "ritual": true
-            },
-            "entries": [
-                "You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within the past day. You might be able to persuade a beast to perform a small favor for you, at the DM's discretion."
-            ],
-            "affectsCreatureType": [
-                "beast"
-            ],
-            "classes": {
-                "fromClassList": [
-                    {
-                        "name": "Bard",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Druid",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Ranger",
-                        "source": "PHB"
-                    }
                 ],
                 "fromSubclass": [
                     {
@@ -47396,15 +47217,30 @@
             },
             "races": [
                 {
-                    "name": "Human (Mark of Handling)",
+                    "name": "Mark of Handling",
                     "source": "ERLW",
                     "baseName": "Human",
+                    "baseSource": "PHB"
+                },
+                {
+                    "name": "Mark of Finding",
+                    "source": "ERLW",
+                    "baseName": "Half-Orc",
+                    "baseSource": "PHB"
+                },
+                {
+                    "name": "Mark of Finding",
+                    "source": "ERLW",
                     "baseSource": "PHB"
                 }
             ],
             "backgrounds": [
                 {
                     "name": "Gruul Anarch",
+                    "source": "GGR"
+                },
+                {
+                    "name": "Selesnya Initiate",
                     "source": "GGR"
                 }
             ],
@@ -47582,83 +47418,6 @@
                 {
                     "name": "Whispers of the Grave",
                     "source": "PHB"
-                }
-            ]
-        },
-        {
-            "name": "Speak with Plants",
-            "source": "PHB",
-            "page": 277,
-            "srd": true,
-            "level": 3,
-            "school": "T",
-            "time": [
-                {
-                    "number": 1,
-                    "unit": "action"
-                }
-            ],
-            "range": {
-                "type": "radius",
-                "distance": {
-                    "type": "feet",
-                    "amount": 30
-                }
-            },
-            "components": {
-                "v": true,
-                "s": true
-            },
-            "duration": [
-                {
-                    "type": "timed",
-                    "duration": {
-                        "type": "minute",
-                        "amount": 10
-                    }
-                }
-            ],
-            "entries": [
-                "You imbue plants within 30 feet of you with limited sentience and animation, giving them the ability to communicate with you and follow your simple commands. You can question plants about events in the spell's area within the past day, gaining information about creatures that have passed, weather, and other circumstances.",
-                "You can also turn difficult terrain caused by plant growth (such as thickets and undergrowth) into ordinary terrain that lasts for the duration. Or you can turn ordinary terrain where plants are present into difficult terrain that lasts for the duration, causing vines and branches to hinder pursuers, for example.",
-                "Plants might be able to perform other tasks on your behalf, at the DM's discretion. The spell doesn't enable plants to uproot themselves and move about, but they can freely move branches, tendrils, and stalks.",
-                "If a plant creature is in the area, you can communicate with it as if you shared a common language, but you gain no magical ability to influence it.",
-                "This spell can cause the plants created by the {@spell entangle} spell to release a {@condition restrained} creature."
-            ],
-            "classes": {
-                "fromClassList": [
-                    {
-                        "name": "Bard",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Druid",
-                        "source": "PHB"
-                    },
-                    {
-                        "name": "Ranger",
-                        "source": "PHB"
-                    }
-                ]
-            },
-            "races": [
-                {
-                    "name": "Half-Orc (Mark of Finding)",
-                    "source": "ERLW",
-                    "baseName": "Half-Orc",
-                    "baseSource": "PHB"
-                },
-                {
-                    "name": "Human (Mark of Finding)",
-                    "source": "ERLW",
-                    "baseName": "Human",
-                    "baseSource": "PHB"
-                }
-            ],
-            "backgrounds": [
-                {
-                    "name": "Selesnya Initiate",
-                    "source": "GGR"
                 }
             ]
         },
@@ -48083,17 +47842,25 @@
                 }
             ],
             "entries": [
-                "You call forth spirits of the dead, which flit around you for the spell's duration. The spirits are intangible and invulnerable.",
-                "Until the spell ends, any attack you make deals {@damage 1d8} extra damage when you hit a creature within 10 feet of you. This damage is radiant, necrotic, or cold (your choice when you cast the spell). Any creature that takes this damage can't regain hit points until the start of your next turn.",
-                "In addition, any creature of your choice that you can see that starts its turn within 10 feet of you has its speed reduced by 10 feet until the start of your next turn.",
+                "You call forth spirits of the dead, which flit around you for the spell's duration. The spirits are intangible and invulnerable. Choose a damage type when you cast this spell: cold, necrotic, or radiant. All damage dealt by this spell is of that type.",
+                "For the duration of the spell, your weapons are wreathed in ethereal light, any attack you make deals {@damage 1d8} extra damage when you hit a creature within 10 feet of you; any creature that takes this damage can't regain hit points until the start of your next turn.",
+                "In addition, when you cast this spell and as a bonus action on subsequent turns, you can command the entity to make a melee spell attack against one target within 10 feet, dealing {@damage 1d8} damage on a hit. A creature hit by this attack has its movement speed reduced by half until the start of your next turn.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Make this a move offensive variant of {@spell spirit guardians} that can target specific enemies and lock them down to do extra damage."
+                    ]
+                },
                 {
                     "type": "inset",
                     "name": "3rd Ecumenical Spell Council of Capital",
                     "entries": [
-                        "These spirits are conjured as used as in the spell spirit guardians, not animated or used as in other necromancy spells."
+                        "These spirits are conjured and used as in the spell spirit guardians, not animated or used as in other necromancy spells."
                     ]
                 }
             ],
+            "change":"buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -50523,7 +50290,7 @@
                 "v": true,
                 "s": true,
                 "m": {
-                    "text": "mercury, phosphorus, and powdered diamond and opal with a total value of at least 1,000 gp, which the spell consumes",
+                    "text": "mercury, phosphorus, and powdered diamond and opal with a total value of at least 5000 gp, which the spell consumes",
                     "cost": 100000,
                     "consume": true
                 }
@@ -50542,64 +50309,58 @@
                 "The glyph is nearly invisible, requiring an Intelligence ({@skill Investigation}) check against your spell save DC to find it.",
                 "You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, the most typical triggers include touching or stepping on the glyph, removing another object covering it, approaching within a certain distance of it, or manipulating the object that holds it. For glyphs inscribed within an object, the most common triggers are opening the object, approaching within a certain distance of it, or seeing or reading the glyph.",
                 "You can further refine the trigger so the spell is activated only under certain circumstances or according to a creature's physical characteristics (such as height or weight), or physical kind (for example, the ward could be set to affect hags or shapechangers). You can also specify creatures that don't trigger the glyph, such as those who say a certain password.",
-                "When you inscribe the glyph, choose one of the options below for its effect. Once triggered, the glyph glows, filling a 60-foot-radius sphere with dim light for 10 minutes, after which time the spell ends. Each creature in the sphere when the glyph activates is targeted by its effect, as is a creature that enters the sphere for the first time on a turn or ends its turn there.",
+                "When you inscribe the glyph, choose one of the options below for its effect. When the glyph triggers, it flares with colored light until destroyed. The effect immediately occurs, targeting every non-exempt creature within 60 feet.",
+                {
+                    "type": "entries",
+                    "name": "Weakness",
+                    "entries": [
+                        "Each target must make a Strength saving throw. On a failure, they suffer crippling weakness for 1 hour. Their speed drops to 15 feet, and all their weapon attacks deal damage as if they rolled the minimum result."
+                    ]
+                },
+                {
+                    "type": "entries",
+                    "name": "Binding",
+                    "entries": [
+                        "Each target must make a Dexterity saving throw. On a failure, they are restrained by magical lines of force for 1 hour."
+                    ]
+                },
                 {
                     "type": "entries",
                     "name": "Death",
                     "entries": [
-                        "Each target must make a Constitution saving throw, taking {@damage 10d10} necrotic damage on a failed save, or half as much damage on a successful save."
-                    ]
-                },
-                {
-                    "type": "entries",
-                    "name": "Discord",
-                    "entries": [
-                        "Each target must make a Constitution saving throw. On a failed save, a target bickers and argues with other creatures for 1 minute. During this time, it is incapable of meaningful communication and has disadvantage on attack rolls and ability checks."
-                    ]
-                },
-                {
-                    "type": "entries",
-                    "name": "Fear",
-                    "entries": [
-                        "Each target must make a Wisdom saving throw and becomes {@condition frightened} for 1 minute on a failed save. While {@condition frightened}, the target drops whatever it is holding and must move at least 30 feet away from the glyph on each of its turns, if able."
-                    ]
-                },
-                {
-                    "type": "entries",
-                    "name": "Hopelessness",
-                    "entries": [
-                        "Each target must make a Charisma saving throw. On a failed save, the target is overwhelmed with despair for 1 minute. During this time, it can't attack or target any creature with harmful abilities, spells, or other magical effects."
+                        "Each target must make a Constitution saving throw, dropping to 0 hit points on a failure or suffering {@damage 8d10} necrotic damage on a success."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Insanity",
                     "entries": [
-                        "Each target must make an Intelligence saving throw. On a failed save, the target is driven insane for 1 minute. An insane creature can't take actions, can't understand what other creatures say, can't read, and speaks only in gibberish. The DM controls its movement, which is erratic."
+                        "Each target must make an Intelligence saving throw. On a failed save, it loses its ability to understand the world for 1 hour. It cannot cast spells, and has disadvantage on all ability checks and attack rolls. It can't understand what other creatures say, can't read, and speaks only in gibberish. The DM controls its movement, which is erratic."
                     ]
                 },
                 {
                     "type": "entries",
-                    "name": "Pain",
+                    "name": "Discord",
                     "entries": [
-                        "Each target must make a Constitution saving throw and becomes {@condition incapacitated} with excruciating pain for 1 minute on a failed save."
+                        "Each target must make a Wisdom saving throw. On a failed save, it becomes hostile to all other creatures and attacks the nearest target. It can repeat the save at the end of each of its turns."
                     ]
                 },
                 {
                     "type": "entries",
-                    "name": "Sleep",
+                    "name": "Stupor",
                     "entries": [
-                        "Each target must make a Wisdom saving throw and falls {@condition unconscious} for 10 minutes on a failed save. A creature awakens if it takes damage or if someone uses an action to shake or slap it awake."
+                        "Each target must make a Charisma saving throw, or enter a dazed state, their mind disconnected from their body. A creature takes no actions, and their speed is reduced by half. They recover after 1 hour or when they take any damage."
                     ]
                 },
                 {
-                    "type": "entries",
-                    "name": "Stunning",
+                    "type": "inset",
+                    "name": "DM Note: Change",
                     "entries": [
-                        "Each target must make a Wisdom saving throw and becomes {@condition stunned} for 1 minute on a failed save."
+                        "Rebalance effects to make them a little more equal, and decrease cost."
                     ]
                 }
             ],
+            "change":"change",
             "damageInflict": [
                 "necrotic"
             ],
@@ -51457,7 +51218,7 @@
             "name": "Temple of the Gods",
             "source": "XGE",
             "page": 167,
-            "level": 7,
+            "level": 6,
             "school": "C",
             "time": [
                 {
@@ -51490,15 +51251,31 @@
                 }
             ],
             "entries": [
-                "You cause a temple to shimmer into existence on ground you can see within range. The temple must fit within an unoccupied cube of space, up to 120 feet on each side. The temple remains until the spell ends. It is dedicated to whatever god, pantheon, or philosophy is represented by the holy symbol used in the casting.",
-                "You make all decisions about the temple's appearance. The interior is enclosed by a floor, walls, and a roof, with one door granting access to the interior and as many windows as you wish. Only you and any creatures you designate when you cast the spell can open or close the door.",
-                "The temple's interior is an open space with an idol or altar at one end. You decide whether the temple is illuminated and whether that illumination is bright light or dim light. The smell of burning incense fills the air within, and the temperature is mild.",
+                "You cause a temple to shimmer into existence on ground you can see within range. The temple must fit within an unoccupied cube of space, up to 60 feet on each side. The temple remains until the spell ends. It is dedicated to whatever god, pantheon, or philosophy is represented by the holy symbol used in the casting.",
+                "The temple has at least one door and is enclosed by wood and stone floors, walls, and a roof. You determine all other aspects of its appearance (as long as it conforms to the deity represented by the holy symbol used in the casting) such as altars, idols, illumination, rooms, scent, temperature, and windows.",
+                "Divination spells of 6th level and below can't target creatures within the temple or create sensors inside of it.",
                 "The temple opposes types of creatures you choose when you cast this spell. Choose one or more of the following: celestials, elementals, fey, fiends, or undead. If a creature of the chosen type attempts to enter the temple, that creature must make a Charisma saving throw. On a failed save, it can't enter the temple for 24 hours. Even if the creature can enter the temple, the magic there hinders it; whenever it makes an attack roll, an ability check, or a saving throw inside the temple, it must roll a {@dice d4} and subtract the number rolled from the {@dice d20} roll.",
-                "In addition, the sensors created by divination spells can't appear inside the temple, and creatures within can't be targeted by divination spells.",
                 "Finally, whenever any creature in the temple regains hit points from a spell of 1st level or higher, the creature regains additional hit points equal to your Wisdom modifier (minimum 1 hit point).",
-                "The temple is made from opaque magical force that extends into the Ethereal Plane, thus blocking ethereal travel into the temple's interior. Nothing can physically pass through the temple's exterior. It can't be dispelled by {@spell dispel magic}, and {@spell antimagic field} has no effect on it. A {@spell disintegrate} spell destroys the temple instantly.",
-                "Casting this spell on the same spot every day for a year makes this effect permanent."
+                "The temple is made from opaque magical force that extends into the Ethereal Plane, thus blocking ethereal travel into the temple's interior. Nothing can physically pass through the temple's exterior. It can't be dispelled by {@spell dispel magic}, and {@spell antimagic field} has no effect on it.",
+                "Casting this spell on the same spot every day for a year makes this effect permanent.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Down to 6th level to match <em>Druid Grove</em> with more control over the interior look and feel. Reduced size, but added upcasting to get the same effect as RAW with using a 7th level slot."
+                    ]
+                }
             ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 7th level or higher, the casting time increases by 1 hour and the temple's size increases by 60 feet on each side for each spell level above 6th. The temple counters divination spells of a level less than or equal to the slot level used."
+                    ]
+                }
+            ],
+            "change":"buff",
             "savingThrow": [
                 "charisma"
             ],

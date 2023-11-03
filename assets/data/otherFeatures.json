@@ -23,11 +23,11 @@
 				"rows": [
 					[
 						"1st",
-						"{@spell animal friendship}, {@spell speak with animals}"
+						"{@spell animal friend}, {@spell speak with nature}"
 					],
 					[
 						"2nd",
-						"{@spell beast sense}, {@spell calm emotions}"
+						"{@spell beast ally}, {@spell calm emotions}"
 					],
 					[
 						"3rd",
@@ -54,14 +54,14 @@
 				"name": "The Bigger They Are",
 				"type": "entries",
 				"entries": [
-					"Starting at 3rd level, you can target a beast or monstrosity when you cast animal friendship or speak with animals, provided the creature's Intelligence score is 3 or lower."
+					"Starting at 3rd level, you can target a beast or monstrosity when you cast animal friend or speak with nature, provided the creature's Intelligence score is 3 or lower."
 				]
 			},
 			{
 				"name": "Primal Connection",
 				"type": "entries",
 				"entries": [
-					"You can cast the {@spell animal friendship} and {@spell speak with animals} spells with this trait, requiring no material component. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a short or long rest. Wisdom is your spellcasting ability for these spells.."
+					"You can cast the {@spell animal friend} and {@spell speak with nature} spells with this trait, requiring no material component. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a short or long rest. Wisdom is your spellcasting ability for these spells.."
 				]
 			}
 		]
@@ -225,7 +225,7 @@
 					],
 					[
 						"3rd",
-						"{@spell clairvoyance}, {@spell speak with plants}"
+						"{@spell clairvoyance}, {@spell speak with nature}"
 					],
 					[
 						"4th",
@@ -401,7 +401,7 @@
 					],
 					[
 						"2nd",
-						"{@spell animal messenger}, {@spell silence}"
+						"{@spell animal friend}, {@spell silence}"
 					],
 					[
 						"3rd",
@@ -827,13 +827,13 @@
 			{
 				"innate": {
 					"_": [
-						"speak with animals"
+						"speak with nature"
 					]
 				}
 			}
 		],
 		"entries": [
-			"You can cast {@spells speak with animals} at will, without expending a spell slot."
+			"You can cast {@spells speak with nature} at will, without expending a spell slot."
 		]
 	},
 	{
