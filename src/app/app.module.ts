@@ -17,6 +17,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParticlesComponent } from './controllers/particles/particles.component';
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
+import { DmAssistantComponent } from './controllers/dm-assistant/dm-assistant.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
 import { OtherFeaturesModule } from './controllers/other-features/other-features.module';
@@ -28,6 +29,7 @@ import { SpellbookComponent } from './controllers/spellbook/spellbook.component'
     HexmapComponent,
     ParticlesComponent,
     EncounterBuilderComponent,
+    DmAssistantComponent,
     NotFoundComponent,
     ServerErrorComponent,
     SpellbookComponent

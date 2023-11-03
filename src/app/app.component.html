@@ -24,17 +24,20 @@
             <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a class="nav-link dropdown-toggle" href="#" id="navdarDropdownDm" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                DM
+                DM<!--<span class="ml-1 badge badge-success">*</span>-->
               </a>
               <div class="dropdown-menu" aria-labelledby="navdarDropdownDm">
                 <a class="dropdown-item" [routerLink]="'/beastiary'"> Beastiary </a>
+                <!--<a class="dropdown-item" [routerLink]="'/dm-assistant'"> DM Assistant
+                  <span class="ml-1 badge badge-success">NEW</span>
+                </a>-->
                 <a class="dropdown-item" [routerLink]="'/encounter-builder'"> Encounter Builder</a>
                 <a class="dropdown-item" [routerLink]="'/items'"> Items </a>
               </div>
             </li>
             <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownRef"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-              Reference<span class="ml-1 badge badge-success">*</span>
+              Reference<span class="ml-1 badge badge-warning">*</span>
               </a>
               <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
                 <a  class="dropdown-item" [routerLink]="'/spells'"> Spells </a>
@@ -51,7 +54,7 @@
               <a class="nav-link " href="#" id="navbarDropdownPortal" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Planar Portal
-              <i class="fa fa-cog" aria-hidden="true"></i><span class="ml-1 badge badge-warning">WIP</span>
+              <i class="fa fa-cog" aria-hidden="true"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownRef">
                 <form class="form-sm m-3">

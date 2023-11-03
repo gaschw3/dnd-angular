@@ -9042,10 +9042,10 @@
       "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions.",
       "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
       "{@beastiary raven|Silver Raven}.",
-      "This silver statuette of a raven can become a raven for up to 12 hours. Once it has been used, it can't be used again until 2 days have passed. While in raven form, the figurine allows you to cast the {@spells animal messenger} spell on it at will."
+      "This silver statuette of a raven can become a raven for up to 12 hours. Once it has been used, it can't be used again until 2 days have passed. While in raven form, the figurine allows you to cast the {@spells animal friend} spell on it at will."
     ],
     "attachedSpells": [
-      "animal messenger"
+      "animal friend"
     ],
     "lootTables": [
       "Magic Item Table F"
@@ -11167,10 +11167,10 @@
       "You can use an action to play the instrument and cast one of its spells. Once the instrument has been used to cast a spell, it can't be used to cast that spell again until the next dawn. The spells use your spellcasting ability and spell save DC.",
       "You can play the instrument while casting a spell that causes any of its targets to be {@conditions charmed} on a failed saving throw, thereby imposing disadvantage on the save. This effect applies only if the spell has a somatic or a material component.",
       "All instruments of the bards can be used to cast the following spells: {@spells fly}, {@spells invisibility}, {@spells levitate}, and {@spells and good protection from evil and good}.",
-      "In addition, the Doss lute can be used to cast {@spells animal friendship}, {@spells protection from energy} (fire only), and {@spells protection from poison}."
+      "In addition, the Doss lute can be used to cast {@spells animal friend}, {@spells protection from energy} (fire only), and {@spells protection from poison}."
     ],
     "attachedSpells": [
-      "animal friendship",
+      "animal friend",
       "fly",
       "invisibility",
       "levitate",
@@ -11198,7 +11198,7 @@
       "You can use an action to play the instrument and cast one of its spells. Once the instrument has been used to cast a spell, it can't be used to cast that spell again until the next dawn. The spells use your spellcasting ability and spell save DC.",
       "You can play the instrument while casting a spell that causes any of its targets to be {@conditions charmed} on a failed saving throw, thereby imposing disadvantage on the save. This effect applies only if the spell has a somatic or a material component.",
       "All instruments of the bards can be used to cast the following spells: {@spells fly}, {@spells invisibility}, {@spells levitate}, and {@spells and good protection from evil and good}.",
-      "In addition, the Fochlucan bandore can be used to cast {@spells entangle}, {@spells faerie fire}, {@spells shillelagh}, and {@spells speak with animals}."
+      "In addition, the Fochlucan bandore can be used to cast {@spells entangle}, {@spells faerie fire}, {@spells shillelagh}, and {@spells speak with nature}."
     ],
     "attachedSpells": [
       "entangle",
@@ -11208,7 +11208,7 @@
       "protection from evil and good",
       "faerie fire",
       "shillelagh",
-      "speak with animals"
+      "speak with nautre"
     ],
     "lootTables": [
       "Magic Item Table F"
@@ -12976,10 +12976,10 @@
     "recharge": "dawn",
     "charges": 3,
     "entries": [
-      "This wooden mask is shaped in the likeness of a beast's visage and has 3 charges. While wearing the mask you can expend 1 charge and use the mask to cast the {@spells animal friendship} spell as an action. The mask regains all expended charges at dawn."
+      "This wooden mask is shaped in the likeness of a beast's visage and has 3 charges. While wearing the mask you can expend 1 charge and use the mask to cast the {@spells animal friend} spell as an action. The mask regains all expended charges at dawn."
     ],
     "attachedSpells": [
-      "animal friendship"
+      "animal friend"
     ]
   },
   {
@@ -15077,10 +15077,10 @@
     "rarity": "uncommon",
     "weight": 0.5,
     "entries": [
-      "When you drink this potion, you can cast the {@spells animal friendship} spell (save DC 13) for 1 hour at will. Agitating this muddy liquid brings little bits into view: a fish scale, a hummingbird tongue, a cat claw, or a squirrel hair."
+      "When you drink this potion, you can cast the {@spells animal friend} spell (save DC 13) for 1 hour at will. Agitating this muddy liquid brings little bits into view: a fish scale, a hummingbird tongue, a cat claw, or a squirrel hair."
     ],
     "attachedSpells": [
-      "animal friendship"
+      "animal friend"
     ],
     "lootTables": [
       "Magic Item Table B"
@@ -16192,16 +16192,16 @@
       {
         "type": "list",
         "items": [
-          "{@spells Animal friendship} (save DC 13)",
+          "{@spells Animal friend} (save DC 13)",
           "{@spells Fear} (save DC 13), targeting only beasts that have an Intelligence of 3 or lower",
           "{@spells Speak with animals}"
         ]
       }
     ],
     "attachedSpells": [
-      "animal friendship",
+      "animal friend",
       "fear",
-      "speak with animals"
+      "speak with nature"
     ],
     "lootTables": [
       "Magic Item Table G"
@@ -18170,11 +18170,11 @@
     "reqAttune": true,
     "wondrous": true,
     "entries": [
-      "You can use an action to play this lyre and cast one of the following spells from it: {@spells animal friendship}, {@spells charm person}, {@spells enthrall}, {@spells suggestion}. If the spell requires a saving throw, the spell save DC is 13.",
+      "You can use an action to play this lyre and cast one of the following spells from it: {@spells animal friend}, {@spells charm person}, {@spells enthrall}, {@spells suggestion}. If the spell requires a saving throw, the spell save DC is 13.",
       "Once the instrument has been used to cast a spell, it can't be used to cast that spell again until the next dawn."
     ],
     "attachedSpells": [
-      "animal friendship",
+      "animal friend",
       "charm person",
       "enthrall",
       "suggestion"
@@ -19497,7 +19497,7 @@
         "name": "Spells",
         "id": "spells",
         "entries": [
-          "You can use an action to expend 1 or more of the staff's charges to cast one of the following spells from it, using your spell save DC: {@spells animal friendship} (1 charge), {@spells awaken} (5 charges), {@spells barkskin} (2 charges), {@spells plants locate animals or plants} (2 charges), {@spells speak with animals} (1 charge), {@spells speak with plants} (3 charges), or {@spells wall of thorns} (6 charges).",
+          "You can use an action to expend 1 or more of the staff's charges to cast one of the following spells from it, using your spell save DC: {@spells animal friend} (1 charge), {@spells awaken} (5 charges), {@spells barkskin} (2 charges), {@spells plants locate animals or plants} (2 charges), {@spells speak with nature} (1 charge), {@spells speak with nature} at 3rd level (3 charges), or {@spells wall of thorns} (6 charges).",
           "You can also use an action to cast the {@spells pass without trace} spell from the staff without using any charges."
         ]
       },
@@ -19512,12 +19512,11 @@
     ],
     "attachedSpells": [
       "pass without trace",
-      "animal friendship",
+      "animal friend",
       "awaken",
       "barkskin",
       "locate animals or plants",
-      "speak with animals",
-      "speak with plants",
+      "speak with nature",
       "wall of thorns"
     ],
     "lootTables": [
@@ -19674,14 +19673,13 @@
     "charges": 10,
     "entries": [
       "Created by the stone giant librarians of Gravenhollow, this nineteen-inch-long shard of quartz grants you advantage on Intelligence (Investigation) checks while it is on your person.",
-      "The crystal has 10 charges. While holding it, you can use an action to expend some of its charges to cast one of the following spells from it: {@spells speak with animals} (2 charges), {@spells speak with dead} (4 charges), or {@spells speak with plants} (3 charges).",
+      "The crystal has 10 charges. While holding it, you can use an action to expend some of its charges to cast one of the following spells from it: {@spells speak with nature} (1 charge), {@spells speak with dead} (4 charges), or {@spells speak with nature} at 3rd level(3 charges).",
       "When you cast a <span class='color-divination'>Divination</span> spell, you can use the crystal in place of one material component that would normally be consumed by the spell, at a cost of 1 charge per level of the spell. The crystal is not consumed when used in this way.",
       "The crystal regains 1d6 + 4 expended charges daily at dawn. If you expend the crystal's last charge, roll a d20. On a 1, the crystal vanishes, lost forever."
     ],
     "attachedSpells": [
-      "speak with animals",
-      "speak with dead",
-      "speak with plants"
+      "speak with nature",
+      "speak with dead"
     ]
   },
   {
@@ -23167,7 +23165,7 @@
         "type": "entries",
         "entries": [
           "Wave is a sentient weapon of neutral alignment, with an Intelligence of 14, a Wisdom of 10, and a Charisma of 18. It has hearing and darkvision out to a range of 120 feet.",
-          "The weapon communicates telepathically with its wielder and can speak, read, and understand Aquan. It can also speak with aquatic animals as if using a {@spells speak with animals} spell, using telepathy to involve its wielder in the conversation."
+          "The weapon communicates telepathically with its wielder and can speak, read, and understand Aquan. It can also speak with aquatic animals as if using a {@spells speak with nature} spell, using telepathy to involve its wielder in the conversation."
         ]
       },
       {
@@ -23182,7 +23180,7 @@
       }
     ],
     "attachedSpells": [
-      "speak with animals"
+      "speak with nature"
     ]
   },
   {

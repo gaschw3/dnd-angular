@@ -21,8 +21,8 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   crXp = crXpMap;
 
   //bound variables for party size
-  partySize: any = 4;
-  partyLevel: any = 6;
+  partySize: any = 5;
+  partyLevel: any = 9;
   //derived variables used to calculate and show total XP values
   singleMultiplier:number = 1;
   pairMultiplier: number = 1;
