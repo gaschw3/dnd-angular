@@ -1,0 +1,432 @@
+{
+    "_meta": {
+		"sources": [
+			{
+				"json": "BREW-S",
+				"abbreviation": "BREW-S",
+				"full": "Shizomi Spells",
+				"authors": [
+					"Paranoid"
+				],
+				"convertedBy": [
+					"Paranoid"
+				],
+				"version": "1.0.0",
+				"targetSchema": "1.0.0"
+			}
+		],
+		"dateAdded": 1600868694,
+		"dateLastModified": 1600868694,
+		"_dateLastModifiedHash": "38c75dbc7d"
+	},
+	"spell": [
+        {
+            "name": "Ultra-Lux Scorching Ray",
+            "source": "BREW-S",
+            "level": 2,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 120
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "As an additional cost to cast this spell, you pay the Ultra-Lux corporation 10gp (1,000 credits)",
+                "You create three rays of fire and hurl them at targets within range. You can hurl them at one target or several.",
+                "Make a ranged spell attack for each ray. On a hit, the target takes {@damage 3d6} fire damage.",
+                {
+                    "type": "inset",
+                    "name": "Ultra-Lux",
+                    "entries": [
+                        "Ultra-Lux, because you're worth it."
+                    ]
+                }
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 3rd level or higher, you create one additional ray for each slot level above 2nd."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "fire"
+            ],
+            "spellAttack": [
+                "R"
+            ],
+            "areaTags": [
+                "ST",
+                "MT"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Yamato Fire Bolt",
+            "source": "BREW-S",
+            "level": 0,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 120
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d10} fire damage and {@damage 1d10} lightning damage. A flammable object hit by this spell ignites if it isn't being worn or carried.",
+                "The caster takes half the lightning damage dealt by this spell.",
+                "This spell's damage increases by {@dice 1d10} when you reach 5th level ({@damage 2d10}), 11th level ({@damage 3d10}), and 17th level ({@damage 4d10}).",
+                {
+                    "type": "inset",
+                    "name": "Yamato",
+                    "entries": [
+                        "Yamato products shoot more lightning than the next leading competitor, guaranteed (restriction may apply, not legal in Waterside, first right of refusal maintained by Yamato, no liability for use is given or implied)."
+                    ]
+                }
+            ],
+            "scalingLevelDice": {
+                "label": "fire damage",
+                "scaling": {
+                    "1": "1d10",
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                }
+            },
+            "damageInflict": [
+                "fire",
+                "lightning"
+            ],
+            "spellAttack": [
+                "R"
+            ],
+            "miscTags": [
+                "SCL"
+            ],
+            "areaTags": [
+                "ST"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Artificer",
+                        "source": "TCE"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Pinpoint Ltd. Cone of Cold",
+            "source": "BREW-S",
+            "level": 5,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "cone",
+                "distance": {
+                    "type": "feet",
+                    "amount": 60
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true,
+                "m": "a small crystal or glass cone"
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "A blast of cold air erupts from your hands. Each creature in a 60-foot cone must make a Constitution saving throw at a -3 penalty. A creature takes {@damage 10d6} cold damage on a failed save, or half as much damage on a successful one.",
+                "A creature killed by this spell becomes a frozen statue until it thaws.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Buff",
+                    "entries": [
+                        "Enemies only die if you hit them. Buy Pinpoint Limited today."
+                    ]
+                }
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 6th level or higher, the damage increases by {@damage 1d8} for each slot level above 5th."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "cold"
+            ],
+            "savingThrow": [
+                "constitution"
+            ],
+            "areaTags": [
+                "N"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "ACC Cone of Cold",
+            "source": "BREW-S",
+            "level": 5,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "cone",
+                "distance": {
+                    "type": "feet",
+                    "amount": 60
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true,
+                "m": "a small crystal or glass cone"
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "A blast of cold air erupts from your hands. Each creature in a 60-foot cone must make a Constitution saving throw with a +3 bonus. A creature takes {@damage 10d12} cold damage on a failed save, or half as much damage on a successful one.",
+                "A creature killed by this spell becomes a frozen statue until it thaws.",
+                {
+                    "type": "inset",
+                    "name": "ACC",
+                    "entries": [
+                        "If it took more than 1 shot, you weren't using ACC. (ACC not responsible for collateral damage)"
+                    ]
+                }
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 6th level or higher, the damage increases by {@damage 1d8} for each slot level above 5th."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "cold"
+            ],
+            "savingThrow": [
+                "constitution"
+            ],
+            "areaTags": [
+                "N"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Lucky Seven Bolt",
+            "source": "BREW-S",
+            "level": 1,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 120
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You hurl an undulating, warbling mass of chaotic energy at one creature in range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d7} force damage. The number rolled on the die determines the additional damage, and additional effects. If you roll more than 1d7 (for instance, by a critical hit or casting at a higher level), you may select which d7 determines the table result.",
+                {
+                    "type": "table",
+                    "caption": "Lucky Bolt",
+                    "colLabels": [
+                        "{@dice d7}",
+                        "Name",
+                        "Effect"
+                    ],
+                    "colStyles": [
+                        "col-2 text-center",
+                        "col-2 text-center",
+                        "col-8"
+                    ],
+                    "rows": [
+                        [
+                            "1",
+                            "Bankrupt",
+                            "The target takes no additional damage and you lose {@damage 5d7} gold pieces."
+                        ],
+                        [
+                            "2",
+                            "Free Spin",
+                            "The target extra damage equal your spellcasting ability modifier and you regain the spell slot used to cast this spell."
+                        ],
+                        [
+                            "4",
+                            "Hearts",
+                            "The target takes {@damage 1d7} damage and you gain temporary hit points equal to your level in the class that cast this spell."
+                        ],
+                        [
+                            "3",
+                            "Diamonds",
+                            "The target takes {@damage 2d7} damage and you gain that many gold pieces."
+                        ],
+                        [
+                            "5",
+                            "Spades",
+                            "The target takes {@damage 3d7} damage and the force of the spell explodes outward to deal the same damage to other creatures withing 5 feet."
+                        ],
+                        [
+                            "6",
+                            "Clubs",
+                            "The target takes {@damage 4d7} damage."
+                        ],
+                        [
+                            "7",
+                            "Jackpot",
+                            "The target takes {@damage 5d7} damage"
+                        ]
+                    ]
+                },
+                {
+                    "type": "inset",
+                    "name": "Lucky Seven",
+                    "entries": [
+                        "Better to be lucky than good."
+                    ]
+                }
+            ],
+            "change": "change",
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the initial roll increases by {@damage 1d7} for each slot level above 1st."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "force"
+            ],
+            "spellAttack": [
+                "R"
+            ],
+            "miscTags": [
+                "RO"
+            ],
+            "areaTags": [
+                "ST"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        }
+    ]
+}

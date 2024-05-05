@@ -1,0 +1,220 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "DesertDomain",
+				"abbreviation": "BREW",
+        "subclassShortName": "Desert",
+				"full": "Cleric: Desert Domain",
+				"authors": [
+					"Paranoid"
+				],
+				"version": "1.0"
+			}
+		],
+		"dateAdded": 1659216578,
+		"dateLastModified": 1671544279,
+		"_dateLastModifiedHash": "f76a151013"
+	},
+	"subclass": [
+		{
+			"name": "Desert Domain",
+			"source": "DesertDomain",
+      "subclassShortName": "Desert",
+			"shortName": "Desert",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassFeatures": [
+				"Desert Domain|Cleric||Desert|DesertDomain|1",
+				"Channel Divinity: Sandstorm|Cleric||Desert|DesertDomain|2",
+				"Dune Walker|Cleric||Desert|DesertDomain|6",
+				"Blessed Strikes|Cleric||Desert|DesertDomain|8",
+				"Endless Expanse|Cleric||Desert|DesertDomain|17"
+			],
+			"subclassSpells": [
+				"create or destroy water",
+				"disguise self",
+				"heat metal",
+				"mirror image",
+				"daylight",
+				"beacon of hope",
+				"blight",
+				"giant insect",
+				"insect plague",
+				"mislead"
+			]
+		}
+	],
+	"subclassFeature": [
+		{
+			"name": "Desert Domain",
+			"source": "DesertDomain",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Desert",
+			"subclassSource": "DesertDomain",
+			"level": 1,
+			"entries": [
+				"Gods of the sands and burning sun, deities of cloudless nights and storms of cutting wind, masters of the scorching hear and lords of the desert all call this domain their own. Often as merciless as the lands they claim, many are jealous and generous in equal measure.",
+        "Your faith has drawn you to connect with the place, becoming one with the will of your deity and allowing the chill of the night air to calm the fire within your spirit. Clerics of these deities often escort travelers, seek forgotten relics, hunt criminals, and war against heretics and traitors to the rule of their divines.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Domain Spells|Cleric||Desert|DesertDomain|1"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Bonus Proficiencies|Cleric||Desert|DesertDomain|1"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Nomadic Endurance|Cleric||Desert|DesertDomain|1"
+				}
+			]
+		},
+		{
+			"name": "Domain Spells",
+			"source": "DesertDomain",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Desert",
+			"subclassSource": "DesertDomain",
+			"level": 1,
+			"header": 1,
+			"entries": [
+        "{@i 1st-level Desert Domain feature}",
+				"You gain domain spells at the cleric levels listed in the Desert Domain Spells table. See the Divine Domain class feature for how domain spells work.",
+				{
+					"type": "table",
+					"caption": "Desert Domain Spells",
+					"colLabels": [
+						"Cleric Level",
+						"Spells"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1st",
+							"{@spell create or destroy water}, {@spell disguise self}"
+						],
+						[
+							"3rd",
+							"{@spell heat metal}, {@spell mirror image}"
+						],
+						[
+							"5th",
+							"{@spell daylight}, {@spell beacon of hope}"
+						],
+						[
+							"7th",
+							"{@spell blight}, {@spell giant insect}"
+						],
+						[
+							"9th",
+							"{@spell insect plague}, {@spell mislead}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "DesertDomain",
+			"page": 32,
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Desert",
+			"subclassSource": "DesertDomain",
+			"level": 1,
+			"header": 1,
+			"entries": [
+        "{@i 1st-level Desert Domain feature}",
+				"When you select this domain at 1st level, you gain proficiency in martial weapons and the {@skill Performance} skill."
+			]
+		},
+		{
+			"name": "Nomadic Endurance",
+			"source": "DesertDomain",
+			"page": 32,
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Desert",
+			"subclassSource": "DesertDomain",
+			"level": 1,
+			"header": 1,
+			"entries": [
+				"{@i 1st-level Desert Domain feature}",
+				"At 1st level, your deity blesses you with the resilience required to survive the harsh desert landscape. You can go without food or water for a number of days equal to your cleric level without suffering ill effects, and you gain advantage on saving throws against exhaustion from desert conditions.",
+        "Additionally, you can see clearly through smoke, fog, dust, swirling sand, and other obscurement caused by gases or airborne particles."
+			]
+		},
+		{
+			"name": "Channel Divinity: Sandstorm",
+			"source": "DesertDomain",
+			"page": 32,
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Desert",
+			"subclassSource": "DesertDomain",
+			"level": 2,
+			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
+			"entries": [
+				"{@i 2nd-level Desert Domain feature}",
+				"At 2nd level, your deity grants you the power to control one of the desert's greatest dangers. As an action, you can use your channel divinity feature to unleash a swirling vortex of tearing sand in a line 20 feet wide and 60 feet long. The area becomes heavily obscured by a cloud of sand until the start of your next turn. Creatures of your choosing in the area must make a Constitution saving throw against your cleric spell save DC. If a creature fails it takes damage equal to 3d6 + your cleric level and is blinded until the end of your next turn. If a creature succeeds, it takes half as much damage and is not blinded."
+			]
+		},
+		{
+			"name": "Dune Walker",
+			"source": "DesertDomain",
+			"page": 32,
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Desert",
+			"subclassSource": "DesertDomain",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"{@i 6th-level Desert Domain feature}",
+				"At 6th level, your deity's domain is in you, allowing you to move with the grave of a fearsome desert serpent. Once when you take the attack action, you can disappear in a flash of sand and reform from dust at an empty location within 10 feet of the target of your attack, provided the destination is one you could have reached using your walking speed. When you teleport using this feature, you can use your reaction to become partially obscured by a cloud of sand until the start of your next turn, causing the first attack targeting you during that time to be made at disadvantage."
+			]
+		},
+		{
+			"name": "Blessed Strikes",
+			"source": "DesertDomain",
+			"page": 32,
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Desert",
+			"subclassSource": "DesertDomain",
+			"level": 8,
+			"isClassFeatureVariant": true,
+			"header": 2,
+			"entries": [
+				"{@i 8th-level cleric {@variantrule optional class features|tce|optional feature}, which replaces the Divine Strike feature}",
+				"You are blessed with the ability to infuse your weapons and spells with the venom of scorpions and the cutting winds of the desert. When a creature takes damage from one of your cantrips or weapon attacks, you can also deal {@damage 1d8} poison or slashing (your choice) damage to that creature. Once you deal this damage, you can't use this feature again until the start of your next turn."
+			]
+		},
+		{
+			"name": "Endless Expanse",
+			"source": "DesertDomain",
+			"page": 32,
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Desert",
+			"subclassSource": "DesertDomain",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"{@i 17th-level Desert Domain feature}",
+				"At 17th level, you gain incredible swiftness and resilience, and you learn the ancient sacred ritual used to spread the desert beyond its border. You ignore difficult terrain and gain resistance to fire and cold damage. While you are maintaining concentration on a spell, your movement speed is doubled.",
+        "You can perform a ritual over the course of a short rest and expend a spell slot of 6th level or higher. When you do, the area in a 1-mile radius centered on you transforms into desert, with sand replacing dirt, natural foliage decaying to dust or being replaced with desert equivalents, and the dry heat of the sun or the chill of desert night replace the normal seasonal temperature and humidity within the area. This change is permanent, but can be dispelled by casting <em>dispel magic</em> using a slot of 6th level or higher.",
+        "If you expend a spell slot of 7th level, the radius increases to 3 miles, a slot of 8th level affects a 5-mile radius, and a 9th level slot transforms a 10-mile radius. If you die, the area gradually returns to normal over the course of 7 days."
+			]
+		}
+	]
+}

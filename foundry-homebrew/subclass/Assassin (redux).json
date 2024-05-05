@@ -1,0 +1,143 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "BREW",
+				"abbreviation": "BREW",
+				"full": "Assassin Redux",
+				"authors": [
+					"Paranoid"
+				],
+				"version": "2.0.0",
+				"url": "https://drive.google.com/file/d/1JK_bAvJwGDpwz4gkG3mS-OHIiaoL6alK/view",
+				"targetSchema": "1.0"
+			}
+		],
+		"dateAdded": 0,
+		"dateLastModified": 0,
+		"_dateLastModifiedHash": "a9397c18ad"
+	},
+  "subclass": [
+    {
+      "name": "Assassin (Redux)",
+      "source": "BREW",
+      "shortName": "Assassin (Redux)",
+      "className": "Rogue",
+      "classSource": "PHB",
+      "subclassFeatures": [
+        "Assassin (Redux)|Rogue|PHB|Assassin (Redux)|BREW|3|BREW",
+        "On the Mark|Rogue|PHB|Assassin (Redux)|BREW|9|BREW",
+        "Master Infiltrator|Rogue|PHB|Assassin (Redux)|BREW|13|BREW",
+        "Death Strike|Rogue|PHB|Assassin (Redux)|BREW|17|BREW"
+      ]
+    }
+  ],
+  "subclassFeature": [
+    {
+			"name": "Assassin (Redux)",
+			"source": "BREW",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Assassin (Redux)",
+			"subclassSource": "BREW",
+			"level": 3,
+			"entries": [
+        "You focus your training on the grim art of death. Those who adhere to this archetype are diverse: hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency.",
+        {
+          "type": "inset",
+          "name": "DM Note: Redux",
+          "entries": [
+              "The Assassin archetype in the Player's Handbook is really terrible. Its core feature relies on a circumstance that barely happens, and then its later level features are just stuff you could do anyway without needing features for it. This revision overhauls its kit, keeping the theme and main fantasy intact while giving it far more mechanical heft."
+          ]
+        },
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Assassin's Strike|Rogue|PHB|Assassin (Redux)|BREW|3|BREW"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Tools of the Trade|Rogue|PHB|Assassin (Redux)|BREW|3|BREW"
+				}
+			]
+		},
+		{
+			"name": "Assassin's Strike",
+			"source": "BREW",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Assassin (Redux)",
+			"subclassSource": "BREW",
+			"level": 3,
+			"entries": [
+				"Starting at 3rd level, you're very good at what you do — killing. Your Sneak Attack feature uses d8s for damage, instead of d6s.",
+        "You have advantage on any attack rolls you make against creatures that have not yet acted in combat and when you hit a creature that is surprised with an attack, your attack becomes an automatic critical hit."
+			]
+		},
+		{
+			"name": "Tools of the Trade",
+			"source": "BREW",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Assassin (Redux)",
+			"subclassSource": "BREW",
+			"level": 3,
+			"entries": [
+				"You have the skills to infiltrate and sow death wherever your target dwells. When you adopt this Archetype at 3rd level, you gain proficiency with the {@item disguise kit|PHB} and the {@item poisoner's kit|PHB}.",
+				"Also, if a poison normally takes an action to apply, you can apply it as a bonus action instead."
+			]
+		},
+		{
+			"name": "On the Mark",
+			"source": "BREW",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Assassin (Redux)",
+			"subclassSource": "BREW",
+			"level": 9,
+			"header": 2,
+			"entries": [
+				"Starting at 9th level, when you roll initiative, you can choose to be first in the turn order."
+			]
+		},
+		{
+			"name": "Master Infiltrator",
+			"source": "BREW",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Assassin (Redux)",
+			"subclassSource": "BREW",
+			"level": 13,
+			"header": 2,
+			"entries": [
+				"Starting at 13th level, you double your proficiency bonus when using a disguise kit or poisoner's kit. You also gain the following benefits:",
+        {
+          "type": "entries",
+          "name": "Expert Poisoner",
+          "entries": [
+            "When hit a creature using a poisoned weapon or ammunition, your target has disadvantage on its initial saving throw against the poison."
+          ]
+        },
+        {
+          "type": "entries",
+          "name": "Master of Disguise",
+          "entries": [
+            "Whenever you make a Charisma (Deception) check to maintain a disguise or false identity, you can treat a d20 roll of 14 or lower as a 15."
+          ]
+        }
+			]
+		},
+		{
+			"name": "Death Strike",
+			"source": "BREW",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Assassin (Redux)",
+			"subclassSource": "BREW",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"Starting at 17th level, you become a master of instant death. Once on your turn when you hit a creature that is surprised, the attack is devastating. If the target has 100 hitpoints or fewer, it dies. Otherwise, you gain a +50 bonus to the damage roll."
+			]
+		}
+  ]
+}
