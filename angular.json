@@ -82,19 +82,19 @@
 				},
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
-					"options": {
-						"browserTarget": "dnd-angular:build"
+          "options": {
+            "buildTarget": "dnd-angular:build"
 					},
 					"configurations": {
-						"production": {
-							"browserTarget": "dnd-angular:build:production"
+            "production": {
+              "buildTarget": "dnd-angular:build:production"
 						}
 					}
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
-					"options": {
-						"browserTarget": "dnd-angular:build"
+          "options": {
+            "buildTarget": "dnd-angular:build"
 					}
 				},
 				"test": {
