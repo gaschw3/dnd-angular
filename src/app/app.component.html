@@ -2,7 +2,12 @@
 <div [ngClass]="'theme-'+theme"><div class="theme-container">
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <img src="./favicon.ico" width="30" height="30" alt="site favicon">
+      <div *ngIf="theme != 'royal'" class="form-group mb-0">
+        <img src="./favicon.ico" width="30" height="30" alt="site favicon">
+      </div>
+      <div *ngIf="theme == 'royal'" class="form-group mb-0">
+        <img src="./royal-seal.png" width="30" height="36" alt="site icon">
+      </div>
       <a class="d-inline-block align-top navbar-brand" href="#">EotCC 5e</a>
       <button  class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
       <span  class="navbar-toggler-icon"></span>
@@ -65,6 +70,7 @@
                       <option value="dark">Material Realm</option>
                       <option value="ice">Seven Cities</option>
                       <option value="rainbow">Shizomi</option>
+                      <option value="royal">Aldovia</option>
                       <!--
                       <option value="light">Celestia</option>
                       <option value="hell">The Abyss</option>

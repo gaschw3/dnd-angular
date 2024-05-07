@@ -27,7 +27,8 @@
 							"src/assets",
 							"src/manifest.json",
 							"src/icon_x192.png",
-							"src/icon_x512.png"
+							"src/icon_x512.png",
+							"src/royal-seal.png"
 						],
 						"styles": [
 							"src/styles.scss",
@@ -110,6 +111,7 @@
 						"scripts": [],
 						"assets": [
 							"src/favicon.ico",
+							"src/royal-seal.png",
 							"src/assets"
 						]
 					}

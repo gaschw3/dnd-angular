@@ -149,7 +149,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   }
 
   complexCrFilter(): void {
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+    this.dtElement.dtInstance.then((dtInstance) => {
       dtInstance.draw();
     });
   }

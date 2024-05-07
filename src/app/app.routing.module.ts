@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { HexmapComponent } from './controllers/hexmap/hexmap.component'
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
-import { DmAssistantComponent } from './controllers/dm-assistant/dm-assistant.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
 import { SpellbookComponent } from './controllers/spellbook/spellbook.component';
@@ -55,10 +54,6 @@ const routes: Routes = [
   {
     path: 'encounter-builder',
     component: EncounterBuilderComponent
-  },
-  {
-    path: 'dm-assistant',
-    component: DmAssistantComponent
   },
   {
     path: 'map',

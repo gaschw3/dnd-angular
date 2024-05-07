@@ -133,7 +133,7 @@ export class OtherFeaturesComponent implements OnInit {
       this.currFeature = this.shownFeatures[0];
       this.location.go("/other-features/" + clicked + "/" + this.idPipe.transform(this.shownFeatures[0].name))
     }
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+    this.dtElement.dtInstance.then((dtInstance) => {
       // Destroy and redraw table with new filtered items
       dtInstance.destroy();
       this.dtTrigger.next(this.dtOptions);

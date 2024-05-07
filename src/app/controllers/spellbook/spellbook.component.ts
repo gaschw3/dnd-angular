@@ -152,7 +152,7 @@ export class SpellbookComponent implements OnInit, AfterViewInit, OnDestroy {
     });
     this.setSubclassOptions();
     this.setClassSpellList();
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+    this.dtElement.dtInstance.then((dtInstance) => {
       // This causes an annoying screen flash, but I can't find any other way to do it that works
       // ideally I'd 'pause' rendering, finish this, then actually redraw the screen but I can't figure out if that easily possible
       dtInstance.destroy(false);

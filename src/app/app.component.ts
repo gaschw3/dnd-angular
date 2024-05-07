@@ -43,8 +43,8 @@ export class AppComponent {
         while (c.charAt(0)==' ') c = c.substring(1,c.length);
         if (c.indexOf(nameEQ) == 0) {
           var themeName = c.substring(nameEQ.length,c.length);
-          if (themeName == 'ice') {
-            return 'rainbow'
+          if (themeName == 'rainbow') {
+            return 'royal'
           }
           else {
             return themeName;
@@ -55,7 +55,7 @@ export class AppComponent {
   }
 
   changeTheme() {
-    this.setCookie("theme", this.theme, 7); //set "user_email" cookie, expires in 7 days
+    this.setCookie("theme", this.theme, 7); //set "theme" cookie, expires in 7 days
   }
 
 }

@@ -1,4 +1,27 @@
 $themes: (
+  royal: (
+    bgImage: url(royal.png),
+    backgroundColor: #171612,
+    headerFont: "UnifrakturCook",
+    headerFallbackFont: serif,
+    background: auto,
+    navColor: #b0861d,
+    tableActiveColor: #3a3f44,
+    navText: #fff,
+    cardColor: #32383e,
+    textColor: #aaa,
+    textLinkColor: #fff,
+    textLinkBackground: #272b30,
+    linkColor: #dec45b,
+    colorPrimary: #c4b262, //most headers on site
+    colorSecondary: #a600ff, //feature headers in class, features outline,
+    colorTertiary: #ccc, //feature usbheaders for stuff like fighting styles
+    headerColor: #aaa,
+    classButtonGradient: linear-gradient(#484e55,#3a3f44 60%,#313539),
+    classButtonGradientActive: linear-gradient(#101112, #17191b 40%, #1b1e20),
+    paginateSelected: rgba(255, 237, 121, 0.514),
+    tableHover: rgba(255,255,255,.075)
+  ),
   light: (
     backgroundColor: #fff,
     headerFont: "Cinzel Decorative",
