@@ -29,6 +29,7 @@ export class HexmapComponent implements AfterViewInit {
       ['Arkhos', 25, 20],
       ['Seven Cities', 65, -90],
       ['Hokai', 37, -212],
+      ['Concordat', 52, 4.5]
     ];
     this.seas = [
       ['Starfall Sea', 28, -88],
@@ -41,6 +42,8 @@ export class HexmapComponent implements AfterViewInit {
       ['Siren Sea', 21.5, 22.5],
 
       ['Sea of Moving Ice', 66.13, -93.01],
+
+      ['Great North Sea', 55, 6]
     ];
     this.cities = [
       ['Avon', 30, -120.6],
@@ -65,6 +68,14 @@ export class HexmapComponent implements AfterViewInit {
       ["Bryn Nonig", 65.216, -86.29],
 
       ['Shizomi', 34.23, -211.59],
+
+      ['Aldovia', 52, 4],
+      ['Ascalon', 51.28, 3.48],
+      ['Kyvyrthin', 50.91, 6.9],
+      ['Throne', 52.89, 2.78],
+      ['Ivry-sur-Vin', 53.67, 2.77],
+      ['Verdunia', 53.12, 4.45],
+      ['Redharbour', 52.386, 6.01]
     ];
     this.towns = [
       ['Borderland Keep', 30.2, -119.7],
@@ -130,7 +141,7 @@ export class HexmapComponent implements AfterViewInit {
    }
 
   private initMap(): void {
-    let map = L.map('map', {zoomSnap: 0.25}).setView([31, -211], 5.5);
+    let map = L.map('map', {zoomSnap: 0.25}).setView([52, 5], 4);
     let textLabel = L.icon({
       iconUrl: 't',
       iconSize: [0, 0],
@@ -211,7 +222,7 @@ export class HexmapComponent implements AfterViewInit {
 
     this.changeZoom(map, ".country-label", 4, 5);
     this.changeZoom(map, ".water-label", 6, 8);
-    this.changeZoom(map, ".city-label", 5, 8);
+    this.changeZoom(map, ".city-label", 5.5, 8);
     this.changeZoom(map, ".town-label", 7, 8);
     this.changeZoom(map, ".shizomi-label", 6, 8);
     this.changeZoom(map, ".leaflet-marker-icon", 6, 8);

@@ -11,7 +11,7 @@ declare var gtag
 })
 export class AppComponent {
   title = 'dnd-angular';
-  defaultTheme = "rainbow";
+  defaultTheme = "royal";
   particles = false;
 
   theme = this.getCookie("theme");

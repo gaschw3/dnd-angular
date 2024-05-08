@@ -63,9 +63,8 @@
         color: themed("colorPrimary") !important;
       }
   }
-  /*center scroll to top better */
-  .scrolltop-button .symbol-container svg {
-    transform: translateY(-15%) !important;
+  .scrolltop-button {
+    background-color: themed("colorPrimary") !important;
   }
 
   .color-primary {
