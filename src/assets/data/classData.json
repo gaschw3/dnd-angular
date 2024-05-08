@@ -9464,47 +9464,47 @@
       "minScore": "Charisma 13"
     },
     "levelTable": [
-      ["Level", "Proficiency", "Features", "Points", "Spells", "Cantrips", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"
+      ["Level", "Proficiency", "Features", "Points", "Spells", "Cantrips", "Spell Points", "Max Spell Level"
       ],
-      ["1", "+2", "features", "-", "2", "4", "2", "-", "-", "-", "-", "-", "-", "-", "-"
+      ["1", "+2", "features", "-", "2", "4", "2", "1st"
       ],
-      ["2", "+2", "features", "2", "3", "4", "3", "-", "-", "-", "-", "-", "-", "-", "-"
+      ["2", "+2", "features", "2", "3", "4", "3", "1st"
       ],
-      ["3", "+2", "features", "3", "4", "4", "4", "2", "-", "-", "-", "-", "-", "-", "-"
+      ["3", "+2", "features", "3", "4", "4", "8", "2nd"
       ],
-      ["4", "+2", "features", "4", "5", "5", "4", "3", "-", "-", "-", "-", "-", "-", "-"
+      ["4", "+2", "features", "4", "5", "5", "10", "2nd"
       ],
-      ["5", "+3", "features", "5", "6", "5", "4", "3", "2", "-", "-", "-", "-", "-", "-"
+      ["5", "+3", "features", "5", "6", "5", "16", "3rd"
       ],
-      ["6", "+3", "features", "6", "7", "5", "4", "3", "3", "-", "-", "-", "-", "-", "-"
+      ["6", "+3", "features", "6", "7", "5", "19", "3rd"
       ],
-      ["7", "+3", "features", "7", "8", "5", "4", "3", "3", "1", "-", "-", "-", "-", "-"
+      ["7", "+3", "features", "7", "8", "5", "23", "4th"
       ],
-      ["8", "+3", "features", "8", "9", "5", "4", "3", "3", "2", "-", "-", "-", "-", "-"
+      ["8", "+3", "features", "8", "9", "5", "27", "4th"
       ],
-      ["9", "+4", "features", "9", "10", "5", "4", "3", "3", "3", "1", "-", "-", "-", "-"
+      ["9", "+4", "features", "9", "10", "5", "32", "5th"
       ],
-      ["10", "+4", "features", "10", "11", "6", "4", "3", "3", "3", "2", "-", "-", "-", "-"
+      ["10", "+4", "features", "10", "11", "6", "37", "5th"
       ],
-      ["11", "+4", "features", "11", "12", "6", "4", "3", "3", "3", "2", "1", "-", "-", "-"
+      ["11", "+4", "features", "11", "12", "6", "43", "6th"
       ],
-      ["12", "+4", "features", "12", "12", "6", "4", "3", "3", "3", "2", "1", "-", "-", "-"
+      ["12", "+4", "features", "12", "12", "6", "43", "6th"
       ],
-      ["13", "+5", "features", "13", "13", "6", "4", "3", "3", "3", "2", "1", "1", "-", "-"
+      ["13", "+5", "features", "13", "13", "6", "50", "7th"
       ],
-      ["14", "+5", "features", "14", "13", "6", "4", "3", "3", "3", "2", "1", "1", "-", "-"
+      ["14", "+5", "features", "14", "13", "6", "50", "7th"
       ],
-      ["15", "+5", "features", "15", "14", "6", "4", "3", "3", "3", "2", "1", "1", "1", "-"
+      ["15", "+5", "features", "15", "14", "6", "58", "8th"
       ],
-      ["16", "+5", "features", "16", "14", "6", "4", "3", "3", "3", "2", "1", "1", "1", "-"
+      ["16", "+5", "features", "16", "14", "6", "58", "8th"
       ],
-      ["17", "+6", "features", "17", "15", "6", "4", "3", "3", "3", "2", "1", "1", "1", "1"
+      ["17", "+6", "features", "17", "15", "6", "67", "9th"
       ],
-      ["18", "+6", "features", "18", "15", "6", "4", "3", "3", "3", "3", "1", "1", "1", "1"
+      ["18", "+6", "features", "18", "15", "6", "72", "9th"
       ],
-      ["19", "+6", "features", "19", "15", "6", "4", "3", "3", "3", "3", "2", "1", "1", "1"
+      ["19", "+6", "features", "19", "15", "6", "78", "9th"
       ],
-      ["20", "+6", "features", "20", "15", "6", "4", "3", "3", "3", "3", "2", "2", "1", "1"
+      ["20", "+6", "features", "20", "15", "6", "85", "9th"
       ]
     ],
     "features": [
@@ -9515,7 +9515,9 @@
         "title": "Spellcasting",
         "text": [
           "An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.",
-          "<h5 class='mb-0'>Cantrips</h5><p class='pad-left'>At 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels per the Bard table.<h5 class='mb-0'>Spell Slots</h5><p class='pad-left'>The Sorcerer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.<h5 class='mb-0'>Spells Known of 1st Level and Higher</h5><p class='pad-left'>You know two 1st-level spells of your choice from the sorcerer spell list. You learn additional sorcerer spells per the Sorcerer table.<p class='pad-left'>Additionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list.<h5 class='mb-0'>Spellcasting Ability</h5><p class='pad-left'>Charisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your will into the world.",
+          "<h5 class='mb-0'>Cantrips</h5><p class='pad-left'>At 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels per the Bard table.",
+          "<h5 class='mb-0'>Spell Points</h5><p class='pad-left'>Your unique way of accessing the Weave means you use spell points to cast your spells instead of slots like all other magic users. To cast a spell with spell points, you expend a number of points equal to the level of the spell you're casting. You can't reduce your spell points total to less than 0, and you regain all spent spell points when you finish a long rest.<p class='pad-left'>Spells of 6th level and higher are particularly taxing to cast. You can use spell points to cast one spell of each level 6th or higher then you can't cast another spell of the same level until you finish a long rest.</p><p class='pad-left'>The number of spell points you have to spend is based on your level as a spellcaster, per the Sorcerer table. Your level also determines the maximum-level spell you can cast. Even though you might have enough points to cast a spell above this maximum, you can't do so.</p>",
+          "<h5 class='mb-0'>Spells Known of 1st Level and Higher</h5><p class='pad-left'>You know two 1st-level spells of your choice from the sorcerer spell list. You learn additional sorcerer spells per the Sorcerer table.<p class='pad-left'>Additionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list.<h5 class='mb-0'>Spellcasting Ability</h5><p class='pad-left'>Charisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your will into the world.",
           {
             "type": "list",
             "items": [
@@ -9990,7 +9992,8 @@
         "title": "Font of Magic",
         "text": [
           "At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects",
-          "<h5 class='mb-0'>Sorcery Points</h5><p class='pad-left'>You have 2 sorcery points, and you gain one additional point every time you level up, to a maximum of 20 at level 20. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest<div class='row'><div class='col-md-4'><table class='table table-striped table-bordered text-centered'><tr><th>Spell Slot Level</th><th>Sorcery Point Cost</th></tr><tr><td>1st</td><td>2</td><tr><td>2nd</td><td>3</td><tr><td>3rd</td><td>5</td><tr><td>4th</td><td>6</td><tr><td>5th</td><td>7</td></table></div><p class='pad-left'><div class='col-md-8'><h5 class='mb-0'>Flexible Casting</h5><p class='pad-left'>You can use your sorcery points to gain additional spell slots, or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.<p class='pad-left'><strong>Creating Spell Slots.</strong> You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The created spell slots vanish at the end of a long rest. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.<p class='pad-left'><strong>Converting a Spell Slot to Sorcery Points.</strong> As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level.</div></div>"
+          "<h5 class='mb-0'>Sorcery Points</h5><p class='pad-left'>You have 2 sorcery points, and you gain one additional point every time you level up, to a maximum of 20 at level 20. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest",
+          "<h5 class='mb-0'>Flexible Casting</h5><p class='pad-left'>You can use your sorcery points to gain additional spell slots, or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.<p class='pad-left'><strong>Converting Sorcery Points and Spell Points.</strong> As a bonus action on your turn, you can expend any number of sorcery points to create that many spell points. Alternately, you can expend any number of spell points to create that many sorcery points. Any extra spell points vanish at the end of a long rest. You still can't have more sorcery points than shown in the Sorcerer table."
         ]
       },
       {
