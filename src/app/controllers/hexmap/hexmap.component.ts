@@ -7,20 +7,18 @@ import * as L from 'leaflet';
   styleUrls: ['./hexmap.component.scss']
 })
 export class HexmapComponent implements AfterViewInit {
-  private map;
-
   private countries;
   private continents;
   private cities;
   private towns;
   private seas;
-
   private shizomi;
 
   constructor() {
     this.continents = [
       ['Ilia', 50, -77],
       ['Ischia', 41, 15],
+      ['Humerum', -42, -95]
     ];
     this.countries = [
       ['Denari', 30, -120],
@@ -122,7 +120,7 @@ export class HexmapComponent implements AfterViewInit {
       ["Megara", 24.6, 21.7],
       ["Mount Pantheus", 25.7, 23],
 
-      ["Wile's Home", 65.08, -90.42],
+      ["Wile's Hole", 65.08, -90.42],
       ["Tamerlaine", 65.18, -89.1],
       ["Lostwood", 65.595, -87.7],
       ["Cold Mead", 64.77, -88.07],
