@@ -51,7 +51,7 @@ export class HexmapComponent implements AfterViewInit {
       ['Arden', 16.57, -100],
       ['Dalgrange', 22.3, -105.91],
       ['Tramere', 17.05, -101.18],
-      ['Avonshire', 24.69, -109.4],
+      ['Stromshire', 24.69, -109.4],
 
       ['Reliqa', 28.4, -110.5],
       ['Kintalla', 31.6, -106.4],
@@ -127,6 +127,15 @@ export class HexmapComponent implements AfterViewInit {
       ["Targon", 64.86, -86.915],
       ["Estwall", 64.95, -88.77],
       ["Ymir's Cairn", 65.48, -86.5],
+
+      ["Screaming Winds", 51.47, 4.19],
+      ["Red Gate", 52.73, 3.19],
+      ["Luminos", 52.73, 4.97],
+      ["Caerleon", 51.8, 6.066],
+      ["Sarcozia", 51.78, 4.31],
+      ["Whore Island", 52.22, 4.59],
+      ["Black Barrow", 52.53, 3.5],
+      ["Tinnakill", 49.79, 5.3]
     ];
     this.shizomi = [
       ['Imperial Palace', 29.71, -210.63],
@@ -156,7 +165,8 @@ export class HexmapComponent implements AfterViewInit {
       popupAnchor: [0, 25],
       shadowUrl: '',
       shadowSize: [0, 0],
-      shadowAnchor: [0, 0]
+      shadowAnchor: [0, 0],
+      className: 'city-marker-icon',
     });
     let townLabel = L.icon({
       iconUrl: 'assets/town-marker.png',
@@ -165,7 +175,8 @@ export class HexmapComponent implements AfterViewInit {
       popupAnchor: [0, 0],
       shadowUrl: '',
       shadowSize: [0, 0],
-      shadowAnchor: [0, 0]
+      shadowAnchor: [0, 0],
+      className: 'town-marker-icon',
     });
 
     L.tileLayer('https://raw.githack.com/gaschw3/dnd-map-tiles/master/{z}/{x}/{y}.png', {
@@ -220,10 +231,11 @@ export class HexmapComponent implements AfterViewInit {
 
     this.changeZoom(map, ".country-label", 4, 5);
     this.changeZoom(map, ".water-label", 6, 8);
-    this.changeZoom(map, ".city-label", 5.5, 8);
+    this.changeZoom(map, ".city-label", 6, 8);
     this.changeZoom(map, ".town-label", 7, 8);
     this.changeZoom(map, ".shizomi-label", 6, 8);
-    this.changeZoom(map, ".leaflet-marker-icon", 6, 8);
+    this.changeZoom(map, ".city-marker-icon", 5.5, 8);
+    this.changeZoom(map, ".town-marker-icon", 6.5, 8);
     map.zoomIn();
   }
 
