@@ -208,7 +208,7 @@
       },
       {
         "name": "Size",
-        "text": ["Changelings in their notural state are usually slightly smaller than humans."]
+        "text": ["Changelings in their natural state are usually slightly smaller than humans."]
       },
       {
         "name": "Shapechanger",
@@ -1765,7 +1765,7 @@
     "traits": [
       {
         "name": "Age",
-        "text": ["Half-orcs mature somewhat faster than humans, reaching adulthood around age 10. They age noticeably faster and rarely live longer than 65 years."]
+        "text": ["Nezumi mature somewhat faster than humans, reaching adulthood around age 10. They also age noticeably faster and rarely live longer than 50 years."]
       },
       {
         "name": "Alignment",
