@@ -156,11 +156,8 @@ body {
         background-color: themed("tableActiveColor")!important;
         color: themed("textLinkColor");
     }
-    .table td, .table th {
-        border-top: 1px solid rgba(0,0,0,.6);
-    }
-    .table-sm td, .table-sm th {
-        border-top: 1px solid themed("textColor");
+    .table-bordered th, .table-bordered td {
+      border: 1px solid themed("textColor") !important;
     }
     .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
         color: themed("textColor");
