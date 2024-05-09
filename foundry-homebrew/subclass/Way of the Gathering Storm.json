@@ -123,7 +123,7 @@
 			},
 			"entries": [
 				"At 11th level, you gain the ability to convert your energy into a searing lightning bolt.",
-        "You can spend 4 Gathering Storm charges or 2 Ki points to gain a new attack option you can use with the Attack action this turn. This special attack is a lightning bolt 40 feet long and 5 feet wide. Each creature in the line must succeed on Dexterity saving throw against your Ki save DC. On a failure, they take lightning damage equal to 2 rolls of your martial arts die and fall prone. On a success, they take half as much damage and do not fall prone."
+        "You can spend 4 Gathering Storm charges or 2 Ki points to gain a new attack option you can use with the Attack action this turn. This special attack is a lightning bolt 40 feet long and 5 feet wide. Each creature in the line must succeed on Dexterity saving throw against your Ki save DC. On a failure, they take lightning damage equal to 3 rolls of your martial arts die and fall prone. On a success, they take half as much damage and do not fall prone."
 			]
 		},
 		{

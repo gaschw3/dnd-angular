@@ -357,7 +357,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 3rd level or higher, the damage reduced increases by 1d10 for every 2 slot levels above 2nd and you can make summon one additional blade to make a counter attack."
+						"When you cast this spell using a spell slot of 4th level or higher, the damage reduced increases by 1d10 for every 2 slot levels above 2nd and you can make summon one additional blade to make a counter attack."
 					]
 				}
 			],
@@ -593,7 +593,7 @@
 				]
 			},
 			"entries": [
-				"Fire a semi-transparent magic bolt at a creature that you can see within range Make a ranged spell attack against the target. If you or the target are in dim-light or darkness, make this roll with advantage. On a hit, the target takes {@damage 3d8} force damage."
+				"Fire a semi-transparent magic bolt at a creature that you can see within range. Make a ranged spell attack against the target. If you or the target are in dim-light or darkness, make this roll with advantage. On a hit, the target takes {@damage 3d8} force damage."
 			],
 			"source": "BREW-A",
 			"components": {
@@ -650,7 +650,7 @@
 			},
 			"entries": [
 				"Launch a small projectile and immediately teleport it so that it strikes the target from an unexpected direction. Make a ranged spell attack against a creature within range. On a hit, the spell deals {@damage 3d8} force damage. This spell ignores any bonus to AC granted by a shield or a dexterity modifier. The target also gains no benefit from cover.",
-				"Additionally, if you cast this spell within 5 feet of your target you gain advantage on the roll."
+				"Additionally, if you cast this spell within 5 feet of your target you have advantage on the attack instead of disadvantage."
 			],
 			"source": "BREW-A",
 			"components": {
@@ -703,7 +703,7 @@
 			},
 			"entries": [
 				"You summon a spear made of lightning and hurl it at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 4d6} lightning damage.",
-				"When you cast this spell, you can choose to make the attack at the start of your next turn instead, charging the lightning spear and increasing the damage by {@dice 1d6} and the range by 60 feet."
+				"When you cast this spell, you can choose to release the magic just before the start of your next turn instead, charging the lightning spear and increasing the damage by {@dice 1d6} and the range by 60 feet."
 			],
 			"source": "BREW-A",
 			"entriesHigherLevel": [
