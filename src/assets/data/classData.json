@@ -1159,6 +1159,42 @@
         ]
       },
       {
+        "level": 3,
+        "filter": "yes",
+        "subclass": "giant",
+        "name": "giant",
+        "title": "Primal Path: Path of the Giant",
+        "source": "BGG",
+        "text": [
+          "Barbarians who walk the Path of the Giant draw strength from the same primal forces as giants. As they rage, these barbarians surge with elemental power and grow in size, taking on forms that evoke the glory of giants. Some barbarians look like oversized versions of themselves, perhaps with a hint of elemental energy flaring in their eyes and around their weapons. Others transform more dramatically, taking on the appearance of an actual giant or a form similar to an Elemental, wreathed in fire, frost, or lightning."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "giant",
+        "name": "giant-power",
+        "title": "Path of the Giant: Giant Power",
+        "text": [
+          "When you choose this path, you learn to speak, read, and write Giant or one other language of your choice if you already know Giant. Additionally, you learn a cantrip of your choice: either {@spell druidcraft} or {@spell thaumaturgy}. Wisdom is your spellcasting ability for this spell."
+        ]
+      },
+      {
+        "level": 3,
+        "subclass": "giant",
+        "name": "giant-havoc",
+        "title": "Path of the Giant: Giant Havoc",
+        "text": [
+          "Your rages pull strength from the primal might of giants, transforming you into a hulking force of destruction. While raging, you gain the following benefits:",
+          {
+            "type": "list",
+            "items": [
+              "<strong>Crushing Throw.</strong> When you make a successful ranged attack with a thrown weapon using Strength, you can add your Rage Damage bonus to the attack's damage roll.",
+              "<strong>Giant Stature.</strong> Your reach increases by 5 feet, and if you are smaller than Large, you become Large, along with anything you are wearing. If there isn't enough room for you to increase your size, your size doesn't change."
+            ]
+          }
+        ]
+      },
+      {
         "level": 4,
         "subclass": "base",
         "name": "asi-1",
@@ -1288,6 +1324,17 @@
         "title": "Path of the Zealot: Fanatical Focus",
         "text": [
           "Starting at 6th level, the divine power that fuels your rage can protect you. If you fail a saving throw while you're raging, you can reroll it, and you must use the new roll. You can use this ability only once per rage."
+        ]
+      },
+      {
+        "level": 6,
+        "subclass": "giant",
+        "name": "giant-elemental-cleaver",
+        "title": "Path of the Giant: Elemental Cleaver",
+        "text": [
+          "Your bond with the elemental might of giants grows, and you learn to infuse weapons with primordial energy.",
+          "When you enter your rage, you can choose one weapon that you are holding and infuse it with one of the following damage types: acid, cold, fire, thunder, or lightning. While you wield the infused weapon during your rage, the weapon's damage type changes to the chosen type, it deals an extra 1d6 damage of the chosen type when it hits, and it gains the thrown property, with a normal range of 20 feet and a long range of 60 feet. If you throw the weapon, it reappears in your hand the instant after it hits or misses a target.",
+          "While raging and holding the infused weapon, you can use a bonus action to change the infused weapon's current damage type to another one from the damage type options above."
         ]
       },
       {
@@ -1527,9 +1574,18 @@
         "name": "zealot-beyond-death",
         "title": "Path of the Zealot: Rage Beyond Death",
         "text": [
-
           "Beginning at 14th level, the divine power that fuels your rage allows you to shrug off fatal blows.",
           "While you're raging, having 0 hit points doesn't knock you unconscious. You still must make death saving throws, and you suffer the normal effects of taking damage while at 0 hit points. However, if you would die due to failing death saving throws, you don't die until your rage ends, and you die then only if you still have 0 hit points."
+        ]
+      },
+      {
+        "level": 14,
+        "subclass": "giant",
+        "name": "giant-colossus",
+        "title": "Path of the Giant: Demiurgic Colossus",
+        "text": [
+          "The primordial power of your rage intensifies. When you rage, your reach increases by 10 feet, your size can increase to Large or Huge (your choice), and you can use your Mighty Impel to move creatures that are Large or smaller.",
+          "In addition, the extra damage dealt by your Elemental Cleaver feature increases to 2d6."
         ]
       },
       {
@@ -9543,8 +9599,8 @@
         "level": 1,
         "filter": "yes",
         "subclass": "raw",
-        "name": "raw magic",
-        "title": "Raw Magic",
+        "name": "raw-magic",
+        "title": "Origin: Raw Magic",
         "source": "BREW",
         "text": [
           "(ORIGINAL: This Raw Magic Origin is intended as a slightly less silly, higher player agency version of the PHB Wild Magic Origin. The regular Wild Magic Origin is still available, but Fireballing your own party at random isn't particularly fun so this makes effects smaller and repeatable and not so potentially catastrophic)",
@@ -9577,7 +9633,7 @@
         "filter": "yes",
         "subclass": "dragon",
         "name": "draconic",
-        "title": "Draconic Bloodline",
+        "title": "Origin: Draconic Bloodline",
         "source": "PHB",
         "text": [
           "Your innate magic comes from draconic magic that was mingled with your blood or that of your ancestors. Most often, sorcerers with this origin trace their descent back to a mighty sorcerer of ancient times who made a bargain with a dragon or who might even have claimed a dragon parent.At each indicated sorcerer level, add the listed spells to your list of known spells. They do not count towards your limit.",
@@ -9631,7 +9687,7 @@
         "filter": "yes",
         "subclass": "storm",
         "name": "storm",
-        "title": "Storm Sorcery",
+        "title": "Origin: Storm Sorcery",
         "source": "XGE",
         "text": [
           "Your innate magic comes from the power of elemental air. Those with this power might be able to trace their magic back to a near-death experience during a flood, a birth during a blizzard or howling gale, or even lineage from a djinn or sphinx. Storm sorcerers are often valuable members of a ship's crew with ability to read and exert control over wind and weather.At each indicated sorcerer level, add the listed spells to your list of known spells. They do not count towards your limit.",
@@ -9671,7 +9727,7 @@
         "filter": "yes",
         "subclass": "divine",
         "name": "divine",
-        "title": "Divine Soul",
+        "title": "Origin: Divine Soul",
         "source": "XGE",
         "text": [
           "Sometimes the spark of magic that fuels a sorcerer comes from a divine source that glimmers within the soul. Those with this power might be able to trace their magic back to angelic ancestry, or find that their life aligns with an ancient prophecy. A Divine Soul, with a natural magnetism, is seen as a threat by some religious hierarchies. As an outsider who commands sacred power, a Divine Soul can undermine an existing order by claiming a direct tie to the divine.At each indicated sorcerer level, add the listed spells to your list of known spells. They do not count towards your limit.",
@@ -9711,7 +9767,7 @@
         "filter": "yes",
         "subclass": "shadow",
         "name": "shadow",
-        "title": "Shadow",
+        "title": "Origin: Shadow",
         "source": "XGE",
         "text": [
           "You are a creature of shadow, for your innate magic comes from the Shadowfell itself. You might trace your lineage to an entity from that place, or perhaps you were exposed to its fell energy and transformed by it. The power of shadow magic casts a strange pall over your physical presence. The spark of life that sustains you is muffled, as if it struggles to remain viable against the dark energy that imbues your soul. At your option, you can pick from or roll on the Shadow Sorcerer Quirks table to create a quirk for your character.",
@@ -9790,8 +9846,8 @@
         "filter": "yes",
         "subclass": "lunar",
         "name": "lunar",
-        "title": "Lunar",
-        "source": "DSotDQ",
+        "title": "Origin: Lunar",
+        "source": "SotDQ",
         "text": [
           "On many worlds, the moon is a revered celestial body with magical properties. You or someone from your lineage has been exposed to the concentrated magic of the moon (or moons) of your world, imbuing you with lunar magic. Perhaps your ancestor was involved in a druidic ritual involving an eclipse, or maybe a mystical fragment of a moon crashed near you. However you came to have your magic, your connection to the moon is obvious when you cast sorcerer spells—perhaps making your pupils glow with the color of a moon from your world, causing spectral manifestations of lunar phases to orbit you, or some other effect.",
           "At each indicated sorcerer level, add the listed spells to your list of known spells. They do not count towards your limit.",
@@ -9879,7 +9935,7 @@
         "filter": "yes",
         "subclass": "gravity",
         "name": "gravity wielder",
-        "title": "Gravity Wielder",
+        "title": "Origin: Gravity Wielder",
         "source": "BREW",
         "text": [
 
@@ -9921,7 +9977,7 @@
         "filter": "yes",
         "subclass": "aberrant",
         "name": "aberrant mind",
-        "title": "Aberrant Mind",
+        "title": "Origin: Aberrant Mind",
         "source": "TCE",
         "text": [
           "An alien influence has wrapped its tendrils around your mind, giving you psionic power. You can now touch other minds with that power and alter the world around you by using it to control the magical energy of the multiverse. Will this power shine from you as a hopeful beacon to others? Or will you be a source of terror to those who feel the stab of your mind and witness the strange manifestations of your might?",
@@ -10000,7 +10056,7 @@
         "filter": "yes",
         "subclass": "clockwork",
         "name": "clockwork",
-        "title": "Clockwork Soul",
+        "title": "Origin: Clockwork Soul",
         "source": "TCE",
         "text": [
           "The cosmic force of order has suffused you with magic. That power arises from Axiom - the plane of existence shaped entirely by clockwork efficiency. You, or someone from your lineage, might have become entangled in the machinations of the modrons, the orderly beings who inhabit Axiom. Perhaps your ancestor even took part in the Great Modron March. Whatever its origin within you, the power of order can seem strange to others, but for you, it is part of a vast and glorious system.",
