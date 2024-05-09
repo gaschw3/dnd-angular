@@ -5,18 +5,19 @@ $themes: (
     headerFont: "UnifrakturCook",
     headerFallbackFont: serif,
     background: auto,
-    navColor: #b0861d,
+    navColor: #fde37b,
     tableActiveColor: #3a3f44,
-    navText: #fff,
+    navText: #333,
+    brandText: #333, //color for text next to favicon
     cardColor: #32383e,
     textColor: #aaa,
     textLinkColor: #fff,
     textLinkBackground: #574310,
     linkColor: #dec45b,
     colorPrimary: #c4b262, //most headers on site
-    colorSecondary: #a600ff, //feature headers in class, features outline,
-    colorTertiary: #ccc, //feature usbheaders for stuff like fighting styles
-    headerColor: #aaa,
+    colorSecondary: #a749ff, //feature headers in class, features outline,
+    colorTertiary: #ddd, //feature usbheaders for stuff like fighting styles
+    headerColor: #ffffff,
     classButtonGradient: linear-gradient(#484e55,#3a3f44 60%,#313539),
     classButtonGradientActive: linear-gradient(#101112, #17191b 40%, #1b1e20),
     paginateSelected: rgba(255, 237, 121, 0.514),
@@ -30,6 +31,7 @@ $themes: (
     navColor: #fff59b,
     tableActiveColor: #fff59b,
     navText: #000,
+    brandText: #60adff, //color for text next to favicon
     cardColor: #fff,
     textColor: auto,
     textLinkColor: auto,
@@ -52,6 +54,7 @@ $themes: (
     background: auto,
     navColor: #946B44,
     navText: #fff,
+    brandText: #67b4e0, //color for text next to favicon
     cardColor: #ebd4c1,
     textColor: auto,
     textLinkColor: #E0A267,
@@ -74,6 +77,7 @@ $themes: (
     navColor: #3a3f44,
     tableActiveColor: #3a3f44,
     navText: #fff,
+    brandText: #ccc, //color for text next to favicon
     cardColor: #32383e,
     textColor: #aaa,
     textLinkColor: #fff,
@@ -95,6 +99,7 @@ $themes: (
     background: linear-gradient(15deg, #140220 0%, #0a0046 74%),
     navColor: #192970,
     navText: #fff,
+    brandText: #ffcc80, //color for text next to favicon
     cardColor: #35377c,
     textColor: #eee,
     textLinkColor: #c4fff7,
@@ -116,6 +121,7 @@ $themes: (
     background: linear-gradient(15deg, #140220 0%, #0a0046 74%),
     navColor: #000,
     navText: #fff,
+    brandText: #cc92ff, //color for text next to favicon
     cardColor: #2b333a,
     textColor: #fff,
     textLinkColor: #00f7ff,
