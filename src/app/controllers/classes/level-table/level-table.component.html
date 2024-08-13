@@ -10,7 +10,7 @@
         <ng-container *ngFor="let column of levels">
             <td *ngIf="column == 'features'; else static">
             <ng-container *ngFor="let f of getFeatures(i+1); let last = last">
-                <a routerLink="./" fragment="{{f.name}}" (click)="this.shake(f.name)" >{{ f.title }}</a><span *ngIf="!last">, </span>
+                <a routerLink="./" fragment="{{f.id}}" (click)="this.shake(f.id)" >{{ f.name }}</a><span *ngIf="!last">, </span>
             </ng-container>
             </td>
             <ng-template #static>

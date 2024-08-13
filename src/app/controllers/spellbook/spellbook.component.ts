@@ -30,11 +30,11 @@ export class SpellbookComponent implements OnInit, AfterViewInit, OnDestroy {
   currSubclass: string;
 
   public getClassJSON(): Observable<any> {
-      return this.http.get("assets/data/classData.json")
+      return this.http.get("assets/data/2023/classData.json")
   }
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/spellData.json")
+      return this.http.get("assets/data/2023/spellData.json")
   }
 
   constructor(private http: HttpClient,

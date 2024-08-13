@@ -20,7 +20,7 @@ export class FeatsComponent implements OnInit {
   currFeat: Feat;
 
   public getJSON(): Observable<any> {
-    return this.http.get("assets/data/featData.json")
+    return this.http.get("assets/data/2023/featData.json")
   }
 
   constructor(private http: HttpClient,

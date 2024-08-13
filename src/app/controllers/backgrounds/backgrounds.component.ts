@@ -20,7 +20,7 @@ export class BackgroundsComponent implements OnInit {
   currBackground: Background;
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/backgroundData.json")
+      return this.http.get("assets/data/2023/backgroundData.json")
   }
 
   constructor(private http: HttpClient,

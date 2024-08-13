@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Class } from 'src/app/models';
+import { newClass } from 'src/app/models';
 
 @Component({
   selector: 'app-level-table',
@@ -8,10 +8,8 @@ import { Class } from 'src/app/models';
 })
 export class LevelTableComponent implements OnInit {
 
-  @Input() class: Class;
+  @Input() class: newClass;
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
-
-  private selected: Array<String> = ["beast"];
 
   constructor() { }
 
@@ -19,7 +17,7 @@ export class LevelTableComponent implements OnInit {
   }
 
   getFeatures(level) {
-    return this.class.features.filter(f => f.level == level && f.subclass == "base");
+    return this.class.classFeature.filter(f => f.level == level);
   }
 
   shake(id: string){

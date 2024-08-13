@@ -6,8 +6,8 @@
         None
     </button>
     <ng-container *ngFor="let archetype of archetypes">
-        <button class="btn btn-primary p-2 m-1 btn-archetype" [ngClass]="{'active': selectedArchetypes.includes(archetype.subclass)}" (click)="clickArchetype(archetype.subclass)" [attr.data-name]="archetype.subclass">
-            {{archetype.title}}
+        <button class="btn btn-primary p-2 m-1 btn-archetype" [ngClass]="{'active': selectedArchetypes.includes(archetype.shortName)}" (click)="clickArchetype(archetype.shortName)" [attr.data-name]="archetype.shortName">
+            {{archetype.name}}
             (<span [class]="'text-right color-'+archetype.source | lowercase">{{archetype.source}}</span>)
         </button>
     </ng-container>

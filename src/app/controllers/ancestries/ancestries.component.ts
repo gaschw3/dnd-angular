@@ -20,7 +20,7 @@ export class AncestriesComponent implements OnInit {
   currAncestry: Ancestry;
 
   public getJSON(): Observable<any> {
-    return this.http.get("assets/data/ancestryData.json")
+    return this.http.get("assets/data/2023/ancestryData.json")
   }
 
   constructor(private http: HttpClient,

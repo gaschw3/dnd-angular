@@ -36,6 +36,9 @@
     </div>
     <div *ngSwitchCase="'entries'">
         <p *ngIf="parent==''" class="pb-0 mb-2">
+            <strong *ngIf="entry.name">{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+        </p>
+        <p *ngIf="parent=='entries'" class="pb-0 mb-2">
             <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
         </p>
         <li *ngIf="parent=='list'">
@@ -45,6 +48,9 @@
     <div *ngSwitchCase="'item'">
         <p *ngIf="parent==''" [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></p>
         <li *ngIf="parent=='list'" [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></li>
+    </div>
+    <div *ngSwitchCase="'undef'">
+        <p [innerHtml]="entry.type"></p>
     </div>
     <ng-container *ngSwitchDefault>
         <p *ngIf="parent==''" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>

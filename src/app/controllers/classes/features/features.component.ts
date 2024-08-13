@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@angular/core';
-import { ClassFeature } from 'src/app/models/class-feature';
+import { ClassFeature } from 'src/app/models/newClass';
+
 
 @Component({
   selector: 'app-features',
@@ -16,16 +17,6 @@ export class FeaturesComponent implements OnInit {
   constructor() {this.currActive = "test";}
 
   ngOnInit() {}
-
-  getEntryType(entry): string {
-    if (entry.list) {
-      return "list";
-    } else if (entry.column) {
-      return "column";
-    } else {
-      return "";
-    }
-  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event) {

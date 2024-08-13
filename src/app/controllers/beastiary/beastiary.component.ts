@@ -22,7 +22,7 @@ export class BeastiaryComponent implements OnInit {
   monsterName: string;
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/beastiary.json")
+      return this.http.get("2023/beastiary.json")
   }
 
   constructor(private http: HttpClient,

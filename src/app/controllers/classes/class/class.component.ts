@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Class, Proficiency, Multiclass } from '../../../models';
+import { newClass, newMulticlass, Proficiencies} from '../../../models';
 import { FeaturesComponent } from '../features/features.component';
 import { ArchetypesComponent } from '../archetypes/archetypes.component';
 import { Subject } from 'rxjs';
@@ -12,7 +12,7 @@ import { Subject } from 'rxjs';
 })
 export class ClassComponent implements OnInit, OnChanges {
 
-  @Input() class: Class;
+  @Input() class: newClass;
   @ViewChild(FeaturesComponent) child: FeaturesComponent;
   @ViewChild(ArchetypesComponent) child2: ArchetypesComponent;
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
@@ -20,8 +20,8 @@ export class ClassComponent implements OnInit, OnChanges {
   archetypeChange: Subject<Array<String>> = new Subject<Array<String>>();
   selectedChange: Subject<boolean> = new Subject<boolean>();
 
-  prof: Proficiency;
-  multi: Multiclass;
+  prof: Proficiencies;
+  multi: newMulticlass;
   selectedArchetypes: Array<String> = [];
   allSelected: boolean = true;
   ccId: number = 0; //current class id
@@ -36,25 +36,31 @@ export class ClassComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.prof = this.class.proficiencies;
+    this.prof = this.class.startingProficiencies;
     this.multi = this.class.multiclassing;
   }
 
   ngOnChanges() {
-    this.prof = this.class.proficiencies;
+    this.prof = this.class.startingProficiencies;
     this.multi = this.class.multiclassing;
   }
 
   getFilteredFeatures() {
     if (this.selectedArchetypes.length == 0 && this.allSelected) {
-      return this.class.features
+      return this.class.classFeature.concat(this.class.subclassFeature)
+      .sort((a,b) =>
+          (a.level < b.level) ? -1 : 1
+      );
     } else {
-      return this.class.features.filter(f => f.subclass == "base" || this.selectedArchetypes.includes(f.subclass));
+      return this.class.classFeature.concat(this.class.subclassFeature.filter(f => this.selectedArchetypes.includes(f.subclassShortName)))
+      .sort((a,b) => 
+        (a.level < b.level) ? -1 : 1
+      );
     }
   }
 
   getArchetypes() {
-    return this.class.features.filter(f => f.filter == "yes").sort(function(a, b) {
+    return this.class.subclass.sort(function(a, b) {
       return (a.name < b.name) ? -1 : 1;
     });
   }

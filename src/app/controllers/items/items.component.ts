@@ -27,7 +27,7 @@ export class ItemsComponent implements OnInit {
   selected: string;
 
   public getJSON(): Observable<any> {
-    return this.http.get("assets/data/items.json")
+    return this.http.get("assets/data/2023/items.json")
   }
 
   constructor(private http: HttpClient,

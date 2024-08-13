@@ -38,6 +38,8 @@ export class EntryRendererComponent implements OnInit {
         return "column";
       } else if (entry.type == "inset") {
         return "inset";
+      } else {
+        return "undef";
       }
     } else {
       return "";
