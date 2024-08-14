@@ -35,7 +35,7 @@
         <tr *ngFor="let feat of feats" (click)="setCurrAncestry(feat)"
           [class.table-active]="currFeat?.id == feat.id">
           <td>{{feat.name}}</td>
-          <td>{{feat.asi}}</td>
+          <td>{{feat.asi | titlecaseExcept}}</td>
           <td [class]="'text-right color-'+feat.source.replace('+','').replace('-','') | lowercase" class="text-right">{{feat.source}}</td>
         </tr>
       </tbody>

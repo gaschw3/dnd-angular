@@ -32,7 +32,7 @@ export class LinkmakerPipe implements PipeTransform {
       var linkLocation = linkPath.replace(/[\s\/]/g, '-').replace(/[^\w-\/]/g, '').toLowerCase();
       // XXX:special case for specific EI link - should not be done this way
       linkLocation = linkLocation.replace('ei-', 'EI\/');
-      var linkRoot = splitArr.slice(0, 1).toString().replace('creature', 'beastiary').replace('spells', 'spell').replace('spell', 'spells').replace('items', 'item').replace('item', 'items').replace('@', '/');
+      var linkRoot = splitArr.slice(0, 1).toString().replace('creature', 'beastiary').replace('spells', 'spell').replace('spell', 'spells').replace('items', 'item').replace('item', 'items').replace('feat', 'feats').replace('@', '/');
       if (queryText !== '') {
         var href = linkRoot + '?' + queryText;
       } else {
@@ -40,7 +40,7 @@ export class LinkmakerPipe implements PipeTransform {
       }
       // a bunch of these are used in Foundry but I don't really want to make handler pages for all of them
       // most of these get ignored, a few special ones are turned into stuff like text decorations
-      if (splitArr.slice(0,1).toString() == '@damage' || splitArr.slice(0,1).toString() == '@scaledamage' || splitArr.slice(0,1).toString() == '@dice' || splitArr.slice(0,1).toString() == '@scaledice' || splitArr.slice(0,1).toString() == '@condition' || splitArr.slice(0,1).toString() == '@skill' || splitArr.slice(0,1).toString() == '@hit' || splitArr.slice(0,1).toString() == '@sense' || splitArr.slice(0,1).toString() == '@chance' || splitArr.slice(0,1).toString() == '@h' || splitArr.slice(0,1).toString() == '@atk' || splitArr.slice(0,1).toString() == '@b' ||splitArr.slice(0,1).toString() == '@i') {
+      if (splitArr.slice(0,1).toString() == '@damage' || splitArr.slice(0,1).toString() == '@scaledamage' || splitArr.slice(0,1).toString() == '@dice' || splitArr.slice(0,1).toString() == '@scaledice' || splitArr.slice(0,1).toString() == '@condition' || splitArr.slice(0,1).toString() == '@skill' || splitArr.slice(0,1).toString() == '@hit' || splitArr.slice(0,1).toString() == '@sense' || splitArr.slice(0,1).toString() == '@chance' || splitArr.slice(0,1).toString() == '@h' || splitArr.slice(0,1).toString() == '@atk' || splitArr.slice(0,1).toString() == '@b' ||splitArr.slice(0,1).toString() == '@i' || splitArr.slice(0,1).toString() == '@filter') {
         if (splitArr.slice(0,1).toString() == '@hit') {
           return `+${linkText === '' ? linkPath : linkText}`;
         } else if (splitArr.slice(0,1).toString() == '@atk') {

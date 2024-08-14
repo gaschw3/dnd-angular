@@ -1,3 +1,5 @@
+import { HelperService } from "../shared/helpers/helper.service";
+
 export interface ISpell {
   name:       string;
   id:         string;
@@ -35,7 +37,7 @@ export class Spell implements ISpell {
 
   constructor (spellJson) {
         this.name = spellJson.name;
-        this.id = spellJson.name.toLowerCase().replace(/['\/]/g,'').replace(/\W/g, '-');
+        this.id = HelperService.createIdFromName(spellJson.name);
         this.source = spellJson.source;
         this.level = spellJson.level;
         this.school = spellSchool[spellJson.school];

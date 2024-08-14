@@ -47,7 +47,11 @@ export class EntryRendererComponent implements OnInit {
   }
 
   getListItemHtml(entry): string {
-    return '<strong>'+entry.name+'</strong> '+entry.entry;
+    //data isn't super clean, an "item" should only have an "entry":string, but very occasionally, one slips through that uses "entries":[] where the array is just one string - handle that case
+    if (entry.entries)
+      return '<strong>'+entry.name+'</strong> '+ entry.entries.join("\n");
+    else
+    return '<strong>'+entry.name+'</strong> '+ entry.entry
   }
 
 }

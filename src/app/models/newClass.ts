@@ -1,5 +1,6 @@
 import { Spell } from './spell';
 import { commonFeatures } from './consts'
+import { HelperService } from '../shared/helpers/helper.service';
 
 export interface IClass {
   canripProgression?: number[];
@@ -43,7 +44,7 @@ export class ClassFeature {
     this.entries = feat.entries;
     this.level = feat.level;
     this.name = feat.name;
-    this.id = this.name.toLowerCase().replace(/['\/]/g,'').replace(/\W/g, '-');
+    this.id = HelperService.createIdFromName(this.name);
     this.source = feat.source; 
 
     this.subclassShortName = feat.subclassShortName ? feat.subclassShortName : '';
@@ -125,7 +126,7 @@ export class newClass implements IClass{
   constructor (classJson) {
     var currClass = classJson.class[0];
     this.name = currClass.name;
-    this.id = currClass.name.toLowerCase().replace(/['\/]/g,'').replace(/\W/g, '-');
+    this.id = HelperService.createIdFromName(currClass.name);
     this.canripProgression = currClass.cantripProgression;
     this.casterProgression = currClass.casterProgression;
     this.classFeatureList = currClass.classFeatures;

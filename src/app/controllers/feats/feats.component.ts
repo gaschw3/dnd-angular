@@ -16,11 +16,11 @@ import { ADTSettings } from 'angular-datatables/src/models/settings';
 })
 export class FeatsComponent implements OnInit {
 
-  feats: Feat[];
+  feats: Feat[] = [];
   currFeat: Feat;
 
   public getJSON(): Observable<any> {
-    return this.http.get("assets/data/2023/featData.json")
+    return this.http.get("assets/data/2024/feats.json")
   }
 
   constructor(private http: HttpClient,
@@ -80,7 +80,7 @@ export class FeatsComponent implements OnInit {
     };
 
     this.getJSON().subscribe(feats => {
-      this.feats = feats;
+      feats.forEach(feat => this.feats.push(new Feat(feat)));
       this.feats.sort(function (a, b) {
         return (a.name < b.name) ? -1 : 1;
       });

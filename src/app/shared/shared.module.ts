@@ -6,8 +6,9 @@ import { CommonModule } from '@angular/common';
 import { DataTablesModule } from 'angular-datatables';
 import { LinkmakerPipe } from '../pipes/linkmaker.pipe';
 import { SanitizeHtmlPipe } from '../pipes/sanitize-html.pipe';
-import { BackButtonDirective } from '../directives/back-button.directive';
 import { ItemTypePipe } from '../pipes/item-type.pipe';
+import { TitlecaseExceptPipe } from '../pipes/titlecase-except.pipe';
+import { BackButtonDirective } from '../directives/back-button.directive';
 import { EntryRendererComponent } from './entry-renderer/entry-renderer.component';
 import { HelperService } from './helpers/helper.service';
 import { IdToNamePipe } from '../pipes/id-to-name.pipe';
@@ -21,6 +22,7 @@ import { IdToNamePipe } from '../pipes/id-to-name.pipe';
     LinkmakerPipe,
     SanitizeHtmlPipe,
     ItemTypePipe,
+    TitlecaseExceptPipe,
     BackButtonDirective,
     AncestryComponent,
     MonsterComponent,
@@ -37,6 +39,7 @@ import { IdToNamePipe } from '../pipes/id-to-name.pipe';
     LinkmakerPipe,
     SanitizeHtmlPipe,
     ItemTypePipe,
+    TitlecaseExceptPipe,
     BackButtonDirective,
     AncestryComponent,
     MonsterComponent,

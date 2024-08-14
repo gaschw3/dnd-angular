@@ -15,21 +15,7 @@
             </div>
           </div>
           <div class="col">
-            <p class="pb-1 m-0">{{feat.text.description}}</p>
-          </div>
-          <ng-container *ngIf="feat.text.benefits">
-            <entry-renderer [list]=feat.text.benefits [parent]="''"></entry-renderer>
-          </ng-container>
-          <div *ngIf="feat.text.extraDescription" class="col">
-            <p class="pb-1 m-0">{{feat.text.extraDescription}}</p>
-          </div>
-          <ul *ngIf="feat.text.extras">
-            <li *ngFor="let text of feat.text.extras">
-              {{text}}
-            </li>
-          </ul>
-          <div *ngIf="feat.text.multipleSelect" class="col">
-            <p class="pb-1 m-0">{{feat.text.multipleSelect}}</p>
+            <entry-renderer [list]=feat.text parent=''></entry-renderer>
           </div>
         </div>
       </div>

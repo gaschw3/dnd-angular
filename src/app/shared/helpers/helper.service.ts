@@ -28,4 +28,8 @@ export class HelperService {
     
     return sign+mod;
   }
+
+  static createIdFromName(name: string): string {
+    return name.replace(/['\/]/g,'').replace(/\W/g, '-').toLowerCase();
+  }
 }

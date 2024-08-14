@@ -9,6 +9,7 @@ import { DataTableDirective } from 'angular-datatables';
 import { Monster } from 'src/app/models/monster';
 import { sizeMap } from 'src/app/shared/helpers/monster/sizeMap';
 import { ADTSettings } from 'angular-datatables/src/models/settings';
+import { HelperService } from 'src/app/shared/helpers/helper.service';
 
 @Component({
   selector: 'app-beastiary',
@@ -22,7 +23,7 @@ export class BeastiaryComponent implements OnInit {
   monsterName: string;
 
   public getJSON(): Observable<any> {
-      return this.http.get("2023/beastiary.json")
+      return this.http.get("assets/data/2023/beastiary.json")
   }
 
   constructor(private http: HttpClient,
@@ -87,7 +88,7 @@ export class BeastiaryComponent implements OnInit {
 
     this.getJSON().subscribe(beastiary => {
         this.monsters = beastiary.monsters;
-        this.monsters.forEach(monster => monster.id ? null : monster.id = monster.name.toLowerCase().replace(/['\/]/g,'').replace(/\W/g, '-')); //TODO: this is yucky, should be done in monster.ts class Monster
+        this.monsters.forEach(monster => monster.id ? null : monster.id = HelperService.createIdFromName(monster.name)); //TODO: this is yucky, should be done in monster.ts class Monster
         this.route.paramMap.subscribe(params => {
           this.currMonster = this.monsters.find(f => f.id == this.route.snapshot.params.monsterName);
         });
