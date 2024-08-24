@@ -11,7 +11,7 @@
               <h3 [class]="'pull-right color-'+feat.source.replace('+','').replace('-','') | lowercase">{{feat.source}}</h3>
             </div>
             <div *ngIf="feat.prerequisite" class="col-12">
-              <p class="m-0 mb-2"><strong>Prerequisite</strong> {{feat.prerequisite}}</p>
+              <p class="m-0 mb-2"><strong>Prerequisite </strong> <span [innerHtml]="feat.prerequisite | linkmaker"></span></p>
             </div>
           </div>
           <div class="col">

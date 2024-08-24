@@ -17,7 +17,10 @@ export class Feat {
     if (feat.ability) {
       if (feat.ability[0].choose) {
         if (feat.ability[0].choose.from.length == 6) {
-          this.asi = `Any +1`;
+          if (feat.ability[0].choose.amount == 2)
+            this.asi = `Any +1, Any +1`;
+          else 
+            this.asi = `Any +1`;
         } else {
           this.asi = `${feat.ability[0].choose.from.join(", ").replace(/, ([^,]*)$/, ' or $1')} +${feat.ability[0].choose.amount}`;
         }
@@ -43,11 +46,23 @@ export class Feat {
         //kind of yucky regex, but basically parse into a comma-seperated list in this format: 'x', 'x or y', 'x, y, or z', etc.
         prereqArr.push(ancestryArr.join(', ').replace(/, ([^,]*)$/, ' or $1'));
       }
+      if (jsonPrereq.class) {
+        let classArr = [];
+        for (let clazz of jsonPrereq.class) {
+          classArr.push(clazz.name);
+        }
+        //kind of yucky regex, but basically parse into a comma-seperated list in this format: 'x', 'x or y', 'x, y, or z', etc.
+        prereqArr.push(classArr.join(', ').replace(/, ([^,]*)$/, ' or $1'));
+      }
       if (jsonPrereq.ability) {
         let abilityArr = [];
         for (let ability of jsonPrereq.ability) {
           abilityArr.push(`${Object.keys(ability)[0].toUpperCase()} ${Object.values(ability)[0]}+`);
         }
+        prereqArr.push(abilityArr.join(', ').replace(/, ([^,]*)$/, ' or $1'));
+      }
+      if (jsonPrereq.feat) {
+        prereqArr.push(`{@feat ${capitalize(jsonPrereq.feat[0])}} feat`);
       }
       this.prerequisite = capitalize(prereqArr.join("; "));
     }
