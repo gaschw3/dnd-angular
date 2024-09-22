@@ -145,6 +145,16 @@
   }
 }
 
+.entry-title p:first-child {
+  display: inline;
+}
+.entry-title p:last-child {
+  padding-bottom: .5rem !important;
+}
+div:has(.entry-title p:only-child) {
+  padding-bottom: .25rem !important;
+}
+
 /* labels for map stuff, probably better way to do this but it's working for now */
 .continent-label {
     font-size: 50px;

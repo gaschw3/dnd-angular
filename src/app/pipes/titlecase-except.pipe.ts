@@ -9,7 +9,7 @@ export class TitlecaseExceptPipe implements PipeTransform{
         console.log(this.except);
         if(!value) return null;
 
-        let words = value.split(" ");
+        let words = value.split(/([\s\/]+)/);
         for (var index = 0; index < words.length; index++) {
         var word = words[index];
         if (index > 0 && this.isPreposition(word)) {
@@ -20,7 +20,7 @@ export class TitlecaseExceptPipe implements PipeTransform{
         }
         }
 
-        return words.join(" ");
+        return words.join("");
     }
     private isPreposition = (word: string):boolean => {
         let lowerCaseWords  = [...this.except];   

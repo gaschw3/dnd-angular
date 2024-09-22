@@ -35,10 +35,10 @@
         </div>
     </div>
     <div *ngSwitchCase="'entries'">
-        <p *ngIf="parent==''" class="pb-0 mb-2">
+        <p *ngIf="parent==''" class="pb-0 mb-2 entry-title">
             <strong *ngIf="entry.name">{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
         </p>
-        <p *ngIf="parent=='entries'" class="pb-0 mb-2">
+        <p *ngIf="parent=='entries'" class="pb-0 mb-2 entry-title">
             <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
         </p>
         <li *ngIf="parent=='list'">
@@ -54,7 +54,7 @@
     </div>
     <ng-container *ngSwitchDefault>
         <p *ngIf="parent==''" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
-        <span class="pb-0 mb-1" *ngIf="parent=='entries'" [innerHtml]="entry | linkmaker | sanitizeHtml"></span>
+        <p class="pb-0 mb-1" *ngIf="parent=='entries'" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
         <li *ngIf="parent=='list'" [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
     </ng-container>
 </ng-container>

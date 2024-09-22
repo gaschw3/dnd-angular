@@ -1,7 +1,7 @@
 <h1>D&D 5e Feats</h1>
 
 <div class="row">
-  <div *ngIf="feats" class="col-sm-5 feats-table">
+  <div *ngIf="feats" class="col-sm-6 feats-table">
     <table id="tbl-feats" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
       class="table table-hover table-condensed">
       <thead>
@@ -12,6 +12,11 @@
                 <span class="input-group-text"><i class="fa fa-search"></i></span>
               </div>
               <input id="feat-name-filter" class="form-control" type="search" placeholder="Filter Feats">
+            </div>
+          </th>
+          <th class="feat-filter">
+            <div class="input-group input-group-sm">
+              <input id="feat-category-filter" class="form-control" type="search" placeholder="Category">
             </div>
           </th>
           <th class="feat-filter">
@@ -27,6 +32,7 @@
         </tr>
         <tr>
           <th>Name</th>
+          <th>Category</th>
           <th>ASI</th>
           <th class="text-right">Source</th>
         </tr>
@@ -35,13 +41,14 @@
         <tr *ngFor="let feat of feats" (click)="setCurrAncestry(feat)"
           [class.table-active]="currFeat?.id == feat.id">
           <td>{{feat.name}}</td>
+          <td title="">{{feat.category}}</td>
           <td>{{feat.asi | titlecaseExcept}}</td>
           <td [class]="'text-right color-'+feat.source.replace('+','').replace('-','') | lowercase" class="text-right">{{feat.source}}</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="col-sm-7">
+  <div class="col-sm-6">
     <app-feat *ngIf="currFeat" [feat]="currFeat"></app-feat>
   </div>
 </div>

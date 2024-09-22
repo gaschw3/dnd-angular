@@ -33,8 +33,7 @@
             <p>Alternatively, you may start with <span class="text--gp" [innerHtml]="class.startingGold | linkmaker"></span> to buy your own equipment</p>
 
             <h4 class="text-success mt-3 mb-0">Multiclassing</h4>
-            <p>When you gain a level in a class other than your first, there is a minimum requirement for one (or more) stats and you gain only some of that class's starting proficiencies.</p>
-            <div *ngIf="multi.requirements"><strong>Ability Score Min: </strong>{{multi.requirements}}</div>
+            <p *ngIf="multi.requirements">{{multi.requirements}}</p>
             <div *ngIf="multi.proficiencies.armor"><strong>Armor: </strong><span [innerHtml]="multi.proficiencies.armor | linkmaker"></span></div>
             <div *ngIf="multi.proficiencies.weapons"><strong>Weapons: </strong>{{multi.proficiencies.weapons}}</div>
             <div *ngIf="multi.proficiencies.tools"><strong>Tools: </strong>{{multi.proficiencies.tools}}</div>

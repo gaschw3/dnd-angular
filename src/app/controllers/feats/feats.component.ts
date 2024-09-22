@@ -36,11 +36,13 @@ export class FeatsComponent implements OnInit {
   dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
+    let route = this.route.queryParams;
     this.dtOptions = {
       columnDefs: [
-        { width: '55%', targets: 0 },
-        { width: '35%', targets: 1 },
-        { width: '10%', targets: 2 },
+        { width: '50%', targets: 0 },
+        { width: '10%', targets: 1 },
+        { width: '30%', targets: 2 },
+        { width: '10%', targets: 3 },
       ],
       autoWidth: false,
       scrollX: true,
@@ -64,6 +66,11 @@ export class FeatsComponent implements OnInit {
       },
       initComplete: function (settings, json) {
         const api = this.api();
+        route.subscribe(params => {
+          for (var param in params) {
+            $(`#${param}`).val(params[param]); //fill in text boxes with query params
+          }
+        });
         api.columns().every(function () {
           const column = this;
           const $head = $(column.header());

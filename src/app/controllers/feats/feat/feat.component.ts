@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Feat } from 'src/app/models/feat';
+import { Feat, featCategory } from 'src/app/models/feat';
 
 @Component({
   selector: 'app-feat',
@@ -9,6 +9,7 @@ import { Feat } from 'src/app/models/feat';
 export class FeatComponent implements OnInit {
 
   @Input() feat: Feat;
+  featCategory = featCategory;
 
   ngOnInit() { }
 }

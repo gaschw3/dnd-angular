@@ -26,7 +26,7 @@ export class OtherFeaturesComponent implements OnInit {
   featureType = featureType;
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/2023/otherFeatures.json")
+      return this.http.get("assets/data/2024/otherFeatures.json")
   }
 
   constructor(private http: HttpClient,
@@ -154,6 +154,9 @@ export class OtherFeaturesComponent implements OnInit {
       }
       if (typeof reqs.item != "undefined") {
         ret.push(reqs.item[0]);
+      }
+      if (typeof reqs.feature != "undefined") {
+        ret.push(reqs.feature[0]);
       }
       if (typeof reqs.level != "undefined") {
         if (typeof reqs.level.subclass != "undefined") {

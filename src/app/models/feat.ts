@@ -4,6 +4,7 @@ export class Feat {
   name:          string;
   id:            string;
   source:        string;
+  category:      string;
   asi?:          string;
   text:          any[];
   prerequisite?: string;
@@ -11,6 +12,7 @@ export class Feat {
   constructor(feat) {
     this.name = feat.name;
     this.id = HelperService.createIdFromName(feat.name);
+    this.category = feat.category ? feat.category : 'G';
     this.source = feat.source;
     this.text = feat.entries;
 
@@ -22,10 +24,10 @@ export class Feat {
           else 
             this.asi = `Any +1`;
         } else {
-          this.asi = `${feat.ability[0].choose.from.join(", ").replace(/, ([^,]*)$/, ' or $1')} +${feat.ability[0].choose.amount}`;
+          this.asi = `${feat.ability[0].choose.from.join("/").replace(/, ([^,]*)$/, ' or $1')} +${feat.ability[0].choose.amount}`;
         }
       } else {
-        this.asi = `${Object.keys(feat.ability[0])[0]} + ${Object.values(feat.ability[0])[0]}`;
+        this.asi = `${Object.keys(feat.ability[0])[0]} +${Object.values(feat.ability[0])[0]}`;
       }
     }
 
@@ -64,6 +66,9 @@ export class Feat {
       if (jsonPrereq.feat) {
         prereqArr.push(`{@feat ${capitalize(jsonPrereq.feat[0])}} feat`);
       }
+      if (jsonPrereq.feature) {
+        prereqArr.push(`${capitalize(jsonPrereq.feature[0])} feature`);
+      }
       this.prerequisite = capitalize(prereqArr.join("; "));
     }
   }
@@ -85,4 +90,11 @@ const getOrdinal = (number) => {
 
 const capitalize = (s) => {
     return s && s[0].toUpperCase() + s.slice(1);
+}
+
+export const featCategory = {
+  "O": "Origin",
+  "G": "General",
+  "FS": "Fighting Style",
+  "EB": "Epic Boon"
 }

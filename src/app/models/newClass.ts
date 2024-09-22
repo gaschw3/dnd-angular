@@ -37,6 +37,7 @@ export class ClassFeature {
   subclassShortName: string;
   subclassSource: string;
   header: number;
+  cost: string;
 
   constructor (feat) {
     this.className = feat.className;
@@ -50,6 +51,7 @@ export class ClassFeature {
     this.subclassShortName = feat.subclassShortName ? feat.subclassShortName : '';
     this.subclassSource = feat.subclassSource ? feat.subclassSource : '';
     this.header = feat.header ? feat.header : 0;
+    this.cost = feat.cost ? feat.cost : '';
   }
 }
 
@@ -69,10 +71,14 @@ export class newMulticlass {
 
   constructor (mc) {
     let reqArr = []
-    for (const [key, value] of Object.entries(mc.requirements)) {
-      reqArr.push(`${key.toUpperCase()} ${value}`);
+    if (mc.requirements) {
+      for (const [key, value] of Object.entries(mc.requirements)) {
+        reqArr.push(`${key.toUpperCase()} ${value}`);
+      }
+      this.requirements = reqArr.join(", ");
+    } else {
+      this.requirements = "To qualify for a new class, you must have a score of at least 13 in the primary ability of the new class and your current classes."
     }
-    this.requirements = reqArr.join(", ");
     if (mc.proficienciesGained) {
       this.proficiencies = new Proficiencies(mc.proficienciesGained, '');
     } else {//some multiclasses provide no extra proficiencies

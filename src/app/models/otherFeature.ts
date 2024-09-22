@@ -13,6 +13,7 @@ export interface Prerequisite {
     pact?:         string;
     level?:        Level;
     item?:         string[];
+    feature?:      string[];
     patron?:       string;
     otherSummary?: string;
 }
@@ -28,14 +29,12 @@ export interface Class {
 }
 
 export const featureType = {
-    "AI": "Artificer Infusion",
-    "AS": "Arcane Shot",
-    "ED": "Elemental Discipline",
-    "ED:B": "Elemental Discipline Rebrewed",
+    //"AI": "Artificer Infusion",
+    //"AS": "Arcane Shot",
     "EI": "Eldritch Invocation",
     "FS": "Fighting Style",
     "MM": "Metamagic",
-    "MV": "Battlemaster Maneuver",
-    "RN": "Rune Knight Rune",
-    "DM": "Dragonmark"
+    "MV": "Battlemaster Maneuver"
+    //"RN": "Rune Knight Rune",
+    //"DM": "Dragonmark"
 }
