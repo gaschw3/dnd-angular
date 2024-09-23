@@ -7,7 +7,6 @@ import { FeatComponent } from './feat/feat.component';
 
 @NgModule({
   declarations: [
-    FeatComponent,
     FeatsComponent
   ],
   imports: [

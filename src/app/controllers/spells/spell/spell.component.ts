@@ -18,7 +18,8 @@ export class SpellComponent implements OnInit {
   ngOnInit() {
   }
 
-  formatSpellLevel(lvl, school){
+  formatSpellLevel(lvl, schoolObj){
+    let school = schoolObj.name;
     if (lvl === 0)
       return school + " Cantrip";
     if (lvl === 1)

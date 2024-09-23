@@ -12,6 +12,7 @@ import { BackButtonDirective } from '../directives/back-button.directive';
 import { EntryRendererComponent } from './entry-renderer/entry-renderer.component';
 import { HelperService } from './helpers/helper.service';
 import { IdToNamePipe } from '../pipes/id-to-name.pipe';
+import { FeatComponent } from '../controllers/feats/feat/feat.component';
 
 @NgModule({
   providers: [
@@ -23,6 +24,7 @@ import { IdToNamePipe } from '../pipes/id-to-name.pipe';
     SanitizeHtmlPipe,
     ItemTypePipe,
     TitlecaseExceptPipe,
+    FeatComponent,
     BackButtonDirective,
     AncestryComponent,
     MonsterComponent,
@@ -39,6 +41,7 @@ import { IdToNamePipe } from '../pipes/id-to-name.pipe';
     LinkmakerPipe,
     SanitizeHtmlPipe,
     ItemTypePipe,
+    FeatComponent,
     TitlecaseExceptPipe,
     BackButtonDirective,
     AncestryComponent,

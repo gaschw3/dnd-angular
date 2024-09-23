@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {Location} from '@angular/common';
-import { Observable, Subject } from 'rxjs';
+import { forkJoin, Observable, Subject } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
@@ -20,8 +20,12 @@ export class SpellsComponent implements OnInit {
   currSpell: Spell;
   spellName: string;
 
+  public getSourceJSON(): Observable<any> {
+    return this.http.get("assets/data/2024/spellSource.json")
+}
+
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/2023/spellData.json")
+      return this.http.get("assets/data/2024/spells.json")
   }
 
   constructor(private http: HttpClient,
@@ -40,11 +44,13 @@ export class SpellsComponent implements OnInit {
     let route = this.route.queryParams;
     this.dtOptions = {
       columnDefs: [
-        { width: '45%', targets: 0 },
+        { width: '30%', targets: 0 },
         { width: '7%', targets: 1 },
-        { width: '10%', targets: 2 },
-        { width: '35%', orderable: false, targets: 3 },
-        { width: '5%', targets: 4 }
+        { width: '5%', targets: 2 },
+        { width: '7%', targets: 3 },
+        { width: '7%', targets: 4 },
+        { width: '41%', orderable: false, targets: 5 },
+        { width: '5%', targets: 6 }
       ],
       autoWidth: false,
       scrollX: true,
@@ -91,8 +97,14 @@ export class SpellsComponent implements OnInit {
       }
     };
 
-    this.getJSON().subscribe(spells => {
-      spells.spell.forEach(spell => this.spells.push(new Spell(spell)));
+    const combined = forkJoin([
+      this.getJSON(),
+      this.getSourceJSON()
+    ]);
+    combined.subscribe((response) => {
+      let spells = response[0];
+      let spellSource = response[1];
+      spells.spell.forEach(spell => this.spells.push(new Spell(spell, spellSource[spell.name.toLowerCase()])));
       this.route.paramMap.subscribe(params => {
         this.currSpell = this.spells.find(f => f.id == this.route.snapshot.params.spellName);
       });

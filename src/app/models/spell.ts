@@ -5,12 +5,14 @@ export interface ISpell {
   id:         string;
   source:     string;
   level:      string;
-  school:     string;
+  school:     any;
+  tableTime:  string;
   time:       string;
   range:      string;
   components: string;
   duration:   string;
   classes:    string[];
+  subclasses: string[];
   entries:    string[];
   change?:    string;
   higher?:    any;
@@ -23,19 +25,22 @@ export class Spell implements ISpell {
   id:         string;
   source:     string;
   level:      string;
-  school:     string;
+  school:     any;
+  tableTime:  string;
   time:       string;
   range:      string;
   components: string;
   duration:   string;
+  concentration: boolean;
   classes:    string[] = [];
+  subclasses: string[] = [];
   entries:    string[];
   change?:    string;
   higher?:    any;
   ritual?:    string;
   roll?:      string[] | string;
 
-  constructor (spellJson) {
+  constructor (spellJson, spellSource) {
         this.name = spellJson.name;
         this.id = HelperService.createIdFromName(spellJson.name);
         this.source = spellJson.source;
@@ -44,6 +49,12 @@ export class Spell implements ISpell {
         let time = spellJson.time[0];
 
         this.time = `${time.number} ${time.unit == 'bonus' ? 'bonus action' : time.unit} ${time.condition ? ', ' + time.condition : ''}`;
+        if (time.unit !== 'bonus' && time.unit !== 'action' && time.unit !== 'reaction') {
+          this.tableTime = `${time.number} ${time.unit}`;
+        } else {
+          this.tableTime = `${time.unit}`;
+        }
+        
 
         if (spellJson.range.type === 'special') {
           this.range = 'Special';
@@ -60,8 +71,10 @@ export class Spell implements ISpell {
 
         let duration = spellJson.duration[0];
         this.duration = '';
+        this.concentration = false;
         if (duration.concentration) {
           this.duration += "Concentration, up to ";
+          this.concentration = true;
         }
         if (duration.type == 'timed') {
           this.duration += `${duration.duration.amount} ${duration.duration.type}`;
@@ -78,29 +91,20 @@ export class Spell implements ISpell {
         }
         this.duration = this.duration.charAt(0).toUpperCase() + this.duration.slice(1);
 
-        if (spellJson.classes.fromClassList) {
-          spellJson.classes.fromClassList.map((item) => {
-            if (!(item.source.includes('UA')) && !(item.source === 'PSA')) {
-              this.classes.push(item.name);
-            }
-          }).filter(n => n); // filter n=>n to remove null/undefined/empties
+        if (spellSource["class"]["XPHB"]) {
+          for (const className in spellSource["class"]["XPHB"]) {
+            this.classes.push(className);
+          }
         }
-        if (spellJson.classes.fromClassListVariant) {
-          spellJson.classes.fromClassListVariant.map((item) => {
-            if (!(item.source.includes('UA')) && !(item.source === 'PSA')) {
-              this.classes.push(item.name);
+        if (spellSource["subclass"] && spellSource["subclass"]["XPHB"]) {
+          for (const className in spellSource["subclass"]["XPHB"]) {
+            if (spellSource["subclass"]["XPHB"][className]["XPHB"]) {
+              for (const subclassName in spellSource["subclass"]["XPHB"][className]["XPHB"]) {
+                this.subclasses.push(`${className} (${subclassName})`);
+              }
             }
-          }).filter(n => n); // filter n=>n to remove null/undefined/empties
+          }
         }
-        if (spellJson.classes.fromSubclass) {
-          spellJson.classes.fromSubclass.map((item) => {
-            if (!(item.subclass.source.includes('UA')) && !(item.subclass.source == 'PSA')
-              && !(item.class.source.includes('UA'))) {
-              this.classes.push(`${item.class.name} (${item.subclass.name})`);
-            }
-          });
-        }
-        this.classes = [...new Set(this.classes)]; //remove potential dupes from classes/variantClasses
         this.entries = spellJson.entries;
         this.change = spellJson.change;
         this.higher = spellJson.entriesHigherLevel ? spellJson.entriesHigherLevel[0] : '';
@@ -109,12 +113,12 @@ export class Spell implements ISpell {
 }
 
 export const spellSchool = {
-    "A": "Abjuration",
-    "C": "Conjuration",
-    "D": "Divination",
-    "E": "Enchantment",
-    "V": "Evocation",
-    "I": "Illusion",
-    "N": "Necromancy",
-    "T": "Transmutation"
+    "A": {name: "Abjuration", abbrev: "Abj"},
+    "C": {name: "Conjuration", abbrev: "Conj"},
+    "D": {name: "Divination", abbrev: "Div"},
+    "E": {name: "Enchantment", abbrev: "Ench"},
+    "V": {name: "Evocation", abbrev: "Evo"},
+    "I": {name: "Illusion", abbrev: "Ill"},
+    "N": {name: "Necromancy", abbrev: "Necro"},
+    "T": {name: "Transmutation", abbrev: "Trans"}
 }

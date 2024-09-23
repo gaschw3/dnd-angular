@@ -5,7 +5,7 @@
                 <div [class]="'spell-header spell-header-'+spell.school | lowercase">
                     <div class="row">
                         <div class="col">
-                            <h2 [class]="'color-'+spell.school | lowercase">{{spell.name}}</h2>
+                            <h1>{{spell.name}}</h1>
                         </div>
                         <div class="col">
                             <h3 [class]="'pull-right color-'+spell.source | lowercase">{{spell.source}}</h3>
@@ -13,12 +13,12 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h5><em>{{formatSpellLevel(spell.level, spell.school)}}</em></h5>
+                            <h4><em [class]="'color-'+spell.school.name | lowercase">{{formatSpellLevel(spell.level, spell.school)}}<span *ngIf="spell.ritual"> Ritual</span></em></h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <p class="p-0 m-0"><strong>Casting Time: </strong>{{spell.time}}</p>
+                            <p class="p-0 m-0"><strong>Casting Time: </strong>{{spell.time}}<span *ngIf="spell.ritual"> or ritual</span></p>
                             <p class="pt-0 mt-0"><strong>Components: </strong>{{spell.components}}</p>
                         </div>
                         <div class="col">
@@ -30,7 +30,8 @@
                 <div class="feature-text">
                     <entry-renderer [list]=spell.entries [parent]="''"></entry-renderer>
                     <p *ngIf="spell.higher"><strong><em>{{spell.higher.name}}: </em></strong><entry-renderer [list]=spell.higher.entries [parent]="''"></entry-renderer></p>
-                    <p *ngIf="spell.classes" ><strong>Classes: </strong><span [innerHtml]="spell.classes.join(', ') | linkmaker"></span></p>
+                    <p *ngIf="spell.classes" class="mb-0"><strong>Classes: </strong><span [innerHtml]="spell.classes.join(', ') | linkmaker"></span></p>
+                    <p *ngIf="spell.subclasses.length > 0" class="mb-0"><strong>Subclasses: </strong><span [innerHtml]="spell.subclasses.join(', ') | linkmaker"></span></p>
                 </div>
             </div>
         </div>

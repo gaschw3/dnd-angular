@@ -10,4 +10,5 @@ export interface Ancestry {
   source: string;
   proficiency: string;
   traits: Trait[];
+  entries: any[];
 }

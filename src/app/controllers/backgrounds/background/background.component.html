@@ -2,6 +2,7 @@
   <div class="pb-4">
     <div class="card">
       <div class="card-body">
+        <img class="bg-image" src={{background.image}}>
         <div [class]="'background-header background-header-'+background.id | lowercase">
           <div class="row">
             <div class="col">
@@ -13,71 +14,16 @@
           </div>
 
           <div class="row">
-            <ng-container *ngIf="background.traits">
-              <ng-container *ngFor="let trait of background.traits">
-                <ng-container [ngSwitch]="trait.name">
-                  <ng-container *ngSwitchCase="'Skill Proficiencies'">
-                    <div class="col-sm-6">
-                      <p class="m-0"><strong>{{trait.name}}</strong> {{trait.text}}</p>
-                    </div>
-                  </ng-container>
-                  <ng-container *ngSwitchCase="'Languages'">
-                    <div class="col-sm-6">
-                      <p class="m-0"><strong>{{trait.name}}</strong> {{trait.text}}</p>
-                    </div>
-                  </ng-container>
-                  <ng-container *ngSwitchCase="'Tool Proficiencies'">
-                    <div class="col-sm-6">
-                      <p class="m-0"><strong>{{trait.name}}</strong> {{trait.text}}</p>
-                    </div>
-                  </ng-container>
-                  <ng-container *ngSwitchCase="'Equipment'">
-                    <div [class]="'col-12 border-bottom-primary' | lowercase">
-                      <p class="pb-2 mb-0"><strong>{{trait.name}}</strong> {{trait.text}}</p>
-                    </div>
-                  </ng-container>
-                </ng-container>
-              </ng-container>
+            <ng-container *ngIf="background.info">
+              <div [class]="'col-12 border-bottom-primary' | lowercase">
+                <p class="pb-2 mb-0">{{background.info}}</p>
+              </div>
             </ng-container>
           </div>
 
-          <div class="card-columns">
-            <ng-container *ngIf="background.traits">
-              <ng-container *ngFor="let trait of background.traits">
-                <ng-container *ngIf="isUnique(trait)">
-                  <div class="card border-0">
-                    <div class="card-body pb-0">
-                      <h4 [class]="'card-title color-primary' | lowercase">{{trait.name}}</h4>
-                      <div *ngIf="isTable(trait)">
-                        <p class="card-text pt-0" *ngIf="trait.leadin">{{trait.leadin}}</p>
-                        <table class="table table-striped table-sm table-bordered">
-                          <thead>
-                            <tr>
-                              <th>
-                                d{{trait.text.length}}
-                              </th>
-                              <th>
-                                {{trait.name}}
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr *ngFor="let line of trait.text; let i = index">
-                              <td>{{i+1}}</td>
-                              <td>{{line}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div *ngIf="!isTable(trait)">
-                        <ng-container *ngFor="let line of trait.text">
-                          <p class="card-text pt-0" [innerHtml]="line | linkmaker"></p>
-                        </ng-container>
-                      </div>
-                    </div>
-                  </div>
-                </ng-container>
-              </ng-container>
+          <div>
+            <ng-container *ngIf="background.entries">
+              <entry-renderer [list]=background.entries parent=''></entry-renderer>
             </ng-container>
           </div>
         </div>

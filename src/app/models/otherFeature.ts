@@ -20,7 +20,7 @@ export interface Prerequisite {
 
 interface Level {
     level:     number;
-    class:     Class;
+    class?:     Class;
     subclass?: Class;
 }
 

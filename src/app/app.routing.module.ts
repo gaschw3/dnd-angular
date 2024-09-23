@@ -36,6 +36,10 @@ const routes: Routes = [
     loadChildren: () => import('./controllers/feats/feats.module').then(m => m.FeatsModule)
   },
   {
+    path: 'epic-boons',
+    loadChildren: () => import('./controllers/epic-boons/epic-boons.module').then(m => m.EpicBoonsModule)
+  },
+  {
     path: 'items',
     loadChildren: () => import('./controllers/items/items.module').then(m => m.ItemsModule)
   },
