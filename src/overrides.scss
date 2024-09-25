@@ -87,6 +87,7 @@ body {
       color: themed("textColor");
       border-color: themed('textLinkColor');
       background-color: lighten(themed('cardColor'), 10%);
+      padding-bottom: 0;
     }
 
     .text-success {

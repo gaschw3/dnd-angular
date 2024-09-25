@@ -59,7 +59,7 @@ export class LinkmakerPipe implements PipeTransform {
 
     if (value.includes('@')) {
       str = value.toString().replace(/{@h}/g, 'Hit: ')
-        .replace(/{@([\w-]+) ([\w\-\s/'\|\?\=(),\&%\+]+)}/g, replaceLinks);
+        .replace(/{@([\w-]+) ([\w\-\s/'\|\?\=(),\.\:\&%\+]+)}/g, replaceLinks);
       return str;
     } else {
       return value;

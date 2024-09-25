@@ -36,6 +36,7 @@ export class Spell implements ISpell {
   subclasses: string[] = [];
   entries:    string[];
   change?:    string;
+  replaced?:  string;
   higher?:    any;
   ritual?:    string;
   roll?:      string[] | string;
@@ -45,6 +46,7 @@ export class Spell implements ISpell {
         this.id = HelperService.createIdFromName(spellJson.name);
         this.source = spellJson.source;
         this.level = spellJson.level;
+        this.replaced = spellJson.replaced;
         this.school = spellSchool[spellJson.school];
         let time = spellJson.time[0];
 

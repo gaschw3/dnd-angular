@@ -155,6 +155,7 @@
   "alter self": {
     "class": {
       "XPHB": {
+        "Druid": true,
         "Sorcerer": true,
         "Wizard": true
       }
@@ -461,6 +462,29 @@
     }
   },
   "arms of hadar": {
+    "class": {
+      "XPHB": {
+        "Warlock": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Sorcerer": {
+          "XPHB": {
+            "Aberrant": {
+              "name": "Aberrant Sorcery"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "XPHB": {
+        "Magic Initiate": true
+      }
+    }
+  },
+  "eldritch rift": {
     "class": {
       "XPHB": {
         "Warlock": true
@@ -839,6 +863,32 @@
     "feat": {
       "DSotDQ": {
         "Adept of the White Robes": true
+      }
+    }
+  },
+  "beast ally": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Ranger": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Barbarian": {
+          "XPHB": {
+            "Wild Heart": {
+              "name": "Path of the Wild Heart"
+            }
+          }
+        },
+        "Bard": {
+          "XPHB": {
+            "Lore": {
+              "name": "College of Lore"
+            }
+          }
+        }
       }
     }
   },
@@ -1682,6 +1732,133 @@
     }
   },
   "chill touch": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Cleric": {
+          "DMG": {
+            "Death": {
+              "name": "Death Domain"
+            }
+          },
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Cleric": {
+          "DMG": {
+            "Death": {
+              "name": "Death Domain"
+            }
+          },
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Fighter": {
+          "PHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "PHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "ERLW": {
+        "Aberrant Dragonmark": true
+      },
+      "DSotDQ": {
+        "Initiate of High Sorcery": true
+      },
+      "PHB": {
+        "Magic Initiate": true,
+        "Spell Sniper": true
+      },
+      "XPHB": {
+        "Magic Initiate": true
+      }
+    },
+    "optionalfeature": {
+      "PHB": {
+        "Pact of the Tome": {
+          "featureType": [
+            "PB"
+          ]
+        }
+      },
+      "XPHB": {
+        "Pact of the Tome": {
+          "featureType": [
+            "EI"
+          ]
+        }
+      }
+    },
+    "race": {
+      "PHB": {
+        "Elf (High)": {
+          "baseName": "Elf",
+          "baseSource": "PHB"
+        }
+      },
+      "SCAG": {
+        "Half-Elf (Variant; Moon Elf or Sun Elf Descent)": {
+          "baseName": "Half-Elf",
+          "baseSource": "PHB"
+        }
+      },
+      "MPMM": {
+        "Kobold": true
+      },
+      "PSX": {
+        "Merfolk (Ixalan; Blue)": {
+          "baseName": "Merfolk",
+          "baseSource": "PSZ"
+        }
+      },
+      "PSZ": {
+        "Merfolk (Zendikar; Ula Creed)": {
+          "baseName": "Merfolk",
+          "baseSource": "PSZ"
+        }
+      }
+    }
+  },
+  "memento mori": {
     "class": {
       "XPHB": {
         "Sorcerer": true,
@@ -2808,6 +2985,49 @@
       }
     }
   },
+  "alter weather": {
+    "class": {
+      "XPHB": {
+        "Cleric": true,
+        "Druid": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "PHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      },
+      "XPHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    }
+  },
   "cordon of arrows": {
     "class": {
       "XPHB": {
@@ -2991,6 +3211,55 @@
     }
   },
   "crown of madness": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Fighter": {
+          "PHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "PHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "DSotDQ": {
+        "Adept of the Black Robes": true
+      }
+    }
+  },
+  "stoke fury": {
     "class": {
       "XPHB": {
         "Bard": true,
@@ -3498,6 +3767,52 @@
     }
   },
   "detect evil and good": {
+    "class": {
+      "XPHB": {
+        "Cleric": true,
+        "Paladin": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "DSotDQ": {
+        "Divinely Favored": true
+      },
+      "TCE": {
+        "Fey Touched": true
+      },
+      "XPHB": {
+        "Fey-Touched": true,
+        "Magic Initiate": true
+      },
+      "PHB": {
+        "Magic Initiate": true
+      },
+      "SCC": {
+        "Strixhaven Initiate": true
+      }
+    }
+  },
+  "detect otherworldly influence": {
     "class": {
       "XPHB": {
         "Cleric": true,
@@ -4556,6 +4871,26 @@
       }
     }
   },
+  "imbue element": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Ranger": true,
+        "Paladin": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Bard": {
+          "XPHB": {
+            "Lore": {
+              "name": "College of Lore"
+            }
+          }
+        }
+      }
+    }
+  },
   "elementalism": {
     "class": {
       "XPHB": {
@@ -4897,6 +5232,19 @@
     }
   },
   "enthrall": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Warlock": true
+      }
+    },
+    "feat": {
+      "DSotDQ": {
+        "Adept of the Black Robes": true
+      }
+    }
+  },
+  "captivate": {
     "class": {
       "XPHB": {
         "Bard": true,
@@ -5415,6 +5763,64 @@
       }
     }
   },
+  "play dead": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Cleric": true,
+        "Druid": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        },
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Fighter": {
+          "PHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "PHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        },
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    }
+  },
   "find familiar": {
     "class": {
       "XPHB": {
@@ -5529,6 +5935,35 @@
       }
     }
   },
+  "wayfinding": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Cleric": true,
+        "Druid": true
+      }
+    },
+    "subclass": {
+      "PHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      },
+      "XPHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    }
+  },
   "find traps": {
     "class": {
       "XPHB": {
@@ -5563,7 +5998,70 @@
       }
     }
   },
+  "detect hazards": {
+    "class": {
+      "XPHB": {
+        "Cleric": true,
+        "Druid": true,
+        "Ranger": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "DSotDQ": {
+        "Adept of the White Robes": true
+      }
+    }
+  },
   "finger of death": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "PHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        }
+      },
+      "XPHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        }
+      }
+    }
+  },
+  "death beam": {
     "class": {
       "XPHB": {
         "Sorcerer": true,
@@ -5797,6 +6295,35 @@
       }
     }
   },
+  "rain of fire": {
+    "class": {
+      "XPHB": {
+        "Cleric": true,
+        "Druid": true,
+        "Sorcerer": true
+      }
+    },
+    "subclass": {
+      "PHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      },
+      "XPHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    }
+  },
   "fireball": {
     "class": {
       "XPHB": {
@@ -5923,6 +6450,47 @@
       }
     }
   },
+  "holy flame": {
+    "class": {
+      "XPHB": {
+        "Cleric": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Cleric": {
+          "XPHB": {
+            "Light": {
+              "name": "Light Domain"
+            }
+          }
+        },
+        "Paladin": {
+          "XPHB": {
+            "Devotion": {
+              "name": "Oath of Devotion"
+            }
+          }
+        },
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    }
+  },
   "flaming sphere": {
     "class": {
       "XPHB": {
@@ -5967,6 +6535,35 @@
     }
   },
   "flesh to stone": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "PHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        }
+      },
+      "XPHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        }
+      }
+    }
+  },
+  "petrify": {
     "class": {
       "XPHB": {
         "Druid": true,
@@ -6287,6 +6884,127 @@
     }
   },
   "friends": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Fighter": {
+          "PHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "PHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "ERLW": {
+        "Aberrant Dragonmark": true
+      },
+      "DSotDQ": {
+        "Initiate of High Sorcery": true
+      },
+      "PHB": {
+        "Magic Initiate": true
+      },
+      "XPHB": {
+        "Magic Initiate": true
+      }
+    },
+    "optionalfeature": {
+      "PHB": {
+        "Pact of the Tome": {
+          "featureType": [
+            "PB"
+          ]
+        }
+      },
+      "XPHB": {
+        "Pact of the Tome": {
+          "featureType": [
+            "EI"
+          ]
+        }
+      }
+    },
+    "race": {
+      "PHB": {
+        "Elf (High)": {
+          "baseName": "Elf",
+          "baseSource": "PHB"
+        }
+      },
+      "SCAG": {
+        "Half-Elf (Variant; Moon Elf or Sun Elf Descent)": {
+          "baseName": "Half-Elf",
+          "baseSource": "PHB"
+        }
+      },
+      "MPMM": {
+        "Kobold": true
+      },
+      "PSX": {
+        "Merfolk (Ixalan; Blue)": {
+          "baseName": "Merfolk",
+          "baseSource": "PSZ"
+        }
+      },
+      "PSZ": {
+        "Merfolk (Zendikar; Cosi Creed)": {
+          "baseName": "Merfolk",
+          "baseSource": "PSZ"
+        },
+        "Merfolk (Zendikar; Ula Creed)": {
+          "baseName": "Merfolk",
+          "baseSource": "PSZ"
+        }
+      }
+    }
+  },
+  "befriend": {
     "class": {
       "XPHB": {
         "Bard": true,
@@ -7159,6 +7877,47 @@
       }
     }
   },
+  "deceiving bolt": {
+    "class": {
+      "XPHB": {
+        "Cleric": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Cleric": {
+          "XPHB": {
+            "Trickery": {
+              "name": "Trickery Domain"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "DSotDQ": {
+        "Divinely Favored": true
+      },
+      "PHB": {
+        "Magic Initiate": true
+      },
+      "XPHB": {
+        "Magic Initiate": true
+      },
+      "SCC": {
+        "Strixhaven Initiate": true
+      }
+    }
+  },
   "gust of wind": {
     "class": {
       "XPHB": {
@@ -7878,6 +8637,66 @@
       }
     }
   },
+  "frost shuriken": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Fighter": {
+          "PHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "PHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "ERLW": {
+        "Aberrant Dragonmark": true
+      },
+      "DSotDQ": {
+        "Divinely Favored": true
+      },
+      "PHB": {
+        "Magic Initiate": true
+      },
+      "XPHB": {
+        "Magic Initiate": true
+      },
+      "SCC": {
+        "Strixhaven Initiate": true
+      }
+    }
+  },
   "ice storm": {
     "class": {
       "XPHB": {
@@ -8017,6 +8836,88 @@
     }
   },
   "illusory script": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Fighter": {
+          "PHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "PHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "DSotDQ": {
+        "Divinely Favored": true
+      },
+      "PHB": {
+        "Magic Initiate": true,
+        "Ritual Caster": true
+      },
+      "XPHB": {
+        "Magic Initiate": true,
+        "Ritual Caster": true,
+        "Shadow-Touched": true
+      },
+      "PSK": {
+        "Quicksmithing": true
+      },
+      "TCE": {
+        "Shadow Touched": true
+      },
+      "SCC": {
+        "Strixhaven Initiate": true
+      }
+    },
+    "optionalfeature": {
+      "PHB": {
+        "Book of Ancient Secrets": {
+          "featureType": [
+            "EI"
+          ]
+        }
+      },
+      "XPHB": {
+        "Pact of the Tome": {
+          "featureType": [
+            "EI"
+          ]
+        }
+      }
+    }
+  },
+  "secret missive": {
     "class": {
       "XPHB": {
         "Bard": true,
@@ -9771,7 +10672,77 @@
       }
     }
   },
+  "stone pact": {
+    "class": {
+      "XPHB": {
+        "Cleric": true,
+        "Druid": true,
+        "Ranger": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    }
+  },
   "melf's acid arrow": {
+    "class": {
+      "XPHB": {
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Fighter": {
+          "PHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "PHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    }
+  },
+  "caius' caustic quarrel": {
     "class": {
       "XPHB": {
         "Wizard": true
@@ -13899,6 +14870,132 @@
       }
     }
   },
+  "lightning tendril": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Druid": {
+          "XPHB": {
+            "Land": {
+              "name": "Circle of the Land",
+              "subSubclasses": [
+                "Temperate Land"
+              ]
+            }
+          }
+        },
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Fighter": {
+          "PHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "PHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "ERLW": {
+        "Aberrant Dragonmark": true
+      },
+      "DSotDQ": {
+        "Initiate of High Sorcery": true
+      },
+      "PHB": {
+        "Magic Initiate": true,
+        "Spell Sniper": true
+      },
+      "XPHB": {
+        "Magic Initiate": true
+      }
+    },
+    "optionalfeature": {
+      "PHB": {
+        "Pact of the Tome": {
+          "featureType": [
+            "PB"
+          ]
+        }
+      },
+      "XPHB": {
+        "Pact of the Tome": {
+          "featureType": [
+            "EI"
+          ]
+        }
+      }
+    },
+    "race": {
+      "PHB": {
+        "Elf (High)": {
+          "baseName": "Elf",
+          "baseSource": "PHB"
+        }
+      },
+      "SCAG": {
+        "Half-Elf (Variant; Moon Elf or Sun Elf Descent)": {
+          "baseName": "Half-Elf",
+          "baseSource": "PHB"
+        }
+      },
+      "MPMM": {
+        "Kobold": true
+      },
+      "PSX": {
+        "Merfolk (Ixalan; Blue)": {
+          "baseName": "Merfolk",
+          "baseSource": "PSZ"
+        }
+      },
+      "PSZ": {
+        "Merfolk (Zendikar; Ula Creed)": {
+          "baseName": "Merfolk",
+          "baseSource": "PSZ"
+        }
+      }
+    }
+  },
   "silence": {
     "class": {
       "XPHB": {
@@ -14443,6 +15540,73 @@
       }
     }
   },
+  "speak with nature": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Druid": true,
+        "Ranger": true,
+        "Warlock": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Barbarian": {
+          "XPHB": {
+            "Wild Heart": {
+              "name": "Path of the Wild Heart"
+            }
+          }
+        },
+        "Paladin": {
+          "XPHB": {
+            "Ancients": {
+              "name": "Oath of the Ancients"
+            }
+          }
+        }
+      }
+    },
+    "feat": {
+      "DSotDQ": {
+        "Divinely Favored": true
+      },
+      "TCE": {
+        "Fey Touched": true
+      },
+      "XPHB": {
+        "Fey-Touched": true,
+        "Magic Initiate": true,
+        "Ritual Caster": true
+      },
+      "PHB": {
+        "Magic Initiate": true,
+        "Ritual Caster": true
+      },
+      "PSK": {
+        "Quicksmithing": true
+      },
+      "SCC": {
+        "Strixhaven Initiate": true
+      }
+    },
+    "optionalfeature": {
+      "PHB": {
+        "Book of Ancient Secrets": {
+          "featureType": [
+            "EI"
+          ]
+        }
+      },
+      "XPHB": {
+        "Pact of the Tome": {
+          "featureType": [
+            "EI"
+          ]
+        }
+      }
+    }
+  },
   "speak with dead": {
     "class": {
       "XPHB": {
@@ -14796,6 +15960,32 @@
       }
     }
   },
+  "iron wind strike": {
+    "class": {
+      "XPHB": {
+        "Ranger": true,
+        "Paladin": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    }
+  },
   "stinking cloud": {
     "class": {
       "XPHB": {
@@ -14972,6 +16162,13 @@
     }
   },
   "storm of vengeance": {
+    "class": {
+      "XPHB": {
+        "Druid": true
+      }
+    }
+  },
+  "tempest": {
     "class": {
       "XPHB": {
         "Druid": true
@@ -15477,6 +16674,50 @@
     }
   },
   "symbol": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Cleric": true,
+        "Druid": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "PHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      },
+      "XPHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        },
+        "Sorcerer": {
+          "XGE": {
+            "Divine Soul": {
+              "name": "Divine Soul"
+            }
+          }
+        }
+      }
+    }
+  },
+  "glyph of power": {
     "class": {
       "XPHB": {
         "Bard": true,
@@ -16710,6 +17951,13 @@
       }
     }
   },
+  "great wave": {
+    "class": {
+      "XPHB": {
+        "Druid": true
+      }
+    }
+  },
   "unseen servant": {
     "class": {
       "XPHB": {
@@ -17525,6 +18773,220 @@
     "feat": {
       "DSotDQ": {
         "Adept of the Black Robes": true
+      }
+    }
+  },
+  "aura of truth": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Cleric": true,
+        "Paladin": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Paladin": {
+          "XPHB": {
+            "Devotion": {
+              "name": "Oath of Devotion"
+            }
+          }
+        }
+      }
+    }
+  },
+  "animal friend": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Druid": true,
+        "Ranger": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Bard": {
+          "XPHB": {
+            "Lore": {
+              "name": "College of Lore"
+            }
+          }
+        }
+      }
+    }
+  },
+  "arcane key": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      },
+      "PHB": {
+        "Fighter": {
+          "PHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Rogue": {
+          "PHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    }
+  },
+  "arcanist's sword": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "PHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        }
+      },
+      "XPHB": {
+        "Cleric": {
+          "SCAG": {
+            "Arcana": {
+              "name": "Arcana Domain"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sky omen": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Druid": true,
+        "Wizard": true
+      }
+    }
+  },
+  "cause fear": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "minor drain": {
+    "class": {
+      "XPHB": {
+        "Wizard": true
+      }
+    }
+  },
+  "reversal of fortune": {
+    "class": {
+      "XPHB": {
+        "Cleric": true
+      }
+    }
+  },
+  "shielding hands": {
+    "class": {
+      "XPHB": {
+        "Cleric": true
+      }
+    }
+  },
+  "aegis": {
+    "class": {
+      "XPHB": {
+        "Paladin": true,
+        "Cleric": true
+      }
+    }
+  },
+  "celerity": {
+    "class": {
+      "XPHB": {
+        "Paladin": true,
+        "Ranger": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Fighter": {
+          "XPHB": {
+            "Eldritch Knight": {
+              "name": "Eldritch Knight"
+            }
+          }
+        },
+        "Paladin": {
+          "XPHB": {
+            "Glory": {
+              "name": "Oath of Glory"
+            },
+            "Vengeance": {
+              "name": "Oath of Vengeance"
+            }
+          }
+        },
+        "Rogue": {
+          "XPHB": {
+            "Arcane Trickster": {
+              "name": "Arcane Trickster"
+            }
+          }
+        }
+      }
+    }
+  },
+  "illusory dart": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Wizard": true
+      }
+    }
+  },
+  "lesser image": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "warlock": true,
+        "Wizard": true
       }
     }
   }
