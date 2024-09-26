@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Class } from 'src/app/models';
 
@@ -13,7 +14,9 @@ export class LevelTableComponent implements OnInit {
 
   private selected: Array<String> = ["beast"];
 
-  constructor() { }
+  constructor(private viewport: ViewportScroller) {
+    this.viewport.setOffset([0, 80]);
+  }
 
   ngOnInit() {
   }
@@ -23,6 +26,8 @@ export class LevelTableComponent implements OnInit {
   }
 
   shake(id: string){
+    this.viewport.setOffset(() => [50, 80]);
+    this.viewport.scrollToAnchor(id);
     this.talk.emit(id);
   }
 

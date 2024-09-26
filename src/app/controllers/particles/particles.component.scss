@@ -8,6 +8,8 @@
   pointer-events: none;
   z-index: 900;
   transform: translate(0, 0, 1);
+  transform-style: preserve-3d;
+  perspective: 800px;
 }
 
 body {
@@ -22,14 +24,65 @@ body {
   @return $random_range;
 }
 
+$ripple-speed: 2s;
+$wave-height: 0.4%;
+$wave-start: 85;
+$imgurl: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/168181/about-eco-bg-bottom.jpg);
+div[class^='ripple-'] {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  left: 0px;
+  z-index: 6;
+  animation-name: water; 
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  opacity: 0.3;
+}
+
+@for $i from 1 through 10 {
+  .ripple-#{$i} {
+    height: ($wave-height * $i * 2);
+    top: (  $wave-start + ($i * 2) + 1%);
+    animation-delay: -1 * calc(random(10)/5) + s;
+    animation-duration: $ripple-speed * calc($i/5) + calc(random(2)/4);
+    background: linear-gradient(110deg * $i, rgb(0, 46, 7), rgb(122, 0, 0));
+    background-size: 100%;
+    background-position:0  ( $wave-start + ($i * 2) - 5%);
+  }
+}
+
+@keyframes water {
+  from { transform: rotateX(0deg); filter: blur(10px); }
+  to { transform: rotateX(random(360)+deg);  filter: blur(30px);}
+}
+
 .particle {
-  $total: 100;
+  $total: 150;
   position: absolute;
   width: 5px;
   height: 5px;
   border-radius: 50%;
+  $dotSize: .2;
+  
+  &:after {
+    content: "";
+    position: absolute;
+    width: $dotSize+vw;
+    height: $dotSize+vw;
+    border-radius: 50%;
+    left: 50%;
+    bottom: calc($dotSize/-2)+vw;
+    margin-left: calc($dotSize/-2)+vw;
+  }
+  
 
   @for $i from 1 through $total {
+    $size: random(50) * 1px; //maybe unused
+    $rotate: random(360) * 1deg; //maybe unused
+    $time: 10s; //maybe unused
+
     $random-x: random(1000) * 0.1vw;
     $random-y: random(1000) * 0.1vh;
     $random-offset: random_range(-100, 100) * 0.1vw;
@@ -121,7 +174,7 @@ body {
       filter: drop-shadow(0 0 50px rgb(255, random(200), 0));
       background: rgb(255, random(200), 0);
       transform: translate($random-x, 100vh) scale($random-scale);
-      animation: ember-#{$i} $ember-duration $fall-delay linear infinite;
+      animation: ember-#{$i} $ember-duration $fall-delay*1s linear infinite;
     }
 
     @keyframes ember-#{$i} {
@@ -135,7 +188,57 @@ body {
       }
     }
 
-    .rainbow &:nth-child(#{$i}) {
+    /*.waterfall &:nth-child(#{$i}){
+      $hue: random(50);
+      opacity: 0;
+      $height: 400;
+      $percent: .69444%;
+      position: relative;
+      height: $height+px;
+      width: $percent;
+      margin-top: -$height+px;
+      left: ($i - 1) * $percent;
+      z-index: -10;
+      background-image: linear-gradient( to bottom, black, hsla($hue, 100%, 50%, .8));
+      animation: drop 4+s infinite ease-in;
+      animation-delay: random($total) * (4s/$total) * -1;
+      &:after {
+        background: hsla($hue, 100%, 50%, 1);
+      }
+    }
+  
+    @keyframes drop {
+      80% {
+        opacity: .2;
+      }
+      100% {
+        transform: translate3d(0, 150vh, 0);
+        opacity: 0;
+      }
+    }
+
+    /*.vortex &:nth-child(#{$i}){
+      border-top: $size solid hsla(random(360), 100%, 50%, 1);
+      border-right: $size solid transparent;
+      border-left: $size solid transparent;
+      margin-left: -$size/2;
+      margin-top: -$size/2;
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+      transform: rotate($rotate) translate3d(0,0,-1500px) scale(0);
+      animation: anim#{$i} $time infinite linear;
+      animation-delay: $i * -($time/$total);
+      opacity: 0;
+    }
+    
+    @keyframes anim#{$i}{
+      0% {
+        opacity: 1;
+        transform: rotate($rotate * 1.5) translate3d(random(1000) * 1px, random(1000) * 1px,1000px) scale(1);
+      }
+    }
+
+    /*.rainbow &:nth-child(#{$i}) {
       animation: rainbow-#{$i} 60s infinite;
       filter: drop-shadow(0 0 10px hsl(random(360), 70%, 50%));
       $size: random(10) * 1px;
