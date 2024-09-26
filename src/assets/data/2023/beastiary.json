@@ -565,28 +565,31 @@
 		},
 		{
 			"name": "Aberrant Spirit",
-			"id": "aberrant-spirit",
-			"source": "TCE",
 			"cr": "N/A",
-			"page": 109,
-			"size": "M",
+			"source": "PHB'24",
+			"page": 322,
+			"summonedBySpell": "Summon Aberration",
+			"summonedBySpellLevel": 4,
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
 				{
-					"special": "11 + the level of the spell (natural armor)"
+					"special": "11 + the spell's level"
 				}
 			],
 			"hp": {
-				"special": "40 + 10 for each spell level above 4th"
+				"special": "40 + 10 for each spell level above 4"
 			},
 			"speed": {
 				"walk": 30,
 				"fly": {
 					"number": 30,
-					"condition": "(beholderkin only; hover)"
+					"condition": "(hover; Beholderkin only)"
 				}
 			},
 			"str": 16,
@@ -599,24 +602,22 @@
 				"darkvision 60 ft."
 			],
 			"passive": 10,
-			"immune": [
-				"psychic"
-			],
 			"languages": [
 				"Deep Speech",
-				"understands the languages you speak"
+				"understands the languages you know"
 			],
+			"pbNote": "equals your Proficiency Bonus",
 			"trait": [
 				{
-					"name": "Regeneration (Slaadi Only)",
+					"name": "Regeneration (Slaad Only)",
 					"entries": [
-						"The aberration regains 5 hit points at the start of its turn if it has at least 1 hit point."
+						"The spirit regains 5 Hit Points at the start of its turn if it has at least 1 Hit Point."
 					]
 				},
 				{
-					"name": "Whispering Aura (Star Spawn Only)",
+					"name": "Whispering Aura (Mind Flayer Only)",
 					"entries": [
-						"At the start of each of the aberration's turns, each creature within 5 feet of the aberration must succeed on a Wisdom saving throw against your spell save DC or take 2d6 psychic damage, provided that the aberration isn't {@conditions incapacitated}."
+						"At the start of each of the spirit's turns, the spirit emits psionic energy if it doesn't have the {@condition Incapacitated} condition. Wisdom Saving Throw: DC equals your spell save DC, each creature (other than you) within 5 feet of the spirit. {@actSaveFail} {@damage 2d6} Psychic damage."
 					]
 				}
 			],
@@ -624,28 +625,32 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The aberration makes a number of attacks equal to half this spell's level (rounded down)."
+						"The spirit makes a number of attacks equal to half this spell's level (round down)."
+					]
+				},
+				{
+					"name": "Claw (Slaad Only)",
+					"entries": [
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d10 + 3 + summonSpellLevel} Slashing damage, and the target can't regain Hit Points until the start of the spirit's next turn."
 					]
 				},
 				{
 					"name": "Eye Ray (Beholderkin Only)",
 					"entries": [
-						"Ranged Spell Attack: you spell attack modifier to hit, range 150 ft., one creature. 1d8 + 3 + the spell's level psychic damage."
+						"{@atkr r} {@hitYourSpellAttack Bonus equals your spell attack modifier}, range 150 ft. {@h}{@damage 1d8 + 3 + summonSpellLevel} Psychic damage."
 					]
 				},
 				{
-					"name": "Claws (Slaadi Only)",
+					"name": "Psychic Slam (Mind Flayer Only)",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d10 + 3 + the spell's level slashing damage. If the target is a creature, it can't regain hit points until the start of the aberration's next turn."
-					]
-				},
-				{
-					"name": "Psychic Slam (Star Spawn Only)",
-					"entries": [
-						"Melee Spell Attack: you spell attack modifier to hit, reach 5 ft., one creature. 1d8 + 3 + the spell's level psychic damage."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d8 + 3 + summonSpellLevel} Psychic damage."
 					]
 				}
 			],
+			"token": {
+				"name": "Aberrant Spirit",
+				"source": "PHB'24"
+			},
 			"traitTags": [
 				"Regeneration"
 			],
@@ -663,7 +668,146 @@
 				"Y"
 			],
 			"miscTags": [
-				"MW"
+				"MA",
+				"RA"
+			],
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Aberrant Spirit (Beholderkin)",
+					"source": "PHB'24",
+					"_mod": {
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Claw (Slaad Only)",
+									"Psychic Slam (Mind Flayer Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Eye Ray (Beholderkin Only)",
+									"with": "Eye Ray"
+								}
+							}
+						]
+					},
+					"speed": {
+						"walk": 30,
+						"fly": {
+							"number": 30,
+							"condition": "(hover)"
+						}
+					},
+					"trait": null,
+					"traitTags": null,
+					"damageTags": [
+						"Y"
+					],
+					"miscTags": [
+						"RA"
+					]
+				},
+				{
+					"name": "Aberrant Spirit (Slaad)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Whispering Aura (Mind Flayer Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Regeneration (Slaad Only)",
+									"with": "Regeneration"
+								}
+							}
+						],
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Eye Ray (Beholderkin Only)",
+									"Psychic Slam (Mind Flayer Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Claw (Slaad Only)",
+									"with": "Claw"
+								}
+							}
+						]
+					},
+					"speed": {
+						"walk": 30
+					},
+					"traitTags": [
+						"Regeneration"
+					],
+					"damageTags": [
+						"S"
+					],
+					"miscTags": [
+						"MA"
+					]
+				},
+				{
+					"name": "Aberrant Spirit (Star Spawn)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Regeneration (Slaad Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Whispering Aura (Mind Flayer Only)",
+									"with": "Whispering Aura"
+								}
+							}
+						],
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Eye Ray (Beholderkin Only)",
+									"Claw (Slaad Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Psychic Slam (Mind Flayer Only)",
+									"with": "Psychic Slam"
+								}
+							}
+						]
+					},
+					"speed": {
+						"walk": 30
+					},
+					"traitTags": [
+						"Regeneration"
+					],
+					"damageTags": [
+						"Y"
+					],
+					"miscTags": [
+						"RA"
+					]
+				}
 			]
 		},
 		{
@@ -4578,9 +4722,7 @@
 				"fly": {
 					"number": 90,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 24,
 			"dex": 15,
 			"con": 22,
@@ -5503,9 +5645,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 18,
 			"dex": 14,
 			"con": 14,
@@ -6006,9 +6146,7 @@
 				"fly": {
 					"number": 15,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 11,
 			"dex": 12,
 			"con": 16,
@@ -6378,9 +6516,7 @@
 				"fly": {
 					"number": 40,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 6,
 			"dex": 17,
 			"con": 10,
@@ -10184,9 +10320,7 @@
 				"fly": {
 					"number": 120,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 28,
 			"dex": 15,
 			"con": 26,
@@ -14585,9 +14719,7 @@
 				"fly": {
 					"number": 80,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 28,
 			"dex": 7,
 			"con": 25,
@@ -15457,9 +15589,7 @@
 				"fly": {
 					"number": 50,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 19,
 			"dex": 5,
 			"con": 22,
@@ -16184,9 +16314,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 1,
 			"dex": 12,
 			"con": 21,
@@ -21269,22 +21397,24 @@
 		},
 		{
 			"name": "Beast of the Land",
-			"id": "beast-of-the-land",
-			"source": "TCE",
 			"cr": "N/A",
-			"page": 61,
-			"size": "M",
+			"source": "PHB'24",
+			"page": 123,
+			"summonedByClass": "Ranger",
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
 				{
-					"special": "13 + PB (natural armor)"
+					"special": "13 plus your Wisdom modifier"
 				}
 			],
 			"hp": {
-				"special": "5 + five times your ranger level (the beast has a number of Hit Dice [d8s] equal to your ranger level)"
+				"special": "5 plus five times your Ranger level (the beast has a number of Hit Dice [d8s] equal to your Ranger level)"
 			},
 			"speed": {
 				"walk": 40,
@@ -21301,41 +21431,27 @@
 			],
 			"passive": 12,
 			"languages": [
-				"understands the languages you speak"
+				"understands the languages you know"
 			],
+			"pbNote": "equals your Proficiency Bonus",
 			"trait": [
-				{
-					"name": "Charge",
-					"entries": [
-						"If the beast moves at least 20 feet straight toward a target and then hits it with a maul attack on the same turn, the target takes an extra 1d6 slashing damage. If the target is a creature, it must succeed on a Strength saving throw against your spell save DC or be knocked {@conditions prone}."
-					]
-				},
 				{
 					"name": "Primal Bond",
 					"entries": [
-						"You can add your proficiency bonus to any ability check or saving throw that the beast makes."
+						"Add your Proficiency Bonus to any ability check or saving throw the beast makes."
 					]
 				}
 			],
 			"action": [
 				{
-					"name": "Maul",
+					"name": "Beast's Strike",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d8 + 2 + PB slashing damage."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@dice 1d8 + 2} plus your Wisdom modifier Bludgeoning, Piercing, or Slashing damage (your choice when you summon the beast). If the beast moved at least 20 feet straight toward the target before the hit, the target takes an extra {@damage 1d6} damage of the same type, and the target has the {@condition Prone} condition if it is a Large or smaller creature."
 					]
 				}
 			],
-			"traitTags": [
-				"Charge"
-			],
-			"senseTags": [
-				"D"
-			],
-			"damageTags": [
-				"S"
-			],
 			"miscTags": [
-				"MW"
+				"MA"
 			],
 			"conditionInflict": [
 				"prone"
@@ -21343,26 +21459,99 @@
 		},
 		{
 			"name": "Beast of the Sea",
-			"id": "beast-of-the-sea",
-			"source": "TCE",
 			"cr": "N/A",
-			"page": 61,
-			"size": "M",
+			"source": "PHB'24",
+			"page": 124,
+			"summonedByClass": "Ranger",
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
 				{
-					"special": "13 + PB (natural armor)"
+					"special": "13 plus your Wisdom modifier"
 				}
 			],
 			"hp": {
-				"special": "5 + five times your ranger level (the beast has a number of Hit Dice [d8s] equal to your ranger level)"
+				"special": "5 plus five times your Ranger level (the beast has a number of Hit Dice [d8s] equal to your Ranger level)"
 			},
 			"speed": {
 				"walk": 5,
 				"swim": 60
+			},
+			"str": 6,
+			"dex": 16,
+			"con": 13,
+			"int": 8,
+			"wis": 14,
+			"cha": 11,
+			"senses": [
+				"darkvision 90 ft."
+			],
+			"passive": 12,
+			"languages": [
+				"understands the languages you know"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Amphibious",
+					"entries": [
+						"The beast can breathe air and water."
+					]
+				},
+				{
+					"name": "Primal Bond",
+					"entries": [
+						"Add your Proficiency Bonus to any ability check or saving throw the beast makes."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Beast's Strike",
+					"entries": [
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@dice 1d6 + 2} plus your Wisdom modifier Bludgeoning or Piercing damage (your choice when you summon the beast), and the target has the {@condition Grappled} condition (escape DC equals your spell save DC)."
+					]
+				}
+			],
+			"traitTags": [
+				"Amphibious"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"conditionInflict": [
+				"grappled"
+			]
+		},
+		{
+			"name": "Beast of the Sky",
+			"cr": "N/A",
+			"source": "PHB'24",
+			"page": 124,
+			"summonedByClass": "Ranger",
+			"size": [
+				"S"
+			],
+			"type": "beast",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"special": "13 plus your Wisdom modifier"
+				}
+			],
+			"hp": {
+				"special": "4 plus four times your Ranger level (the beast has a number of Hit Dice [d6s] equal to your Ranger level)"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": 60
 			},
 			"str": 14,
 			"dex": 14,
@@ -21375,116 +21564,36 @@
 			],
 			"passive": 12,
 			"languages": [
-				"understands the languages you speak"
+				"understands the languages you know"
 			],
-			"trait": [
-				{
-					"name": "Amphibious",
-					"entries": [
-						"The beast can breathe both air and water."
-					]
-				},
-				{
-					"name": "Primal Bond",
-					"entries": [
-						"You can add your proficiency bonus to any ability check or saving throw that the beast makes."
-					]
-				}
-			],
-			"action": [
-				{
-					"name": "Binding Strike",
-					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d6 + 2 + PB piercing damage or 1d6 + 2 + PB bludgeoning damage (your choice), and the target is {@conditions grappled} (escape DC equal to your spellcasting save DC). Until this grapple ends, the beast can't use this attack on another target."
-					]
-				}
-			],
-			"traitTags": [
-				"Amphibious"
-			],
-			"senseTags": [
-				"D"
-			],
-			"damageTags": [
-				"B",
-				"P"
-			],
-			"miscTags": [
-				"MW"
-			],
-			"conditionInflict": [
-				"grappled"
-			]
-		},
-		{
-			"name": "Beast of the Sky",
-			"id": "beast-of-the-sky",
-			"source": "TCE",
-			"cr": "N/A",
-			"page": 61,
-			"size": "S",
-			"type": "beast",
-			"alignment": [
-				"N"
-			],
-			"ac": [
-				{
-					"special": "13 + PB (natural armor)"
-				}
-			],
-			"hp": {
-				"special": "4 + four times your ranger level (the beast has a number of Hit Dice [d6s] equal to your ranger level)"
-			},
-			"speed": {
-				"walk": 10,
-				"fly": 60
-			},
-			"str": 6,
-			"dex": 16,
-			"con": 13,
-			"int": 8,
-			"wis": 14,
-			"cha": 11,
-			"senses": [
-				"darkvision 60 ft."
-			],
-			"passive": 12,
-			"languages": [
-				"understands the languages you speak"
-			],
+			"pbNote": "equals your Proficiency Bonus",
 			"trait": [
 				{
 					"name": "Flyby",
 					"entries": [
-						"The beast doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+						"The beast doesn't provoke Opportunity Attacks when it flies out of an enemy's reach."
 					]
 				},
 				{
 					"name": "Primal Bond",
 					"entries": [
-						"You can add your proficiency bonus to any ability check or saving throw that the beast makes."
+						"Add your Proficiency Bonus to any ability check or saving throw the beast makes."
 					]
 				}
 			],
 			"action": [
 				{
-					"name": "Shred",
+					"name": "Beast's Strike",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d4 + 3 + PB slashing damage"
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@dice 1d4 + 3} plus your Wisdom modifier Slashing damage."
 					]
 				}
 			],
 			"traitTags": [
 				"Flyby"
 			],
-			"senseTags": [
-				"D"
-			],
-			"damageTags": [
-				"S"
-			],
 			"miscTags": [
-				"MW"
+				"MA"
 			]
 		},
 		{
@@ -22259,36 +22368,39 @@
 		},
 		{
 			"name": "Bestial Spirit",
-			"id": "bestial-spirit",
-			"source": "TCE",
 			"cr": "N/A",
-			"page": 109,
-			"size": "S",
+			"source": "PHB'24",
+			"page": 323,
+			"summonedBySpell": "Summon Beast",
+			"summonedBySpellLevel": 2,
+			"size": [
+				"S"
+			],
 			"type": "beast",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
 				{
-					"special": "11 + the level of the spell (natural armor)"
+					"special": "11 + the spell's level"
 				}
 			],
 			"hp": {
-				"special": "20 (Air only) or 30 (Land and Water only) + 5 for each spell level above 2nd"
+				"special": "20 (Air only) or 30 (Land and Water only) + 5 for each spell level above 2"
 			},
 			"speed": {
 				"walk": 30,
 				"climb": {
 					"number": 30,
-					"condition": "(land only)"
+					"condition": "(Land only)"
 				},
 				"fly": {
 					"number": 60,
-					"condition": "(air only)"
+					"condition": "(Air only)"
 				},
 				"swim": {
 					"number": 30,
-					"condition": "(water only)"
+					"condition": "(Water only)"
 				}
 			},
 			"str": 18,
@@ -22302,25 +22414,26 @@
 			],
 			"passive": 12,
 			"languages": [
-				"understands the languages you speak"
+				"understands the languages you know"
 			],
+			"pbNote": "equals your Proficiency Bonus",
 			"trait": [
-				{
-					"name": "Water Breathing (Water Only)",
-					"entries": [
-						"The beast can breathe only underwater."
-					]
-				},
 				{
 					"name": "Flyby (Air Only)",
 					"entries": [
-						"The beast doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+						"The spirit doesn't provoke Opportunity Attacks when it flies out of an enemy's reach."
 					]
 				},
 				{
 					"name": "Pack Tactics (Land and Water Only)",
 					"entries": [
-						"The beast has advantage on an attack roll against a creature if at least one of the beast's allies is within 5 feet of the creature and the ally isn't {@conditions incapacitated}."
+						"The spirit has Advantage on an attack roll against a creature if at least one of the spirit's allies is within 5 feet of the creature and the ally doesn't have the {@condition Incapacitated} condition."
+					]
+				},
+				{
+					"name": "Water Breathing (Water Only)",
+					"entries": [
+						"The spirit can breathe only underwater."
 					]
 				}
 			],
@@ -22328,13 +22441,13 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The beast makes a number of attacks equal to half this spell's level (rounded down)."
+						"The spirit makes a number of Rend attacks equal to half this spell's level (round down)."
 					]
 				},
 				{
-					"name": "Maul",
+					"name": "Rend",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d8 + 4 + the spell's level piercing damage."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d8 + 4 + summonSpellLevel} Piercing damage."
 					]
 				}
 			],
@@ -22343,9 +22456,6 @@
 				"Pack Tactics",
 				"Water Breathing"
 			],
-			"senseTags": [
-				"D"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -22353,7 +22463,105 @@
 				"P"
 			],
 			"miscTags": [
-				"MW"
+				"MA"
+			],
+			"_versions": [
+				{
+					"name": "Bestial Spirit (Air)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Water Breathing (Water Only)",
+									"Pack Tactics (Land and Water Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Flyby (Air Only)",
+									"with": "Flyby"
+								}
+							}
+						]
+					},
+					"hp": {
+						"special": "20 + 5 for each spell level above 2"
+					},
+					"speed": {
+						"walk": 30,
+						"fly": 60
+					},
+					"traitTags": [
+						"Flyby"
+					]
+				},
+				{
+					"name": "Bestial Spirit (Land)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Water Breathing (Water Only)",
+									"Flyby (Air Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Pack Tactics (Land and Water Only)",
+									"with": "Pack Tactics"
+								}
+							}
+						]
+					},
+					"hp": {
+						"special": "30 + 5 for each spell level above 2"
+					},
+					"speed": {
+						"walk": 30,
+						"climb": 30
+					},
+					"traitTags": [
+						"Pack Tactics"
+					]
+				},
+				{
+					"name": "Bestial Spirit (Water)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Flyby (Air Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Pack Tactics (Land and Water Only)",
+									"with": "Pack Tactics"
+								}
+							}
+						]
+					},
+					"hp": {
+						"special": "30 + 5 for each spell level above 2"
+					},
+					"speed": {
+						"walk": 30,
+						"swim": 30
+					},
+					"traitTags": [
+						"Pack Tactics",
+						"Water Breathing"
+					]
+				}
 			]
 		},
 		{
@@ -22392,9 +22600,7 @@
 				"fly": {
 					"number": 50,
 					"condition": "(hover, Graystaff magic)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 13,
 			"dex": 16,
 			"con": 14,
@@ -29821,22 +30027,25 @@
 		},
 		{
 			"name": "Celestial Spirit",
-			"id": "celestial-spirit",
-			"source": "TCE",
 			"cr": "N/A",
-			"page": 110,
-			"size": "L",
+			"source": "PHB'24",
+			"page": 323,
+			"summonedBySpell": "Summon Celestial",
+			"summonedBySpellLevel": 5,
+			"size": [
+				"L"
+			],
 			"type": "celestial",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
 				{
-					"special": "11 + the level of the spell (natural armor) + 2 (Defender only)"
+					"special": "11 + the spell's level + 2 (Defender only)"
 				}
 			],
 			"hp": {
-				"special": "40 + 10 for each spell level above 5th"
+				"special": "40 + 10 for each spell level above 5"
 			},
 			"speed": {
 				"walk": 30,
@@ -29861,49 +30070,108 @@
 			],
 			"languages": [
 				"Celestial",
-				"understands the languages you speak"
+				"understands the languages you know"
 			],
+			"pbNote": "equals your Proficiency Bonus",
 			"action": [
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The celestial makes a number of attacks equal to half this spell's level (rounded down)."
+						"The spirit makes a number of attacks equal to half this spell's level (round down)."
 					]
 				},
 				{
 					"name": "Radiant Bow (Avenger Only)",
 					"entries": [
-						"Ranged Weapon Attack: you spell attack modifier to hit, range 150/600 ft., one target. 2d6 + 2 + the spell's level radiant damage."
+						"{@atkr r} {@hitYourSpellAttack Bonus equals your spell attack modifier}, range 600 ft. {@h}{@damage 2d6 + 2 + summonSpellLevel} Radiant damage."
 					]
 				},
 				{
 					"name": "Radiant Mace (Defender Only)",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d10 + 3 + the spell's level radiant damage, and the celestial can choose itself or another creature it can see within 10 feet of the target. The chosen creature gains 1d10 temporary hit points."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d10 + 3 + summonSpellLevel} Radiant damage, and the spirit can choose itself or another creature it can see within 10 feet of the target. The chosen creature gains {@dice 1d10} Temporary Hit Points."
 					]
 				},
 				{
 					"name": "Healing Touch (1/Day)",
 					"entries": [
-						"The celestial touches another creature. The target magically regains hit points equal to 2d8 + the spell's level."
+						"The spirit touches another creature. The target regains Hit Points equal to {@dice 2d8 + summonSpellLevel}."
 					]
 				}
 			],
-			"senseTags": [
-				"D"
-			],
+			"token": {
+				"name": "Celestial Spirit",
+				"source": "PHB'24"
+			},
 			"actionTags": [
 				"Multiattack"
-			],
-			"languageTags": [
-				"CE"
 			],
 			"damageTags": [
 				"R"
 			],
 			"miscTags": [
-				"MW",
-				"RW"
+				"MA",
+				"MLW",
+				"RA"
+			],
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Celestial Spirit (Avenger)",
+					"source": "PHB'24",
+					"_mod": {
+						"action": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Radiant Bow (Avenger Only)",
+									"with": "Radiant Bow"
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": "Radiant Mace (Defender Only)"
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "11 + the spell's level"
+						}
+					],
+					"miscTags": [
+						"RA",
+						"RW"
+					]
+				},
+				{
+					"name": "Celestial Spirit (Defender)",
+					"source": "PHB'24",
+					"_mod": {
+						"action": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Radiant Mace (Defender Only)",
+									"with": "Radiant Mace"
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": "Radiant Bow (Avenger Only)"
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "13 + the spell's level"
+						}
+					],
+					"miscTags": [
+						"MA",
+						"MLW"
+					]
+				}
 			]
 		},
 		{
@@ -33074,9 +33342,7 @@
 				"fly": {
 					"number": 40,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 26,
 			"dex": 12,
 			"con": 22,
@@ -34234,22 +34500,25 @@
 		},
 		{
 			"name": "Construct Spirit",
-			"id": "construct-spirit",
-			"source": "TCE",
 			"cr": "N/A",
-			"page": 111,
-			"size": "M",
+			"source": "PHB'24",
+			"page": 324,
+			"summonedBySpell": "Summon Construct",
+			"summonedBySpellLevel": 4,
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
 				{
-					"special": "13 + the level of the spell (natural armor)"
+					"special": "13 + the spell's level"
 				}
 			],
 			"hp": {
-				"special": "40 + 15 for each spell level above 3rd"
+				"special": "40 + 15 for each spell level above 4"
 			},
 			"speed": {
 				"walk": 30
@@ -34271,25 +34540,24 @@
 				"charmed",
 				"exhaustion",
 				"frightened",
-				"incapacitated",
 				"paralyzed",
-				"petrified",
 				"poisoned"
 			],
 			"languages": [
-				"understands the languages you speak"
+				"Understands the languages you know"
 			],
+			"pbNote": "equals your Proficiency Bonus",
 			"trait": [
 				{
 					"name": "Heated Body (Metal Only)",
 					"entries": [
-						"A creature that touches the construct or hits it with a melee attack while within 5 feet of it takes 1d10 fire damage."
+						"A creature that hits the spirit with a melee attack or that starts its turn in a grapple with the spirit takes {@damage 1d10} Fire damage."
 					]
 				},
 				{
 					"name": "Stony Lethargy (Stone Only)",
 					"entries": [
-						"When a creature the construct can see starts its turn within 10 feet of the construct, the construct can force it to make a Wisdom saving throw against your spell save DC. On a failed save, the target can't use reactions and its speed is halved until the start of its next turn."
+						"When a creature starts its turn within 10 feet of the spirit, the spirit can target it with magical energy if the spirit can see it. Wisdom Saving Throw: DC equals your spell save DC, the target. {@actSaveFail} Until the start of its next turn, the target can't make Opportunity Attacks, and its Speed is halved."
 					]
 				}
 			],
@@ -34297,13 +34565,13 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The construct makes a number of attacks equal to half this spell's level (rounded down)."
+						"The spirit makes a number of Slam attacks equal to half this spell's level (round down)."
 					]
 				},
 				{
 					"name": "Slam",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d8 + 4 + the spell's level bludgeoning damage."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d8 + 4 + summonSpellLevel} Bludgeoning damage."
 					]
 				}
 			],
@@ -34311,13 +34579,14 @@
 				{
 					"name": "Berserk Lashing (Clay Only)",
 					"entries": [
-						"When the construct takes damage, it makes a slam attack against a random creature within 5 feet of it. If no creature is within reach, the construct moves up to half its speed toward an enemy it can see, without provoking opportunity attacks."
+						"{@actTrigger} The spirit takes damage from a creature. {@actResponse} The spirit makes a Slam attack against that creature if possible, or the spirit moves up to half its Speed toward that creature without provoking Opportunity Attacks."
 					]
 				}
 			],
-			"senseTags": [
-				"D"
-			],
+			"token": {
+				"name": "Construct Spirit",
+				"source": "PHB'24"
+			},
 			"actionTags": [
 				"Multiattack"
 			],
@@ -34326,7 +34595,72 @@
 				"F"
 			],
 			"miscTags": [
-				"MW"
+				"MA"
+			],
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Construct Spirit (Clay)",
+					"source": "PHB'24",
+					"_mod": {
+						"reaction": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Berserk Lashing (Clay Only)",
+									"with": "Berserk Lashing"
+								}
+							}
+						]
+					},
+					"trait": null,
+					"damageTags": [
+						"B"
+					]
+				},
+				{
+					"name": "Construct Spirit (Metal)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Heated Body (Metal Only)",
+									"with": "Heated Body"
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": "Stony Lethargy (Stone Only)"
+							}
+						]
+					},
+					"reaction": null
+				},
+				{
+					"name": "Construct Spirit (Stone)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Stony Lethargy (Stone Only)",
+									"with": "Stony Lethargy"
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": "Heated Body (Metal Only)"
+							}
+						]
+					},
+					"reaction": null,
+					"damageTags": [
+						"B"
+					]
+				}
 			]
 		},
 		{
@@ -37622,9 +37956,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 18,
 			"dex": 14,
 			"con": 18,
@@ -50209,9 +50541,7 @@
 				"fly": {
 					"number": 40,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 7,
 			"dex": 8,
 			"con": 9,
@@ -50759,9 +51089,7 @@
 				"fly": {
 					"number": 120,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 23,
 			"dex": 28,
 			"con": 23,
@@ -50909,38 +51237,40 @@
 		},
 		{
 			"name": "Elemental Spirit",
-			"id": "elemental-spirit",
-			"source": "TCE",
 			"cr": "N/A",
-			"page": 111,
-			"size": "M",
+			"source": "PHB'24",
+			"page": 325,
+			"summonedBySpell": "Summon Elemental",
+			"summonedBySpellLevel": 4,
+			"size": [
+				"M"
+			],
 			"type": "elemental",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
 				{
-					"special": "11 + the level of the spell (natural armor)"
+					"special": "11 + the spell's level"
 				}
 			],
 			"hp": {
-				"special": "50 + 10 for each spell level above 4th"
+				"special": "50 + 10 for each spell level above 4"
 			},
 			"speed": {
 				"walk": 40,
-				"fly": {
-					"number": 40,
-					"condition": "(air only hover)"
-				},
 				"burrow": {
 					"number": 40,
-					"condition": "(earth only)"
+					"condition": "(Earth only)"
+				},
+				"fly": {
+					"number": 40,
+					"condition": "(hover; Air only)"
 				},
 				"swim": {
 					"number": 40,
-					"condition": "(water only)"
-				}
-			},
+					"condition": "(Water only)"
+				}			},
 			"str": 18,
 			"dex": 15,
 			"con": 17,
@@ -50964,18 +51294,18 @@
 				"exhaustion",
 				"paralyzed",
 				"petrified",
-				"poisoned",
-				"unconscious"
+				"poisoned"
 			],
 			"languages": [
 				"Primordial",
-				"understands the languages you speak"
+				"understands the languages you know"
 			],
+			"pbNote": "equals your Proficiency Bonus",
 			"trait": [
 				{
 					"name": "Amorphous Form (Air, Fire, and Water Only)",
 					"entries": [
-						"The elemental can move through a space as narrow as 1 inch wide without squeezing."
+						"The spirit can move through a space as narrow as 1 inch wide without it counting as Difficult Terrain."
 					]
 				}
 			],
@@ -50983,34 +51313,171 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The elemental makes a number of attacks equal to half this spell's level (rounded down)."
+						"The spirit makes a number of Slam attacks equal to half this spell's level (round down)."
 					]
 				},
 				{
 					"name": "Slam",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d10 + 4 + the spell's level bludgeoning damage (Air, Earth, and Water only) or fire damage (Fire only)."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@dice 1d10 + 4 + summonSpellLevel} Bludgeoning (Earth only), Cold (Water only), Lightning (Air only), or Fire (Fire only) damage."
 					]
 				}
 			],
 			"traitTags": [
 				"Amorphous"
 			],
-			"senseTags": [
-				"D"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
-			"languageTags": [
-				"P"
-			],
-			"damageTags": [
-				"B",
-				"F"
-			],
 			"miscTags": [
-				"MW"
+				"MA"
+			],
+			"_versions": [
+				{
+					"name": "Elemental Spirit (Air)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Amorphous Form (Air, Fire, and Water Only)",
+									"with": "Amorphous Form"
+								}
+							}
+						],
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Slam",
+							"items": {
+								"name": "Slam",
+								"entries": [
+									"{@atk m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft.. {@h}{@damage 1d10 + 4 + summonSpellLevel} Bludgeoning damage."
+								]
+							}
+						}
+					},
+					"speed": {
+						"walk": 40,
+						"fly": {
+							"number": 40,
+							"condition": "(hover)"
+						}					},
+					"resist": [
+						"lightning",
+						"thunder"
+					],
+					"immune": [
+						"poison"
+					],
+					"damageTags": [
+						"B"
+					]
+				},
+				{
+					"name": "Elemental Spirit (Earth)",
+					"source": "PHB'24",
+					"_mod": {
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Slam",
+							"items": {
+								"name": "Slam",
+								"entries": [
+									"{@atk m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft.. {@h}{@damage 1d10 + 4 + summonSpellLevel} Bludgeoning damage."
+								]
+							}
+						}
+					},
+					"speed": {
+						"walk": 40,
+						"burrow": 40
+					},
+					"resist": [
+						"piercing",
+						"slashing"
+					],
+					"immune": [
+						"poison"
+					],
+					"trait": null,
+					"damageTags": [
+						"B"
+					]
+				},
+				{
+					"name": "Elemental Spirit (Fire)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Amorphous Form (Air, Fire, and Water Only)",
+									"with": "Amorphous Form"
+								}
+							}
+						],
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Slam",
+							"items": {
+								"name": "Slam",
+								"entries": [
+									"{@atk m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft.. {@h}{@damage 1d10 + 4 + summonSpellLevel} Fire damage."
+								]
+							}
+						}
+					},
+					"speed": {
+						"walk": 40
+					},
+					"immune": [
+						"poison",
+						"fire"
+					],
+					"damageTags": [
+						"F"
+					]
+				},
+				{
+					"name": "Elemental Spirit (Water)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Amorphous Form (Air, Fire, and Water Only)",
+									"with": "Amorphous Form"
+								}
+							}
+						],
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Slam",
+							"items": {
+								"name": "Slam",
+								"entries": [
+									"{@atk m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft.. {@h}{@damage 1d10 + 4 + summonSpellLevel} Bludgeoning damage."
+								]
+							}
+						}
+					},
+					"speed": {
+						"walk": 40,
+						"swim": 40
+					},
+					"resist": [
+						"acid"
+					],
+					"immune": [
+						"poison"
+					],
+					"damageTags": [
+						"B"
+					]
+				}
 			]
 		},
 		{
@@ -51856,9 +52323,7 @@
 				"fly": {
 					"number": 60,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 24,
 			"dex": 8,
 			"con": 20,
@@ -52568,9 +53033,7 @@
 				"fly": {
 					"number": 20,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 21,
 			"dex": 6,
 			"con": 23,
@@ -54076,25 +54539,29 @@
 		},
 		{
 			"name": "Fey Spirit",
-			"id": "fey-spirit",
-			"source": "TCE",
 			"cr": "N/A",
-			"page": 112,
-			"size": "S",
+			"source": "PHB'24",
+			"page": 326,
+			"summonedBySpell": "Summon Fey",
+			"summonedBySpellLevel": 3,
+			"size": [
+				"S"
+			],
 			"type": "fey",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
 				{
-					"special": "12 + the level of the spell (natural armor)"
+					"special": "12 + the spell's level"
 				}
 			],
 			"hp": {
-				"special": "30 + 10 for each spell level above 3rd"
+				"special": "30 + 10 for each spell level above 3"
 			},
 			"speed": {
-				"walk": 40
+				"walk": 30,
+				"fly": 30
 			},
 			"str": 13,
 			"dex": 16,
@@ -54106,24 +54573,22 @@
 				"darkvision 60 ft."
 			],
 			"passive": 10,
-			"conditionImmune": [
-				"charmed"
-			],
 			"languages": [
 				"Sylvan",
-				"understands the languages you speak"
+				"understands the languages you know"
 			],
+			"pbNote": "equals your Proficiency Bonus",
 			"action": [
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The fey makes a number of attacks equal to half this spell's level (rounded down)."
+						"The spirit makes a number of Fey Blade attacks equal to half this spell's level (round down)."
 					]
 				},
 				{
-					"name": "Shortsword",
+					"name": "Fey Blade",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d6 + 3 + the spell's level piercing damage+ 1d6 force damage."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 2d6 + 3 + summonSpellLevel} Force damage."
 					]
 				}
 			],
@@ -54131,31 +54596,41 @@
 				{
 					"name": "Fey Step",
 					"entries": [
-						"The fey magically teleports up to 30 feet to an unoccupied space it can see. Then one of the following effects occurs, based on the fey's chosen mood:",
+						"The spirit magically teleports up to 30 feet to an unoccupied space it can see. Then one of the following effects occurs, based on the spirit's chosen mood:",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
+									"name": "Fuming",
 									"type": "item",
-									"name": "Fuming.",
-									"entry": "The fey has advantage on the next attack roll it makes before the end of this turn."
+									"entries": [
+										"The spirit has Advantage on the next attack roll it makes before the end of this turn."
+									]
 								},
 								{
+									"name": "Mirthful",
 									"type": "item",
-									"name": "Mirthful.",
-									"entry": "The fey can force one creature it can see within 10 feet of it to make a Wisdom saving throw against your spell save DC. Unless the save succeeds, the target is charmed by you and the fey for 1 minute or until the target takes any damage."
+									"entries": [
+										"{@actSave wis} DC equals your spell save DC, one creature the spirit can see within 10 feet of itself. {@actSaveFail} The target is {@condition Charmed} by you and the spirit for 1 minute or until the target takes any damage."
+									]
 								},
 								{
+									"name": "Tricksy",
 									"type": "item",
-									"name": "Tricksy.",
-									"entry": "The fey can fill a 5-foot cube within 5 feet of it with magical darkness, which lasts until the end of its next turn."
+									"entries": [
+										"The spirit fills a 10-foot Cube within 5 feet of it with magical Darkness, which lasts until the end of its next turn."
+									]
 								}
 							]
 						}
 					]
 				}
 			],
+			"token": {
+				"name": "Fey Spirit",
+				"source": "PHB'24"
+			},
 			"senseTags": [
 				"D"
 			],
@@ -54166,15 +54641,52 @@
 				"S"
 			],
 			"damageTags": [
-				"O",
-				"P"
+				"O"
 			],
 			"miscTags": [
-				"AOE",
-				"MW"
+				"MA"
 			],
 			"conditionInflict": [
 				"charmed"
+			],
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Fey Spirit (Fuming)",
+					"source": "PHB'24",
+					"bonus": [
+						{
+							"name": "Fey Step",
+							"entries": [
+								"The spirit magically teleports up to 30 feet to an unoccupied space it can see. The spirit has Advantage on the next attack roll it makes before the end of this turn."
+							]
+						}
+					]
+				},
+				{
+					"name": "Fey Spirit (Mirthful)",
+					"source": "PHB'24",
+					"bonus": [
+						{
+							"name": "Fey Step",
+							"entries": [
+								"The spirit magically teleports up to 30 feet to an unoccupied space it can see. {@actSave wis} DC equals your spell save DC, one creature the spirit can see within 10 feet of itself. {@actSaveFail} The target is {@condition Charmed} by you and the spirit for 1 minute or until the target takes any damage."
+							]
+						}
+					]
+				},
+				{
+					"name": "Fey Spirit (Tricksy)",
+					"source": "PHB'24",
+					"bonus": [
+						{
+							"name": "Fey Step",
+							"entries": [
+								"The spirit magically teleports up to 30 feet to an unoccupied space it can see. The spirit fills a 10-foot Cube within 5 feet of it with magical Darkness, which lasts until the end of its next turn."
+							]
+						}
+					]
+				}
 			]
 		},
 		{
@@ -54207,9 +54719,7 @@
 				"fly": {
 					"number": 50,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 16,
 			"dex": 16,
 			"con": 11,
@@ -54301,32 +54811,35 @@
 		},
 		{
 			"name": "Fiendish Spirit",
-			"id": "fiendish-spirit",
-			"source": "TCE",
 			"cr": "N/A",
-			"page": 112,
-			"size": "L",
+			"source": "PHB'24",
+			"page": 327,
+			"summonedBySpell": "Summon Fiend",
+			"summonedBySpellLevel": 6,
+			"size": [
+				"L"
+			],
 			"type": "fiend",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
 				{
-					"special": "12 + the level of the spell (natural armor)"
+					"special": "12 + the spell's level"
 				}
 			],
 			"hp": {
-				"special": "50 (Demon only) or 40 (Devil only) or 60 (Yugoloth only) + 15 for each spell level above 6th"
+				"special": "50 (Demon only) or 40 (Devil only) or 60 (Yugoloth only) + 15 for each spell level above 6"
 			},
 			"speed": {
 				"walk": 40,
 				"climb": {
 					"number": 40,
-					"condition": "(demon only)"
+					"condition": "(Demon only)"
 				},
 				"fly": {
 					"number": 60,
-					"condition": "(devil only)"
+					"condition": "(Devil only)"
 				}
 			},
 			"str": 13,
@@ -54351,25 +54864,26 @@
 			"languages": [
 				"Abyssal",
 				"Infernal",
-				"telepathy 60 ft."
+				"Telepathy 60 ft."
 			],
+			"pbNote": "equals your Proficiency Bonus",
 			"trait": [
-				{
-					"name": "Magic Resistance",
-					"entries": [
-						"The fiend has advantage on saving throws against spells and other magical effects."
-					]
-				},
 				{
 					"name": "Death Throes (Demon Only)",
 					"entries": [
-						"When the fiend drops to 0 hit points or the spell ends, the fiend explodes, and each creature within 10 feet of it must make a Dexterity saving throw against your spell save DC. A creature takes 2d10 + this spell's level fire damage on a failed save, or half as much damage on a successful one."
+						"When the spirit drops to 0 Hit Points or the spell ends, the spirit explodes. Dexterity Saving Throw: DC equals your spell save DC, each creature in a 10-foot Emanation originating from the spirit. {@actSaveFail} {@dice 2d10} plus this spell's level Fire damage. {@actSaveSuccess} Half damage."
 					]
 				},
 				{
 					"name": "Devil's Sight (Devil Only)",
 					"entries": [
-						"Magical darkness doesn't impede the fiend's darkvision."
+						"Magical Darkness doesn't impede the spirit's Darkvision."
+					]
+				},
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The spirit has Advantage on saving throws against spells and other magical eff ects."
 					]
 				}
 			],
@@ -54377,43 +54891,39 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The fiend makes a number of attacks equal to half this spell's level (rounded down)."
+						"The spirit makes a number of attacks equal to half this spell's level (round down)."
 					]
 				},
 				{
 					"name": "Bite (Demon Only)",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d12 + 3 + the spell's level necrotic damage."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d12 + 3 + summonSpellLevel} Necrotic damage."
 					]
 				},
 				{
 					"name": "Claws (Yugoloth Only)",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d8 + 3 + the spell's level slashing damage. Immediately after the attack hits or misses, the fiend can magically teleport up to 30 feet to an unoccupied space it can see."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d8 + 3 + summonSpellLevel} Slashing damage. Immediately after the attack hits or misses, the spirit can teleport up to 30 feet to an unoccupied space it can see."
 					]
 				},
 				{
-					"name": "Hurl Flame (Devil Only)",
+					"name": "Fiery Strike (Devil Only)",
 					"entries": [
-						"Ranged Spell Attack: you spell attack modifier to hit, range 150 ft., one target. 2d6 + 3 + the spell's level fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire."
+						"{@atkr m,r} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. or range 150 ft. {@h}{@damage 2d6 + 3 + summonSpellLevel} Fire damage."
 					]
 				}
 			],
+			"token": {
+				"name": "Fiendish Spirit",
+				"source": "PHB'24"
+			},
 			"traitTags": [
 				"Death Burst",
 				"Devil's Sight",
 				"Magic Resistance"
 			],
-			"senseTags": [
-				"D"
-			],
 			"actionTags": [
 				"Multiattack"
-			],
-			"languageTags": [
-				"AB",
-				"I",
-				"TP"
 			],
 			"damageTags": [
 				"F",
@@ -54421,7 +54931,152 @@
 				"S"
 			],
 			"miscTags": [
-				"MW"
+				"MA",
+				"RA"
+			],
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Fiendish Spirit (Demon)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Death Throes (Demon Only)",
+									"with": "Death Throes"
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": "Devil's Sight (Devil Only)"
+							}
+						],
+						"action": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Bite (Demon Only)",
+									"with": "Bite"
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": [
+									"Claws (Yugoloth Only)",
+									"Fiery Strike (Devil Only)"
+								]
+							}
+						]
+					},
+					"hp": {
+						"special": "50 + 15 for each spell level above 6"
+					},
+					"speed": {
+						"walk": 40,
+						"climb": 40
+					},
+					"traitTags": [
+						"Death Burst",
+						"Magic Resistance"
+					],
+					"damageTags": [
+						"F"
+					]
+				},
+				{
+					"name": "Fiendish Spirit (Devil)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Devil's Sight (Devil Only)",
+									"with": "Devil's Sight"
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": "Death Throes (Demon Only)"
+							}
+						],
+						"action": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Fiery Strike (Devil Only)",
+									"with": "Fiery Strike"
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": [
+									"Bite (Demon Only)",
+									"Claws (Yugoloth Only)"
+								]
+							}
+						]
+					},
+					"hp": {
+						"special": "40 + 15 for each spell level above 6"
+					},
+					"speed": {
+						"walk": 40,
+						"fly": 60
+					},
+					"traitTags": [
+						"Devil's Sight",
+						"Magic Resistance"
+					],
+					"damageTags": [
+						"N"
+					]
+				},
+				{
+					"name": "Fiendish Spirit (Yugoloth)",
+					"source": "PHB'24",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Death Throes (Demon Only)",
+									"Devil's Sight (Devil Only)"
+								]
+							}
+						],
+						"action": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Claws (Yugoloth Only)",
+									"with": "Claws"
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": [
+									"Bite (Demon Only)",
+									"Fiery Strike (Devil Only)"
+								]
+							}
+						]
+					},
+					"hp": {
+						"special": "60 + 15 for each spell level above 6"
+					},
+					"speed": {
+						"walk": 40
+					},
+					"traitTags": [
+						"Magic Resistance"
+					],
+					"damageTags": [
+						"F"
+					]
+				}
 			]
 		},
 		{
@@ -59495,9 +60150,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 8,
 			"dex": 14,
 			"con": 10,
@@ -59642,9 +60295,7 @@
 				"swim": {
 					"number": 40,
 					"condition": "(ring of swimming)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 8,
 			"dex": 14,
 			"con": 10,
@@ -59809,9 +60460,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 10,
 			"dex": 18,
 			"con": 18,
@@ -60394,9 +61043,7 @@
 				"fly": {
 					"number": 20,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 10,
 			"dex": 14,
 			"con": 16,
@@ -60575,9 +61222,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 3,
 			"dex": 17,
 			"con": 14,
@@ -67566,9 +68211,7 @@
 				"fly": {
 					"number": 40,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 16,
 			"dex": 21,
 			"con": 18,
@@ -83052,37 +83695,11 @@
 		},
 		{
 			"name": "Imp",
-			"id": "imp",
-			"source": "MM",
-			"page": 76,
-			"srd": true,
-			"otherSources": [
-				{
-					"source": "CoS"
-				},
-				{
-					"source": "SKT"
-				},
-				{
-					"source": "ToA"
-				},
-				{
-					"source": "WDH"
-				},
-				{
-					"source": "GoS"
-				},
-				{
-					"source": "BGDIA"
-				},
-				{
-					"source": "EGW"
-				},
-				{
-					"source": "TCE"
-				}
+			"source": "PHB'24",
+			"page": 352,
+			"size": [
+				"T"
 			],
-			"size": "T",
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -83097,8 +83714,8 @@
 				13
 			],
 			"hp": {
-				"average": 10,
-				"formula": "3d4 + 3"
+				"average": 21,
+				"formula": "6d4 + 6"
 			},
 			"speed": {
 				"walk": 20,
@@ -83113,7 +83730,6 @@
 			"skill": {
 				"deception": "+4",
 				"insight": "+3",
-				"persuasion": "+4",
 				"stealth": "+5"
 			},
 			"senses": [
@@ -83121,8 +83737,7 @@
 			],
 			"passive": 11,
 			"resist": [
-				"cold",
-				"b/p/s from nonmagical attacks that aren't silvered"
+				"cold"
 			],
 			"immune": [
 				"fire",
@@ -83132,73 +83747,72 @@
 				"poisoned"
 			],
 			"languages": [
-				"Infernal",
-				"Common"
+				"Common",
+				"Infernal"
 			],
 			"cr": "1",
-			"trait": [
+			"spellcasting": [
 				{
-					"name": "Shapechanger",
-					"entries": [
-						"The imp can use its action to polymorph into a beast form that resembles a rat (speed 20 ft.), a raven (20 ft., fly 60 ft.), or a spider (20 ft., climb 20 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+					"name": "Invisibility",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The imp casts {@spell Invisibility} on itself, requiring no spell components and using Charisma as the spellcasting ability."
+					],
+					"will": [
+						"{@spell Invisibility}"
+					],
+					"ability": "cha",
+					"displayAs": "action",
+					"hidden": [
+						"will"
 					]
-				},
+				}
+			],
+			"trait": [
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the imp's darkvision."
+						"Magical Darkness doesn't impede the imp's Darkvision."
 					]
 				},
 				{
 					"name": "Magic Resistance",
 					"entries": [
-						"The imp has advantage on saving throws against spells and other magical effects."
+						"The imp has Advantage on saving throws against spells and other magical effects."
 					]
 				}
 			],
 			"action": [
 				{
-					"name": "Sting (Bite in Beast Form)",
+					"name": "Sting",
 					"entries": [
-						"Melee Weapon Attack: +5 to hit, reach 5 ft., one target. 5 (1d4 + 3) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one."
+						"{@atkr m} {@hit 5}, reach 5 ft. {@h}6 ({@damage 1d6 + 3}) Piercing damage plus 7 ({@damage 2d6}) Poison damage."
 					]
 				},
 				{
-					"name": "Invisibility",
+					"name": "Change Shape",
 					"entries": [
-						"The imp magically turns {@conditions invisible} until it attacks, or until its concentration ends (as if concentrating on a spell). Any equipment the imp wears or carries is {@conditions invisible} with it."
+						"The imp changes into a form that resembles a rat (Speed 20 ft.), a raven (20 ft., Fly 60 ft.), or a spider (20 ft., Climb 20 ft.), or it returns to its true form. Its statistics are the same in each form, except for its Speed. Any equipment it's wearing or carrying isn't transformed. The imp reverts to its true form if it dies."
 					]
 				}
 			],
-			"variant": [
-				{
-					"type": "variant",
-					"name": "Imp Familiar",
-					"entries": [
-						"Imps can be found in the service to mortal spellcasters, acting as advisors, spies, and familiars. An imp urges its master to acts of evil, knowing the mortal's soul is a prize the imp might ultimately claim. Imps display an unusual loyalty to their masters, and an imp can be quite dangerous if its master is threatened. Some such imps have the following trait.",
-						{
-							"name": "Familiar",
-							"type": "entries",
-							"entries": [
-								"The imp can enter into a contract to serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the imp senses as long as they are within 1 mile of each other. While the imp is within 10 feet of its master, the master shares the imp's Magic Resistance trait. If its master violates the terms of the contract, the imp can end its service as a familiar, ending the telepathic bond."
-							]
-						}
-					]
-				}
-			],
-			"familiar": true,
-			"hasToken": true,
+			"token": {
+				"name": "Imp",
+				"source": "PHB'24"
+			},
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/imp.mp3"
 			},
 			"traitTags": [
 				"Devil's Sight",
-				"Magic Resistance",
-				"Shapechanger"
+				"Magic Resistance"
 			],
 			"senseTags": [
 				"SD"
+			],
+			"actionTags": [
+				"Shapechanger"
 			],
 			"languageTags": [
 				"C",
@@ -83209,9 +83823,8 @@
 				"P"
 			],
 			"miscTags": [
-				"MW"
+				"MA"
 			],
-			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
@@ -86737,9 +87350,7 @@
 				"fly": {
 					"number": 120,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 21,
 			"dex": 16,
 			"con": 16,
@@ -87041,9 +87652,7 @@
 				"fly": {
 					"number": 60,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 25,
 			"dex": 7,
 			"con": 17,
@@ -92233,9 +92842,7 @@
 				"fly": {
 					"number": 60,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 26,
 			"dex": 10,
 			"con": 20,
@@ -92344,9 +92951,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 10,
 			"dex": 16,
 			"con": 19,
@@ -94103,9 +94708,7 @@
 				"fly": {
 					"number": 40,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 1,
 			"dex": 14,
 			"con": 10,
@@ -96665,9 +97268,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 28,
 			"dex": 12,
 			"con": 26,
@@ -100435,9 +101036,7 @@
 				"fly": {
 					"number": 20,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 10,
 			"dex": 14,
 			"con": 14,
@@ -118519,31 +119118,11 @@
 		},
 		{
 			"name": "Quasit",
-			"id": "quasit",
-			"source": "MM",
-			"page": 63,
-			"srd": true,
-			"otherSources": [
-				{
-					"source": "CoS"
-				},
-				{
-					"source": "TftYP"
-				},
-				{
-					"source": "WDMM"
-				},
-				{
-					"source": "BGDIA"
-				},
-				{
-					"source": "EGW"
-				},
-				{
-					"source": "TCE"
-				}
+			"source": "PHB'24",
+			"page": 355,
+			"size": [
+				"T"
 			],
-			"size": "T",
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -118558,8 +119137,8 @@
 				13
 			],
 			"hp": {
-				"average": 7,
-				"formula": "3d4"
+				"average": 25,
+				"formula": "10d4"
 			},
 			"speed": {
 				"walk": 40
@@ -118580,8 +119159,7 @@
 			"resist": [
 				"cold",
 				"fire",
-				"lightning",
-				"b/p/s from non-magical attacks"
+				"lightning"
 			],
 			"immune": [
 				"poison"
@@ -118594,85 +119172,82 @@
 				"Common"
 			],
 			"cr": "1",
-			"trait": [
+			"spellcasting": [
 				{
-					"name": "Shapechanger",
-					"entries": [
-						"The quasit can use its action to polymorph into a beast form that resembles a bat (speed 10 feet fly 40 ft.), a centipede (40 ft., climb 40 ft.), or a toad (40 ft., swim 40 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+					"name": "Invisibility",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The quasit casts {@spell Invisibility} on itself, requiring no spell components and using Charisma as the spellcasting ability."
+					],
+					"will": [
+						"{@spell Invisibility}"
+					],
+					"ability": "cha",
+					"displayAs": "action",
+					"hidden": [
+						"will"
 					]
-				},
+				}
+			],
+			"trait": [
 				{
 					"name": "Magic Resistance",
 					"entries": [
-						"The quasit has advantage on saving throws against spells and other magical effects."
+						"The quasit has Advantage on saving throws against spells and other magical effects."
 					]
 				}
 			],
 			"action": [
 				{
-					"name": "Claw (Bite in Beast Form)",
+					"name": "Rend",
 					"entries": [
-						"Melee Weapon Attack: +4 to hit, reach 5 ft., one target. 5 (1d4 + 3) piercing damage, and the target must succeed on a DC 10 Constitution saving throw or take 5 (2d4) poison damage and become {@conditions poisoned} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"{@atkr m} {@hit 5}, reach 5 ft. {@h}5 ({@damage 1d4 + 3}) Slashing damage, and the target has the {@condition Poisoned} condition until the start of the quasit's next turn."
+					]
+				},
+				{
+					"name": "Change Shape",
+					"entries": [
+						"The quasit changes into a form that resembles a bat (Speed 10 ft., Fly 40 ft.), a centipede (40 ft., Climb 40 ft.), or a toad (40 ft., Swim 40 ft.), or it returns to its true form. Its statistics are the same in each form, except for its Speed. Any equipment it's wearing or carrying isn't transformed. The quasit reverts to its true form if it dies."
 					]
 				},
 				{
 					"name": "Scare (1/Day)",
 					"entries": [
-						"One creature of the quasit's choice within 20 feet of it must succeed on a DC 10 Wisdom saving throw or be {@conditions frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the quasit is within line of sight, ending the effect on itself on a success."
-					]
-				},
-				{
-					"name": "Invisibility",
-					"entries": [
-						"The quasit magically turns {@conditions invisible} until it attacks or uses Scare, or until its concentration ends (as if concentrating on a spell). Any equipment the quasit wears or carries is {@conditions invisible} with it."
+						"{@actSave wis} {@dc 10}, one creature within 20 feet. {@actSaveFail} The target has the {@condition Frightened} condition. At the end of each of its turns, the target repeats the save, ending the effect on itself on a success. After 1 minute, it succeeds automatically"
 					]
 				}
 			],
-			"variant": [
-				{
-					"type": "variant",
-					"name": "Quasit Familiar",
-					"entries": [
-						"Mortal spellcasters interested in extraplanar familiars find quasits easy to summon and eager to serve. The quasit plays the part of the obsequious servant. It serves its master well, but it goads the mortal to greater and greater acts of chaos and evil. Such quasits have the following trait.",
-						{
-							"name": "Familiar",
-							"type": "entries",
-							"entries": [
-								"The quasit can serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the quasit senses as long as they are within 1 mile of each other. While the quasit is within 10 feet of its master, the master shares the quasit's Magic Resistance trait. At any time and for any reason, the quasit can end its service as a familiar, ending the telepathic bond."
-							]
-						}
-					]
-				}
-			],
-			"familiar": true,
-			"hasToken": true,
+			"token": {
+				"name": "Quasit",
+				"source": "PHB'24"
+			},
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/quasit.mp3"
 			},
 			"traitTags": [
-				"Magic Resistance",
-				"Shapechanger"
+				"Magic Resistance"
 			],
 			"senseTags": [
 				"SD"
+			],
+			"actionTags": [
+				"Shapechanger"
 			],
 			"languageTags": [
 				"AB",
 				"C"
 			],
 			"damageTags": [
-				"I",
-				"P"
+				"S"
 			],
 			"miscTags": [
-				"MW"
+				"MA"
 			],
 			"conditionInflict": [
 				"frightened",
 				"poisoned"
 			],
-			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
@@ -130193,9 +130768,7 @@
 				"fly": {
 					"number": 20,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 10,
 			"dex": 3,
 			"con": 23,
@@ -132983,9 +133556,7 @@
 				"fly": {
 					"number": 40,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 16,
 			"dex": 15,
 			"con": 18,
@@ -136842,9 +137413,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 1,
 			"dex": 11,
 			"con": 10,
@@ -138532,9 +139101,7 @@
 					"number": 50,
 					"condition": "(hover)"
 				},
-				"swim": 50,
-				"canHover": true
-			},
+				"swim": 50			},
 			"str": 29,
 			"dex": 14,
 			"con": 20,
@@ -149010,7 +149577,7 @@
 		{
 			"name": "Undead Spirit",
 			"id": "undead-spirit",
-			"source": "TCE",
+			"source": "PHB'24",
 			"cr": "N/A",
 			"page": 114,
 			"size": "M",
@@ -149060,13 +149627,13 @@
 				{
 					"name": "Incorporeal Passage (Ghostly Only)",
 					"entries": [
-						"The spirit can move through other creatures and objects as if they were difficult terrain. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes 1d10 force damage for every 5 feet traveled."
+						"he spirit can move through other creatures and objects as if they were Difficult Terrain. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes 1d10 Force damage for every 5 feet traveled."
 					]
 				},
 				{
 					"name": "Festering Aura (Putrid Only)",
 					"entries": [
-						"Any creature, other than you, that starts its turn within 5 feet of the spirit must succeed on a Constitution saving throw against your spell save DC or be {@conditions poisoned} until the start of its next turn."
+						"{@i Constitution Saving Throw: } DC equals your spell save DC, any creature (other than you) that starts its turn within a 5-foot Emanation originating from the spirit. Failure: The creature has the Poisoned condition until the start of its next turn."
 					]
 				}
 			],
@@ -149074,25 +149641,25 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The spirit makes a number of attacks equal to half this spell's level (rounded down)."
+						"The spirit makes a number of attacks equal to half this spell's level (round down)."
 					]
 				},
 				{
 					"name": "Deathly Touch (Ghostly Only)",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one creature. 1d8 + 3 + the spell's level necrotic damage, and the creature must succeed on a Wisdom saving throw against your spell save DC or be {@conditions frightened} of the undead until the end of the target's next turn."
+						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one creature. 1d8 + 3 + the spell's level Necrotic damage, and the target has the Frightened condition until the end of its next turn."
 					]
 				},
 				{
 					"name": "Grave Bolt (Skeletal Only)",
 					"entries": [
-						"Ranged Spell Attack: you spell attack modifier to hit, range 150 ft., one target. 2d4 + 3 + the spell's level necrotic damage."
+						"Ranged Spell Attack: you spell attack modifier to hit, range 150 ft., one target. 2d4 + 3 + the spell's level Necrotic damage."
 					]
 				},
 				{
 					"name": "Rotting Claw (Putrid Only)",
 					"entries": [
-						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d6 + 3 + the spell's level slashing damage. If the target is {@conditions poisoned}, it must succeed on a Constitution saving throw against your spell save DC be {@conditions paralyzed} until the end of its next turn."
+						"Melee Weapon Attack: you spell attack modifier to hit, reach 5 ft., one target. 1d6 + 3 + the spell's level Slashing damage. If the target has the Poisoned condition, it has the Paralyzed condition until the end of its next turn."
 					]
 				}
 			],
@@ -151292,9 +151859,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 6,
 			"dex": 16,
 			"con": 16,
@@ -159792,9 +160357,7 @@
 				"fly": {
 					"number": 40,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 18,
 			"dex": 17,
 			"con": 16,
@@ -162528,9 +163091,7 @@
 				"fly": {
 					"number": 60,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 20,
 			"dex": 15,
 			"con": 20,
@@ -165867,9 +166428,7 @@
 				"fly": {
 					"number": 30,
 					"condition": "(hover)"
-				},
-				"canHover": true
-			},
+				}			},
 			"str": 30,
 			"dex": 10,
 			"con": 26,
@@ -166400,9 +166959,10 @@
 		},
 		{
 			"name": "Animated Object",
-			"source": "XPHB",
+			"cr": "N/A",
+			"source": "PHB'24",
 			"page": 240,
-			"summonedBySpell": "Animate Objects|XPHB",
+			"summonedBySpell": "Animate Objects",
 			"summonedBySpellLevel": 5,
 			"size": [
 				"T",
@@ -166448,7 +167008,7 @@
 			],
 			"token": {
 				"name": "Animated Object",
-				"source": "XPHB"
+				"source": "PHB'24"
 			},
 			"senseTags": [
 				"B"
@@ -166460,7 +167020,7 @@
 			"_versions": [
 				{
 					"name": "Animated Object (Huge)",
-					"source": "XPHB",
+					"source": "PHB'24",
 					"hp": {
 						"special": "40"
 					},
@@ -166475,7 +167035,7 @@
 				},
 				{
 					"name": "Animated Object (Large)",
-					"source": "XPHB",
+					"source": "PHB'24",
 					"hp": {
 						"special": "20"
 					},
@@ -166490,7 +167050,7 @@
 				},
 				{
 					"name": "Animated Object (Medium or Smaller)",
-					"source": "XPHB",
+					"source": "PHB'24",
 					"hp": {
 						"special": "10"
 					},
@@ -166504,6 +167064,398 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Otherworldly Steed",
+			"cr": "N/A",
+			"source": "PHB'24",
+			"page": 273,
+			"summonedBySpell": "Find Steed",
+			"summonedBySpellLevel": 2,
+			"size": [
+				"L"
+			],
+			"type": {
+				"type": {
+					"choose": [
+						"celestial",
+						"fey",
+						"fiend"
+					]
+				}
+			},
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"special": "10 + 1 per spell level"
+				}
+			],
+			"hp": {
+				"special": "5 + 10 per spell level (the steed has a number of Hit Dice [d10s] equal to the spell's level)"
+			},
+			"speed": {
+				"walk": 60,
+				"fly": {
+					"number": 60,
+					"condition": "(requires level 4+ spell)"
+				}
+			},
+			"str": 18,
+			"dex": 12,
+			"con": 14,
+			"int": 6,
+			"wis": 12,
+			"cha": 8,
+			"passive": 11,
+			"languages": [
+				"telepathy 1 mile (works only with you)"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Life Bond",
+					"entries": [
+						"When you regain Hit Points from a level 1+ spell, the steed regains the same number of Hit Points if you're within 5 feet of it."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Otherworldly Slam",
+					"entries": [
+						"{@atk m} Bonus equals your spell attack modifier, reach 5 ft. {@h} 1d8 + the spell's level  of Radiant (Celestial), Psychic (Fey), or Necrotic (Fiend) damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
+					"entries": [
+						"{@actSave wis} DC equals your spell save DC, one creature within 60 feet the steed can see. {@actSaveFail fail} The target has the {@condition Frightened} condition until the end of your next turn."
+					]
+				},
+				{
+					"name": "Fey Step (Fey Only; Recharges after a Long Rest)",
+					"entries": [
+						"The steed teleports, along with its rider, to an unoccupied space of your choice up to 60 feet away from itself."
+					]
+				},
+				{
+					"name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
+					"entries": [
+						"One creature within 5 feet of the steed regains a number of Hit Points equal to {@dice 2d8 + summonSpellLevel}."
+					]
+				}
+			],
+			"token": {
+				"name": "Otherworldly Steed",
+				"source": "PHB'24"
+			},
+			"languageTags": [
+				"TP"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"conditionInflict": [
+				"frightened"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"name": "Giant Insect",
+			"cr": "N/A",
+			"source": "PHB'24",
+			"page": 279,
+			"summonedBySpell": "Giant Insect",
+			"summonedBySpellLevel": 4,
+			"size": [
+				"L"
+			],
+			"type": "beast",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"special": "11 + the spell's level"
+				}
+			],
+			"hp": {
+				"special": "30 + 10 for each spell level above 4"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": 40,
+				"fly": {
+					"number": 40,
+					"condition": "(Wasp only)"
+				}
+			},
+			"str": 17,
+			"dex": 13,
+			"con": 15,
+			"int": 4,
+			"wis": 14,
+			"cha": 3,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"languages": [
+				"understands the languages you know"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Spider Climb",
+					"entries": [
+						"The insect can climb difficult surfaces, including along ceilings, without needing to make an ability check."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The insect makes a number of attacks equal to half this spell's level (round down)."
+					]
+				},
+				{
+					"name": "Poison Jab",
+					"entries": [
+						"{@atk m} Bonus equals your spell attack modifier, reach 10 ft. {@h}{@dice 1d6 + 3 + summonSpellLevel} Piercing damage plus {@damage 1d4} Poison damage."
+					]
+				},
+				{
+					"name": "Web Bolt (Spider Only)",
+					"entries": [
+						"{@atk r} Bonus equals your spell attack modifier, range 60 ft. {@h}{@dice 1d10 + 3 + summonSpellLevel} Bludgeoning damage, and the target's Speed is reduced to 0 until the start of the insect's next turn."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Venomous Spew (Centipede Only)",
+					"entries": [
+						"{@actSave con} Your spell save DC, one creature the insect can see within 10 feet. {@actSaveFail} The target has the {@condition Poisoned} condition until the start of the insect's next turn."
+					]
+				}
+			],
+			"traitTags": [
+				"Spider Climb"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"poisoned"
+			]
+		},
+		{
+			"name": "Draconic Spirit",
+			"cr": "N/A",
+			"source": "PHB'24",
+			"page": 325,
+			"summonedBySpell": "Summon Dragon",
+			"summonedBySpellLevel": 5,
+			"size": [
+				"L"
+			],
+			"type": "dragon",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"special": "14 + the spell's level"
+				}
+			],
+			"hp": {
+				"special": "50 + 10 for each spell level above 5"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 60,
+				"swim": 30
+			},
+			"str": 19,
+			"dex": 14,
+			"con": 17,
+			"int": 10,
+			"wis": 14,
+			"cha": 14,
+			"senses": [
+				"blindsight 30 ft.",
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"resist": [
+				"acid",
+				"cold",
+				"fire",
+				"lightning",
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened",
+				"poisoned"
+			],
+			"languages": [
+				"Draconic",
+				"understands the languages you know"
+			],
+			"pbNote": "equals your Proficiency Bonus",
+			"trait": [
+				{
+					"name": "Shared Resistances",
+					"entries": [
+						"When you summon the spirit, choose one of its Resistances. You have Resistance to the chosen damage type until the spell ends."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The spirit makes a number of Rend attacks equal to half the spell's level (round down), and it uses Breath Weapon."
+					]
+				},
+				{
+					"name": "Rend",
+					"entries": [
+						"{@atk m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 10 feet. {@h}{@damage 1d6 + 4 + summonSpellLevel} Piercing damage."
+					]
+				},
+				{
+					"name": "Breath Weapon",
+					"entries": [
+						"{@actSave dex} DC equals your spell save DC, each creature in a 30-foot Cone. {@actSaveFail} {@damage 2d6} damage of a type this spirit has Resistance to (your choice when you cast the spell). {@actSaveSuccess} Half damage."
+					]
+				}
+			],
+			"token": {
+				"name": "Draconic Spirit",
+				"source": "PHB'24"
+			},
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"name": "Sphinx of Wonder",
+			"source": "PHB'24",
+			"page": 357,
+			"size": [
+				"T"
+			],
+			"type": "celestial",
+			"alignment": [
+				"L",
+				"G"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 24,
+				"formula": "7d4 + 7"
+			},
+			"speed": {
+				"walk": 20,
+				"fly": 40
+			},
+			"str": 6,
+			"dex": 17,
+			"con": 13,
+			"int": 15,
+			"wis": 12,
+			"cha": 11,
+			"skill": {
+				"arcana": "+4",
+				"religion": "+4",
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 11,
+			"resist": [
+				"necrotic",
+				"psychic",
+				"radiant"
+			],
+			"languages": [
+				"Celestial",
+				"Common"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The sphinx has Advantage on saving throws against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Rend",
+					"entries": [
+						"{@atkr m} {@hit 5}, reach 5 ft. {@h}5 ({@damage 1d4 + 3}) Slashing damage plus 7 ({@damage 2d6}) Radiant damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Burst of Ingenuity (2/Day)",
+					"entries": [
+						"{@actTrigger} The sphinx or another creature within 30 feet makes an ability check or a saving throw. {@actResponse} The sphinx adds 2 to the roll."
+					]
+				}
+			],
+			"token": {
+				"name": "Sphinx of Wonder",
+				"source": "PHB'24"
+			},
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C",
+				"CE"
+			],
+			"damageTags": [
+				"R",
+				"S"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"hasFluffImages": true
 		}
 ]
 }

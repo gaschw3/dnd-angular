@@ -12,14 +12,14 @@
                                 <h3 [class]="'pull-right color-'+monster.source | lowercase">{{monster.source}}</h3>
                             </div>
                         </div>
-                        <div *ngIf="monster.hasToken" id="float-token" class="ecgen__hidden relative">
+                        <div *ngIf="monster.hasToken || monster.token" id="float-token" class="ecgen__hidden relative">
                             <a class="mon__wrp-token">
-                                <img alt="{{monster.name}} token image" src="{{'https://5e.tools/img/' + monster.source + '/' + monster.name + '.png?v=1.123.0'}}" class="mon__token" alt="{{monster.name}}" style="opacity: 1; top: 0px;"/>
+                                <img alt="{{monster.name}} token image" src="{{'https://5e.tools/img/bestiary/tokens/' + monster.source.replace('PHB\'24', 'XPHB') + '/' + monster.name + '.webp'}}" class="mon__token" alt="{{monster.name}}" style="opacity: 1; top: 0px;"/>
                             </a>
                         </div>
                         <div class="row mb-2">
                             <div class="col">
-                                <h5><em>{{monsterService.translateSize(monster.size) | titlecase}} {{monsterService.getType(monster.type)}}, {{monsterService.translateAlignment(monster.alignment)}}</em></h5>
+                                <h5><em>{{monsterService.translateSize(monster.size) | titlecase}} {{monsterService.getType(monster.type) | titlecaseExcept}}, {{monsterService.translateAlignment(monster.alignment) | titlecaseExcept}}</em></h5>
                             </div>
                         </div>
                         <div class="row pb-2 mb-2">
@@ -52,7 +52,7 @@
                                 <p class="p-0 m-0"><strong>Speed: </strong>
                                     <ng-container *ngFor="let speed of monster.speed | keyvalue; let isLast=last">
                                         <ng-container *ngIf="isObject(speed.value);then complex else simple"></ng-container>
-                                        <ng-template #complex>{{speed.value.number}} ft. {{speed.value.condition}}</ng-template>
+                                        <ng-template #complex>{{speed.key}} {{speed.value.number}} ft. {{speed.value.condition}}</ng-template>
                                         <ng-template #simple>{{speed.key}} {{speed.value}} ft.</ng-template>
                                         {{isLast ? '' : ', '}}
                                     </ng-container>

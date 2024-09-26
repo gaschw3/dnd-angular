@@ -113,6 +113,8 @@ export class BeastiaryComponent implements OnInit {
         return `${type.type} (${type.tags[0]})`;
       } else if (type.swarmSize) {
         return `swarm of ${sizeMap[type.swarmSize]} ${type.type}`;
+      } else if (type.type && type.type.choose) {
+        return type.type.choose.join(", ") + ' (choose)'
       } else if (type.type) {
         return type.type;
       } else {

@@ -40,16 +40,24 @@ export class LinkmakerPipe implements PipeTransform {
       }
       // a bunch of these are used in Foundry but I don't really want to make handler pages for all of them
       // most of these get ignored, a few special ones are turned into stuff like text decorations
-      if (splitArr.slice(0,1).toString() == '@damage' || splitArr.slice(0,1).toString() == '@scaledamage' || splitArr.slice(0,1).toString() == '@dice' || splitArr.slice(0,1).toString() == '@scaledice' || splitArr.slice(0,1).toString() == '@condition' || splitArr.slice(0,1).toString() == '@skill' || splitArr.slice(0,1).toString() == '@hit' || splitArr.slice(0,1).toString() == '@sense' || splitArr.slice(0,1).toString() == '@chance' || splitArr.slice(0,1).toString() == '@h' || splitArr.slice(0,1).toString() == '@atk' || splitArr.slice(0,1).toString() == '@b' ||splitArr.slice(0,1).toString() == '@i' || splitArr.slice(0,1).toString() == '@filter') {
+      if (splitArr.slice(0,1).toString() == '@damage' || splitArr.slice(0,1).toString() == '@scaledamage' || splitArr.slice(0,1).toString() == '@dice' || splitArr.slice(0,1).toString() == '@scaledice' || splitArr.slice(0,1).toString() == '@condition' || splitArr.slice(0,1).toString() == '@skill' || splitArr.slice(0,1).toString() == '@hit' || splitArr.slice(0,1).toString() == '@sense' || splitArr.slice(0,1).toString() == '@chance' || splitArr.slice(0,1).toString() == '@h' || splitArr.slice(0,1).toString() == '@atk' || splitArr.slice(0,1).toString() == '@dc' || splitArr.slice(0,1).toString() == '@atkr' || splitArr.slice(0,1).toString() == '@actSave' || splitArr.slice(0,1).toString() == '@actSaveFail' || splitArr.slice(0,1).toString() == '@actSaveSuccess' || splitArr.slice(0,1).toString() == '@b' ||splitArr.slice(0,1).toString() == '@i' || splitArr.slice(0,1).toString() == '@filter') {
         if (splitArr.slice(0,1).toString() == '@hit') {
           return `+${linkText === '' ? linkPath : linkText}`;
-        } else if (splitArr.slice(0,1).toString() == '@atk') {
-          return `<em>${linkPath.replace('ms', 'Melee Spell').replace('rs', 'Ranged Spell').replace('mw', 'Melee Weapon').replace('mw', 'Ranged Weapon').replace(',', ' or ') + ' Attack:'}</em>`;
+        } else if (splitArr.slice(0,1).toString() == '@actSave') {
+          return `<em>${linkPath + ' Saving Throw:'}</em>`;
+        } else if (splitArr.slice(0,1).toString() == '@actSaveFail') {
+          return `<em>${'Failure: '}</em>`;
+        } else if (splitArr.slice(0,1).toString() == '@actSaveSuccess') {
+            return `<em>${'Success: '}</em>`;
+        } else if (splitArr.slice(0,1).toString() == '@dc') {
+            return `DC ${linkPath}`;
+        } else if (splitArr.slice(0,1).toString() == '@atk' || splitArr.slice(0,1).toString() == '@atkr') {
+          return `<em>${linkPath.replace('m', 'Melee').replace('r', 'Ranged').replaceAll('s', ' Spell').replaceAll('w', ' Weapon').replace(',', ' or ') + ' Attack:'}</em>`;
         } else if (splitArr.slice(0,1).toString() == '@b') {
           return `<strong>${linkText === '' ? linkPath : linkText}</strong>`
         } else if (splitArr.slice(0,1).toString() == '@i') {
           return `<em>${linkText === '' ? linkPath : linkText}</em>`
-        }else {
+        } else {
           return `${linkText === '' ? linkPath : linkText}`;
         }
       } else {
@@ -58,8 +66,8 @@ export class LinkmakerPipe implements PipeTransform {
     }
 
     if (value.includes('@')) {
-      str = value.toString().replace(/{@h}/g, 'Hit: ')
-        .replace(/{@([\w-]+) ([\w\-\s/'\|\?\=(),\.\:\&%\+]+)}/g, replaceLinks);
+      str = value.toString().replace(/{@h}/g, '<em>Hit: </em>')
+        .replace(/{@([\w-]+)\s?([\w\-\s/'\|\?\=(),\.\:\&%\+]+)?}/g, replaceLinks);
       return str;
     } else {
       return value;

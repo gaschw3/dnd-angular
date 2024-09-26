@@ -148,13 +148,14 @@ $themes: (
     paginateSelected: rgb(228, 0, 0),
     tableHover: rgba(255,255,255,.075)
   ),
-  /*hell: (
+  hell: (
     backgroundColor: #2e0505,
     headerFont: 'Mate SC',
     headerFallbackFont: serif,
     background: linear-gradient(#2e0505 80%, #ffbb001c),
     navColor: #531111,
     navText: #fff,
+    brandText: #cc92ff, //color for text next to favicon
     cardColor: #531111,
     textColor: #ccc,
     textLinkColor: #ffeac4,
@@ -168,5 +169,5 @@ $themes: (
     classButtonGradient: linear-gradient(50deg,  #b16a00 0%, #5c1400 74%),
     paginateSelected: rgba(255, 121, 121, 0.514),
     tableHover: rgba(255,255,255,.075)
-  )*/
+  )
 );
