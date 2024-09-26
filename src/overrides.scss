@@ -4,7 +4,7 @@
 
 // TODO: shouldn't need this, but I'm seeing a tiny y-scroll bar show up sometimes
 body {
-  overflow-x:hidden;
+  //overflow-x:hidden;
   min-width: auto!important;
 }
 
@@ -13,7 +13,7 @@ body {
   @include themify($themes) {
     background: themed('background') no-repeat center center fixed;
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 98vw;
     background-color: themed('backgroundColor');
     color: themed('textColor');
 
@@ -30,7 +30,7 @@ body {
       background: themed('headerColor');
       background-clip: text;
       -webkit-background-clip: text;
-      color: transparent;
+      color: themed('headerColor');
     }
 
     h5 {

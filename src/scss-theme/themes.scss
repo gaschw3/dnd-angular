@@ -148,14 +148,39 @@ $themes: (
     paginateSelected: rgb(228, 0, 0),
     tableHover: rgba(255,255,255,.075)
   ),
-  hell: (
+  end: (
+    name: 'Phyrexian',
+    bgImage: url(phyrexian-border.png),
+    backgroundColor: #302727,
+    headerFont: "Iceberg",
+    headerFallbackFont: sans-serif,
+    background: auto,
+    navColor: #443a3a,
+    tableActiveColor: #443a3a,
+    navText: #fff,
+    brandText: #ccc, //color for text next to favicon
+    cardColor: #32383e,
+    textColor: #aaa,
+    textLinkColor: #fff,
+    textLinkBackground: #272b30,
+    linkColor: #de5b5b,
+    colorPrimary: #de5b5b, //most headers on site
+    colorSecondary: #c4b462, //feature headers in class, features outline,
+    colorTertiary: #ccc, //feature usbheaders for stuff like fighting styles
+    headerColor: #aaa,
+    classButtonGradient: linear-gradient(#484e55,#3a3f44 60%,#313539),
+    classButtonGradientActive: linear-gradient(#101112, #17191b 40%, #1b1e20),
+    paginateSelected: rgba(255, 150, 121, 0.514),
+    tableHover: rgba(255,255,255,.075)
+  )
+  /*hell: (
     backgroundColor: #2e0505,
-    headerFont: 'Mate SC',
+    headerFont: 'Iceberg',
     headerFallbackFont: serif,
     background: linear-gradient(#2e0505 80%, #ffbb001c),
     navColor: #531111,
     navText: #fff,
-    brandText: #cc92ff, //color for text next to favicon
+    brandText: #ff4949, //color for text next to favicon
     cardColor: #531111,
     textColor: #ccc,
     textLinkColor: #ffeac4,
@@ -164,10 +189,10 @@ $themes: (
     colorPrimary: #ffb546, //most headers on site
     colorSecondary: #ff4949, //feature headers in class, features outline,
     colorTertiary: #fff8b9, //feature usbheaders for stuff like fighting styles
-    headerColor: linear-gradient(0deg, rgba(0,29,133,0.75) 0%, rgba(255,166,0,0.85) 30%, rgba(253,29,29,1) 95%),
+    headerColor: #F1490D,
     classButtonGradientActive: linear-gradient(315deg,  #f5a020 0%, #ac2500 74%),
     classButtonGradient: linear-gradient(50deg,  #b16a00 0%, #5c1400 74%),
     paginateSelected: rgba(255, 121, 121, 0.514),
     tableHover: rgba(255,255,255,.075)
-  )
+  )*/
 );

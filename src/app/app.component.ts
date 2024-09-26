@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
 
 declare var gtag
@@ -11,7 +12,7 @@ declare var gtag
 })
 export class AppComponent {
   title = 'dnd-angular';
-  defaultTheme = "royal";
+  defaultTheme = "end";
   particles = false;
 
   theme = this.getCookie("theme");
@@ -22,6 +23,13 @@ export class AppComponent {
     );
     navEndEvent$.subscribe((e: NavigationEnd) => {
       gtag('config', 'G-BKMXZP7BG0', {'page_path':e.urlAfterRedirects});
+      setTimeout(function() {
+        $('nav a').each(function() {
+          $(this).attr('data-phy', $(this)[0].textContent.substring(0, 7));
+        });
+        console.log('Page is fully loaded!');
+      }
+    ,100);
     });
   }
 
@@ -43,19 +51,14 @@ export class AppComponent {
         while (c.charAt(0)==' ') c = c.substring(1,c.length);
         if (c.indexOf(nameEQ) == 0) {
           var themeName = c.substring(nameEQ.length,c.length);
-          if (themeName == 'rainbow') {
-            return 'royal'
-          }
-          else {
-            return themeName;
-          }
+          return themeName;
         }
     }
     return this.defaultTheme; //use dark mode if no cookie is set
   }
 
   changeTheme() {
-    this.setCookie("theme", this.theme, 7); //set "theme" cookie, expires in 7 days
+    this.setCookie("theme", this.theme, 4); //set "theme" cookie, expires in 7 days
   }
 
 }

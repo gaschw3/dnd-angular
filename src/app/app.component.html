@@ -62,20 +62,20 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownRef">
                 <form class="form-sm m-3">
                   <div class="form-group">
-                    <label for="theme"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label> <span class="ml-1 badge badge-warning">WIP</span>
+                    <label for="theme"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label>
                     <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
                       <option value="greek">Arkhos</option>
                       <option value="dark">Material Realm</option>
                       <option value="ice">Seven Cities</option>
                       <option value="rainbow">Shizomi</option>
                       <option value="royal">Aldovia</option>
+                      <option value="end">Worldbreaker</option>
                       <!--
                       <option value="light">Celestia</option>
-                      <option value="hell">The Abyss</option>
                       -->
                     </select>
                   </div>
-                  <div *ngIf="theme != 'dark'" class="form-group">
+                  <div *ngIf="theme != 'dark' && theme != 'royal'" class="form-group">
                     <div class="form-check form-switch">
                       <input type="checkbox" class="form-check-input" [(ngModel)]="particles" id="particles" name="particles">
                       <label class="form-check-label" for="particles">Use Occultum<sup><a class="text--op" href="/items/occultum-op">?</a></sup></label>
