@@ -27,7 +27,6 @@ export class AppComponent {
         $('nav a').each(function() {
           $(this).attr('data-phy', $(this)[0].textContent.substring(0, 7));
         });
-        console.log('Page is fully loaded!');
       }
     ,100);
     });
@@ -51,6 +50,7 @@ export class AppComponent {
         while (c.charAt(0)==' ') c = c.substring(1,c.length);
         if (c.indexOf(nameEQ) == 0) {
           var themeName = c.substring(nameEQ.length,c.length);
+          return 'end';
           return themeName;
         }
     }
