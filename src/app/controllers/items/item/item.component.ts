@@ -14,7 +14,8 @@ export class ItemComponent implements OnInit {
   damageType = {
     "B": "bludgeoning",
     "P": "piercing",
-    "S": "slashing"
+    "S": "slashing",
+    "Y": "psychic"
   }
 
   itemProps = {
@@ -67,7 +68,7 @@ export class ItemComponent implements OnInit {
           case "T":
             properties.push("thrown (" + item.range + ")");
             break;
-          case "T":
+          case "V":
             properties.push("versatile (" + item.dmg2 + ")");
             break;
           default:
