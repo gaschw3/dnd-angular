@@ -1,0 +1,1558 @@
+[
+    {
+      "name": "Agonizing Blast",
+      "source": "PHB'24",
+      "page": 155,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "spell": "Damaging cantrip",
+          "level": {
+            "level": 2,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "entries": [
+        "Choose one of your known Warlock cantrips that deals damage. You can add your Charisma modifier to that spell's damage rolls.",
+        {
+          "type": "entries",
+          "entries": [
+            {
+              "type": "entries",
+              "name": "Repeatable",
+              "entries": [
+                "You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ambush",
+      "source": "PHB'24",
+      "page": 94,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you make a Dexterity ({@skill Stealth}) check or an {@variantrule Initiative} roll, you can expend one Superiority Die and add the die to the roll, unless you have the {@condition Incapacitated} condition."
+      ]
+    },
+    {
+      "name": "Armor of Shadows",
+      "source": "PHB'24",
+      "page": 155,
+      "featureType": [
+        "EI"
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "mage armor|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "You can cast {@spell Mage Armor} on yourself without expending a spell slot."
+      ]
+    },
+    {
+      "name": "Ascendant Step",
+      "source": "PHB'24",
+      "page": 155,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 5,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "levitate|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "You can cast {@spell Levitate} on yourself without expending a spell slot."
+      ]
+    },
+    {
+      "name": "Bait and Switch",
+      "source": "PHB'24",
+      "page": 94,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you're within 5 feet of a creature on your turn, you can expend one Superiority Die and switch places with that creature, provided you spend at least 5 feet of movement and the creature is willing and doesn't have the {@condition Incapacitated} condition. This movement doesn't provoke {@action Opportunity Attack|Opportunity Attacks}.",
+        "Roll the Superiority Die. Until the start of your next turn, you or the other creature (your choice) gains a bonus to AC equal to the number rolled."
+      ]
+    },
+    {
+      "name": "Careful Spell",
+      "source": "PHB'24",
+      "page": 141,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point"
+      },
+      "entries": [
+        "When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, spend 1 Sorcery Point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell, and it takes no damage if it would normally take half damage on a successful save."
+      ]
+    },
+    {
+      "name": "Commander's Strike",
+      "source": "PHB'24",
+      "page": 94,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you take the {@action Attack} action on your turn, you can replace one of your attacks to direct one of your companions to strike. When you do so, choose a willing creature who can see or hear you and expend one Superiority Die. That creature can immediately use its {@variantrule Reaction} to make one attack with a weapon or an {@variantrule Unarmed Strike}, adding the Superiority Die to the attack's damage roll on a hit."
+      ]
+    },
+    {
+      "name": "Commanding Presence",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you make a Charisma ({@skill Intimidation}, {@skill Performance}, or {@skill Persuasion}) check, you can expend one Superiority Die and add that die to the roll."
+      ]
+    },
+    {
+      "name": "Devil's Sight",
+      "source": "PHB'24",
+      "page": 155,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 2,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "entries": [
+        "You can see normally in {@variantrule Dim Light} and {@variantrule Darkness}—both magical and nonmagical—within 120 feet of yourself."
+      ]
+    },
+    {
+      "name": "Devouring Blade",
+      "source": "PHB'24",
+      "page": 155,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 12,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          },
+          "optionalfeature": [
+            "thirsting blade|xphb"
+          ]
+        }
+      ],
+      "entries": [
+        "The Extra Attack of your {@optfeature Thirsting Blade} invocation confers two extra attacks rather than one."
+      ]
+    },
+    {
+      "name": "Disarming Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you hit a creature with an attack roll, you can expend one Superiority Die to attempt to disarm the target. Add the Superiority Die roll to the attack's damage roll. The target must succeed on a Strength saving throw or drop one object of your choice that it's holding, with the object landing in its space."
+      ]
+    },
+    {
+      "name": "Distant Spell",
+      "source": "PHB'24",
+      "page": 141,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point"
+      },
+      "entries": [
+        "When you cast a spell that has a range of at least 5 feet, you can spend 1 Sorcery Point to double the spell's range. Or when you cast a spell that has a range of Touch, you can spend 1 Sorcery Point to make the spell's range 30 feet."
+      ]
+    },
+    {
+      "name": "Distracting Strike",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you hit a creature with an attack roll, you can expend one Superiority Die to distract the target. Add the Superiority Die roll to the attack's damage roll. The next attack roll against the target by an attacker other than you has {@variantrule Advantage} if the attack is made before the start of your next turn."
+      ]
+    },
+    {
+      "name": "Eldritch Mind",
+      "source": "PHB'24",
+      "page": 155,
+      "featureType": [
+        "EI"
+      ],
+      "entries": [
+        "You have {@variantrule Advantage} on Constitution saving throws that you make to maintain {@status Concentration}."
+      ]
+    },
+    {
+      "name": "Eldritch Smite",
+      "source": "PHB'24",
+      "page": 155,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 5,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          },
+          "optionalfeature": [
+            "pact of the blade|xphb"
+          ]
+        }
+      ],
+      "entries": [
+        "Once per turn when you hit a creature with your pact weapon, you can expend a Pact Magic spell slot to deal an extra {@damage 1d8} Force damage to the target, plus another {@dice 1d8} per level of the spell slot, and you can give the target the {@condition Prone} condition if it is Huge or smaller."
+      ]
+    },
+    {
+      "name": "Eldritch Spear",
+      "source": "PHB'24",
+      "page": 155,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "spell": "Damaging cantrip",
+          "level": {
+            "level": 2,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "entries": [
+        "Choose one of your known Warlock cantrips that deals damage and has a range of 10+ feet. When you cast that spell, its range increases by a number of feet equal to 30 times your Warlock level.",
+        {
+          "type": "entries",
+          "entries": [
+            {
+              "type": "entries",
+              "name": "Repeatable",
+              "entries": [
+                "You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Empowered Spell",
+      "source": "PHB'24",
+      "page": 142,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point"
+      },
+      "entries": [
+        "When you roll damage for a spell, you can spend 1 Sorcery Point to reroll a number of the damage dice up to your Charisma modifier (minimum of one), and you must use the new rolls.",
+        "You can use Empowered Spell even if you've already used a different Metamagic option during the casting of the spell."
+      ]
+    },
+    {
+      "name": "Evasive Footwork",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "As a {@variantrule Bonus Action}, you can expend one Superiority Die and take the {@action Disengage} action. You also roll the die and add the number rolled to your AC until the start of your next turn."
+      ]
+    },
+    {
+      "name": "Extended Spell",
+      "source": "PHB'24",
+      "page": 142,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point",
+        "amount": 1
+      },
+      "entries": [
+        "When you cast a spell that has a duration of 1 minute or longer, you can spend 1 Sorcery Point to double its duration to a maximum duration of 24 hours.",
+        "If the affected spell requires {@status Concentration}, you have {@variantrule Advantage} on any saving throw you make to maintain that {@status Concentration}."
+      ]
+    },
+    {
+      "name": "Feinting Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "As a {@variantrule Bonus Action}, you can expend one Superiority Die to feint, choosing one creature within 5 feet of yourself as your target. You have {@variantrule Advantage} on your next attack roll against that target this turn. If that attack hits, add the Superiority Die to the attack's damage roll."
+      ]
+    },
+    {
+      "name": "Fiendish Vigor",
+      "source": "PHB'24",
+      "page": 155,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 2,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "false life|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "You can cast {@spell False Life} on yourself without expending a spell slot. When you cast the spell with this feature, you don't roll the die for the {@variantrule Temporary Hit Points}; you automatically get the highest number on the die."
+      ]
+    },
+    {
+      "name": "Gaze of Two Minds",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 5,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "entries": [
+        "You can use a {@variantrule Bonus Action} to touch a willing creature and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can take a {@variantrule Bonus Action} on subsequent turns to maintain this connection, extending the duration until the end of your next turn. The connection ends if you don't maintain it in this way.",
+        "While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you can cast spells as if you were in your space or the other creature's space if the two of you are within 60 feet of each other."
+      ]
+    },
+    {
+      "name": "Gift of the Depths",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 5,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": {
+              "daily": {
+                "1e": [
+                  "water breathing|xphb"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "entries": [
+        "You can breathe underwater, and you gain a {@variantrule Swim Speed} equal to your {@variantrule Speed}.",
+        "You can also cast {@spell Water Breathing} once without expending a spell slot. You regain the ability to cast it in this way again when you finish a {@variantrule Long Rest}."
+      ]
+    },
+    {
+      "name": "Gift of the Protectors",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 9,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          },
+          "optionalfeature": [
+            "pact of the tome|xphb"
+          ]
+        }
+      ],
+      "entries": [
+        "A new page appears in your Book of Shadows when you conjure it. With your permission, a creature can take an action to write its name on that page, which can contain a number of names equal to your Charisma modifier (minimum of one name).",
+        "When any creature whose name is on the page is reduced to 0 {@variantrule Hit Points} but not killed outright, the creature magically drops to 1 {@variantrule Hit Points|Hit Point} instead. Once this magic is triggered, no creature can benefit from it until you finish a {@variantrule Long Rest}.",
+        "As a {@action Magic} action, you can erase a name on the page by touching it."
+      ]
+    },
+    {
+      "name": "Goading Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you hit a creature with an attack roll, you can expend one Superiority Die to attempt to goad the target into attacking you. Add the Superiority Die to the attack's damage roll. The target must succeed on a Wisdom saving throw or have {@variantrule Disadvantage} on attack rolls against targets other than you until the end of your next turn."
+      ]
+    },
+    {
+      "name": "Heightened Spell",
+      "source": "PHB'24",
+      "page": 142,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point",
+        "amount": 2
+      },
+      "entries": [
+        "When you cast a spell that forces a creature to make a saving throw, you can spend 2 Sorcery Points to give one target of the spell {@variantrule Disadvantage} on saves against the spell."
+      ]
+    },
+    {
+      "name": "Investment of the Chain Master",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 5,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          },
+          "optionalfeature": [
+            "pact of the chain|xphb"
+          ]
+        }
+      ],
+      "entries": [
+        "When you cast {@spell Find Familiar}, you infuse the summoned familiar with a measure of your eldritch power, granting the creature the following benefits.",
+        {
+          "type": "entries",
+          "entries": [
+            {
+              "type": "entries",
+              "name": "Aerial or Aquatic",
+              "entries": [
+                "The familiar gains either a {@variantrule Fly Speed} or a {@variantrule Swim Speed} (your choice) of 40 feet."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Quick Attack",
+              "entries": [
+                "As a {@variantrule Bonus Action}, you can command the familiar to take the {@action Attack} action."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Necrotic or Radiant Damage",
+              "entries": [
+                "Whenever the familiar deals Bludgeoning, Piercing, or Slashing damage, you can make it deal Necrotic or Radiant damage instead."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Your Save DC",
+              "entries": [
+                "If the familiar forces a creature to make a saving throw, it uses your spell save DC."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Resistance",
+              "entries": [
+                "When the familiar takes damage, you can take a {@variantrule Reaction} to grant it {@variantrule Resistance} against that damage."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lessons of the First Ones",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 2,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "entries": [
+        "You have received knowledge from an elder entity of the multiverse, allowing you to gain one {@feat ?feat-category-filter=O|Origin feat} of your choice.",
+        {
+          "type": "entries",
+          "entries": [
+            {
+              "type": "entries",
+              "name": "Repeatable",
+              "entries": [
+                "You can gain this invocation more than once. Each time you do so, choose a different Origin feat."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lifedrinker",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 9,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          },
+          "optionalfeature": [
+            "pact of the blade|xphb"
+          ]
+        }
+      ],
+      "entries": [
+        "Once per turn when you hit a creature with your pact weapon, you can deal an extra {@damage 1d6} Necrotic, Psychic, or Radiant damage (your choice) to the creature, and you can expend one of your {@variantrule Hit Point Dice} to roll it and regain a number of {@variantrule Hit Points} equal to the roll plus your Constitution modifier (minimum of 1 {@variantrule Hit Points|Hit Point})."
+      ]
+    },
+    {
+      "name": "Lunging Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "As a {@variantrule Bonus Action}, you can expend one Superiority Die and take the {@action Dash} action. If you move at least 5 feet in a straight line immediately before hitting with a melee attack as part of the {@action Attack} action on this turn, you can add the Superiority Die to the attack's damage roll."
+      ]
+    },
+    {
+      "name": "Maneuvering Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you hit a creature with an attack roll, you can expend one Superiority Die to maneuver one of your comrades into another position. Add the Superiority Die roll to the attack's damage roll, and choose a willing creature who can see or hear you. That creature can use its {@variantrule Reaction} to move up to half its {@variantrule Speed} without provoking an {@action Opportunity Attack|Opportunity Attacks} from the target of your attack."
+      ]
+    },
+    {
+      "name": "Mask of Many Faces",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 2,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "disguise self|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "You can cast {@spell Disguise Self} without expending a spell slot."
+      ]
+    },
+    {
+      "name": "Master of Myriad Forms",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 5,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "alter self|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "You can cast {@spell Alter Self} without expending a spell slot."
+      ]
+    },
+    {
+      "name": "Menacing Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you hit a creature with an attack roll, you can expend one Superiority Die to attempt to frighten the target. Add the Superiority Die to the attack's damage roll. The target must succeed on a Wisdom saving throw or have the {@condition Frightened} condition until the end of your next turn."
+      ]
+    },
+    {
+      "name": "Misty Visions",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 2,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "silent image|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "You can cast {@spell Silent Image} without expending a spell slot."
+      ]
+    },
+    {
+      "name": "One with Shadows",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 5,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "invisibility|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "While you're in an area of {@variantrule Dim Light} or {@variantrule Darkness}, you can cast {@spell Invisibility} on yourself without expending a spell slot."
+      ]
+    },
+    {
+      "name": "Otherworldly Leap",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 2,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "jump|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "You can cast {@spell Jump} on yourself without expending a spell slot."
+      ]
+    },
+    {
+      "name": "Pact of the Blade",
+      "source": "PHB'24",
+      "page": 156,
+      "featureType": [
+        "EI"
+      ],
+      "entries": [
+        "As a {@variantrule Bonus Action}, you can conjure a pact weapon in your hand—a Simple or Martial Melee weapon of your choice with which you bond—or create a bond with a magic weapon you touch; you can't bond with a magic weapon if someone else is attuned to it or another Warlock is bonded with it. Until the bond ends, you have proficiency with the weapon, and you can use it as a {@variantrule Spellcasting Focus}.",
+        "Whenever you attack with the bonded weapon, you can use your Charisma modifier for the attack and damage rolls instead of using Strength or Dexterity; and you can cause the weapon to deal Necrotic, Psychic, or Radiant damage or its normal damage type.",
+        "Your bond with the weapon ends if you use this feature's {@variantrule Bonus Action} again, if the weapon is more than 5 feet away from you for 1 minute or more, or if you die. A conjured weapon disappears when the bond ends."
+      ]
+    },
+    {
+      "name": "Pact of the Chain",
+      "source": "PHB'24",
+      "page": 157,
+      "featureType": [
+        "EI"
+      ],
+      "additionalSpells": [
+        {
+          "ability": "cha",
+          "innate": {
+            "_": {
+              "ritual": [
+                "find familiar|xphb"
+              ]
+            }
+          }
+        }
+      ],
+      "entries": [
+        "You learn the {@spell Find Familiar} spell and can cast it as a {@action Magic} action without expending a spell slot.",
+        "When you cast the spell, you choose one of the normal forms for your familiar or one of the following special forms: {@creature Imp}, {@creature Pseudodragon}, {@creature Quasit}, {@creature Skeleton}, {@creature Slaad Tadpole}, {@creature Sphinx of Wonder}, {@creature Sprite}, or {@creature Venomous Snake} (see appendix B for the familiar's stat block).",
+        "Additionally, when you take the {@action Attack} action, you can forgo one of your own attacks to allow your familiar to make one attack of its own with its {@variantrule Reaction}."
+      ]
+    },
+    {
+      "name": "Pact of the Tome",
+      "source": "PHB'24",
+      "page": 157,
+      "featureType": [
+        "EI"
+      ],
+      "additionalSpells": [
+        {
+          "ability": "cha",
+          "known": {
+            "_": [
+              {
+                "choose": "level=0",
+                "count": 3
+              }
+            ]
+          },
+          "prepared": {
+            "_": [
+              {
+                "choose": "level=1|components & miscellaneous=ritual",
+                "count": 2
+              }
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "Stitching together strands of shadow, you conjure forth a book in your hand at the end of a {@variantrule Short Rest|Short} or {@variantrule Long Rest}. This Book of Shadows (you determine its appearance) contains eldritch magic that only you can access, granting you the benefits below. The book disappears if you conjure another book with this feature or if you die.",
+        {
+          "type": "entries",
+          "entries": [
+            {
+              "type": "entries",
+              "name": "Cantrips and Rituals",
+              "entries": [
+                "When the book appears, choose three cantrips, and choose two level 1 spells that have the {@variantrule Ritual} tag. The spells can be from any class's spell list, and they must be spells you don't already have prepared. While the book is on your person, you have the chosen spells prepared, and they function as Warlock spells for you."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Spellcasting Focus",
+              "entries": [
+                "You can use the book as a {@variantrule Spellcasting Focus}."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Parry",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When another creature damages you with a melee attack roll, you can take a {@variantrule Reaction} and expend one Superiority Die to reduce the damage by the number you roll on your Superiority Die plus your Strength or Dexterity modifier (your choice)."
+      ]
+    },
+    {
+      "name": "Precision Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you miss with an attack roll, you can expend one Superiority Die, roll that die, and add it to the attack roll, potentially causing the attack to hit."
+      ]
+    },
+    {
+      "name": "Pushing Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you hit a creature with an attack roll using a weapon or an {@variantrule Unarmed Strike}, you can expend one Superiority Die to attempt to drive the target back. Add the Superiority Die to the attack's damage roll. If the target is Large or smaller, it must succeed on a Strength saving throw or be pushed up to 15 feet directly away from you."
+      ]
+    },
+    {
+      "name": "Quickened Spell",
+      "source": "PHB'24",
+      "page": 142,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point",
+        "amount": 2
+      },
+      "entries": [
+        "When you cast a spell that has a casting time of an action, you can spend 2 Sorcery Points to change the casting time to a {@variantrule Bonus Action} for this casting. You can't modify a spell in this way if you've already cast a level 1+ spell on the current turn, nor can you cast a level 1+ spell on this turn after modifying a spell in this way."
+      ]
+    },
+    {
+      "name": "Rally",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "As a {@variantrule Bonus Action}, you can expend one Superiority Die to bolster the resolve of a companion. Choose an ally of yours within 30 feet of yourself who can see or hear you. That creature gains {@variantrule Temporary Hit Points} equal to the Superiority Die roll plus half your Fighter level (round down)."
+      ]
+    },
+    {
+      "name": "Repelling Blast",
+      "source": "PHB'24",
+      "page": 157,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "spell": "Damaging cantrip",
+          "level": {
+            "level": 2,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "entries": [
+        "Choose one of your known Warlock cantrips that requires an attack roll. When you hit a Large or smaller creature with that cantrip, you can push the creature up to 10 feet straight away from you.",
+        {
+          "type": "entries",
+          "entries": [
+            {
+              "type": "entries",
+              "name": "Repeatable",
+              "entries": [
+                "You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Riposte",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When a creature misses you with a melee attack roll, you can take a {@variantrule Reaction} and expend one Superiority Die to make a melee attack roll with a weapon or an {@variantrule Unarmed Strike} against the creature. If you hit, add the Superiority Die to the attack's damage."
+      ]
+    },
+    {
+      "name": "Seeking Spell",
+      "source": "PHB'24",
+      "page": 142,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point",
+        "amount": 1
+      },
+      "entries": [
+        "If you make an attack roll for a spell and miss, you can spend 1 Sorcery Point to reroll the {@dice d20}, and you must use the new roll.",
+        "You can use Seeking Spell even if you've already used a different Metamagic option during the casting of the spell."
+      ]
+    },
+    {
+      "name": "Subtle Spell",
+      "source": "PHB'24",
+      "page": 142,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point"
+      },
+      "entries": [
+        "When you cast a spell, you can spend 1 Sorcery Point to cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell."
+      ]
+    },
+    {
+      "name": "Sweeping Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you hit a creature with a melee attack roll using a weapon or an {@variantrule Unarmed Strike}, you can expend one Superiority Die to attempt to damage another creature. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your Superiority Die. The damage is of the same type dealt by the original attack."
+      ]
+    },
+    {
+      "name": "Tactical Assessment",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you make an Intelligence ({@skill History} or {@skill Investigation}) check or a Wisdom ({@skill Insight}) check, you can expend one Superiority Die and add that die to the ability check."
+      ]
+    },
+    {
+      "name": "Thirsting Blade",
+      "source": "PHB'24",
+      "page": 157,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 5,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          },
+          "optionalfeature": [
+            "pact of the blade|xphb"
+          ]
+        }
+      ],
+      "entries": [
+        "You gain the Extra Attack feature for your pact weapon only. With that feature, you can attack twice with the weapon instead of once when you take the {@action Attack} action on your turn."
+      ]
+    },
+    {
+      "name": "Transmuted Spell",
+      "source": "PHB'24",
+      "page": 142,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point"
+      },
+      "entries": [
+        "When you cast a spell that deals a type of damage from the following list, you can spend 1 Sorcery Point to change that damage type to one of the other listed types: Acid, Cold, Fire, Lightning, Poison, Thunder."
+      ]
+    },
+    {
+      "name": "Trip Attack",
+      "source": "PHB'24",
+      "page": 95,
+      "featureType": [
+        "MV"
+      ],
+      "consumes": {
+        "name": "Superiority Die"
+      },
+      "entries": [
+        "When you hit a creature with an attack roll using a weapon or an {@variantrule Unarmed Strike}, you can expend one Superiority Die and add the die to the attack's damage roll. If the target is Large or smaller, it must succeed on a Strength saving throw or have the {@condition Prone} condition."
+      ]
+    },
+    {
+      "name": "Twinned Spell",
+      "source": "PHB'24",
+      "page": 142,
+      "featureType": [
+        "MM"
+      ],
+      "consumes": {
+        "name": "Sorcery Point"
+      },
+      "entries": [
+        "When you cast a spell, such as {@spell Charm Person}, that can be cast with a higher-level spell slot to target an additional creature, you can spend 1 Sorcery Point to increase the spell's effective level by 1."
+      ]
+    },
+    {
+      "name": "Visions of Distant Realms",
+      "source": "PHB'24",
+      "page": 157,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 9,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "arcane eye|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "You can cast {@spell Arcane Eye} without expending a spell slot."
+      ]
+    },
+    {
+      "name": "Whispers of the Grave",
+      "source": "PHB'24",
+      "page": 157,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 7,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "additionalSpells": [
+        {
+          "innate": {
+            "_": [
+              "speak with dead|xphb"
+            ]
+          }
+        }
+      ],
+      "entries": [
+        "You can cast {@spell Speak with Dead} without expending a spell slot."
+      ]
+    },
+    {
+      "name": "Witch Sight",
+      "source": "PHB'24",
+      "page": 157,
+      "featureType": [
+        "EI"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "level": 15,
+            "class": {
+              "name": "Warlock",
+              "source": "PHB'24",
+              "visible": true
+            }
+          }
+        }
+      ],
+      "senses": [
+        {
+          "truesight": 30
+        }
+      ],
+      "entries": [
+        "You have {@sense Truesight} with a range of 30 feet."
+      ]
+    },
+	{
+		"name": "Unarmed Fighting",
+		"source": "PHB'24",
+		"page": 210,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"entries": [
+			"When you hit with your Unarmed Strike and deal damage, you can deal Bludgeoning damage equal to {@dice 1d6} plus your Strength modifier instead of the normal damage of an Unarmed Strike. If you aren't holding any weapons or a Shield when you make the attack roll, the {@dice d6} becomes a {@dice d8}.",
+			"At the start of each of your turns, you can deal {@damage 1d4} Bludgeoning damage to one creature {@condition Grappled} by you."
+		]
+	},
+	{
+		"name": "Two-Weapon Fighting",
+		"source": "PHB'24",
+		"page": 210,
+		"freeRules2024": true,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"entries": [
+			"When you make an extra attack as a result of using a weapon that has the Light property, you can add your ability modifier to the damage of that attack if you aren't already adding it to the damage."
+		],
+		"hasFluffImages": true
+	},
+	{
+		"name": "Thrown Weapon Fighting",
+		"source": "PHB'24",
+		"page": 210,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"entries": [
+			"When you hit with a ranged attack roll using a weapon that has the Thrown property, you gain a +2 bonus to the damage roll."
+		]
+	},
+	{
+		"name": "Protection",
+		"source": "PHB'24",
+		"page": 209,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"entries": [
+			"When a creature you can see attacks a target other than you that is within 5 feet of you, you can take a Reaction to interpose your Shield if you're holding one. You impose Disadvantage on the triggering attack roll and all other attack rolls against the target until the start of your next turn if you remain within 5 feet of the target."
+		]
+	},
+	{
+		"name": "Interception",
+		"source": "PHB'24",
+		"page": 209,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"entries": [
+			"When a creature you can see hits another creature within 5 feet of you with an attack roll, you can take a Reaction to reduce the damage dealt to the target by {@dice 1d10} plus your Proficiency Bonus. You must be holding a Shield or a Simple or Martial weapon to use this Reaction."
+		]
+	},
+	{
+		"name": "Great Weapon Fighting",
+		"source": "PHB'24",
+		"page": 209,
+		"freeRules2024": true,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"entries": [
+			"When you roll damage for an attack you make with a Melee weapon that you are holding with two hands, you can treat a roll of less than half the highest number on a die as half the highest number on that die. (eg. a d12 roll of 5 or lower as a 6, and a d6 roll of 2 or lower as a 3, etc.). The weapon must have the Two-Handed or Versatile property to gain this benefit."
+		]
+	},
+	{
+		"name": "Dueling",
+		"source": "PHB'24",
+		"page": 209,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"entries": [
+			"When you're holding a Melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon."
+		]
+	},
+	{
+		"name": "Defense",
+		"source": "PHB'24",
+		"page": 209,
+		"freeRules2024": true,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"entries": [
+			"While you're wearing Light, Medium, or Heavy armor, you gain a +1 bonus to Armor Class."
+		]
+	},
+	{
+		"name": "Blind Fighting",
+		"source": "PHB'24",
+		"page": 209,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"senses": [
+			{
+				"blindsight": 10
+			}
+		],
+		"entries": [
+			"You have Blindsight with a range of 10 feet."
+		]
+	},
+	{
+		"name": "Archery",
+		"source": "PHB'24",
+		"page": 209,
+		"freeRules2024": true,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Fighting Style feature"
+				]
+			}
+		],
+		"entries": [
+			"You gain a +2 bonus to attack rolls you make with Ranged weapons."
+		]
+	},
+	{
+		"name": "Blessed Warrior",
+		"source": "PHB'24",
+		"page": 110,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature":  [
+					"Paladin Fighting Style Feature"
+				]
+			}
+		],
+		"additionalSpells": [
+			{
+				"ability": "cha",
+				"known": {
+					"_": [
+						{
+							"choose": "level=0|class=cleric",
+							"count": 2
+						}
+					]
+				}
+			}
+		],
+		"entries": [
+			"You learn two {@spells ?spell-class-filter=cleric&spell-level-filter=0|Cleric spell list} of your choice. The chosen cantrips count as Paladin spells for you, and Charisma is your spellcasting ability for them. Whenever you gain a Paladin level, you can replace one of these cantrips with another Cleric cantrip.",
+			"{@spell Guidance} and {@spell Toll the} are recommended."
+		]
+	},
+	{
+		"name": "Druidic Warrior",
+		"source": "PHB'24",
+		"page": 120,
+		"category": "FS",
+		"featureType": [
+        	"FS"
+      	],
+		"prerequisite": [
+			{
+				"feature": [
+					"Ranger Fighting Style Feature"
+				]
+			}
+		],
+		"additionalSpells": [
+			{
+				"ability": "wis",
+				"known": {
+					"_": [
+						{
+							"choose": "level=0|class=druid",
+							"count": 2
+						}
+					]
+				}
+			}
+		],
+		"entries": [
+			"You learn two {@spells ?spell-class-filter=druid&spell-level-filter=0|Druid spell list} of your choice. The chosen cantrips count as Ranger spells for you, and Wisdom is your spellcasting ability for them. Whenever you gain a Ranger level, you can replace one of these cantrips with another Druid cantrip.",
+			"{@spell Guidance} and {@spell Thorn Whip} are recommended."
+		]
+	}
+]

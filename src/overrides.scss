@@ -1,10 +1,10 @@
 @use "sass:color";
 @import "./scss-theme/functions.scss";
-@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Cinzel+Decorative&family=Monoton&family=Iceberg&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Cinzel+Decorative&family=Monoton&family=Iceberg&family=UnifrakturCook:wght@700&display=swap');
 
 // TODO: shouldn't need this, but I'm seeing a tiny y-scroll bar show up sometimes
 body {
-  overflow-x:hidden;
+  //overflow-x:hidden;
   min-width: auto!important;
 }
 
@@ -13,7 +13,7 @@ body {
   @include themify($themes) {
     background: themed('background') no-repeat center center fixed;
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 98vw;
     background-color: themed('backgroundColor');
     color: themed('textColor');
 
@@ -30,7 +30,7 @@ body {
       background: themed('headerColor');
       background-clip: text;
       -webkit-background-clip: text;
-      color: transparent;
+      color: themed('headerColor');
     }
 
     h5 {
@@ -73,7 +73,7 @@ body {
       }
 
       .form-group {
-        color: themed("textColor");
+        color: themed("navText") !important;
       }
     }
 
@@ -87,6 +87,7 @@ body {
       color: themed("textColor");
       border-color: themed('textLinkColor');
       background-color: lighten(themed('cardColor'), 10%);
+      padding-bottom: 0;
     }
 
     .text-success {
@@ -156,11 +157,8 @@ body {
         background-color: themed("tableActiveColor")!important;
         color: themed("textLinkColor");
     }
-    .table td, .table th {
-        border-top: 1px solid rgba(0,0,0,.6);
-    }
-    .table-sm td, .table-sm th {
-        border-top: 1px solid themed("textColor");
+    .table-bordered th, .table-bordered td {
+      border: 1px solid themed("textColor") !important;
     }
     .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
         color: themed("textColor");

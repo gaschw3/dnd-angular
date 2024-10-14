@@ -46,7 +46,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   currEncounter: Array<EncounterMonster> = [];
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/beastiary.json")
+      return this.http.get("assets/data/2023/beastiary.json")
   }
 
   constructor(
@@ -149,7 +149,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   }
 
   complexCrFilter(): void {
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+    this.dtElement.dtInstance.then((dtInstance) => {
       dtInstance.draw();
     });
   }

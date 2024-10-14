@@ -16,11 +16,11 @@ import { ADTSettings } from 'angular-datatables/src/models/settings';
 })
 export class FeatsComponent implements OnInit {
 
-  feats: Feat[];
+  feats: Feat[] = [];
   currFeat: Feat;
 
   public getJSON(): Observable<any> {
-    return this.http.get("assets/data/featData.json")
+    return this.http.get("assets/data/2024/feats.json")
   }
 
   constructor(private http: HttpClient,
@@ -36,11 +36,13 @@ export class FeatsComponent implements OnInit {
   dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
+    let route = this.route.queryParams;
     this.dtOptions = {
       columnDefs: [
-        { width: '55%', targets: 0 },
-        { width: '35%', targets: 1 },
-        { width: '10%', targets: 2 },
+        { width: '50%', targets: 0 },
+        { width: '10%', targets: 1 },
+        { width: '30%', targets: 2 },
+        { width: '10%', targets: 3 },
       ],
       autoWidth: false,
       scrollX: true,
@@ -64,6 +66,11 @@ export class FeatsComponent implements OnInit {
       },
       initComplete: function (settings, json) {
         const api = this.api();
+        route.subscribe(params => {
+          for (var param in params) {
+            $(`#${param}`).val(params[param]); //fill in text boxes with query params
+          }
+        });
         api.columns().every(function () {
           const column = this;
           const $head = $(column.header());
@@ -80,7 +87,7 @@ export class FeatsComponent implements OnInit {
     };
 
     this.getJSON().subscribe(feats => {
-      this.feats = feats;
+      feats.forEach(feat => this.feats.push(new Feat(feat)));
       this.feats.sort(function (a, b) {
         return (a.name < b.name) ? -1 : 1;
       });

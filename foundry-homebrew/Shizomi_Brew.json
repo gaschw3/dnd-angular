@@ -1,0 +1,953 @@
+{
+	"siteVersion": "1.188.1",
+	"_meta": {
+		"sources": [
+			{
+				"json": "ShizomiBrew",
+				"abbreviation": "BREW-S-Monsters",
+				"full": "Shizomi Brew",
+				"url": "",
+				"authors": [
+					"Paranoid"
+				],
+				"convertedBy": [],
+				"color": "#ff8a8a"
+			}
+		],
+		"dateAdded": 1697489122,
+		"dateLastModified": 1697489122
+	},
+	"monster": [
+		{
+			"name": "Awakened Samurai",
+			"source": "ShizomiBrew",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"machine"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"{@item splint armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"formula": "9d8 + 18",
+				"average": 58
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 13,
+			"con": 14,
+			"int": 10,
+			"wis": 12,
+			"cha": 10,
+			"save": {
+				"wis": "+3"
+			},
+			"skill": {
+				"athletics": "+5",
+				"insight": "+3",
+				"perception": "+3",
+				"persuasion": "+2"
+			},
+			"passive": 13,
+			"languages": [
+				"Machine",
+				"common"
+			],
+			"cr": "3",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The samurai makes two Katana attacks. If it has a wakizashi drawn, it can also make a Wakizashi attack."
+					]
+				},
+				{
+					"name": "Katana",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 1d8 + 6}) slashing damage, or 11 ({@damage 1d10 + 6}) slashing damage if used with both hands."
+					]
+				},
+				{
+					"name": "Wakizashi",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d6 + 6}) slashing damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Fighting Spirit (3/day)",
+					"entries": [
+						"The samurai gains 5 temporary hit points and gains advantage on all weapon attack rolls until the end of its turn."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			]
+		},
+		{
+			"name": "Awakened Theorist",
+			"source": "ShizomiBrew",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"machine"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "11d8",
+				"average": 49
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 9,
+			"dex": 14,
+			"con": 11,
+			"int": 17,
+			"wis": 12,
+			"cha": 11,
+			"skill": {
+				"perception": "+4",
+				"medicine": "+7"
+			},
+			"passive": 14,
+			"languages": [
+				"common"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Cunning Action",
+					"entries": [
+						"On each of its turns, the theorist can use a bonus action to take the Dash, Disengage, or Hide action."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The theorist makes three necrotic burst attacks."
+					]
+				},
+				{
+					"name": "Necrotic Medi-Burst",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 120 ft., one target. {@h}21 ({@damage 3d10 + 5}) necrotic damage. A creature reduced to 0 hit points by this damage becomes stable."
+					]
+				},
+				{
+					"name": "Extract Organ",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one large or smaller {@condition incapacitated} target. {@h} The target rolls all of their hit dice and takes piercing damage equal to the total. If the creature is {@condition unconscious}, that amount of damage is doubled."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Augment",
+					"entries": [
+						"The theorist pulls energy from a creature and redirects it towards its allies. After the theorist hits a creature that isn't a Construct or Undead with its medi-burst, it chooses an ally within 60 feet of it to gain one of the following benefits:",
+						"● The ally regains one expended spell slot of 3rd level or lower.",
+						"● The ally regains one use of a trait that can be used 2/day or more.",
+						"● One of the ally's traits with Recharge 6 or Recharge 5-6 immediately recharges."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"N"
+			],
+			"miscTags": [
+				"MW",
+				"RW"
+			]
+		},
+		{
+			"name": "Chrome Prowler",
+			"source": "ShizomiBrew",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "construct",
+				"tags": [
+					"machine"
+				]
+			},
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"formula": "3d8",
+				"average": 13
+			},
+			"speed": {
+				"walk": 50,
+				"climb": 40
+			},
+			"str": 10,
+			"dex": 10,
+			"con": 10,
+			"int": 10,
+			"wis": 10,
+			"cha": 10,
+			"save": {
+				"str": "+14",
+				"dex": "+15",
+				"con": "+10",
+				"int": "+10",
+				"wis": "+14",
+				"cha": "+7"
+			},
+			"skill": {
+				"perception": "+4",
+				"sleight of hand": "+6",
+				"stealth": "+6"
+			},
+			"passive": 14,
+			"immune": [
+				{
+					"immune": [
+						"poison"
+					]
+				},
+				{
+					"immune": [
+						"psychic"
+					]
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"petrified",
+				"poisoned"
+			],
+			"languages": [
+				"understands common and machine",
+				"but can't speak"
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Keen Senses",
+					"entries": [
+						"The chrome prowler has advantage on Wisdom ({@skill Perception}) checks that rely on sight, hearing or smell."
+					]
+				},
+				{
+					"name": "Pounce (Panther)",
+					"entries": [
+						"If the chrome prowler moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 12} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the chrome prowler can make one bite attack against it as a bonus action."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Bite (Machine)",
+					"entries": [
+						"{@atk mw} {@hit +4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6+2}) piercing damage. If the target is a creature, it must succeed on a {@dc 10} saving throw against corruption or become {@condition poisoned} until the corruption is cured. Every 24 hours, the creature must repeat the saving throw, reducing its hit point maximum by 5 ({@dice 1d10}) on a failure. This reduction lasts until the corruption is cured. The creature dies while corrupted, it rises again as a machine."
+					]
+				},
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6+2}) damage."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"traitTags": [
+				"Keen Senses",
+				"Pounce"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"poisoned",
+				"prone"
+			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"fluff": {
+				"entries": [
+					"Chrome Prowlers are compleated cats, likely taken from the streets of Shizomi surface. These cunning constructs patrol the laboratories of the Surgical Bay, and wait to alert their masters."
+				]
+			}
+		},
+		{
+			"name": "Elsedrive Awakened",
+			"source": "ShizomiBrew",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"machine"
+				]
+			},
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "12d8 + 24",
+				"average": 78
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 60,
+					"condition": "when concentrating on <i>fly</i>"
+				}
+			},
+			"str": 10,
+			"dex": 18,
+			"con": 15,
+			"int": 17,
+			"wis": 11,
+			"cha": 6,
+			"skill": {
+				"acrobatics": "+6",
+				"perception": "+2"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"resist": [
+				"psychic"
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened",
+				"poisoned"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"will": [
+						"{@spell fly}"
+					]
+				}
+			],
+			"trait": [
+				{
+					"name": "Unusual Nature",
+					"entries": [
+						"The awakened doesn't require air, food, drink, or sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The awakened makes two Strike attacks."
+					]
+				},
+				{
+					"name": "Strike",
+					"entries": [
+						"{@atk mw} {@hit 2} to hit, reach 15 ft., one target. {@h}13 ({@damage 2d8+4}) damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Unusual Nature"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			]
+		},
+		{
+			"name": "Eye of Myojin",
+			"source": "ShizomiBrew",
+			"size": [
+				"S"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"formula": "3d4 + 6",
+				"average": 13
+			},
+			"speed": {
+				"fly": {
+					"number": 30,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 3,
+			"dex": 16,
+			"con": 14,
+			"int": 10,
+			"wis": 17,
+			"cha": 7,
+			"save": {
+				"wis": "+5"
+			},
+			"skill": {
+				"perception": "+5",
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 15,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned",
+				"prone"
+			],
+			"languages": [
+				"understands common and machine but can't speak"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "False Appearance (Cloaker)",
+					"entries": [
+						"If the eye is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the eye move or act, that creature must succeed on a {@dc 15} Wisdom (Perception) check to discern that the eye is animate."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Eye Ray",
+					"entries": [
+						"The eye shoots a beam of light at a target it can see within 60 feet of it. The target make a {@dc 13} Dexterity saving throw, taking 13 ({@damage 3d8}) radiant damage on a failed save, or half as much damage on a successful one."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Detect",
+					"entries": [
+						"The eye makes a Wisdom (Perception) check."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"traitTags": [
+				"False Appearance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"R"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"fluff": {
+				"entries": [
+					"Myojin is the purity overseer, a sective within the Machine Cult. His watchers and eyes are metallic constructs that he uses to protect the Great Work from outsiders. They keep the Cult informed of all the goings-on throughout the area."
+				]
+			}
+		},
+		{
+			"name": "Myojin, High Anatomist",
+			"shortName": "Myojin",
+			"isNamedCreature": true,
+			"source": "ShizomiBrew",
+			"size": [
+				"L"
+			],
+			"type": {
+				"type": "Humanoid Monstrosity",
+				"tags": [
+					"machine"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "20d10 + 80",
+				"average": 190
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 13,
+			"con": 18,
+			"int": 20,
+			"wis": 12,
+			"cha": 13,
+			"save": {
+				"con": "+9",
+				"int": "+10",
+				"cha": "+6"
+			},
+			"skill": {
+				"persuasion": "+6",
+				"investigation": "+10",
+				"perception": "+6",
+				"medicine": "+11",
+				"arcana": "+10"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 16,
+			"resist": [
+				{
+					"resist": [
+						"psychic"
+					]
+				},
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from non-magical attacks",
+					"cond": true
+				}
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
+			"languages": [
+				"Common",
+				"Machine",
+				"Elven",
+				"Dwarven"
+			],
+			"cr": "16",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"will": [
+						"{@spell detect magic}",
+						"{@spell detect thoughts}",
+						"{@spell identify}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell dispel magic}",
+							"{@spell hold person}",
+							"{@spell mislead}"
+						],
+						"1e": [
+							"{@spell dominate person}",
+							"{@spell foresight}",
+							"{@spell hold monster}"
+						]
+					}
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Myojin makes three attacks with his claws."
+					]
+				},
+				{
+					"name": "Claws",
+					"entries": [
+						"{@atk mw} {@hit +8} to hit, reach 5 ft., one target. {@h}17 ({@damage 4d6 + 3}) slashing damage. The claws are coated in strange oil."
+					]
+				},
+				{
+					"name": "Force of Command",
+					"entries": [
+						"Each creature of Myojin's choice that is within 120 feet of him and can hear him must succeed on a {@dc 20} Wisdom saving throw or become {@condition charmed} by him for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the Command for the next 24 hours."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Counterspell",
+					"entries": [
+						"Myojin casts <i>counterspell</i>, using Intelligence as the spellcasting ability (+5)."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Claw",
+					"entries": [
+						"Myojin makes one attack with his Claws."
+					]
+				},
+				{
+					"name": "Spellcasting (Costs 2 Actions)",
+					"entries": [
+						"Myojin uses Spellcasting."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"S"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"charmed"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			]
+		},
+		{
+			"name": "Shining Seer",
+			"source": "ShizomiBrew",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"machine"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "8d8 + 16",
+				"average": 52
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 8,
+			"dex": 12,
+			"con": 14,
+			"int": 16,
+			"wis": 15,
+			"cha": 10,
+			"save": {
+				"int": "+5",
+				"wis": "+4"
+			},
+			"skill": {
+				"arcana": "+5",
+				"insight": "+4",
+				"perception": "+4"
+			},
+			"passive": 14,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from non-magical attacks",
+					"cond": true
+				}
+			],
+			"languages": [
+				"Common",
+				"Machine"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"will": [
+						"{@spell guidance}",
+						"{@spell message}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell bless}",
+							"{@spell detect thoughts}"
+						],
+						"1e": [
+							"{@spell augury}",
+							"{@spell locate object}",
+							"{@spell mind spike|XGE}"
+						]
+					}
+				}
+			],
+			"action": [
+				{
+					"name": "Eldritch Touch",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) force damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Foresight",
+					"entries": [
+						"When the seer or a creature it can see makes an attack roll, a saving throw, or an ability check, the seer can cause the roll to be made with advantage or disadvantage."
+					]
+				}
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"fluff": {
+				"entries": [
+					"Shining Seers are former Shizomi citizens who have been compleated with a single purpose: to divine. They use a combination of strange oil and jade power to peer into the future, attempting to give the Cult an edge."
+				]
+			}
+		},
+		{
+			"name": "Watchful Nomura",
+			"source": "ShizomiBrew",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "beast",
+				"tags": [
+					"machine"
+				]
+			},
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"formula": "10d8 + 10",
+				"average": 55
+			},
+			"speed": {
+				"walk": 5,
+				"fly": {
+					"number": 30,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 15,
+			"dex": 14,
+			"con": 13,
+			"int": 3,
+			"wis": 17,
+			"cha": 6,
+			"skill": {
+				"perception": "+7",
+				"stealth": "+6"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 17,
+			"cr": "1",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"daily": {
+						"2": [
+							"{@spell eyebite}"
+						]
+					}
+				}
+			],
+			"trait": [
+				{
+					"name": "Vigilant",
+					"entries": [
+						"The nomura can't be surprised while it isn't {@condition incapacitated}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The nomura makes two attacks: one with its Tentacles and one with its Bite."
+					]
+				},
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d4 + 4}) slashing damage."
+					]
+				},
+				{
+					"name": "Tentacle",
+					"entries": [
+						"{@atk mw} {@hit +4} to hit, reach 30 ft., one target. {@h}7 ({@damage 1d10+ 2}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 12}).  If the target is Medium or smaller, it is also {@condition restrained} until this grapple ends. While grappling the target, the nomura has advantage on attack rolls against it and can't use this attack against other targets."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			],
+			"damageTags": [
+				"B",
+				"S"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			]
+		}
+	]
+}

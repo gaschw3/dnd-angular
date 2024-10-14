@@ -8,28 +8,14 @@
               <h1 [class]="'color-primary mb-1' | lowercase">{{feat.name}}</h1>
             </div>
             <div class="col-4">
-              <h3 [class]="'pull-right color-'+feat.source.replace('+','').replace('-','') | lowercase">{{feat.source}}</h3>
+              <h3 [class]="'pull-right color-'+feat.source | lowercase">{{feat.source}}</h3>
             </div>
-            <div *ngIf="feat.prerequisite" class="col-12">
-              <p class="m-0 mb-2"><strong>Prerequisite</strong> {{feat.prerequisite}}</p>
+            <div class="col-12">
+              <p class="m-0 mb-2"><em>{{featCategory[feat.category]}} feat <span *ngIf="feat.prerequisite" > (Prerequisite: <span [innerHtml]="feat.prerequisite | linkmaker"></span>)</span></em></p>
             </div>
           </div>
           <div class="col">
-            <p class="pb-1 m-0">{{feat.text.description}}</p>
-          </div>
-          <ng-container *ngIf="feat.text.benefits">
-            <entry-renderer [list]=feat.text.benefits [parent]="''"></entry-renderer>
-          </ng-container>
-          <div *ngIf="feat.text.extraDescription" class="col">
-            <p class="pb-1 m-0">{{feat.text.extraDescription}}</p>
-          </div>
-          <ul *ngIf="feat.text.extras">
-            <li *ngFor="let text of feat.text.extras">
-              {{text}}
-            </li>
-          </ul>
-          <div *ngIf="feat.text.multipleSelect" class="col">
-            <p class="pb-1 m-0">{{feat.text.multipleSelect}}</p>
+            <entry-renderer [list]=feat.text parent=''></entry-renderer>
           </div>
         </div>
       </div>

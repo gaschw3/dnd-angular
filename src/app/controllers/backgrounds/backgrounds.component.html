@@ -5,42 +5,49 @@
     <table id="tbl-backgrounds" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-condensed">
       <thead>
         <tr>
-          <th class="background-filter" colspan="1">
+          <th class="bg-filter" colspan="1">
             <div class="input-group input-group-sm">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-search"></i></span>
               </div>
-              <input id="background-name-filter" class="form-control" type="search" placeholder="Filter Background">
+              <input id="bg-name-filter" class="form-control" type="search" placeholder="Filter Background">
             </div>
           </th>
-          <th class="background-filter" colspan="1">
+          <th class="bg-filter" colspan="1">
             <div class="input-group input-group-sm">
-              <input id="background-prof-filter" class="form-control" type="search" placeholder="Skills">
+              <input id="bg-skill-filter" class="form-control" type="search" placeholder="Skills">
             </div>
           </th>
-          <th class="background-filter" colspan="1">
+          <th class="bg-filter" colspan="1">
             <div class="input-group input-group-sm">
-              <input id="background-prof-filter" class="form-control" type="search" placeholder="Other Proficiencies">
+              <input id="bg-tool-filter" class="form-control" type="search" placeholder="Tools">
             </div>
           </th>
-          <th class="background-filter" colspan="1">
+          <th class="bg-filter" colspan="1">
             <div class="input-group input-group-sm">
-              <input id="background-source-filter" class="form-control" type="search" placeholder="Source">
+              <input id="bg-feat-filter" class="form-control" type="search" placeholder="Feats">
+            </div>
+          </th>
+          <th class="bg-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="bg-source-filter" class="form-control" type="search" placeholder="Source">
             </div>
           </th>
         </tr>
         <tr>
           <th>Name</th>
-          <th>Skill Proficiencies</th>
-          <th>Other Proficiencies</th>
+          <th>Skills</th>
+          <th>Tool</th>
+          <th>Feat</th>
           <th class="text-right">Source</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let background of backgrounds" (click)="setCurrBackground(background)" [class.table-active]="currBackground?.id == background.id">
           <td>{{background.name}}</td>
-          <td>{{background.skillProfs}}</td>
-          <td>{{background.otherProfs}}</td>
+          <td>{{background.skill}}</td>
+          <td [innerHtml]="background.tool | linkmaker"></td>
+          <td [innerHtml]="background.feat | linkmaker"></td>
           <td [class]="'text-right color-'+background.source | lowercase" class="text-right">{{background.source}}</td>
         </tr>
       </tbody>

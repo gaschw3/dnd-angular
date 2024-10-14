@@ -26,6 +26,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.navbar').textContent).toContain('EotCC 5e');
+    expect(compiled.querySelector('.navbar').textContent).toContain('Poop Deck 5e');
   });
 });

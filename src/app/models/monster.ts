@@ -31,6 +31,7 @@ export interface Monster {
   legendary: Action[];
   source: string;
   hasToken: boolean;
+  token: any;
 }
 
 interface Action {

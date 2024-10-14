@@ -1,0 +1,791 @@
+{
+	"siteVersion": "1.206.1",
+	"_meta": {
+		"sources": [
+			{
+				"json": "ConcordatForged",
+				"abbreviation": "FORGE",
+				"full": "Concordat Forged",
+				"version": "1.0",
+				"authors": [
+					"Paranoid"
+				],
+				"color": "5c0000"
+			}
+		],
+		"dateAdded": 1719522033,
+		"dateLastModified": 1719522033
+	},
+	"monster": [
+		{
+			"name": "Forged Beast",
+			"source": "ConcordatForged",
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"L",
+				"G",
+				"NY",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "4d8 + 8",
+				"average": 26
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 16,
+			"con": 14,
+			"int": 2,
+			"wis": 10,
+			"cha": 1,
+			"skill": {
+				"athletics": "+5"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 10,
+			"resist": [
+				"fire"
+			],
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"vulnerable": [
+				"radiant"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"paralyzed",
+				"poisoned"
+			],
+			"languages": [
+				"Any language it knew in life"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Forgeheart",
+					"entries": [
+						"Forged are cannot move or take actions while they have no charge counters. At the beginning of each turn, Forged gain one charge counter."
+					]
+				},
+				{
+					"name": "Haywire",
+					"entries": [
+						"Whenever a Forged takes 10 or more bludgeoning damage, or 15 or more radiant damage from a single source, it takes an 1 additional lightning damage for each charge counter it has, then loses 1 charge counter."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Slam",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 15 ft., one target. {@h}10 ({@damage 1d8 + 6}) bludgeoning damage."
+					]
+				},
+				{
+					"name": "Fire Wire",
+					"entries": [
+						"You create a 30 foot long line of fire on a solid surface within range. When the wall appears, each creature within its area must make a Dexterity saving throw. On a failed save, a creature takes 9 ({@damage 2d8}), or half as much on a successful save. The line deals the same damage to an creature crossing the wire or ending its turn on the wire."
+					]
+				},
+				{
+					"name": "Flame Whip",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 30 ft., one target. {@h}7 ({@damage 2d6}) fire damage and the target is pulled 10 feet closer to the beast."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Magic Cycling",
+					"entries": [
+						"When the sentry is targeted with a spell, it may gain one charge counter that lasts for a minute."
+					]
+				}
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"LF"
+			],
+			"damageTags": [
+				"B",
+				"F"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RCH",
+				"RW"
+			]
+		},
+		{
+			"name": "Forged Breaker",
+			"source": "ConcordatForged",
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"L",
+				"G",
+				"NY",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "8d8 + 24",
+				"average": 60
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18,
+			"dex": 11,
+			"con": 16,
+			"int": 2,
+			"wis": 13,
+			"cha": 1,
+			"skill": {
+				"athletics": "+6",
+				"intimidation": "-3"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 11,
+			"resist": [
+				"fire"
+			],
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"vulnerable": [
+				"radiant"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"paralyzed",
+				"poisoned"
+			],
+			"languages": [
+				"Any language it knew in life"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Forgeheart",
+					"entries": [
+						"Forged are cannot move or take actions while they have no charge counters. At the beginning of each turn, Forged gain one charge counter."
+					]
+				},
+				{
+					"name": "Haywire",
+					"entries": [
+						"Whenever a Forged takes 10 or more bludgeoning damage, or 15 or more radiant damage from a single source, it takes an 1 additional lightning damage for each charge counter it has, then loses 1 charge counter."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Shield Slam",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 1d8 + 7}) bludgeoning damage plus 3 ({@damage 1d6}) lightning damage for each charge counter the Forged has."
+					]
+				},
+				{
+					"name": "Submission Burst (Costs 2 charge counters)",
+					"entries": [
+						"Each creature within 5 feet must succeed on a {@dc 13} Constitution saveing throw or take 14 ({@damage 4d6}) fire damage and be dazed, or take half as much damage on a success. A creature that fails this save by 5 or more is also knocked {@condition prone}."
+					]
+				},
+				{
+					"name": "Magnetize",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 15 ft., one target. {@h}11 ({@damage 1d8 + 7}) fire damage and the target becomes sheathed in booming energy until the start of your next turn. If the target willingly moves 5 feet or more before then, the target takes 9 ({@damage 2d8}) thunder damage, and the spell ends. This attack has advantage on creatures wearing metal armor or using a nonmagical metal weapon."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Magic Cycling",
+					"entries": [
+						"When the sentry is targeted with a spell, it may gain one charge counter that lasts for a minute."
+					]
+				}
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"LF"
+			],
+			"damageTags": [
+				"B",
+				"F",
+				"L",
+				"T"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			]
+		},
+		{
+			"name": "Forged Cannonade",
+			"source": "ConcordatForged",
+			"size": [
+				"L"
+			],
+			"type": "construct",
+			"alignment": [
+				"L",
+				"G",
+				"NY",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "9d8 + 45",
+				"average": 85
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 21,
+			"dex": 15,
+			"con": 20,
+			"int": 2,
+			"wis": 14,
+			"cha": 1,
+			"skill": {
+				"athletics": "+8",
+				"arcana": "+2"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 12,
+			"resist": [
+				"fire"
+			],
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"vulnerable": [
+				"radiant"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"paralyzed",
+				"poisoned"
+			],
+			"languages": [
+				"Any language it knew in life"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"daily": {
+						"3e": [
+							"{@spell erupting earth|XGE}",
+							"{@spell glyph of warding}",
+							"{@spell stinking cloud}"
+						],
+						"1e": [
+							"{@spell flame strike} (costs 5 charge counters)",
+							"{@spell fire storm} (costs 9 charge counters)"
+						]
+					}
+				}
+			],
+			"trait": [
+				{
+					"name": "Forgeheart",
+					"entries": [
+						"Forged are cannot move or take actions while they have no charge counters. At the beginning of each turn, Forged gain one charge counter."
+					]
+				},
+				{
+					"name": "Haywire",
+					"entries": [
+						"Whenever a Forged takes 10 or more bludgeoning damage, or 15 or more radiant damage from a single source, it takes an 1 additional lightning damage for each charge counter it has, then loses 1 charge counter."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Magebreaker Fist",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 10 ft., one target. {@h}14 ({@damage 2d8 + 5}) bludgeoning damage and the Forged gains a number of charge counters equal to the highest level unexpended spell slot of the target."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Overcharge (Costs 5 charge counters)",
+					"entries": [
+						"The Forged can take an additional action."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Magic Cycling",
+					"entries": [
+						"When the sentry is targeted with a spell, it may gain one charge counter that lasts for a minute."
+					]
+				}
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"LF"
+			],
+			"damageTags": [
+				"B"
+			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"L",
+				"R",
+				"T"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			]
+		},
+		{
+			"name": "Forged Mage",
+			"source": "ConcordatForged",
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"L",
+				"G",
+				"NY",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "6d8 + 18",
+				"average": 45
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 17,
+			"dex": 11,
+			"con": 16,
+			"int": 2,
+			"wis": 13,
+			"cha": 1,
+			"skill": {
+				"arcana": "-2"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 11,
+			"resist": [
+				"fire"
+			],
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"vulnerable": [
+				"radiant"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"paralyzed",
+				"poisoned"
+			],
+			"languages": [
+				"Any language it knew in life"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"daily": {
+						"2e": [
+							"{@spell call lightning}",
+							"{@spell heat metal}"
+						]
+					},
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell fire bolt}",
+								"{@spell shocking grasp}"
+							]
+						}
+					}
+				}
+			],
+			"trait": [
+				{
+					"name": "Forgeheart",
+					"entries": [
+						"Forged are cannot move or take actions while they have no charge counters. At the beginning of each turn, Forged gain one charge counter."
+					]
+				},
+				{
+					"name": "Haywire",
+					"entries": [
+						"Whenever a Forged takes 10 or more bludgeoning damage, or 15 or more radiant damage from a single source, it takes an 1 additional lightning damage for each charge counter it has, then loses 1 charge counter."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Forged Link",
+					"entries": [
+						"Up to 5 forged within range are linked together. While within 100 feet of the mage, those Forged gain a +1 bonus to saving throws and damage they take is divided by the number of linked creatures. Each time a linked creatures takes damage, other creatures linked to it take the same amount of damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Magic Cycling",
+					"entries": [
+						"When the sentry is targeted with a spell, it may gain one charge counter that lasts for a minute."
+					]
+				}
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"LF"
+			],
+			"damageTagsSpell": [
+				"F",
+				"L"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			]
+		},
+		{
+			"name": "Forged Sharpshooter",
+			"source": "ConcordatForged",
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"L",
+				"G",
+				"NY",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "3d8 + 9",
+				"average": 22
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 16,
+			"con": 17,
+			"int": 2,
+			"wis": 14,
+			"cha": 1,
+			"skill": {
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 12,
+			"resist": [
+				"fire"
+			],
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"vulnerable": [
+				"radiant"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"paralyzed",
+				"poisoned"
+			],
+			"languages": [
+				"Any language it knew in life"
+			],
+			"cr": "2",
+			"trait": [
+				{
+					"name": "Forgeheart",
+					"entries": [
+						"Forged are cannot move or take actions while they have no charge counters. At the beginning of each turn, Forged gain one charge counter."
+					]
+				},
+				{
+					"name": "Haywire",
+					"entries": [
+						"Whenever a Forged takes 10 or more bludgeoning damage, or 15 or more radiant damage from a single source, it takes an 1 additional lightning damage for each charge counter it has, then loses 1 charge counter."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Aim (Costs 1 charge counter)",
+					"entries": [
+						"The Forged's speed drops to 0 until the start of its next turn and it marks a target within 300 feet. If the marked creature is targetable at the beginning of the sharpshooter's next turn they can use their action to make an 'Aimed Searing Lance' action targeting that creature. The attack is made with advantage."
+					]
+				},
+				{
+					"name": "Aimed Searing Lance",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 100/300 ft., one target. {@h}37 ({@damage 3d8 + 6d6 + 3}) fire damage. This attack can target on additional target directly behind the first target for each charge counter on the Forged."
+					]
+				},
+				{
+					"name": "Searing Lance",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 60/120 ft., one target. {@h}12 ({@damage 2d8 + 3}) fire damage."
+					]
+				},
+				{
+					"name": "Cutting Sweep (Costs 3 charge counters)",
+					"entries": [
+						"The Forged sweeps its cutting beams in a 60 foot cone, forcing each creature in the area to succeed on a {@dc 14} Dexterity saving throw or take 13 ({@damage 3d8}) radiant damage, or take half as much damage on a success.",
+						"A creature that fails this save by 5 or more has one nonmagical item it is wielding bisected, destroying it."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Magic Cycling",
+					"entries": [
+						"When the sentry is targeted with a spell, it may gain one charge counter that lasts for a minute."
+					]
+				},
+				{
+					"name": "Close Enough",
+					"entries": [
+						"If the sharpshooter missed with a ranged weapon attack that had advantage, that attack deals 1/4 damage to the intended target."
+					]
+				}
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"LF"
+			],
+			"damageTags": [
+				"F",
+				"R"
+			],
+			"miscTags": [
+				"MLW",
+				"RW"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			]
+		},
+		{
+			"name": "Forged Soldier",
+			"source": "ConcordatForged",
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"L",
+				"G",
+				"NY",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "3d8 + 6",
+				"average": 19
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 11,
+			"con": 15,
+			"int": 2,
+			"wis": 16,
+			"cha": 1,
+			"skill": {
+				"perception": "+5",
+				"athletics": "+4"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 15,
+			"resist": [
+				"fire"
+			],
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"vulnerable": [
+				"radiant"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"paralyzed",
+				"poisoned"
+			],
+			"languages": [
+				"Any language it knew in life"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Forgeheart",
+					"entries": [
+						"Forged are cannot move or take actions while they have no charge counters. At the beginning of each turn, Forged gain one charge counter."
+					]
+				},
+				{
+					"name": "Haywire",
+					"entries": [
+						"Whenever a Forged takes 10 or more bludgeoning damage, or 15 or more radiant damage from a single source, it takes an 1 additional lightning damage for each charge counter it has, then loses 1 charge counter."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Detaining Grasp",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) bludgeoning damage and the target is {@condition grappled}. A creature {@condition grappled} this way by 3 or more soldiers is {@condition restrained}."
+					]
+				},
+				{
+					"name": "Overcharge (Costs 2 charge counters)",
+					"entries": [
+						"A target the Forged is grappling must succeed on a {@dc 12} Constitution saving throw or take  10 ({@damage 3d6}) fire damage"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Magic Cycling",
+					"entries": [
+						"When the sentry is targeted with a spell, it may gain one charge counter that lasts for a minute."
+					]
+				}
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"LF"
+			],
+			"damageTags": [
+				"B",
+				"F"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"savingThrowForced": [
+				"constitution"
+			]
+		}
+	]
+}

@@ -23,7 +23,7 @@ export class MonsterHelperService {
         let split = cr.split('/');
         return (parseInt(split[0]) / parseInt(split[1]));
       } else {
-        //this is an error state and something bad has ahappened in the JSON
+        //this is an error state and something bad has happened in the JSON
         console.log("Gound problem CR, returning -1: " + cr);
         return -1;
       }
@@ -57,6 +57,8 @@ export class MonsterHelperService {
       return `${type.type} (${type.tags[0]})`;
     } else if (type.swarmSize) {
       return `swarm of ${sizeMap[type.swarmSize]} ${type.type}`;
+    } else if (type.type && type.type.choose) {
+      return type.type.choose.join(", ").replace(/, ([^,]*)$/, ' or $1');
     } else {
       return type;
     }

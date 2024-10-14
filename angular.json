@@ -27,11 +27,13 @@
 							"src/assets",
 							"src/manifest.json",
 							"src/icon_x192.png",
-							"src/icon_x512.png"
+							"src/icon_x512.png",
+							"src/royal-seal.png"
 						],
 						"styles": [
 							"src/styles.scss",
 							"src/overrides.scss",
+							"src/assets/fonts/fonts.css",
 							"node_modules/bootstrap/dist/css/bootstrap.min.css",
 							"node_modules/datatables.net-dt/css/jquery.dataTables.css",
 							"node_modules/leaflet/dist/leaflet.css"
@@ -82,19 +84,19 @@
 				},
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
-					"options": {
-						"browserTarget": "dnd-angular:build"
+          "options": {
+            "buildTarget": "dnd-angular:build"
 					},
 					"configurations": {
-						"production": {
-							"browserTarget": "dnd-angular:build:production"
+            "production": {
+              "buildTarget": "dnd-angular:build:production"
 						}
 					}
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
-					"options": {
-						"browserTarget": "dnd-angular:build"
+          "options": {
+            "buildTarget": "dnd-angular:build"
 					}
 				},
 				"test": {
@@ -110,6 +112,7 @@
 						"scripts": [],
 						"assets": [
 							"src/favicon.ico",
+							"src/royal-seal.png",
 							"src/assets"
 						]
 					}

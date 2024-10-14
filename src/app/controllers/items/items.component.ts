@@ -9,6 +9,7 @@ import { Item } from 'src/app/models/item';
 import { ItemComponent } from './item/item.component';
 import { typeTable } from '../../shared/itemTypes';
 import { ADTSettings } from 'angular-datatables/src/models/settings';
+import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
 
 @Component({
   selector: 'app-items',
@@ -26,8 +27,10 @@ export class ItemsComponent implements OnInit {
   currItem: Item;
   selected: string;
 
+  idPipe = new IdToNamePipe;
+
   public getJSON(): Observable<any> {
-    return this.http.get("assets/data/items.json")
+    return this.http.get("assets/data/2024/items.json")
   }
 
   constructor(private http: HttpClient,
@@ -98,7 +101,7 @@ export class ItemsComponent implements OnInit {
       this.shownItems = this.items;
       this.selected = 'all';
       this.route.paramMap.subscribe(params => {
-        this.currItem = this.items.find(f => f.id == this.route.snapshot.params.itemName);
+        this.currItem = this.items.find(f => this.idPipe.transform(f.name) == this.route.snapshot.params.itemName);
       });
       setTimeout(() => {
         this.dtTrigger.next(this.dtOptions);
@@ -112,7 +115,7 @@ export class ItemsComponent implements OnInit {
 
   setCurrItem(clicked): void {
     this.currItem = clicked;
-    this.location.go("/items/" + this.currItem.id)
+    this.location.go("/items/" + this.idPipe.transform(this.currItem.name))
   }
 
   setItems(choice): void {
@@ -131,7 +134,7 @@ export class ItemsComponent implements OnInit {
           this.shownItems = this.items;
           break;
       }
-      this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      this.dtElement.dtInstance.then((dtInstance) => {
         // Destroy the table first
         dtInstance.destroy();
         // Call the dtTrigger to rerender again

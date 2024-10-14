@@ -18,9 +18,6 @@
             <div class="col-sm-6">
               <p class="pb-0 m-0"><strong>Speed</strong> {{ancestry.speed}} ft.<ng-container *ngIf=ancestry.extraspeed>, {{ancestry.extraspeed}}</ng-container></p>
             </div>
-            <div class="col-sm-12">
-              <p class="pb-1 m-0"><strong>Ability Scores</strong> {{ancestry.ability}}</p>
-            </div>
             <!-- This is badly done; the first three traits are Age, Alignment, and Size but I shouldn't be relying on that-->
             <div class="col-sm-12">
               <p class="pb-1 m-0"><strong>{{ancestry.traits[0].name}}</strong> {{ancestry.traits[0].text}}</p>
@@ -33,11 +30,11 @@
             </div>
           </div>
             <div class="card-columns" *ngIf="ancestry.traits">
-              <ng-container *ngFor="let trait of ancestry.traits.slice(3)" >
+              <ng-container *ngFor="let entry of ancestry.entries" >
                 <div class="card border-0">
                   <div class="card-body pb-0">
-                    <h4 [class]="'color-primary' | lowercase">{{trait.name}}</h4>
-                    <entry-renderer [list]=trait.text [parent]="''"></entry-renderer>
+                    <h4 [class]="'color-primary' | lowercase">{{entry.name}}</h4>
+                    <entry-renderer [list]=entry.entries [parent]="''"></entry-renderer>
                   </div>
                 </div>
               </ng-container>

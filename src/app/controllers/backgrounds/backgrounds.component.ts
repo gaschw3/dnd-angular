@@ -16,11 +16,11 @@ import { ADTSettings } from 'angular-datatables/src/models/settings';
 })
 export class BackgroundsComponent implements OnInit {
 
-  backgrounds: Background[];
+  backgrounds: Background[] = [];
   currBackground: Background;
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/backgroundData.json")
+      return this.http.get("assets/data/2024/background.json")
   }
 
   constructor(private http: HttpClient,
@@ -38,10 +38,11 @@ export class BackgroundsComponent implements OnInit {
   ngOnInit(): void {
     this.dtOptions = {
       columnDefs: [
-        { width: '30%', targets: 0 },
-        { width: '30%', targets: 1 },
-        { width: '30%', targets: 2 },
-        { width: '10%', targets: 3 }
+        { width: '22%', targets: 0 },
+        { width: '22%', targets: 1 },
+        { width: '22%', targets: 2 },
+        { width: '22%', targets: 3 },
+        { width: '10%', targets: 4 }
       ],
       autoWidth: false,
       scrollX: true,
@@ -81,14 +82,14 @@ export class BackgroundsComponent implements OnInit {
       }
     };
 
-    this.getJSON().subscribe(backgrounds => {
-        this.backgrounds = backgrounds;
-        this.route.paramMap.subscribe(params => {
-          this.currBackground = this.backgrounds.find(f => f.id == this.route.snapshot.params.backgroundName);
-        });
-        setTimeout(() => {
-          this.dtTrigger.next(this.dtOptions);
-        });
+    this.getJSON().subscribe(inputBackgrounds => {
+      inputBackgrounds.forEach(inBg => this.backgrounds.push(new Background(inBg)));
+      this.route.paramMap.subscribe(params => {
+        this.currBackground = this.backgrounds.find(f => f.id == this.route.snapshot.params.backgroundName);
+      });
+      setTimeout(() => {
+        this.dtTrigger.next(this.dtOptions);
+      });
     });
   }
 

@@ -7,20 +7,18 @@ import * as L from 'leaflet';
   styleUrls: ['./hexmap.component.scss']
 })
 export class HexmapComponent implements AfterViewInit {
-  private map;
-
   private countries;
   private continents;
   private cities;
   private towns;
   private seas;
-
   private shizomi;
 
   constructor() {
     this.continents = [
       ['Ilia', 50, -77],
       ['Ischia', 41, 15],
+      ['Humerum', -42, -95]
     ];
     this.countries = [
       ['Denari', 30, -120],
@@ -29,6 +27,7 @@ export class HexmapComponent implements AfterViewInit {
       ['Arkhos', 25, 20],
       ['Seven Cities', 65, -90],
       ['Hokai', 37, -212],
+      ['Concordat', 52, 4.5]
     ];
     this.seas = [
       ['Starfall Sea', 28, -88],
@@ -41,6 +40,8 @@ export class HexmapComponent implements AfterViewInit {
       ['Siren Sea', 21.5, 22.5],
 
       ['Sea of Moving Ice', 66.13, -93.01],
+
+      ['Great North Sea', 55, 6]
     ];
     this.cities = [
       ['Avon', 30, -120.6],
@@ -50,7 +51,7 @@ export class HexmapComponent implements AfterViewInit {
       ['Arden', 16.57, -100],
       ['Dalgrange', 22.3, -105.91],
       ['Tramere', 17.05, -101.18],
-      ['Avonshire', 24.69, -109.4],
+      ['Stromshire', 24.69, -109.4],
 
       ['Reliqa', 28.4, -110.5],
       ['Kintalla', 31.6, -106.4],
@@ -65,6 +66,14 @@ export class HexmapComponent implements AfterViewInit {
       ["Bryn Nonig", 65.216, -86.29],
 
       ['Shizomi', 34.23, -211.59],
+
+      ['Aldovia', 52, 4],
+      ['Ascalon', 51.28, 3.48],
+      ['Kyvyrthin', 50.91, 6.9],
+      ['Throne', 52.89, 2.78],
+      ['Ivry-sur-Vin', 53.67, 2.77],
+      ['Verdunia', 53.12, 4.45],
+      ['Redharbour', 52.386, 6.01]
     ];
     this.towns = [
       ['Borderland Keep', 30.2, -119.7],
@@ -111,13 +120,22 @@ export class HexmapComponent implements AfterViewInit {
       ["Megara", 24.6, 21.7],
       ["Mount Pantheus", 25.7, 23],
 
-      ["Wile's Home", 65.08, -90.42],
+      ["Wile's Hole", 65.08, -90.42],
       ["Tamerlaine", 65.18, -89.1],
       ["Lostwood", 65.595, -87.7],
       ["Cold Mead", 64.77, -88.07],
       ["Targon", 64.86, -86.915],
       ["Estwall", 64.95, -88.77],
       ["Ymir's Cairn", 65.48, -86.5],
+
+      ["Screaming Winds", 51.47, 4.19],
+      ["Red Gate", 52.73, 3.19],
+      ["Luminos", 52.73, 4.97],
+      ["Caerleon", 51.8, 6.066],
+      ["Sarcozia", 51.78, 4.31],
+      ["Whore Island", 52.22, 4.59],
+      ["Black Barrow", 52.53, 3.5],
+      ["Tinnakill", 49.79, 5.3]
     ];
     this.shizomi = [
       ['Imperial Palace', 29.71, -210.63],
@@ -130,7 +148,7 @@ export class HexmapComponent implements AfterViewInit {
    }
 
   private initMap(): void {
-    let map = L.map('map', {zoomSnap: 0.25}).setView([31, -211], 5.5);
+    let map = L.map('map', {zoomSnap: 0.25}).setView([52, 5], 4);
     let textLabel = L.icon({
       iconUrl: 't',
       iconSize: [0, 0],
@@ -147,7 +165,8 @@ export class HexmapComponent implements AfterViewInit {
       popupAnchor: [0, 25],
       shadowUrl: '',
       shadowSize: [0, 0],
-      shadowAnchor: [0, 0]
+      shadowAnchor: [0, 0],
+      className: 'city-marker-icon',
     });
     let townLabel = L.icon({
       iconUrl: 'assets/town-marker.png',
@@ -156,7 +175,8 @@ export class HexmapComponent implements AfterViewInit {
       popupAnchor: [0, 0],
       shadowUrl: '',
       shadowSize: [0, 0],
-      shadowAnchor: [0, 0]
+      shadowAnchor: [0, 0],
+      className: 'town-marker-icon',
     });
 
     L.tileLayer('https://raw.githack.com/gaschw3/dnd-map-tiles/master/{z}/{x}/{y}.png', {
@@ -211,10 +231,11 @@ export class HexmapComponent implements AfterViewInit {
 
     this.changeZoom(map, ".country-label", 4, 5);
     this.changeZoom(map, ".water-label", 6, 8);
-    this.changeZoom(map, ".city-label", 5, 8);
+    this.changeZoom(map, ".city-label", 6, 8);
     this.changeZoom(map, ".town-label", 7, 8);
     this.changeZoom(map, ".shizomi-label", 6, 8);
-    this.changeZoom(map, ".leaflet-marker-icon", 6, 8);
+    this.changeZoom(map, ".city-marker-icon", 5.5, 8);
+    this.changeZoom(map, ".town-marker-icon", 6.5, 8);
     map.zoomIn();
   }
 

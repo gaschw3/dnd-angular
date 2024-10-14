@@ -29,13 +29,13 @@
       @media (min-width: 768px) {
         background-image: themed("bgImage"), themed("bgImage")!important;
         background-repeat: repeat-y!important;
-        background-size: 45px 40px!important;
+        background-size: 50px!important;
         background-position-x: left, right!important;
       }
       @media (min-width: 300px) {
         background-image: themed("bgImage");
         background-repeat: repeat-y;
-        background-size: 40px 35px;
+        background-size: 40px;
         background-position-x: left;
       }
     }
@@ -45,27 +45,47 @@
       background-size: 150% !important;
     }
 
+    @if (themed("name") == 'Phyrexian') {
+      nav a { 
+        &:before {
+          margin-top:6px;
+          content: attr(data-phy);
+          color:#f8505b;
+          text-transform: lowercase;
+          pointer-events: none;
+          position: absolute; 
+          font-family: 'Phyrexian';
+          opacity: 1;
+          z-index: 2;
+          font-weight: 900;
+        }
+      }
+    }
+
   .navbar-brand {
     padding-left: 5px;
-    color: themed("colorTertiary");
+    color: themed("brandText");
+
+    &:hover {
+      color: color.scale(themed('brandText'), $lightness: 40%);
+    }
   }
 
   .navbar-nav a {
-      color: themed("navText");
+      color: themed("navText") !important;
 
       &:hover {
         text-decoration: none;
-        color: themed("colorPrimary");
+        color: themed("colorPrimary") !important;
       }
 
       &:focus {
         text-decoration: none;
-        color: themed("colorPrimary");
+        color: themed("colorPrimary") !important;
       }
   }
-  /*center scroll to top better */
-  .scrolltop-button .symbol-container svg {
-    transform: translateY(-15%) !important;
+  .scrolltop-button {
+    background-color: themed("colorPrimary") !important;
   }
 
   .color-primary {
@@ -89,7 +109,7 @@
       top: 0;
       right: 40%;
       width: auto;
-      max-width: 6rem;
+      max-width: 8rem;
       height: auto;
   }
   .mon__token {
@@ -142,9 +162,19 @@
   }
 }
 
+.entry-title p:first-child {
+  display: inline;
+}
+.entry-title p:last-child {
+  padding-bottom: .5rem !important;
+}
+div:has(.entry-title p:only-child) {
+  padding-bottom: .25rem !important;
+}
+
 /* labels for map stuff, probably better way to do this but it's working for now */
 .continent-label {
-    font-size: 60px;
+    font-size: 50px;
     letter-spacing: 6px;
     font-weight: bold;
     background-color: transparent !important;

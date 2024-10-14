@@ -26,7 +26,7 @@ export class OtherFeaturesComponent implements OnInit {
   featureType = featureType;
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/otherFeatures.json")
+      return this.http.get("assets/data/2024/otherFeatures.json")
   }
 
   constructor(private http: HttpClient,
@@ -133,7 +133,7 @@ export class OtherFeaturesComponent implements OnInit {
       this.currFeature = this.shownFeatures[0];
       this.location.go("/other-features/" + clicked + "/" + this.idPipe.transform(this.shownFeatures[0].name))
     }
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+    this.dtElement.dtInstance.then((dtInstance) => {
       // Destroy and redraw table with new filtered items
       dtInstance.destroy();
       this.dtTrigger.next(this.dtOptions);
@@ -154,6 +154,9 @@ export class OtherFeaturesComponent implements OnInit {
       }
       if (typeof reqs.item != "undefined") {
         ret.push(reqs.item[0]);
+      }
+      if (typeof reqs.feature != "undefined") {
+        ret.push(reqs.feature[0]);
       }
       if (typeof reqs.level != "undefined") {
         if (typeof reqs.level.subclass != "undefined") {

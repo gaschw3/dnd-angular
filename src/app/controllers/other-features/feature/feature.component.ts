@@ -42,6 +42,9 @@ export class FeatureComponent implements OnInit {
       if (typeof reqs.item != "undefined") {
         ret.push(reqs.item[0]);
       }
+      if (typeof reqs.feature != "undefined") {
+        ret.push(reqs.feature[0]);
+      }
       return ret.join(", ");
     }
   }

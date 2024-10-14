@@ -2,8 +2,13 @@
 <div [ngClass]="'theme-'+theme"><div class="theme-container">
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <img src="./favicon.ico" width="30" height="30" alt="site favicon">
-      <a class="d-inline-block align-top navbar-brand" href="#">EotCC 5e</a>
+      <div *ngIf="theme != 'royal'" class="form-group mb-0">
+        <img src="./favicon.ico" width="30" height="30" alt="site favicon">
+      </div>
+      <div *ngIf="theme == 'royal'" class="form-group mb-0">
+        <img src="./royal-seal.png" width="30" height="36" alt="site icon">
+      </div>
+      <a class="d-inline-block align-top navbar-brand" href="#">Poop Deck 5e</a>
       <button  class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
       <span  class="navbar-toggler-icon"></span>
       </button>
@@ -18,6 +23,7 @@
                 <a  class="dropdown-item" [routerLink]="'/backgrounds'"> Backgrounds </a>
                 <a  class="dropdown-item" [routerLink]="'/ancestries'"> Ancestries </a>
                 <a  class="dropdown-item" [routerLink]="'/feats'"> Feats </a>
+                <a  class="dropdown-item" [routerLink]="'/epic-boons'"> Epic Boons </a>
                 <a class="dropdown-item" [routerLink]="'/other-features'"> Misc. Features</a>
               </div>
             </li>
@@ -37,15 +43,12 @@
             </li>
             <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownRef"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-              Reference<span class="ml-1 badge badge-warning">*</span>
+              Reference<!--<span class="ml-1 badge badge-warning">*</span>>-->
               </a>
               <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
                 <a  class="dropdown-item" [routerLink]="'/spells'"> Spells </a>
                 <a  class="dropdown-item" [routerLink]="'/map'"> Map </a>
                 <a class="dropdown-item" [routerLink]="'/point-buy'"> Point Buy Calculator</a>
-                <a class="dropdown-item" [routerLink]="'/spellbook'"> Spellbook Creator
-                  <span class="ml-1 badge badge-warning">WIP</span>
-                </a>
               </div>
             </li>
           </ul>
@@ -59,19 +62,20 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownRef">
                 <form class="form-sm m-3">
                   <div class="form-group">
-                    <label for="theme"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label> <span class="ml-1 badge badge-warning">WIP</span>
+                    <label for="theme"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label>
                     <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
                       <option value="greek">Arkhos</option>
                       <option value="dark">Material Realm</option>
                       <option value="ice">Seven Cities</option>
                       <option value="rainbow">Shizomi</option>
+                      <option value="royal">Aldovia</option>
+                      <option value="end">Worldbreaker</option>
                       <!--
                       <option value="light">Celestia</option>
-                      <option value="hell">The Abyss</option>
                       -->
                     </select>
                   </div>
-                  <div *ngIf="theme != 'dark'" class="form-group">
+                  <div *ngIf="theme != 'dark' && theme != 'royal'" class="form-group">
                     <div class="form-check form-switch">
                       <input type="checkbox" class="form-check-input" [(ngModel)]="particles" id="particles" name="particles">
                       <label class="form-check-label" for="particles">Use Occultum<sup><a class="text--op" href="/items/occultum-op">?</a></sup></label>
@@ -87,5 +91,5 @@
   <div  class="container-fluid">
       <router-outlet></router-outlet>
   </div>
+  <ngx-scrolltop [size]="70" symbolColor="#fff"></ngx-scrolltop>
 </div></div>
-<ngx-scrolltop backgroundColor="#62c462" [size]="50" symbolColor="#fff"></ngx-scrolltop>

@@ -1,4 +1,4 @@
-<h1>D&D 5e Spells</h1>
+<h1 text="dnd 5e spells">D&D 5e Spells</h1>
 
 <div class="row">
   <div *ngIf="spells" class="col-md-12 spell-table">
@@ -20,6 +20,16 @@
           </th>
           <th class="spell-filter" colspan="1">
             <div class="input-group input-group-sm">
+              <input id="spell-conc-filter" class="form-control" type="search" placeholder="Conc">
+            </div>
+          </th>
+          <th class="spell-filter" colspan="1">
+            <div class="input-group input-group-sm">
+              <input id="spell-time-filter" class="form-control" type="search" placeholder="Time">
+            </div>
+          </th>
+          <th class="spell-filter" colspan="1">
+            <div class="input-group input-group-sm">
               <input id="spell-school-filter" class="form-control" type="search" placeholder="School">
             </div>
           </th>
@@ -37,6 +47,8 @@
         <tr>
           <th>Name</th>
           <th>Level</th>
+          <th>Conc</th>
+          <th>Time</th>
           <th>School</th>
           <th>Classes</th>
           <th>Source</th>
@@ -44,9 +56,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let spell of spells" (click)="setCurrSpell(spell)" [class.table-active]="currSpell?.id == spell.id">
-          <td>{{spell.name}}{{spell.ritual ? ' (r)' : ''}}{{spell.time.includes('bonus') ? ' (b)' : ''}}{{spell.time.includes('reaction') ? ' (re)' : ''}}{{spell.change == 'buff' ? ' (++)' : ''}}{{spell.change == 'nerf' ? ' (--)' : ''}}{{spell.change == 'change' ? ' (??)' : ''}}</td>
+          <td [ngClass]="spell.replaced ? 'strikethrough': ''">{{spell.name}}{{spell.ritual ? ' (r)' : ''}}{{spell.change == 'buff' ? ' (++)' : ''}}{{spell.change == 'nerf' ? ' (--)' : ''}}{{spell.change == 'change' ? ' (??)' : ''}}</td>
           <td class="text-center">{{spell.level}}</td>
-          <td [class]="'color-'+spell.school | lowercase" class="text-center">{{spell.school}}</td>
+          <td class="text-center">{{spell.concentration == true ? "X" : " "}}</td>
+          <td class="text-center">{{spell.tableTime | titlecase}}</td>
+          <td [class]="'color-'+spell.school.name | lowercase" class="text-center">{{spell.school.abbrev}}</td>
           <td>{{spell.classes.join(", ")}}</td>
           <td [class]="'text-right color-'+spell.source | lowercase" class="text-right">{{spell.source}}</td>
         </tr>

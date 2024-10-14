@@ -5,10 +5,8 @@ import { NgModule } from '@angular/core';
 import { HexmapComponent } from './controllers/hexmap/hexmap.component'
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
-import { DmAssistantComponent } from './controllers/dm-assistant/dm-assistant.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
-import { SpellbookComponent } from './controllers/spellbook/spellbook.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'classes', pathMatch: 'full' },
@@ -37,6 +35,10 @@ const routes: Routes = [
     loadChildren: () => import('./controllers/feats/feats.module').then(m => m.FeatsModule)
   },
   {
+    path: 'epic-boons',
+    loadChildren: () => import('./controllers/epic-boons/epic-boons.module').then(m => m.EpicBoonsModule)
+  },
+  {
     path: 'items',
     loadChildren: () => import('./controllers/items/items.module').then(m => m.ItemsModule)
   },
@@ -49,16 +51,8 @@ const routes: Routes = [
     loadChildren: () => import('./controllers/other-features/other-features.module').then(m => m.OtherFeaturesModule)
   },
   {
-    path: 'spellbook',
-    component: SpellbookComponent
-  },
-  {
     path: 'encounter-builder',
     component: EncounterBuilderComponent
-  },
-  {
-    path: 'dm-assistant',
-    component: DmAssistantComponent
   },
   {
     path: 'map',

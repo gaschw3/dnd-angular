@@ -667,7 +667,8 @@
             ]
         },
         {
-            "name": "Aganazzar's Scorcher",
+            "name": "Flamethrower",
+            "replaces": "Aganazzar's Scorcher",
             "source": "XGE",
             "page": 150,
             "otherSources": [
@@ -1169,7 +1170,8 @@
             ]
         },
         {
-            "name": "Alter Self",
+            "name": "Adaptation",
+            "replaces": "Alter Self",
             "source": "PHB",
             "page": 211,
             "srd": true,
@@ -1201,12 +1203,12 @@
                 }
             ],
             "entries": [
-                "You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.",
+                "You touch a creature, modifying it for a specific environment. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to grant the creature the benefits of a different one.",
                 {
                     "type": "entries",
                     "name": "Aquatic Adaptation",
                     "entries": [
-                        "You adapt your body to an aquatic environment, sprouting gills and growing webbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed."
+                        "The target adapts to an aquatic environment, sprouting gills and growing webbing between its fingers. It can breathe underwater and gains a swimming speed equal to its walking speed."
                     ]
                 },
                 {
@@ -1220,21 +1222,21 @@
                     "type": "entries",
                     "name": "Change Appearance",
                     "entries": [
-                        "You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another race, though none of your statistics change. You also can't appear as a creature of a different size than you, and your basic shape stays the same; if you're bipedal, you can't use this spell to become quadrupedal, for instance. At any time for the duration of the spell, you can use your action to change your appearance in this way again."
+                        "The creature's appearance changes. For the duration, it can use an action to change what it looks like, including changes to its height, weight, facial features, voice, hair length and coloration, and any distinguishing characteristics. It cannot change its size or number of limbs."
                     ]
                 },
                 {
                     "type": "entries",
                     "name": "Natural Weapons",
                     "entries": [
-                        "You grow claws, fangs, spines, horns, or a different natural weapon of your choice. Your unarmed strikes deal {@damage 1d6} bludgeoning, piercing, or slashing damage, as appropriate to the natural weapon you chose, and you are proficient with your unarmed strikes. Finally, the natural weapon is magic and you have a +1 bonus to the attack and damage rolls you make using it."
+                        "The creature grows a natural weapon (claws, fangs, spines, horns, etc). Unarmed strikes with the weapon deal {@damage 1d6} bludgeoning, piercing, or slashing damage, as appropriate. The natural weapon is magic and has a +1 bonus to attack and damage rolls."
                     ]
                 },
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Add another option (manta glide). No longer requires concentration. Give the spell to druids, who should have obviously had it."
+                        "Add another option and remove concentration to widen the use case as a support spell instead of a weird sidegrade disguise self. Also give the spell to druids, who should have obviously had it."
                     ]
                 }
             ],
@@ -1487,7 +1489,8 @@
             }
         },
         {
-            "name": "Animate Dead",
+            "name": "Reanimate",
+            "replaces": "Animate Dead",
             "source": "PHB",
             "page": 212,
             "srd": true,
@@ -1513,25 +1516,34 @@
             },
             "duration": [
                 {
-                    "type": "instant"
+                    "type": "timed",
+                    "duration": {
+                        "type": "hour",
+                        "amount": 24
+                    }
                 }
             ],
             "entries": [
-                "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a {@creature skeleton} if you chose bones or a {@creature zombie} if you chose a corpse (the DM has the creature's game statistics).",
-                "On each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.",
-                "The creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one."
+                "You channel necromantic energy to raise a corpse as an undead servant. Choose a pile of bones or corpse within range, which belonged in life to a humanoid of CR 2 or less. The target is raised as a skeleton or zombie, respectively, applying the Skeleton or Zombie template to its former stat block.",
+                "On each of your turns, you can use a bonus action to mentally command any or all minions you have created through this spell within 60 feet. You select an action for each creature and where it will move. If you issue no command, the creature moves to attack any creatures hostile to it, or takes the Dodge action if it cannot detect any.",
+                "The creature is under your control for 24 hours, after which it becomes hostile to you and all living things. You can control a number of minions up to your proficiency bonus through this spell, but their combined CR cannot exceed 3, and you must wait 24 hours after creating one before you can create another. If you cast the spell while you have any controlled reanimated servants, you may renew the duration of their control rather than creating a new one.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Part of the sweeping change to make necromancy cooler and easier to run. Now work off of templates instead of just crappy zombies and skeletons as you fight tougher enemies (intentionally, reanimating a commoner produces a standard zombie or skeleton)",
+                        "'Lesser' is pretty bad, more for the low-level fantasy. 'Reanimate' is slow and a bit limited, but scales better than animate dead did, 'Greater' lets you do instant hordes and animate stronger monsters, but all 3 limit the hassle of running 25 minions that are all so crappy that they die to single AoE effects."
+                    ]
+                }
             ],
             "entriesHigherLevel": [
                 {
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones."
+                        "When you cast this spell using a spell slot of 4th level or higher, the target's maximum CR increases by 1 for each slot level above 3rd. When you cast this spell using a spell slot of a 4th level or higher, you can also reanimate beast corpses. If you use a slot of 5th level or higher, you can reanimate giant or monstrosity corpses."
                     ]
                 }
-            ],
-            "affectsCreatureType": [
-                "humanoid"
             ],
             "miscTags": [
                 "PRM",
@@ -1542,6 +1554,10 @@
                 "fromClassList": [
                     {
                         "name": "Cleric",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Warlock",
                         "source": "PHB"
                     },
                     {
@@ -1590,12 +1606,77 @@
                             "source": "TCE"
                         }
                     }
-                ],
-                "fromClassListVariant": [
+                ]
+            },
+            "backgrounds": [
+                {
+                    "name": "Golgari Agent",
+                    "source": "GGR"
+                }
+            ]
+        },
+        {
+            "name": "Lesser Reanimate",
+            "source": "BREW",
+            "level": 1,
+            "school": "N",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "minute"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 10
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true,
+                "m": "a drop of blood, a piece of flesh, and a pinch of bone dust"
+            },
+            "duration": [
+                {
+                    "type": "timed",
+                    "duration": {
+                        "type": "hour",
+                        "amount": 24
+                    }
+                }
+            ],
+            "entries": [
+                "You channel necromantic energy to raise a humanoid appendage as an undead servant. Choose a hand, foot, arm, or leg of a dead creature within range. The target is transformed into a {@creature crawling claw}.",
+                "On each of your turns, you can use a bonus action to mentally command any or all minions you have created within 60 feet. You select an action for each creature and where it will move. If you issue no command, the creature moves to attack any creatures hostile to it, or takes the Dodge action if it cannot detect any.",
+                "The creature is under your control for 24 hours, after which it becomes hostile to you and all living things. You can control a number of minions up to your proficiency bonus through this spell, and you must wait 24 hours after creating one before you can create another. If you cast the spell while you have any controlled reanimated servants, you may renew the duration of their control rather than creating a new one.",
+                {
+                    "type": "inset",
+                    "name": "DM Note: Change",
+                    "entries": [
+                        "Part of the sweeping change to make necromancy cooler and easier to run. This is a very small effect at low level to allow budding necromancers to have some minions before level 5."
+                    ]
+                }
+            ],
+            "miscTags": [
+                "PRM",
+                "SMN",
+                "UBA"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Cleric",
+                        "source": "PHB"
+                    },
                     {
                         "name": "Warlock",
-                        "source": "PHB",
-                        "definedInSource": "UAClassFeatureVariants"
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
                     }
                 ]
             },
@@ -1607,7 +1688,8 @@
             ]
         },
         {
-            "name": "Animate Objects",
+            "name": "Command Objects",
+            "replaces": "Animate Objects",
             "source": "PHB",
             "page": 213,
             "srd": true,
@@ -2367,8 +2449,9 @@
             }
         },
         {
-            "name": "Arcane Lock",
-            "source": "PHB",
+            "name": "Arcane Key",
+            "replaces": "{@spell knock} and {@spell arcane lock}",
+            "source": "BREW",
             "page": 215,
             "srd": true,
             "basicRules": true,
@@ -2386,8 +2469,104 @@
                     "type": "touch"
                 }
             },
-            "meta": {
-                "ritual": true
+            "components": {
+                "v": true,
+                "s": true,
+                "m": {
+                    "text": "gold dust worth at least 25 gp, which the spell consumes",
+                    "cost": 2500,
+                    "consume": true
+                }
+            },
+            "duration": [
+                {
+                    "type": "permanent",
+                    "ends": [
+                        "dispel"
+                    ]
+                }
+            ],
+            "entries": [
+                "You can seal or unseal an object in range. The object can be a door, box, chest, set of manacles, gate, window, bit of technology, or any other object that has a mundane or magical means of preventing access or entry.",
+                "<b>Seal.</b> If the target object is not sealed in some way, it becomes sealed until this spell is dispelled. You and the creatures you designate when you cast this spell can open the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute.",
+                "While sealed by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10.",
+                "<b>Unlock.</b> If the target is sealed by mundane means (locked, stuck, barred, etc.) it becomes unsealed.",
+                "If the target object is sealed by magical means, the magic seal is suppressed for 10 minutes.",
+                "If the object is sealed in multiple different ways, only one of those seals is unsealed per casting of the spell. For example, a magically sealed door that is locked and barred from the other side will require 3 castings of arcane key: one to suppress the magic, one to unbar the door, and one to uplock the mundane lock.",
+                {
+                    "type": "inset",
+                    "name": "Caius' Notes: Abjurers in Shambles",
+                    "entries": [
+                        "The state of the abjuration these days is embarrassing. This is a spell form my personal collection that combies the effects of the idiocy peddled these days as '{@spell knock}' and '{@spell arcane lock}'. Any wizard who can't do both with the same spellform is a certified dunce."
+                    ]
+                }
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Wizard",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Sorcerer",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Bard",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Artificer",
+                        "source": "TCE"
+                    }
+                ]
+            },
+            "races": [
+                {
+                    "name": "Tiefling (Mammon)",
+                    "source": "UAFiendishOptions",
+                    "baseName": "Tiefling",
+                    "baseSource": "PHB"
+                },
+                {
+                    "name": "Tiefling (Mammon)",
+                    "source": "MTF",
+                    "baseName": "Tiefling",
+                    "baseSource": "PHB"
+                },
+                {
+                    "name": "Dwarf (Mark of Warding)",
+                    "source": "ERLW",
+                    "baseName": "Dwarf",
+                    "baseSource": "PHB"
+                }
+            ],
+            "backgrounds": [
+                {
+                    "name": "Azorius Functionary",
+                    "source": "GGR"
+                }
+            ]
+        },
+        {
+            "name": "Arcane Lock (deprecated)",
+            "source": "PHB",
+            "page": 215,
+            "srd": true,
+            "basicRules": true,
+            "level": 2,
+            "school": "A",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "touch"
+                }
             },
             "components": {
                 "v": true,
@@ -2411,13 +2590,13 @@
                 "While affected by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff",
+                    "name": "DM Note: Deprecated",
                     "entries": [
-                        "Can now be cast as a ritual. Also added wording around other lockable objects and technology"
+                        "Has been combined with knock into {@spell arcane key}. Both Lock and Knock were so specific and narrowly useful that they were essentially never worth picking up."
                     ]
                 }
             ],
-            "change": "buff",
+            "change": "deprecated",
             "classes": {
                 "fromClassList": [
                     {
@@ -2751,16 +2930,6 @@
                             "source": "PHB"
                         },
                         "subclass": {
-                            "name": "Aberrant Mind (UA)",
-                            "source": "UASorcererAndWarlock"
-                        }
-                    },
-                    {
-                        "class": {
-                            "name": "Sorcerer",
-                            "source": "PHB"
-                        },
-                        "subclass": {
                             "name": "Aberrant Mind",
                             "source": "TCE"
                         }
@@ -2769,7 +2938,8 @@
             }
         },
         {
-            "name": "Ashardalon's Stride",
+            "name": "Burning Stride",
+            "replaces": "Ashardalon's Stride",
             "source": "FTD",
             "page": 19,
             "level": 2,
@@ -2801,13 +2971,13 @@
                 }
             ],
             "entries": [
-                "The billowing flames of a dragon blast from your feet, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn't provoke opportunity attacks.",
+                "The billowing flames of a dragon blast from your feet, granting you explosive speed. For the duration, your speed increases by 10 feet and moving doesn't provoke opportunity attacks.",
                 "When you move within 5 feet of a creature or an object that isn't being worn or carried, it takes {@damage 1d6} fire damage from your trail of heat. A creature or object can take this damage only once during a turn.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Moved down to level 2 so that being a slight buff over longstrider is sensical."
+                        "Moved down to level 2 and altered slight to make it more usable on rangers, fighters, rogues, and artificers, who want this kind of spell where most wizards and sorceres don't."
                     ]
                 }
             ],
@@ -2817,7 +2987,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 3rd level or higher, increase your speed by 5 feet for each spell slot level above 3rd. The spell deals an additional {@damage 1d6} fire damage for each slot level above 2nd."
+                        "When you cast this spell using a spell slot of 2nd level or higher, increase your speed by 5 feet for each spell slot level above 2nd. The spell deals an additional {@damage 1d6} fire damage for each slot level above 2nd."
                     ]
                 }
             ],
@@ -3893,7 +4063,8 @@
             }
         },
         {
-            "name": "Banishment",
+            "name": "Expulsion",
+            "replaces": "Banishment",
             "source": "PHB",
             "page": 217,
             "srd": true,
@@ -3928,8 +4099,8 @@
                 }
             ],
             "entries": [
-                "You brandish a repellent item at a creature you can see within range and attempt to expel them from this plane. The target must make a Charisma saving throw. On a failure, they are partly wrenched off their current plane. For the duration, they become incapacitated and gain resistance to all damage.",
-                "The target makes another Charisma save at the end of each of their turns, ending the spell on a success. Extraplanar creatures make these saves at disadvantage. Extraplanar creatures failing the third Charisma save are fully returned to their home plane and stop attempting saving throws. If you maintain concentration for the full duration, this banishment becomes permanent.",
+                "You brandish a repellent item at a creature you can see within range and attempt to expel them from this plane. The target must make a Charisma saving throw. On a failure, they are partly wrenched from the current plane. For the duration, they become incapacitated and gain resistance to all damage.",
+                "The target makes another Charisma save at the end of each of their turns, ending the spell on a success. Extraplanar creatures make these saves at disadvantage. Extraplanar creatures failing the third Charisma save are banished to their home plane and stop attempting saves. If you maintain concentration for the full duration, this banishment becomes permanent.",
                 "A target that returns reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
                 {
                     "type": "inset",
@@ -4136,7 +4307,8 @@
             }
         },
         {
-            "name": "Barkskin",
+            "name": "Oakskin",
+            "replaces": "Barkskin",
             "source": "PHB",
             "page": 217,
             "srd": true,
@@ -4165,8 +4337,7 @@
                     "duration": {
                         "type": "hour",
                         "amount": 1
-                    },
-                    "concentration": true
+                    }
                 }
             ],
             "entries": [
@@ -4175,7 +4346,7 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "AC from 16 -> 18 to make it an actual improvement outside of wildshape."
+                        "AC from 16 -> 18 to make it an actual improvement outside of wildshape, remove concentration so that wildshaped druids can fight in melee withotu losing the buff."
                     ]
                 }
             ],
@@ -4234,7 +4405,8 @@
             "hasFluffImages": true
         },
         {
-            "name": "Beacon of Hope",
+            "name": "Beacon of Resilience",
+            "replaces": "Beacon of Hope",
             "source": "PHB",
             "page": 217,
             "srd": true,
@@ -4276,14 +4448,14 @@
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Make it a movable beacon with the same benefits as before, and add added an ability to get temporary HP when the becon triggers to create a 'tide-turning' spell, especially for mass combat."
+                        "Make it a movable beacon with the same benefits as before, and add an ability to get temporary HP when the becon triggers to create a 'tide-turning' spell, especially for mass combat."
                     ]
                 },
                 {
                     "type": "inset",
                     "name": "3rd Ecumenical Spell Council of Capital",
                     "entries": [
-                        "Though bestowing 'hope' might be in the realm of abjuration. Casting of this spell actually bestows healing and pulls targets back from death. Clear necromantic magic."
+                        "Though bestowing  might be in the realm of abjuration. Casting of this spell actually bestows healing and pulls targets back from death. Clear necromantic magic."
                     ]
                 }
             ],
@@ -4410,7 +4582,7 @@
                 }
             ],
             "entries": [
-                "You establish a telepathic bond with a friendly beast within range. You can use your action to use its senses instead of your own for one round. While you are within 120 feet of one another, you and the beast can communicate telepathically and the beast can add your proficiency bonus to its ability checks. Additionally, its attacks deal 1d6 bonus damage, and it has advantage on attack rolls against any creature you have attacked since the start of your last turn.",
+                "You establish a telepathic bond with a friendly beast within range. You can use your action to use its senses instead of your own for one round. While you are within 120 feet of one another, you and the beast can communicate telepathically and the beast can add your proficiency bonus to its ability checks. Additionally, its attacks deal {@damage 1d6} bonus damage, and it has advantage on attack rolls against any creature you have attacked since the start of your last turn.",
                 {
                     "type": "inset",
                     "name": "Caius' Notes: The Lost True Version",
@@ -4471,7 +4643,8 @@
             ]
         },
         {
-            "name": "Bestow Curse",
+            "name": "Curse",
+            "replaces": "Bestow Curse",
             "source": "PHB",
             "page": 218,
             "srd": true,
@@ -4908,7 +5081,7 @@
             "time": [
                 {
                     "number": 1,
-                    "unit": "action"
+                    "unit": "bonus"
                 }
             ],
             "range": {
@@ -5158,7 +5331,8 @@
             }
         },
         {
-            "name": "Blight",
+            "name": "Spreading Blight",
+            "replaces": "Blight",
             "source": "PHB",
             "page": 219,
             "srd": true,
@@ -5187,14 +5361,14 @@
                 }
             ],
             "entries": [
-                "Necromantic energy washes over a 30-foot sphere that you can see within range, draining moisture and vitality from creatures within. Creatures in the area must make a Constitution saving throw. They take {@damage 6d8} necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs.",
+                "Necromantic energy washes over a 20-foot-radius sphere that you can see within range, draining moisture and vitality from creatures within. Creatures in the area must make a Constitution saving throw. They take {@damage 6d8} necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs.",
                 "If the spell targets a plant creature or a magical plant, it makes the saving throw with disadvantage, and the spell deals maximum damage to it.",
                 "If the spells targets a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw, it simply withers and dies.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Now a 30-foot area instead of a single target to make it something of a Druid fireball."
+                        "Now a 20-foot area instead of a single target to make it something of a Druid fireball."
                     ]
                 }
             ],
@@ -5628,7 +5802,8 @@
             }
         },
         {
-            "name": "Blink",
+            "name": "Ethereal Stutter",
+            "replaces": "Blink",
             "source": "PHB",
             "page": 219,
             "srd": true,
@@ -5637,7 +5812,7 @@
             "time": [
                 {
                     "number": 1,
-                    "unit": "bonus"
+                    "unit": "action"
                 }
             ],
             "range": {
@@ -5660,13 +5835,13 @@
                 }
             ],
             "entries": [
-                "Roll a {@dice d20} at the end of each of your turns for the duration of the spell. On a roll of 11 or higher, you vanish from your current plane of existence and appear in the Ethereal Plane (the spell fails and the casting is wasted if you were already on that plane). At the start of your next turn, and when the spell ends if you are on the Ethereal Plane, you return to an unoccupied space of your choice that you can see within 10 feet of the space you vanished from. If no unoccupied space is available within that range, you appear in the nearest unoccupied space (chosen at random if more than one space is equally near). You can dismiss this spell as an action.",
-                "While on the Ethereal Plane, you can see and hear the plane you originated from, which is cast in shades of gray, and you can't see anything there more than 60 feet away. You can only affect and be affected by other creatures on the Ethereal Plane. Creatures that aren't there can't perceive you or interact with you, unless they have the ability to do so.",
+                "You thin the fabric of the Ethereal Plane, allowing yourself to slide seamlessly over the boundary. At the end of the turn you cast this spell and then at the end of every other turn until the spells ends, you slip into the Ethereal Plane, returning at the start of your next turn to an unoccupied space of your choice within 10 feet of the space you vanished from. If that space is occupied, you appear in the nearest unoccupied space.",
+                "While on the Ethereal Plane, you can't be perceived except by creatures capable of seeing into the Ethereal Plane. You can see and hear your plane of origin out to a range of 60 feet, but you can't interact with anything or affect any creatures there. When the spell ends, you reappear on your plane of origin. You cannot cast this spell while already on the Ethereal Plane.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff",
+                    "name": "DM Note: Change",
                     "entries": [
-                        "Cast as a bonus action to make it potentially usable for gishes."
+                        "Remove the random effect and make it true 50% intangibility."
                     ]
                 },
                 {
@@ -5677,7 +5852,7 @@
                     ]
                 }
             ],
-            "change": "buff",
+            "change": "change",
             "miscTags": [
                 "SGT"
             ],
@@ -5941,7 +6116,8 @@
             }
         },
         {
-            "name": "Bones of the Earth",
+            "name": "Stalagmite",
+            "replaces": "Bones of the Earth",
             "source": "XGE",
             "page": 150,
             "otherSources": [
@@ -5975,17 +6151,17 @@
                 }
             ],
             "entries": [
-                "You haul up to six mighty spire of rock out of the ground, erupting at locations you can see within range. Each spire occupies a 5-foot space, is up to 30 feet tall, is AC 11 and has 30 hit points. ",
-                "If a spires is created under a creature, you can choose pillar or spike.",
+                "You haul up to six spires of rock out of the ground, erupting at locations you can see within range. Each spire occupies a 5-foot space, is up to 30 feet tall, has AC 10 and 20 hit points. ",
+                "If a spire is created under a creature, you can choose pillar or spike.",
                 "If you choose pillar that creature must succeed on a Dexterity saving throw or be lifted by the pillar. A creature can choose to fail the save.",
-                "If you choose spike that creature it takes {@damage 5d10} piercing damage and is impaled if it is Large or smaller, becoming restrained at the top of the spike. Huge creatures can be restrained if targeted with two or more spikes, and Gargantuan creatures with six or more. On a success, targets suffer half as much damage and no other effects. A creature can only be damaged by the spell once.",
-                "An impaled target can use its action to attempt an Athletics or Acrobatics check to free themselves, rolling against your spell save DC. On a success, they are no longer restrained and fall. Targets are also freed if their spike is destroyed.",
+                "If you choose spike that creature must succeed on a Dexterity saving throw or take {@damage 5d10} piercing damage and be impaled if it is Medium or smaller, becoming restrained at the top of the spike. Large creatures can be restrained if targeted with two or more spikes, Huge creatures with four or more, and Gargantuan creatures with six or more. On a success, targets suffer half as much damage and no other effects. A creature can only be damaged by the spell once.",
+                "An impaled target can use its action to attempt an Athletics or Acrobatics check against your spell save DC to free themselves. On a success, they are no longer restrained and fall. Targets are also freed if their spike is destroyed.",
                 "If a creature is slammed into a ceiling or other obstacle when it gets impaled, it takes an additional {@damage 2d10} bludgeoning damage, and attempts to free itself are made at disadvantage. The spikes crumble back into the earth after 1 hour.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Make this into a much more metal spell that isn't hamstrung into total uselessness by certain environments. Also allow it to be used on very large creatures, which is a fantastic image."
+                        "Make this into a much more metal spell that isn't hamstrung into uselessness by certain environments. Also allow it to be used on very large creatures, which is a fantastic image."
                     ]
                 }
             ],
@@ -6070,7 +6246,7 @@
             ],
             "entries": [
                 "You brandish the weapon used in the spell's casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack's normal effects and then becomes sheathed in booming energy until the start of your next turn. If the target willingly moves 5 feet or more before then, the target takes {@damage 1d8} thunder damage, and the spell ends.",
-                "This spell's damage increases when you reach certain levels. At 5th level, the melee attack deals an extra {@damage 1d8} thunder damage to the target on a hit, and the damage the target takes for moving increases to {@damage 2d8}. Both damage rolls increase by 1d8 at 11th level ({@damage 2d8} and {@damage 3d8}) and again at 17th level ({@damage 3d8} and {@damage 4d8})."
+                "This spell's damage increases when you reach certain levels. At 5th level, the melee attack deals an extra {@damage 1d8} thunder damage to the target on a hit, and the damage the target takes for moving increases to {@damage 2d8}. Both damage rolls increase by {@damage 1d8} at 11th level ({@damage 2d8} and {@damage 3d8}) and again at 17th level ({@damage 3d8} and {@damage 4d8})."
             ],
             "scalingLevelDice": [
                 {
@@ -6342,7 +6518,8 @@
             ]
         },
         {
-            "name": "Burning Hands",
+            "name": "Cone of Flames",
+            "replaces": "Burning Hands",
             "source": "PHB",
             "page": 220,
             "srd": true,
@@ -6598,15 +6775,8 @@
             ],
             "entries": [
                 "A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius, centered on a point you can see within range directly above you. The spell fails if you can't see a point in the air where the storm cloud could appear (for example, if you are in a room that can't accommodate the cloud).",
-                "When you cast the spell, choose a point you can see under the cloud. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point must make a Dexterity saving throw. A creature takes {@damage 3d10} lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your bonus action to call down lightning in this way again, targeting the same point or a different one.",
+                "When you cast the spell, choose a point you can see under the cloud. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point must make a Dexterity saving throw. A creature takes {@damage 3d10} lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your action to call down lightning in this way again, targeting the same point or a different one.",
                 "If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell's damage increases by {@dice 1d10}.",
-                {
-                    "type": "inset",
-                    "name": "DM Note: Buff",
-                    "entries": [
-                        "Use your bonus action to do more lightning instead of your action."
-                    ]
-                },
                 {
                     "type": "inset",
                     "name": "3rd Ecumenical Spell Council of Capital",
@@ -6615,7 +6785,6 @@
                     ]
                 }
             ],
-            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -6824,7 +6993,8 @@
             ]
         },
         {
-            "name": "Catapult",
+            "name": "Force Push",
+            "replaces": "Catapult",
             "source": "XGE",
             "page": 150,
             "otherSources": [
@@ -6857,12 +7027,12 @@
                 }
             ],
             "entries": [
-                "Choose one object weighing up to 50 pounds within range that isn't being worn or carried. The object flies in a straight line up to 90 feet in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the target and stops moving. When the object strikes something, the object and what it strikes each take {@damage 3d8} bludgeoning damage.",
+                "Choose one object weighing up to 10 pounds within range that isn't being worn or carried. The object flies in a straight line up to 90 feet in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the target and stops moving. When the object strikes something, the object and what it strikes each take {@damage 3d8} bludgeoning damage.",
                 {
                     "type": "inset",
                     "name": "DM Note: Change",
                     "entries": [
-                        "50lbs starting weight and +50/level scaling, mostly just a for fun change."
+                        "10lbs starting weight and +50/level scaling, mostly just for fun."
                     ]
                 },
                 {
@@ -6914,7 +7084,8 @@
             }
         },
         {
-            "name": "Catnap",
+            "name": "Power Word: Nap",
+            "replaces": "Catnap",
             "source": "XGE",
             "page": 151,
             "level": 3,
@@ -6940,8 +7111,7 @@
                 {
                     "type": "timed",
                     "duration": {
-                        "type": "minute",
-                        "amount": 10
+                        "type": "special"
                     }
                 }
             ],
@@ -7281,7 +7451,8 @@
             }
         },
         {
-            "name": "Chaos Bolt",
+            "name": "Prismatic Bolt",
+            "replaces": "Chaos Bolt",
             "source": "XGE",
             "page": 151,
             "otherSources": [
@@ -7314,10 +7485,10 @@
                 }
             ],
             "entries": [
-                "You hurl an undulating, warbling mass of chaotic energy at one creature in range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d8} damage. The number rolled on the die determines the damage type, additional damage, and additional effects. If you roll more than 1d8 (for instance, by a critical hit or casting at a higher level), you may select which d8 determines the table result.",
+                "You hurl an undulating, warbling mass of chaotic energy at one creature in range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d8} damage. The number rolled on the die determines the damage type, additional damage, and additional effects. If you roll more than 1d8 (for instance, by a critical hit or casting at a higher level), you may select which d8 determines the result.",
                 {
                     "type": "table",
-                    "caption": "Chaos Bolt",
+                    "caption": "Prismatic Bolt",
                     "colLabels": [
                         "{@dice d8}",
                         "Damage Type",
@@ -7774,6 +7945,7 @@
         },
         {
             "name": "Spectral Grasp",
+            "replaces": "Chill Touch",
             "source": "PHB",
             "page": 221,
             "srd": true,
@@ -7982,7 +8154,80 @@
             }
         },
         {
-            "name": "Circle of Death",
+            "name": "Esoteric Orb",
+            "source": "BREW",
+            "level": 1,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 90
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true,
+                "m": {
+                    "text": "an onyx worth at least 50 gp",
+                    "cost": 5000
+                }
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You hurl a 4-inch-diameter sphere of strange warbling energy at a creature that you can see within range. You choose radiant, necrotic, psychic, force, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes {@damage 3d8} damage of the type you chose."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d8} for each slot level above 1st."
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "force",
+                "radiant",
+                "necrotic",
+                "psychic",
+                "thunder"
+            ],
+            "spellAttack": [
+                "R"
+            ],
+            "miscTags": [
+                "SGT"
+            ],
+            "areaTags": [
+                "ST"
+            ],
+            "classes": {
+                "fromClassList": [
+                    {
+                        "name": "Warlock",
+                        "source": "PHB"
+                    },
+                    {
+                        "name": "Bard",
+                        "source": "PHB"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Necrotic Pulse",
+            "replaces": "Circle of Death",
             "source": "PHB",
             "page": 221,
             "srd": true,
@@ -8005,8 +8250,8 @@
                 "v": true,
                 "s": true,
                 "m": {
-                    "text": "the powder of a crushed black pearl worth at least 500 gp",
-                    "cost": 50000
+                    "text": "the powder of a crushed black pearl worth at least 50 gp",
+                    "cost": 5000
                 }
             },
             "duration": [
@@ -8015,7 +8260,7 @@
                 }
             ],
             "entries": [
-                "A sphere of negative energy ripples out in a 60-foot-radius sphere from a point within range. Each creature in that area must make a Constitution saving throw. A target takes {@damage 10d6} necrotic damage on a failed save, or half as much damage on a successful one.",
+                "A pulse of negative energy ripples out in a 60-foot-radius sphere from a point you can see within range. Each creature in that area must make a Constitution saving throw. A target takes {@damage 10d6} necrotic damage on a failed save, or half as much damage on a successful one.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -8327,7 +8572,8 @@
             }
         },
         {
-            "name": "Cloud of Daggers",
+            "name": "Whirling Daggers",
+            "replaces": "Cloud of Daggers",
             "source": "PHB",
             "page": 222,
             "level": 2,
@@ -8613,7 +8859,8 @@
             "hasFluffImages": true
         },
         {
-            "name": "Color Spray",
+            "name": "Dazzle",
+            "replaces": "Color Spray",
             "source": "PHB",
             "page": 222,
             "srd": true,
@@ -8629,7 +8876,7 @@
                 "type": "cone",
                 "distance": {
                     "type": "feet",
-                    "amount": 15
+                    "amount": 20
                 }
             },
             "components": {
@@ -8647,24 +8894,22 @@
                 }
             ],
             "entries": [
-                "A dazzling array of flashing, colored light springs from your hand. Roll {@dice 6d10}; the total is how many hit points of creatures this spell can effect. Creatures in a 15-foot cone originating from you are affected in ascending order of their current hit points (ignoring {@condition unconscious} creatures and creatures that can't see).",
-                "Starting with the creature that has the lowest current hit points, each creature affected by this spell is {@condition blinded}. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.",
-                "A creature can use their action to clear their head and end the blinded condition on themselves.",
+                "A dazzling array of flashing, colored light springs from your hand. Creatures in a 20-foot cone perceive your location as heavily obscured and must make a Constitution saving throw. On a failure, they are blinded and have their speed reduced by half. The spell ends at the end of your next turn.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Now lasts up to a minute and can be ended by an action to at least compete a little with sleep."
+                        "Changed away from {@spell sleep}s unique hit point targeting to instead act as a disengage plus larger area blind."
                     ]
                 }
             ],
-            "change": "buff",
+            "change": "change",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 2nd level or higher, roll an additional {@dice 2d10} for each slot level above 1st."
+                        "When you cast this spell using a spell slot of 2nd level or higher, the cone's size increases by 5 feet for each slot level above 1st."
 
                     ]
                 }
@@ -9789,7 +10034,8 @@
             }
         },
         {
-            "name": "Confusion",
+            "name": "Bewilder",
+            "replaces": "Confusion",
             "source": "PHB",
             "page": 224,
             "srd": true,
@@ -10109,7 +10355,8 @@
             ]
         },
         {
-            "name": "Conjure Barrage",
+            "name": "Spreadshot",
+            "replaces": "Conjure Barrage",
             "source": "PHB",
             "page": 225,
             "level": 3,
@@ -10130,7 +10377,7 @@
             "components": {
                 "v": true,
                 "s": true,
-                "m": "one piece of ammunition or a thrown weapon"
+                "m": "one mundane piece of ammunition or thrown weapon"
             },
             "duration": [
                 {
@@ -10138,7 +10385,7 @@
                 }
             ],
             "entries": [
-                "You throw a nonmagical weapon or fire a piece of nonmagical ammunition into the air to create a cone of identical weapons that shoot forward and then disappear. Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A creature takes {@damage 5d8} damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the weapon or ammunition used as a component.",
+                "You touch the material component used in the spell's casting make a ranged attack with it against one creature within the spell's range. Hit or miss, each creature in a 60-foot cone must succeed on a Dexterity saving throw. A creature takes {@damage 5d8} damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the weapon or ammunition used as a component.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -10763,7 +11010,8 @@
             }
         },
         {
-            "name": "Contagion",
+            "name": "Inflict Disease",
+            "replaces": "Contagion",
             "source": "PHB",
             "page": 227,
             "srd": true,
@@ -10795,8 +11043,8 @@
                 }
             ],
             "entries": [
-                "Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is afflicted with one of the diseases listed below (your choice). The spell has no effect on constructs, undead, or creatures immune to disease. The disease is magical, and can only be cured by the heal spell or equivalent magic.",
-                "At the end of each of the target’s turns, they must make another Constitution saving throw. If they succeed on the saving throw, they suffer no effects from the disease until the end of their next turn. When the target has succeeded on three of these saving throws, they are no longer diseased. When they have failed on three of these saving throws, the disease sets in, and lasts for 7 days unless treated by an appropriate means. Once the target has either three successes or three failures on these saving throws, they stop making saves for this spell.",
+                "Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is afflicted with one of the diseases listed below (your choice). The spell has no effect on constructs, undead, or creatures immune to disease. The disease is magical, and can only be cured by the {@spell heal} spell or equivalent magic.",
+                "At the end of each of the target's turns, they must make another Constitution saving throw. If they succeed on the saving throw, they suffer no effects from the disease until the end of their next turn. When the target has succeeded on three of these saving throws, they are no longer diseased. When they have failed on three of these saving throws, the disease sets in, and lasts for 7 days unless treated by an appropriate means. Once the target has either three successes or three failures on these saving throws, they stop making saves for this spell.",
                 {
                     "type": "entries",
                     "name": "Muscle Weakness",
@@ -11349,7 +11597,8 @@
             ]
         },
         {
-            "name": "Control Weather",
+            "name": "Alter Weather",
+            "replaces": "Control Weather",
             "source": "PHB",
             "page": 228,
             "srd": true,
@@ -11563,7 +11812,8 @@
             }
         },
         {
-            "name": "Control Winds",
+            "name": "Shape Winds",
+            "replaces": "Control Winds",
             "source": "XGE",
             "page": 152,
             "otherSources": [
@@ -11703,7 +11953,7 @@
                 }
             ],
             "entries": [
-                "You plant four pieces of nonmagical ammunition—{@item arrow|arrows} or {@item crossbow bolt|crossbow bolts}—in the ground within range and lay magic upon them to protect an area. Until the spell ends, whenever a creature other than you comes within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take 1d8 piercing damage. The piece of ammunition is then destroyed. The spell ends when no ammunition remains.",
+                "You plant four pieces of nonmagical ammunition in the ground within range and lay magic upon them to protect an area. Until the spell ends, whenever a creature other than you comes within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take {@damage 1d8} piercing damage. The piece of ammunition is then destroyed. The spell ends when no ammunition remains.",
                 "When you cast this spell, you can designate any creatures you choose, and the spell ignores them.",
                 {
                     "type": "inset",
@@ -12159,7 +12409,8 @@
             }
         },
         {
-            "name": "Create Undead",
+            "name": "Greater Reanimation",
+            "replaces": "Create Undead",
             "source": "PHB",
             "page": 229,
             "srd": true,
@@ -12182,39 +12433,39 @@
                 "v": true,
                 "s": true,
                 "m": {
-                    "text": "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 gp black onyx stone for each corpse",
-                    "cost": 15000
+                    "text": "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one black onyx"
                 }
             },
             "duration": [
                 {
-                    "type": "instant"
+                    "type": "timed",
+                    "duration": {
+                        "type": "hour",
+                        "amount": 24
+                    }
                 }
             ],
             "entries": [
-                "You can cast this spell only at night. Choose up to four corpses of Medium or Small humanoids within range. Each corpse becomes a {@creature ghoul} under your control. (The DM has game statistics for these creatures.)",
-                "As a bonus action on each of your turns, you can mentally command any creature you animated with this spell if the creature is within 120 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.",
-                "The creature is under your control for 24 hours, after which it stops obeying any command you have given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating new ones.",
+                "You summon a mighty surge of necromantic power to revive the dead as undead servants. Choose a number of bone piles or corpses within range up to your proficiency bonus, which belonged in life to a creature of CR 6 or less. Targets are raised as a skeleton, zombie, or ghoul, applying the appropriate template to their former stat blocks.",
+                "On each of your turns, you can use a bonus action to mentally command any or all minions you created through this spell within 60 feet. You select an action for each creature and where it will move. If you issue no command, the creature moves to attack any creatures hostile to it, or takes the Dodge action if it cannot detect any.",
+                "The targets are under your control for 24 hours, after which they become hostile to you and all living things. You can control a number of minions up to your proficiency bonus through this spell, but their combined CR cannot exceed 10. You can cast this spell without any targets to renew the duration of control on all your current minions, as well as any created through {@spell lesser reanimation}, or {@spell reanimation}. Minions created through those spells also count towards the 10-CR limit.",
                 {
                     "type": "inset",
-                    "name": "DM Note: Buff",
+                    "name": "DM Note: Change",
                     "entries": [
-                        "From 3 corpses -> 4 corpses. To improve power vs. equivalent Animate Dead upcast."
+                        "Part of the sweeping change to make necromancy cooler and easier to run. See {@spell reanimate} for a larger overview."
                     ]
                 }
             ],
-            "change": "buff",
+            "change": "change",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a 7th-level spell slot, you can animate or reassert control over four {@creature ghoul|ghouls}. When you cast this spell using an 8th-level spell slot, you can animate or reassert control over five {@creature ghoul|ghouls} or two {@creature ghast|ghasts} or {@creature wight|wights}. When you cast this spell using a 9th-level spell slot, you can animate or reassert control over six {@creature ghoul|ghouls}, four {@creature ghast|ghasts} or {@creature wight|wights}, or two {@creature mummy|mummies}."
+                        "When you cast this spell using a spell slot of 7th level, its duration increases to 1 week. If you cast this spell using a spell slot of 8th level or higher, its duration is permanent."
                     ]
                 }
-            ],
-            "affectsCreatureType": [
-                "humanoid"
             ],
             "miscTags": [
                 "PRM",
@@ -12533,7 +12784,8 @@
             ]
         },
         {
-            "name": "Crown of Madness",
+            "name": "Stoke Fury",
+            "replaces": "Crown of Madness",
             "source": "PHB",
             "page": 229,
             "level": 2,
@@ -12566,13 +12818,13 @@
                 }
             ],
             "entries": [
-                "One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become {@condition charmed} by you for the duration. While the target is {@condition charmed} in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes. When you cast the spell, or as an action on subsequent turns, you may activate this madness.",
-                "If their madness is activated, at the beginning of the target's turn, they must move up to their speed towards the closest other creature and use their action to make 1 melee attack against them. If their madness is not activated or they cannot reach another creature, the target may take their turn as normal. Regardless, they may attempt a Wisdom saving throw at the end of their turn, ending the spell on a success.",
+                "You plant an unquenchable rage in the mind of one humanoid you can see within range. The target must make a Wisdom saving throw or become charmed by you, their eyes glowing with a fiery light. When you cast the spell, or as an action on subsequent turns, you may activate this rage.",
+                "If their rage is activated, at the beginning of the target's turn, they must move up to their speed towards the closest other creature and use their action to make 1 melee attack against them. If their rage is not activated or they cannot reach another creature, the target may take their turn as normal. Regardless, they may attempt a Wisdom saving throw at the end of their turn, ending the spell on a success.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Spell doesn't end of save when going unactivated, allow some movement before the attack to remove extremely trivial counterplay. Unique upcasting for multiattack targets."
+                        "Spell doesn't end when going unactivated and allowing movement before the attack removes extremely trivial counterplay. Unique upcasting for multiattack targets."
                     ]
                 }
             ],
@@ -12902,7 +13154,7 @@
             "srd": true,
             "basicRules": true,
             "level": 1,
-            "school": "V",
+            "school": "N",
             "time": [
                 {
                     "number": 1,
@@ -13075,7 +13327,8 @@
             ]
         },
         {
-            "name": "Dancing Lights",
+            "name": "Fairy Lights",
+            "replaces": "Dancing Lights",
             "source": "PHB",
             "page": 230,
             "srd": true,
@@ -13105,7 +13358,7 @@
                     "type": "timed",
                     "duration": {
                         "type": "minute",
-                        "amount": 1
+                        "amount": 10
                     }
                 }
             ],
@@ -13668,7 +13921,8 @@
             }
         },
         {
-            "name": "Daylight",
+            "name": "Brilliance",
+            "replaces": "Daylight",
             "source": "PHB",
             "page": 230,
             "srd": true,
@@ -13702,8 +13956,9 @@
             ],
             "entries": [
                 "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet. It is not sunlight.",
-                "If you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.", "If any of this spell's area overlaps with an area of darkness created by a spell of its own level, or an equivalent magical effect, the light in that area is converted to dim light.",
-                "Forthermore, if any of this spell's area overlaps with an area of darkness created by a spell of a lower level, or an equivalent magical effect, the spell or effect that created the darkness is dispelled.",
+                "If you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object blocks the light.", 
+                "If any of this spell's area overlaps with an area of darkness created by a spell of its own level, or an equivalent magical effect, the light in that area is converted to dim light.",
+                "Furthermore, if any of this spell's area overlaps with an area of darkness created by a spell of a lower level, or an equivalent magical effect, the spell or effect that created the darkness is dispelled.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -14399,7 +14654,8 @@
             ]
         },
         {
-            "name": "Detect Evil and Good",
+            "name": "Detect Otherworldly Influence",
+            "replaces": "Detect Evil and Good",
             "source": "PHB",
             "page": 231,
             "srd": true,
@@ -14435,13 +14691,13 @@
                 "ritual": true
             },
             "entries": [
-                "For the duration, you know if there is an aberration, celestial, elemental, fey, fiend, or undead within 30 feet of you, as well as where the creature is located. Similarly, you know if there is a place or object within 30 feet of you that has been magically consecrated or desecrated.",
+                "You sense the presence of unnatural or extraplanar creatures. The spell reveals the existence of any aberrations, celestials, elementals, fey, fiends, or undead within 30 feet of you, as well as their locations. Similarly, you know if there is a place or object within 30 feet of you that has been magically consecrated or desecrated.",
                 "The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Allow ritual casting, might get some clerics to cast it in some scenarios?"
+                        "Allow ritual casting, might get some clerics to cast it in some scenarios."
                     ]
                 },
                 {
@@ -15968,7 +16224,8 @@
             ]
         },
         {
-            "name": "Divine Favor",
+            "name": "Blessed Strikes",
+            "replaces": "Divine Favor",
             "source": "PHB",
             "page": 234,
             "srd": true,
@@ -16001,12 +16258,12 @@
                 }
             ],
             "entries": [
-                "Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal an extra {@damage 1d6} radiant damage on a hit.",
+                "Your prayer empowers you with divine power. Until the spell ends, your weapon attacks deal an extra {@damage 1d6} radiant or necrotic damage (your choice) on a hit.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Damage up from 1d4 -> 1d6. Matches up better to Hunter's Mark / Hex"
+                        "Damage up from 1d4 -> 1d6. Matches up better to Hunter's Mark / Hex. Also allow necrotic damage for evil god flavor."
                     ]
                 },
                 {
@@ -16841,17 +17098,9 @@
             "entries": [
                 "This spell shapes a creature's dreams. Choose a creature known to you as the target of this spell. The target must be on the same plane of existence as you. Creatures that don't sleep, such as elves, can't be contacted by this spell. You, or a willing creature you touch, enters a trance state, acting as a messenger. While in the trance, the messenger is aware of his or her surroundings, but can't take actions or move.",
                 "If the target is asleep, the messenger appears in the target's dreams and can converse with the target as long as it remains asleep, through the duration of the spell. The messenger can also shape the environment of the dream, creating landscapes, objects, and other images. The messenger can emerge from the trance at any time, ending the effect of the spell early. The target recalls the dream perfectly upon waking. If the target is awake when you cast the spell, the messenger knows it, and can either end the trance (and the spell) or wait for the target to fall asleep, at which point the messenger appears in the target's dreams.",
-                "You can make the messenger appear monstrous and terrifying to the target. If you do, the messenger can deliver a message of no more than ten words and then the target must make a Wisdom saving throw. On a failed save, echoes of the phantasmal monstrosity spawn a nightmare that lasts the duration of the target's sleep and prevents the target from gaining any benefit from that rest. In addition, when the target wakes up, it takes {@damage 6d6} psychic damage.",
-                "If you have a body part, lock of hair, clipping from a nail, or similar portion of the target's body, the target makes its saving throw with disadvantage.",
-                {
-                    "type": "inset",
-                    "name": "DM Note: Buff",
-                    "entries": [
-                        "Damage up from 3d6 -> 6d6"
-                    ]
-                }
+                "You can make the messenger appear monstrous and terrifying to the target. If you do, the messenger can deliver a message of no more than ten words and then the target must make a Wisdom saving throw. On a failed save, echoes of the phantasmal monstrosity spawn a nightmare that lasts the duration of the target's sleep and prevents the target from gaining any benefit from that rest. In addition, when the target wakes up, it takes {@damage 3d6} psychic damage.",
+                "If you have a body part, lock of hair, clipping from a nail, or similar portion of the target's body, the target makes its saving throw with disadvantage."
             ],
-            "change": "buff",
             "damageInflict": [
                 "psychic"
             ],
@@ -17098,7 +17347,8 @@
             ]
         },
         {
-            "name": "Dust Devil",
+            "name": "Dust Cyclone",
+            "replaces": "dust cyclone",
             "source": "XGE",
             "page": 154,
             "otherSources": [
@@ -17138,14 +17388,15 @@
                 }
             ],
             "entries": [
-                "Choose an unoccupied 5-foot cube of air that you can see within range. An elemental force that resembles a dust devil appears in the cube and lasts for the spell's duration.",
-                "Any creature that enters its radius for the first time during its turn or ends its turn within 5 feet of the dust devil must make a Strength saving throw. On a failed save, the creature takes {@damage 1d10} bludgeoning damage and is pushed 5 feet away from the center of the dust devil. On a successful save, the creature takes half as much damage and isn't pushed.",
-                "As a bonus action, you can move the dust devil up to 30 feet in any direction. If the dust devil runs into a creature, that creature must make the saving throw against the sphere's damage and push, and the dust devil stops moving this turn. If the dust devil moves over sand, dust, loose dirt, or light gravel, it sucks up the material and forms a 10-foot-radius cloud of debris around itself that lasts until the start of your next turn. The cloud heavily obscures its area.",
+                "Choose an unoccupied 5-foot cube of air that you can see within range. A small cyclone whips up at the target point with a radius of 5 feet and a height of 30 feet.",
+                "Any creature that ends its turn inside the radius of the cyclone or enters its radius for the first time during its turn must make a Strength saving throw. On a failed save, the creature takes {@damage 1d10} bludgeoning damage and is pushed 5 feet away from the center of the cyclone. On a successful save, the creature takes half as much damage and isn't pushed.",
+                "As a bonus action, you can move the cyclone up to 30 feet in any direction. If the  cyclone runs into a creature, that creature must make the saving throw against the sphere's damage and push. You can continue to move the cyclone, but its strength is exhausted until the end of your turn and subsequent creatures are unaffected by it passing through them.",
+                "If the cyclone moves over sand, dust, loose dirt, or small gravel, it sucks up the material and heavily obscures its radius until the start of your next turn.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Give Dust Devil the ram effect from Flaming Sphere to make it a sidegrade instead of strictly worse."
+                        "1d8 -> 1d10, give the ram effect from {spell flaming sphere}, and add a small rider to make it a sidegrade instead of strictly worse."
                     ]
                 },
                 {
@@ -17162,7 +17413,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@damage 1d8} for each slot level above 2nd."
+                        "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@damage 1d20} for each slot level above 2nd."
                     ]
                 }
             ],
@@ -17195,7 +17446,8 @@
             }
         },
         {
-            "name": "Earth Tremor",
+            "name": "Lesser Earthquake",
+            "replaces": "Earth Tremor",
             "source": "XGE",
             "page": 155,
             "otherSources": [
@@ -17229,7 +17481,7 @@
                 }
             ],
             "entries": [
-                "You cause a tremor in the ground within range. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes {@damage 2d6} bludgeoning damage and is knocked {@condition prone}. On a success, they suffer half as much damage and no other effects. If the ground in that area is loose earth or stone, it becomes difficult terrain for all other creatures besides you until cleared, with each 5-foot-diameter portion requiring at least 1 minute to clear by hand.",
+                "You cause a tremor in the ground within range. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes {@damage 2d6} bludgeoning damage and is knocked {@condition prone}. On a success, they suffer half as much damage and no other effects. If the terrain is dirt or stone, it becomes difficult terrain for all other creatures besides you for the next hour.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -17237,13 +17489,14 @@
                         "Damage up from 1d6 -> 2d6 (save for half), prone + difficult terrain makes it comparable to {@spell thunderwave}. Let caster ignore terrain to use as an escape."
                     ]
                 }
-            ],"change": "buff",
+            ],
+            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d6} for each slot level above 1st."
+                        "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@damage 1d6} for each slot level above 1st and the radius increases by 5 feet for each two slot levels above 1st."
                     ]
                 }
             ],
@@ -17281,7 +17534,8 @@
             }
         },
         {
-            "name": "Earthbind",
+            "name": "Gravatic Surge",
+            "replaces": "Earthbind",
             "source": "XGE",
             "page": 154,
             "otherSources": [
@@ -17291,7 +17545,7 @@
                 }
             ],
             "level": 2,
-            "school": "T",
+            "school": "E",
             "time": [
                 {
                     "number": 1,
@@ -17319,7 +17573,7 @@
                 }
             ],
             "entries": [
-                "You point at one creature you can see within range, and send a lashing tentacle of earth to haul them to the ground. The target must succeed on a Strength saving throw, or immediately fall prone. Its flying speed (if any) is reduced to 0 feet for the spell's duration, and a flying creature falls even if it has hover. An airborne creature takes normal falling damage up to a maximum of 4d6 points of bludgeoning damage. A creature that makes the saving throw suffers no effects.",
+                "You point at one creature you can see within range, and send a tendril of gravitic energy to haul them to the ground. The target must succeed on a Strength saving throw or immediately fall prone. Its flying speed (if any) is reduced to 0 feet for the spell's duration, and a flying creature falls even if it has hover. An airborne creature takes normal falling damage up to a maximum of {@damage 4d6} bludgeoning damage. A creature that makes the saving throw suffers no effects.",
                 {
                     "type": "inset",
                     "name": "DM Note: Change",
@@ -17334,7 +17588,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 3rd level or higher, the number of targets increases by 1 for each slot level above 2nd, and the maximum damage increases by 1d6 for each level above 2nd."
+                        "When you cast this spell using a spell slot of 3rd level or higher, the number of targets increases by 1 for each slot level above 2nd, and the maximum damage increases by {@damage 1d6} for each level above 2nd."
                     ]
                 }
             ],
@@ -17518,7 +17772,8 @@
             }
         },
         {
-            "name": "Elemental Bane",
+            "name": "Expose Weakness",
+            "replaces": "Elemental Bane",
             "source": "XGE",
             "page": 155,
             "otherSources": [
@@ -17557,12 +17812,12 @@
                 }
             ],
             "entries": [
-                "Choose one creature you can see within range, and choose one of the following damage types: acid, cold, fire, lightning, or thunder. The target must make a Charisma saving throw or lose any resistance to that damage type for the duration. Twice per turn when the target takes damage of the chosen type, they take {@damage 2d6} additional damage of that type.",
+                "Select one creature you can see within range, and one damage type that isn't bludgeoning, piercing, or slashing. The target must make a Charisma saving throw or lose any resistance to that damage type for the duration. Twice per turn when the target takes damage of the chosen type, they take {@damage 2d6} additional damage of that type.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "From CON -> CHA save to make it more likely to take hold. Once per turn -> twice per turn to boost stuff like Scorching Ray or Twinned Cantrips"
+                        "From CON -> CHA save to make it more likely to take hold. Once per turn -> twice per turn to boost stuff like Scorching Ray or Twinned Cantrips. Elemental damages -> any non b/p/s."
                     ]
                 }
             ],
@@ -17618,7 +17873,8 @@
             }
         },
         {
-            "name": "Elemental Weapon",
+            "name": "Imbue Element",
+            "replaces": "Elemental Weapon",
             "source": "PHB",
             "page": 237,
             "level": 3,
@@ -17650,7 +17906,7 @@
                 }
             ],
             "entries": [
-                "You touch a melee weapon and enhance it with elemental power. Choose one of the following damage types: acid, cold, fire, or lightning. For the duration, the weapon deals 1d6 bonus damage per hit, and the weapon's base damage is of the chosen type. In addition, once per round after a creature takes damage from the weapon, they suffer an effect based on the damage type chosen:",
+                "You touch a melee weapon and enhance it with elemental power. Choose one of the following damage types: acid, cold, fire, or lightning. For the duration, the weapon deals {@damage 1d6} bonus damage per hit, and the weapon's base damage is of the chosen type. In addition, once per round after a creature takes damage from the weapon, they suffer an effect based on the damage type chosen:",
                 {
                     "type": "list",
                     "style": "list-hang-notitle",
@@ -17658,12 +17914,12 @@
                         {
                             "type": "item",
                             "name": "Acid",
-                            "entry": "The target takes 2d4 acid damage at the end of their next turn."
+                            "entry": "The target takes {@damage 2d4} acid damage at the end of their next turn."
                         },
                         {
                             "type": "item",
                             "name": "Fire",
-                            "entry": "The target takes 1d6 additional fire damage."
+                            "entry": "The target takes {@damage 1d6} additional fire damage."
                         },
                         {
                             "type": "item",
@@ -17673,7 +17929,7 @@
                         {
                             "type": "item",
                             "name": "Lightning",
-                            "entry": "The target takes 1d8 lightning damage if they willingly move 5 feet or more before the end of their next turn."
+                            "entry": "The target takes {@damage 1d8} lightning damage if they willingly move 5 feet or more before the end of their next turn."
                         }
                     ]
                 },
@@ -17698,7 +17954,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 5th or 6th level, the bonus to attack rolls increases to +2 and the extra damage increases to {@damage 3d4}. When you use a spell slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to {@damage 4d4}."
+                        "When you cast this spell using a spell slot of 5th level or higher, the bonus damage increases by {@damage 1d6} for each two slot levels above 3rd."
                     ]
                 }
             ],
@@ -17936,8 +18192,8 @@
 				}
 			],
 			"entries": [
-				"You shroud a target in visible ethereal power that reacts violently to the presence of magic. For the duration of the spell, if the target casts a spell, it takes 2d4 force damage. This damage is increased by 1d4 for each spell level of the spell cast (no additional damage for cantrips).",
-                "Additionally, if the target ends their turn while concentrating on a spell, they take 1d4 force damage."
+				"You shroud a target in visible ethereal power that reacts violently to the presence of magic. For the duration of the spell, if the target casts a spell, it takes {@damage 2d4} force damage. This damage is increased by {@damage 1d4} for each spell level of the spell cast (no additional damage for cantrips).",
+                "Additionally, if the target ends their turn while concentrating on a spell, they take {@damage 1d4} force damage."
 			],
 			"damageInflict": [
 				"psychic"
@@ -18282,7 +18538,8 @@
             }
         },
         {
-            "name": "Enervation",
+            "name": "Lifedrinker",
+            "replaces": "Enervation",
             "source": "XGE",
             "page": 155,
             "level": 5,
@@ -18315,14 +18572,12 @@
                 }
             ],
             "entries": [
-                "A tendril of inky darkness reaches out from you, touching a creature you can see within range to drain life from it. The target must make a Dexterity saving throw. On a successful save, the target takes {@damage 4d8} necrotic damage, and the spell ends. On a failed save, the target takes {@damage 6d8} necrotic damage, and until the spell ends, you can use your action on each of your turns to automatically deal {@damage 6d8} necrotic damage to the target. The spell ends if you use your action to do anything else, if the target is ever outside the spell's range, or if the target has total cover from you.",
-                "Whenever the spell deals damage to a target, you regain hit points equal to half the amount of necrotic damage the target takes."
-                ,
+                "You empower yourself with deathly energies, gaining the ability to harvest life from your foes. When you cast the spell, you extend a black tendril out to one creature you can see within range. The target must make a Constitution saving throw. On a failure, they take {@damage 6d8} necrotic damage and have their movement speed reduced halved until the start of your next turn. On a success, they suffer half as much damage and no other effects. You regain hit points equal to half the damage dealt. You can repeat this as an action for the spell's duration.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Damage up from 4d8 -> 6d8 (and success damage up from 2d8 -> 4d8, to at least give you something on a bad cast)"
+                        "Damage up from 4d8 -> 6d8 and change mechanics so you can siphon multiple targets instead of being stuck with the crappy witchbolt limitations."
                     ]
                 }
             ],
@@ -18958,7 +19213,8 @@
             ]
         },
         {
-            "name": "Enthrall",
+            "name": "Captivate Audience",
+            "replaces": "Enthrall",
             "source": "PHB",
             "page": 238,
             "srd": true,
@@ -18991,7 +19247,8 @@
                 }
             ],
             "entries": [
-                "You weave a distracting string of words, causing creatures of your choice that you can see within range and that can hear you to make a Wisdom saving throw or be charmed by you. If you or your companions are fighting a creature, it has advantage on the save. While charmed by you in this way, a creature has disadvantage on Dexterity (Initiative) rolls as well as Wisdom (Perception) checks made to perceive any creature other than you until the spell ends or until the target can no longer see or hear you. The spell ends if you are incapacitated or you can no longer speak. Creatures do not realize that you used magic to influence them.",
+                "You weave a distracting string of words, causing creatures of your choice that you can see within range and that can hear you to make a Wisdom saving throw or be charmed by you. If you or your companions are fighting a creature, it has advantage on the save.",
+                "While charmed by you in this way, a creature has disadvantage on Dexterity (Initiative) rolls as well as Wisdom (Perception) checks made to perceive any creature other than you until the spell ends or until the target can no longer see or hear you. The spell ends if you are incapacitated or you can no longer speak. Creatures do not realize that you used magic to influence them.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -19385,7 +19642,8 @@
             }
         },
         {
-            "name": "Expeditious Retreat",
+            "name": "Swiftness",
+            "replaces": "Expeditious Retreat",
             "source": "PHB",
             "page": 238,
             "srd": true,
@@ -19418,7 +19676,7 @@
                 }
             ],
             "entries": [
-                "This spell allows you to move at an incredible pace. When you cast this spell, and then as a bonus action on each of your turns until the spell ends, you can take the Dash action. On the turn you cast this spell, your movement doens't provoke attacks of opportunity.",
+                "This spell allows you to move at an incredible pace. When you cast this spell, and then as a bonus action on each of your turns until the spell ends, you can take the Dash action. On the turn you cast this spell, your movement doesn't provoke attacks of opportunity.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -20025,7 +20283,8 @@
             ]
         },
         {
-            "name": "Far Step",
+            "name": "Shift",
+            "replaces": "Far Step",
             "source": "XGE",
             "page": 155,
             "level": 5,
@@ -20056,9 +20315,8 @@
                 }
             ],
             "entries": [
-                "You teleport up to 60 feet to an unoccupied space you can see. You can also bring one willing creature of your size or smaller who is carrying gear up to its carrying capacity. The creature must be within 5 feet of you teleport.",
+                "You teleport up to 60 feet to an unoccupied space you can see. You can also bring one willing creature of your size or smaller who is carrying gear up to its carrying capacity. The creature must be within 5 feet of you when you teleport.",
                 "On each of your turns before the spell ends, you can use a bonus action to teleport in this way again.",
-
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -20379,7 +20637,8 @@
             }
         },
         {
-            "name": "Feign Death",
+            "name": "False Death",
+            "replaces": "Feign Death",
             "source": "PHB",
             "page": 240,
             "level": 3,
@@ -20674,7 +20933,8 @@
             }
         },
         {
-            "name": "Find Traps",
+            "name": "Detect Hazard",
+            "replaces": "Find Traps",
             "source": "PHB",
             "page": 241,
             "srd": true,
@@ -20703,7 +20963,7 @@
                 }
             ],
             "entries": [
-                "You sense the presence of any trap within range that is within line of sight. A trap, for the purpose of this spell, includes anything that would inflict a sudden or unexpected effect you consider harmful or undesirable, which was specifically intended as such by its creator. Thus, the spell would sense an area affected by the {@spell alarm} spell, a {@spell glyph of warding}, or a mechanical pit trap, but it would not reveal a natural weakness in the floor, an unstable ceiling, or a creature lying in ambush.",
+                "You sense the presence of any trap within range that is within range. A trap, for the purpose of this spell, includes anything that would inflict a sudden or unexpected effect you consider harmful or undesirable, which was specifically intended as such by its creator. Thus, the spell would sense an area affected by the {@spell alarm} spell, a {@spell glyph of warding}, or a mechanical pit trap, but it would not reveal a natural weakness in the floor, an unstable ceiling, or a creature lying in ambush.",
                 "The spell reveals the general presence and vague direction of a trap within its 120-foot range, but not its specific location. If you come within 15 feet of the trap, you detect its presence exactly, and any ability checks you or your companions make to examine it are made with advantage.",
                 "The spell is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
                 {
@@ -20753,7 +21013,8 @@
             ]
         },
         {
-            "name": "Find the Path",
+            "name": "Wayfinding",
+            "replaces": "Find the Path",
             "source": "PHB",
             "page": 240,
             "srd": true,
@@ -20841,7 +21102,8 @@
             }
         },
         {
-            "name": "Finger of Death",
+            "name": "Death Ray",
+            "replaces": "Finger of Death",
             "source": "PHB",
             "page": 241,
             "srd": true,
@@ -20871,8 +21133,8 @@
                 }
             ],
             "entries": [
-                "You send negative energy coursing through a creature that you can see within range, causing it searing pain. The target must make a Constitution saving throw. It takes {@damage 9d8 + 30} necrotic damage on a failed save, or half as much damage on a successful one.",
-                "A humanoid killed by this spell rises at the start of your next turn as a {@creature zombie} that is permanently under your command, following your verbal orders to the best of its ability.",
+                "You send a blast of negative energy at a creature you can see within range. Make a spell attack roll, dealing {@damage 9d8 + 30} necrotic damage on a hit, or half as much a miss.",
+                "If the target is a humanoid and dies before the start of your next turn after being damaged by this spell, they rise at the start of your next turn as a {@creature zombie} that is permanently under your control.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -20887,7 +21149,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 8th level or higher, the damage increases by 2d8 for each level above 7th."
+                        "When you cast this spell using a spell slot of 8th level or higher, the damage increases by {@damage 2d8} for each level above 7th."
                     ]
                 }
             ],
@@ -21228,7 +21490,8 @@
             }
         },
         {
-            "name": "Fire Storm",
+            "name": "Rain of Fire",
+            "replaces": "Fire Storm",
             "source": "PHB",
             "page": 242,
             "srd": true,
@@ -21559,7 +21822,8 @@
             }
         },
         {
-            "name": "Flame Arrows",
+            "name": "Fiery Quiver",
+            "replaces": "Flame Arrows",
             "source": "XGE",
             "page": 156,
             "otherSources": [
@@ -21596,7 +21860,7 @@
                 }
             ],
             "entries": [
-                "You touch a quiver containing arrows or bolts. When a target is hit by a ranged weapon attack using a piece of ammunition drawn from the quiver, the target takes an extra {@damage 1d6} fire damage. The spell's magic ends on a piece of ammunition when it hits or misses, and the spell ends when twelve pieces of ammunition have been drawn from the quiver.",
+                "You touch a quiver containing arrows or bolts. When a target is hit by a ranged weapon attack using a piece of ammunition drawn from the quiver, the target takes an extra {@damage 1d6} fire damage. The spell's magic ends on a piece of ammunition when it hits or misses, and the spell ends when twelve pieces of ammunition have been drawn from the quiver or if you cast the spell again on a different quiver.",
                 "A flammable object hit by these arrows ignites if it isn't being worn or carried.",
                 {
                     "type": "inset",
@@ -21656,7 +21920,8 @@
             }
         },
         {
-            "name": "Flame Blade",
+            "name": "Flametongue",
+            "replaces": "Flame Blade",
             "source": "PHB",
             "page": 242,
             "srd": true,
@@ -21691,7 +21956,7 @@
             ],
             "entries": [
                 "You evoke a fiery blade in a free hand of the touched creature. The blade is similar in size and shape to a scimitar, and it lasts for the duration. It counts as a simple melee weapon with which the target is proficient, and provides bright light in a 20-foot radius and dim light for an additional 20 feet.",
-                "It deals 2d6 fire damage on a hit and has the finesse, light, and thrown properties (range 20/60). If the blade hits a flammable creature or object, it ignites, taking 1d6 fire damage at the start of each of its turns until a creature uses its action to douse the flames on itself or another creature.",
+                "It deals {@damage 2d6} fire damage on a hit and has the finesse, light, and thrown properties (range 20/60). If the blade hits a flammable creature or object, it ignites, taking {@damage 1d6} fire damage at the start of each of its turns until a creature uses its action to douse the flames on itself or another creature.",
                 "If the weaponed is dropped or thrown, it dissipates at the end of the turn. Thereafter, while the spell persists, the target can use a bonus action to cause the blade to reappear in its hand.",
                 {
                     "type": "inset",
@@ -21707,7 +21972,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 4th level or higher, the blade's damage increases by 1d6 for every two slot levels above 2nd."
+                        "When you cast this spell using a spell slot of 4th level or higher, the blade's damage increases by {@damage 1d6} for every two slot levels above 2nd."
                     ]
                 }
             ],
@@ -21754,7 +22019,8 @@
             ]
         },
         {
-            "name": "Flame Strike",
+            "name": "Divine Flame",
+            "replaces": "Flame Strike",
             "source": "PHB",
             "page": 242,
             "srd": true,
@@ -22156,7 +22422,8 @@
             ]
         },
         {
-            "name": "Flesh to Stone",
+            "name": "Petrify",
+            "replaces": "Flesh to Stone",
             "source": "PHB",
             "page": 243,
             "srd": true,
@@ -22184,15 +22451,15 @@
                 {
                     "type": "timed",
                     "duration": {
-                        "type": "minute",
-                        "amount": 1
+                        "type": "round",
+                        "amount": 3
                     },
                     "concentration": true
                 }
             ],
             "entries": [
                 "You attempt to petrify a creature that you can see within range. If the target's body is made of flesh, the creature must make a Constitution saving throw. If the saving throw fails by 5 or more, the creature is instantly petrified; otherwise, a creature that fails the save begins to turn to stone and is restrained.",
-                "A creature restrained by this spell must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this spell three times, the spell ends; if it fails its save, it is petrified.",
+                "A creature restrained by this spell must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this spell three times, the spell ends; if it fails a save, it is petrified.",
                 "If the creature is physically broken while {@condition petrified}, it suffers from similar deformities if it reverts to its original state.",
                 "The petrification lasts until the creature is freed by the greater restoration spell or other magic.",
                 {
@@ -22585,7 +22852,8 @@
             }
         },
         {
-            "name": "Forcecage",
+            "name": "Force Prison",
+            "replaces": "Forcecage",
             "source": "PHB",
             "page": 243,
             "srd": true,
@@ -23041,7 +23309,8 @@
             ]
         },
         {
-            "name": "Friends",
+            "name": "Bewitch",
+            "replaces": "Friends",
             "source": "PHB",
             "page": 244,
             "level": 0,
@@ -23073,7 +23342,7 @@
                 }
             ],
             "entries": [
-                "For the duration, you have advantage on Charisma (Persuasion) or Charisma (Deception) checks directed at one creature of your choice that isn't hostile toward you. When the spell ends, the creature can make a wisdom saving throw. On a success the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM's discretion), depending on the nature of your interaction with it.",
+                "Select one creature you can see within range. For the duration, you have advantage on Charisma (Persuasion) or Charisma (Deception) checks to interact with the target. When the spell ends, the creature can make a Wisdom saving throw. On a success the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM's discretion), depending on the nature of your interaction with it.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
@@ -23599,7 +23868,8 @@
             }
         },
         {
-            "name": "Geas",
+            "name": "Injunction",
+            "replaces": "Geas",
             "source": "PHB",
             "page": 244,
             "srd": true,
@@ -23631,15 +23901,15 @@
                 }
             ],
             "entries": [
-                "You place a magical command on a creature that you can see within range, forcing it to carry out some service or refrain from some action or course of activity as you decide. If the creature can understand you, it must succeed on a Wisdom saving throw or become {@condition charmed} by you for the duration. While the creature is {@condition charmed} by you, it takes {@damage 5d10} psychic damage each time it acts in a manner directly counter to your instructions, but no more than once each day. A creature that can't understand you is unaffected by the spell.",
-                "Damage dealt by the Geas cannot be healed by any means except spending a day in complicance with the given command. For each day spent in compliance, 5 damage caused by Geas is healed.",
-                "You can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the spell ends.",
-                "You can end the spell early by using an action to dismiss it. A {@spell remove curse}, {@spell greater restoration}, or {@spell wish} spell also ends it.",
+                "You magically bind a creature that can understand you within range to either complete or abstain from some action or activity. It must succeed on a Wisdom saving throw or become {@condition charmed} by you for the duration. Once per turn while the creature is {@condition charmed} this way, the target's current and maximum hit points are reduced by {@damage 5d10} if its behavior contradicts your instructions. This reduction lasts until the spell ends.",
+                "For each day spent in compliance with the spell, the target regains up to 5 maximum hit points.",
+                "You can issue any command you choose, though the spell ends if you issue a suicidal command. The creature's death does not end the spell.",
+                "As an action, you can end the spell early. A {@spell wish} or {@spell remove curse} cast at the spell's level also ends the spell. {@spell Greater restoration} restores the targets hitpoint maximum but does not end the spell.",
                 {
                     "type": "inset",
                     "name": "DM Note: Buff",
                     "entries": [
-                        "Don't allow healing the damage unless the creature is in compliance."
+                        "Make damage also inflict max HP reduction and occur more often so that the effect can't be ignored by creatures with larger HP pools"
                     ]
                 }
             ],
@@ -24308,7 +24578,7 @@
                     "type": "inset",
                     "name": "DM Note: Nerf",
                     "entries": [
-                        "For a tiny cost, this spell used to trivialize a huge range of low-level survival challenges. THe changes to nourishment and material components fix that."
+                        "For a tiny cost, this spell used to trivialize a huge range of low-level survival challenges. The changes to nourishment and material components fix that."
                     ]
                 }
             ],
@@ -26818,7 +27088,7 @@
             "srd": true,
             "basicRules": true,
             "level": 1,
-            "school": "V",
+            "school": "N",
             "time": [
                 {
                     "number": 1,
@@ -26841,7 +27111,14 @@
                 }
             ],
             "entries": [
-                "A creature of your choice that you can see within range regains hit points equal to {@dice 1d4} + your spellcasting ability modifier. This spell has no effect on undead or constructs."
+                "A creature of your choice that you can see within range regains hit points equal to {@dice 1d4} + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+                {
+                    "type": "inset",
+                    "name": "3rd Ecumenical Spell Council of Capital",
+                    "entries": [
+                        "Healing magic is necromantic in nature. Stop submitting appeals."
+                    ]
+                }
             ],
             "entriesHigherLevel": [
                 {
@@ -27449,7 +27726,7 @@
                 }
             ],
             "entries": [
-                "You place a helpful boon on a creature that you can see within range. Until the spell ends, whenever the target uses an attack action or casts a spell of 1st level or higher they regain 1d6 hit points.",
+                "You place a helpful boon on a creature that you can see within range. Until the spell ends, whenever the target uses an attack action or casts a spell of 1st level or higher they regain {@damage 1d6} hit points.",
                 "If the target drops to 0 hit points before this spell ends, You can use a bonus action on a subsequent turn of yours to move the boon to a new creature.",
                 "A {@spell hex} cast on the target ends this spell early."
             ],
@@ -29049,7 +29326,7 @@
                     "type": "entries",
                     "name": "At Higher Levels",
                     "entries": [
-                        "When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
+                        "When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@damage 1d6} for each slot level above 3rd."
                     ]
                 }
             ],
@@ -31682,7 +31959,7 @@
                 }
             ],
             "entries": [
-                "You gesture at two creatures within range, redirecting the life force from one to heal another within range. One creature of your choice within 30 feet of you that you can see must make a Constitution saving throw. On a failure, the target takes 4d8 damage, which can't be reduced in any way, and another creature of your choice that you can see within 30 feet of your target regains an half that number of hit points. A creature can willingly fail this save.",
+                "You gesture at two creatures within range, redirecting the life force from one to heal another within range. One creature of your choice within 30 feet of you that you can see must make a Constitution saving throw. On a failure, the target takes {@damage 4d8} damage, which can't be reduced in any way, and another creature of your choice that you can see within 30 feet of your target regains an half that number of hit points. A creature can willingly fail this save.",
                 "The spell has no effect on constructs or the undead.",
                 {
                     "type": "inset",
@@ -34039,7 +34316,7 @@
             "srd": true,
             "basicRules": true,
             "level": 9,
-            "school": "V",
+            "school": "N",
             "time": [
                 {
                     "number": 1,
@@ -34109,7 +34386,7 @@
             "srd": true,
             "basicRules": true,
             "level": 3,
-            "school": "V",
+            "school": "N",
             "time": [
                 {
                     "number": 1,
@@ -34708,7 +34985,7 @@
                     "type": "inset",
                     "name": "3rd Ecumenical Spell Council of Capital",
                     "entries": [
-                        "Moved from conjuration. Acid is not an energy. Creating acid from the air is clearly transmutation."
+                        "Moved from Evocation. Acid is not an energy. Creating acid from the air is clearly Transmutation."
                     ]
                 }
             ],
@@ -35434,7 +35711,7 @@
                 }
             ],
             "entries": [
-                "You reach into the mind of one creature you can see within range. The target must make a Wisdom saving throw, taking {@damage 3d8} psychic damage on a failed save, or half as much damage on a successful one.  On a failed save, you psychically pin the target and link yourself to its mind. For the duration, you can use a bonus action to mentally twist the skewer, causing the creature to subtract 1d4 from the next saving throw it makes before the end of your next turn.",
+                "You reach into the mind of one creature you can see within range. The target must make a Wisdom saving throw, taking {@damage 3d8} psychic damage on a failed save, or half as much damage on a successful one.  On a failed save, you psychically pin the target and link yourself to its mind. For the duration, you can use a bonus action to mentally twist the skewer, causing the creature to subtract {@dice 1d4} from the next saving throw it makes before the end of your next turn.",
                 "Additionally, you have perfect knowledge of the target's location as long as you are on the same plane of existence. The target can't be hidden from you and it gains no benefit from the invisible condition against you. If you maintain concentration for the full duration, this knowledge lasts for 1 hour after the spell ends.",
                 {
                     "type": "inset",
@@ -37086,7 +37363,7 @@
                 }
             ],
             "entries": [
-                "You open a conduit to a plane of death, infusing one creature you can see within range with a jolt of negative energy. A living target must make a Constitution saving throw, suffering 5d8 necrotic damage on a failure or half as much on a success. An undead target receives 5d8 temporary hit points. While it has these temporary hit points, all its attacks have advantage.",
+                "You open a conduit to a plane of death, infusing one creature you can see within range with a jolt of negative energy. A living target must make a Constitution saving throw, suffering {@damage 5d8} necrotic damage on a failure or half as much on a success. An undead target receives {@damage 5d8} temporary hit points. While it has these temporary hit points, all its attacks have advantage.",
                 {
                     "type": "inset",
                     "name": "Caius' Notes: Necromantic Drift",
@@ -37151,8 +37428,8 @@
                 }
             ],
             "entries": [
-                "You tear a rift to a plane of death, summoning forth a flood of negative energy. Choose a point within 60 feet to open the rift. All non-undead creatures within 10 feet must make a Constitution saving throw, taking 6d8 necrotic damage on a failure or half as much on a success. If a creature is killed by this spell, the blast spreads, affecting a 10-foot radius around that creature as well. A creature cannot be damaged twice by the spell, and the spell ends after damaging 10 creatures.",
-                "If a humanoid dies from this spell, they rise as a zombie at the start of your next turn and attack the closest living creature. You can assert control over the zombies by casting animate dead as if you were reasserting control over zombies created with that spell. Statistics for a zombie are in the Monster Manual. At the DM's discretion, other creature types may rise as different undead.",
+                "You tear a rift to a plane of death, summoning forth a flood of negative energy. Choose a point within 60 feet to open the rift. All non-undead creatures within 10 feet must make a Constitution saving throw, taking {@damage 6d8} necrotic damage on a failure or half as much on a success. If a creature is killed by this spell, the blast spreads, affecting a 10-foot radius around that creature as well. A creature cannot be damaged twice by the spell, and the spell ends after damaging 10 creatures.",
+                "If a humanoid dies from this spell, they rise as a zombie at the start of your next turn and attack the closest living creature. You can assert control over the zombies by casting {@spell reanimate} or animate dead as if you were reasserting control over zombies created with that spell. Statistics for a zombie are in the Monster Manual. At the DM's discretion, other creature types may rise as different undead.",
                 {
                     "type": "inset",
                     "name": "Caius' Notes: Necromantic Drift",
@@ -41386,7 +41663,7 @@
                     "type": "entries",
                     "name": "Heat",
                     "entries": [
-                        "You conjure a blast of intense heat, causing every creature in a 10-foot radius to make a Constitution saving throw. On a failure they take 3d6 fire damage, or half as much on a successful save. If you target an existing flame, the damage increases to 4d6."
+                        "You conjure a blast of intense heat, causing every creature in a 10-foot radius to make a Constitution saving throw. On a failure they take {@damage 3d6} fire damage, or half as much on a successful save. If you target an existing flame, the damage increases to {@damage 4d6}."
                     ]
                 },
                 {
@@ -48371,7 +48648,7 @@
             ],
             "entries": [
                 "You touch a stone surface or the ground, and call forth stone that shapes itself to your command. You can make any roughly shaped Small or Tiny item from the stone, including functional simple or martial melee weapons (for Medium or smaller creatures). Items created this way possess magical durability to resist shattering or breaking.",
-				"Alternatively you can encase your limbs in stone, causing your unarmed strikes to deal 1d8 bludgeoning damage for the duration of the spell.",
+				"Alternatively you can encase your limbs in stone, causing your unarmed strikes to deal {@damage 1d8} bludgeoning damage for the duration of the spell.",
 				"Items made this way lose any magical durability after one hour, and become easily broken if they would not normally be functional in that shape. You can have three items or effects created by this cantrip at a time, and upon creating a fourth the oldest one loses its magical durability and becomes easily broken."
             ],
             "classes": {
@@ -53684,7 +53961,7 @@
                 }
             ],
             "entries": [
-                "You send tendrils of necrotic energy out, sucking the life essence from your foes. Select up to three creatures within range. Make a ranged spell attack against each of them, dealing 3d6 necrotic damage on a hit. You regain hit points equal to half the damage dealt.",
+                "You send tendrils of necrotic energy out, sucking the life essence from your foes. Select up to three creatures within range. Make a ranged spell attack against each of them, dealing {@damage 3d6} necrotic damage on a hit. You regain hit points equal to half the damage dealt.",
                 {
                     "type": "inset",
                     "name": "Caius' Notes: Vampiric Touch",

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {Location} from '@angular/common';
 import { Observable, Subject } from "rxjs";
 
-import { Class } from '../../models';
+import { newClass } from '../../models';
 import { HttpClient } from '@angular/common/http';
 import { DataTableDirective } from 'angular-datatables';
 import { ActivatedRoute } from '@angular/router';
@@ -16,11 +16,11 @@ import { ADTSettings } from 'angular-datatables/src/models/settings';
 })
 export class ClassesComponent implements OnInit {
 
-  classes: Class[];
-  currClass: Class;
+  classes: newClass[] = [];
+  currClass: newClass;
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/classData.json")
+      return this.http.get("assets/data/2024/classes.json")
   }
 
   constructor(private http: HttpClient,
@@ -61,14 +61,14 @@ export class ClassesComponent implements OnInit {
       }
     };
 
-    this.getJSON().subscribe(classes => {
-        this.classes = classes;
-        this.route.paramMap.subscribe(params => {
-          this.currClass = this.classes.find(f => f.id == this.route.snapshot.params.className);
-        });
-        setTimeout(() => {
-          this.dtTrigger.next(this.dtOptions);
-        });
+    this.getJSON().subscribe(inputClasses => {
+      inputClasses.forEach(inClass => this.classes.push(new newClass(inClass)));
+      this.route.paramMap.subscribe(params => {
+        this.currClass = this.classes.find(f => f.id == this.route.snapshot.params.className);
+      });
+      setTimeout(() => {
+        this.dtTrigger.next(this.dtOptions);
+      });
     });
   }
 

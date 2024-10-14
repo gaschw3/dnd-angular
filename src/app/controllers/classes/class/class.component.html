@@ -3,7 +3,7 @@
     <div class="col-12">
       <h2 class="text-center text-success">{{class.name}}</h2>
       <div class="col-md-6 offset-md-3">
-        <p class="text-center">{{class.description}}</p>
+        <entry-renderer [list]=class.fluff.entries parent=''></entry-renderer>
       </div>
       <app-archetypes [archetypes]="this.getArchetypes()" [selectedArchetypes]="selectedArchetypes" [allSelected]="allSelected"></app-archetypes>
     </div>
@@ -11,44 +11,43 @@
       <div class="card">
         <div class="card-body">
             <h4 class="text-success">Hit Points</h4>
-            <div><strong>Hit Dice: </strong>1d{{class.hd}}</div>
+            <div><strong>Hit Dice: </strong>{{class.hd}}</div>
             <div><strong>HP at 1st Level: </strong>{{class.hd}} + CON</div>
-            <div><strong>HP at Higher Levels: </strong>(1d{{class.hd}} + CON) per {{class.name}} level after first</div>
+            <div><strong>HP at Higher Levels: </strong>({{class.hd}} + CON) per {{class.name}} level after first</div>
 
             <h4 class="text-success mt-3 mb-0">Proficiencies</h4>
             <p>You are proficient with the following items, in addition to any proficiencies provided by your race or background.</p>
-            <div><strong>Armor: </strong>{{prof.armor}}</div>
+            <div><strong>Armor: </strong><span [innerHtml]="prof.armor | linkmaker"></span></div>
             <div><strong>Weapons: </strong>{{prof.weapons}}</div>
             <div><strong>Tools: </strong>{{prof.tools}}</div>
-            <div><strong>Saves: </strong>{{prof.saves}}</div>
+            <div><strong>Saves: </strong>{{class.saves}}</div>
             <div><strong>Skills: </strong>{{prof.skills}}</div>
 
             <h4 class="text-success mt-3 mb-0">Starting Equipment</h4>
             <p>You start with the following items, plus anything provided by your background.</p>
             <ul>
-              <ng-container *ngFor="let item of class.equipment.default">
+              <ng-container *ngFor="let item of class.startingEquipment">
                 <li [innerHtml]="item | linkmaker"></li>
               </ng-container>
             </ul>
-            <p>Alternatively, you may start with <span class="text--gp">{{class.equipment.alt}} x 10gp</span> to buy your own equipment</p>
+            <p>Alternatively, you may start with <span class="text--gp" [innerHtml]="class.startingGold | linkmaker"></span> to buy your own equipment</p>
 
             <h4 class="text-success mt-3 mb-0">Multiclassing</h4>
-            <p>When you gain a level in a class other than your first, there is a minimum requirement for one (or more) stats and you gain only some of that class's starting proficiencies.</p>
-            <div *ngIf="multi.minScore"><strong>Ability Score Min: </strong>{{multi.minScore}}</div>
-            <div *ngIf="multi.armor"><strong>Armor: </strong>{{multi.armor}}</div>
-            <div *ngIf="multi.weapons"><strong>Weapons: </strong>{{multi.weapons}}</div>
-            <div *ngIf="multi.tools"><strong>Tools: </strong>{{multi.tools}}</div>
-            <div *ngIf="multi.skills"><strong>Skills: </strong>{{multi.skills}}</div>
+            <p *ngIf="multi.requirements">{{multi.requirements}}</p>
+            <div *ngIf="multi.proficiencies.armor"><strong>Armor: </strong><span [innerHtml]="multi.proficiencies.armor | linkmaker"></span></div>
+            <div *ngIf="multi.proficiencies.weapons"><strong>Weapons: </strong>{{multi.proficiencies.weapons}}</div>
+            <div *ngIf="multi.proficiencies.tools"><strong>Tools: </strong>{{multi.proficiencies.tools}}</div>
+            <div *ngIf="multi.proficiencies.skills"><strong>Skills: </strong>{{multi.proficiencies.skills}}</div>
         </div>
       </div>
       <div class="list-group features-list sticky-top py-2 d-none d-md-block">
         <h5>Outline (jump to feature)</h5>
-        <ng-container *ngFor="let feature of class.features">
-            <a *ngIf="feature.subclass == 'base'"
-            [ngClass]="{'active': this.child?.currActive == feature.name}"
+        <ng-container *ngFor="let feature of class.classFeature">
+            <a *ngIf="feature.className == class.name"
+            [ngClass]="{'active': this.child?.currActive == feature.id}"
             class="list-group-item list-group-item-action py-2"
-            (click)="shake(feature.name)"
-            routerLink="./" fragment="{{feature.name}}">{{feature.title}}</a>
+            (click)="shake(feature.id)"
+            routerLink="./" fragment="{{feature.id}}">{{feature.name}}</a>
         </ng-container>
       </div>
       <div class="py-2 d-sm-none d-md-block">

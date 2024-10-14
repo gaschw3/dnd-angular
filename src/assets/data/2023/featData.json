@@ -171,7 +171,7 @@
                "type": "list",
                "items": [
                   "Increase your Intelligence, Wisdom, or Charisma by 1, to a maximum of 20.",
-                  "You can speak telepathically to any creature you can see within 60 feet of you. Your telepathic utterances are in a language you know, and the creature understands you only if it knows that language. Your communication doesn't give the creature the ability to respond to you telepathically.",
+                  "You can speak telepathically to any creature you can see within 60 feet of you. Your telepathic utterances are in a language you know, and the creature understands you only if it knows that language. If you choose, you give the creature the ability to respond to you telepathically.",
                   "You can cast the {@spells detect thoughts} spell, requiring no spell slot or components, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for the spell is the ability increased by this feat. If you have spell slots of 2nd level or higher, you can cast this spell with them."
                ]
             }
@@ -365,7 +365,7 @@
                "type": "list",
                "items": [
                   "You gain a +1 bonus to attack rolls you make with a whip.",
-                  "When you use a ship, its damage die changes from a d4 to a d6. (This benefit has no effect if another feature has already improved the weapon’s die.)",
+                  "When you use a whip, its damage die changes from a d4 to a d6. (This benefit has no effect if another feature has already improved the weapon's die.)",
                   "Whenever you have advantage on a melee attack roll you make with a whip and hit, you can knock a weapon or another item from the target's grasp if the lower of the two d20 rolls would also hit the target."
                ]
             }

@@ -1,0 +1,145 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "WayofArcingSteel",
+				"abbreviation": "BREW",
+				"full": "The Way of Arcing Steel",
+				"authors": [
+					"Paranoid"
+				],
+				"version": "1.0",
+				"targetSchema": "2.6.2"
+			}
+		],
+		"dateAdded": 1642783092,
+		"dateLastModified": 1642783092,
+		"_dateLastModifiedHash": "992ccde3e9"
+	},
+	"subclass": [
+		{
+			"name": "Way of Arcing Steel",
+			"source": "BREW",
+			"className": "Monk",
+			"classSource": "PHB",
+			"shortName": "Arcing Monk",
+			"subclassFeatures": [
+				"Gathering Storm|Monk||Arcing Monk|BREW|3",
+				"Static Shield|Monk||Arcing Monk|BREW|3",
+				"Ride the Lightning|Monk||Arcing Monk|BREW|6",
+				"Fulminating Strike|Monk||Arcing Monk|BREW|11",
+				"Unleashed Storm|Monk||Arcing Monk|BREW|17"
+			]
+		}
+	],
+	"subclassFeature": [
+    {
+			"name": "Way of Arcing Steel",
+			"source": "BREW",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Arcing Monk",
+			"subclassSource": "BREW",
+			"level": 3,
+			"entries": [
+				"Many monastic traditions deal with using the body to harness the elements. Monks of the Way of Arcing Steel are marked by the ephemeral arcs and trails of lighting that travel out in all directions as they move around the battlefield. More advanced adherenents can use this electrical energy to travel through the air, generate shields, and even create dangerous fulminating strikes.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Ride the Lightning|Monk||Arcing Monk|BREW|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Static Shield|Monk||Arcing Monk|BREW|3"
+				}
+			]
+		},
+		{
+			"name": "Gathering Storm",
+			"source": "BREW",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 1,
+			"subclassShortName": "Arcing Monk",
+			"subclassSource": "BREW",
+			"level": 3,
+			"header": 2,
+			"consumes": {
+				"name": "Ki",
+				"amount": 1
+			},
+			"entries": [
+        "Starting when you choose this tradition at 3rd level, whenever you hit a creature with a melee weapon attack, you gain a stack of Gathering Storm that lasts until the end of your next turn, to a maximum of 4 stacks.",
+        "Once per turn, you can spend 1 stack of Gathering Storm or 1 Ki point when you hit with a melee weapon attack to cause arcs of lightning to jump towards nearby enemies. The target of the attack and up to 1 other creature within 10 feet take lightning damage equal to 1 roll of your Martial Arts die."
+			]
+		},
+		{
+			"name": "Static Shield",
+			"source": "BREW",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 1,
+			"subclassShortName": "Arcing Monk",
+			"subclassSource": "BREW",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"Also at 3rd level, energy from the air embraces you as you move.",
+        "If you move at least 20 feet on your turn, you gain temporary hit points equal to one roll of your martial arts die as tendrils of lightning twist around you and form a small barrier. These hit points last until the start of your next turn."
+			]
+		},
+		{
+			"name": "Ride the Lightning",
+			"source": "BREW",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 1,
+			"subclassShortName": "Arcing Monk",
+			"subclassSource": "BREW",
+			"level": 6,
+			"header": 2,
+			"consumes": {
+				"name": "Ki",
+				"amount": 1
+			},
+			"entries": [
+        "At 6th level, you learn to travel along the arcing lightning trails you generate during battle.",
+        "When you hit a creature with a melee weapon attack, you can spend 1 Gathering Storm charge to deal additional lightning damage to it equal to your half your Wisdom modifier (rounded up) and move to an unoccupied space within 10 feet of it without provoking attacks of opportunity. This damage increases by your half your Wisdom modifier (rounded up) for each time you've already used Ride the Lightning this turn. Once you use Ride the Lightning on a creature, you can't use it on that creature again until the start of your next turn.",
+        "You do not generate Gathering Storm charges with the melee weapon attacks used to Ride the Lightning."
+			]
+		},
+		{
+			"name": "Fulminating Strike",
+			"source": "BREW",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 1,
+			"subclassShortName": "Arcing Monk",
+			"subclassSource": "BREW",
+			"level": 11,
+			"header": 2,
+			"consumes": {
+				"name": "Ki",
+				"amount": 2
+			},
+			"entries": [
+				"At 11th level, you gain the ability to convert your energy into a searing lightning bolt.",
+        "You can spend 4 Gathering Storm charges or 2 Ki points to gain a new attack option you can use with the Attack action this turn. This special attack is a lightning bolt 40 feet long and 5 feet wide. Each creature in the line must succeed on Dexterity saving throw against your Ki save DC. On a failure, they take lightning damage equal to 3 rolls of your martial arts die and fall prone. On a success, they take half as much damage and do not fall prone."
+			]
+		},
+		{
+			"name": "Overcharge",
+			"source": "BREW",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 1,
+			"subclassShortName": "Arcing Monk",
+			"subclassSource": "BREW",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"At 17th level, your connection to the energy around you is complete, allowing you to partially merge with it. As a bonus action, you can spend 6 ki points to overcharge yourself for 1 minute. This overcharge ends early if you are incapacitated or die.",
+        "While you are overcharged this way, you gain 4 charges of Gathering Storm at the beginning of every turn, , and you can use Ride the Lightning on a creature even if you've already used it against that creture on the same turn."
+			]
+		}
+	]
+}

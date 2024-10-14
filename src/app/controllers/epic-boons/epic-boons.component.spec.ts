@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpellbookComponent } from './spellbook.component';
+import { EpicBoonsComponent } from './epic-boons.component';
 
-describe('SpellbookComponent', () => {
-  let component: SpellbookComponent;
-  let fixture: ComponentFixture<SpellbookComponent>;
+describe('EpicBoonsComponent', () => {
+  let component: EpicBoonsComponent;
+  let fixture: ComponentFixture<EpicBoonsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpellbookComponent ]
+      imports: [EpicBoonsComponent]
     })
     .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SpellbookComponent);
+    
+    fixture = TestBed.createComponent(EpicBoonsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
