@@ -177,7 +177,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 2nd level or higher, you create one additional star for each slot level above 1st."
+						"When you cast this spell using a spell slot of 3rd level or higher, you create one additional star for each slot level above 1st."
 					]
 				}
 			],
@@ -422,7 +422,7 @@
 			},
 			"entries": [
 				"You summon a magic greatbow and fire a conjured arrow at a creature or object within 600 feet. Make a ranged spell attack against the target. If the target is more than 150 feet away, the attack roll has disadvantage. On a hit, the target takes {@damage 8d6} piercing damage.",
-				"If you use the ready action to cast this spell, it deals an additional {@damage 2d6} damage."
+				"If you use the ready action to cast this spell, the attack roll has advantage and it deals an additional {@damage 2d6} damage."
 			],
 			"source": "BREW-A",
 			"components": {

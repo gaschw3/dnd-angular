@@ -30,7 +30,7 @@
 				}
 			],
 			"entries": [
-				"You create an acidic bubble at a point within range, where it explodes in a 5-foot-radius Sphere. Each creature in that Sphere must succeed on a Dexterity saving throw or take {@damage 1d6} Acid damage.",
+				"You create an acidic bubble at a point within range, where it explodes in a 5-foot-radius Sphere. Each creature in that Sphere must succeed on a Dexterity saving throw or take {@damage 2d4} Acid damage.",
 				{
                     "type": "inset",
                     "name": "Notes from the Most Recent Magisterial Conclave",
@@ -44,7 +44,7 @@
 					"type": "entries",
 					"name": "Cantrip Upgrade",
 					"entries": [
-						"The damage increases by {@dice 1d6} when you reach levels 5 ({@damage 2d6}), 11 ({@damage 3d6}), and 17 ({@damage 4d6})."
+						"The damage increases by {@dice 1d4} when you reach levels 5 ({@damage 3d4}), 11 ({@damage 4d4}), and 17 ({@damage 5d4})."
 					]
 				}
 			],
@@ -2361,7 +2361,7 @@
 			],
 			"entries": [
 				"A storm cloud appears at a point within range that you can see above yourself. It takes the shape of a Cylinder that is 10 feet tall with a 60-foot radius.",
-				"When you cast the spell, choose a point you can see under the cloud. A lightning bolt shoots from the cloud to that point. Each creature within 5 feet of that point makes a Dexterity saving throw, taking {@damage 3d10} Lightning damage on a failed save or half as much damage on a successful one.",
+				"When you cast the spell, choose a point you can see under the cloud. A lightning bolt shoots from the cloud to that point. Each creature within 5 feet of that point makes a Dexterity saving throw, taking {@damage 3d12} Lightning damage on a failed save or half as much damage on a successful one.",
 				"Until the spell ends, you can take a {@action Magic} action to call down lightning in that way again, targeting the same point or a different one.",
 				"If you're outdoors in a storm when you cast this spell, the spell gives you control over that storm instead of creating a new one. Under such conditions, the spell's damage increases by {@dice 1d10}.",
 				{
@@ -2481,7 +2481,7 @@
 			],
 			"entries": [
 				"You launch a lightning bolt toward a target you can see within range. Three bolts then leap from that target to as many as three other targets of your choice, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.",
-				"Each target makes a Dexterity saving throw, taking {@damage 10d8} Lightning damage on a failed save or half as much damage on a successful one."
+				"Each target makes a Dexterity saving throw, taking {@damage 7d12} Lightning damage on a failed save or half as much damage on a successful one."
 			],
 			"entriesHigherLevel": [
 				{
@@ -8049,7 +8049,7 @@
 			"entries": [
 				"Wispy flames wreathe your body for the duration, shedding {@variantrule Bright Light} in a 10-foot radius and {@variantrule Dim Light} for an additional 10 feet.",
 				"The flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you {@variantrule Resistance} to Cold damage, and the chill shield grants you {@variantrule Resistance} to Fire damage.",
-				"In addition, whenever a creature within 5 feet of you hits you with a melee attack roll, the shield erupts with flame. The attacker takes {@damage 2d8} Fire damage from a warm shield or {@damage 2d8} Cold damage from a chill shield."
+				"In addition, whenever a creature within 5 feet of you hits you with a melee attack roll, the shield erupts with flame. The attacker takes {@damage 3d6} Fire damage from a warm shield or {@damage 2d8} Cold damage from a chill shield."
 			],
 			"damageResist": [
 				"cold",
@@ -8094,7 +8094,7 @@
 				}
 			],
 			"entries": [
-				"A storm of fire appears within range. The area of the storm consists of up to ten 10-foot Cubes, which you arrange as you like. Each Cube must be contiguous with at least one other Cube. Each creature in the area makes a Dexterity saving throw, taking {@damage 7d10} Fire damage on a failed save or half as much damage on a successful one.",
+				"A storm of fire appears within range. The area of the storm consists of up to ten 10-foot Cubes, which you arrange as you like. Each Cube must be contiguous with at least one other Cube. Each creature in the area makes a Dexterity saving throw, taking {@damage 11d6} Fire damage on a failed save or half as much damage on a successful one.",
 				"Flammable objects in the area that aren't being worn or carried start burning."
 			],
 			"damageInflict": [
@@ -8268,7 +8268,7 @@
 					"type": "entries",
 					"name": "Using a Higher-Level Spell Slot",
 					"entries": [
-						"The Fire damage and the Radiant damage increase by 5d6 for each spell slot level above 5."
+						"The Fire damage and the Radiant damage increase by 1d6 for each spell slot level above 5."
 					]
 				}
 			],
@@ -10365,7 +10365,7 @@
 				}
 			],
 			"entries": [
-				"Choose a manufactured metal object, such as a metal weapon or a suit of Heavy or Medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes {@damage 2d8} Fire damage when you cast the spell. Until the spell ends, you can take a {@variantrule Bonus Action} on each of your later turns to deal this damage again if the object is within range.",
+				"Choose a manufactured metal object, such as a metal weapon or a suit of Heavy or Medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes {@damage 2d6} Fire damage when you cast the spell. Until the spell ends, you can take a {@variantrule Bonus Action} on each of your later turns to deal this damage again if the object is within range.",
 				"If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't drop the object, it has {@variantrule Disadvantage} on attack rolls and ability checks until the start of your next turn.",
 				{
                     "type": "inset",
@@ -10380,7 +10380,7 @@
 					"type": "entries",
 					"name": "Using a Higher-Level Spell Slot",
 					"entries": [
-						"The damage increases by 1d8 for each spell slot level above 2."
+						"The damage increases by 1d6 for each spell slot level above 2."
 					]
 				}
 			],
@@ -10430,14 +10430,14 @@
 				}
 			],
 			"entries": [
-				"The creature that damaged you is momentarily surrounded by green flames. It makes a Dexterity saving throw, taking {@damage 2d10} Fire damage on a failed save or half as much damage on a successful one."
+				"The creature that damaged you is momentarily surrounded by green flames. It makes a Dexterity saving throw, taking {@damage 3d6} Fire damage on a failed save or half as much damage on a successful one."
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
 					"name": "Using a Higher-Level Spell Slot",
 					"entries": [
-						"The damage increases by 1d10 for each spell slot level above 1."
+						"The damage increases by 2d6 for each spell slot level above 1."
 					]
 				}
 			],
@@ -10879,14 +10879,14 @@
 			],
 			"entries": [
 				"You open a gateway to the Far Realm, a region infested with unspeakable horrors. A 20-foot-radius Sphere of {@variantrule Darkness} appears, centered on a point with range and lasting for the duration. The Sphere is {@variantrule Difficult Terrain}, and it is filled with strange whispers and slurping noises, which can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within it have the {@condition Blinded} condition.",
-				"Any creature that starts its turn in the area takes {@damage 2d6} Cold damage. Any creature that ends its turn there must succeed on a Dexterity saving throw or take {@damage 2d6} Acid damage from otherworldly tentacles."
+				"Any creature that starts its turn in the area takes {@damage 2d6} Cold damage. Any creature that ends its turn there must succeed on a Dexterity saving throw or take {@damage 3d4} Acid damage from otherworldly tentacles."
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
 					"name": "Using a Higher-Level Spell Slot",
 					"entries": [
-						"The Cold or Acid damage (your choice) increases by 2d6 for each spell slot level above 3."
+						"The Cold damage increases by 2d6 for each spell slot level above 3."
 					]
 				}
 			],
@@ -11364,7 +11364,7 @@
 			],
 			"entries": [
 				"A swirling cloud of embers and smoke fills a 20-foot-radius Sphere centered on a point within range. The cloud's area is {@variantrule Heavily Obscured}. It lasts for the duration or until a strong wind (like that created by {@spell Gust of Wind}) disperses it.",
-				"When the cloud appears, each creature in it makes a Dexterity saving throw, taking {@damage 10d8} Fire damage on a failed save or half as much damage on a successful one. A creature must also make this save when the Sphere moves into its space and when it enters the Sphere or ends its turn there. A creature makes this save only once per turn.",
+				"When the cloud appears, each creature in it makes a Dexterity saving throw, taking {@damage 13d6} Fire damage on a failed save or half as much damage on a successful one. A creature must also make this save when the Sphere moves into its space and when it enters the Sphere or ends its turn there. A creature makes this save only once per turn.",
 				"The cloud moves 10 feet away from you in a direction you choose at the start of each of your turns.",
 				{
                     "type": "inset",
@@ -15212,11 +15212,11 @@
 						],
 						[
 							"2",
-							"{@b Purple.} {@i Failed Save:} {@damage 12d6} Acid damage. {@i Successful Save:} Half as much damage."
+							"{@b Purple.} {@i Failed Save:} {@damage 17d4} Acid damage. {@i Successful Save:} Half as much damage."
 						],
 						[
 							"3",
-							"{@b Yellow.} {@i Failed Save:} {@damage 12d6} Lightning damage. {@i Successful Save:} Half as much damage."
+							"{@b Yellow.} {@i Failed Save:} {@damage 6d12} Lightning damage. {@i Successful Save:} Half as much damage."
 						],
 						[
 							"4",
@@ -15321,11 +15321,11 @@
 						],
 						[
 							"2",
-							"{@b Purple.} {@i Failed Save:} {@damage 12d6} Acid damage. {@i Successful Save:} Half as much damage. {@i Additional Effects:} Magical ranged attacks can't pass through this layer, which is destroyed by a strong wind (such as the one created by {@spell Gust of Wind})."
+							"{@b Purple.} {@i Failed Save:} {@damage 17d4} Acid damage. {@i Successful Save:} Half as much damage. {@i Additional Effects:} Magical ranged attacks can't pass through this layer, which is destroyed by a strong wind (such as the one created by {@spell Gust of Wind})."
 						],
 						[
 							"3",
-							"{@b Yellow.} {@i Failed Save:} {@damage 12d6} Lightning damage. {@i Successful Save:} Half as much damage. {@i Additional Effects:} The layer is destroyed if it takes at least 60 Force damage."
+							"{@b Yellow.} {@i Failed Save:} {@damage 6d12} Lightning damage. {@i Successful Save:} Half as much damage. {@i Additional Effects:} The layer is destroyed if it takes at least 60 Force damage."
 						],
 						[
 							"4",
@@ -18463,14 +18463,14 @@
 					"type": "entries",
 					"name": "Turn 2",
 					"entries": [
-						"Acidic rain falls. Each creature and object under the cloud takes {@damage 4d6} Acid damage."
+						"Acidic rain falls. Each creature and object under the cloud takes {@damage 6d4} Acid damage."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Turn 3",
 					"entries": [
-						"You call six bolts of lightning from the cloud to strike six different creatures or objects beneath it. Each target makes a Dexterity saving throw, taking {@damage 10d6} Lightning damage on a failed save or half as much damage on a successful one."
+						"You call six bolts of lightning from the cloud to strike six different creatures or objects beneath it. Each target makes a Dexterity saving throw, taking {@damage 6d12} Lightning damage on a failed save or half as much damage on a successful one."
 					]
 				},
 				{
@@ -20949,15 +20949,15 @@
 			],
 			"entries": [
 				"You create a wall of fire on a solid surface within range. You can make the wall up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts for the duration.",
-				"When the wall appears, each creature in its area makes a Dexterity saving throw, taking {@damage 5d8} Fire damage on a failed save or half as much damage on a successful one.",
-				"One side of the wall, selected by you when you cast this spell, deals {@damage 5d8} Fire damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage."
+				"When the wall appears, each creature in its area makes a Dexterity saving throw, taking {@damage 7d6} Fire damage on a failed save or half as much damage on a successful one.",
+				"One side of the wall, selected by you when you cast this spell, deals {@damage 7d6} Fire damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage."
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
 					"name": "Using a Higher-Level Spell Slot",
 					"entries": [
-						"The damage increases by 1d8 for each spell slot level above 4."
+						"The damage increases by 1d6 for each spell slot level above 4."
 					]
 				}
 			],
@@ -21381,7 +21381,7 @@
 				"If the webs aren't anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.",
 				"The first time a creature enters the webs on a turn or starts its turn there, it must succeed on a Dexterity saving throw or have the {@condition Restrained} condition while in the webs or until it breaks free.",
 				"A creature {@condition Restrained} by the webs can take an action to make a Strength ({@skill Athletics}) check against your spell save DC. If it succeeds, it is no longer {@condition Restrained}.",
-				"The webs are flammable. Any 5-foot Cube of webs exposed to fire burns away in 1 round, dealing {@damage 2d4} Fire damage to any creature that starts its turn in the fire.",
+				"The webs are flammable. Any 5-foot Cube of webs exposed to fire burns away in 1 round, dealing {@damage 2d6} Fire damage to any creature that starts its turn in the fire.",
 				{
                     "type": "inset",
                     "name": "Notes from the Most Recent Magisterial Conclave",
@@ -22675,7 +22675,7 @@
                         {
                             "type": "item",
                             "name": "Lightning",
-                            "entry": "The target takes {@damage 1d8} lightning damage if they willingly move 5 feet or more before the end of their next turn."
+                            "entry": "The target takes {@damage 1d12} lightning damage if they willingly move 5 feet or more before the end of their next turn."
                         }
                     ]
                 },
@@ -23085,7 +23085,7 @@
 				}
 			],
 			"entries": [
-				"A vertical column of brilliant fire roars down from above. Each creature in a 15-foot-radius, 40-foot-high Cylinder centered on a point within range makes a Dexterity saving throw, taking {@damage 4d8} Fire damage and {@damage 4d8} Radiant damage on a failed save or half as much damage on a successful one.",
+				"A vertical column of brilliant fire roars down from above. Each creature in a 15-foot-radius, 40-foot-high Cylinder centered on a point within range makes a Dexterity saving throw, taking {@damage 5d6} Fire damage and {@damage 4d8} Radiant damage on a failed save or half as much damage on a successful one.",
 				"The spell is not blocked by stone, dirt, or wood and targets gain no benefit from cover for this saving throw.",
 				{
                     "type": "inset",
@@ -23100,7 +23100,7 @@
 					"type": "entries",
 					"name": "Using a Higher-Level Spell Slot",
 					"entries": [
-						"The Fire damage and the Radiant damage increase by 1d8 for each spell slot level above 5."
+						"The Fire damage and the Radiant damage increase by one die for each spell slot level above 5."
 					]
 				}
 			],
