@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Phyrexian";
+    src: url("./Phyrexian-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Phyrexian";
+    src: url("./Phyrexian-Regular.woff") format("woff");
+}
