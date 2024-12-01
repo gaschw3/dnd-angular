@@ -2048,6 +2048,13 @@
       }
     }
   },
+  "prismatic bolt": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true
+      }
+    }
+  },
   "circle of death": {
     "class": {
       "XPHB": {
@@ -10745,6 +10752,7 @@
   "caius' caustic quarrel": {
     "class": {
       "XPHB": {
+        "Sorcerer": true,
         "Wizard": true
       }
     },
@@ -18859,7 +18867,7 @@
       }
     }
   },
-  "arcanist's sword": {
+  "caius' swift sword": {
     "class": {
       "XPHB": {
         "Bard": true,
@@ -18900,7 +18908,7 @@
     "class": {
       "XPHB": {
         "Bard": true,
-        "warlock": true,
+        "Warlock": true,
         "Wizard": true
       }
     }
@@ -18987,6 +18995,13 @@
         "Sorcerer": true,
         "warlock": true,
         "Wizard": true
+      }
+    }
+  },
+  "personal blessing": {
+    "class": {
+      "XPHB": {
+        "Paladin": true
       }
     }
   }

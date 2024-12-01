@@ -2654,7 +2654,14 @@
 				}
 			],
 			"entries": [
-				"Channeling the chill of the grave, make a melee spell attack against a target within reach. On a hit, the target takes {@damage 1d12} Necrotic damage, and it can't regain {@variantrule Hit Points} until the end of your next turn."
+				"Channeling the chill of the grave, make a melee spell attack against a target within reach. On a hit, the target takes {@damage 1d12} Necrotic damage, and it can't regain {@variantrule Hit Points} until the end of your next turn.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Necromantic Schism",
+                    "entries": [
+                        "One of two spells (along with {@spell Memento Mori}) that used to be called \"Spectral Grasp\". Some schism beyond my ken has caused has caused the spells to diverge into two seperate spells among different Necromantic syndicates."
+                    ]
+                }
 			],
 			"entriesHigherLevel": [
 				{
@@ -5943,7 +5950,57 @@
 			]
 		},
 		{
+			"name": "Personal Blessing",
+			"source": "PHB'24",
+			"page": 265,
+			"freeRules2024": true,
+			"level": 1,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"Until the spell ends, whenever you make an attack roll or saving throw, you add {@dice 1d4} to the attack roll or save and your attacks deal an extra {@damage 1d4} Radiant damage on a hit.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Divine Intervention",
+                    "entries": [
+                        "There seems to be a minor variation on this spell for every last sect of holy warriors. This is the most generic 'good' version I could find, it's combines {@spell divine favor} with {@spell bless}."
+                    ]
+                }
+			],
+			"damageInflict": [
+				"radiant"
+			],
+			"miscTags": [
+				"AAD"
+			]
+		},
+		{
 			"name": "Divine Favor",
+			"replaced": "Personal Blessing",
 			"source": "PHB'24",
 			"page": 265,
 			"freeRules2024": true,
@@ -7363,7 +7420,7 @@
 			"entries": [
 				"You convert raw materials into products of the same material. For example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, or clothes from flax or wool.",
 				"Choose raw materials that you can see within range. You can fabricate a Large or smaller object (contained within a 10-foot Cube or eight connected 5-foot Cubes) given a sufficient quantity of material. If you're working with metal, stone, or another mineral substance, however, the fabricated object can be no larger than Medium (contained within a 5-foot Cube). The quality of any fabricated objects is based on the quality of the raw materials.",
-				"Creatures and magic items can't be created by this spell. You also can't use it to create items that require a high degree of skill\u2014such as weapons and armor\u2014unless you have proficiency with the type of {@item Artisan's Tools|PHB} used to craft such objects."
+				"Creatures and magic items can't be created by this spell. You also can't use it to create items that require a high degree of skill\u2014such as weapons and armor\u2014unless you have proficiency with the type of {@item Artisan's Tools} used to craft such objects."
 			],
 			"miscTags": [
 				"OBJ",
@@ -9262,7 +9319,7 @@
 			"components": {
 				"v": true,
 				"s": true,
-				"m": "a sprig of mistletoe"
+				"m": "up to 10 pieces of freshly-picked fruit"
 			},
 			"duration": [
 				{
@@ -9274,8 +9331,8 @@
 				}
 			],
 			"entries": [
-				"Ten berries appear in your hand and are infused with magic for the duration. A creature can take a {@variantrule Bonus Action} to eat one berry. Eating a berry restores 1 {@variantrule Hit Points|Hit Point}, and the berry provides enough nourishment to sustain a creature for one day.",
-				"Uneaten berries disappear when the spell ends."
+				"You infuse the components used in the spell's casting with magic for the duration. A creature can take a {@variantrule Bonus Action} to eat one. Eating a fruit restores 1 {@variantrule Hit Points|Hit Point}. If a creature eats 5 infused fruits, the magic combines to provide enough nourishment to sustain a creature for one day.",
+				"Uneaten fruit disappear when the spell ends."
 			],
 			"miscTags": [
 				"HL"
@@ -11061,7 +11118,7 @@
 					"type": "entries",
 					"name": "Using a Higher-Level Spell Slot",
 					"entries": [
-						"The Bludgeoning damage increases by 2d8 for each spell slot level above 4."
+						"The Bludgeoning damage increases by 1d10 for each spell slot level above 4."
 					]
 				}
 			],
@@ -11958,7 +12015,7 @@
 				}
 			],
 			"entries": [
-				"As your attack hits or misses the target, the weapon or ammunition you're using transforms into a lightning bolt. Instead of taking any damage or other effects from the attack, the target takes {@damage 4d8} Lightning damage on a hit or half as much damage on a miss. Each creature within 10 feet of the target then makes a Dexterity saving throw, taking {@damage 2d8} Lightning damage on a failed save or half as much damage on a successful one.",
+				"As your attack hits or misses the target, the weapon or ammunition you're using transforms into a lightning bolt. Instead of taking any damage or other effects from the attack, the target takes {@damage 3d12} Lightning damage on a hit or half as much damage on a miss. Each creature within 15 feet of the target then makes a Dexterity saving throw, taking {@damage 3d12} Lightning damage on a failed save or half as much damage on a successful one.",
 				"The weapon or ammunition then returns to its normal form."
 			],
 			"entriesHigherLevel": [
@@ -11966,7 +12023,7 @@
 					"type": "entries",
 					"name": "Using a Higher-Level Spell Slot",
 					"entries": [
-						"The damage for both effects of the spell increases by 1d8 for each spell slot level above 3."
+						"The damage for both effects of the spell increases by 1d12 for each spell slot level above 3."
 					]
 				}
 			],
@@ -12011,14 +12068,21 @@
 				}
 			],
 			"entries": [
-				"A stroke of lightning forming a 100-foot-long, 5-foot-wide Line blasts out from you in a direction you choose. Each creature in the Line makes a Dexterity saving throw, taking {@damage 8d6} Lightning damage on a failed save or half as much damage on a successful one."
+				"A stroke of lightning forming a 100-foot-long, 5-foot-wide Line blasts out from you in a direction you choose. You can cause the beam to bounce once off of a solid, nonconductive object (such as a wall or crate) in a new direction. Each creature in the resulting Area makes a Dexterity saving throw, taking {@damage 4d12} Lightning damage on a failed save or half as much damage on a successful one.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Reflective Bolt",
+                    "entries": [
+                        "A subtle change to the spellform results in an old trick that most mage college's seem to have forgotten - a single bounce in the path of a lightning bolt can be just the ticket to cath a few more targets."
+                    ]
+                }
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
 					"name": "Using a Higher-Level Spell Slot",
 					"entries": [
-						"The damage increases by 1d6 for each spell slot level above 3."
+						"The damage increases by 1d12 for each spell slot level above 3."
 					]
 				}
 			],
@@ -13061,7 +13125,7 @@
 			"page": 298,
 			"freeRules2024": true,
 			"level": 0,
-			"school": "T",
+			"school": "D",
 			"time": [
 				{
 					"number": 1,
@@ -13818,7 +13882,7 @@
 		},
 		{
 			"name": "Mordenkainen's Sword",
-			"replaced": "Arcanist's Sword",
+			"replaced": "Caius' Swift Sword",
 			"source": "PHB'24",
 			"page": 302,
 			"level": 7,
@@ -16368,7 +16432,7 @@
                     "type": "inset",
                     "name": "Notes from the Most Recent Magisterial Conclave",
                     "entries": [
-                        "Dimensional magic, even for tiny pocket dimensions is the realm of Conjuration."
+                        "Dimensional magic, even for tiny pocket dimensions, is the realm of Conjuration."
                     ]
                 }
 			]
@@ -22035,7 +22099,7 @@
             ]
         },
 		{
-            "name": "Arcanist's Sword",
+            "name": "Caius' Swift Sword",
             "source": "BREW",
             "page": 8,
             "level": 7,
@@ -22144,7 +22208,7 @@
 				}
 			],
 			"entries": [
-				"Invoking Hadar, you cause tendrils to erupt from yourself. Each creature in a 10-foot Emanation originating from you makes a Strength saving throw. On a failed save, a target takes {@damage 2d6} Necrotic damage and can't take Reactions until the start of its next turn. On a successful save, a target takes half as much damage and has disadvantage on opportunity attacks until the start of its next turn instead.",
+				"Invoking an Outsider, you cause tendrils to erupt from yourself. Each creature in a 10-foot Emanation originating from you makes a Strength saving throw. On a failed save, a target takes {@damage 2d8} Necrotic damage and can't take Reactions until the start of its next turn. On a successful save, a target takes half as much damage and has disadvantage on opportunity attacks until the start of its next turn instead.",
 				{
                     "type": "inset",
                     "name": "Caius' Notes: An Improved Version",
@@ -22408,7 +22472,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Climatomancy Refined",
                     "entries": [
-                        "Advances in weather magic have been made in recent decades to the point that the old stand of Control Weather is quite a bit below the line of what a competent mage can do. This newer version starts faster, scales better, and has more powerful effects."
+                        "Advances in weather magic have been made in recent decades to the point that the old standard {@spell Control Weather} is quite a bit below the line of what a competent mage can do. This newer version starts faster, scales better, and has more powerful effects."
                     ]
                 },
                 {
@@ -22473,7 +22537,6 @@
                     ]
                 }
             ],
-            "change": "buff",
             "entriesHigherLevel": [
                 {
                     "type": "entries",
@@ -22748,9 +22811,9 @@
 				"The target also has {@variantrule Resistance} to all damage except Psychic damage, and it has {@variantrule Immunity} to the {@condition Poisoned} condition.",
 				{
                     "type": "inset",
-                    "name": "Caius' Notes: Elemental Effects",
+                    "name": "Caius' Notes: Pursuit of Lichdom",
                     "entries": [
-                        "I found notes from a Lich who claimed this superior version of {@spell Feign Death} was part of the training used to enter Lichdom and curiously allows the target a measure of control over when the spell ends. The name is a bit flip, but I've learned it's best to print anything from a Lich exactly as I found it."
+                        "I found notes from a Karnassian Lich who claimed this superior version of {@spell Feign Death} was part of the training used to enter Lichdom and curiously allows the target a measure of control over when the spell ends. The name is a bit flip, but I've learned it's best to print anything from a Lich exactly as I found it."
                     ]
                 }
 			],
@@ -22823,7 +22886,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: True Finding",
                     "entries": [
-                        "The {@spell Find the Path} might have been more correctly named \"Find the Path if You've Been There Before\". This variation is more generalized and can be used to find locations that the caster isn't already familiar with - a boon for adventurers."
+                        "{@spell Find the Path} might have been more correctly named \"Find the Path if You've Been There Before\". This variation is more generalized and can be used to find locations that the caster isn't already familiar with - a boon for adventurers."
                     ]
                 }
 			]
@@ -22865,7 +22928,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: True Finding",
                     "entries": [
-                        "It's clear Mage Colleges these days aren't focusing on real world applications of spells. The poor excuse for a spell they teach as {@spell Find Traps} might as well be \"Do Nothing\". Any adventurer worth their salt should instead use this version, the noe only actually <i>finds<i> traps, but also helps the party interact with them."
+                        "It's clear Mage Colleges these days aren't focusing on real world applications of spells. The poor excuse for a spell they teach as {@spell Find Traps} might as well be \"Do Nothing\". Any adventurer worth their salt should instead use this version, it not only actually <i>finds<i> traps, but also helps the party interact with them."
                     ]
                 }
 			],
@@ -22909,7 +22972,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Fingers v Beams",
                     "entries": [
-                        "This version of {@spell Finger of Death} harkens closer to the original spell effect create by Beholders. Concentrating into a Beam instead of more nedulous targeting increases damage and allows more precise aiming instead of allowing the target to fight back directly."
+                        "This version of {@spell Finger of Death} harkens closer to the original spell effect create by Beholders. Creating a Beam instead of nebulously pointing at enemies increases damage and limits defensive options."
                     ]
                 }
 			],
@@ -22974,7 +23037,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Circle of Wildfire",
                     "entries": [
-                        "This take on {@spell Fire Storm} that I learned from a group of Druids living on the side of the Great Tortoise Vul'kaan take inspiration from {@spell Call Lightning} but is significantly more destructive."
+                        "This take on {@spell Fire Storm} that I learned from a group of Druids living on the side of the Great Tortoise Vul'kaan takes inspiration from {@spell Call Lightning} but is significantly more destructive."
                     ]
                 }
 			],
@@ -23413,10 +23476,10 @@
 			"scalingLevelDice": {
 				"label": "Lightning damage",
 				"scaling": {
-					"1": "1d8",
-					"5": "2d8",
-					"11": "3d8",
-					"17": "4d8"
+					"1": "1d12",
+					"5": "2d12",
+					"11": "3d12",
+					"17": "4d12"
 				}
 			},
 			"damageInflict": [
@@ -23620,7 +23683,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Necromantic Schism",
                     "entries": [
-                        "One of two spells (along with {@spell Chill Touch}) that used to be called \"Spectral Grasp\". Some schism beyond my ken has caused has caused the spells to divege into two seperate spells among different Necromantic syndicates."
+                        "One of two spells (along with {@spell Chill Touch}) that used to be called \"Spectral Grasp\". Some schism beyond my ken has caused has caused the spells to diverge into two seperate spells among different Necromantic syndicates."
                     ]
                 }
 			],
@@ -24069,7 +24132,7 @@
 			"source": "BREW",
 			"page": 271,
 			"freeRules2024": true,
-			"level": 3,
+			"level": 1,
 			"school": "E",
 			"time": [
 				{
@@ -24099,7 +24162,7 @@
 				}
 			],
 			"entries": [
-				"You bewitch a creature's mind, terrifying it One creature of your choice that you can see within range makes a Wisdom saving throw. On a failed save, it has the {@condition Frightened} condition for the duration.",
+				"You bewitch a creature's mind, terrifying it. One creature of your choice that you can see within range makes a Wisdom saving throw. On a failed save, it has the {@condition Frightened} condition for the duration.",
 				"At the end of each of its turns, it makes another Wisdom saving throw. On a successful save, the spell ends.",
 				{
                     "type": "inset",
@@ -24195,7 +24258,7 @@
 			"source": "BREW",
 			"page": 284,
 			"freeRules2024": true,
-			"level": 3,
+			"level": 2,
 			"school": "T",
 			"time": [
 				{
@@ -24285,7 +24348,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Inversus",
                     "entries": [
-                        "An intersting little spell made by inversing the {@spell Guiding Bolt} cantrip that I won off a Cleric of the Trickster. I strongly suspect but cannot prove that the same cleric retaliated for that win by stealing all the fine silverware from my Tower."
+                        "An intersting little spell made by inversing the {@spell Guiding Bolt} spellform that I won off a Cleric of the Trickster. I strongly suspect, but cannot prove, that the same cleric retaliated for that win by stealing all the fine silverware from my Tower."
                     ]
                 }
 			],
@@ -24380,7 +24443,7 @@
 			"source": "BREW",
 			"page": 295,
 			"freeRules2024": true,
-			"level": 3,
+			"level": 2,
 			"school": "I",
 			"time": [
 				{
@@ -24411,7 +24474,7 @@
 				}
 			],
 			"entries": [
-				"You afflice a single creature you can see within range with an illusory phantasm. THe target perceives the image of an object, a creature, or some other visible phenomenon that is no larger than a 10-foot Cube. The image appears at a spot that you can see within range and lasts for the duration. It seems real, including sounds, smells, and temperature appropriate to the thing depicted, but it can't deal damage or cause conditions.",
+				"You afflict a single creature you can see within range with an illusory phantasm. The target perceives the image of an object, a creature, or some other visible phenomenon that is no larger than a 10-foot Cube. The image appears at a spot that you can see within range and lasts for the duration. It seems real, including sounds, smells, and temperature appropriate to the thing depicted, but it can't deal damage or cause conditions.",
 				"If you are within range of the illusion, you can take a {@action Magic} action to cause the image to move to any other spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image.",
 				"Physical interaction with the image reveals it to be an illusion, for things can pass through it. A creature that takes a {@action Study} action to examine the image can determine that it is an illusion with a successful Intelligence ({@skill Investigation}) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image, and its other sensory qualities become faint to the creature.",
 				{
@@ -24581,6 +24644,121 @@
                         "Creatures affected by the spell gain a +1 bonus to the saving throw for each slot level above 2."
                     ]
                 }
+            ]
+        },
+		{
+            "name": "Prismatic Bolt",
+            "source": "BREW",
+            "level": 1,
+            "school": "V",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 120
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "instant"
+                }
+            ],
+            "entries": [
+                "You hurl an undulating, warbling mass of chaotic energy at one creature in range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d8} damage. The number rolled on the die determines the damage type, additional damage, and additional effects. If you roll more than 1d8 (for instance, by a critical hit or casting at a higher level), you may select which d8 determines the result.",
+                {
+                    "type": "table",
+                    "caption": "Prismatic Bolt",
+                    "colLabels": [
+                        "d8",
+                        "Damage Type",
+                        "Effect"
+                    ],
+                    "colStyles": [
+                        "col-2 text-center",
+                        "col-2 text-center",
+                        "col-8"
+                    ],
+                    "rows": [
+                        [
+                            "1",
+                            "Acid",
+                            "The target takes {@damage 2d4} acid damage, and {@damage 2d4} acid damage at the end of their next turn."
+                        ],
+                        [
+                            "2",
+                            "Cold",
+                            "The target takes {@damage 2d8} cold damage and has their movement speed reduced by half until the end of their next turn."
+                        ],
+                        [
+                            "3",
+                            "Fire",
+                            "The target takes {@damage 3d6} fire damage."
+                        ],
+                        [
+                            "4",
+                            "Force",
+                            "The target takes {@damage 3d4} force damage, and is knocked prone if it is Large or smaller."
+                        ],
+                        [
+                            "5",
+                            "Lightning",
+                            "The target takes {@damage 1d12} lightning damage and can't take reactions until the start of their next turn."
+                        ],
+                        [
+                            "6",
+                            "Poison",
+                            "The target takes {@damage 1d12} poison damage and is poisoned until the end of their next turn."
+                        ],
+                        [
+                            "7",
+                            "Psychic",
+                            "The target takes {@damage 2d8} psychic damage and is charmed by you until the end of their next turn."
+                        ],
+                        [
+                            "8",
+                            "Thunder",
+                            "The target takes {@damage 2d8} thunder damage and is deafened until the end of their next turn."
+                        ]
+                    ]
+                }
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "At Higher Levels",
+                    "entries": [
+                        "The damage increases by {@damage 1d8} for each spell slot level above 1. The orb can leap a number of times equal to the slot level"
+                    ]
+                }
+            ],
+            "damageInflict": [
+                "acid",
+                "cold",
+                "fire",
+                "force",
+                "lightning",
+                "poison",
+                "psychic",
+                "thunder"
+            ],
+            "spellAttack": [
+                "R"
+            ],
+            "miscTags": [
+                "RO"
+            ],
+            "areaTags": [
+                "ST"
             ]
         }
 	]
