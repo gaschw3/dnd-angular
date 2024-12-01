@@ -24639,7 +24639,7 @@
             "entriesHigherLevel": [
                 {
                     "type": "entries",
-                    "name": "At Higher Levels",
+                    "name": "Using a Higher-Level Spell Slot",
                     "entries": [
                         "Creatures affected by the spell gain a +1 bonus to the saving throw for each slot level above 2."
                     ]
@@ -24735,7 +24735,7 @@
             "entriesHigherLevel": [
                 {
                     "type": "entries",
-                    "name": "At Higher Levels",
+                    "name": "Using a Higher-Level Spell Slot",
                     "entries": [
                         "The damage increases by {@damage 1d8} for each spell slot level above 1. The orb can leap a number of times equal to the slot level"
                     ]
