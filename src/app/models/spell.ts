@@ -83,7 +83,7 @@ export class Spell implements ISpell {
           if (duration.duration.amount !== 1)
            this.duration += 's'; //pluralize unites when it's not 1 minutes/hour/day
         } else if (duration.type == 'permanent') {
-          this.duration += `${duration.ends[0] == 'dispelled' ? 'Until dispelled' : 'Permanent'}`;
+          this.duration += `${duration.ends[0] == 'dispel' ? 'Until dispelled' : 'Permanent'}`;
           this.duration += `${duration.ends[1] == 'trigger' ? ' or triggered' : ''}`;
         } else {
           this.duration += duration.type;

@@ -5487,7 +5487,7 @@
 				"ritual": true
 			},
 			"entries": [
-				"For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the {@action Magic} action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's {@book school of magic|7|Schools of Magic}.",
+				"For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the {@action Magic} action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's Schools of Magic.",
 				"The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
 			]
 		},
@@ -20177,6 +20177,7 @@
 		},
 		{
 			"name": "Time Stop",
+			"replaced": "Time Dilate",
 			"source": "PHB'24",
 			"page": 334,
 			"freeRules2024": true,
@@ -23827,12 +23828,12 @@
                         {
                             "type": "item",
                             "name": "Lightning",
-                            "entry": "Lightning strikes begin to rain down from the storm. When you choose this effect and on every turn thereafter, you can cause lightning to strike two creatures or objects beneath the cloud. Each target makes a Dexterity saving throw, taking {@damage 2d12} Lightning damage on a failed save or half as much damage on a successful one."
+                            "entry": "Lightning strikes begin to rain down from the storm. When you choose this effect and on every turn thereafter, you can cause lightning to strike two points beneath the cloud. Each creature within 10 feet of one of those points makes a Dexterity saving throw, taking {@damage 2d12} Lightning damage on a failed save or half as much on a successful one."
                         },
 						{
                             "type": "item",
                             "name": "Downpour",
-                            "entry": "Torrential rain falls. The area under the cloud is {@variantrule Difficult Terrain} and {@variantrule Heavily Obscured} to every creature excepy you."
+                            "entry": "Torrential rain falls. The area under the cloud is {@variantrule Difficult Terrain} and {@variantrule Heavily Obscured} to every creature except you."
                         },
 						{
                             "type": "item",
@@ -24405,8 +24406,7 @@
 				}
 			],
 			"entries": [
-				"You create and shoot an illusory projectile from your weapon. Make a ranged spell attack against one creature or object in range. On a hit, the target takes {@damage 1d8} Psychic damage. If damage form this spell would reduce a creature to 0 Hit Points, it is instead reduced to 1 Hit Point and gains the {@spell Unconsious} condition for 1 minute or until it takes damage or is shaken awake by a different creature within range.",
-				"Creatures that don't sleep, such as elves, or that have {@variantrule Immunity} to the {@condition Exhaustion} condition don't fall Unconsious and can't be damaged below 1 Hit Points with this spell.",
+				"You create and shoot an illusory projectile from your weapon. Make a ranged spell attack. On a hit, the target takes {@damage 1d8} Psychic damage. If damage form this spell would reduce a creature to 0 Hit Points, it is instead reduced to 1 Hit Point and gains the {@spell Unconsious} condition for 1 minute or until it takes damage or is shaken awake by a different creature within range.",
 				{
                     "type": "inset",
                     "name": "Caius' Notes: 'Trick' Shot",
@@ -24543,7 +24543,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Protection Prayers",
                     "entries": [
-						"One of three 'Protection Prayers' I found at a derelict Monastery of Arowen in Pfennig. The notes with them indicate they were invented by a squemish Cleric who thought attempts should be made to proactively stop damage instead of just retroactively fixing \"disgusting, festering, bloody, wounds\"."
+						"One of four 'Protection Prayers' I found at a derelict Monastery of Arowen in Pfennig. The notes with them indicate they were invented by a squemish Cleric who thought attempts should be made to proactively stop damage instead of retoactively fixing \"disgusting, festering, bloody wounds\"."
 					]
                 }
 			]
@@ -24589,7 +24589,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Protection Prayers",
                     "entries": [
-						"One of three 'Protection Prayers' I found at a derelict Monastery of Arowen in Pfennig. The notes with them indicate they were invented by a squemish Cleric who thought attempts should be made to proactively stop damage instead of just retroactively fixing \"disgusting, festering, bloody, wounds\"."
+						"One of four 'Protection Prayers' I found at a derelict Monastery of Arowen in Pfennig. The notes with them indicate they were invented by a squemish Cleric who thought attempts should be made to proactively stop damage instead of retoactively fixing \"disgusting, festering, bloody wounds\"."
 					]
                 }
 			]
@@ -24632,7 +24632,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Protection Prayers",
                     "entries": [
-						"One of three 'Protection Prayers' I found at a derelict Monastery of Arowen in Pfennig. The notes with them indicate they were invented by a squemish Cleric who thought attempts should be made to proactively stop damage instead of just retroactively fixing \"disgusting, festering, bloody, wounds\"."
+						"One of four 'Protection Prayers' I found at a derelict Monastery of Arowen in Pfennig. The notes with them indicate they were invented by a squemish Cleric who thought attempts should be made to proactively stop damage instead of retoactively fixing \"disgusting, festering, bloody wounds\"."
 					]
                 }
             ],
@@ -24760,6 +24760,2082 @@
             "areaTags": [
                 "ST"
             ]
-        }
+        },
+		{
+			"name": "Time Dilate",
+			"source": "BREW",
+			"level": 9,
+			"school": "V",
+			"subschools": [
+                "time"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 3
+					}
+				}
+			],
+			"entries": [
+				"You stretch a moment in time so thin that everyone and everything else seems to slow to a stop. No time passes for other creatures and they are considered {@condition Paralyzed} for the duration. You take 3 turns in a row, during which you can use actions and move as normal.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Time and Time Again",
+                    "entries": [
+						"A common mistake of new chronomancers is actually trying to stop time. Interacting with an entity not passing through Time while you are causes tears in the Weave and interrupts the spell. This better version really only stretches time, but does it so strongly that it <em>feels</em> stopped."
+					]
+                }
+			]
+		},
+		{
+			"name": "Blade Mirage",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "a melee weapon worth at least 1 sp",
+					"cost": 10
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You twist illusions around a melee weapon you are holding. When you cast the spell, and as a bonus action on your subsequent turns for the duration, you can feint with the illusory blades, distracting a creature within 5 feet of you and giving you advantage on the next weapon attack against it before the end of the turn. The spell ends early if you let go of the weapon.",
+				"As an action, a creature that can see you can make an Intelligence ({@skill Investigation}) check against your spell save DC. On a success, it becomes immune to the spell's effects.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Spellblade",
+                    "entries": [
+                        "This is one among a set of spells designed for a type of close-range magic user once called a \"Spellblade\"."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Ranger",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"UBA"
+			]
+		},
+		{
+			"name": "Crippling Agony",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "N",
+			"subschools": [
+                "mesmerism"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action."
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a joint bone"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You can inflict crippling agony on one creature you can see within range. The target must succeed on a Constitution saving throw or become crippled with horrific pain. Whenever the target moves more than half of its speed or takes any action, it takes {@damage 1d6} necrotic damage.",
+				"The target repeats the save at the end of each of its turns, ending the spell on itself on a success. If the creature moved or used an action on its turn the save is made at disadvantage.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Quit Hitting Yourself",
+                    "entries": [
+                        "I found this spell in a foreign collection dedicated to a Bardic College of Mesmerism. The magics of this college subverting energy used by enemies to deflect back and cause them to \"hit themselves\", for lack of a better turn of phrase."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"necrotic"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"name": "Fall",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "V",
+			"subschools": [
+                "gravity"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You alter gravity for yourself, reorienting which way is down for you until the end of your turn. You can pick any direction to fall (as if under the effect of gravity), falling up to 500 feet before the spell ends.",
+				"If you collide with something during this time, you take falling damage as normal. You can control your fall as you would normally by holding onto objects, or move along a surface according to your new orientation until your turn ends and gravity returns to normal.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Graviturgy",
+                    "entries": [
+                        "Gravity as a seperate controllable force was only put forth around the time of the Shuriman conquest, but developments since then have shown that even energy of only the First and Second Circles can create simple manipulations of this great force."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Arcane Conduit",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You tap directly into the arcane weave. For the duration, you have resistance to all damage from magical sources besides force damage.",
+				"At the start of each of your turns while tapped into this power, you and all creatures with 10 feet of you take {@damage 1d6} Force damage. The damage increases by {@dice 1d6} each turn to a maximum of {@damage 4d6} damage.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Sorcerers are Lunatics",
+                    "entries": [
+                        "I've only really recreated this spell here because all sorcerers are essentially crazed and turning themselves into a irradiating bomb is the exact kind of thing they are always asking me to dig up."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageResist": [
+				"acid",
+				"bludgeoning",
+				"cold",
+				"fire",
+				"force",
+				"lightning",
+				"necrotic",
+				"piercing",
+				"poison",
+				"psychic",
+				"radiant",
+				"slashing",
+				"thunder"
+			],
+			"damageInflict": [
+				"force"
+			]
+		},
+		{
+			"name": "Become Fire",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You become a burst of elemental flames. Until the start of your next turn, you gain the following benefits:",
+				{
+					"type": "list",
+					"items": [
+						"You gain resistance to fire damage and to bludgeoning, piercing, and slashing damage from nonmagical attacks.",
+						"You can move through the space of other creatures and ignore difficult terrain. The first time you enter another creature's space on a turn, it takes {@damage 1d6} fire damage.",
+						"Any time you are hit by a melee attack, the attacker takes {@damage 1d6} fire damage."
+					]
+				},
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Lesser Elemental Forms",
+                    "entries": [
+                        "The four \"Become Element\" spellforms seem to be variations on a single spellform that have been adapted by Four rival monasteries in Hokai. Even though they aren't suitable for use as combat forms without extensive training, they each provide an interesting perspective for defense."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The spell lasts for 1 additional round for each spell slot level above 2."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageResist": [
+				"fire"
+			],
+			"damageInflict": [
+				"fire"
+			]
+		},
+		{
+			"name": "Become Stone",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You solidify into stone. Until the start of your next turn, you gain the following benefits.",
+				{
+					"type": "list",
+					"items": [
+						"You are {@condition petrified} (granting you resistance to all damage).",
+						"Your AC becomes 20.",
+						"You gain 15 temporary hit points. Any remaining temporary hit points fade when the spell ends."
+					]
+				},
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Lesser Elemental Forms",
+                    "entries": [
+                        "The four \"Become Element\" spellforms seem to be variations on a single spellform that have been adapted by Four rival monasteries in Hokai. Even though they aren't suitable for use as combat forms without extensive training, they each provide an interesting perspective for defense."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"You gain an additional 5 temporary hit points for each spell slot level above 2."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageResist": [
+				"acid",
+				"bludgeoning",
+				"cold",
+				"fire",
+				"force",
+				"lightning",
+				"necrotic",
+				"piercing",
+				"poison",
+				"psychic",
+				"radiant",
+				"slashing",
+				"thunder"
+			],
+			"miscTags": [
+				"THP"
+			]
+		},
+		{
+			"name": "Become Water",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You become a burst of elemental water. Until the start of your next turn, you gain the following benefits.",
+				{
+					"type": "list",
+					"items": [
+						"You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks.",
+						"You can move through the space of other creatures and ignore difficult terrain. The first time you move through a Large or smaller creature on a turn, it must succeed on a Strength saving throw or be knocked {@condition prone}."
+					]
+				},
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Lesser Elemental Forms",
+                    "entries": [
+                        "The four \"Become Element\" spellforms seem to be variations on a single spellform that have been adapted by Four rival monasteries in Hokai. Even though they aren't suitable for use as combat forms without extensive training, they each provide an interesting perspective for defense."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The spell lasts for 1 additional round for each spell slot level above 2."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrow": [
+				"strength"
+			]
+		},
+		{
+			"name": "Become Wind",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You become a burst of elemental wind. Until the start of the next turn, you gain the following benefits.",
+				{
+					"type": "list",
+					"items": [
+						"You gain resistance to lightning damage and bludgeoning, piercing, and slashing damage from nonmagical attacks.",
+						"You gain a flying speed of 60 feet, can move through the space of other creatures, and ignore difficult terrain, but will fall if you are in the air when the spell ends."
+					]
+				},
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Lesser Elemental Forms",
+                    "entries": [
+                        "The four \"Become Element\" spellforms seem to be variations on a single spellform that have been adapted by Four rival monasteries in Hokai. Even though they aren't suitable for use as combat forms without extensive training, they each provide an interesting perspective for defense."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The spell lasts for 1 additional round for each level above 2."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageResist": [
+				"lightning"
+			]
+		},
+		{
+			"name": "Crackle",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You create three arcs of lightning striking targets in range. You can direct them at one target or several.",
+				"Make a ranged spell attack for each arc. On a hit, a target takes {@damage 1d12} lightning damage. If three or more arcs hit a single target, it must make a Constitution saving throw or become shocked, stunning it until the start of its next turn.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: The Old \"Whatever\" Bolts",
+                    "entries": [
+                        "The obvious similarities to {@spell scorching ray} aren't accidental, and this is but one example of a spellform being adapted to a different type of damage. The possibilites of doing this in other magical traditions are essentially endless (see also {@spell rock sling}, {@spell magic missile}, etc.)"
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The spell creates 1 additional arc of lightning for each spell slot level above 2."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"lightning"
+			],
+			"spellAttack": [
+				"R"
+			],
+			"savingThrow": [
+				"constitution"
+			]
+		},
+		{
+			"name": "Caius' Earthen Ripple",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You cause the earth to deform at a point you can see within range. Every creature within 10 feet must make a Dexterity saving throw. Choose one of the effects below, affecting each creature which fails its save.",
+				{
+					"type": "list",
+					"items": [
+						{
+							"type": "item",
+							"name": "Sink",
+							"entry": "A creature is pulled into the earth, taking {@damage 1d8} bludgeoning damage and reducing its movement speed to zero until it or another creature within 5 feet spends an action to dig it free."
+						},
+						{
+							"type": "item",
+							"name": "Slam",
+							"entry": "A creature is pushed 5 feet in a direction of your choice by a wave of earth, taking {@damage 2d8} bludgeoning damage and falling {@condition prone}."
+						},
+						{
+							"type": "item",
+							"name": "Impale",
+							"entry": "A creature takes {@damage 4d8} piercing damage"
+						}
+					],
+					"style": "list-hang-notitle"
+				},
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Maximilian",
+                    "entries": [
+                        "There was a famous geomancer named Maximilian some 200 years ago and he was a hack. I produced this spell largely as a way to upstage his \"earthen grasp\", which was pitifully weak and about a quarter as adaptable. Dunce."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"bludgeoning",
+				"piercing"
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"miscTags": [
+				"FMV",
+				"SGT"
+			]
+		},
+		{
+			"name": "Fling",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "T",
+			"subschools": [
+                "gravity"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You manipulate gravity around one Large or smaller creature. The target must make a Strength saving throw. On a failure, you can fling it 40 feet straight up or 20 feet in any other direction.",
+				"If you fling the target upward, it immediately falls, taking {@damage 4d6} bludgeoning damage and landing {@condition prone}. If you fling it in any other direction, it takes {@damage 2d6} bludgeoning damage and lands {@condition prone}. If this movement would be stopped early by a creature or object, both the target and whatever it collides with takes {@damage 3d6} bludgeoning damage.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Graviturgy",
+                    "entries": [
+                        "Gravity as a seperate controllable force was only put forth around the time of the Shuriman conquest, but developments since then have shown that even energy of only the First and Second Circles can create simple manipulations of this great force."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"bludgeoning"
+			],
+			"savingThrow": [
+				"strength"
+			],
+			"miscTags": [
+				"OBJ"
+			]
+		},
+		{
+			"name": "Spirit Echo",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "C",
+			"subschools": [
+                "time"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You summon a ghostly echo of yourself in an adjacent timeline. It shares your space and acts automatically, mirroring your actions.",
+				"The first time on your turn you make a weapon attack, it attacks the same target. It makes a separate attack roll using your attack modifier. On a hit, roll your attack's normal damage; the target takes force damage equal to half the result.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Chronomancy",
+                    "entries": [
+                        "Long agreed upon as the most powerful and most dangerous realm of magic, playing with time is not for the faint of heart (and even the stong of heart die early, as a rule), but a colleague named Tayse instists that providing a few lower circle spellforms to up-and-comers <em>should</em> reduce paradox angel incidents moving forward."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Ranger",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"SMN"
+			]
+		},
+		{
+			"name": "Time Slip",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "T",
+			"subschools": [
+                "time"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "an small ornate hourglass worth at least 25 gold pieces",
+					"cost": 2500
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You surround yourself with a film of distorted time, setting yourself slightly off from time's normal flow.",
+				"While you are in this bubble of distorted time, you have a +2 bonus to AC. If you would take damage from an attack or fail a saving throw against a spell of 2nd level or lower, you can use your reaction to revert your personal timeline and negate the effect—causing the attack to miss or the save to succeed.",
+				"Afterward, this spell ends.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Chronomancy",
+                    "entries": [
+                        "Long agreed upon as the most powerful and most dangerous realm of magic, playing with time is not for the faint of heart (and even the stong of heart die early, as a rule), but a colleague named Tayse instists that providing a few lower circle spellforms to up-and-comers <em>should</em> reduce paradox angel incidents moving forward."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The maximum level of spell you can negate increases to be equal to the level of the spell slot used."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"MAC"
+			]
+		},
+		{
+			"name": "Scintillating Spray",
+			"source": "BREW",
+			"page": 0,
+			"level": 0,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 5
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You send a blast of wild, random magic outward, affecting one or two adjacent creatures within 5 feet of you. Each target must make a Dexterity saving throw, or suffer 1 force damage and an additional effect. Roll {@dice 1d6} for each target to determine the spell's damage type and added effects:",
+				{
+					"type": "entries",
+					"name": "1 - Acid",
+					"entries": [
+						"The target takes {@damage 4d4} acid damage at the end of its next turn."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "2 - Cold",
+					"entries": [
+						"The target takes {@damage 1d8} cold damage and has its movement speed reduced by 15 feet until the end of its next turn."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "3 - Fire",
+					"entries": [
+						"The target takes {@damage 2d6} fire damage."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "4 - Lightning",
+					"entries": [
+						"The target takes {@damage 1d12} lightning damage and can't take reactions until the start of its next turn."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "5 - Poison",
+					"entries": [
+						"The target takes {@damage 1d4} poison damage and is {@condition poisoned} until the end of its next turn."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "6 - Wild",
+					"entries": [
+						"Choose the damage type and effect."
+					]
+				},
+				"This spell's base damage increases by one die when you reach 5th level ({@dice 1d6 + 1}), 11th level ({@dice 2d6 + 1}), and 17th level ({@dice 3d6 + 1}).",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Wild Magic Practice",
+                    "entries": [
+                        "This spells makes it in by way of request from a group of Wild Magic practitioners. I can't deny it's overall power, but relying on fate to decide what effect a spell will have will always seem like insane sorcerer nonsense to me."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"acid",
+				"cold",
+				"fire",
+				"force",
+				"lightning",
+				"poison"
+			],
+			"conditionInflict": [
+				"poisoned"
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"miscTags": [
+				"SCL"
+			]
+		},
+		{
+			"name": "Glistening Barb",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "C",
+			"subschools": [
+                "mechanicus"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You conjure a dagger dripping with glistening oil and hurl it at a creature within range. Make a ranged spell attack roll. On a hit, the target takes {@dice 2d4} acid and {@damage 1d4} piercing damage, and the dagger embeds itself in its flesh. While the dagger is embedded, the first time the target makes an attack roll on each of its turns, it must roll {@dice 1d4}. The target subtracts the result from the attack roll and suffers acid damage equal to the result. A creature within 5 feet of the target can remove the dagger as an action. If the attack misses or the dagger is removed, it disappears.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Spells of the Machine God",
+                    "entries": [
+                        "This spell is one of my most recent additions and comes from adaptations of the magics used by the recent apocalyptic invasion of the Legions of the Machine God. I'd recommend prudence when casting it, the wounds of the invasion are still extremely fresh in many locales."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The initial acid damage dealt increases by {@dice 2d4} for each spell slot level above 1."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"piercing"
+			],
+			"spellAttack": [
+				"R"
+			]
+		},
+		{
+			"name": "Force Dart",
+			"source": "BREW",
+			"page": 0,
+			"level": 0,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You create one glowing dart of magical force. That dart hits a creature that you can see in range. A dart deals {@damage 1d4 + 1} force damage to its target.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Perfected Cantrip",
+                    "entries": [
+                        "This is the most elegant  attack spellform I am able to create. Simple, unerring, expandable, and great for training any force-construct magic. Quite a feat, if I do say so myself."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Cantrip Upgrade",
+					"entries": [
+						"The spell creates two darts at level 5, three darts at level 11, and four darts at level 17. You can direct the beams at the same target or at different ones."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"force"
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"name": "Night Shard",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"s": true,
+				"m": "a shard of crystal and a bit of soot"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"Fire a semi-transparent magic bolt at a creature that you can see within range. Make a ranged spell attack against the target. If you or the target are in dim-light or darkness, make this roll with advantage. On a hit, the target takes {@damage 3d8} force damage.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Shadow Magic",
+                    "entries": [
+                        "An interesting spell scrawled in Theives' Cant above a dive bar in Reliqua. A bit underhanded perhaps, but effective enough that I wrote it down after my 4th drink."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The damage increases by {@dice 1d8} for each spell slot level above 1."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"force"
+			],
+			"spellAttack": [
+				"R"
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"name": "Rock Sling",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "T",
+			"subschools": [
+                "gravity"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "line",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You create three masses of dirt, stone, or loose debris from a surface within 5 feet of you and send them flying in a straight line 10 feet wide.",
+				"Beginning with the closest object or creature in the line, make a ranged spell attack for each of three masses. On a hit, the target takes {@damage 1d10} bludgeoning damage and one mass is destroyed. On a miss, you repeat the process for the next closest object or creature. The masses fall apart with no effect after travelling 60 feet.",
+				"If a single creature is hit by two of the masses, that creature is knocked {@condition prone}.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Graviturgy",
+                    "entries": [
+                        "Gravity as a seperate controllable force was only put forth around the time of the Shuriman conquest, but developments since then have shown that even energy of only the First and Second Circles can create simple manipulations of this great force."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"You create one additional mass for each spell slot level above 2."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"bludgeoning"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"spellAttack": [
+				"R"
+			]
+		},
+		{
+			"name": "Dahlian Slicer",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"s": true,
+				"m": "metal powder or shavings"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You conjure a magic sword and deliver a swift slash. Make a melee spell attack against a creature within 5 feet of you. On a hit, the target takes Slashing damage equal to {@dice 2d10} plus your spellcasting ability modifier.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Spells of the Last Dahlia",
+                    "entries": [
+                        "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family lef tthem dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"You can make an additional attack for every 2 spell slot levels above 1."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"spellAttack": [
+				"M"
+			]
+		},
+		{
+			"name": "Dahlian Retaliation",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "reaction",
+					"condition": "which you take in response to being damaged by a spell from a creature within 120 feet of you that you can see"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a polished silver knife"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"As a reaction to being damaged by a spell, you can quickly gesture and attempt to redirect some of the incoming magic.",
+				"You reduce the damage (if any) of the spell by {@dice 1d10} plus your spellcasting ability modifier, and can retaliate with summoned blades by making up to two ranged spell attacks against any creature within 30 feet of you. On a hit, the blades deal Slashing damage equal to {@dice 1d6} plus your spellcasting modifier.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Spells of the Last Dahlia",
+                    "entries": [
+                        "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family lef tthem dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The damage reduced increases by {@dice 1d10} for every 2 spell slot levels above 2 and you can summon one additional blade to make a counter attack."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"name": "Dahlian Greatbow",
+			"source": "BREW",
+			"page": 0,
+			"level": 3,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 600
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You summon a magic greatbow and fire a conjured arrow at a creature or object within 600 feet. Make a ranged spell attack against the target. If the target is more than 150 feet away, the attack roll has disadvantage. On a hit, the target takes {@damage 8d6} piercing damage.",
+				"If you use the ready action to cast this spell, it deals an additional {@damage 2d6} damage.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Spells of the Last Dahlia",
+                    "entries": [
+                        "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family lef tthem dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The base damage and the extra damage for using the ready action both increase by {@dice 1d6} for each spell slot level above 3."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"piercing"
+			],
+			"spellAttack": [
+				"R"
+			],
+			"miscTags": [
+				"OBJ",
+				"SMN"
+			]
+		},
+		{
+			"name": "Backfire",
+			"source": "BREW",
+			"page": 0,
+			"level": 2,
+			"school": "E",
+			"subschools": [
+                "mesmerism"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You shroud a target in visible ethereal power that reacts violently to the presence of magic. For the duration of the spell, if the target casts a spell, it takes {@damage 2d4} force damage. This damage is increased by {@dice 1d4} for each spell level of the spell cast (no additional damage for cantrips).",
+				"Additionally, if the target ends their turn while {@status Concentration|Concentrating} on a spell, they take {@damage 1d4} force damage.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Quit Hitting Yourself",
+                    "entries": [
+                        "I found this spell in a foreign collection dedicated to a Bardic College of Mesmerism. The magics of this college subverting energy used by enemies to deflect back and cause them to \"hit themselves\", for lack of a better turn of phrase."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"force"
+			]
+		},
+		{
+			"name": "Feedback",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "E",
+			"subschools": [
+                "mesmerism"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "two rings made of different materials"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You place a binding on a creature you can see within range. Until the start of your next turn, any time that creature deals damage with its action, bonus action, or reaction, they take psychic damage equal to the damage dealt. The target is aware of the effect of this spell. After reflecting 10 damage, the spell ends.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Quit Hitting Yourself",
+                    "entries": [
+                        "I found this spell in a foreign collection dedicated to a Bardic College of Mesmerism. The magics of this college subverting energy used by enemies to deflect back and cause them to \"hit themselves\", for lack of a better turn of phrase."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The maximum damage increases by 10 for each spell slot level above 1."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"SGT",
+				"UBA"
+			]
+		},
+		{
+			"name": "Empathy",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "E",
+			"subschools": [
+                "mesmerism"
+            ],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a cracked mirror"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You awaken and enhance a sense of empathy in one creature you can see within range. The target must make a Wisdom saving throw. On a failed save, it is affected by this spell. Until the spell ends, whenever the creature makes an attack roll for the first time on a turn, it takes {@damage 1d10} force damage.",
+				"It can repeat the saving throw at the end of each of its turns, if the creature made an attack roll on its turn the save is made at disadvantage. On a success, the spell ends.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Quit Hitting Yourself",
+                    "entries": [
+                        "I found this spell in a foreign collection dedicated to a Bardic College of Mesmerism. The magics of this college subverting energy used by enemies to deflect back and cause them to \"hit themselves\", for lack of a better turn of phrase."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The damage increases by {@dice 1d10} for every two slot levels above 1."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"force"
+			],
+			"savingThrow": [
+				"wisdom"
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"name": "Wristpocket",
+			"source": "BREW",
+			"page": 0,
+			"level": 0,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "permanent",
+					"ends": [
+						"dispel"
+					]
+				}
+			],
+			"entries": [
+				"You flick your wrist, causing one object in your hand to vanish. The object, which only you can be holding and can weigh no more than 5 pounds, is transported to an extradimensional space, where it remains for the duration.",
+				"Until the spell ends, you can use your action to summon the object to your free hand, and you can use your action to return the object to the extradimensional space. An object still in the pocket plane when the spell ends appears in your space, at your feet.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Extradimensional Spells",
+                    "entries": [
+                        "This cantrip is the introduction used for all higher Circle spells that create, manipulate, or use extradimensional spaces and is invaluable to know if you suspect you might ever end up jailed (or if you ever want to pull a really funny trick on the Monarch of Rioja)."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Lesser Reanimate",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a drop of blood, a piece of flesh, and a pinch of bone dust"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 24
+					}
+				}
+			],
+			"entries": [
+				"You channel necromantic energy to raise a humanoid appendage as an undead servant. Choose a hand, foot, arm, or leg of a dead creature within range. The target becomes an Undead {@creature Crawling Claw}.",
+				"On each of your turns, you can take a {@variantrule Bonus Action} to mentally command any or all minions you have created within 60 feet. You decide what action the creature will take and where it will move on its next turn, or you can issue a general command, such as to guard a chamber or corridor. If you issue no commands, the creature takes the {@action Dodge} action and moves only to avoid harm. Once given an order, the creature continues to follow it until its task is complete.",
+				"The creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell rather than animating a new creature.",
+				{
+					"type": "inset",
+					"name": "Caius' Note: Necromancer's First Minion",
+					"entries": [
+						"Found this nifty little reanimation effect on the corpse of a teenage necromantic hopeful. Clearly it didn't go well for her, but I'm sure your budding forays into creating undead abominations will be fine."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Cleric",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"UBA"
+			]
+		},
+		{
+			"name": "Esoteric Orb",
+			"source": "BREW",
+			"page": 0,
+			"level": 1,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 90
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "an onyx worth at least 50 gp",
+					"cost": 5000
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You hurl a 4-inch-diameter sphere of strange warbling energy at a creature that you can see within range. You choose radiant, necrotic, psychic, force, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes {@damage 3d8} damage of the type you chose.",
+				{
+                    "type": "inset",
+                    "name": "Caius Notes: Weird Damage",
+                    "entries": [
+                        "A funny effect of letting a bard or warlock learn {@spell chromatic orb} is that it comes out all screwy and they can only do strange non-elemental types of damage. A gnome in Farthen Jun is studying why, but it's never seemed important to me."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The damage increases by {@dice 1d8} for each spell slot level above 1."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Bard",
+						"source": "PHB"
+					}
+				]
+			},
+			"spellAttack": [
+				"R"
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"name": "Orison of Protection",
+			"source": "BREW",
+			"page": 0,
+			"level": 0,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a set of prayer beads"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"One willing creature in range is blessed by a small prayer. The target gains a number of temporary hit points equal to your spellcasting ability modifier plus your proficiency bonus. The temporary hit points are lost when the spell ends. You can only have one Orison of Protection active at a time.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Protection Prayers",
+                    "entries": [
+						"One of four 'Protection Prayers' I found at a derelict Monastery of Arowen in Pfennig. The notes with them indicate they were invented by a squemish Cleric who thought attempts should be made to proactively stop damage instead of retoactively fixing \"disgusting, festering, bloody wounds\"."
+					]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Cleric",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"THP"
+			]
+		}
 	]
 }

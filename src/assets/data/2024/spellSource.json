@@ -19004,5 +19004,256 @@
         "Paladin": true
       }
     }
+  },
+  "time dilate": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "blade mirage": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Ranger": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "crippling agony": {
+    "class": {
+      "XPHB": {
+        "Bard": true
+      }
+    }
+  },
+  "fall": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "arcane conduit": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true
+      }
+    }
+  },
+  "become fire": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "become stone": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "become water": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "become wind": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "crackle": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Sorcerer": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "caius' earthen ripple": {
+    "class": {
+      "XPHB": {
+        "Druid": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "fling": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "spirit echo": {
+    "class": {
+      "XPHB": {
+        "Ranger": true,
+        "Wizard": true
+      }
+    }
+  },
+  "time slip": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "scintillating spray": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true
+      }
+    }
+  },
+  "glistening barb": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "force dart": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "night shard": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "rock sling": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "dahlian slicer": {
+    "class": {
+      "XPHB": {
+        "Paladin": true,
+        "Ranger": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "dahlian retaliation": {
+    "class": {
+      "XPHB": {
+        "Paladin": true,
+        "Ranger": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "dahlian greatbow": {
+    "class": {
+      "XPHB": {
+        "Paladin": true,
+        "Ranger": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "backfire": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "feedback": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "empathy": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "wristpocket": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "lesser reanimate": {
+    "class": {
+      "XPHB": {
+        "Cleric": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "esoteric orb": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Warlock": true
+      }
+    }
+  },
+  "orison of protection": {
+    "class": {
+      "XPHB": {
+        "Cleric": true
+      }
+    }
   }
 }
