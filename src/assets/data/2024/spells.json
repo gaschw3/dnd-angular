@@ -1,10 +1,30 @@
 {
+	"_meta": {
+		"sources": [
+			{
+				"json": "BREW",
+				"abbreviation": "BREW",
+				"full": "EotCC Spells",
+				"authors": [
+					"Paranoid"
+				],
+				"convertedBy": [
+					"Paranoid"
+				],
+				"version": "1.0.0",
+				"targetSchema": "1.0.0",
+				"url": "",
+				"color": "#61fff4"
+			}
+		],
+		"dateAdded": 1600868694,
+		"dateLastModified": 1600868694
+	},
 	"spell": [
 		{
 			"name": "Acid Splash",
 			"source": "PHB'24",
 			"page": 239,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -69,13 +89,28 @@
 			],
 			"areaTags": [
 				"MT"
-			]
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Artificer",
+						"source": "TCE"
+					}
+				]
+			}
 		},
 		{
 			"name": "Aid",
 			"source": "PHB'24",
 			"page": 239,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "N",
 			"time": [
@@ -129,13 +164,40 @@
 			],
 			"areaTags": [
 				"MT"
-			]
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Druid",
+						"source": "XPHB"
+					},
+					{
+						"name": "Paladin",
+						"source": "XPHB"
+					},
+					{
+						"name": "Ranger",
+						"source": "XPHB"
+					}
+				]
+			}
 		},
 		{
 			"name": "Alarm",
 			"source": "PHB'24",
 			"page": 239,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -193,13 +255,26 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Artificer",
+					"source": "TCE"
+				}
 			]
 		},
 		{
 			"name": "Alter Self",
 			"source": "PHB'24",
 			"page": 239,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -255,6 +330,20 @@
 				"bludgeoning",
 				"piercing",
 				"slashing"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Artificer",
+					"source": "TCE"
+				}
 			]
 		},
 		{
@@ -262,7 +351,6 @@
 			"replaced": "Animal Friend",
 			"source": "PHB'24",
 			"page": 239,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -325,7 +413,6 @@
 			"replaced": "Animal Friend",
 			"source": "PHB'24",
 			"page": 240,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -388,7 +475,6 @@
 			"name": "Animal Shapes",
 			"source": "PHB'24",
 			"page": 240,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "T",
 			"time": [
@@ -428,13 +514,18 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Animate Dead",
 			"source": "PHB'24",
 			"page": 240,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "N",
 			"time": [
@@ -481,13 +572,22 @@
 				"PRM",
 				"SMN",
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Animate Objects",
 			"source": "PHB'24",
 			"page": 240,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "T",
 			"time": [
@@ -544,13 +644,29 @@
 			"areaTags": [
 				"MT"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Artificer",
+					"source": "TCE"
+				}
+			]
 		},
 		{
 			"name": "Antilife Shell",
 			"source": "PHB'24",
 			"page": 241,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "A",
 			"time": [
@@ -600,13 +716,18 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Antimagic Field",
 			"source": "PHB'24",
 			"page": 241,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "A",
 			"time": [
@@ -648,13 +769,22 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Antipathy/Sympathy",
 			"source": "PHB'24",
 			"page": 242,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "E",
 			"time": [
@@ -726,13 +856,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Arcane Eye",
 			"source": "PHB'24",
 			"page": 242,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "D",
 			"time": [
@@ -769,6 +912,16 @@
 			],
 			"miscTags": [
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Artificer",
+					"source": "TCE"
+				}
 			]
 		},
 		{
@@ -814,6 +967,20 @@
 				"SGT",
 				"TP",
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -821,7 +988,6 @@
 			"replaced": "Arcane Key",
 			"source": "PHB'24",
 			"page": 242,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -901,6 +1067,16 @@
 			],
 			"miscTags": [
 				"HL"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -953,7 +1129,12 @@
 			"miscTags": [
 				"THP"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Arms of Hadar",
@@ -1011,7 +1192,6 @@
 			"name": "Astral Projection",
 			"source": "PHB'24",
 			"page": 243,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "N",
 			"time": [
@@ -1060,13 +1240,26 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Augury",
 			"source": "PHB'24",
 			"page": 244,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "D",
 			"time": [
@@ -1129,13 +1322,26 @@
 						]
 					]
 				}
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Aura of Life",
 			"source": "PHB'24",
 			"page": 244,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "N",
 			"time": [
@@ -1182,6 +1388,16 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -1234,6 +1450,16 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -1283,13 +1509,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Awaken",
 			"source": "PHB'24",
 			"page": 245,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "T",
 			"time": [
@@ -1334,13 +1573,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Bane",
 			"source": "PHB'24",
 			"page": 245,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -1391,6 +1639,20 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -1436,13 +1698,18 @@
 			],
 			"miscTags": [
 				"AAD"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Banishment",
 			"source": "PHB'24",
 			"page": 245,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -1504,13 +1771,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Barkskin",
 			"source": "PHB'24",
 			"page": 245,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -1547,13 +1835,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Beacon of Hope",
 			"source": "PHB'24",
 			"page": 245,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -1599,6 +1896,12 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -1689,13 +1992,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Bestow Curse",
 			"source": "PHB'24",
 			"page": 246,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "N",
 			"time": [
@@ -1756,6 +2076,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -1861,13 +2195,25 @@
 				"SGT",
 				"UBA"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "TCE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Blade Barrier",
 			"source": "PHB'24",
 			"page": 247,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -1912,6 +2258,12 @@
 			],
 			"areaTags": [
 				"W"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -1948,13 +2300,30 @@
 			],
 			"entries": [
 				"Whenever a creature makes an attack roll against you before the spell ends, the attacker subtracts {@dice 1d4} from the attack roll."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Bless",
 			"source": "PHB'24",
 			"page": 247,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -2009,13 +2378,22 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Blight",
 			"source": "PHB'24",
 			"page": 247,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "N",
 			"time": [
@@ -2064,6 +2442,24 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -2120,13 +2516,18 @@
 			],
 			"miscTags": [
 				"AAD"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "TCE"
+				}
 			]
 		},
 		{
 			"name": "Blindness/Deafness",
 			"source": "PHB'24",
 			"page": 248,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -2185,13 +2586,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "TCE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Blink",
 			"source": "PHB'24",
 			"page": 248,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "C",
 			"time": [
@@ -2232,13 +2650,26 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "TCE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Blur",
 			"source": "PHB'24",
 			"page": 248,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -2268,13 +2699,26 @@
 			],
 			"entries": [
 				"Your body becomes blurred. For the duration, any creature has {@variantrule Disadvantage} on attack rolls against you. An attacker is immune to this effect if it perceives you with {@sense Blindsight} or {@sense Truesight}."
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "TCE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Burning Hands",
 			"source": "PHB'24",
 			"page": 248,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -2323,13 +2767,22 @@
 			],
 			"areaTags": [
 				"N"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Call Lightning",
 			"source": "PHB'24",
 			"page": 248,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -2393,13 +2846,18 @@
 			"areaTags": [
 				"S",
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Calm Emotions",
 			"source": "PHB'24",
 			"page": 249,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -2447,13 +2905,22 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Chain Lightning",
 			"source": "PHB'24",
 			"page": 249,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -2505,6 +2972,16 @@
 			"areaTags": [
 				"MT",
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -2562,13 +3039,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Charm Person",
 			"source": "PHB'24",
 			"page": 249,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -2623,13 +3121,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Chill Touch",
 			"source": "PHB'24",
 			"page": 249,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "N",
 			"time": [
@@ -2692,6 +3211,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -2756,13 +3289,21 @@
 			"areaTags": [
 				"ST"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Circle of Death",
 			"source": "PHB'24",
 			"page": 250,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "N",
 			"time": [
@@ -2811,6 +3352,20 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -2853,13 +3408,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Clairvoyance",
 			"source": "PHB'24",
 			"page": 250,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "D",
 			"time": [
@@ -2900,13 +3468,30 @@
 			],
 			"miscTags": [
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Clone",
 			"source": "PHB'24",
 			"page": 251,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "N",
 			"time": [
@@ -2941,6 +3526,12 @@
 			],
 			"miscTags": [
 				"PRM"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -3002,13 +3593,30 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Cloudkill",
 			"source": "PHB'24",
 			"page": 251,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "T",
 			"time": [
@@ -3070,13 +3678,22 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Color Spray",
 			"source": "PHB'24",
 			"page": 251,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -3113,13 +3730,26 @@
 			],
 			"areaTags": [
 				"N"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Command",
 			"source": "PHB'24",
 			"page": 251,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -3207,13 +3837,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Commune",
 			"source": "PHB'24",
 			"page": 252,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "D",
 			"time": [
@@ -3249,13 +3892,18 @@
 				"You contact a deity or a divine proxy and ask up to three questions that can be answered with yes or no. You must ask your questions before the spell ends. You receive a correct answer for each question.",
 				"Divine beings aren't necessarily omniscient, so you might receive \"unclear\" as an answer if a question pertains to information that lies beyond the deity's knowledge. In a case where a one-word answer could be misleading or contrary to the deity's interests, the DM might offer a short phrase as an answer instead.",
 				"If you cast the spell more than once before finishing a {@variantrule Long Rest}, there is a cumulative 25% chance for each casting after the first that you get no answer."
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Commune with Nature",
 			"source": "PHB'24",
 			"page": 252,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "D",
 			"time": [
@@ -3300,6 +3948,16 @@
 					]
 				},
 				"For example, you could determine the location of a powerful monster in the area, the locations of bodies of water, and the locations of any towns."
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -3346,13 +4004,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Comprehend Languages",
 			"source": "PHB'24",
 			"page": 252,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -3386,13 +4049,30 @@
 			},
 			"entries": [
 				"For the duration, you understand the literal meaning of any language that you hear or see signed. You also understand any written language that you see, but you must be touching the surface on which the words are written. It takes about 1 minute to read one page of text. This spell doesn't decode symbols or secret messages."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Compulsion",
 			"source": "PHB'24",
 			"page": 252,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "E",
 			"time": [
@@ -3435,13 +4115,18 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Cone of Cold",
 			"source": "PHB'24",
 			"page": 253,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -3488,13 +4173,25 @@
 			"areaTags": [
 				"N"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Confusion",
 			"source": "PHB'24",
 			"page": 253,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "E",
 			"time": [
@@ -3574,13 +4271,30 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Conjure Animals",
 			"source": "PHB'24",
 			"page": 254,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "C",
 			"time": [
@@ -3636,6 +4350,16 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -3700,13 +4424,18 @@
 			],
 			"areaTags": [
 				"N"
+			],
+			"fromClassList": [
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Conjure Celestial",
 			"source": "PHB'24",
 			"page": 254,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "C",
 			"time": [
@@ -3782,13 +4511,18 @@
 			],
 			"areaTags": [
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Conjure Elemental",
 			"source": "PHB'24",
 			"page": 254,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "C",
 			"time": [
@@ -3845,13 +4579,22 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Conjure Fey",
 			"source": "PHB'24",
 			"page": 255,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "C",
 			"time": [
@@ -3903,13 +4646,18 @@
 			"miscTags": [
 				"SGT",
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Conjure Minor Elementals",
 			"source": "PHB'24",
 			"page": 255,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -3964,6 +4712,16 @@
 			],
 			"areaTags": [
 				"R"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -4019,13 +4777,18 @@
 			],
 			"areaTags": [
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Conjure Woodland Beings",
 			"source": "PHB'24",
 			"page": 255,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -4077,13 +4840,22 @@
 			"miscTags": [
 				"SGT",
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Contact Other Plane",
 			"source": "PHB'24",
 			"page": 255,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "D",
 			"time": [
@@ -4122,13 +4894,22 @@
 			],
 			"savingThrow": [
 				"intelligence"
+			],
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Contagion",
 			"source": "PHB'24",
 			"page": 256,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "N",
 			"time": [
@@ -4172,13 +4953,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Contingency",
 			"source": "PHB'24",
 			"page": 256,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "A",
 			"time": [
@@ -4221,13 +5011,18 @@
                         "This is raw magic acting upon itself, one of the rarer and lesser known realms of Abjuration (spells like counterspell, dispel magic, and nondetection are also in this realm)."
                     ]
                 }
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Continual Flame",
 			"source": "PHB'24",
 			"page": 256,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -4268,13 +5063,30 @@
 			"miscTags": [
 				"LGT",
 				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "TCE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Control Water",
 			"source": "PHB'24",
 			"page": 256,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "V",
 			"time": [
@@ -4359,6 +5171,20 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -4366,7 +5192,6 @@
 			"replaced": "Alter Weather",
 			"source": "PHB'24",
 			"page": 257,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "V",
 			"time": [
@@ -4577,13 +5402,18 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Counterspell",
 			"source": "PHB'24",
 			"page": 258,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -4616,13 +5446,26 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Create Food and Water",
 			"source": "PHB'24",
 			"page": 258,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -4656,13 +5499,26 @@
                         "Though there is an elemental plane of water, and some <s>maniacs</s>scholars like Brennik insist on the existense of the quasi-paraelemental plane of flesh, there is no true plane from which the results of this spell can come, so it is plainly transmuted, not conjured."
                     ]
                 }
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Create or Destroy Water",
 			"source": "PHB'24",
 			"page": 258,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "T",
 			"time": [
@@ -4725,13 +5581,22 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Create Undead",
 			"source": "PHB'24",
 			"page": 258,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "N",
 			"time": [
@@ -4781,13 +5646,26 @@
 				"PRM",
 				"SMN",
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Creation",
 			"source": "PHB'24",
 			"page": 259,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "C",
 			"time": [
@@ -4868,6 +5746,24 @@
 					"entries": [
 						"The Cube increases by 5 feet for each spell slot level above 5."
 					]
+				}
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
 				}
 			]
 		},
@@ -4976,13 +5872,18 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Cure Wounds",
 			"source": "PHB'24",
 			"page": 259,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "N",
 			"time": [
@@ -5030,13 +5931,38 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Dancing Lights",
 			"source": "PHB'24",
 			"page": 259,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "I",
 			"time": [
@@ -5074,13 +6000,30 @@
 			"miscTags": [
 				"LGT",
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Darkness",
 			"source": "PHB'24",
 			"page": 260,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -5120,13 +6063,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Darkvision",
 			"source": "PHB'24",
 			"page": 260,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -5160,13 +6116,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Daylight",
 			"source": "PHB'24",
 			"page": 260,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -5207,13 +6184,33 @@
 			"areaTags": [
 				"S"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Death Ward",
 			"source": "PHB'24",
 			"page": 261,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -5247,13 +6244,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Delayed Blast Fireball",
 			"source": "PHB'24",
 			"page": 261,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -5310,13 +6316,22 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Demiplane",
 			"source": "PHB'24",
 			"page": 261,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "C",
 			"time": [
@@ -5353,6 +6368,20 @@
 				"OBJ",
 				"PRM",
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -5399,6 +6428,12 @@
 			"areaTags": [
 				"MT",
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -5406,7 +6441,6 @@
 			"replaced": "Detect Otherworldly Influence",
 			"source": "PHB'24",
 			"page": 261,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -5453,7 +6487,6 @@
 			"name": "Detect Magic",
 			"source": "PHB'24",
 			"page": 262,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -5489,13 +6522,50 @@
 			"entries": [
 				"For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the {@action Magic} action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's Schools of Magic.",
 				"The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Detect Poison and Disease",
 			"source": "PHB'24",
 			"page": 262,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -5532,13 +6602,30 @@
 			"entries": [
 				"For the duration, you sense the location of poisons, poisonous or venomous creatures, and magical contagions within 30 feet of yourself. You sense the kind of poison, creature, or contagion in each case.",
 				"The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Detect Thoughts",
 			"source": "PHB'24",
 			"page": 262,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "D",
 			"time": [
@@ -5595,13 +6682,26 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Dimension Door",
 			"source": "PHB'24",
 			"page": 262,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -5635,13 +6735,30 @@
 			],
 			"miscTags": [
 				"TP"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Disguise Self",
 			"source": "PHB'24",
 			"page": 262,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -5679,13 +6796,30 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Disintegrate",
 			"source": "PHB'24",
 			"page": 263,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "T",
 			"time": [
@@ -5737,13 +6871,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Dispel Evil and Good",
 			"source": "PHB'24",
 			"page": 263,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "A",
 			"time": [
@@ -5806,13 +6949,21 @@
 			"areaTags": [
 				"ST"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Dispel Magic",
 			"source": "PHB'24",
 			"page": 265,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -5854,6 +7005,44 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -5906,13 +7095,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Divination",
 			"source": "PHB'24",
 			"page": 264,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "D",
 			"time": [
@@ -5947,13 +7141,26 @@
 			"entries": [
 				"This spell puts you in contact with a god or a god's servants. You ask one question about a specific goal, event, or activity to occur within 7 days. The DM offers a truthful reply, which might be a short phrase or cryptic rhyme. The spell doesn't account for circumstances that might change the answer, such as the casting of other spells.",
 				"If you cast the spell more than once before finishing a {@variantrule Long Rest}, there is a cumulative 25% chance for each casting after the first that you get no answer."
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Personal Blessing",
 			"source": "PHB'24",
 			"page": 265,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -5996,6 +7203,12 @@
 			],
 			"miscTags": [
 				"AAD"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -6003,7 +7216,6 @@
 			"replaced": "Personal Blessing",
 			"source": "PHB'24",
 			"page": 265,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -6097,13 +7309,17 @@
 			"miscTags": [
 				"AAD"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Divine Word",
 			"source": "PHB'24",
 			"page": 265,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -6177,13 +7393,18 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Dominate Beast",
 			"source": "PHB'24",
 			"page": 265,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "E",
 			"time": [
@@ -6241,13 +7462,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Dominate Monster",
 			"source": "PHB'24",
 			"page": 265,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "E",
 			"time": [
@@ -6302,13 +7536,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Dominate Person",
 			"source": "PHB'24",
 			"page": 266,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "E",
 			"time": [
@@ -6366,6 +7617,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -6426,6 +7691,16 @@
 			"areaTags": [
 				"N",
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -6472,13 +7747,18 @@
 			],
 			"miscTags": [
 				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Dream",
 			"source": "PHB'24",
 			"page": 266,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "I",
 			"time": [
@@ -6521,13 +7801,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Druidcraft",
 			"source": "PHB'24",
 			"page": 266,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -6583,13 +7876,17 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Earthquake",
 			"source": "PHB'24",
 			"page": 267,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "T",
 			"time": [
@@ -6659,13 +7956,26 @@
 			],
 			"areaTags": [
 				"R"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Eldritch Blast",
 			"source": "PHB'24",
 			"page": 267,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -6714,6 +8024,12 @@
 			"areaTags": [
 				"MT",
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -6777,6 +8093,24 @@
 			],
 			"miscTags": [
 				"AAD"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -6851,13 +8185,26 @@
 			"areaTags": [
 				"C",
 				"Q"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Enhance Ability",
 			"source": "PHB'24",
 			"page": 268,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -6904,13 +8251,42 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Enlarge/Reduce",
 			"source": "PHB'24",
 			"page": 268,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -6969,6 +8345,28 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -7034,13 +8432,18 @@
 			],
 			"abilityCheck": [
 				"strength"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Entangle",
 			"source": "PHB'24",
 			"page": 268,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "T",
 			"time": [
@@ -7093,14 +8496,22 @@
 			"areaTags": [
 				"Q"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Enthrall",
 			"replaced": "Captivate",
 			"source": "PHB'24",
 			"page": 269,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -7146,7 +8557,6 @@
 			"name": "Etherealness",
 			"source": "PHB'24",
 			"page": 269,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "C",
 			"time": [
@@ -7201,6 +8611,28 @@
 			],
 			"miscTags": [
 				"PS"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -7267,13 +8699,21 @@
 			"areaTags": [
 				"Q"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Expeditious Retreat",
 			"source": "PHB'24",
 			"page": 270,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "T",
 			"time": [
@@ -7307,13 +8747,30 @@
 			],
 			"miscTags": [
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Eyebite",
 			"source": "PHB'24",
 			"page": 270,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "E",
 			"time": [
@@ -7386,13 +8843,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Fabricate",
 			"source": "PHB'24",
 			"page": 271,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "T",
 			"time": [
@@ -7426,13 +8900,22 @@
 				"OBJ",
 				"PRM",
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Faerie Fire",
 			"source": "PHB'24",
 			"page": 271,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -7474,13 +8957,26 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "False Life",
 			"source": "PHB'24",
 			"page": 271,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "N",
 			"time": [
@@ -7519,13 +9015,26 @@
 			],
 			"miscTags": [
 				"THP"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Fear",
 			"source": "PHB'24",
 			"page": 271,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "I",
 			"time": [
@@ -7568,13 +9077,30 @@
 			],
 			"areaTags": [
 				"N"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Feather Fall",
 			"source": "PHB'24",
 			"page": 271,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -7616,6 +9142,24 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -7688,7 +9232,6 @@
 			"name": "Find Familiar",
 			"source": "PHB'24",
 			"page": 272,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "C",
 			"time": [
@@ -7757,13 +9300,17 @@
 				"PRM",
 				"SMN"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Find Steed",
 			"source": "PHB'24",
 			"page": 272,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "C",
 			"time": [
@@ -7818,13 +9365,19 @@
 			"miscTags": [
 				"PRM",
 				"SMN"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Find the Path",
+			"replaced": "Wayfinding",
 			"source": "PHB'24",
 			"page": 273,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "D",
 			"time": [
@@ -7867,7 +9420,6 @@
 			"replaced": "Detect Hazards",
 			"source": "PHB'24",
 			"page": 273,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "D",
 			"time": [
@@ -7905,7 +9457,6 @@
 			"replaced": "Death Beam",
 			"source": "PHB'24",
 			"page": 273,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "N",
 			"time": [
@@ -7953,7 +9504,6 @@
 			"name": "Fire Bolt",
 			"source": "PHB'24",
 			"page": 274,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -8011,13 +9561,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Fire Shield",
 			"source": "PHB'24",
 			"page": 274,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "V",
 			"time": [
@@ -8061,6 +9624,20 @@
 			],
 			"miscTags": [
 				"LGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -8068,7 +9645,6 @@
 			"replaced": "Rain of Fire",
 			"source": "PHB'24",
 			"page": 275,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -8114,7 +9690,6 @@
 			"name": "Fireball",
 			"source": "PHB'24",
 			"page": 274,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -8165,13 +9740,22 @@
 			"areaTags": [
 				"S"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Flame Blade",
 			"source": "PHB'24",
 			"page": 275,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -8227,6 +9811,16 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -8234,7 +9828,6 @@
 			"replaced": "Holy Flame",
 			"source": "PHB'24",
 			"page": 275,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -8287,7 +9880,6 @@
 			"name": "Flaming Sphere",
 			"source": "PHB'24",
 			"page": 275,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -8352,6 +9944,20 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -8359,7 +9965,6 @@
 			"replaced": "Petrify",
 			"source": "PHB'24",
 			"page": 275,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "T",
 			"time": [
@@ -8414,7 +10019,6 @@
 			"name": "Fly",
 			"source": "PHB'24",
 			"page": 276,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -8465,13 +10069,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Fog Cloud",
 			"source": "PHB'24",
 			"page": 276,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -8525,13 +10146,30 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Forbiddance",
 			"source": "PHB'24",
 			"page": 276,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "A",
 			"time": [
@@ -8587,13 +10225,18 @@
 			"miscTags": [
 				"PIR",
 				"PRM"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Forcecage",
 			"source": "PHB'24",
 			"page": 276,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -8640,13 +10283,26 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Foresight",
 			"source": "PHB'24",
 			"page": 276,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "D",
 			"time": [
@@ -8683,6 +10339,24 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -8738,13 +10412,22 @@
 				"AAD",
 				"LGT",
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Freedom of Movement",
 			"source": "PHB'24",
 			"page": 277,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -8792,6 +10475,28 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -8842,13 +10547,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Gaseous Form",
 			"source": "PHB'24",
 			"page": 277,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -8900,13 +10622,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Gate",
 			"source": "PHB'24",
 			"page": 277,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "C",
 			"time": [
@@ -8951,13 +10686,30 @@
 				"SGT",
 				"TP"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Geas",
 			"source": "PHB'24",
 			"page": 278,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "E",
 			"time": [
@@ -9015,13 +10767,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Gentle Repose",
 			"source": "PHB'24",
 			"page": 278,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "N",
 			"time": [
@@ -9059,13 +10832,26 @@
 			"entries": [
 				"You touch a corpse or other remains. For the duration, the target is protected from decay and can't become Undead.",
 				"The spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don't count against the time limit of spells such as {@spell Raise Dead}."
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Giant Insect",
 			"source": "PHB'24",
 			"page": 279,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -9110,13 +10896,18 @@
 			],
 			"miscTags": [
 				"SMN"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Glibness",
 			"source": "PHB'24",
 			"page": 279,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "E",
 			"time": [
@@ -9152,13 +10943,22 @@
                         "One most obviously cannot Transmute oneself into being charismatic, it can only be Enchanted - either in your mind of that of the targets."
                     ]
                 }
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Globe of Invulnerability",
 			"source": "PHB'24",
 			"page": 279,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "A",
 			"time": [
@@ -9204,13 +11004,22 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Glyph of Warding",
 			"source": "PHB'24",
 			"page": 279,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -9295,13 +11104,30 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Goodberry",
 			"source": "PHB'24",
 			"page": 280,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "C",
 			"time": [
@@ -9336,6 +11162,16 @@
 			],
 			"miscTags": [
 				"HL"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -9408,13 +11244,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Grease",
 			"source": "PHB'24",
 			"page": 280,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "T",
 			"time": [
@@ -9466,13 +11311,26 @@
 			],
 			"areaTags": [
 				"Q"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Greater Invisibility",
 			"source": "PHB'24",
 			"page": 281,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "I",
 			"time": [
@@ -9509,13 +11367,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Greater Restoration",
 			"source": "PHB'24",
 			"page": 281,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "A",
 			"time": [
@@ -9559,13 +11430,38 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Guardian of Faith",
 			"source": "PHB'24",
 			"page": 281,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -9606,13 +11502,18 @@
 			"miscTags": [
 				"SGT"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Guards and Wards",
 			"source": "PHB'24",
 			"page": 282,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "A",
 			"time": [
@@ -9693,13 +11594,22 @@
 			],
 			"areaTags": [
 				"Q"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Guidance",
 			"source": "PHB'24",
 			"page": 282,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "D",
 			"time": [
@@ -9733,13 +11643,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Guiding Bolt",
 			"source": "PHB'24",
 			"page": 282,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -9791,13 +11714,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Gust of Wind",
 			"source": "PHB'24",
 			"page": 282,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -9842,6 +11770,24 @@
 			],
 			"areaTags": [
 				"L"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -9903,13 +11849,18 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Hallow",
 			"source": "PHB'24",
 			"page": 283,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "A",
 			"time": [
@@ -10075,13 +12026,18 @@
 			],
 			"miscTags": [
 				"LGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Hallucinatory Terrain",
 			"source": "PHB'24",
 			"page": 283,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "I",
 			"time": [
@@ -10120,13 +12076,30 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Harm",
 			"source": "PHB'24",
 			"page": 283,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "N",
 			"time": [
@@ -10165,13 +12138,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Haste",
 			"source": "PHB'24",
 			"page": 284,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -10216,13 +12194,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Heal",
 			"source": "PHB'24",
 			"page": 284,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "N",
 			"time": [
@@ -10272,13 +12263,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Healing Word",
 			"source": "PHB'24",
 			"page": 284,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "N",
 			"time": [
@@ -10327,13 +12327,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Heat Metal",
 			"source": "PHB'24",
 			"page": 284,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -10397,13 +12410,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Hellish Rebuke",
 			"source": "PHB'24",
 			"page": 284,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -10452,13 +12478,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Heroes' Feast",
 			"source": "PHB'24",
 			"page": 284,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "T",
 			"time": [
@@ -10514,13 +12545,26 @@
 				"C",
 				"MT"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Heroism",
 			"source": "PHB'24",
 			"page": 285,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -10576,6 +12620,16 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -10642,13 +12696,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Hold Monster",
 			"source": "PHB'24",
 			"page": 285,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "E",
 			"time": [
@@ -10717,13 +12776,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Hold Person",
 			"source": "PHB'24",
 			"page": 286,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -10780,13 +12856,38 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Holy Aura",
 			"source": "PHB'24",
 			"page": 286,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "A",
 			"time": [
@@ -10841,6 +12942,12 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -10906,13 +13013,18 @@
 			"areaTags": [
 				"S"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Hunter's Mark",
 			"source": "PHB'24",
 			"page": 287,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -10965,13 +13077,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Hypnotic Pattern",
 			"source": "PHB'24",
 			"page": 287,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "I",
 			"time": [
@@ -11014,6 +13131,24 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -11083,7 +13218,6 @@
 			"name": "Ice Storm",
 			"source": "PHB'24",
 			"page": 287,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "V",
 			"time": [
@@ -11131,13 +13265,26 @@
 			],
 			"areaTags": [
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Identify",
 			"source": "PHB'24",
 			"page": 287,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -11177,6 +13324,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -11184,7 +13345,6 @@
 			"replaced": "Secret Missive",
 			"source": "PHB'24",
 			"page": 288,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -11223,13 +13383,26 @@
 				"You write on parchment, paper, or another suitable material and imbue it with an illusion that lasts for the duration. To you and any creatures you designate when you cast the spell, the writing appears normal, seems to be written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing appears as if it were written in an unknown or magical script that is unintelligible. Alternatively, the illusion can alter the meaning, handwriting, and language of the text, though the language must be one you know.",
 				"If the spell is dispelled, the original script and the illusion both disappear.",
 				"A creature that has {@sense Truesight} can read the hidden message."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Imprisonment",
 			"source": "PHB'24",
 			"page": 288,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "A",
 			"time": [
@@ -11326,13 +13499,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Incendiary Cloud",
 			"source": "PHB'24",
 			"page": 288,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "T",
 			"time": [
@@ -11385,13 +13567,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Inflict Wounds",
 			"source": "PHB'24",
 			"page": 288,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "N",
 			"time": [
@@ -11435,13 +13630,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Insect Plague",
 			"source": "PHB'24",
 			"page": 289,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "C",
 			"time": [
@@ -11497,13 +13697,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Invisibility",
 			"source": "PHB'24",
 			"page": 289,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -11550,6 +13763,28 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -11616,13 +13851,22 @@
 			"areaTags": [
 				"Y"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Jump",
 			"source": "PHB'24",
 			"page": 290,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "T",
 			"time": [
@@ -11665,6 +13909,28 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -11672,7 +13938,6 @@
 			"replaced": "Arcane Key",
 			"source": "PHB'24",
 			"page": 290,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -11718,7 +13983,6 @@
 			"name": "Legend Lore",
 			"source": "PHB'24",
 			"page": 290,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "D",
 			"time": [
@@ -11757,6 +14021,20 @@
 			],
 			"miscTags": [
 				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -11801,6 +14079,16 @@
 			"miscTags": [
 				"OBJ",
 				"PRM"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -11849,13 +14137,22 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Lesser Restoration",
 			"source": "PHB'24",
 			"page": 291,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -11885,13 +14182,38 @@
 			"areaTags": [
 				"ST"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Levitate",
 			"source": "PHB'24",
 			"page": 291,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -11943,13 +14265,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Light",
 			"source": "PHB'24",
 			"page": 292,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -11984,6 +14319,28 @@
 			"miscTags": [
 				"LGT",
 				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -12035,13 +14392,18 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Lightning Bolt",
 			"source": "PHB'24",
 			"page": 292,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -12097,13 +14459,22 @@
 			],
 			"areaTags": [
 				"L"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Locate Animals or Plants",
 			"source": "PHB'24",
 			"page": 292,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "D",
 			"time": [
@@ -12137,13 +14508,26 @@
 			"affectsCreatureType": [
 				"beast",
 				"plant"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Locate Creature",
 			"source": "PHB'24",
 			"page": 292,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "D",
 			"time": [
@@ -12177,13 +14561,38 @@
 				"Describe or name a creature that is familiar to you. You sense the direction to the creature's location if that creature is within 1,000 feet of you. If the creature is moving, you know the direction of its movement.",
 				"The spell can locate a specific creature known to you or the nearest creature of a specific kind (such as a human or a unicorn) if you have seen such a creature up close\u2014within 30 feet\u2014at least once. If the creature you described or named is in a different form, such as under the effects of a {@spell Flesh to Stone} or {@spell Polymorph} spell, this spell doesn't locate the creature.",
 				"This spell can't locate a creature if any thickness of lead blocks a direct path between you and the creature."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Locate Object",
 			"source": "PHB'24",
 			"page": 293,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "D",
 			"time": [
@@ -12220,13 +14629,38 @@
 			],
 			"miscTags": [
 				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Longstrider",
 			"source": "PHB'24",
 			"page": 293,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "T",
 			"time": [
@@ -12251,7 +14685,7 @@
 					"type": "timed",
 					"duration": {
 						"type": "hour",
-						"amount": 1
+						"amount": 8
 					}
 				}
 			],
@@ -12269,13 +14703,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Mage Armor",
 			"source": "PHB'24",
 			"page": 293,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -12313,13 +14768,22 @@
 			"areaTags": [
 				"ST"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Mage Hand",
 			"source": "PHB'24",
 			"page": 293,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -12363,13 +14827,34 @@
 			],
 			"miscTags": [
 				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Magic Circle",
 			"source": "PHB'24",
 			"page": 293,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -12443,13 +14928,30 @@
 			],
 			"areaTags": [
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Magic Jar",
 			"source": "PHB'24",
 			"page": 294,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "N",
 			"time": [
@@ -12497,13 +14999,18 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Magic Missile",
 			"source": "PHB'24",
 			"page": 295,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -12550,13 +15057,22 @@
 				"MT",
 				"ST"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Magic Mouth",
 			"source": "PHB'24",
 			"page": 295,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -12600,13 +15116,26 @@
 			"miscTags": [
 				"OBJ",
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Magic Weapon",
 			"source": "PHB'24",
 			"page": 295,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -12652,13 +15181,34 @@
 						"The bonus increases to +2 with a level 3-5 spell slot. The bonus increases to +3 with a level 6+ spell slot."
 					]
 				}
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Major Image",
 			"source": "PHB'24",
 			"page": 295,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "I",
 			"time": [
@@ -12709,13 +15259,30 @@
 			"miscTags": [
 				"PRM",
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Mass Cure Wounds",
 			"source": "PHB'24",
 			"page": 296,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "N",
 			"time": [
@@ -12765,13 +15332,26 @@
 			"areaTags": [
 				"MT",
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Mass Heal",
 			"source": "PHB'24",
 			"page": 296,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "N",
 			"time": [
@@ -12812,13 +15392,18 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Mass Healing Word",
 			"source": "PHB'24",
 			"page": 296,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "N",
 			"time": [
@@ -12867,13 +15452,22 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Mass Suggestion",
 			"source": "PHB'24",
 			"page": 296,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "E",
 			"time": [
@@ -12926,13 +15520,26 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Maze",
 			"source": "PHB'24",
 			"page": 296,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "C",
 			"time": [
@@ -12972,6 +15579,12 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -12979,7 +15592,6 @@
 			"replaced": "Stone Pact",
 			"source": "PHB'24",
 			"page": 296,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -13020,6 +15632,20 @@
 			],
 			"conditionInflict": [
 				"prone"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -13086,7 +15712,6 @@
 			"name": "Mending",
 			"source": "PHB'24",
 			"page": 297,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -13117,13 +15742,38 @@
 			],
 			"miscTags": [
 				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Message",
 			"source": "PHB'24",
 			"page": 298,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "D",
 			"time": [
@@ -13166,13 +15816,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Meteor Swarm",
 			"source": "PHB'24",
 			"page": 298,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "V",
 			"time": [
@@ -13214,13 +15885,22 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Mind Blank",
 			"source": "PHB'24",
 			"page": 298,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "A",
 			"time": [
@@ -13259,6 +15939,16 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -13321,6 +16011,24 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -13378,13 +16086,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Minor Illusion",
 			"source": "PHB'24",
 			"page": 298,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "I",
 			"time": [
@@ -13433,13 +16154,30 @@
 			],
 			"abilityCheck": [
 				"intelligence"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Mirage Arcane",
 			"source": "PHB'24",
 			"page": 299,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "I",
 			"time": [
@@ -13472,13 +16210,30 @@
 				"Similarly, you can alter the appearance of structures or add them where none are present. The spell doesn't disguise, conceal, or add creatures.",
 				"The illusion includes audible, visual, tactile, and olfactory elements, so it can turn clear ground into {@variantrule Difficult Terrain} (or vice versa) or otherwise impede movement through the area. Any piece of the illusory terrain (such as a rock or stick) that is removed from the spell's area disappears immediately.",
 				"Creatures with {@sense Truesight} can see through the illusion to the terrain's true form; however, all other elements of the illusion remain, so while the creature is aware of the illusion's presence, the creature can still physically interact with the illusion."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Mirror Image",
 			"source": "PHB'24",
 			"page": 299,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -13510,13 +16265,30 @@
 				"Three illusory duplicates of yourself appear in your space. Until the spell ends, the duplicates move with you and mimic your actions, shifting position so it's impossible to track which image is real.",
 				"Each time a creature hits you with an attack roll during the spell's duration, roll a {@dice d6} for each of your remaining duplicates. If any of the d6s rolls a 3 or higher, one of the duplicates is hit instead of you, and the duplicate is destroyed. The duplicates otherwise ignore all other damage and effects. The spell ends when all three duplicates are destroyed.",
 				"A creature is unaffected by this spell if it has the {@condition Blinded} condition, {@sense Blindsight}, or {@sense Truesight}."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Mislead",
 			"source": "PHB'24",
 			"page": 299,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "I",
 			"time": [
@@ -13554,13 +16326,27 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Misty Step",
 			"replaced": "Reposition",
+			"source": "PHB'24",
 			"page": 299,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "C",
 			"time": [
@@ -13589,13 +16375,26 @@
 			"miscTags": [
 				"SGT",
 				"TP"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Modify Memory",
 			"source": "PHB'24",
 			"page": 299,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "E",
 			"time": [
@@ -13654,13 +16453,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Moonbeam",
 			"source": "PHB'24",
 			"page": 300,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -13715,6 +16523,12 @@
 			],
 			"areaTags": [
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -13764,6 +16578,12 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -13812,7 +16632,17 @@
 			"miscTags": [
 				"OBJ"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Mordenkainen's Private Sanctum",
@@ -13878,6 +16708,12 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -13941,7 +16777,6 @@
 			"name": "Move Earth",
 			"source": "PHB'24",
 			"page": 302,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "T",
 			"time": [
@@ -13980,13 +16815,26 @@
 			],
 			"areaTags": [
 				"Q"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Nondetection",
 			"source": "PHB'24",
 			"page": 302,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -14027,6 +16875,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -14092,6 +16954,12 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -14148,6 +17016,16 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -14213,6 +17091,16 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -14262,13 +17150,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Pass without Trace",
 			"source": "PHB'24",
 			"page": 303,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -14304,13 +17201,22 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Passwall",
 			"source": "PHB'24",
 			"page": 303,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "C",
 			"time": [
@@ -14354,6 +17260,12 @@
 			"miscTags": [
 				"OBJ",
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -14407,13 +17319,26 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Phantasmal Killer",
 			"source": "PHB'24",
 			"page": 304,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "I",
 			"time": [
@@ -14467,13 +17392,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Phantom Steed",
 			"source": "PHB'24",
 			"page": 304,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -14519,13 +17453,18 @@
 			"miscTags": [
 				"SMN"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Planar Ally",
 			"source": "PHB'24",
 			"page": 304,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "C",
 			"time": [
@@ -14559,13 +17498,18 @@
 			],
 			"miscTags": [
 				"SMN"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Planar Binding",
 			"source": "PHB'24",
 			"page": 305,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "A",
 			"time": [
@@ -14626,13 +17570,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Plane Shift",
 			"source": "PHB'24",
 			"page": 305,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "C",
 			"time": [
@@ -14673,13 +17638,34 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Plant Growth",
 			"source": "PHB'24",
 			"page": 305,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -14729,13 +17715,26 @@
 			],
 			"miscTags": [
 				"DFT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Poison Spray",
 			"source": "PHB'24",
 			"page": 306,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -14799,13 +17798,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Polymorph",
 			"source": "PHB'24",
 			"page": 306,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "T",
 			"time": [
@@ -14850,6 +17870,24 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -14895,6 +17933,16 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -14939,13 +17987,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Power Word Kill",
 			"source": "PHB'24",
 			"page": 306,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "E",
 			"time": [
@@ -14980,13 +18037,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Power Word Stun",
 			"source": "PHB'24",
 			"page": 306,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "E",
 			"time": [
@@ -15025,13 +18103,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Prayer of Healing",
 			"source": "PHB'24",
 			"page": 307,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "N",
 			"time": [
@@ -15079,13 +18174,22 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Prestidigitation",
 			"source": "PHB'24",
 			"page": 307,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -15161,13 +18265,30 @@
 			],
 			"miscTags": [
 				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Prismatic Spray",
 			"source": "PHB'24",
 			"page": 307,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -15263,13 +18384,26 @@
 			],
 			"areaTags": [
 				"N"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Prismatic Wall",
 			"source": "PHB'24",
 			"page": 308,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "V",
 			"time": [
@@ -15377,13 +18511,22 @@
 			],
 			"areaTags": [
 				"W"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Produce Flame",
 			"source": "PHB'24",
 			"page": 308,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -15453,13 +18596,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Programmed Illusion",
 			"source": "PHB'24",
 			"page": 309,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "I",
 			"time": [
@@ -15500,13 +18648,22 @@
 			"abilityCheck": [
 				"intelligence"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Project Image",
 			"source": "PHB'24",
 			"page": 309,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "I",
 			"time": [
@@ -15550,13 +18707,22 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Protection from Energy",
 			"source": "PHB'24",
 			"page": 309,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -15597,13 +18763,38 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Protection from Evil and Good",
 			"source": "PHB'24",
 			"page": 309,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -15653,13 +18844,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Protection from Poison",
 			"source": "PHB'24",
 			"page": 310,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -15698,13 +18910,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Purify Food and Drink",
 			"source": "PHB'24",
 			"page": 310,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "T",
 			"time": [
@@ -15737,13 +18970,34 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Raise Dead",
 			"source": "PHB'24",
 			"page": 310,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "N",
 			"time": [
@@ -15796,7 +19050,21 @@
 			"miscTags": [
 				"HL"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Rary's Telepathic Bond",
@@ -15840,13 +19108,22 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Ray of Enfeeblement",
 			"source": "PHB'24",
 			"page": 311,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -15892,13 +19169,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Ray of Frost",
 			"source": "PHB'24",
 			"page": 311,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -15955,6 +19241,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -16015,13 +19315,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Regenerate",
 			"source": "PHB'24",
 			"page": 311,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "N",
 			"time": [
@@ -16065,13 +19374,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Reincarnate",
 			"source": "PHB'24",
 			"page": 311,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "N",
 			"time": [
@@ -16101,60 +19423,61 @@
 				}
 			],
 			"entries": [
-				"You touch a dead Humanoid or a piece of one. If the creature has been dead no longer than 10 days, the spell forms a new body for it and calls the soul to enter that body. Roll {@dice 1d10} and consult the table below to determine the body's species, or the DM chooses another playable species.",
+				"You touch a dead Humanoid or a piece of one. If the creature has been dead no longer than 10 days, the spell forms a new body for it and calls the soul to enter that body. Roll {@dice 1d100} and consult the table below to determine the body's species, or the DM chooses another playable species.",
 				{
-					"type": "table",
-					"colStyles": [
-						"col-2 text-center",
-						"col-10"
-					],
-					"colLabels": [
-						"1d10",
-						"Species"
-					],
-					"rows": [
+                    "type": "table",
+                    "caption": "Reincarnation Species",
+                    "colLabels": [
+                        "{@dice d100}",
+                        "Species"
+                    ],
+                    "colStyles": [
+                        "col-1 text-center no-wrap",
+                        "col-11"
+                    ],
+                    "rows": [
+                        [
+                            "1-4",
+                            "Monstrous"
+                        ],
 						[
-							"1",
-							"{@race Aasimar}"
+                            "5-8",
+                            "Goliath"
+                        ],
+                        [
+                            "9-29",
+                            "Dwarf"
+                        ],
+                        [
+                            "30-39",
+                            "Elf"
+                        ],
+                        [
+                            "40-49",
+                            "Gnome"
+                        ],
+                        [
+                            "50-52",
+                            "Dragonborn"
+                        ],
+                        [
+                            "53-64",
+                            "Halfling"
+                        ],
+                        [
+                            "65-95",
+                            "Human"
+                        ],
+						[
+							"96-98",
+							"Tiefling"
 						],
-						[
-							"2",
-							"{@race Dragonborn}"
-						],
-						[
-							"3",
-							"{@race Dwarf}"
-						],
-						[
-							"4",
-							"{@race Elf}"
-						],
-						[
-							"5",
-							"{@race Gnome}"
-						],
-						[
-							"6",
-							"{@race Goliath}"
-						],
-						[
-							"7",
-							"{@race Halfling}"
-						],
-						[
-							"8",
-							"{@race Human}"
-						],
-						[
-							"9",
-							"{@race Orc}"
-						],
-						[
-							"10",
-							"{@race Tiefling}"
-						]
-					]
-				}
+                        [
+                            "99-0",
+                            "Aasimar"
+                        ]
+                    ]
+                }
 			],
 			"affectsCreatureType": [
 				"humanoid"
@@ -16162,13 +19485,18 @@
 			"miscTags": [
 				"HL",
 				"RO"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Remove Curse",
 			"source": "PHB'24",
 			"page": 312,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -16200,13 +19528,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Resistance",
 			"source": "PHB'24",
 			"page": 312,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "A",
 			"time": [
@@ -16240,13 +19585,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				}
 			]
 		},
 		{
 			"name": "Resurrection",
 			"source": "PHB'24",
 			"page": 312,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "N",
 			"time": [
@@ -16298,13 +19656,22 @@
 			],
 			"miscTags": [
 				"HL"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Reverse Gravity",
 			"source": "PHB'24",
 			"page": 312,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "T",
 			"time": [
@@ -16347,13 +19714,26 @@
 			],
 			"areaTags": [
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Revivify",
 			"source": "PHB'24",
 			"page": 312,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "N",
 			"time": [
@@ -16390,13 +19770,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Rope Trick",
 			"source": "PHB'24",
 			"page": 312,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "C",
 			"time": [
@@ -16435,13 +19836,22 @@
                         "Dimensional magic, even for tiny pocket dimensions, is the realm of Conjuration."
                     ]
                 }
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Sacred Flame",
 			"source": "PHB'24",
 			"page": 313,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -16499,13 +19909,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Sanctuary",
 			"source": "PHB'24",
 			"page": 313,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -16544,13 +19959,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Scorching Ray",
 			"source": "PHB'24",
 			"page": 314,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -16596,13 +20020,22 @@
 			"areaTags": [
 				"MT",
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Scrying",
 			"source": "PHB'24",
 			"page": 314,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "D",
 			"time": [
@@ -16691,7 +20124,29 @@
 			"savingThrow": [
 				"wisdom"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Searing Smite",
@@ -16744,13 +20199,18 @@
 			],
 			"miscTags": [
 				"AAD"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "See Invisibility",
 			"source": "PHB'24",
 			"page": 314,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "D",
 			"time": [
@@ -16781,13 +20241,30 @@
 			],
 			"entries": [
 				"For the duration, the target of this spell can see creatures and objects that have the {@condition Invisible} condition as if they were visible, and you can see into the Ethereal Plane. Creatures and objects there appear ghostly."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Artificer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Seeming",
 			"source": "PHB'24",
 			"page": 314,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "I",
 			"time": [
@@ -16833,13 +20310,26 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Sending",
 			"source": "PHB'24",
 			"page": 314,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "D",
 			"time": [
@@ -16868,13 +20358,26 @@
 				"You send a short message of 25 words or fewer to a creature you have met or a creature described to you by someone who has met it. The target hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately. The spell enables targets to understand the meaning of your message.",
 				"You can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5% chance that the message doesn't arrive. You know if the delivery fails.",
 				"Upon receiving your message, a creature can block your ability to reach it again with this spell for 8 hours. If you try to send another message during that time, you learn that you are blocked, and the spell fails."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Sequester",
 			"source": "PHB'24",
 			"page": 315,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "C",
 			"time": [
@@ -16927,13 +20430,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Shapechange",
 			"source": "PHB'24",
 			"page": 315,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "T",
 			"time": [
@@ -16975,13 +20483,22 @@
 			"miscTags": [
 				"THP"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Shatter",
 			"source": "PHB'24",
 			"page": 316,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -17031,13 +20548,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Shield",
 			"source": "PHB'24",
 			"page": 316,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -17071,13 +20601,22 @@
 			],
 			"miscTags": [
 				"MAC"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Shield of Faith",
 			"source": "PHB'24",
 			"page": 316,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -17116,13 +20655,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Shillelagh",
 			"source": "PHB'24",
 			"page": 316,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "A",
 			"time": [
@@ -17183,6 +20731,12 @@
 			"miscTags": [
 				"AAD",
 				"SCL"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -17239,6 +20793,12 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -17246,7 +20806,6 @@
 			"replaced": "Lightning Tendril",
 			"source": "PHB'24",
 			"page": 316,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -17308,7 +20867,6 @@
 			"name": "Silence",
 			"source": "PHB'24",
 			"page": 316,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -17362,13 +20920,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Silent Image",
 			"source": "PHB'24",
 			"page": 317,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -17407,13 +20978,26 @@
 			"abilityCheck": [
 				"intelligence"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Simulacrum",
 			"source": "PHB'24",
 			"page": 317,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "I",
 			"time": [
@@ -17457,13 +21041,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Sleep",
 			"source": "PHB'24",
 			"page": 317,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -17507,13 +21096,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Sleet Storm",
 			"source": "PHB'24",
 			"page": 317,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -17567,13 +21169,26 @@
 			],
 			"areaTags": [
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Slow",
 			"source": "PHB'24",
 			"page": 318,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -17618,6 +21233,20 @@
 			"areaTags": [
 				"C",
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -17685,13 +21314,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Spare the Dying",
 			"source": "PHB'24",
 			"page": 318,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "N",
 			"time": [
@@ -17733,6 +21367,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -17740,7 +21388,6 @@
 			"replaced": "Speak with Nature",
 			"source": "PHB'24",
 			"page": 318,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -17784,7 +21431,6 @@
 			"name": "Speak with Dead",
 			"source": "PHB'24",
 			"page": 318,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "D",
 			"time": [
@@ -17842,6 +21488,20 @@
 				"monstrosity",
 				"ooze",
 				"plant"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -17849,7 +21509,6 @@
 			"replaced": "Speak with Nature",
 			"source": "PHB'24",
 			"page": 318,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -17885,13 +21544,26 @@
 			],
 			"affectsCreatureType": [
 				"plant"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Spider Climb",
 			"source": "PHB'24",
 			"page": 318,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -17932,13 +21604,30 @@
 						"You can target one additional creature for each spell slot level about 2."
 					]
 				}
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Spike Growth",
 			"source": "PHB'24",
 			"page": 318,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -17984,13 +21673,22 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Spirit Guardians",
 			"source": "PHB'24",
 			"page": 318,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "C",
 			"time": [
@@ -18043,13 +21741,18 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Spiritual Weapon",
 			"source": "PHB'24",
 			"page": 318,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -18104,7 +21807,13 @@
 			"areaTags": [
 				"ST"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Staggering Smite",
@@ -18156,6 +21865,12 @@
 			],
 			"miscTags": [
 				"AAD"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -18220,6 +21935,16 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -18269,13 +21994,18 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Stinking Cloud",
 			"source": "PHB'24",
 			"page": 320,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -18326,13 +22056,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Stone Shape",
 			"source": "PHB'24",
 			"page": 320,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "T",
 			"time": [
@@ -18362,13 +22105,30 @@
 			],
 			"miscTags": [
 				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Stoneskin",
 			"source": "PHB'24",
 			"page": 320,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "T",
 			"time": [
@@ -18419,6 +22179,28 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -18426,7 +22208,6 @@
 			"replaced": "Tempest",
 			"source": "PHB'24",
 			"page": 320,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "T",
 			"time": [
@@ -18522,7 +22303,6 @@
 			"name": "Suggestion",
 			"source": "PHB'24",
 			"page": 320,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -18567,6 +22347,24 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -18623,7 +22421,17 @@
 				"SGT",
 				"SMN"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Summon Beast",
@@ -18678,6 +22486,16 @@
 			"miscTags": [
 				"SGT",
 				"SMN"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -18734,7 +22552,17 @@
 				"SGT",
 				"SMN"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Summon Construct",
@@ -18790,7 +22618,17 @@
 				"SGT",
 				"SMN"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Summon Dragon",
@@ -18846,7 +22684,13 @@
 				"SGT",
 				"SMN"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Summon Elemental",
@@ -18901,6 +22745,20 @@
 			"miscTags": [
 				"SGT",
 				"SMN"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -18957,7 +22815,25 @@
 				"SGT",
 				"SMN"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Summon Fiend",
@@ -19013,7 +22889,17 @@
 				"SGT",
 				"SMN"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Summon Undead",
@@ -19069,13 +22955,22 @@
 				"SGT",
 				"SMN"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Sunbeam",
 			"source": "PHB'24",
 			"page": 329,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -19125,13 +23020,30 @@
 			],
 			"areaTags": [
 				"L"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Sunburst",
 			"source": "PHB'24",
 			"page": 329,
-			"freeRules2024": true,
 			"level": 8,
 			"school": "V",
 			"time": [
@@ -19177,6 +23089,24 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -19220,6 +23150,12 @@
 			],
 			"miscTags": [
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -19227,7 +23163,6 @@
 			"replaced": "Glyph of Power",
 			"source": "PHB'24",
 			"page": 329,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "A",
 			"time": [
@@ -19383,6 +23318,24 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -19427,7 +23380,17 @@
 				"HL",
 				"UBA"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Tasha's Hideous Laughter",
@@ -19488,13 +23451,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Telekinesis",
 			"source": "PHB'24",
 			"page": 331,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -19563,6 +23539,16 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -19603,13 +23589,18 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Teleport",
 			"source": "PHB'24",
 			"page": 331,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "C",
 			"time": [
@@ -19756,13 +23747,26 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Teleportation Circle",
 			"source": "PHB'24",
 			"page": 332,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "C",
 			"time": [
@@ -19805,6 +23809,24 @@
 				"PIR",
 				"PRM",
 				"TP"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -19858,13 +23880,18 @@
 			"miscTags": [
 				"SGT"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Thaumaturgy",
 			"source": "PHB'24",
 			"page": 333,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -19939,6 +23966,12 @@
 			],
 			"miscTags": [
 				"ADV"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -20003,6 +24036,16 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -20064,6 +24107,32 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -20117,13 +24186,18 @@
 			"miscTags": [
 				"AAD",
 				"FMV"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Thunderwave",
 			"source": "PHB'24",
 			"page": 334,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -20173,6 +24247,24 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -20180,7 +24272,6 @@
 			"replaced": "Time Dilate",
 			"source": "PHB'24",
 			"page": 334,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "T",
 			"time": [
@@ -20280,13 +24371,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Tongues",
 			"source": "PHB'24",
 			"page": 334,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "D",
 			"time": [
@@ -20319,13 +24423,34 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Transport via Plants",
 			"source": "PHB'24",
 			"page": 334,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "C",
 			"time": [
@@ -20360,13 +24485,18 @@
 			"miscTags": [
 				"TP"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Tree Stride",
 			"source": "PHB'24",
 			"page": 335,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "C",
 			"time": [
@@ -20402,13 +24532,22 @@
 			"miscTags": [
 				"TP"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "True Polymorph",
 			"source": "PHB'24",
 			"page": 335,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "T",
 			"time": [
@@ -20480,13 +24619,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "True Resurrection",
 			"source": "PHB'24",
 			"page": 336,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "N",
 			"time": [
@@ -20525,13 +24677,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "True Seeing",
 			"source": "PHB'24",
 			"page": 336,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "D",
 			"time": [
@@ -20566,13 +24727,34 @@
 			],
 			"entries": [
 				"For the duration, the willing creature you touch has {@sense Truesight} with a range of 120 feet."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "True Strike",
 			"source": "PHB'24",
 			"page": 336,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "D",
 			"time": [
@@ -20629,6 +24811,24 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -20688,7 +24888,6 @@
 			"name": "Unseen Servant",
 			"source": "PHB'24",
 			"page": 336,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "C",
 			"time": [
@@ -20729,13 +24928,26 @@
 			"miscTags": [
 				"SMN",
 				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Vampiric Touch",
 			"source": "PHB'24",
 			"page": 337,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "N",
 			"time": [
@@ -20788,13 +25000,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Vicious Mockery",
 			"source": "PHB'24",
 			"page": 337,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "E",
 			"time": [
@@ -20852,7 +25077,13 @@
 			"areaTags": [
 				"ST"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Vitriolic Sphere",
@@ -20911,13 +25142,22 @@
 			"areaTags": [
 				"S"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Wall of Fire",
 			"source": "PHB'24",
 			"page": 338,
-			"freeRules2024": true,
 			"level": 4,
 			"school": "V",
 			"time": [
@@ -20970,13 +25210,26 @@
 			],
 			"areaTags": [
 				"W"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Wall of Force",
 			"source": "PHB'24",
 			"page": 338,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -21013,13 +25266,18 @@
 			],
 			"areaTags": [
 				"W"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Wall of Ice",
 			"source": "PHB'24",
 			"page": 339,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -21074,13 +25332,18 @@
 			],
 			"areaTags": [
 				"W"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Wall of Stone",
 			"source": "PHB'24",
 			"page": 339,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "T",
 			"time": [
@@ -21135,13 +25398,30 @@
 			],
 			"areaTags": [
 				"W"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Wall of Thorns",
 			"source": "PHB'24",
 			"page": 339,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "T",
 			"time": [
@@ -21202,13 +25482,18 @@
 			],
 			"areaTags": [
 				"W"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Warding Bond",
 			"source": "PHB'24",
 			"page": 340,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -21249,13 +25534,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Water Breathing",
 			"source": "PHB'24",
 			"page": 340,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -21294,13 +25588,34 @@
 			"areaTags": [
 				"MT"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Water Walk",
 			"source": "PHB'24",
 			"page": 340,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -21340,13 +25655,34 @@
 			"areaTags": [
 				"MT"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Web",
 			"source": "PHB'24",
 			"page": 340,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -21409,13 +25745,26 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Weird",
 			"source": "PHB'24",
 			"page": 341,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "I",
 			"time": [
@@ -21460,13 +25809,22 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Wind Walk",
 			"source": "PHB'24",
 			"page": 341,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "T",
 			"time": [
@@ -21505,13 +25863,18 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Wind Wall",
 			"source": "PHB'24",
 			"page": 341,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -21555,13 +25918,22 @@
 			],
 			"areaTags": [
 				"W"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Wish",
 			"source": "PHB'24",
 			"page": 341,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "A",
 			"time": [
@@ -21674,6 +26046,16 @@
 				"ADV",
 				"HL",
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -21736,7 +26118,21 @@
 			"areaTags": [
 				"ST"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Word of Radiance",
@@ -21799,13 +26195,18 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Word of Recall",
 			"source": "PHB'24",
 			"page": 343,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "C",
 			"time": [
@@ -21836,6 +26237,12 @@
 			"miscTags": [
 				"PS",
 				"TP"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -21892,6 +26299,12 @@
 			],
 			"miscTags": [
 				"AAD"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -21945,6 +26358,16 @@
 			],
 			"areaTags": [
 				"R"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -21952,7 +26375,6 @@
 			"replaced": "Aura of Truth",
 			"source": "PHB'24",
 			"page": 343,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -22044,7 +26466,21 @@
 						"The spell can last longer with a spell slot of level 2 (up to 24 hours). For each spell slot level above 2 the spell can either last an additional 48 hours or target an additional beast."
                     ]
                 }
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
+			]
         },
 		{
             "name": "Arcane Key",
@@ -22097,7 +26533,25 @@
                         "The state of the abjuration these days is embarrassing. This is a spell form my personal collection that combies the effects of the idiocy peddled these days as '{@spell knock}' and '{@spell arcane lock}'. Any wizard who can't do both with the same spellform is a certified dunce."
                     ]
                 }
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
         },
 		{
             "name": "Caius' Swift Sword",
@@ -22178,7 +26632,17 @@
             ],
             "areaTags": [
                 "ST"
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
         },
 		{
 			"name": "Eldritch Rift",
@@ -22236,7 +26700,12 @@
 			"areaTags": [
 				"S"
 			],
-			"hasFluffImages": true
+			"fromClassList": [
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
             "name": "Beast Ally",
@@ -22280,7 +26749,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: The Lost True Version",
                     "entries": [
-                        "Dug up this spell in a Mwongali Jungle Druid Grove. This is clearly the spell that has been perverted into Beast Sense and Beast Bond, and it is altogether more usable."
+                        "Dug up this spell in a Mwongali Jungle Druid Grove. This is clearly the spell that has been perverted into {@spell beast sense} and {@spell beast bond}, and it is altogether more usable."
                     ]
                 }
             ],
@@ -22295,7 +26764,17 @@
             ],
             "areaTags": [
                 "ST"
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
+			]
         },
 		{
             "name": "Alter Weather",
@@ -22492,7 +26971,21 @@
 						"The spell can last longer and affect a larger area with a spell slot of level 7 (up to 8 hours and 5 milles), 8 (up to 24 hours and 10 miles), or 9 (1 week and 25 miles)."
                     ]
                 }
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
         },
 		{
             "name": "Stoke Fury",
@@ -22561,13 +27054,30 @@
             ],
             "areaTags": [
                 "ST"
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
         },
 		{
 			"name": "Detect Otherworldly Influence",
 			"source": "BREW",
 			"page": 261,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -22618,6 +27128,16 @@
 				"fey",
 				"fiend",
 				"undead"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -22684,7 +27204,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Elemental Effects",
                     "entries": [
-                        "The older version of this spell, {@spell Elemental Weapon}, saw some large improvements after being looked over by an Avatish order of Monks. This newer version pulls enough power to improve power and actually imbue some elemental effects beyond increased damage."
+                        "The older version of this spell, {@spell elemental weapon}, saw some large improvements after being looked over by an Avatish order of Monks. This newer version pulls enough power to improve damage and actually imbue some elemental effects."
                     ]
                 }
 			],
@@ -22706,13 +27226,30 @@
 			],
 			"miscTags": [
 				"AAD"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Captivate",
 			"source": "BREW",
 			"page": 269,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -22768,6 +27305,16 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -22841,13 +27388,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Wayfinding",
 			"source": "BREW",
 			"page": 273,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "D",
 			"time": [
@@ -22890,13 +27454,26 @@
                         "{@spell Find the Path} might have been more correctly named \"Find the Path if You've Been There Before\". This variation is more generalized and can be used to find locations that the caster isn't already familiar with - a boon for adventurers."
                     ]
                 }
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Detect Hazards",
 			"source": "BREW",
 			"page": 273,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "D",
 			"time": [
@@ -22935,13 +27512,26 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Death Beam",
 			"source": "BREW",
 			"page": 273,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "N",
 			"time": [
@@ -22999,13 +27589,26 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Rain of Fire",
 			"source": "BREW",
 			"page": 275,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -23053,13 +27656,26 @@
 			],
 			"areaTags": [
 				"C"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Holy Flame",
 			"source": "BREW",
 			"page": 275,
-			"freeRules2024": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -23114,13 +27730,18 @@
 			],
 			"areaTags": [
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Petrify",
 			"source": "BREW",
 			"page": 275,
-			"freeRules2024": true,
 			"level": 6,
 			"school": "T",
 			"time": [
@@ -23176,6 +27797,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -23238,13 +27873,26 @@
 			"areaTags": [
 				"ST"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Secret Missive",
 			"source": "BREW",
 			"page": 288,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -23292,13 +27940,26 @@
                         "This version of {@spell Illusory Script} is used by Songbirds to send secret messages. The passphrase mechanism means secret notes can be sent among agents who do not know on another or left behind for future agents who might stumble upon the test and know the passphrase. The 'upcasting' of a ritual is also novel and useful. I might investigate improving other spells similarly."
                     ]
                 }
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Stone Pact",
 			"source": "BREW",
 			"page": 296,
-			"freeRules2024": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -23366,6 +28027,20 @@
 			],
 			"conditionInflict": [
 				"prone"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -23403,7 +28078,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Melf is a Hack",
                     "entries": [
-                        "{@spell Melf's Acid Arrow}? More like \"Melf's Sucky Sting\". My version does more damage and the spellform is simple enough that even a Sorcerer will be able to cast it."
+                        "{@spell Melf's acid arrow}? More like \"Melf's sucky sting\". My version does more damage and the spellform is simple enough that even a Sorcerer will be able to cast it."
                     ]
                 }
 			],
@@ -23425,13 +28100,22 @@
 			"areaTags": [
 				"ST"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
 		},
 		{
 			"name": "Lightning Tendril",
 			"source": "BREW",
 			"page": 316,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -23494,6 +28178,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -23647,13 +28345,26 @@
             ],
             "affectsCreatureType": [
                 "beast"
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				}
+			]
         },
 		{
 			"name": "Memento Mori",
 			"source": "BREW",
 			"page": 249,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "N",
 			"time": [
@@ -23717,6 +28428,20 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -23782,13 +28507,22 @@
 			],
 			"areaTags": [
 				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Tempest",
 			"source": "BREW",
 			"page": 320,
-			"freeRules2024": true,
 			"level": 9,
 			"school": "V",
 			"time": [
@@ -23881,13 +28615,18 @@
 			],
 			"areaTags": [
 				"Y"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Glyph of Power",
 			"source": "BREW",
 			"page": 329,
-			"freeRules2024": true,
 			"level": 7,
 			"school": "A",
 			"time": [
@@ -24007,6 +28746,24 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -24066,13 +28823,18 @@
 			],
 			"areaTags": [
 				"W"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Aura of Truth",
 			"source": "BREW",
 			"page": 343,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -24126,13 +28888,26 @@
 			],
 			"areaTags": [
 				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Cause Fear",
 			"source": "BREW",
 			"page": 271,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -24190,6 +28965,24 @@
 			],
 			"areaTags": [
 				"N"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -24252,13 +29045,26 @@
             ],
             "areaTags": [
                 "ST"
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
+			]
         },
 		{
 			"name": "Celerity",
 			"source": "BREW",
 			"page": 284,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -24308,13 +29114,30 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Deceiving Bolt",
 			"source": "BREW",
 			"page": 282,
-			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -24373,13 +29196,22 @@
 			],
 			"areaTags": [
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Illusory Dart",
 			"source": "BREW",
 			"page": 267,
-			"freeRules2024": true,
 			"level": 0,
 			"school": "I",
 			"time": [
@@ -24436,13 +29268,26 @@
 			"areaTags": [
 				"MT",
 				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
 			"name": "Lesser Image",
 			"source": "BREW",
 			"page": 295,
-			"freeRules2024": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -24500,6 +29345,24 @@
 			"miscTags": [
 				"PRM",
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -24546,6 +29409,12 @@
 						"One of four 'Protection Prayers' I found at a derelict Monastery of Arowen in Pfennig. The notes with them indicate they were invented by a squemish Cleric who thought attempts should be made to proactively stop damage instead of retoactively fixing \"disgusting, festering, bloody wounds\"."
 					]
                 }
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
         {
@@ -24592,6 +29461,12 @@
 						"One of four 'Protection Prayers' I found at a derelict Monastery of Arowen in Pfennig. The notes with them indicate they were invented by a squemish Cleric who thought attempts should be made to proactively stop damage instead of retoactively fixing \"disgusting, festering, bloody wounds\"."
 					]
                 }
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -24641,10 +29516,20 @@
                     "type": "entries",
                     "name": "Using a Higher-Level Spell Slot",
                     "entries": [
-                        "Creatures affected by the spell gain a +1 bonus to the saving throw for each slot level above 2."
+                        "Creatures affected by the spell gain a +1 bonus to the saving throw for each slot level above 3."
                     ]
                 }
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "XPHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "XPHB"
+				}
+			]
         },
 		{
             "name": "Prismatic Bolt",
@@ -24759,7 +29644,13 @@
             ],
             "areaTags": [
                 "ST"
-            ]
+            ],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				}
+			]
         },
 		{
 			"name": "Time Dilate",
@@ -24802,6 +29693,16 @@
 						"A common mistake of new chronomancers is actually trying to stop time. Interacting with an entity not passing through Time while you are causes tears in the Weave and interrupts the spell. This better version really only stretches time, but does it so strongly that it <em>feels</em> stopped."
 					]
                 }
+			],
+			"fromClassList": [
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -24939,6 +29840,24 @@
 			],
 			"miscTags": [
 				"SGT"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "XPHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "XPHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "XPHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "XPHB"
+				}
 			]
 		},
 		{
@@ -26154,7 +31073,7 @@
 			"classes": {
 				"fromClassList": [
 					{
-						"name": "Wizard",
+						"name": "Sorcerer",
 						"source": "PHB"
 					},
 					{
@@ -26206,7 +31125,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Spells of the Last Dahlia",
                     "entries": [
-                        "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family lef tthem dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
+                        "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family left them dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
                     ]
                 }
 			],
@@ -26272,7 +31191,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Spells of the Last Dahlia",
                     "entries": [
-                        "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family lef tthem dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
+                        "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family left them dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
                     ]
                 }
 			],
@@ -26287,6 +31206,10 @@
 			],
 			"classes": {
 				"fromClassList": [
+					{
+						"name": "Paladin",
+						"source": "PHB"
+					},
 					{
 						"name": "Sorcerer",
 						"source": "PHB"
@@ -26336,7 +31259,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Spells of the Last Dahlia",
                     "entries": [
-                        "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family lef tthem dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
+                        "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family left them dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
                     ]
                 }
 			],
@@ -26351,6 +31274,10 @@
 			],
 			"classes": {
 				"fromClassList": [
+					{
+						"name": "Paladin",
+						"source": "PHB"
+					},
 					{
 						"name": "Sorcerer",
 						"source": "PHB"
@@ -27292,10 +32219,6 @@
 						"source": "XPHB"
 					},
 					{
-						"name": "Cleric",
-						"source": "XPHB"
-					},
-					{
 						"name": "Sorcerer",
 						"source": "XPHB"
 					},
@@ -27591,6 +32514,10 @@
 						"source": "XPHB"
 					},
 					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
 						"name": "Warlock",
 						"source": "XPHB"
 					},
@@ -27729,11 +32656,7 @@
 			"classes": {
 				"fromClassList": [
 					{
-						"name": "Bard",
-						"source": "XPHB"
-					},
-					{
-						"name": "Cleric",
+						"name": "Sorcerer",
 						"source": "XPHB"
 					},
 					{

@@ -19311,7 +19311,6 @@
     "class": {
       "XPHB": {
         "Bard": true,
-        "Cleric": true,
         "Sorcerer": true,
         "Wizard": true
       }
@@ -19368,7 +19367,6 @@
   "time jaunt": {
     "class": {
       "XPHB": {
-        "Bard": true,
         "Sorcerer": true,
         "Wizard": true
       }
