@@ -5985,7 +5985,7 @@
 				"Until the spell ends, whenever you make an attack roll or saving throw, you add {@dice 1d4} to the attack roll or save and your attacks deal an extra {@damage 1d4} Radiant damage on a hit.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Divine Intervention",
+                    "name": "Caius' Notes: Divine Intervention",
                     "entries": [
                         "There seems to be a minor variation on this spell for every last sect of holy warriors. This is the most generic 'good' version I could find, it's combines {@spell divine favor} with {@spell bless}."
                     ]
@@ -12071,7 +12071,7 @@
 				"A stroke of lightning forming a 100-foot-long, 5-foot-wide Line blasts out from you in a direction you choose. You can cause the beam to bounce once off of a solid, nonconductive object (such as a wall or crate) in a new direction. Each creature in the resulting Area makes a Dexterity saving throw, taking {@damage 4d12} Lightning damage on a failed save or half as much damage on a successful one.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Reflective Bolt",
+                    "name": "Caius' Notes: Reflective Bolt",
                     "entries": [
                         "A subtle change to the spellform results in an old trick that most mage college's seem to have forgotten - a single bounce in the path of a lightning bolt can be just the ticket to cath a few more targets."
                     ]
@@ -13558,7 +13558,7 @@
 		},
 		{
 			"name": "Misty Step",
-			"source": "PHB'24",
+			"replaced": "Reposition",
 			"page": 299,
 			"freeRules2024": true,
 			"level": 2,
@@ -24845,7 +24845,7 @@
 				"As an action, a creature that can see you can make an Intelligence ({@skill Investigation}) check against your spell save DC. On a success, it becomes immune to the spell's effects.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Spellblade",
+                    "name": "Caius' Notes: Spellblade",
                     "entries": [
                         "This is one among a set of spells designed for a type of close-range magic user once called a \"Spellblade\"."
                     ]
@@ -24917,7 +24917,7 @@
 				"The target repeats the save at the end of each of its turns, ending the spell on itself on a success. If the creature moved or used an action on its turn the save is made at disadvantage.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Quit Hitting Yourself",
+                    "name": "Caius' Notes: Quit Hitting Yourself",
                     "entries": [
                         "I found this spell in a foreign collection dedicated to a Bardic College of Mesmerism. The magics of this college subverting energy used by enemies to deflect back and cause them to \"hit themselves\", for lack of a better turn of phrase."
                     ]
@@ -24976,7 +24976,7 @@
 				"If you collide with something during this time, you take falling damage as normal. You can control your fall as you would normally by holding onto objects, or move along a surface according to your new orientation until your turn ends and gravity returns to normal.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Graviturgy",
+                    "name": "Caius' Notes: Graviturgy",
                     "entries": [
                         "Gravity as a seperate controllable force was only put forth around the time of the Shuriman conquest, but developments since then have shown that even energy of only the First and Second Circles can create simple manipulations of this great force."
                     ]
@@ -25032,7 +25032,7 @@
 				"At the start of each of your turns while tapped into this power, you and all creatures with 10 feet of you take {@damage 1d6} Force damage. The damage increases by {@dice 1d6} each turn to a maximum of {@damage 4d6} damage.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Sorcerers are Lunatics",
+                    "name": "Caius' Notes: Sorcerers are Lunatics",
                     "entries": [
                         "I've only really recreated this spell here because all sorcerers are essentially crazed and turning themselves into a irradiating bomb is the exact kind of thing they are always asking me to dig up."
                     ]
@@ -25108,7 +25108,7 @@
 				},
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Lesser Elemental Forms",
+                    "name": "Caius' Notes: Lesser Elemental Forms",
                     "entries": [
                         "The four \"Become Element\" spellforms seem to be variations on a single spellform that have been adapted by Four rival monasteries in Hokai. Even though they aren't suitable for use as combat forms without extensive training, they each provide an interesting perspective for defense."
                     ]
@@ -25193,7 +25193,7 @@
 				},
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Lesser Elemental Forms",
+                    "name": "Caius' Notes: Lesser Elemental Forms",
                     "entries": [
                         "The four \"Become Element\" spellforms seem to be variations on a single spellform that have been adapted by Four rival monasteries in Hokai. Even though they aren't suitable for use as combat forms without extensive training, they each provide an interesting perspective for defense."
                     ]
@@ -25289,7 +25289,7 @@
 				},
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Lesser Elemental Forms",
+                    "name": "Caius' Notes: Lesser Elemental Forms",
                     "entries": [
                         "The four \"Become Element\" spellforms seem to be variations on a single spellform that have been adapted by Four rival monasteries in Hokai. Even though they aren't suitable for use as combat forms without extensive training, they each provide an interesting perspective for defense."
                     ]
@@ -25373,7 +25373,7 @@
 				},
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Lesser Elemental Forms",
+                    "name": "Caius' Notes: Lesser Elemental Forms",
                     "entries": [
                         "The four \"Become Element\" spellforms seem to be variations on a single spellform that have been adapted by Four rival monasteries in Hokai. Even though they aren't suitable for use as combat forms without extensive training, they each provide an interesting perspective for defense."
                     ]
@@ -25445,7 +25445,7 @@
 				"Make a ranged spell attack for each arc. On a hit, a target takes {@damage 1d12} lightning damage. If three or more arcs hit a single target, it must make a Constitution saving throw or become shocked, stunning it until the start of its next turn.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: The Old \"Whatever\" Bolts",
+                    "name": "Caius' Notes: The Old \"Whatever\" Bolts",
                     "entries": [
                         "The obvious similarities to {@spell scorching ray} aren't accidental, and this is but one example of a spellform being adapted to a different type of damage. The possibilites of doing this in other magical traditions are essentially endless (see also {@spell rock sling}, {@spell magic missile}, etc.)"
                     ]
@@ -25543,7 +25543,7 @@
 				},
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Maximilian",
+                    "name": "Caius' Notes: Maximilian",
                     "entries": [
                         "There was a famous geomancer named Maximilian some 200 years ago and he was a hack. I produced this spell largely as a way to upstage his \"earthen grasp\", which was pitifully weak and about a quarter as adaptable. Dunce."
                     ]
@@ -25613,7 +25613,7 @@
 				"If you fling the target upward, it immediately falls, taking {@damage 4d6} bludgeoning damage and landing {@condition prone}. If you fling it in any other direction, it takes {@damage 2d6} bludgeoning damage and lands {@condition prone}. If this movement would be stopped early by a creature or object, both the target and whatever it collides with takes {@damage 3d6} bludgeoning damage.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Graviturgy",
+                    "name": "Caius' Notes: Graviturgy",
                     "entries": [
                         "Gravity as a seperate controllable force was only put forth around the time of the Shuriman conquest, but developments since then have shown that even energy of only the First and Second Circles can create simple manipulations of this great force."
                     ]
@@ -25681,7 +25681,7 @@
 				"The first time on your turn you make a weapon attack, it attacks the same target. It makes a separate attack roll using your attack modifier. On a hit, roll your attack's normal damage; the target takes force damage equal to half the result.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Chronomancy",
+                    "name": "Caius' Notes: Chronomancy",
                     "entries": [
                         "Long agreed upon as the most powerful and most dangerous realm of magic, playing with time is not for the faint of heart (and even the stong of heart die early, as a rule), but a colleague named Tayse instists that providing a few lower circle spellforms to up-and-comers <em>should</em> reduce paradox angel incidents moving forward."
                     ]
@@ -25748,7 +25748,7 @@
 				"Afterward, this spell ends.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Chronomancy",
+                    "name": "Caius' Notes: Chronomancy",
                     "entries": [
                         "Long agreed upon as the most powerful and most dangerous realm of magic, playing with time is not for the faint of heart (and even the stong of heart die early, as a rule), but a colleague named Tayse instists that providing a few lower circle spellforms to up-and-comers <em>should</em> reduce paradox angel incidents moving forward."
                     ]
@@ -25854,7 +25854,7 @@
 				"This spell's base damage increases by one die when you reach 5th level ({@dice 1d6 + 1}), 11th level ({@dice 2d6 + 1}), and 17th level ({@dice 3d6 + 1}).",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Wild Magic Practice",
+                    "name": "Caius' Notes: Wild Magic Practice",
                     "entries": [
                         "This spells makes it in by way of request from a group of Wild Magic practitioners. I can't deny it's overall power, but relying on fate to decide what effect a spell will have will always seem like insane sorcerer nonsense to me."
                     ]
@@ -25926,7 +25926,7 @@
 				"You conjure a dagger dripping with glistening oil and hurl it at a creature within range. Make a ranged spell attack roll. On a hit, the target takes {@dice 2d4} acid and {@damage 1d4} piercing damage, and the dagger embeds itself in its flesh. While the dagger is embedded, the first time the target makes an attack roll on each of its turns, it must roll {@dice 1d4}. The target subtracts the result from the attack roll and suffers acid damage equal to the result. A creature within 5 feet of the target can remove the dagger as an action. If the attack misses or the dagger is removed, it disappears.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Spells of the Machine God",
+                    "name": "Caius' Notes: Spells of the Machine God",
                     "entries": [
                         "This spell is one of my most recent additions and comes from adaptations of the magics used by the recent apocalyptic invasion of the Legions of the Machine God. I'd recommend prudence when casting it, the wounds of the invasion are still extremely fresh in many locales."
                     ]
@@ -25996,7 +25996,7 @@
 				"You create one glowing dart of magical force. That dart hits a creature that you can see in range. A dart deals {@damage 1d4 + 1} force damage to its target.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Perfected Cantrip",
+                    "name": "Caius' Notes: Perfected Cantrip",
                     "entries": [
                         "This is the most elegant  attack spellform I am able to create. Simple, unerring, expandable, and great for training any force-construct magic. Quite a feat, if I do say so myself."
                     ]
@@ -26058,7 +26058,7 @@
 				"Fire a semi-transparent magic bolt at a creature that you can see within range. Make a ranged spell attack against the target. If you or the target are in dim-light or darkness, make this roll with advantage. On a hit, the target takes {@damage 3d8} force damage.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Shadow Magic",
+                    "name": "Caius' Notes: Shadow Magic",
                     "entries": [
                         "An interesting spell scrawled in Theives' Cant above a dive bar in Reliqua. A bit underhanded perhaps, but effective enough that I wrote it down after my 4th drink."
                     ]
@@ -26136,7 +26136,7 @@
 				"If a single creature is hit by two of the masses, that creature is knocked {@condition prone}.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Graviturgy",
+                    "name": "Caius' Notes: Graviturgy",
                     "entries": [
                         "Gravity as a seperate controllable force was only put forth around the time of the Shuriman conquest, but developments since then have shown that even energy of only the First and Second Circles can create simple manipulations of this great force."
                     ]
@@ -26204,7 +26204,7 @@
 				"You conjure a magic sword and deliver a swift slash. Make a melee spell attack against a creature within 5 feet of you. On a hit, the target takes Slashing damage equal to {@dice 2d10} plus your spellcasting ability modifier.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Spells of the Last Dahlia",
+                    "name": "Caius' Notes: Spells of the Last Dahlia",
                     "entries": [
                         "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family lef tthem dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
                     ]
@@ -26270,7 +26270,7 @@
 				"You reduce the damage (if any) of the spell by {@dice 1d10} plus your spellcasting ability modifier, and can retaliate with summoned blades by making up to two ranged spell attacks against any creature within 30 feet of you. On a hit, the blades deal Slashing damage equal to {@dice 1d6} plus your spellcasting modifier.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Spells of the Last Dahlia",
+                    "name": "Caius' Notes: Spells of the Last Dahlia",
                     "entries": [
                         "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family lef tthem dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
                     ]
@@ -26334,7 +26334,7 @@
 				"If you use the ready action to cast this spell, it deals an additional {@damage 2d6} damage.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Spells of the Last Dahlia",
+                    "name": "Caius' Notes: Spells of the Last Dahlia",
                     "entries": [
                         "The Dahlian Royal Family were prolific mages and the ertwhile heads of the Academy Unseen until a civil war with a splinter branch of the family lef tthem dead or fled. Their last princess, Corrine Dahlia, was a renowned Mageknight who created a number of weapon-based spells, one of which I've reproduced here."
                     ]
@@ -26413,7 +26413,7 @@
 				"Additionally, if the target ends their turn while {@status Concentration|Concentrating} on a spell, they take {@damage 1d4} force damage.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Quit Hitting Yourself",
+                    "name": "Caius' Notes: Quit Hitting Yourself",
                     "entries": [
                         "I found this spell in a foreign collection dedicated to a Bardic College of Mesmerism. The magics of this college subverting energy used by enemies to deflect back and cause them to \"hit themselves\", for lack of a better turn of phrase."
                     ]
@@ -26479,7 +26479,7 @@
 				"You place a binding on a creature you can see within range. Until the start of your next turn, any time that creature deals damage with its action, bonus action, or reaction, they take psychic damage equal to the damage dealt. The target is aware of the effect of this spell. After reflecting 10 damage, the spell ends.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Quit Hitting Yourself",
+                    "name": "Caius' Notes: Quit Hitting Yourself",
                     "entries": [
                         "I found this spell in a foreign collection dedicated to a Bardic College of Mesmerism. The magics of this college subverting energy used by enemies to deflect back and cause them to \"hit themselves\", for lack of a better turn of phrase."
                     ]
@@ -26557,7 +26557,7 @@
 				"It can repeat the saving throw at the end of each of its turns, if the creature made an attack roll on its turn the save is made at disadvantage. On a success, the spell ends.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Quit Hitting Yourself",
+                    "name": "Caius' Notes: Quit Hitting Yourself",
                     "entries": [
                         "I found this spell in a foreign collection dedicated to a Bardic College of Mesmerism. The magics of this college subverting energy used by enemies to deflect back and cause them to \"hit themselves\", for lack of a better turn of phrase."
                     ]
@@ -26628,7 +26628,7 @@
 				"Until the spell ends, you can use your action to summon the object to your free hand, and you can use your action to return the object to the extradimensional space. An object still in the pocket plane when the spell ends appears in your space, at your feet.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Extradimensional Spells",
+                    "name": "Caius' Notes: Extradimensional Spells",
                     "entries": [
                         "This cantrip is the introduction used for all higher Circle spells that create, manipulate, or use extradimensional spaces and is invaluable to know if you suspect you might ever end up jailed (or if you ever want to pull a really funny trick on the Monarch of Rioja)."
                     ]
@@ -26748,7 +26748,7 @@
 				"You hurl a 4-inch-diameter sphere of strange warbling energy at a creature that you can see within range. You choose radiant, necrotic, psychic, force, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes {@damage 3d8} damage of the type you chose.",
 				{
                     "type": "inset",
-                    "name": "Caius Notes: Weird Damage",
+                    "name": "Caius' Notes: Weird Damage",
                     "entries": [
                         "A funny effect of letting a bard or warlock learn {@spell chromatic orb} is that it comes out all screwy and they can only do strange non-elemental types of damage. A gnome in Farthen Jun is studying why, but it's never seemed important to me."
                     ]
@@ -26836,6 +26836,912 @@
 			"miscTags": [
 				"THP"
 			]
+		},
+		{
+			"name": "Ashen Memories",
+			"source": "BREW",
+			"level": 2,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"You touch the ashes, embers, or soot left behind by a fire and receive a vision of one significant event that occurred in the area while the fire was burning. For example, if you were to touch the cold embers of a campfire, you might witness a snippet of a conversation that occurred around the fire. Similarly, touching the ashes of a burned letter might grant you a vision of the person who destroyed the letter or the contents of the letter. You have no control over what information the spell reveals, but your vision usually is tied to the most meaningful event related to the fire. The GM determines the details of what is revealed.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Forms of Divination",
+                    "entries": [
+                        "Possible ways to divine information are myriad, almost every subregion has their own (sometimes they even differ town to town). This specific one came from a Temple of Elemental Flame that claim themselves as the original pyromancers in the oldest sense of the word; \"diviners by way of fire\"."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Turn Aside",
+			"source": "BREW",
+			"level": 1,
+			"school": "E",
+			"time": [
+				{
+					"number": 1,
+					"unit": "reaction",
+					"condition": "which you take when an enemy approaches to within 5 feet of you"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 5
+				}
+			},
+			"components": {
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"When an enemy that you can see moves to within 5 feet of you, you utter a perplexing word that alters the foe's course. The enemy must make a successful Wisdom saving throw or take {@damage 2d4} psychic damage and use the remainder of its speed to move in a direction of your choosing.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Tasha's Mild Deflection",
+                    "entries": [
+                        "A subtle variation on {@spell dissonant whispers} that can be cast reactively is interesting enough to recreate here. Sadly, it does no damage when the target is able to overpower the enchantment."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"name": "At Higher Levels",
+					"entries": [
+						"The target takes an additional {@damage 2d4} psychic damage for each spell slot level above 1."
+					],
+					"type": "entries"
+				}
+			],
+			"damageInflict": [
+				"psychic"
+			],
+			"savingThrow": [
+				"wisdom"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Burrowing Bolt",
+			"source": "BREW",
+			"level": 0,
+			"school": "T",
+			"subschools": [
+				"mechanicus"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "an arrow or bolt"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You imbue a missile with machine magic just as you fire it at your target; spinning blades materialize on the missile after it strikes to further mutilate your enemy.",
+				"As part of the action used to cast this spell, you make a ranged weapon attack against one creature within range. If the attack hits, the missile embeds in the target. Unless a creature within 5 feet uses an action to remove the projectile, the target takes an additional {@damage 1d6} slashing damage at the end of its next turn as the missile burrows deeper. Afterward, the projectile reverts to normal.",
+				"The projectile and borrowing damage both increase by 1d6 when you reach levels 5 (1d6 on hit, 2d6 burrowing), 11 (2d6 on hit, 3d6 burrowing), and 17 (3d6 on hit, 4d6 burrowing).",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Machines for the Machine God",
+                    "entries": [
+                        "Another grotesque entry from the recent Machine Invasion. In it's original form the transmuted projectile also left behind the glistening oil that heralded Integration. I've wisely chosen to excise that bit of spellform."
+                    ]
+                }
+			],
+			"damageInflict": [
+				"slashing"
+			],
+			"miscTags": [
+				"SCL"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Consult the Storm",
+			"source": "BREW",
+			"level": 4,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 90
+				}
+			},
+			"components": {
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You ask a question of an entity connected to storms, such as an elemental, a deity, or a primal spirit, and the entity replies with destructive fury.",
+				"As part of the casting of the spell, you must speak a question consisting of fifteen words or fewer. Choose a point within range. A short, truthful answer to your question booms from that point. It can be heard clearly by any creature within 600 feet. Each creature within 15 feet of the point takes {@damage 6d8} thunder damage, or half as much damage with a successful Constitution saving throw.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Forms of Divination",
+                    "entries": [
+                        "Possible ways to divine information are myriad, almost every subregion has their own (sometimes they even differ town to town). This one is interesting because I discovered it on a battlefield when I overheard an Arkhosan typhomancer ask \"Will we win this fight?\" and the thunderous \"yes\" from Keranos was loud enough to obliterate an opposing regiment."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"name": "At Higher Levels",
+					"entries": [
+						"The damage increases by {@damage 1d6} for each spell slot level above 4."
+					],
+					"type": "entries"
+				}
+			],
+			"damageInflict": [
+				"thunder"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"areaTags": [
+				"S"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Druid",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Dark Web of the Matriarch",
+			"source": "BREW",
+			"level": 5,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "cube",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a thread of black silk"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"A 30-foot cube centered on you, fills with sticky, night-black webbing. The webs are {@variantrule Difficult Terrain|XPHB}, and the area within them is {@variantrule Lightly Obscured|XPHB} for creatures other then you. Additionally, you gain a climbing speed of 30 feet when moving on the webs.",
+				"If the webs aren't anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.",
+				"The first time a creature enters the webs on a turn or starts its turn there, it must succeed on a Dexterity saving throw or have the {@condition Restrained} condition while in the webs or until it breaks free.",
+				"Each turn that you are in the webs, you can use a bonus action to siphon life force from every creature {@condition restrained} by the webs. Each creature takes {@damage 3d6} necrotic damage, and you regain hit points equal to half the damage dealt.",
+				"A creature {@condition restrained} by the webs can use its action to make a Strength (Athletics) check against your Spell Save DC. If it succeeds, it is no longer {@condition restrained}.",
+				"The webs are susceptible to radiant damage. Any 5-foot cube of webs exposed to radiant damage dissipates in 1 round.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Lolth's Web",
+                    "entries": [
+                        "This improvement on {@spell web} comes from a society of Drow living at the outermost edges of the Veins. They happily traded it to me in exchange for a divination spell redsigned to track mages. I tend to stay away from that part of the world these days, just in case."
+                    ]
+                }
+			],
+			"damageInflict": [
+				"necrotic"
+			],
+			"conditionInflict": [
+				"restrained"
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"abilityCheck": [
+				"strength"
+			],
+			"miscTags": [
+				"HL",
+				"UBA"
+			],
+			"areaTags": [
+				"C"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Defile Healing",
+			"source": "BREW",
+			"level": 6,
+			"school": "A",
+			"subschools": [
+				"mechanicus"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "reaction",
+					"condition": "which you take when you see a creature cast a healing spell"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You attempt to reverse positive energy of a healing spell, ability, or feature so that it deals damage instead. Any creature targeted by the healing makes a Constitution saving throw. On a failed save, that creature takes necrotic damage equal to the healing it would have received, or half as much damage on a success. If that spell was cast with a spell slot, the slot isn't expended.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Machines for the Machine God",
+                    "entries": [
+                        "Another grotesque entry from the recent Machine Invasion. This spellform is somewhat similar to {@spell counterspell} but the fascinating command they had of biotic processes led to the discovery of a way to invert vivification instead of just cancelling it."
+                    ]
+                }
+			],
+			"damageInflict": [
+				"necrotic"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Reflection of Dancing Blades",
+			"source": "BREW",
+			"level": 3,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"When you cast this spell, you create 3 illusory copies of a weapon of your choice that float in the air 5 feet from you. Until the spell ends, these images move with you, mimicking your attacks.",
+				"When you are hit an attack roll during the spell's duration, if the attack roll exceeded your Armor Class by 3 or less, one illusory weapon parries the attack; you take no damage and the illusory weapon is destroyed. If the attack roll exceeded your Armor Class by 4 or more, you take half damage from the attack, and an illusory weapon is destroyed.",
+				"If you hit with a melee attack during the spell's duration, you can choose to expend one illusory weapon to deal an additional {@damage 1d8} psychic damage.",
+				"The spell ends when its duration expires or when all your illusory weapons are destroyed or expended.",
+				"A creature is unaffected by this spell if it has the Blinded condition, Blindsight, or Truesight.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Illusory Offence",
+                    "entries": [
+                        "A variation on {@spell Mirror Image} notable because it is both defensive and offensive in nature, depending on the needs to the caster."
+                    ]
+                }
+			],
+			"damageInflict": [
+				"psychic"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Dryad's Kiss",
+			"source": "BREW",
+			"level": 3,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"m": "a flower petal or a drop of blood"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"One creature you can see within range is covered with fey vegetation. The target makes a Wisdom saving throw. On a failed save it takes {@damage 3d8} necrotic damage. Success or failure, small flower buds grow on the target.",
+				"The buds can be removed by a creature within 5 feet that uses an action to make a successful {@skill Nature} or {@skill Medicine} check against your spell save DC, or by a {@spell greater restoration} or {@spell blight} spell.",
+				"While the buds remain, whenever the target takes damage from another source, one bud blossoms into a purple and yellow flower and deals {@damage 1d8} necrotic damage to the target. Once four flowers have blossomed, the buds can no longer be removed by nonmagical means. The buds and blossoms wilt and fall away when the spell ends.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Circle of Growth",
+                    "entries": [
+                        "I picked this spell up from a Druid Circle in Chult that turned out to be much more sinister than I expected given their appelation. In specific parts of Florin they might have instead been called the Circle of Kudzu."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"name": "At Higher Levels",
+					"entries": [
+						"The number of targets increases by one for every two spell slot levels above 3."
+					],
+					"type": "entries"
+				}
+			],
+			"damageInflict": [
+				"necrotic"
+			],
+			"savingThrow": [
+				"wisdom"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Hobble",
+			"source": "BREW",
+			"level": 0,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a broken's rabbit foot"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You create an ethereal trap in the space of a creature you can see within range. The target must succeed on a Dexterity saving throw or its speed is halved until the end of its next turn.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Quick Cantrip",
+                    "entries": [
+                        "A weak effect, but one of the only stable, enemey-targeting cantrips I've ever been able to find that can be cast quickly enough to allow a second working during the same turn of combat."
+                    ]
+                }
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Druid",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Definitely Not Dead",
+			"source": "BREW",
+			"level": 3,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "a cloth doll filled with herbs and diamond dust worth 100 gp",
+					"cost": 10000
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"You cast this spell while touching the cloth doll against the intact corpse of a Medium or smaller humanoid that died within the last hour. At the end of the casting, the body reanimates as an undead creature under your control. While the spell lasts, your consciousness resides in the animated body. You can use an action to manipulate the body's limbs in order to make it move, and you can see and hear through the body's eyes and ears, but your own body becomes {@condition unconscious}. The animated body can neither attack nor defend itself. This spell doesn't change the appearance of the corpse. The spell ends instantly, and your consciousness returns to your body, if either your real body or the animated body takes any damage.",
+				"You can't use any of the target's abilities. You don't have access to its knowledge, proficiencies, or anything else that was held in its now dead mind, and you can't make it speak.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Feastday at Bernard's",
+                    "entries": [
+                        "Perhaps more of a joke than most other spells I've saved over the years, but the perfect spellform to recreate the famous novel \"Feastday at Bernard's\" was simply too good to leave in the possession of two roustabouts working at the Dragon Bank."
+                    ]
+                }
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Read Object",
+			"source": "BREW",
+			"level": 2,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"By handling an object and reading the psychic residue on it, you can divine information about the item's history. After you cast the spell, you continue to handle the object, reading any impressions that might be left upon it. Each round, the GM gives you one piece of information related to the item's ownership and handling. The GM might determine that a particular item does not have enough psychic residue to provide any clear impressions. The following are examples of information you can obtain through use of this spell:",
+				{
+					"type": "list",
+					"items": [
+						"The item's name, if it has one",
+						"A visual image of the last creature to handle the item",
+						"An impression of the emotional state of the creature that last used the item",
+						"If the item is a weapon, or has been used as a weapon, an image of the last creature injured or killed by it",
+						"A visual image of the item's owner or crafter",
+						"Information regarding the item's historical significance, if any"
+					]
+				},
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Forms of Divination",
+                    "entries": [
+                        "Possible ways to divine information are myriad, almost every subregion has their own (sometimes they even differ town to town). This one is among the best I've found and has been invaluable to me in tracking down owners and creators of various spells in my journeys."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Reposition",
+			"source": "BREW",
+			"level": 2,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You designate a willing creature (including yourself) in range. Each target teleports to an unoccupied space of its choosing that it can see within 30 feet of itself.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Mistier Steps",
+                    "entries": [
+                        "Essentially the exact same as {@spell misty step} when cast as a Second Circle spell, but increasing power with higher Circles makes this version much more useful as a caster's power increases."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"name": "At Higher Levels",
+					"entries": [
+						"The spell targets one additional willing creature for each spell slot level above 2."
+					],
+					"type": "entries"
+				}
+			],
+			"miscTags": [
+				"TP"
+			],
+			"areaTags": [
+				"MT"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Time Jaunt",
+			"source": "BREW",
+			"level": 7,
+			"school": "T",
+			"subschools": [
+				"time"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"When you cast this spell, you step outside the normal time stream, seeming to vanish for 1 round of time. You can make minor alterations to the area within 150 feet of where you cast the spell, becoming visible for an instant each time you make an adjustment. You cannot be attacked while under the effect of this spell.",
+				"As the round progresses, you can choose to bestow a single effect on each creature in the area, choosing from the list below. You cannot take any other actions during the round.",
+				{
+					"type": "list",
+					"page": 260,
+					"items": [
+						"Give a creature advantage or disadvantage on an attack roll, ability check, or saving throw it is about to make.",
+						"Alter the location of a mobile object to provide or remove cover for a creature.",
+						"Shift objects around to create two 5-foot cubes of difficult terrain",
+						"Adjust the angle of a successful strike, either causing the strike to deal half damage or providing a bonus to damage equal to half your level."
+					]
+				},
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Time Raveling",
+                    "entries": [
+                        "One of Tayse's favorites that he so graciously lended to me to recreate here. A subtle, but powerful, effect as much temporal magic tends to be. Also a joy to experience and a bridge to dealing with the un-motion sickness caused by higher Circle time magic."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					}
+				]
+			}
 		}
 	]
 }

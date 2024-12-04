@@ -19255,5 +19255,123 @@
         "Cleric": true
       }
     }
+  },
+  "ashen memories": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Cleric": true,
+        "Wizard": true
+      }
+    }
+  },
+  "turn aside": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "burrowing bolt": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Cleric": true,
+        "Wizard": true
+      }
+    }
+  },
+  "consult the storm": {
+    "class": {
+      "XPHB": {
+        "Cleric": true,
+        "Druid": true
+      }
+    }
+  },
+  "dark web of the matriarch": {
+    "class": {
+      "XPHB": {
+        "Cleric": true,
+        "Warlock": true
+      }
+    }
+  },
+  "defile healing": {
+    "class": {
+      "XPHB": {
+        "Cleric": true,
+        "Warlock": true
+      }
+    }
+  },
+  "reflection of dancing blades": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Cleric": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
+  },
+  "dryad's kiss": {
+    "class": {
+      "XPHB": {
+        "Druid": true
+      }
+    }
+  },
+  "hobble": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Cleric": true,
+        "Druid": true,
+        "Warlock": true
+      }
+    }
+  },
+  "definitely not dead": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "read object": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Cleric": true,
+        "Druid": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "reposition": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "time jaunt": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
   }
 }
