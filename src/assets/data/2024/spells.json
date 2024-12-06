@@ -94,11 +94,11 @@
 				"fromClassList": [
 					{
 						"name": "Sorcerer",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Artificer",
@@ -169,27 +169,27 @@
 				"fromClassList": [
 					{
 						"name": "Sorcerer",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Bard",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Cleric",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Druid",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Paladin",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Ranger",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -259,11 +259,11 @@
 			"fromClassList": [
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Artificer",
@@ -334,11 +334,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Artificer",
@@ -518,7 +518,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -576,11 +576,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -647,15 +647,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Artificer",
@@ -720,7 +720,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -773,11 +773,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -860,15 +860,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -916,7 +916,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Artificer",
@@ -971,15 +971,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1071,11 +1071,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1132,7 +1132,7 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1244,15 +1244,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1326,15 +1326,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1392,11 +1392,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1454,11 +1454,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1513,15 +1513,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1577,11 +1577,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1643,15 +1643,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1702,7 +1702,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1775,23 +1775,23 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1839,11 +1839,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1900,7 +1900,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -1996,19 +1996,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2080,15 +2080,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2202,11 +2202,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2262,7 +2262,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2304,19 +2304,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2382,11 +2382,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2446,19 +2446,19 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2594,15 +2594,15 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2658,11 +2658,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2707,11 +2707,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2771,11 +2771,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2850,7 +2850,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2909,11 +2909,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -2976,11 +2976,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3043,23 +3043,23 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3125,23 +3125,23 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3215,15 +3215,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3292,11 +3292,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3356,15 +3356,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3412,15 +3412,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3472,19 +3472,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3530,7 +3530,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3597,19 +3597,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3682,11 +3682,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3734,15 +3734,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3841,15 +3841,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3896,7 +3896,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -3952,11 +3952,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4008,7 +4008,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4053,19 +4053,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4119,7 +4119,7 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4176,15 +4176,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4275,19 +4275,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4354,11 +4354,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4428,7 +4428,7 @@
 			"fromClassList": [
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4515,7 +4515,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4583,11 +4583,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4650,7 +4650,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4716,11 +4716,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4781,7 +4781,7 @@
 			"fromClassList": [
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4844,11 +4844,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4898,11 +4898,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -4957,11 +4957,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5015,7 +5015,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5071,15 +5071,15 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5175,15 +5175,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5406,7 +5406,7 @@
 			"fromClassList": [
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5450,15 +5450,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5507,11 +5507,11 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5585,11 +5585,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5650,15 +5650,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5755,15 +5755,15 @@
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5876,7 +5876,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -5939,23 +5939,23 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6008,15 +6008,15 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6067,15 +6067,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6124,19 +6124,19 @@
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6187,23 +6187,23 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6248,11 +6248,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6320,11 +6320,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6372,15 +6372,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6432,7 +6432,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6530,35 +6530,35 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6606,19 +6606,19 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6686,15 +6686,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6739,19 +6739,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6804,15 +6804,15 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6875,11 +6875,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -6952,11 +6952,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7013,35 +7013,35 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7099,7 +7099,7 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7145,15 +7145,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7207,7 +7207,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7312,7 +7312,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7397,7 +7397,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7466,15 +7466,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7540,19 +7540,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7621,15 +7621,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7695,11 +7695,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7751,7 +7751,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7805,15 +7805,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7879,7 +7879,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -7960,15 +7960,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8028,7 +8028,7 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8101,15 +8101,15 @@
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8189,15 +8189,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8259,27 +8259,27 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8353,19 +8353,19 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8436,7 +8436,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8499,11 +8499,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8615,23 +8615,23 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8702,11 +8702,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8755,15 +8755,15 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8847,19 +8847,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8908,7 +8908,7 @@
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -8965,11 +8965,11 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9023,11 +9023,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9081,19 +9081,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9150,15 +9150,15 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9303,7 +9303,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9369,7 +9369,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9569,11 +9569,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9628,15 +9628,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9744,11 +9744,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9815,11 +9815,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -9948,15 +9948,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10077,15 +10077,15 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10150,19 +10150,19 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10229,7 +10229,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10287,15 +10287,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10343,19 +10343,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10416,11 +10416,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10483,19 +10483,19 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10551,19 +10551,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10626,15 +10626,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10690,19 +10690,19 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10771,23 +10771,23 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10836,15 +10836,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10900,7 +10900,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -10947,11 +10947,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11008,11 +11008,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11112,15 +11112,15 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11166,11 +11166,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11248,11 +11248,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11319,11 +11319,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11371,15 +11371,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11438,23 +11438,23 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11506,7 +11506,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11598,11 +11598,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11651,11 +11651,11 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11718,7 +11718,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11774,19 +11774,19 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -11853,7 +11853,7 @@
 			"fromClassList": [
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12030,7 +12030,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12080,19 +12080,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12142,7 +12142,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12202,11 +12202,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12267,11 +12267,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12331,15 +12331,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12418,11 +12418,11 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12482,7 +12482,7 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12549,15 +12549,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12624,11 +12624,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12700,7 +12700,7 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12780,19 +12780,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12860,27 +12860,27 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -12946,7 +12946,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13017,7 +13017,7 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13081,7 +13081,7 @@
 			"fromClassList": [
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13135,19 +13135,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13269,15 +13269,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13332,11 +13332,11 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13387,15 +13387,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13503,11 +13503,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13571,15 +13571,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13634,7 +13634,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13701,15 +13701,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13771,19 +13771,19 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13855,11 +13855,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -13917,19 +13917,19 @@
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14025,15 +14025,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14087,7 +14087,7 @@
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14141,11 +14141,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14190,23 +14190,23 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14273,11 +14273,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14327,19 +14327,19 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14396,7 +14396,7 @@
 			"fromClassList": [
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14463,11 +14463,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14512,15 +14512,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14565,27 +14565,27 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14633,27 +14633,27 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14711,19 +14711,19 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14772,11 +14772,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14835,19 +14835,19 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -14932,19 +14932,19 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15003,7 +15003,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15061,11 +15061,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15120,7 +15120,7 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Artificer",
@@ -15128,7 +15128,7 @@
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15189,19 +15189,19 @@
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15263,19 +15263,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15336,15 +15336,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15396,7 +15396,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15456,11 +15456,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15524,15 +15524,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15583,7 +15583,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15636,15 +15636,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15750,23 +15750,23 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15824,19 +15824,19 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15889,11 +15889,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -15943,11 +15943,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16015,19 +16015,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16090,15 +16090,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16158,19 +16158,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16214,19 +16214,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16269,19 +16269,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16330,15 +16330,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16379,15 +16379,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16457,11 +16457,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16527,7 +16527,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16582,7 +16582,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16636,11 +16636,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16712,7 +16712,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16819,15 +16819,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16879,15 +16879,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -16958,7 +16958,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17020,11 +17020,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17095,11 +17095,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17154,11 +17154,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17205,11 +17205,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17264,7 +17264,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17323,15 +17323,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17396,11 +17396,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17457,7 +17457,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17502,7 +17502,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17574,23 +17574,23 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17642,23 +17642,23 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17719,15 +17719,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17806,19 +17806,19 @@
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17874,19 +17874,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17937,11 +17937,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -17991,11 +17991,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18041,23 +18041,23 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18107,19 +18107,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18178,11 +18178,11 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18269,19 +18269,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18388,15 +18388,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18515,11 +18515,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18600,7 +18600,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18652,11 +18652,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18711,11 +18711,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18771,23 +18771,23 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18848,23 +18848,23 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18918,19 +18918,19 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -18974,23 +18974,23 @@
 			"fromClassList": [
 				{
 					"name": "Artificer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19054,15 +19054,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19112,11 +19112,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19173,11 +19173,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19249,11 +19249,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19319,11 +19319,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19378,15 +19378,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19489,7 +19489,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19532,19 +19532,19 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19589,11 +19589,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Artificer",
@@ -19660,11 +19660,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19718,15 +19718,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19778,19 +19778,19 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19840,11 +19840,11 @@
 			"fromClassList": [
 				{
 					"name": "Artificer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19913,7 +19913,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -19967,7 +19967,7 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20024,11 +20024,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20128,23 +20128,23 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20203,7 +20203,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20245,19 +20245,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Artificer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20314,15 +20314,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20362,15 +20362,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20434,7 +20434,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20487,11 +20487,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20552,15 +20552,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20605,11 +20605,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20659,11 +20659,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20735,7 +20735,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20797,7 +20797,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20924,15 +20924,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -20982,15 +20982,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21045,7 +21045,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21100,15 +21100,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21173,15 +21173,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21237,15 +21237,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21318,7 +21318,7 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21375,11 +21375,11 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21492,15 +21492,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21548,15 +21548,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21612,15 +21612,15 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21677,11 +21677,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21745,7 +21745,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21811,7 +21811,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21869,7 +21869,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21939,11 +21939,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -21998,7 +21998,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22060,15 +22060,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22113,15 +22113,15 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22187,19 +22187,19 @@
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22351,19 +22351,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22425,11 +22425,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22490,11 +22490,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22556,11 +22556,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22626,7 +22626,7 @@
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22688,7 +22688,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22749,15 +22749,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22819,19 +22819,19 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22893,11 +22893,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -22959,11 +22959,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23024,19 +23024,19 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23093,19 +23093,19 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23154,7 +23154,7 @@
 			"fromClassList": [
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23322,19 +23322,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23384,11 +23384,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23455,15 +23455,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23543,11 +23543,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23593,7 +23593,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23751,15 +23751,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23813,19 +23813,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23884,7 +23884,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -23970,7 +23970,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24044,7 +24044,7 @@
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24115,23 +24115,23 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24190,7 +24190,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24251,19 +24251,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24375,15 +24375,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24427,23 +24427,23 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24489,7 +24489,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24536,11 +24536,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24623,15 +24623,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24681,11 +24681,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24731,23 +24731,23 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24815,19 +24815,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -24932,15 +24932,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25004,15 +25004,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25081,7 +25081,7 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25146,11 +25146,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25214,15 +25214,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25270,7 +25270,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25336,7 +25336,7 @@
 			"fromClassList": [
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25406,15 +25406,15 @@
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25486,7 +25486,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25538,11 +25538,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25592,23 +25592,23 @@
 			"fromClassList": [
 				{
 					"name": "Artificer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25663,19 +25663,19 @@
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25753,11 +25753,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25813,11 +25813,11 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25867,7 +25867,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -25922,11 +25922,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -26050,11 +26050,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -26122,15 +26122,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -26199,7 +26199,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -26241,7 +26241,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -26303,7 +26303,7 @@
 			"fromClassList": [
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -26362,11 +26362,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -26470,15 +26470,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -26541,15 +26541,15 @@
 				},
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -26636,11 +26636,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -26703,7 +26703,7 @@
 			"fromClassList": [
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -26768,11 +26768,11 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -26975,15 +26975,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -27058,19 +27058,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -27132,11 +27132,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27234,15 +27234,15 @@
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27309,11 +27309,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27392,19 +27392,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27458,15 +27458,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27516,15 +27516,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27593,15 +27593,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27660,15 +27660,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27734,7 +27734,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27801,15 +27801,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27877,15 +27877,15 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -27944,15 +27944,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28031,15 +28031,15 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28104,11 +28104,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28186,11 +28186,11 @@
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28349,15 +28349,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -28432,15 +28432,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28511,11 +28511,11 @@
 			"fromClassList": [
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28619,7 +28619,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28750,19 +28750,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28827,7 +28827,7 @@
 			"fromClassList": [
 				{
 					"name": "Druid",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28892,15 +28892,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -28969,19 +28969,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -29049,15 +29049,15 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -29118,19 +29118,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Ranger",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -29200,11 +29200,11 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -29272,15 +29272,15 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -29349,19 +29349,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -29413,7 +29413,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -29465,7 +29465,7 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -29523,11 +29523,11 @@
 			"fromClassList": [
 				{
 					"name": "Cleric",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Paladin",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -29648,7 +29648,7 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
         },
@@ -29697,11 +29697,11 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -29844,19 +29844,19 @@
 			"fromClassList": [
 				{
 					"name": "Bard",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Sorcerer",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Warlock",
-					"source": "XPHB"
+					"source": "PHB"
 				},
 				{
 					"name": "Wizard",
-					"source": "XPHB"
+					"source": "PHB"
 				}
 			]
 		},
@@ -31807,15 +31807,15 @@
 				"fromClassList": [
 					{
 						"name": "Bard",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Cleric",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -31876,15 +31876,15 @@
 				"fromClassList": [
 					{
 						"name": "Bard",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -31946,15 +31946,15 @@
 				"fromClassList": [
 					{
 						"name": "Bard",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Cleric",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32018,11 +32018,11 @@
 				"fromClassList": [
 					{
 						"name": "Cleric",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Druid",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32061,7 +32061,7 @@
 				}
 			],
 			"entries": [
-				"A 30-foot cube centered on you, fills with sticky, night-black webbing. The webs are {@variantrule Difficult Terrain|XPHB}, and the area within them is {@variantrule Lightly Obscured|XPHB} for creatures other then you. Additionally, you gain a climbing speed of 30 feet when moving on the webs.",
+				"A 30-foot cube centered on you, fills with sticky, night-black webbing. The webs are {@variantrule Difficult Terrain|PHB}, and the area within them is {@variantrule Lightly Obscured|PHB} for creatures other then you. Additionally, you gain a climbing speed of 30 feet when moving on the webs.",
 				"If the webs aren't anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.",
 				"The first time a creature enters the webs on a turn or starts its turn there, it must succeed on a Dexterity saving throw or have the {@condition Restrained} condition while in the webs or until it breaks free.",
 				"Each turn that you are in the webs, you can use a bonus action to siphon life force from every creature {@condition restrained} by the webs. Each creature takes {@damage 3d6} necrotic damage, and you regain hit points equal to half the damage dealt.",
@@ -32098,11 +32098,11 @@
 				"fromClassList": [
 					{
 						"name": "Cleric",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32155,11 +32155,11 @@
 				"fromClassList": [
 					{
 						"name": "Cleric",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32216,15 +32216,15 @@
 				"fromClassList": [
 					{
 						"name": "Bard",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Sorcerer",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32295,7 +32295,7 @@
 				"fromClassList": [
 					{
 						"name": "Druid",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32351,27 +32351,27 @@
 				"fromClassList": [
 					{
 						"name": "Bard",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Cleric",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Druid",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Sorcerer",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32435,19 +32435,19 @@
 				"fromClassList": [
 					{
 						"name": "Cleric",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Sorcerer",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32511,19 +32511,19 @@
 				"fromClassList": [
 					{
 						"name": "Bard",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Cleric",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32583,19 +32583,19 @@
 				"fromClassList": [
 					{
 						"name": "Bard",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Sorcerer",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Warlock",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
@@ -32657,11 +32657,11 @@
 				"fromClassList": [
 					{
 						"name": "Sorcerer",
-						"source": "XPHB"
+						"source": "PHB"
 					},
 					{
 						"name": "Wizard",
-						"source": "XPHB"
+						"source": "PHB"
 					}
 				]
 			}
