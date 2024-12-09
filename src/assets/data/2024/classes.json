@@ -13292,7 +13292,7 @@
 						"type": "entries",
 						"name": "Cantrips",
 						"entries": [
-							"You know three cantrips: {@spell Mage Hand} and two other cantrips of your choice from the {@spells ?spell-class-filter=wizard|Wizard spell list}. {@spell Mind Sliver} and {@spell Minor Illusion} are recommended.",
+							"You know three cantrips: {@spell Mage Hand} and two other cantrips of your choice from the Wizard spell list. {@spell Message} and {@spell Minor Illusion} are recommended.",
 							"Whenever you gain a Rogue level, you can replace one of your cantrips, except {@spell Mage Hand}, with another Wizard cantrip of your choice.",
 							"When you reach Rogue level 10, you learn another Wizard cantrip of your choice."
 						]
@@ -13976,7 +13976,7 @@
 								"type": "entries",
 								"name": "Cantrips",
 								"entries": [
-									"You know four Sorcerer cantrips of your choice. {@spell Elementalism}, {@spell Light}, {@spell Message}, and {@spell Sorcerous Burst} are recommended. Whenever you gain a Sorcerer level, you can replace one of your cantrips from this feature with another Sorcerer cantrip of your choice.",
+									"You know four Sorcerer cantrips of your choice. {@spell Elementalism}, {@spell Lightning Tendril}, {@spell Message}, and {@spell Sorcerous Burst} are recommended. Whenever you gain a Sorcerer level, you can replace one of your cantrips from this feature with another Sorcerer cantrip of your choice.",
 									"When you reach Sorcerer levels 4 and 10, you learn another Sorcerer cantrip of your choice, as shown in the Cantrips column of the Sorcerer Features table."
 								]
 							},
@@ -16902,7 +16902,7 @@
 								"type": "entries",
 								"name": "Cantrips",
 								"entries": [
-									"You know three Wizard cantrips of your choice. {@spell Light}, {@spell Mage Hand}, and one of {@spell Ray of Frost}, {@spell Fire Bolt}, or {@spell Spectral Grasp} are recommended. Whenever you finish a {@rule Long Rest}, you can replace one of your cantrips from this feature with another Wizard cantrip of your choice.",
+									"You know three Wizard cantrips of your choice. {@spell Prestidigitation}, {@spell Mage Hand}, and one of {@spell Ray of Frost}, {@spell Fire Bolt}, {@spell True Strike} or {@spell Force Dart} are recommended. Whenever you finish a {@rule Long Rest}, you can replace one of your cantrips from this feature with another Wizard cantrip of your choice.",
 									"When you reach Wizard levels 4 and 10, you learn another Wizard cantrip of your choice, as shown in the Cantrips column of the Wizard Features table."
 								]
 							},
