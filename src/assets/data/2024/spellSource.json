@@ -19371,5 +19371,51 @@
         "Wizard": true
       }
     }
+  },
+  "dimensional slash": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Ranger": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "ambush shard": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Warlock": true,
+        "Wizard": true
+      }
+    }
+  },
+  "flaming crescendo": {
+    "class": {
+      "XPHB": {
+        "Sorcerer": true
+      }
+    }
+  },
+  "air bubble": {
+    "class": {
+      "XPHB": {
+        "Artificer": true,
+        "Druid": true,
+        "Ranger": true,
+        "Wizard": true
+      }
+    }
+  },
+  "prismatic flash": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Sorcerer": true,
+        "Wizard": true
+      }
+    }
   }
 }

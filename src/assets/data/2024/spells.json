@@ -3692,6 +3692,7 @@
 		},
 		{
 			"name": "Color Spray",
+			"replaced": "Pirsmatic Flash",
 			"source": "PHB'24",
 			"page": 251,
 			"level": 1,
@@ -5491,7 +5492,8 @@
 				}
 			],
 			"entries": [
-				"You create 45 pounds of food and 30 gallons of fresh water on the ground or in containers within range\u2014both useful in fending off the hazards of malnutrition and dehydration. The food is bland but nourishing and looks like a food of your choice, and the water is clean. The food spoils after 24 hours if uneaten.",
+				"You triple up to 15 pounds of food and 10 gallons of fresh water on the ground or in containers within range, creating a total amount that is enough to sustain up to twelve humanoids or four steeds for 24 hours. The food spoils after 24 hours if uneaten. The water is clean and doesn't go bad.",
+				"This spell can’t target food or water that was magically created, or that has been previously targeted by this spell.",
 				{
                     "type": "inset",
                     "name": "Notes from the Most Recent Magisterial Conclave",
@@ -11157,7 +11159,7 @@
 				}
 			],
 			"entries": [
-				"You infuse the components used in the spell's casting with magic for the duration. A creature can take a {@variantrule Bonus Action} to eat one. Eating a fruit restores 1 {@variantrule Hit Points|Hit Point}. If a creature eats 5 infused fruits, the magic combines to provide enough nourishment to sustain a creature for one day.",
+				"You infuse the components used in the spell's casting with magic for the duration. A creature can take a {@variantrule Bonus Action} to eat one. Eating a fruit restores 1 {@variantrule Hit Points|Hit Point}. If a creature eats 10 infused fruits, the magic combines to provide enough nourishment to sustain a creature for one day.",
 				"Uneaten fruit disappear when the spell ends."
 			],
 			"miscTags": [
@@ -19513,7 +19515,8 @@
 			},
 			"components": {
 				"v": true,
-				"s": true
+				"s": true,
+				"m": "an object realted to the curse's origin, worth at least 1cp"
 			},
 			"duration": [
 				{
@@ -19521,7 +19524,8 @@
 				}
 			],
 			"entries": [
-				"At your touch, all curses affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the spell breaks its owner's {@variantrule Attunement} to the object so it can be removed or discarded."
+				"You perform an exorcism over a cursed creature or object. You must channel your magic through an object relating to the curse. This could be the wand, spellbook, anvil, or cauldron used to create the curse, or a part from the creator's body, such as their fingernails, heart or bones. Alternatively, your DM may specify a unique component, such as unicorn hair, a vampire's tears, or distilled moonlight.",
+				"A curse exorcised from a creature this way ends. If the object is a cursed magic item, its curse remains, but the spell breaks its owner's {@variantrule Attunement} to the object so it can be removed or discarded."
 			],
 			"miscTags": [
 				"OBJ"
@@ -25548,6 +25552,7 @@
 		},
 		{
 			"name": "Water Breathing",
+			"replaced": "Air Bubble",
 			"source": "PHB'24",
 			"page": 340,
 			"level": 3,
@@ -26814,7 +26819,7 @@
             "entries": [
                 "You seize the air currents above you, taking control of the local weather. You must be aboveground, with sight of the sky, to cast or maintain this spell.",
                 "When you cast the spell, can choose to shift the precipitation, temperature, and wind each by one level on the charts below. It takes 30 minutes for the conditions to change, after which you can change them again. The charts suggest weather effects effects, and your DM may determine any additional effects resulting from the change in weather.",
-                "After the spell ends, the weather returns to its original state, changing at the same rate. If you cast the spell again, it ends..",
+                "After the spell ends, the weather returns to its original state, changing at the same rate. If you cast the spell again, it ends.",
                 {
                     "type": "table",
                     "caption": "Precipitation",
@@ -26842,7 +26847,7 @@
                         [
                             "3",
                             "Overcast or ground fog",
-                            "The area is no longer consider to be in sunlight."
+                            "The area is no longer considered to be in sunlight."
                         ],
                         [
                             "4",
@@ -26873,7 +26878,7 @@
                         [
                             "1",
                             "Unbearable heat",
-                            "Creatures must make a DC 10 Constitution saving throw every hours or suffer one level of exhaustion."
+                            "Creatures must make a DC 10 Constitution saving throw every hour or suffer one level of exhaustion."
                         ],
                         [
                             "2",
@@ -26903,7 +26908,7 @@
                         [
                             "7",
                             "Arctic cold",
-                            "Creatures must make a DC 10 Constitution saving throw every hours or suffer one level of exhaustion."
+                            "Creatures must make a DC 10 Constitution saving throw every hour or suffer one level of exhaustion."
                         ]
                     ]
                 },
@@ -27355,7 +27360,7 @@
 			"entries": [
 				"You touch a willing creature and allow it to enter a cataleptic state that is indistinguishable from death.",
 				"As an Action, or as a Reaction to taking damage, the target can appear dead to outward inspection and to spells used to determine the target's status. The target has the {@condition Blinded} and {@condition Incapacitated} conditions, and its {@variantrule Speed} is 1.",
-				"The false state and the spell end when the target moves or you use an action to touch hte target and dismiss the spell.",
+				"The false state and the spell end when the target moves or you use an action to touch the target and dismiss the spell.",
 				"The target also has {@variantrule Resistance} to all damage except Psychic damage, and it has {@variantrule Immunity} to the {@condition Poisoned} condition.",
 				{
                     "type": "inset",
@@ -27563,7 +27568,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Fingers v Beams",
                     "entries": [
-                        "This version of {@spell Finger of Death} harkens closer to the original spell effect create by Beholders. Creating a Beam instead of nebulously pointing at enemies increases damage and limits defensive options."
+                        "This version of {@spell Finger of Death} harkens closer to the original spell effect created by Beholders. Creating a Beam instead of nebulously pointing at enemies increases damage and limits defensive options."
                     ]
                 }
 			],
@@ -27809,6 +27814,84 @@
 				},
 				{
 					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Dimensional Slash",
+			"source": "BREW",
+			"level": 1,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"s": true,
+				"m": "a melee weapon that does slashing or piercing damage"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You strike with your weapon at thin are, targeting a point you can see within range. Reality is distorted in that space, causing damage to the surroundings. Cretures within 5 feet of the point must succeedd on a Desterity saving throw, taking force damage equal to one roll of your weapon die plus your spellcasting modifier on a failed save or half as much on a success.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Dimensionalism",
+                    "entries": [
+                        "I picked up this interesting attack from a tiefling man who claimed an inborn knack for conjuration magics. It's notable as a direct offensive use of spatial magic compared with the usual defensiveness or utility."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"name": "At Higher Levels",
+					"entries": [
+						"The number of targets increases by one for every two spell slot levels above 1. You can target the same point multiple times."
+					],
+					"type": "entries"
+				}
+			],
+			"damageInflict": [
+				"force"
+			],
+			"spellAttack": [
+				"R"
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				},
+				{
+					"name": "Warlock",
 					"source": "PHB"
 				}
 			]
@@ -28711,7 +28794,7 @@
 					"type": "entries",
 					"name": "Stupor (Emerald)",
 					"entries": [
-						"Each target must succeed on a Wisdom saving throw or have the {@condition Stunned} condition for 1 minute."
+						"Each target must succeed on a Charisma saving throw or have the {@condition Stunned} condition for 1 minute."
 					]
 				},
 				{
@@ -28775,7 +28858,7 @@
 			"time": [
 				{
 					"number": 1,
-					"unit": "minute"
+					"unit": "action"
 				}
 			],
 			"range": {
@@ -28808,7 +28891,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Lesser Tsunami",
                     "entries": [
-                        "Though the max power of this spell differs very little from {@spell Tsunami},the spellform used here is able to complete circuits at lower levels of power, making the spell viable in scenarios other than \"Fuck it, wash away this town in particular\"."
+                        "Though the max power of this spell differs very little from {@spell Tsunami}, the spellform used here is able to complete circuits at lower levels of power, making the spell viable in scenarios other than \"Fuck it, wash away this town in particular\"."
                     ]
                 }
 			],
@@ -28907,7 +28990,6 @@
 		{
 			"name": "Cause Fear",
 			"source": "BREW",
-			"page": 271,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -28942,9 +29024,9 @@
 				"At the end of each of its turns, it makes another Wisdom saving throw. On a successful save, the spell ends.",
 				{
                     "type": "inset",
-                    "name": "Caius' Notes: Lesser Necromancy",
+                    "name": "Caius' Notes: Lesser Occultism",
                     "entries": [
-                        "A simple effect that somehow didn't make it into the standard curriculum. Practically a staple for your enchanters, cult acolytes, or less scrupulous Bards to practice with."
+                        "A simple effect that somehow didn't make it into the standard curriculum. Practically a staple for your enchanters, cult acolytes, or less scrupulous bards to practice with."
                     ]
                 }
 			],
@@ -29582,7 +29664,7 @@
                         [
                             "2",
                             "Cold",
-                            "The target takes {@damage 2d8} cold damage and has their movement speed reduced by half until the end of their next turn."
+                            "The target takes {@damage 2d8} cold damage and has their movement speed reduced by 10 feet until the end of their next turn."
                         ],
                         [
                             "3",
@@ -29592,7 +29674,7 @@
                         [
                             "4",
                             "Force",
-                            "The target takes {@damage 3d4} force damage, and is knocked prone if it is Large or smaller."
+                            "The target takes {@damage 3d4} force damage, and is pushed 10 feet in a direction of your choice."
                         ],
                         [
                             "5",
@@ -29612,7 +29694,7 @@
                         [
                             "8",
                             "Thunder",
-                            "The target takes {@damage 2d8} thunder damage and is deafened until the end of their next turn."
+                            "The target takes {@damage 2d8} thunder damage and is knocked prone if it is size Large or smaller."
                         ]
                     ]
                 }
@@ -29622,7 +29704,7 @@
                     "type": "entries",
                     "name": "Using a Higher-Level Spell Slot",
                     "entries": [
-                        "The damage increases by {@damage 1d8} for each spell slot level above 1. The orb can leap a number of times equal to the slot level"
+                        "The damage increases by {@damage 1d8} for each spell slot level above 1."
                     ]
                 }
             ],
@@ -29708,7 +29790,6 @@
 		{
 			"name": "Blade Mirage",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -29779,7 +29860,6 @@
 		{
 			"name": "Crippling Agony",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "N",
 			"subschools": [
@@ -29863,7 +29943,6 @@
 		{
 			"name": "Fall",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "V",
 			"subschools": [
@@ -29917,7 +29996,6 @@
 		{
 			"name": "Arcane Conduit",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -29948,7 +30026,7 @@
 			],
 			"entries": [
 				"You tap directly into the arcane weave. For the duration, you have resistance to all damage from magical sources besides force damage.",
-				"At the start of each of your turns while tapped into this power, you and all creatures with 10 feet of you take {@damage 1d6} Force damage. The damage increases by {@dice 1d6} each turn to a maximum of {@damage 4d6} damage.",
+				"When you cast the spell and at the start of each of your turns while tapped into this power, you and all creatures with 10 feet of you take {@damage 1d6} Force damage. The damage increases by {@dice 1d6} each turn to a maximum of {@damage 4d6} damage.",
 				{
                     "type": "inset",
                     "name": "Caius' Notes: Sorcerers are Lunatics",
@@ -29987,7 +30065,6 @@
 		{
 			"name": "Become Fire",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -30072,7 +30149,6 @@
 		{
 			"name": "Become Stone",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -30169,7 +30245,6 @@
 		{
 			"name": "Become Water",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -30253,7 +30328,6 @@
 		{
 			"name": "Become Wind",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -30334,7 +30408,6 @@
 		{
 			"name": "Crackle",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -30412,7 +30485,6 @@
 		{
 			"name": "Caius' Earthen Ripple",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -30499,7 +30571,6 @@
 		{
 			"name": "Fling",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "T",
 			"subschools": [
@@ -30563,7 +30634,6 @@
 		{
 			"name": "Spirit Echo",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "C",
 			"subschools": [
@@ -30625,7 +30695,6 @@
 		{
 			"name": "Time Slip",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "T",
 			"subschools": [
@@ -30701,7 +30770,6 @@
 		{
 			"name": "Scintillating Spray",
 			"source": "BREW",
-			"page": 0,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -30808,7 +30876,6 @@
 		{
 			"name": "Glistening Barb",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "C",
 			"subschools": [
@@ -30886,7 +30953,6 @@
 		{
 			"name": "Force Dart",
 			"source": "BREW",
-			"page": 0,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -30926,7 +30992,7 @@
 					"type": "entries",
 					"name": "Cantrip Upgrade",
 					"entries": [
-						"The spell creates two darts at level 5, three darts at level 11, and four darts at level 17. You can direct the beams at the same target or at different ones."
+						"The spell creates two darts at level 5, three darts at level 11, and four darts at level 17. You can direct the darts at the same target or at different ones."
 					]
 				}
 			],
@@ -30948,7 +31014,6 @@
 		{
 			"name": "Night Shard",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -31019,9 +31084,141 @@
 			]
 		},
 		{
+			"name": "Ambush Shard",
+			"source": "BREW",
+			"level": 2,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You conjure a transparent shard of force that appears 10 feet behind a creature within range and makes a single strike. Make a ranged spell attack roll against the target's passive perception. On a success, the target takes {@damage 5d6} force damage.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Shadow Magic",
+                    "entries": [
+                        "A perceptual illusion combined with a bit of force make for an effect that attacks orthogonally to many normal spells. Documented to have been extremely effective when used against Mithran Black Knights during a papal schism."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The damage increases by {@dice 1d6} for each spell slot level above 2."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"force"
+			],
+			"spellAttack": [
+				"R"
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"name": "Flaming Crescendo",
+			"source": "BREW",
+			"level": 2,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "flint and something extremely flammable"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"A small fire starts to burn around a creature within range, becoming stronger over time. A creature that you can see within range makes a Constitution saving throw, taking {@damage 1d6} Fire damage on a failed save or half as much damage on a successful one.",
+				"On each of your subsequent turns, you can take an {@variantrule Action} to deal damage to the target again. When you do so, you double the number of damage dice rolled the previous round to a maximum of {@damage 8d6}. (ie. 1d6 -> 2d6 -> 4d6 -> 8d6)",
+				"The spell ends if you use your action to do anything else, if you end your turn with the target outside the spell's range, or if the target has Total {@variantrule Cover} from you.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Crescendo",
+                    "entries": [
+                        "This spell came from a clan of pyromaniac barbarians who developed an unusual spellform that feeds into itself over time. One of the deadliest First Circle spells I know given enough time, and an interesting avenue for further spellform development."
+                    ]
+                }
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"fire"
+			],
+			"spellAttack": [
+				"R"
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
 			"name": "Rock Sling",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "T",
 			"subschools": [
@@ -31095,7 +31292,6 @@
 		{
 			"name": "Dahlian Slicer",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "C",
 			"time": [
@@ -31157,7 +31353,6 @@
 		{
 			"name": "Dahlian Retaliation",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -31227,7 +31422,6 @@
 		{
 			"name": "Dahlian Greatbow",
 			"source": "BREW",
-			"page": 0,
 			"level": 3,
 			"school": "C",
 			"time": [
@@ -31302,7 +31496,6 @@
 		{
 			"name": "Backfire",
 			"source": "BREW",
-			"page": 0,
 			"level": 2,
 			"school": "E",
 			"subschools": [
@@ -31369,7 +31562,6 @@
 		{
 			"name": "Feedback",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "E",
 			"subschools": [
@@ -31445,7 +31637,6 @@
 		{
 			"name": "Empathy",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "E",
 			"subschools": [
@@ -31524,7 +31715,6 @@
 		{
 			"name": "Wristpocket",
 			"source": "BREW",
-			"page": 0,
 			"level": 0,
 			"school": "C",
 			"time": [
@@ -31577,7 +31767,6 @@
 		{
 			"name": "Lesser Reanimate",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "N",
 			"time": [
@@ -31642,7 +31831,6 @@
 		{
 			"name": "Esoteric Orb",
 			"source": "BREW",
-			"page": 0,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -31712,7 +31900,6 @@
 		{
 			"name": "Orison of Protection",
 			"source": "BREW",
-			"page": 0,
 			"level": 0,
 			"school": "A",
 			"time": [
@@ -32649,7 +32836,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Time Raveling",
                     "entries": [
-                        "One of Tayse's favorites that he so graciously lended to me to recreate here. A subtle, but powerful, effect as much temporal magic tends to be. Also a joy to experience and a bridge to dealing with the un-motion sickness caused by higher Circle time magic."
+                        "One of Tayse's favorites that he so graciously lent me for recreate here. A subtle, but powerful effect, as temporal magic tends to be. Also a joy to experience and an introduction to un-motion sickness caused by higher Circle time magic."
                     ]
                 }
 			],
@@ -32665,6 +32852,141 @@
 					}
 				]
 			}
+		},
+		{
+			"name": "Air Bubble",
+			"source": "BREW",
+			"level": 3,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a vial of clean air and a cheesecloth"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					}
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"Choose up to five willing creatures within range. You conjure a bubble around their heads, enabling them to breathe clean, cool air for the duration."
+			],
+			"areaTags": [
+				"MT"
+			],
+			"hasFluffImages": true,
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Prismatic Flash",
+			"source": "BREW",
+			"level": 1,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "cone",
+				"distance": {
+					"type": "feet",
+					"amount": 15
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a prism"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You vivid array of rainbow flashes spring from your hands. Each creature in a 15-foot Cone originating from you that can see you must succeed on a Constitution saving throw or have the {@condition Blinded} and {@condition Dazed} condition until the end of your next turn. If a creature fails by 5 or more it also has the {@condition Incapacitated} condition until the end of your next turn.",
+				"On a successful save the creature is instead momentarily disoriented and has disadvantage on the first attack it makes before the end of your next turn.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Color-est Spray",
+                    "entries": [
+                        "This lightly reformulated version of <em>Color Spray</em> is mostly notable because the area of effect scales with spell Circle."
+                    ]
+                }
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The Cone's range increases by 10 feet for each spell slot level above 1."
+					]
+				}
+			],
+			"conditionInflict": [
+				"blinded",
+				"incapacitated",
+				"dazed"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"areaTags": [
+				"N"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
 		}
 	]
 }
