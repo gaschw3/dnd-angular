@@ -7161,8 +7161,7 @@
 		},
 		{
 			"name": "Personal Blessing",
-			"source": "PHB'24",
-			"page": 265,
+			"source": "BREW",
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -29617,7 +29616,7 @@
 			]
         },
 		{
-            "name": "SCintillating Bolt",
+            "name": "Scintillating Bolt",
             "source": "BREW",
             "level": 1,
             "school": "V",
