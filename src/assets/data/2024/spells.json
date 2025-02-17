@@ -28159,7 +28159,7 @@
 				"A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes {@damage 6d4} Acid damage and {@damage 3d4} Acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage only.",
 				{
                     "type": "inset",
-                    "name": "Caius' Notes: Melf is a Hack",
+                    "name": "Caius' Notes: Melf is a hack",
                     "entries": [
                         "{@spell Melf's acid arrow}? More like \"Melf's sucky sting\". My version does more damage and the spellform is simple enough that even a Sorcerer will be able to cast it."
                     ]
@@ -28459,7 +28459,10 @@
 			"range": {
 				"type": "point",
 				"distance": {
-					"type": "touch"
+					"distance": {
+					"type": "feet",
+					"amount": 120
+				}
 				}
 			},
 			"components": {
@@ -29614,7 +29617,7 @@
 			]
         },
 		{
-            "name": "Prismatic Bolt",
+            "name": "SCintillating Bolt",
             "source": "BREW",
             "level": 1,
             "school": "V",
@@ -29696,6 +29699,13 @@
                             "Thunder",
                             "The target takes {@damage 2d8} thunder damage and is knocked prone if it is size Large or smaller."
                         ]
+                    ]
+                },
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Wild Magic Practice",
+                    "entries": [
+                        "Another spellform from a so-called 'Wild' mage (more like 'unwilling to practice'). Typically deals high damage, but relying on random perturbations in the Weave to decide what effect a spell will have is lunacy."
                     ]
                 }
             ],
@@ -30534,7 +30544,7 @@
 				},
 				{
                     "type": "inset",
-                    "name": "Caius' Notes: Maximilian",
+                    "name": "Caius' Notes: Maximilian was a hack",
                     "entries": [
                         "There was a famous geomancer named Maximilian some 200 years ago and he was a hack. I produced this spell largely as a way to upstage his \"earthen grasp\", which was pitifully weak and about a quarter as adaptable. Dunce."
                     ]
@@ -32836,7 +32846,7 @@
                     "type": "inset",
                     "name": "Caius' Notes: Time Raveling",
                     "entries": [
-                        "One of Tayse's favorites that he so graciously lent me for recreate here. A subtle, but powerful effect, as temporal magic tends to be. Also a joy to experience and an introduction to un-motion sickness caused by higher Circle time magic."
+                        "One of Tayse's favorites that he so graciously lent me for recreation here. A subtle, but powerful effect, as temporal magic tends to be. Also a joy to experience and an introduction to un-motion sickness caused by higher Circle time magic."
                     ]
                 }
 			],
@@ -32889,7 +32899,14 @@
 				"ritual": true
 			},
 			"entries": [
-				"Choose up to five willing creatures within range. You conjure a bubble around their heads, enabling them to breathe clean, cool air for the duration."
+				"Choose up to five willing creatures within range. You conjure a bubble around their heads, enabling them to breathe clean, cool air for the duration.",
+				{
+                    "type": "inset",
+                    "name": "Caius' Notes: Air Breathing",
+                    "entries": [
+						"Transmuting a target until they are able to breate water (per {@spell water breating}) has always felt a bit overwrought to me. Instead, this spell uses an aura to transmute breathable air in a small radius around the target. Maybe don't fight anything spiky though, just to be safe."
+					]
+                }
 			],
 			"areaTags": [
 				"MT"
