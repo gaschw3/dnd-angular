@@ -24,10 +24,9 @@ body {
   @return $random_range;
 }
 
-$ripple-speed: 2s;
-$wave-height: 0.4%;
-$wave-start: 85;
-$imgurl: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/168181/about-eco-bg-bottom.jpg);
+$ripple-speed: 8s;
+$wave-height: 1%;
+$wave-start: 80;
 div[class^='ripple-'] {
   width: 100%;
   position: absolute;
@@ -47,7 +46,7 @@ div[class^='ripple-'] {
     top: (  $wave-start + ($i * 2) + 1%);
     animation-delay: -1 * calc(random(10)/5) + s;
     animation-duration: $ripple-speed * calc($i/5) + calc(random(2)/4);
-    background: linear-gradient(110deg * $i, rgb(0, 46, 7), rgb(122, 0, 0));
+    background: linear-gradient(110deg * $i, rgb(0, 95, 14), rgb(131, 0, 0));
     background-size: 100%;
     background-position:0  ( $wave-start + ($i * 2) - 5%);
   }

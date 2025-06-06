@@ -92,6 +92,30 @@ $themes: (
     paginateSelected: rgba(121, 175, 255, 0.514),
     tableHover: rgba(255,255,255,.075)
   ),
+  forest: (
+    bgImage: url(flower.png),
+    backgroundColor: #0e120e,
+    headerFont: "Segoe UI",
+    headerFallbackFont: sans-serif,
+    background: auto,
+    navColor: #43443a,
+    tableActiveColor: #3f443a,
+    navText: #fff,
+    brandText: #ff91ca, //color for text next to favicon
+    cardColor: #343e32,
+    textColor: #bbb,
+    textLinkColor: #fff,
+    textLinkBackground: #212e18,
+    linkColor: #c997cf,
+    colorPrimary: #78dc7d, //most headers on site
+    colorSecondary: #e1e389, //feature headers in class, features outline,
+    colorTertiary: #ec92e1, //feature usbheaders for stuff like fighting styles
+    headerColor: #bbb,
+    classButtonGradient: linear-gradient(#4b5548,#3a443f 60%,#313739),
+    classButtonGradientActive: linear-gradient(#1f231f, #212724 40%, #22272a),
+    paginateSelected: rgba(121, 255, 161, 0.514),
+    tableHover: rgba(255, 255, 255, 0.075)
+  ),
   ice: (
     backgroundColor: #2e0505,
     headerFont: 'Iceberg',

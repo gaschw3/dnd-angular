@@ -7,6 +7,7 @@ export class IdToNamePipe implements PipeTransform {
 
   transform(value: string): string {
     value = value.toLowerCase(); //convert to lower case
+    value = value.replace(/<.*?>/g, ""); //remove tags, really an 'occultum' item workaround
     value = value.replace(/^\s+/, ""); //remove leading space characters
     value = value.replace(/\s+$/, ""); //remove trailing space characters
     value = value.replace(/\s+/g, '-');//convert other spaces to hyphens

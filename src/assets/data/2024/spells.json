@@ -28458,10 +28458,8 @@
 			"range": {
 				"type": "point",
 				"distance": {
-					"distance": {
 					"type": "feet",
 					"amount": 120
-				}
 				}
 			},
 			"components": {
@@ -29739,7 +29737,7 @@
 			"fromClassList": [
 				{
 					"name": "Sorcerer",
-					"source": "PHB"
+					"source": "XPHB"
 				}
 			]
         },
