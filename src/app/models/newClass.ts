@@ -1,5 +1,5 @@
 import { Spell } from './spell';
-import { commonFeatures } from './consts'
+import { commonFeatures, subclassFeatures } from './consts'
 import { HelperService } from '../shared/helpers/helper.service';
 
 export interface IClass {
@@ -62,6 +62,7 @@ export interface Subclass {
 	name: string;
 	shortName: string;
 	subclassFeature: ClassFeature[];
+  subclassTableGroups: any[];
   source: string;
 }
 
@@ -110,7 +111,9 @@ export class newClass implements IClass{
   casterProgression?: string;
   classFeatureList:   ClassFeature[];
   levelTable:         string[][];
+  subclassLevelTable: string[][];
   classTableGroups:   any[];
+  subclassTableGroups: any[];
   fluff:              any;
   hd:                 string; // {face: 8, number: 1}
   multiclassing:      newMulticlass;
@@ -154,6 +157,8 @@ export class newClass implements IClass{
 
     //create levelTable[][] from JOSN.classTableGroups
     this.levelTable = new Array<Array<string>>();
+    this.subclassLevelTable = new Array<Array<string>>();
+
     //all classes start with the same 3 columns
     this.levelTable = JSON.parse(JSON.stringify(commonFeatures)); //this is some goofy javascript witchcraft, 2D arrays get shallow copied in 95% of the normal scenarios I would use, this makes a deep copy to reset it for each new class.
     this.classTableGroups = currClass.classTableGroups;
@@ -161,6 +166,17 @@ export class newClass implements IClass{
       this.levelTable[0] = this.levelTable[0].concat(this.classTableGroups[i].colLabels)
       for (let j = 0; j < this.classTableGroups[i].rows.length; j++) {
         this.levelTable[j+1] = this.levelTable[j+1].concat(this.classTableGroups[i].rows[j]);
+      }
+    }
+
+    this.subclassLevelTable = JSON.parse(JSON.stringify(subclassFeatures))
+    this.subclassTableGroups = currClass.subclassTableGroups;
+    if(this.subclassTableGroups) {
+      for (let i = 0; i < this.subclassTableGroups.length; i++) {
+        this.subclassLevelTable[0] = this.subclassLevelTable[0].concat(this.subclassTableGroups[i].colLabels)
+        for (let j = 0; j < this.subclassTableGroups[i].rows.length; j++) {
+          this.subclassLevelTable[j+1] = this.subclassLevelTable[j+1].concat(this.subclassTableGroups[i].rows[j]);
+        }
       }
     }
   }

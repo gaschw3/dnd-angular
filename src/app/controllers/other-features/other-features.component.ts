@@ -42,6 +42,7 @@ export class OtherFeaturesComponent implements OnInit {
   dtTrigger: Subject<ADTSettings> = new Subject();
 
   ngOnInit(): void {
+    let route = this.route.queryParams;
     this.dtOptions = {
       columnDefs: [
         { width: '30%', targets: 0 },
@@ -73,6 +74,12 @@ export class OtherFeaturesComponent implements OnInit {
       },
       initComplete: function(settings, json) {
         const api = this.api();
+        route.subscribe(params => {
+          for (var param in params) {
+            $(`#${param}`).val(params[param]); //fill in text boxes with query params
+          }
+        });
+
         api.columns().every(function() {
           const column = this;
           const $head = $(column.header());
@@ -157,6 +164,12 @@ export class OtherFeaturesComponent implements OnInit {
       }
       if (typeof reqs.feature != "undefined") {
         ret.push(reqs.feature[0]);
+      }
+      if (typeof reqs.ability != "undefined") {
+        reqs.ability.forEach((obj) => {
+          let arr = Object.entries(obj);
+          ret.push(`${arr[0][0].replace(/^[a-z]/, (firstChar) => firstChar.toUpperCase())} ${arr[0][1]}`);
+        })
       }
       if (typeof reqs.level != "undefined") {
         if (typeof reqs.level.subclass != "undefined") {

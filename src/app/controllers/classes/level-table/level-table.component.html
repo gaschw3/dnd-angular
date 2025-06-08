@@ -3,20 +3,26 @@
     <thead>
         <tr>
             <th class="center" *ngFor="let header of class.levelTable[0]">{{header}}</th>
+            <ng-container *ngFor="let header of class.subclassLevelTable[0]">
+                <th class="center subclass {{header.split('|')[0]}}" style="display: none">{{header.split("|")[1]}}</th>
+            </ng-container>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let levels of class.levelTable | slice: 1; let i = index;">
-        <ng-container *ngFor="let column of levels">
-            <td *ngIf="column == 'features'; else static">
-            <ng-container *ngFor="let f of getFeatures(i+1); let last = last">
-                <a routerLink="./" fragment="{{f.id}}" (click)="this.shake(f.id)" >{{ f.name }}</a><span *ngIf="!last">, </span>
+            <ng-container *ngFor="let column of levels">
+                <td *ngIf="column == 'features'; else static">
+                <ng-container *ngFor="let f of getFeatures(i+1); let last = last">
+                    <a routerLink="./" fragment="{{f.id}}" (click)="this.shake(f.id)" >{{ f.name }}</a><span *ngIf="!last">, </span>
+                </ng-container>
+                </td>
+                <ng-template #static>
+                    <td class="center">{{column}}</td>
+                </ng-template>
             </ng-container>
-            </td>
-            <ng-template #static>
-            <td class="center">{{column}}</td>
-            </ng-template>
-        </ng-container>
+            <ng-container *ngFor="let column of class.subclassLevelTable[i+1]">
+                <td class="center subclass {{class.subclassLevelTable[0][0].split('|')[0]}}" style="display: none">{{column}}</td>
+            </ng-container>
         </tr>
     </tbody>
     </table>

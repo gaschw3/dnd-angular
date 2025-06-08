@@ -1,8 +1,8 @@
 <div class="card feature-list" *ngIf="features">
     <div class="card-body">
-        <div class="feature" [ngClass]="{'archetype': (feature.subclassShortName && feature.level == 1), 'subclass' : (feature.subclassShortName && feature.header || feature.header == 1)}" [id]="feature.id" *ngFor="let feature of features">
+        <div class="feature" [ngClass]="{'archetype': (feature.subclassShortName && feature.level == 1), 'subclass' : (feature.subclassShortName && feature.header || feature.header == 1), 'subsubclass' : (feature.header == 3)}" [id]="feature.id" *ngFor="let feature of features">
         <h4 [class.color-primary]="!feature.subclassShortName" [class.color-secondary]="feature.subclassShortName">
-            {{(!feature.subclassShortName) ? "Level "+feature.level+": " : ''}}
+            {{(!feature.subclassShortName) ? ((feature.level) ? "Level "+feature.level+": " : '') : ''}}
             {{(feature.subclassShortName && feature.header == 2) ? feature.subclassShortName+" - " : ''}}
             {{feature.name}}{{feature.cost ? " (Cost: "+feature.cost+")": ""}}</h4>
             <div class="feature-text row">

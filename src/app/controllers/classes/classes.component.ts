@@ -20,7 +20,7 @@ export class ClassesComponent implements OnInit {
   currClass: newClass;
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/2024/classes.json")
+      return this.http.get("assets/data/2024/classes-small.json")
   }
 
   constructor(private http: HttpClient,

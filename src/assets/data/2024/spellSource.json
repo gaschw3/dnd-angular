@@ -18824,6 +18824,26 @@
       }
     }
   },
+  "creature friend": {
+    "class": {
+      "XPHB": {
+        "Bard": true,
+        "Druid": true,
+        "Ranger": true
+      }
+    },
+    "subclass": {
+      "XPHB": {
+        "Bard": {
+          "XPHB": {
+            "Lore": {
+              "name": "College of Lore"
+            }
+          }
+        }
+      }
+    }
+  },
   "arcane key": {
     "class": {
       "XPHB": {

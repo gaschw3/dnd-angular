@@ -12,7 +12,7 @@ declare var gtag
 })
 export class AppComponent {
   title = 'dnd-angular';
-  defaultTheme = "end";
+  defaultTheme = 'forest';
   particles = false;
 
   theme = this.getCookie("theme");
@@ -58,7 +58,7 @@ export class AppComponent {
   }
 
   changeTheme() {
-    this.setCookie("theme", this.theme, 4); //set "theme" cookie, expires in 7 days
+    this.setCookie("theme", this.theme, 4); //set "theme" cookie, expires in 4 days
   }
 
 }

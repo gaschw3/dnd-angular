@@ -1,0 +1,716 @@
+[
+  {
+    "name": "Acolyte",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Acolyte.webp",
+    "source": "PHB'24",
+    "skill": "Insight, Religion",
+    "tool": "{@item Calligrapher's Supplies}",
+    "feat": "{@feat Magic Initiate}",
+    "info": "You devoted yourself to service in a Root-Sage church or secluded in a sacred grove. There you performed rites in honor of your ancestors of the Glow. You served under a priest and studied religion. Thanks to your priest's instruction and your own devotion, you also learned how to channel a modicum of divine power in service to your place of worship and the people who prayed there.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Intelligence, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Magic Initiate}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight}, {@skill Religion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Calligrapher's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Calligrapher's Supplies}, {@item Book|Book (prayers)}, {@item Holy Symbol|Holy Symbol}, {@item Parchment|Patchment (10 sheets)}, {@item Robe|Robe}, 8 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Archivist",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Sage.webp",
+    "source": "PHB'24",
+    "skill": "Investigation, History",
+    "tool": "{@item Calligrapher's Supplies}",
+    "feat": "{@feat Magic Initiate}",
+    "info": "You spent your formative years in the Knowledge Ossuary, the subterranean archive of Bloomburrow's history kept by the Squirrellfolk. The Long River brings flotsam of artifacts and forgotten lore to the Ossuary, and you've spent many a restless night studying trinkets and scrolls. Your mind was sharpened in the archive, and you're ready to put your knowledge to use.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Constitution, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Magic Initiate}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Investigation}, {@skill History}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Calligrapher's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Calligrapher's Supplies}, {@item Book} (history), {@item Parchment} (8 sheets), {@item Robe}, 8 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Artisan",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Artisan.webp",
+    "source": "PHB'24",
+    "skill": "Investigation, Persuasion",
+    "tool": "Any {@item Artisan's Tool}",
+    "feat": "{@feat Crafter}",
+    "info": "You began mopping floors and scrubbing counters in an artisan's workshop for a few acorns per day as soon as you were strong enough to carry a bucket. When you were old enough to apprentice, you learned to create basic crafts of your own, as well as how to barter and discern fine detail and value.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Strength, Dexterity, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Crafter}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Investigation}, {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Artisan's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Artisan's Tools} (same as above), 2 {@item Pouch|Pouches}, {@item Traveler's Clothes}, 32 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Caretaker",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Hermit.webp",
+    "source": "PHB'24",
+    "skill": "Medicine, Investigation",
+    "tool": "{@item Herbalism Kit}",
+    "feat": "{@feat Healer}",
+    "info": "You've always had a level head and a knack for helping in dire situations. Perhaps you were raised in a large, busy family, or perhaps a crisis occurred when you were young that you jumped to solve. Once older, you tutored under a folk healer, learning how to identify healing herbs and how to apply medicine and care to all the different species of the Vale.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Constitution, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Healer}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Medicine}, {@skill Investigation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Herbalism Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Herbalism Kit}, {@item Bedroll}, {@item Book} (philosophy), {@item Lamp}, {@item Oil} (3 flasks), {@item Traveler's Clothes}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cook",
+    "image": "https://cdnb.artstation.com/p/assets/images/images/010/040/849/large/anastasiia-kudryavtseva-kupetz-lec-11-eca43-04.jpg",
+    "source": "PHB'24",
+    "skill": "Nature, Survival",
+    "tool": "{@item Cook's Utensils}",
+    "feat": "{@feat Chef}",
+    "info": "You practically grew up in a kitchen, helping elders by preparing meals from a very young age. You've become familiar with many ingredients, and have developed an innate intuition on how to combine them into delicious dishes. Perhaps you've found work in a restaurant in a village or roadside inn.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Constitution, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Chef}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Nature}, {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Cook's Utensils}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) 1 {@item Book} (recipes), {@item Cook's Utensils}, {@item Fine Clothes}, {@item Oil} (3 flasks), {@item Iron Pot}, 6 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Criminal",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Criminal.webp",
+    "source": "PHB'24",
+    "skill": "Stealth, Sleight of Hand",
+    "tool": "{@item Thieves' Tools}",
+    "feat": "{@feat Alert}",
+    "info": "You eked out a living cutting purses or burgling shops. Perhaps you grew up in the dark alleys of a large settlement like Brambleweave City, or perhaps you turned to banditry on the roads between towns. You may have run with a mercenary gang, like Crueljaw's infamous Purple Ivy Company",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Dexterity, Constitution, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Alert}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Sleight of Hand}, {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Thieves' Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger|2 Daggers}, {@item Thieves' Tools}, {@item Crowbar}, {@item Pouch|2 Pouches}, {@item Traveler's Clothes}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Entertainer",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Entertainer.webp",
+    "source": "PHB'24",
+    "skill": "Acrobatics, Performance",
+    "tool": "Any {@item Musical Instrument}",
+    "feat": "{@feat Musician}",
+    "info": "You spent much of your youth following Mousefolk bards and Otterfolk acrobats, performing odd jobs in exchange for lessons. You've developed your own routine or performance, and you thrive on applause and long for the stage.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Strength, Dexterity, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Musician}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Acrobatics}, {@skill Performance}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Musical Instrument}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Musical Instrument} (same as above), {@item Costume|2 Costumes}, {@item Mirror}, {@item Perfume}, {@item Traveler's Clothes}, 11 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Farmer",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Farmer.webp",
+    "source": "PHB'24",
+    "skill": "Animal Handling, Nature",
+    "tool": "{@item Carpenter's Tools}",
+    "feat": "{@feat Tough}",
+    "info": "You grew up close to the land, perhaps a Rabbitfolk garden or Squirrelfolk food reserve. Years tending insects and cultivating the earth rewarded you with patience and good health. You have a keen appreciate for nature's bounty and a healthy respect for nature's wrath.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Strength, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Tough}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Animal Handling}, {@skill Nature}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Carpenter's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Sickle}, {@item Carpenter's Tools}, {@item Healer's Kit}, {@item Iron Pot}, {@item Shovel}, 30 GP; or (B) 50 GP"
+          }
+        ]
+      }
+	  ]
+  },
+  {
+    "name": "Fisher",
+    "image": "https://w.wallhaven.cc/full/vg/wallhaven-vgwgd8.jpg",
+    "source": "PHB'24",
+    "skill": "Athletics, Survival",
+    "tool": "{@item Fishing Tackle}",
+    "feat": "{@feat Lucky}",
+    "info": "You have spent your life aboard fishing boats on the Long River or combing the shallows for the bounty of the Purelake. Perhaps you were taught by a family of Frogfolk or Otterfolk, working to help feed your village. Regardless of how you began, you soon fell in love with the water, the art of fishing, and the promise of the eternal horizon.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Strength, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Lucky}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics}, {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Fishing Tackle}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Bedroll}, {@item Dagger}, {@item Fishing Tackle}, {@item Navigator's Tools}, {@item Net}, {@item Trident}, {@item Traveler's Clothing}, 12 GP; or (B) 50 GP"
+          }
+        ]
+      }
+	  ]
+  },
+  {
+    "name": "Guard",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Guard.webp",
+    "source": "PHB'24",
+    "skill": "Athletics, Perception",
+    "tool": "Any {@item Gaming set}",
+    "feat": "{@feat Alert}",
+    "info": "Your feet ache when you remember the countless hours you spent at your post in Brambleweave City. You were trained to keep one eye looking outside the wall, watching for signs of Beasts or Vermin, and your other eye looking inside the wall, searching for bandits and troublemakers.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Strength, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Alert}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics}, {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Spear}, {@item Light Crossbow}, 20 {@item Bolt|Bolts}, {@item Gaming Set} (same as above), {@item Hooded Lantern}, {@item Manacles}, {@item Quiver}, {@item Traveler's Clothes}, 12 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guide",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Guide.webp",
+    "source": "PHB'24",
+    "skill": "Stealth, Survival",
+    "tool": "{@item Cartographer's Tools}",
+    "feat": "{@feat Alert|Alert} ",
+    "info": "You came of age outdoors, far from settled lands. Your home was anywhere you chose to spread your bedroll. There are wonders in the wilderness of the Hollow Vale — strange insects, Vermin, overgrown ruins — and you learned to fend for yourself as you explored them. From time to time, you've found work as a courier, wilderness guide, or insect hunter.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Dexterity, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Alert}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Stealth}, {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Cartographer's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Shortbow}, {@item Arrow|20 Arrows}, {@item Cartographer's Tools}, {@item Bedroll}, {@item Quiver}, {@item Tent}, {@item Traveler's Clothes}, 3 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Innkeeper",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Charlatan.webp",
+    "source": "PHB'24",
+    "skill": "Persuasion, Survival",
+    "tool": "{@item Brewer's Supplies}",
+    "feat": "{@feat Tough}",
+    "info": "You spent your youth scrubbing floors and counters in a travelling caravan of Squirrelfolk, and you soon became a popular regular fixture at the Inn. You were taken under the wing of the owner, and were taught how to run the business and sweet talk your patrons. You've even learned a few recipes for brewing spirits.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Dexterity, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Tough}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Persuasion}, {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Brewer's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Brewer's Supplies}, {@item Fine Clothes}, 3 {@item Glass Bottle}s , {@item Iron Pot}, {@item Oil} (3 flasks), 6 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Merchant",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Merchant.webp",
+    "source": "PHB'24",
+    "skill": "Animal Handling, Persuasion",
+    "tool": "{@item Navigator's Tools}",
+    "feat": "{@feat Lucky}",
+    "info": "You were apprenticed to a trader, caravan master, or shopkeeper, learning the fundamentals of commerce. You traveled broadly, and you earned a living by buying and selling the raw materials artisans need to practice their craft or finished works from such crafters. You might have transported goods from one place to another (by ship, wagon, or caravan) or bought them from traveling traders and sold them in your own shop.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Constitution, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Lucky}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Animal Handling}, {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Navigator's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Navigator's Tools}, {@item Pouch|2 Pouches}, {@item Traveler's Clothes}, 22 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Noble",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Noble.webp",
+    "source": "PHB'24",
+    "skill": "History, Persuasion",
+    "tool": "Any {@item Gaming set}",
+    "feat": "{@feat Skilled}",
+    "info": "There is no single authority in Valley, but you were raised as the heir of a mayor, important councilman, or group leader, surrounded by wealth, power, and privilege. Your family ensured you received a first-class education in History and Diplomacy, and it was always expected that you would one day fulfill a position of leadership..",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Strength, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Skilled}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill History}, {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Gaming Set} (same as above), {@item Fine Clothes}, {@item Perfume}, 29 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sailor",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Sailor.webp",
+    "source": "PHB'24",
+    "skill": "Acrobatics, Perception",
+    "tool": "{@item Navigator's Tools}",
+    "feat": "{@feat Tavern Brawler}",
+    "info": "You lived on the Long River that cuts across the Vale, wind at your back and decks swaying beneath your feet. You were raised alongside Otterfolk sailors, or perhaps brigands, and perched on barstools in more ports of call than you can remember. Along the river you've faced mighty storms, enormous river Beasts, and even pirate.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Strength, Dexterity, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Tavern Brawler}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Acrobatics}, {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Navigator's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Navigator's Tools}, {@item Rope}, {@item Traveler's Clothes}, 20 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Scavenger",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Wayfarer.webp",
+    "source": "PHB'24",
+    "skill": "Insight, Stealth",
+    "tool": "{@item Thieves' Tools}",
+    "feat": "{@feat Lucky}",
+    "info": "You grew up on the fringes of society, perhaps on the streets of a settlement like Brambleweave City, or perhaps on the outskirts of villages. You slept where you could and did odd jobs for food. You've learned to take what's been discarded or left unused, never letting anything go to waste.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Dexterity, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Lucky}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight}, {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Thieves' Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger|2 Daggers}, {@item Thieves' Tools}, {@item Gaming Set} (any), {@item Bedroll}, {@item Pouch|2 Pouches}, {@item Traveler's Clothes}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Soldier",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Soldier.webp",
+    "source": "PHB'24",
+    "skill": "Athletics, Intimidation",
+    "tool": "Any {@item Gaming set}",
+    "feat": "{@feat Savage Attacker}",
+    "info": "Every settlement in the Vale needs to be ready for Beasts, Vermin, and insects; and many companies of mercenaries and knights form to stand vigilant. You began your martial training with one such group as soon as you reached adulthood and carry precious few memories of life before you took up arms. Battle is in your blood, and you put your training to use on the battlefield, protecting Valley by waging war.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Suggested Abilties:",
+            "entry": "Strength, Dexterity, Constitution"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Savage Attacker}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics}, {@skill Intimidation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Spear}, {@item Shortbow}, {@item Arrow|20 Arrows}, {@item Gaming Set} (same as above), {@item Healer's Kit}, {@item Quiver}, {@item Traveler's Clothes}, 14 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  }
+]

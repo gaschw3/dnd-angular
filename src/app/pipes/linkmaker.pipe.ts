@@ -32,7 +32,7 @@ export class LinkmakerPipe implements PipeTransform {
       var linkLocation = linkPath.replace(/[\s\/]/g, '-').replace(/[^\w-\/]/g, '').toLowerCase();
       // XXX:special case for specific EI link - should not be done this way
       linkLocation = linkLocation.replace('ei-', 'EI\/');
-      var linkRoot = splitArr.slice(0, 1).toString().replace('creature', 'beastiary').replace('spells', 'spell').replace('spell', 'spells').replace('items', 'item').replace('item', 'items').replace('feat', 'feats').replace('@', '/');
+      var linkRoot = splitArr.slice(0, 1).toString().replace('creature', 'beastiary').replace('spells', 'spell').replace('spell', 'spells').replace('items', 'item').replace('item', 'items').replace('feat ', 'feats ').replace('@', '/');
       if (queryText !== '') {
         var href = linkRoot + '?' + queryText;
       } else {

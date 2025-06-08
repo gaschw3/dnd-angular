@@ -25,7 +25,7 @@ export class SpellsComponent implements OnInit {
 }
 
   public getJSON(): Observable<any> {
-      return this.http.get("assets/data/2024/spells.json")
+      return this.http.get("assets/data/2024/spells-small.json")
   }
 
   constructor(private http: HttpClient,

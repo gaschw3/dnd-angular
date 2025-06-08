@@ -1,0 +1,441 @@
+[
+  {
+    "name": "Lizard",
+    "id": "lizard",
+    "size": "S",
+    "source": "BREW",
+    "speed": "30",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Young lizards grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old mouse child by the age of 3, and reach adulthood by 15. They live to be around 50."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Lizards tend to extremes, often living in communes with others who share their outlook and preferred habitat."]
+      },
+      {
+        "name": "Size",
+        "text": ["Lizards are taller and heavier than mice, standing just over 2 feet tall and averaging almost 30 pounds."]
+      }
+    ],
+    "entries": [
+      {
+        "type": "entries",
+        "name": "Draconic Ancestry",
+        "entries": [
+          "Your lineage stems from an elemental progenitor. Choose a kind of lizard from the Ancestors table. Your choice affects your {@rule Damage} {@rule Resistance} traits as well as your appearance.",
+          {
+            "type": "table",
+            "caption": "Ancestors",
+            "colLabels": [
+              "Dragon",
+              "Damage Type"
+            ],
+            "colStyles": [
+              "col-6",
+              "col-6"
+            ],
+            "rows": [
+              [
+                "Serpent",
+                "Cold"
+              ],
+              [
+                "Behir",
+                "Lightning"
+              ],
+              [
+                "Salamander",
+                "Fire"
+              ],
+              [
+                "Basilisk",
+                "Acid"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Hungry Jaws",
+        "entries": [
+          "You can throw yourself into a feeding frenzy. As a bonus action, you can make a special attack with your Bite. If the attack hits, it deals its normal damage, and you gain temporary hit points equal to your proficiency bonus. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Damage Resistance",
+        "entries": [
+          "You have {@rule Resistance} to the damage type determined by your Draconic Ancestry trait."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Lizard Skin",
+        "entries": [
+          "You have tough, scaly skin. When you aren't wearing armor, your base AC is 13 + Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Shed Skin",
+        "entries": [
+          "As a {@rule Reaction} to being subjected to the {@condition Grappled} or {@condition Restrained} condition, you can shed a layer of skin and slip away. The condition ends and you move to an unoccupied space 5 feet from your original location.",
+          "You can use this {@rule Reaction} once, and you regain that use when you finish a {@rule Long Rest}."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Highlander",
+    "id": "highlander",
+    "size": "M",
+    "source": "BREW",
+    "speed": "30",
+    "ability": "Choose one of: (a) Any +2/+1 (b) Any three +1",
+    "traits": [
+      {
+        "name": "Age",
+        "text": [" Highlanders have lifespans comparable to mice. They enter adulthood in their late teens and usually live less than a century."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Highlander 'society', with its unclear roles and constantly shifting members, has a strong chaotic bent. Thier distance from the rest of smallfolk society also pushes them towards neutrality."]
+      },
+      {
+        "name": "Size",
+        "text": ["Highlanders are invariably bigger than most other smallfolk. Often standing 3 feet tall (or more) and weighing 40-50 pounds."]
+      }
+    ],
+    "entries": [
+      {
+        "type": "entries",
+        "name": "Highlander Ancestry",
+        "entries": [
+          "Highlanders are what other smallfolk call all the various races that live outside of the Hollow itself. Choose one of the following benefits — a boon from your ancestry; you can use the chosen benefit a number of times equal to your {@rule Proficiency|Proficiency Bonus}, and you regain all expended uses when you finish a {@rule Long Rest}:",
+          {
+            "type": "list",
+            "style": "list-hang-notitle",
+            "items": [
+              {
+                "type": "item",
+                "name": "Clever Leap (Fox)",
+                "entries": [
+                  "As a {@rule Bonus Action}, you leap up to 30 feet to an unoccupied space you can see."
+                ]
+              },
+              {
+                "type": "item",
+                "name": "Dirty Tricks (Raccoon)",
+                "entries": [
+                  "When you hit a target with an attack roll and deal damage to it, you can also deal {@damage 1d10} Poison damage to that target."
+                ]
+              },
+              {
+                "type": "item",
+                "name": "Play with your Food (Cat)",
+                "entries": [
+                  "When you hit a target with an attack roll and deal damage to it, you can also deal {@damage 1d6} Piercing damage to that target and reduce its {@rule Speed} by 10 feet until the start of your next turn."
+                ]
+              },
+              {
+                "type": "item",
+                "name": "Hill's Tumble (Mole)",
+                "entries": [
+                  "When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the {@condition Prone} condition."
+                ]
+              },
+              {
+                "type": "item",
+                "name": "Honey's Endurance (Badger)",
+                "entries": [
+                  "When you take damage, you can take a {@rule Reaction} to roll {@dice 1d12}. Add your Constitution modifier to the number rolled and reduce the damage by that total."
+                ]
+              },
+              {
+                "type": "item",
+                "name": "Protective Quills (Porcupine)",
+                "entries": [
+                  "When you take damage from a creature within 30 feet of you, you can take a {@rule Reaction} to deal {@damage 1d8} Piercing damage to that creature."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Resilience",
+        "entries": [
+          "Your life on the ourskirts of society give you {@rule Resistance} to Poison damage. You also have {@rule Advantage} on saving throws you make to avoid or end the {@condition Poisoned} condition."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Highlander Toughness",
+        "entries": [
+          "Your {@rule Hit Points|Hit Point} maximum increases by 1, and it increases by 1 again whenever you gain a level."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Powerful Build",
+        "entries": [
+          "You have {@rule Advantage} on any ability check you make to end the Grappled condition. You also count as one size larger when determining your carrying capacity."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Frog",
+    "id": "frog",
+    "size": "S",
+    "source": "BREW",
+    "speed": "30",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Frogs mature at the same rate mice do, and most are expected to settle down into an adult life by around age 40. They can live 50 to almost 100 years."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Frogs are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators, or inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers. Frogs are typically good-hearted."]
+      },
+      {
+        "name": "Size",
+        "text": ["Frogs are between 1 and 2 feet tall and average about 15 pounds."]
+      }
+    ],
+    "entries": [
+      {
+        "type": "entries",
+        "name": "Water's Cunning",
+        "entries": [
+          "You have {@rule Advantage} on Intelligence, Wisdom, and Charisma saving throws."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Amphibious",
+        "entries": [
+          "You can breathe air and water."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Jumpy",
+        "entries": [
+          "Your long jump is up to 25 feet and your high jump is up to 15 feet, with or without a running start."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Keen Senses",
+        "entries": [
+          "You have proficiency in the Perception skill."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rabbit",
+    "id": "rabbit",
+    "size": "S",
+    "source": "BREW",
+    "speed": "30",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["A rabbit reaches adulthood at the age of 20 and generally lives into the middle of his or her second century."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Most rabbits are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways."]
+      },
+      {
+        "name": "Size",
+        "text": ["Rabbits average about 2 feet tall and weigh about 30 pounds."]
+      }
+    ],
+    "entries": [
+      {
+        "type": "entries",
+        "name": "Determined",
+        "entries": [
+          "When you make a {@rule D20 Test}, you can do so with {@rule Advantage}. Once you use this trait, you can't use it again until you finish a {@rule Long Rest}."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Natural Intuition",
+        "entries": [
+          "You have proficiency in the Nature, Perception, Stealth, or Survival skill."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Standing Leap",
+        "entries": [
+          "As a {@rule Bonus Action}, you can jump a number of feet equal to five times your {@rule Proficiency Bonus}, without provoking {@rule Opportunity Attacks}. You can use this trait only if your speed is greater than 0.",
+          "You can use this trait a number of times equal to your {@rule Proficiency Bonus}, and you regain all expended uses when you finish a {@rule Long Rest)."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Stand Together",
+        "entries": [
+          "If you miss with an attack roll, you can take a {@rule Reaction} to gain a bonus to the roll equal to the number of allies that you can see within 30 feet of you (maximum bonus of +5), potentially turning the miss into a hit."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mouse",
+    "id": "mouse",
+    "source": "BREW",
+    "size": "S",
+    "speed": "30",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Mice reach adulthood in their late teens and live less than a century."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Mice tend toward no particular alignment."]
+      },
+      {
+        "name": "Size",
+        "text": ["Mice vary widely in height and build, from barely 0.5 to nearly 2 feet tall."]
+      }
+    ],
+    "entries": [
+      {
+        "type": "entries",
+        "name": "Brave",
+        "entries": [
+          "You have {@rule Advantage} on saving throws you make to avoid or end the {@rule Frightened} condition."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Skillful",
+        "entries": [
+          "You gain proficiency in one skill of your choice."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Versatile",
+        "entries": [
+          "You gain an {@feat feat?feat-category-filter=O|Origin feat} of your choice."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Otter",
+    "id": "otter",
+    "size": "S",
+    "source": "BREW",
+    "speed": "30",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Otters mature a faster than mice, reaching adulthood around age 12. They age noticeably faster and rarely live longer than 35 years."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Otters love freedom, variety, and self-expression and have a tendency toward chaos. Prone to a 'live in the moment' approach, they often do not consider the long-term consequences of their actions."]
+      },
+      {
+        "name": "Size",
+        "text": ["Otters are larger than mice, and they range from 1.5 to just over 2 feet tall."]
+      }
+    ],
+    "entries": [
+      {
+        "type": "entries",
+        "name": "Adrenaline Rush",
+        "entries": [
+          "You can take the {@action Dash} action as a {@rule Bonus Action}. When you do so, you gain a number of {@rule Temporary Hit Points} equal to your {@rule Proficiency|Proficiency Bonus}.",
+          "You can use this trait a number of times equal to your {@rule Proficiency|Proficiency Bonus}, and you regain all expended uses when you finish a {@rule Short Rest|Short} or {@rule Long Rest}."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Watery Pelt",
+        "entries": [
+          "You have {@rule Resistance} to Lightning damage."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Talented Swimmer",
+        "entries": [
+          "You have proficiency in the Acrobatics skill and a {@rule Swim Speed} equal to your Speed."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Aquatic Luck",
+        "entries": [
+          "When you roll a 1 on the d20 of a {@rule D20 Test}, you can reroll the die, and you must use the new roll."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Squirrel",
+    "id": "squirrel",
+    "size": "S",
+    "source": "BREW",
+    "speed": "30",
+    "traits": [
+      {
+        "name": "Age",
+        "text": ["Squirrels mature at the same rate as mice but live a few years longer."]
+      },
+      {
+        "name": "Alignment",
+        "text": ["Squirrels might not have an innate tendency toward evil, but because of their circumstances, many of them end up there. Evil or not, an independent nature inclines many tieflings toward a chaotic alignment."]
+      },
+      {
+        "name": "Size",
+        "text": ["Squirrels are about the same size and build as mice."]
+      }
+    ],
+    "entries": [
+      {
+        "type": "entries",
+        "name": "Climber",
+        "entries": [
+          "You have a Climb Speed equal to your Speed."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Careful Fall",
+        "entries": [
+          "When you fall less than 100 feet above the ground, you can take a {@rule Reaction} to take 0 damage from the fall."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Insect Companion",
+        "entries": [
+          "You know the {@spell Find Familiar} spell and always have it prepared. You can cast it once without a spell slot, and you regain the ability to cast it that way when you finish a Long Rest. When you cast {@spell Find Familiar} this way you can summon a firefly, mosquito, or cricket."
+        ]
+      },
+      {
+        "type": "entries",
+        "name": "Squirrely Talents",
+        "entries": [
+          "You have proficiency in the Stealth and Survival skills."
+        ]
+      }
+    ]
+  }
+]

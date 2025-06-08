@@ -10,7 +10,7 @@ export class ArchetypesComponent implements OnInit {
 
   @Input() archetypes: any;
   @Input() selectedArchetypes: any;
-  @Input() allSelected: boolean = true;
+  @Input() allSelected: boolean = false;
   @Output() check: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
@@ -19,7 +19,14 @@ export class ArchetypesComponent implements OnInit {
   }
 
   clickArchetype(name) {
-    this.selectedArchetypes.includes(name) ? this.selectedArchetypes.splice(this.selectedArchetypes.indexOf(name), 1) : this.selectedArchetypes.push(name);
+    if (this.selectedArchetypes.includes(name)) {
+      this.selectedArchetypes.splice(this.selectedArchetypes.indexOf(name), 1);
+      $("."+name.replace(" ","")).hide();
+     }
+    else {
+      this.selectedArchetypes.push(name);
+       $("."+name.replace(" ","")).show();
+    }
     if (this.selectedArchetypes.length == $('.btn-archetype').length){
       this.allSelected = true;
     } else {

@@ -11,6 +11,7 @@ export interface OtherFeature {
 export interface Prerequisite {
     spell?:        string;
     pact?:         string;
+    ability?:      any[];
     level?:        Level;
     item?:         string[];
     feature?:      string[];
@@ -34,7 +35,8 @@ export const featureType = {
     "EI": "Eldritch Invocation",
     "FS": "Fighting Style",
     "MM": "Metamagic",
-    "MV": "Battlemaster Maneuver"
+    "MV": "Battlemaster Maneuver",
+    "EX": "Tactical Exploit"
     //"RN": "Rune Knight Rune",
     //"DM": "Dragonmark"
 }

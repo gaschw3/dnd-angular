@@ -23,7 +23,7 @@ export class ClassComponent implements OnInit, OnChanges {
   prof: Proficiencies;
   multi: newMulticlass;
   selectedArchetypes: Array<String> = [];
-  allSelected: boolean = true;
+  allSelected: boolean = false;
   ccId: number = 0; //current class id
 
   constructor() {

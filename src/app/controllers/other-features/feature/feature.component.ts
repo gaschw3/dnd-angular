@@ -39,6 +39,12 @@ export class FeatureComponent implements OnInit {
       if (typeof reqs.spell != "undefined") {
         ret.push(reqs.spell);
       }
+      if (typeof reqs.ability != "undefined") {
+        reqs.ability.forEach((obj) => {
+          let arr = Object.entries(obj);
+          ret.push(`${arr[0][0].replace(/^[a-z]/, (firstChar) => firstChar.toUpperCase())} ${arr[0][1]}`);
+        })
+      }
       if (typeof reqs.item != "undefined") {
         ret.push(reqs.item[0]);
       }
