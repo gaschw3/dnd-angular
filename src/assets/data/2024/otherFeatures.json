@@ -2995,5 +2995,566 @@
         ]
       }
     ]
-  }
+  },
+  {
+			"name": "Astrology",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You are a disciple of heavenly bodies and use this knowledge to twist fate. You gain proficiency in {@skill Arcana}, and whenever you make an Intelligence ({@skill Arcana}) check, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"During each long rest that you can see the night sky, roll a {@dice d20} and record that number. Once before the end of the next long rest, you can choose to use that roll in place of the d20 for ability check, attack roll, or saving throw before you roll."
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true
+				}
+			],
+			"foundrySystem": {
+				"activation": {
+					"type": "special",
+					"condition": "During each long rest that you can see the night sky"
+				},
+				"formula": "d20"
+			},
+			"foundryEffects": [
+				{
+					"name": "Arcana Check Bonus",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.arc.bonuses.check",
+							"mode": "ADD",
+							"value": "+@scale.savant.intellect-die"
+						}
+					]
+				}
+			],
+			"foundryImg": "icons/skills/trades/academics-astronomy-navigation-purple.webp"
+		},
+		{
+			"name": "Falconry",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You have spent many months learning to train birds of prey. You gain proficiency in {@skill Perception}, and whenever you make a Wisdom ({@skill Perception}) check, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"You gain a trained Falcon which uses the {@creature Hawk} statblock from the Player's Handbook, but it has an Intelligence score of 8. You and your Falcon can communicate simple ideas with each other using simple gestures and sounds. Your Falcon is unwaveringly loyal to you and obeys your commands.",
+				"In combat, your Falcon shares your initiative and acts on your turn. It can move and use its reaction on its own, but it only takes the {@action Dodge} action unless you use a bonus action to command it to take an action from its stat block, or another action. If you are {@condition incapacitated}, your Falcon acts on its own.",
+				"If your Falcon falls to 0 hit points it makes death saving throws as a player character would. Should your Falcon die, your special skills allow you to track and train another Falcon over the course of an 8-hour period using 5 gp worth of bait."
+			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"foundrySystem": {
+				"activation": {
+					"cost": null,
+					"type": null
+				}
+			},
+			"foundryEffects": [
+				{
+					"name": "Perception Check Bonus",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.prc.bonuses.check",
+							"mode": "ADD",
+							"value": "+@scale.savant.intellect-die"
+						}
+					]
+				}
+			],
+			"foundryImg": "icons/creatures/birds/raptor-hawk-flying.webp"
+		},
+		{
+			"name": "Marksmanship",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You bring your intellect to bear in the use of ranged weapons. You gain proficiency in {@skill Sleight of Hand}. Whenever you make a Dexterity ({@skill Sleight of Hand}) check, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"You also gain proficiency with all martial ranged weapons, and whenever you make a ranged weapon attack, you can use your Intellect Die in place of the weapon's damage die.",
+				"Finally, if your setting includes firearms, and your Savant has been exposed to the inner workings of such devices, they are considered proficient with simple and martial firearms."
+			],
+			"skillProficiencies": [
+				{
+					"sleight of hand": true
+				}
+			],
+			"weaponProficiencies": [
+				{
+					"blowgun|phb": true,
+					"hand crossbow|phb": true,
+					"heavy crossbow|phb": true,
+					"longbow|phb": true,
+					"net|phb": true,
+					"firearms": true
+				}
+			],
+			"foundryEffects": [
+				{
+					"name": "Sleight of Hand Check Bonus",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.slt.bonuses.check",
+							"mode": "ADD",
+							"value": "+@scale.savant.intellect-die"
+						}
+					]
+				}
+			],
+			"foundryImg": "icons/weapons/guns/gun-pistol-flintlock.webp"
+		},
+		{
+			"name": "Instruction",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"entries": [
+				"You have dedicated a significant amount of your studies to the art of education. Over the course of 1 hour, you can teach one creature that can hear and understand you one skill, tool, or weapon proficiency, or one language you know.",
+				"The creature gains proficiency in that tool, skill, or weapon, or learns to speak that language until it completes a long rest."
+			],
+			"foundrySystem": {
+				"activation": {
+					"cost": 1,
+					"type": "hour"
+				}
+			},
+			"foundryImg": "icons/tools/scribal/ink-quill-pink.webp"
+		},
+		{
+			"name": "Perfect Recall",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"entries": [
+				"You can recall picture-perfect details from things that you commit to memory. If you spend at least 1 minute observing an object or creature, you can perfectly recall any observable information about that creature or object point in the future.",
+				"For example, you could perfectly memorize a map, a page from a tome, a work of art, or the appearance of a creature."
+			],
+			"foundrySystem": {
+				"activation": {
+					"cost": 1,
+					"type": "minute"
+				}
+			},
+			"foundryImg": "icons/tools/scribal/lens-blue.webp"
+		},
+		{
+			"name": "Quick Study",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"entries": [
+				"You learn exceptionally fast. You gain proficiency in one skill or tool, or learn to speak and read a language of your choice.",
+				"Over the course of 1 hour, which can be during a short or long rest, you can replace this proficiency or language with another proficiency or language of your choice, so long as you have an example to learn from, such as a teacher or manual."
+			],
+			"skillToolLanguageProficiencies": [
+				{
+					"anySkill": 1
+				},
+				{
+					"anyTool": 1
+				},
+				{
+					"anyLanguage": 1
+				}
+			],
+			"foundryImg": "icons/tools/hand/ruler-steel-grey.webp"
+		},
+		{
+			"name": "Polymath",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"entries": [
+				"You have a knack for picking up new skills, though you may not be a master of them all. You gain proficiency in one skill from the Savant skill list, one tool of your choice, and you learn to speak, read, and write one language of your choice."
+			],
+			"skillToolLanguageProficiencies": [
+				{
+					"choose": [
+						{
+							"from": [
+								"arcana",
+								"history",
+								"insight",
+								"investigation",
+								"medicine",
+								"nature",
+								"persuasion",
+								"religion"
+							]
+						}
+					],
+					"anyTool": 1,
+					"anyLanguage": 1
+				}
+			],
+			"foundryImg": "icons/tools/hand/hammer-and-nail.webp"
+		},
+		{
+			"name": "Riddles",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You have spent a great deal of time learning to speak in both riddles and rhymes. You gain proficiency in {@skill Deception}. When you make a Charisma ({@skill Deception}) check, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"Also, when you speak, you can choose to speak in Riddles. When you do so, you appear to be speaking normally, but you include hidden messages laced in your rhyming words.",
+				"Over the course of 1 hour, which can be during a short or long rest, you can teach a creature with an Intelligence of 11 or higher to understand your Riddles and respond in kind."
+			],
+			"skillProficiencies": [
+				{
+					"deception": true
+				}
+			],
+			"foundrySystem": {
+				"activation": {
+					"cost": 1,
+					"type": "hour",
+					"condition": "Can be during a short or long rest"
+				}
+			},
+			"foundryEffects": [
+				{
+					"name": "Deception Check Bonus",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.dec.bonuses.check",
+							"mode": "ADD",
+							"value": "+@scale.savant.intellect-die"
+						}
+					]
+				}
+			],
+			"foundryImg": "icons/magic/symbols/question-stone-yellow.webp"
+		},
+		{
+			"name": "Secrets & Whispers",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You have a knack for knowing where to eavesdrop and the right person to bribe. You gain proficiency in {@skill Stealth}. When you make a Dexterity ({@skill Stealth}) check, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"Whenever you spend a long rest in a settlement, you can spend 1-hour gathering local rumors to learn of a significant, even secret, event which occurred in there in the last week."
+			],
+			"skillProficiencies": [
+				{
+					"stealth": true
+				}
+			],
+			"foundrySystem": {
+				"activation": {
+					"cost": 1,
+					"type": "hour",
+					"condition": "Whenever you spend a long rest in a settlement"
+				}
+			},
+			"foundryEffects": [
+				{
+					"name": "Stealth Check Bonus",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.ste.bonuses.check",
+							"mode": "ADD",
+							"value": "+@scale.savant.intellect-die"
+						}
+					]
+				}
+			],
+			"foundryImg": "icons/environment/settlement/watchtower-moonlit-blue.webp"
+		},
+		{
+			"name": "Physical Fitness",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You know that the key to a healthy mind is a healthy body. You gain proficiency in either {@skill Athletics} or {@skill Acrobatics}. Whenever you make an ability check with that skill, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"Also, you gain a climbing speed and a swimming speed equal to your walking speed, and when you make a running jump, you add your Intelligence modifier to the distance."
+			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics"
+						]
+					}
+				}
+			],
+			"foundryEffects": [
+				{
+					"name": "Climbing & Swimming Speed",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.movement.climb",
+							"mode": "UPGRADE",
+							"value": "@attributes.movement.walk"
+						},
+						{
+							"key": "system.attributes.movement.swim",
+							"mode": "UPGRADE",
+							"value": "@attributes.movement.walk"
+						}
+					]
+				}
+			],
+			"foundryImg": "icons/magic/control/buff-strength-muscle-damage.webp"
+		},
+		{
+			"name": "Traditions",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You are a student of local cultures, politics, and traditions. You gain proficiency in {@skill History}, and whenever you make an Intelligence ({@skill History}) check, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"Whenever you make a Charisma check to interact with a local ruler or otherwise important figure and you incorporate a local custom or tradition, you have advantage on your roll."
+			],
+			"skillProficiencies": [
+				{
+					"history": true
+				}
+			],
+			"foundryEffects": [
+				{
+					"name": "History Check Bonus",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.his.bonuses.check",
+							"mode": "ADD",
+							"value": "+@scale.savant.intellect-die"
+						}
+					]
+				}
+			],
+			"foundryImg": "icons/sundries/documents/document-letter-blue.webp"
+		},
+		{
+			"name": "Equestrianism",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You have learned to tend to horses and other trained mounts. You gain proficiency in {@skill Animal Handling}, and whenever you make a Wisdom ({@skill Animal Handling}) check, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"When you are riding a trained mount, your mount shares your initiative in combat and acts during your turn. Whenever it makes an ability check, damage roll, or saving throw, it can add one roll of your Intellect Die to its roll, and you can use a bonus action on each of your turns to command your mount to attack, or to use another action from its stat block.",
+				"Finally, if you spend 8 hours training a friendly quadruped creature and spend 50 gold on necessary training materials and food, it is considered to be a trained mount for you."
+			],
+			"skillProficiencies": [
+				{
+					"animal handling": true
+				}
+			],
+			"foundrySystem": {
+				"activation": {
+					"cost": null,
+					"type": null
+				}
+			}
+		},
+		{
+			"name": "First Aid",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You have learned basic medicinal techniques to aid your allies. You gain proficiency in {@skill Medicine}, and whenever you make a Wisdom ({@skill Medicine}) check, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"During a long rest, you can spend 1-hour using a {@item Healer's Kit|phb} to produce a number of {@item potion of healing||potions of healing} equal to your Intelligence modifier (minimum of 1). Any unused potions of healing expire 24 hours after you created them."
+			],
+			"skillProficiencies": [
+				{
+					"medicine": true
+				}
+			],
+			"foundrySystem": {
+				"activation": {
+					"cost": 1,
+					"type": "hour",
+					"condition": "During a long rest"
+				}
+			}
+		},
+		{
+			"name": "Theology",
+			"source": "BREW",
+      "category": "SP",
+			"featureType": [
+				"SP"
+			],
+			"prerequisite": [
+				{
+          "level": {
+            "level": 4,
+            "class": {
+              "name": "Scholar",
+              "source": "BREW",
+              "visible": true
+            }
+          }
+        }
+			],
+			"entries": [
+				"You are a dedicated scholar of various holy texts and sacred rituals. You gain proficiency in {@skill Religion}, and whenever you make an Intelligence ({@skill Religion}) check, you gain a bonus to your roll equal to one roll of your Intellect Die.",
+				"You also learn to speak, read, and write {@language Celestial}. Finally, you learn the {@spell ceremony|xge} spell, but you can only cast it as a ritual. For you, the ritual only takes 10 minutes, and you can cast it without the material components once per long rest."
+			],
+			"skillToolLanguageProficiencies": [
+				{
+					"religion": true,
+					"celestial": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									"ceremony|xge"
+								]
+							}
+						}
+					}
+				}
+			]
+		}
 ]

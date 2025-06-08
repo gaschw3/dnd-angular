@@ -36,7 +36,8 @@ export const featureType = {
     "FS": "Fighting Style",
     "MM": "Metamagic",
     "MV": "Battlemaster Maneuver",
-    "EX": "Tactical Exploit"
+    "EX": "Tactical Exploit",
+    "SP": "Scholarly Pursuit"
     //"RN": "Rune Knight Rune",
     //"DM": "Dragonmark"
 }

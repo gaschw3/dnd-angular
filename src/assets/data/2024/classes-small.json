@@ -9421,7 +9421,7 @@
 			"classSource": "BREW",
 			"level": 1,
 			"entries": [
-				"Never satisfied with your current state you are always looking to expand your educational horizons. At 1st level, you master one {@filter Scholarly Pursuit|optionalfeatures|feature type=ll:sp} from the list at the end of this class.",
+				"Never satisfied with your current state you are always looking to expand your educational horizons. At 1st level, you master one {@other-feathers/SP astrology|Scholarly Pursuit} from the list at the end of this class.",
 				"You master one additional Scholarly Pursuit of your choice when you reach 4th, 7th, 13th, and 18th level in this class."
 			],
 			"foundryImg": "icons/sundries/books/book-tooled-gold-brown.webp"
@@ -10470,7 +10470,6 @@
 			"subclassShortName": "Physician",
 			"subclassSource": "BREW",
 			"level": 3,
-			"header": 1,
 			"header": 3,
 			"entries": [
 				"You touch another living creature and it can expend one of its Hit Dice to regain a number of hit points equal to its Hit Die roll + its Constitution modifier + one roll of your Intellect Die.",
