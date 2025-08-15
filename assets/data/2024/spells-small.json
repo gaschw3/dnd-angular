@@ -1,0 +1,2470 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "BREW",
+				"abbreviation": "BREW",
+				"full": "EotCC Spells",
+				"authors": [
+					"Paranoid"
+				],
+				"convertedBy": [
+					"Paranoid"
+				],
+				"version": "1.1.0",
+				"targetSchema": "1.1.0",
+				"url": "",
+				"color": "#61fff4"
+			}
+		],
+		"dateAdded": 1600868694,
+		"dateLastModified": 1739566355
+	},
+	"spell": [
+		{
+			"name": "Blade Ward",
+			"source": "PHB'24",
+			"page": 247,
+			"level": 0,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"Whenever a creature makes an attack roll against you before the spell ends, the attacker subtracts {@dice 1d4} from the attack roll."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Dancing Lights",
+			"source": "PHB'24",
+			"page": 259,
+			"level": 0,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a bit of phosphorus"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You create up to four torch-size lights within range, making them appear as torches, lanterns, or glowing orbs that hover for the duration. Alternatively, you combine the four lights into one glowing Medium form that is vaguely humanlike. Whichever form you choose, each light sheds {@variantrule Dim Light} in a 10-foot radius.",
+				"As a {@variantrule Bonus Action}, you can move the lights up to 60 feet to a space within range. A light must be within 20 feet of another light created by this spell, and a light vanishes if it exceeds the spell's range."
+			],
+			"miscTags": [
+				"LGT",
+				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Druidcraft",
+			"source": "PHB'24",
+			"page": 266,
+			"level": 0,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"Whispering to the spirits of nature, you create one of the following effects within range.",
+				{
+					"type": "entries",
+					"name": "Weather Sensor",
+					"entries": [
+						"You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bloom",
+					"entries": [
+						"You instantly make a flower blossom, a seed pod open, or a leaf bud bloom."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Sensory Effect",
+					"entries": [
+						"You create a harmless sensory effect, such as falling leaves, spectral dancing fairies, a gentle breeze, the sound of an animal, or the faint odor of skunk. The effect must fit in a 5-foot Cube."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fire Play",
+					"entries": [
+						"You light or snuff out a candle, a torch, or a campfire."
+					]
+				}
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Elementalism",
+			"source": "PHB'24",
+			"page": 267,
+			"level": 0,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You exert control over the elements, creating one of the following effects within range.",
+				{
+					"type": "entries",
+					"name": "Beckon Air",
+					"entries": [
+						"You create a breeze strong enough to ripple cloth, stir dust, rustle leaves, and close open doors and shutters, all in a 5-foot Cube. Doors and shutters being held open by someone or something aren't affected."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Beckon Earth",
+					"entries": [
+						"You create a thin shroud of dust or sand that covers surfaces in a 5-foot-square area, or you cause a single word to appear in your handwriting in a patch of dirt or sand."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Beckon Fire",
+					"entries": [
+						"You create a thin cloud of harmless embers and colored, scented smoke in a 5-foot Cube. You choose the color and scent, and the embers can light candles, torches, or lamps in that area. The smoke's scent lingers for 1 minute."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Beckon Water",
+					"entries": [
+						"You create a spray of cool mist that lightly dampens creatures and objects in a 5-foot Cube. Alternatively, you create 1 cup of clean water either in an open container or on a surface, and the water evaporates in 1 minute."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Sculpt Element",
+					"entries": [
+						"You cause dirt, sand, fire, smoke, mist, or water that can fit in a 1-foot Cube to assume a crude shape (such as that of a creature) for 1 hour."
+					]
+				}
+			],
+			"miscTags": [
+				"OBJ"
+			],
+			"areaTags": [
+				"C",
+				"Q"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Guidance",
+			"source": "PHB'24",
+			"page": 282,
+			"level": 0,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You touch a willing creature and choose a skill. Until the spell ends, the creature adds {@dice 1d4} to any ability check using the chosen skill."
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Hobble",
+			"source": "BREW",
+			"level": 0,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a broken's rabbit foot"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You create an ethereal trap in the space of a creature you can see within range. The target must succeed on a Dexterity saving throw or its speed is halved until the end of its next turn."
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Cleric",
+						"source": "PHB"
+					},
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Light",
+			"source": "PHB'24",
+			"page": 292,
+			"level": 0,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"m": "a firefly or phosphorescent moss"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You touch one Large or smaller object that isn't being worn or carried by someone else. Until the spell ends, the object sheds {@variantrule Bright Light} in a 20-foot radius and {@variantrule Dim Light} for an additional 20 feet. The light can be colored as you like.",
+				"Covering the object with something opaque blocks the light. The spell ends if you cast it again."
+			],
+			"miscTags": [
+				"LGT",
+				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Mage Hand",
+			"source": "PHB'24",
+			"page": 293,
+			"level": 0,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.",
+				"When you cast the spell, you can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial.",
+				"As a {@action Magic} action on your later turns, you can control the hand thus again. As part of that action, you can move the hand up to 30 feet.",
+				"The hand can't attack, activate magic items, or carry more than 10 pounds."
+			],
+			"miscTags": [
+				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Mending",
+			"source": "PHB'24",
+			"page": 297,
+			"level": 0,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "two lodestones"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"This spell repairs a single break or tear in an object you touch, such as a broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage.",
+				"This spell can physically repair a magic item, but it can't restore magic to such an object."
+			],
+			"miscTags": [
+				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"source": "PHB'24",
+			"page": 298,
+			"level": 0,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a copper wire"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You point toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.",
+				"You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence; 1 foot of stone, metal, or wood; or a thin sheet of lead blocks the spell."
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Minor Illusion",
+			"source": "PHB'24",
+			"page": 298,
+			"level": 0,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"s": true,
+				"m": "a bit of fleece"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You create a sound or an image of an object within range that lasts for the duration. See the descriptions below for the effects of each. The illusion ends if you cast this spell again.",
+				"If a creature takes a {@action Study} action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence ({@skill Investigation}) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.",
+				{
+					"type": "entries",
+					"name": "Sound",
+					"entries": [
+						"If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Image",
+					"entries": [
+						"If you create an image of an object\u2014such as a chair, muddy footprints, or a small chest\u2014it must be no larger than a 5-foot Cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, since things can pass through it."
+					]
+				}
+			],
+			"abilityCheck": [
+				"intelligence"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Orison of Protection",
+			"source": "BREW",
+			"level": 0,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a set of prayer beads"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"One willing creature in range is blessed by a small prayer. The target gains a number of temporary hit points equal to your spellcasting ability modifier plus your proficiency bonus. The temporary hit points are lost when the spell ends. You can only have one Orison of Protection active at a time."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Cleric",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"THP"
+			]
+		},
+		{
+			"name": "Prestidigitation",
+			"source": "PHB'24",
+			"page": 307,
+			"level": 0,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You create a magical effect within range. Choose the effect from the options below. If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time.",
+				{
+					"type": "entries",
+					"name": "Sensory Effect",
+					"entries": [
+						"You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fire Play",
+					"entries": [
+						"You instantaneously light or snuff out a candle, a torch, or a small campfire."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Clean or Soil",
+					"entries": [
+						"You instantaneously clean or soil an object no larger than 1 cubic foot."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Minor Sensation",
+					"entries": [
+						"You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Magic Mark",
+					"entries": [
+						"You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Minor Creation",
+					"entries": [
+						"You create a nonmagical trinket or an illusory image that can fit in your hand. It lasts until the end of your next turn. A trinket can deal no damage and has no monetary worth."
+					]
+				}
+			],
+			"miscTags": [
+				"OBJ"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Resistance",
+			"source": "PHB'24",
+			"page": 312,
+			"level": 0,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You touch a willing creature and choose a damage type: Acid, Bludgeoning, Cold, Fire, Lightning, Necrotic, Piercing, Poison, Radiant, Slashing, or Thunder. When the creature takes damage of the chosen type before the spell ends, the creature reduces the total damage taken by {@dice 1d4}. A creature can benefit from this spell only once per turn."
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				}
+			]
+		},
+		{
+			"name": "Shillelagh",
+			"source": "PHB'24",
+			"page": 316,
+			"level": 0,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "mistletoe"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"A Club or Quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a {@dice d8}. If the attack deals damage, it can be Force damage or the weapon's normal damage type (your choice).",
+				"The spell ends early if you cast it again or if you let go of the weapon."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Cantrip Upgrade",
+					"entries": [
+						"The damage die changes when you reach levels 5 ({@damage d10}), 11 ({@damage d12}), and 17 ({@damage 2d6})."
+					]
+				}
+			],
+			"scalingLevelDice": {
+				"label": "damage",
+				"scaling": {
+					"1": "1d8",
+					"5": "1d10",
+					"11": "1d12",
+					"17": "2d6"
+				}
+			},
+			"miscTags": [
+				"AAD",
+				"SCL"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Spare the Dying",
+			"source": "PHB'24",
+			"page": 318,
+			"level": 0,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 15
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"Choose a creature within range that has 0 {@variantrule Hit Points} and isn't dead. The creature becomes {@variantrule Stable}."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Cantrip Upgrade",
+					"entries": [
+						"The range doubles when you reach levels 5 (30 feet), 11 (60 feet), and 17 (120 feet)."
+					]
+				}
+			],
+			"miscTags": [
+				"SCL"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Starry Wisp",
+			"source": "PHB'24",
+			"page": 320,
+			"level": 0,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You launch a mote of light at one creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes {@damage 1d8} Radiant damage, and until the end of your next turn, it emits {@variantrule Dim Light} in a 10-foot radius and can't benefit from the {@condition Invisible} condition."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Cantrip Upgrade",
+					"entries": [
+						"The damage increases by {@dice 1d8} when you reach levels 5 ({@damage 2d8}), 11 ({@damage 3d8}), and 17 ({@damage 4d8})."
+					]
+				}
+			],
+			"scalingLevelDice": {
+				"label": "Radiant damage",
+				"scaling": {
+					"1": "1d8",
+					"5": "2d8",
+					"11": "3d8",
+					"17": "4d8"
+				}
+			},
+			"damageInflict": [
+				"radiant"
+			],
+			"spellAttack": [
+				"R"
+			],
+			"miscTags": [
+				"LGT",
+				"OBJ",
+				"SCL"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Thaumaturgy",
+			"source": "PHB'24",
+			"page": 333,
+			"level": 0,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You manifest a minor wonder within range. You create one of the effects below within range. If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time.",
+				{
+					"type": "entries",
+					"name": "Altered Eyes",
+					"entries": [
+						"You alter the appearance of your eyes for 1 minute."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Booming Voice",
+					"entries": [
+						"Your voice booms up to three times as loud as normal for 1 minute. For the duration, you have {@variantrule Advantage} on Charisma ({@skill Intimidation}) checks."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fire Play",
+					"entries": [
+						"You cause flames to flicker, brighten, dim, or change color for 1 minute."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Invisible Hand",
+					"entries": [
+						"You instantaneously cause an unlocked door or window to fly open or slam shut."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Phantom Sound",
+					"entries": [
+						"You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Tremors",
+					"entries": [
+						"You cause harmless tremors in the ground for 1 minute."
+					]
+				}
+			],
+			"miscTags": [
+				"ADV"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "True Strike",
+			"source": "PHB'24",
+			"page": 336,
+			"level": 0,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"s": true,
+				"m": {
+					"text": "a weapon with which you have proficiency and that is worth 1+ CP",
+					"cost": 1
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"Guided by a flash of magical insight, you make one attack with the weapon used in the spell's casting. The attack uses your spellcasting ability for the attack and damage rolls instead of using Strength or Dexterity. If the attack deals damage, it can be Radiant damage or the weapon's normal damage type (your choice)."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Cantrip Upgrade",
+					"entries": [
+						"Whether you deal Radiant damage or the weapon's normal damage type, the attack deals extra Radiant damage when you reach levels 5 ({@damage 1d6}), 11 ({@damage 2d6}), and 17 ({@damage 3d6})."
+					]
+				}
+			],
+			"scalingLevelDice": [
+				{
+					"label": "extra radiant damage",
+					"scaling": {
+						"5": "1d6",
+						"11": "2d6",
+						"17": "3d6"
+					}
+				}
+			],
+			"damageInflict": [
+				"radiant"
+			],
+			"miscTags": [
+				"AAD"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Wristpocket",
+			"source": "BREW",
+			"level": 0,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "permanent",
+					"ends": [
+						"dispel"
+					]
+				}
+			],
+			"entries": [
+				"You flick your wrist, causing one object in your hand to vanish. The object, which only you can be holding and can weigh no more than 5 pounds, is transported to an extradimensional space, where it remains for the duration.",
+				"Until the spell ends, you can use your action to summon the object to your free hand, and you can use your action to return the object to the extradimensional space. An object still in the pocket plane when the spell ends appears in your space, at your feet."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Bless",
+			"source": "PHB'24",
+			"page": 247,
+			"level": 1,
+			"school": "E",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "a Holy Symbol worth 5+ GP",
+					"cost": 500
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You bless up to three creatures within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target adds {@dice 1d4} to the attack roll or save."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"You can target one additional creature for each spell slot level above 1."
+					]
+				}
+			],
+			"areaTags": [
+				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+            "name": "Creature Friend",
+            "source": "BREW",
+            "level": 1,
+            "school": "E",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "feet",
+                    "amount": 30
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true,
+                "m": "a morsel of food"
+            },
+            "duration": [
+                {
+                    "type": "timed",
+                    "duration": {
+                        "type": "hour",
+                        "amount": 8
+                    }
+                }
+            ],
+            "entries": [
+				"Target an insect or fish that you can see within range. The target must succeed on a Wisdom saving throw or have the Charmed condition for the duration. If you or one of your allies deals damage to the target, the spells ends.",
+                "The creature is willing to perform simple tasks on your behalf, including scouting locations, finding things, or delivering objects. If asked to deliver a message, it can understand locations and a general description of a target and communicate a message of up to twenty-five words. A beast delivering a message typically covers 1 mile per hour walking, or 2 miles per hour if it can fly.",
+				"If the creature doesn't reach its destination before the spell ends, the message is lost."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "Using a Higher-Level Spell Slot",
+                    "entries": [
+						"The spell can last longer with a spell slot of level 2 (up to 24 hours). For each spell slot level above 2 the spell can either last an additional 48 hours or target an additional creature."
+                    ]
+                }
+            ],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				}
+			]
+        },
+		{
+			"name": "Cure Wounds",
+			"source": "PHB'24",
+			"page": 259,
+			"level": 1,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"A creature you touch regains a number of {@variantrule Hit Points} equal to {@dice 2d8} plus your spellcasting ability modifier."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"The healing increases by 2d8 for each spell slot level above 1."
+					]
+				}
+			],
+			"miscTags": [
+				"HL"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Detect Poison and Disease",
+			"source": "PHB'24",
+			"page": 262,
+			"level": 1,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "sphere",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a yew leaf"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					},
+					"concentration": true
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"For the duration, you sense the location of poisons, poisonous or venomous creatures, and magical contagions within 30 feet of yourself. You sense the kind of poison, creature, or contagion in each case.",
+				"The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
+			],
+			"fromClassList": [
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Entangle",
+			"source": "PHB'24",
+			"page": 268,
+			"level": 1,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 90
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"Grasping plants sprout from the ground in a 20-foot square within range. For the duration, these plants turn the ground in the area into {@variantrule Difficult Terrain}. They disappear when the spell ends.",
+				"Each creature (other than you) in the area when you cast the spell must succeed on a Strength saving throw or have the {@condition Restrained} condition until the spell ends. A {@condition Restrained} creature can take an action to make a Strength ({@skill Athletics}) check against your spell save DC. On a success, it frees itself from the grasping plants and is no longer {@condition Restrained} by them."
+			],
+			"conditionInflict": [
+				"restrained"
+			],
+			"savingThrow": [
+				"strength"
+			],
+			"abilityCheck": [
+				"strength"
+			],
+			"areaTags": [
+				"Q"
+			],
+			"fromClassList": [
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Expeditious Retreat",
+			"source": "PHB'24",
+			"page": 270,
+			"level": 1,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You take the {@action Dash} and {@action Disengage} action, and until the spell ends, you can take the {@action Dash} action again as a {@variantrule Bonus Action}."
+			],
+			"miscTags": [
+				"UBA"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Feather Fall",
+			"source": "PHB'24",
+			"page": 271,
+			"level": 1,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "reaction",
+					"condition": "which you take when you or a creature you can see within 60 feet of you falls"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"m": "a small feather or piece of down"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If a creature lands before the spell ends, the creature takes no damage from the fall, and the spell ends for that creature."
+			],
+			"areaTags": [
+				"MT"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Find Familiar",
+			"source": "PHB'24",
+			"page": 272,
+			"level": 1,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "hour"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "burning incense worth 10+ GP, which the spell consumes",
+					"cost": 1000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"You gain the service of a familiar, a spirit that takes an animal form you choose: {@creature Mosquito}, {@creature Cricket}, {@creature Firefly}, {@creature Octopus}, {@creature Waterspinner}, {@creature Spider}, or another insect or fish that has a Challenge Rating of 0. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a Celestial, Fey, or Fiend (your choice) instead of a Beast. Your familiar acts independently of you, but obeys your commands.",
+				{
+					"type": "entries",
+					"name": "Telepathic Connection",
+					"entries": [
+						"While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as a {@variantrule Bonus Action}, you can see through the familiar's eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses it has.",
+						"Finally, when you cast a spell with a range of touch, your familiar can deliver the touch. Your familiar must be within 100 feet of you, and it must take a {@variantrule Reaction} to deliver the touch when you cast the spell."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Combat",
+					"entries": [
+						"The familiar is an ally to you and your allies. It rolls its own {@variantrule Initiative} and acts on its own turn. A familiar can't attack, but it can take other actions as normal."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Disappearance of the Familiar",
+					"entries": [
+						"When the familiar drops to 0 {@variantrule Hit Points}, it disappears. It reappears after you cast this spell again. As a {@action Magic} action, you can temporarily dismiss the familiar to a pocket dimension. Alternatively, you can dismiss it forever. As a {@action Magic} action while it is temporarily dismissed, you can cause it to reappear in an unoccupied space within 30 feet of you. Whenever the familiar drops to 0 {@variantrule Hit Points} or disappears into the pocket dimension, it leaves behind in its space anything it was wearing or carrying."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "One Familiar Only",
+					"entries": [
+						"You can't have more than one familiar at a time. If you cast this spell while you have a familiar, you instead cause it to adopt a new eligible form."
+					]
+				}
+			],
+			"miscTags": [
+				"PRM",
+				"SMN"
+			],
+			"fromClassList": [
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Heroism",
+			"source": "PHB'24",
+			"page": 285,
+			"level": 1,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to the {@condition Frightened} condition and gains {@variantrule Temporary Hit Points} equal to your spellcasting ability modifier at the start of each of its turns."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"You can target one additional creature for each spell slot level above 1."
+					]
+				}
+			],
+			"conditionImmune": [
+				"frightened"
+			],
+			"miscTags": [
+				"THP"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Identify",
+			"source": "PHB'24",
+			"page": 287,
+			"level": 1,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "a pearl worth 100+ GP",
+					"cost": 10000
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"You touch an object throughout the spell's casting. If the object is a magic item or some other magical object, you learn its properties and how to use them, whether it requires {@variantrule Attunement}, and how many charges it has, if any. You learn whether any ongoing spells are affecting the item and what they are. If the item was created by a spell, you learn that spell's name.",
+				"If you instead touch a creature throughout the casting, you learn which ongoing spells, if any, are currently affecting it."
+			],
+			"miscTags": [
+				"OBJ"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Jump",
+			"source": "PHB'24",
+			"page": 290,
+			"level": 1,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a grasshopper's hind leg"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You touch a willing creature. Once on each of its turns until the spell ends, that creature can jump up to 30 feet by spending 10 feet of movement."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"You can target one additional creature for each spell slot level above 1."
+					]
+				}
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Longstrider",
+			"source": "PHB'24",
+			"page": 293,
+			"level": 1,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a pinch of dirt"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 8
+					}
+				}
+			],
+			"entries": [
+				"You touch a creature. The target's {@variantrule Speed} increases by 10 feet until the spell ends."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "Using a Higher-Level Spell Slot",
+					"entries": [
+						"You can target one additional creature for each spell slot level above 1."
+					]
+				}
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Personal Blessing",
+			"source": "BREW",
+			"level": 1,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"Until the spell ends, whenever you make an attack roll or saving throw, you add {@dice 1d4} to the attack roll or save and your attacks deal an extra {@damage 1d4} Radiant damage on a hit."
+			],
+			"damageInflict": [
+				"radiant"
+			],
+			"miscTags": [
+				"AAD"
+			],
+			"fromClassList": [
+				{
+					"name": "Paladin",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Purify Food and Drink",
+			"source": "PHB'24",
+			"page": 310,
+			"level": 1,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"You remove poison and rot from nonmagical food and drink in a 5-foot-radius Sphere centered on a point within range."
+			],
+			"areaTags": [
+				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "PHB"
+				},
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Paladin",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Sanctuary",
+			"source": "PHB'24",
+			"page": 313,
+			"level": 1,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a shard of glass from a mirror"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You ward a creature within range. Until the spell ends, any creature who targets the warded creature with an attack roll or a damaging spell must succeed on a Wisdom saving throw or either choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from areas of effect.",
+				"The spell ends if the warded creature makes an attack roll, casts a spell, or deals damage."
+			],
+			"savingThrow": [
+				"wisdom"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"fromClassList": [
+				{
+					"name": "Artificer",
+					"source": "XGE"
+				},
+				{
+					"name": "Cleric",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Secret Missive",
+			"source": "BREW",
+			"page": 288,
+			"level": 1,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"s": true,
+				"m": {
+					"text": "ink worth 10+ GP, which the spell consumes",
+					"cost": 1000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "day",
+						"amount": 10
+					}
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"You write on parchment, paper, or another suitable material and imbue it with an illusion that lasts for the duration. When you write the message, choose a password or passphrase or designate any number of creatures. To creatures that you designated or who speak the passphrase aloud, the writing appears normal, seems to be written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing appears as if it were written in an unknown or magical script that is unintelligible.",
+				"Alternatively, the illusion can alter the meaning, handwriting, and language of the text, though the language must be one you know.",
+				"If the spell is dispelled, the original script and the illusion both disappear.",
+				"A creature that has {@sense Truesight} can read the hidden message.",
+				"Using ink worth more the 10 GP to cast the spell increases the duration of the spell by 1 day for each 1 GP spent. If 100 GP worth of magical ink is used, the spell lasts until dispelled."
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Warlock",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+			"name": "Sleep",
+			"source": "PHB'24",
+			"page": 317,
+			"level": 1,
+			"school": "E",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a pinch of sand or rose petals"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"Each creature of your choice in a 5-foot-radius Sphere centered on a point within range must succeed on a Wisdom saving throw or have the {@condition Incapacitated} condition until the end of its next turn, at which point it must repeat the save. If the target fails the second save, the target has the {@condition Unconscious} condition for the duration. The spell ends on a target if it takes damage or someone within 5 feet of it takes an action to shake it out of the spell's effect.",
+				"Creatures that don't sleep, such as elves, or that have {@variantrule Immunity} to the {@condition Exhaustion} condition automatically succeed on saves against this spell."
+			],
+			"conditionInflict": [
+				"incapacitated",
+				"unconscious"
+			],
+			"savingThrow": [
+				"wisdom"
+			],
+			"areaTags": [
+				"S"
+			],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Sorcerer",
+					"source": "PHB"
+				},
+				{
+					"name": "Wizard",
+					"source": "PHB"
+				}
+			]
+		},
+		{
+            "name": "Speak with Nature",
+            "source": "BREW",
+            "level": 1,
+            "school": "D",
+            "time": [
+                {
+                    "number": 1,
+                    "unit": "action"
+                }
+            ],
+            "range": {
+                "type": "point",
+                "distance": {
+                    "type": "self"
+                }
+            },
+            "components": {
+                "v": true,
+                "s": true
+            },
+            "duration": [
+                {
+                    "type": "timed",
+                    "duration": {
+                        "type": "hour",
+                        "amount": 1
+                    }
+                }
+            ],
+            "meta": {
+                "ritual": true
+            },
+            "entries": [
+				"For the duration, you can comprehend and verbally communicate with insects and fish, and you can use any of the {@action Influence} action's skill options with them.",
+				"Most creatures have little to say about topics that don't pertain to survival or companionship, but at minimum, a creature can give you information about nearby locations and monsters, including whatever it has perceived within the past day."
+            ],
+            "entriesHigherLevel": [
+                {
+                    "type": "entries",
+                    "name": "Using a Higher-Level Spell Slot",
+                    "entries": [
+                        "When you use a spell slot of level 2 or higher, you can also imbue plants in a 30-foot Emanation with limited sentience, allowing you to communicate with them like creatures.",
+						"When you use a spell slot of level 3 or higher, you can grant plants of size medium or larger with limited animation. The spell doesn't enable plants to uproot themselves and move about, but they can move their branches, tendrils, and stalks for you and to turn ordinary terrain into Difficult Terrain (or the opposite)."
+                    ]
+                }
+            ],
+            "affectsCreatureType": [
+                "beast"
+            ],
+			"fromClassList": [
+				{
+					"name": "Bard",
+					"source": "PHB"
+				},
+				{
+					"name": "Druid",
+					"source": "PHB"
+				},
+				{
+					"name": "Ranger",
+					"source": "PHB"
+				}
+			]
+        }
+	]
+}
