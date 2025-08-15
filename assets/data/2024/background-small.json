@@ -48,7 +48,7 @@
     "skill": "Investigation, History",
     "tool": "{@item Calligrapher's Supplies}",
     "feat": "{@feat Magic Initiate}",
-    "info": "You spent your formative years in the Knowledge Ossuary, the subterranean archive of Bloomburrow's history kept by the Squirrellfolk. The Long River brings flotsam of artifacts and forgotten lore to the Ossuary, and you've spent many a restless night studying trinkets and scrolls. Your mind was sharpened in the archive, and you're ready to put your knowledge to use.",
+    "info": "You spent your formative years in the Knowledge Ossuary, the subterranean archive of the Vale's history kept by the Squirrellfolk. The Long River brings flotsam of artifacts and forgotten lore to the Ossuary, and you've spent many a restless night studying trinkets and scrolls. Your mind was sharpened in the archive, and you're ready to put your knowledge to use.",
     "entries": [
       {
         "type": "list",
