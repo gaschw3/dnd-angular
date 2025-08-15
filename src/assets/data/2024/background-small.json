@@ -510,7 +510,7 @@
     "skill": "Animal Handling, Persuasion",
     "tool": "{@item Navigator's Tools}",
     "feat": "{@feat Lucky}",
-    "info": "You were apprenticed to a trader, caravan master, or shopkeeper, learning the fundamentals of commerce. You traveled broadly, and you earned a living by buying and selling the raw materials artisans need to practice their craft or finished works from such crafters. You might have transported goods from one place to another (by ship, wagon, or caravan) or bought them from traveling traders and sold them in your own shop.",
+    "info": "You were apprenticed to a trader, caravan master, or shopkeeper, learning the fundamentals of commerce. You traveled broadly, and you earned a living by buying and selling the raw materials artisans need to craft or finished works from such crafters. You might have transported goods from one place to another (by ship, wagon, or caravan) or bought them from traveling traders and sold them in your own shop.",
     "entries": [
       {
         "type": "list",
@@ -552,7 +552,7 @@
     "skill": "History, Persuasion",
     "tool": "Any {@item Gaming set}",
     "feat": "{@feat Skilled}",
-    "info": "There is no single authority in Valley, but you were raised as the heir of a mayor, important councilman, or group leader, surrounded by wealth, power, and privilege. Your family ensured you received a first-class education in History and Diplomacy, and it was always expected that you would one day fulfill a position of leadership..",
+    "info": "There is no single authority in the Vale, but you were raised as the heir of a mayor, important councilman, or group leader - surrounded by wealth, power, and privilege. Your family ensured you received a first-class education in History and Diplomacy, and it was always expected that you would one day fill a position of leadership.",
     "entries": [
       {
         "type": "list",
@@ -594,7 +594,7 @@
     "skill": "Acrobatics, Perception",
     "tool": "{@item Navigator's Tools}",
     "feat": "{@feat Tavern Brawler}",
-    "info": "You lived on the Long River that cuts across the Vale, wind at your back and decks swaying beneath your feet. You were raised alongside Otterfolk sailors, or perhaps brigands, and perched on barstools in more ports of call than you can remember. Along the river you've faced mighty storms, enormous river Beasts, and even pirate.",
+    "info": "You lived on the Long River that cuts across the Vale - wind at your back and decks swaying beneath your feet. You were raised alongside Otterfolk sailors (or brigands), and perched on barstools in more ports of call than you can remember. Along the river you've faced mighty storms, enormous river Beasts, and even pirates.",
     "entries": [
       {
         "type": "list",
@@ -678,7 +678,7 @@
     "skill": "Athletics, Intimidation",
     "tool": "Any {@item Gaming set}",
     "feat": "{@feat Savage Attacker}",
-    "info": "Every settlement in the Vale needs to be ready for Beasts, Vermin, and insects; and many companies of mercenaries and knights form to stand vigilant. You began your martial training with one such group as soon as you reached adulthood and carry precious few memories of life before you took up arms. Battle is in your blood, and you put your training to use on the battlefield, protecting Valley by waging war.",
+    "info": "Every settlement in the Vale needs to be ready for Beasts, Vermin, and insects; and many companies of mercenaries and knights form to stand vigilant. You began your martial training with one such group as soon as you reached adulthood and carry precious few memories of life before you took up arms. Battle is in your blood, and you put your training to use on the battlefield, protecting the Vale by waging war.",
     "entries": [
       {
         "type": "list",

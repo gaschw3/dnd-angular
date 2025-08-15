@@ -22,14 +22,14 @@
     "entries": [
       {
         "type": "entries",
-        "name": "Draconic Ancestry",
+        "name": "Lizard Ancestry",
         "entries": [
           "Your lineage stems from an elemental progenitor. Choose a kind of lizard from the Ancestors table. Your choice affects your {@rule Damage} {@rule Resistance} traits as well as your appearance.",
           {
             "type": "table",
             "caption": "Ancestors",
             "colLabels": [
-              "Dragon",
+              "Lizard",
               "Damage Type"
             ],
             "colStyles": [
@@ -68,7 +68,7 @@
         "type": "entries",
         "name": "Damage Resistance",
         "entries": [
-          "You have {@rule Resistance} to the damage type determined by your Draconic Ancestry trait."
+          "You have {@rule Resistance} to the damage type determined by your Lizard Ancestry trait."
         ]
       },
       {
@@ -400,7 +400,7 @@
       },
       {
         "name": "Alignment",
-        "text": ["Squirrels might not have an innate tendency toward evil, but because of their circumstances, many of them end up there. Evil or not, an independent nature inclines many tieflings toward a chaotic alignment."]
+        "text": ["Squirrels might not have an innate tendency toward evil, but because of their circumstances, many of them end up there. Evil or not, an independent nature inclines many squirrels toward a chaotic alignment."]
       },
       {
         "name": "Size",
