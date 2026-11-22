@@ -584,7 +584,7 @@
         "type": "entries",
         "name": "Versatile",
         "entries": [
-          "You gain an {@feat feat?feat-category-filter=O|Origin feat} of your choice."
+          "You gain an {@feats feats?feat-category-filter=O|Origin feat} of your choice."
         ]
       }
     ]

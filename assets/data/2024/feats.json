@@ -23,9 +23,9 @@
 			{
 				"type": "list",
 				"items": [
-					"{@b Tool Proficiency}. You gain proficiency with three different Artisan's Tools of your choice from the Fast Crafting table.",
+					"{@b Tool Proficiency}. You gain proficiency with three different Artisan's Tools of your choice.",
 					"{@b Discount}. Whenever you buy a nonmagical item, you receive a 20 percent discount on it.",
-					"{@b Fast Crafting}. When you finish a Long Rest, you can craft one piece of gear from the Fast Crafting table, provided you have the Artisan's Tools associated with that item and have proficiency with those tools. The item lasts until you finish another Long Rest, at which point the item falls apart."
+					"{@b Fast Crafting}. As part of a Long Rest, you can craft one nonmagical item worth an amount of gold equal to your proficiency bonus. This crafting otherwise follows the normal crafting rules."
 				]
 			}
 		]
@@ -98,7 +98,7 @@
 		"category": "O",
 		"source": "PHB'24",
 		"entries": [
-			"You've trained to deal particularly damaging strikes. Whenever you roll your weapon's damage dice, you can reroll the die if it rolls less than 4, and you must use the new roll."
+			"You've trained to deal particularly damaging strikes. Whenever you roll your weapon's damage dice, you can roll those dice twice and use either roll against the target."
 		]
 	},
 	{
@@ -111,7 +111,7 @@
 				"type": "list",
 				"items": [
 					"{@b Enhanced Unarmed Strike}. When you hit with your Unarmed Strike and deal damage, you can deal Bludgeoning damage equal to 1d4 plus your Strength modifier instead of the normal damage of an Unarmed Strike.",
-					"{@b Savage Punches}. Whenever you roll a damage die for your Unarmed Strike, you can reroll the die if it rolls a less than 4, and you must use the new roll.",
+					"{@b Savage Punches}. Whenever you roll a damage die for your Unarmed Strike, you can reroll the die if it rolls a less than half its maximum, and you must use the new roll.",
 					"{@b Improvised Weaponry}. You have proficiency with improvised weapons.",
 					"{@b Push}. When you hit a creature with an Unarmed Strike as part of the Attack action on your turn, you can deal damage to the target and also push it 5 feet away from you. You can use this benefit only once per turn."
 				]
@@ -291,7 +291,7 @@
 					"{@b Ability Score Increase}. Increase your Constitution or Wisdom score by 1, to a maximum of 20.",
 					"{@b Cook's Utensils}. You gain proficiency with {@item cook's utensils} if you don't already have it.",
 					"{@b Replenishing Meal}. As part of a Short Rest, you can cook special food, provided you have ingredients and {@item cook's utensils} on hand. You can prepare enough of this food for a number of creatures equal to 4 plus your proficiency bonus. At the end of the Short Rest, any creature who eats the food and spends one or more Hit Dice to regain hit points regains an extra {@dice 1d8} hit points.",
-					"{@b Bolstering Treats}. With 1 hour of work or when you finish a Long Rest, you can cook a number of treats equal to your proficiency bonus. These special treats last 8 hours after being made. A creature can use a bonus action to eat one of those treats to gain temporary hit points equal to your proficiency bonus."
+					"{@b Bolstering Treats}. With 1 hour of work or when you finish a Long Rest, you can cook a number of treats equal to your proficiency bonus. These special treats last 8 hours after being made. A creature can use a bonus action to eat one of those treats to gain a number of temporary hit points equal to your level plus your proficiency bonus."
 				]
 			}
 		]
