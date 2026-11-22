@@ -2,7 +2,7 @@
 @use './scss-theme/themes';
 @use './scss-theme/colors';
 
-// Responsive multi-column cards (Bootstrap 5 removed .card-columns)
+// Responsive multi-column cards
 .card-columns {
   column-count: 1;
   column-gap: 1.25rem;

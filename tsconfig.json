@@ -18,6 +18,10 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "types": [
+      "jasmine",
+      "node"
+    ],
     "lib": [
       "es2022",
       "dom"

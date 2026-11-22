@@ -3,12 +3,19 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "strictPropertyInitialization": false,
+    "paths": {
+      "src/*": ["./*"]
+    },
     "types": []
   },
   "files": [
     "main.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "**/*.d.ts",
+    "app/**/*.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
   ]
 }
