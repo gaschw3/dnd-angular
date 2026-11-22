@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Ancestry } from 'src/app/models/ancestry';
 
 @Component({
+  standalone: false,
   selector: 'app-ancestry',
   templateUrl: './ancestry.component.html',
   styleUrls: ['./ancestry.component.scss']

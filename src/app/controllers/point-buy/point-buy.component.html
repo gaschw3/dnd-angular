@@ -35,29 +35,37 @@
             <div class="form-group">
               <label for="ancestrySelect">Ancestry</label>
               <select class="form-control" id="ancestrySelect" [(ngModel)]="selectedAncestry" (ngModelChange)="setCurrAncestry($event)">
-                <option *ngFor="let ancestry of ancestries" [ngValue]="ancestry">
-                  {{ancestry.name}} ({{ancestry.ability}})
-                </option>
+                @for (ancestry of ancestries; track ancestry) {
+                  <option [ngValue]="ancestry">
+                    {{ancestry.name}} ({{ancestry.ability}})
+                  </option>
+                }
               </select>
             </div>
           </div>
           <div class="col-md-2 col-sm-1"><!-- empty spacing column --></div>
         </div>
-        <div *ngIf="this.selectedAncestry" class="container pb-2">
-          <div class="row justify-content-center">
-              <div *ngFor="let stat of stats" class="col-md-1 col form-check form-check-inline">
-              <input class="form-check-input" [disabled]="this.anChoose > 3 && !stat.topChosen" type="checkbox" id="{{stat.name}}TopChoose" value="{{stat.name}}" [(ngModel)]="stat.topChosen" (change)="this.chooseStats($event)">
-              <label class="form-check-label" for="{{stat.name}}TopChoose">{{stat.name | uppercase}}</label>
+        @if (this.selectedAncestry) {
+          <div class="container pb-2">
+            <div class="row justify-content-center">
+              @for (stat of stats; track stat) {
+                <div class="col-md-1 col form-check form-check-inline">
+                  <input class="form-check-input" [disabled]="this.anChoose > 3 && !stat.topChosen" type="checkbox" id="{{stat.name}}TopChoose" value="{{stat.name}}" [(ngModel)]="stat.topChosen" (change)="this.chooseStats($event)">
+                  <label class="form-check-label" for="{{stat.name}}TopChoose">{{stat.name | uppercase}}</label>
+                </div>
+              }
+            </div>
+            <div class="row justify-content-center">
+              @for (stat of stats; track stat) {
+                <div class="col-md-1 col form-check form-check-inline">
+                  <input class="form-check-input" [disabled]="this.anChoose > 3 && !stat.botChosen" type="checkbox"
+                  id="{{stat.name}}BotChoose" value="{{stat.name}}" [(ngModel)]="stat.botChosen" (change)="this.chooseStats($event)">
+                  <label class="form-check-label" for="{{stat.name}}BotChoose">{{stat.name | uppercase}}</label>
+                </div>
+              }
             </div>
           </div>
-          <div class="row justify-content-center">
-              <div *ngFor="let stat of stats" class="col-md-1 col form-check form-check-inline">
-              <input class="form-check-input" [disabled]="this.anChoose > 3 && !stat.botChosen" type="checkbox"
-                id="{{stat.name}}BotChoose" value="{{stat.name}}" [(ngModel)]="stat.botChosen" (change)="this.chooseStats($event)">
-              <label class="form-check-label" for="{{stat.name}}BotChoose">{{stat.name | uppercase}}</label>
-            </div>
-          </div>
-        </div>
+        }
         <!-- END -->
 
         <div class="layout row">
@@ -74,22 +82,24 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let stat of stats;" id="dtRow-{{stat.name}}">
-                  <th class="text-center">{{stat.name | uppercase}}</th>
-                  <td class="text-center">
-                    <div class="number-input input-group input-group--dirty input-group--text-field primary--text">
-                      <input [(ngModel)]="stat.value" max="15" min="8" value="8" tabindex="0" type="number" id="{{stat.name}}" (change)=calculatePoints()>
-                    </div>
-                  </td>
-                  <td class="text-center" [ngClass]="{'text-success': getAnStat(stat.name) > 0}">{{getAnStat(stat.name)}}</td>
-                  <td class="text-center">{{stat.value+getAnStat(stat.name)}}</td>
-                  <td class="text-center" [ngClass]="{'text-danger': getModNum(stat.value, getAnStat(stat.name)) < 0, 'text-success': getModNum(stat.value, getAnStat(stat.name)) > 0}">
-                    {{getMod(stat.value, getAnStat(stat.name))}}
-                  </td>
-                  <td class="text-center">
-                    {{pointCost(stat.value)}}
-                  </td>
-                </tr>
+                @for (stat of stats; track stat) {
+                  <tr id="dtRow-{{stat.name}}">
+                    <th class="text-center">{{stat.name | uppercase}}</th>
+                    <td class="text-center">
+                      <div class="number-input input-group input-group--dirty input-group--text-field primary--text">
+                        <input [(ngModel)]="stat.value" max="15" min="8" value="8" tabindex="0" type="number" id="{{stat.name}}" (change)=calculatePoints()>
+                      </div>
+                    </td>
+                    <td class="text-center" [ngClass]="{'text-success': getAnStat(stat.name) > 0}">{{getAnStat(stat.name)}}</td>
+                    <td class="text-center">{{stat.value+getAnStat(stat.name)}}</td>
+                    <td class="text-center" [ngClass]="{'text-danger': getModNum(stat.value, getAnStat(stat.name)) < 0, 'text-success': getModNum(stat.value, getAnStat(stat.name)) > 0}">
+                      {{getMod(stat.value, getAnStat(stat.name))}}
+                    </td>
+                    <td class="text-center">
+                      {{pointCost(stat.value)}}
+                    </td>
+                  </tr>
+                }
               </tbody>
             </table>
           </div>
@@ -97,5 +107,7 @@
       </div>
     </div>
   </div>
-  <app-ancestry *ngIf="selectedAncestry" [ancestry]="selectedAncestry"></app-ancestry>
+  @if (selectedAncestry) {
+    <app-ancestry [ancestry]="selectedAncestry"></app-ancestry>
+  }
 </div>

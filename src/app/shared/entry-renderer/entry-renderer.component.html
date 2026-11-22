@@ -1,60 +1,98 @@
-<ng-container *ngFor="let entry of list" [ngSwitch]="getEntryType(entry)">
-    <div *ngSwitchCase="'inset'">
+@for (entry of list; track entry) {
+  @switch (getEntryType(entry)) {
+    @case ('inset') {
+      <div>
         <div class="alert alert-dark" role="alert">
-            <strong>{{entry.name}} - </strong><entry-renderer [list]=entry.entries [parent]="''"></entry-renderer>
+          <strong>{{entry.name}} - </strong><entry-renderer [list]=entry.entries [parent]="''"></entry-renderer>
         </div>
-    </div>
-    <div *ngSwitchCase="'list'">
+      </div>
+    }
+    @case ('list') {
+      <div>
         <ul>
-            <entry-renderer [list]=entry.items [parent]="'list'"></entry-renderer>
+          <entry-renderer [list]=entry.items [parent]="'list'"></entry-renderer>
         </ul>
-    </div>
-    <div *ngSwitchCase="'table'">
+      </div>
+    }
+    @case ('table') {
+      <div>
         <h4>{{entry.caption}}</h4>
         <table class="table table-bordered table-striped table-sm">
-            <thead>
-                <tr>
-                    <ng-container *ngFor="let row of entry.colLabels; index as i;">
-                        <th class={{entry.colStyles[i]}}>{{row}}</th>
-                    </ng-container>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let row of entry.rows">
-                    <td *ngFor="let cell of row; index as i" class={{entry.colStyles[i]}} [innerHtml]="cell | linkmaker | sanitizeHtml"></td>
-                </tr>
-            </tbody>
+          <thead>
+            <tr>
+              @for (row of entry.colLabels; track row; let i = $index) {
+                <th class={{entry.colStyles[i]}}>{{row}}</th>
+              }
+            </tr>
+          </thead>
+          <tbody>
+            @for (row of entry.rows; track row) {
+              <tr>
+                @for (cell of row; track cell; let i = $index) {
+                  <td class={{entry.colStyles[i]}} [innerHtml]="cell | linkmaker | sanitizeHtml"></td>
+                }
+              </tr>
+            }
+          </tbody>
         </table>
-    </div>
-    <div class="row" *ngSwitchCase="'column'">
+      </div>
+    }
+    @case ('column') {
+      <div class="row">
         <div class="col-sm-6">
-            <entry-renderer [list]=entry.column [parent]="''"></entry-renderer>
+          <entry-renderer [list]=entry.column [parent]="''"></entry-renderer>
         </div>
         <div class="col-sm-6">
-            <entry-renderer [list]=entry.column2 [parent]="''"></entry-renderer>
+          <entry-renderer [list]=entry.column2 [parent]="''"></entry-renderer>
         </div>
-    </div>
-    <div *ngSwitchCase="'entries'">
-        <p *ngIf="parent==''" class="pb-0 mb-2 entry-title">
-            <strong *ngIf="entry.name">{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
-        </p>
-        <p *ngIf="parent=='entries'" class="pb-0 mb-2 entry-title">
-            <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
-        </p>
-        <li *ngIf="parent=='list'">
-            <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
-        </li>
-    </div>
-    <div *ngSwitchCase="'item'">
-        <p *ngIf="parent==''" [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></p>
-        <li *ngIf="parent=='list'" [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></li>
-    </div>
-    <div *ngSwitchCase="'undef'">
-        <p [innerHtml]="entry.type"></p>
-    </div>
-    <ng-container *ngSwitchDefault>
-        <p *ngIf="parent==''" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
-        <p class="pb-0 mb-1" *ngIf="parent=='entries'" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
-        <li *ngIf="parent=='list'" [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
-    </ng-container>
-</ng-container>
+      </div>
+    }
+    @case ('entries') {
+      <div>
+        @if (parent=='') {
+          <p class="pb-0 mb-2 entry-title">
+            @if (entry.name) {
+              <strong>{{entry.name}}. </strong>
+              }<entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+            </p>
+          }
+          @if (parent=='entries') {
+            <p class="pb-0 mb-2 entry-title">
+              <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+            </p>
+          }
+          @if (parent=='list') {
+            <li>
+              <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+            </li>
+          }
+        </div>
+      }
+      @case ('item') {
+        <div>
+          @if (parent=='') {
+            <p [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></p>
+          }
+          @if (parent=='list') {
+            <li [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></li>
+          }
+        </div>
+      }
+      @case ('undef') {
+        <div>
+          <p [innerHtml]="entry.type"></p>
+        </div>
+      }
+      @default {
+        @if (parent=='') {
+          <p [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
+        }
+        @if (parent=='entries') {
+          <p class="pb-0 mb-1" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
+        }
+        @if (parent=='list') {
+          <li [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
+        }
+      }
+    }
+  }

@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { Background } from 'src/app/models/background';
 
 @Component({
+  standalone: false,
   selector: 'app-background',
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.scss']

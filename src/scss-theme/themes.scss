@@ -1,6 +1,6 @@
 $themes: (
   royal: (
-    bgImage: url(royal.png),
+    bgImage: url(../royal.png),
     backgroundColor: #171612,
     headerFont: "UnifrakturCook",
     headerFallbackFont: serif,
@@ -47,7 +47,7 @@ $themes: (
     tableHover: rgba(0, 0, 0, 0.075)
   ),
   greek: (
-    bgImage: url(meander.svg),
+    bgImage: url(../meander.svg),
     backgroundColor: #FCDEC2,
     headerFont: 'Mate SC',
     headerFallbackFont: serif,
@@ -93,7 +93,7 @@ $themes: (
     tableHover: rgba(255,255,255,.075)
   ),
   forest: (
-    bgImage: url(flower.png),
+    bgImage: url(../flower.png),
     backgroundColor: #0e120e,
     headerFont: "Segoe UI",
     headerFallbackFont: sans-serif,
@@ -138,7 +138,7 @@ $themes: (
     paginateSelected: rgba(184, 255, 216, 0.514),
     tableHover: rgba(255, 255, 255, .075)),
   rainbow: (
-    wholeBgImage: url(shizomi.png),
+    wholeBgImage: url(../shizomi.png),
     backgroundColor: #272b30,
     headerFont: Monoton,
     headerFallbackFont: sans-serif,
@@ -174,7 +174,7 @@ $themes: (
   ),
   end: (
     name: 'Phyrexian',
-    bgImage: url(phyrexian-border.png),
+    bgImage: url(../phyrexian-border.png),
     backgroundColor: #302727,
     headerFont: "Iceberg",
     headerFallbackFont: sans-serif,

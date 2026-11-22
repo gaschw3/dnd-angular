@@ -5,6 +5,7 @@ import { Monster } from 'src/app/models/monster';
 
 
 @Component({
+  standalone: false,
   selector: 'app-monster',
   templateUrl: './monster.component.html',
   styleUrls: ['./monster.component.scss']

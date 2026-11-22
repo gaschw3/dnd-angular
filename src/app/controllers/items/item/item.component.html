@@ -1,4 +1,4 @@
-<ng-container *ngIf="item">
+@if (item) {
   <div class="pt-2 pb-4">
     <div class="card">
       <div class="card-body">
@@ -19,31 +19,33 @@
           <div class="row border-bottom-primary">
             <div class="col">
               <p class="pb-0 mb-2">
-                <ng-container *ngIf="item.value">
+                @if (item.value) {
                   <span [class]="'text--'+((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')">
                     {{((item.value/100 >= 1) ? item.value/100 : (item.value/10 >= 1) ? item.value/10 : item.value) | number:'1.0':'en-US'}}
                     {{((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')}}
                   </span>
-                  <ng-container *ngIf="item.value && item.weight">,</ng-container>
-                </ng-container>
-                <ng-container *ngIf="item.weight">
+                  @if (item.value && item.weight) {
+                    ,
+                  }
+                }
+                @if (item.weight) {
                   {{item.weight + ' lbs.'}}
-                </ng-container>
+                }
+              </div>
+              <div class="col">
+                <p class="pb-0 mb-2 pull-right">
+                  @if (item.dmg1) {
+                    {{getItemDamage(item)}}
+                  }
+                </div>
+              </div>
             </div>
-            <div class="col">
-              <p class="pb-0 mb-2 pull-right">
-                <ng-container *ngIf="item.dmg1">
-                  {{getItemDamage(item)}}
-                </ng-container>
+            <div class="mt-2 feature-text row">
+              <div class="col">
+                <entry-renderer [list]=item.entries [parent]="''"></entry-renderer>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="mt-2 feature-text row">
-          <div class="col">
-            <entry-renderer [list]=item.entries [parent]="''"></entry-renderer>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</ng-container>
+    }

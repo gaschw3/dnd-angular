@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Location, TitleCasePipe } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
+  standalone: false,
   selector: 'app-spells',
   templateUrl: './spells.component.html',
   styleUrls: ['./spells.component.scss']
@@ -108,12 +109,14 @@ export class SpellsComponent implements OnInit, OnDestroy {
   constructor(
     private dataService: DndDataService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
     this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(params => {
       this.initialFilters = { ...params };
+      this.cdr.markForCheck();
     });
 
     this.dataService.getSpells().pipe(takeUntil(this.destroy$)).subscribe(spells => {
@@ -123,7 +126,9 @@ export class SpellsComponent implements OnInit, OnDestroy {
         if (spellName) {
           this.currSpell = this.spells.find(f => f.id === spellName);
         }
+        this.cdr.markForCheck();
       });
+      this.cdr.markForCheck();
     });
   }
 

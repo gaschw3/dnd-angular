@@ -4,6 +4,7 @@ import { featureType, OtherFeature, Prerequisite } from 'src/app/models/otherFea
 import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
 
 @Component({
+  standalone: false,
   selector: 'app-feature',
   templateUrl: './feature.component.html',
   styleUrls: ['./feature.component.scss']

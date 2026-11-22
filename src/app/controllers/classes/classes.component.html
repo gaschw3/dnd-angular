@@ -1,19 +1,25 @@
 <h1 class="glitch layers">D&D 5e Classes</h1>
 <div class="row">
-  <div *ngIf="classes.length" class="col-md-2 class-table">
-    <app-reference-table
-      tableId="tbl-classes"
-      [data]="classes"
-      [columns]="columns"
-      [rowKey]="rowKey"
-      [selectedKey]="currClass?.id || null"
-      [paging]="false"
-      itemLabel="classes"
-      (rowClick)="setCurrClass($event)"
-    ></app-reference-table>
-  </div>
+  @if (classes.length) {
+    <div class="col-md-2 class-table">
+      <app-reference-table
+        tableId="tbl-classes"
+        [data]="classes"
+        [columns]="columns"
+        [rowKey]="rowKey"
+        [selectedKey]="currClass?.id || null"
+        [paging]="false"
+        itemLabel="classes"
+        (rowClick)="setCurrClass($event)"
+      ></app-reference-table>
+    </div>
+  }
   <div class="col-md-10">
-    <app-level-table *ngIf="currClass" (talk)="shake($event)" [class]="currClass"></app-level-table>
+    @if (currClass) {
+      <app-level-table (talk)="shake($event)" [dndClass]="currClass"></app-level-table>
+    }
   </div>
 </div>
-<app-class *ngIf="currClass" (talk)="shake($event)" [class]="currClass"></app-class>
+@if (currClass) {
+  <app-class (talk)="shake($event)" [dndClass]="currClass"></app-class>
+}

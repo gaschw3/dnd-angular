@@ -6,13 +6,17 @@ import { ArchetypesComponent } from '../archetypes/archetypes.component';
 import { Subject } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'app-class',
   templateUrl: './class.component.html',
   styleUrls: ['./class.component.scss']
 })
 export class ClassComponent implements OnInit, OnChanges {
 
-  @Input() class: newClass;
+  @Input() dndClass: newClass;
+  get class(): newClass {
+    return this.dndClass;
+  }
   @ViewChild(FeaturesComponent) child: FeaturesComponent;
   @ViewChild(ArchetypesComponent) child2: ArchetypesComponent;
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();

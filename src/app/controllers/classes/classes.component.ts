@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
+  standalone: false,
   selector: 'app-classes',
   templateUrl: './classes.component.html',
   styleUrls: ['./classes.component.scss']
@@ -48,7 +49,8 @@ export class ClassesComponent implements OnInit, OnDestroy {
   constructor(
     private dataService: DndDataService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -59,7 +61,9 @@ export class ClassesComponent implements OnInit, OnDestroy {
         if (className) {
           this.currClass = this.classes.find(f => f.id === className);
         }
+        this.cdr.markForCheck();
       });
+      this.cdr.markForCheck();
     });
   }
 

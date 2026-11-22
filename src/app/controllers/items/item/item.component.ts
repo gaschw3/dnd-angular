@@ -3,6 +3,7 @@ import { Item } from 'src/app/models/item';
 import { typeTable } from '../../../shared/itemTypes';
 
 @Component({
+  standalone: false,
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']

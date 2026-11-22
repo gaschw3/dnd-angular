@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HelperService } from '../../shared/helpers/helper.service';
 
 @Component({
+  standalone: false,
   selector: 'app-particles',
   templateUrl: './particles.component.html',
   styleUrls: ['./particles.component.scss']

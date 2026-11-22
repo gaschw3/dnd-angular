@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'entry-renderer',
   templateUrl: './entry-renderer.component.html',
   styleUrls: ['./entry-renderer.component.scss'],

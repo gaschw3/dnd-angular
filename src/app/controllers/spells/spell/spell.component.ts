@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Spell } from 'src/app/models/spell';
 
 @Component({
+  standalone: false,
   selector: 'app-spell',
   templateUrl: './spell.component.html',
   styleUrls: ['./spell.component.scss']

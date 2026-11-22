@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-archetypes',
   templateUrl: './archetypes.component.html',
   styleUrls: ['./archetypes.component.scss']

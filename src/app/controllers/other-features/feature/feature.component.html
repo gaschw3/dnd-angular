@@ -1,4 +1,4 @@
-<ng-container *ngIf="feature">
+@if (feature) {
   <div class="pb-4">
     <div class="card">
       <div class="card-body">
@@ -17,9 +17,11 @@
             </div>
           </div>
           <div class="row border-bottom-primary">
-            <div *ngIf="feature.prerequisite" class="col">
-              <h5><em>Prerequisites: {{getPrereq(feature.prerequisite)}}</em></h5>
-            </div>
+            @if (feature.prerequisite) {
+              <div class="col">
+                <h5><em>Prerequisites: {{getPrereq(feature.prerequisite)}}</em></h5>
+              </div>
+            }
           </div>
         </div>
         <div class="mt-2 feature-text row">
@@ -30,4 +32,4 @@
       </div>
     </div>
   </div>
-</ng-container>
+}

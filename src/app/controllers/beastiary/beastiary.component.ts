@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -12,6 +12,7 @@ import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
+  standalone: false,
   selector: 'app-beastiary',
   templateUrl: './beastiary.component.html',
   styleUrls: ['./beastiary.component.scss']
@@ -79,7 +80,8 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
     private dataService: DndDataService,
     private monsterHelper: MonsterHelperService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -90,7 +92,9 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
         if (monsterName) {
           this.currMonster = this.monsters.find(f => f.id === monsterName);
         }
+        this.cdr.markForCheck();
       });
+      this.cdr.markForCheck();
     });
   }
 

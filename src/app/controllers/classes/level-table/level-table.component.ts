@@ -3,13 +3,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { newClass } from 'src/app/models';
 
 @Component({
+  standalone: false,
   selector: 'app-level-table',
   templateUrl: './level-table.component.html',
   styleUrls: ['./level-table.component.scss']
 })
 export class LevelTableComponent implements OnInit {
 
-  @Input() class: newClass;
+  @Input() dndClass: newClass;
+  get class(): newClass {
+    return this.dndClass;
+  }
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private viewport: ViewportScroller) {

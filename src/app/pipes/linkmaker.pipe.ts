@@ -2,6 +2,7 @@ import { SplitInterpolation } from '@angular/compiler';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
+  standalone: false,
   name: 'linkmaker'
 })
 export class LinkmakerPipe implements PipeTransform {

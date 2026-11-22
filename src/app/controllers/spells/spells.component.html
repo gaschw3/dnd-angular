@@ -1,20 +1,24 @@
 <h1 text="dnd 5e spells">D&D 5e Spells</h1>
 
 <div class="row">
-  <div *ngIf="spells.length" class="col-md-12 spell-table">
-    <app-reference-table
-      tableId="tbl-spells"
-      [data]="spells"
-      [columns]="columns"
-      [rowKey]="rowKey"
-      [selectedKey]="currSpell?.id || null"
-      [initialFilters]="initialFilters"
-      [pageSize]="10"
-      [pageSizeOptions]="[10, 15, 30, 60, -1]"
-      itemLabel="spells"
-      defaultSortKey="name"
-      (rowClick)="setCurrSpell($event)"
-    ></app-reference-table>
-  </div>
+  @if (spells.length) {
+    <div class="col-md-12 spell-table">
+      <app-reference-table
+        tableId="tbl-spells"
+        [data]="spells"
+        [columns]="columns"
+        [rowKey]="rowKey"
+        [selectedKey]="currSpell?.id || null"
+        [initialFilters]="initialFilters"
+        [pageSize]="10"
+        [pageSizeOptions]="[10, 15, 30, 60, -1]"
+        itemLabel="spells"
+        defaultSortKey="name"
+        (rowClick)="setCurrSpell($event)"
+      ></app-reference-table>
+    </div>
+  }
 </div>
-<app-spell *ngIf="currSpell" [spell]="currSpell"></app-spell>
+@if (currSpell) {
+  <app-spell [spell]="currSpell"></app-spell>
+}

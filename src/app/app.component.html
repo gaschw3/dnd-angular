@@ -1,14 +1,20 @@
-<app-particles *ngIf="particles" [theme]="theme"></app-particles>
+@if (particles) {
+  <app-particles [theme]="theme"></app-particles>
+}
 <div [ngClass]="'theme-'+theme"><div class="theme-container">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <div *ngIf="theme != 'royal'" class="form-group mb-0">
-        <img src="./favicon.ico" width="30" height="30" alt="site favicon">
-      </div>
-      <div *ngIf="theme == 'royal'" class="form-group mb-0">
-        <img src="./royal-seal.png" width="30" height="36" alt="site icon">
-      </div>
+      @if (theme != 'royal') {
+        <div class="form-group mb-0">
+          <img src="./favicon.ico" width="30" height="30" alt="site favicon">
+        </div>
+      }
+      @if (theme == 'royal') {
+        <div class="form-group mb-0">
+          <img src="./royal-seal.png" width="30" height="36" alt="site icon">
+        </div>
+      }
       <a class="d-inline-block align-top navbar-brand" routerLink="/classes" data-phy="Poop De" (click)="closeMenus()">Poop Deck 5e</a>
       <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isNavbarCollapsed" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -72,12 +78,14 @@
                     <option value="forest">Hidden Vale</option>
                   </select>
                 </div>
-                <div *ngIf="theme != 'dark' && theme != 'royal' && theme != 'forest'" class="form-group">
-                  <div class="form-check form-switch">
-                    <input type="checkbox" class="form-check-input" [(ngModel)]="particles" (change)="changeParticles()" id="particles" name="particles">
-                    <label class="form-check-label" for="particles">Use Occultum<sup><a class="text--op" routerLink="/items/occultum-op" (click)="closeMenus()">?</a></sup></label>
+                @if (theme != 'dark' && theme != 'royal' && theme != 'forest') {
+                  <div class="form-group">
+                    <div class="form-check form-switch">
+                      <input type="checkbox" class="form-check-input" [(ngModel)]="particles" (change)="changeParticles()" id="particles" name="particles">
+                      <label class="form-check-label" for="particles">Use Occultum<sup><a class="text--op" routerLink="/items/occultum-op" (click)="closeMenus()">?</a></sup></label>
+                    </div>
                   </div>
-                </div>
+                }
               </form>
             </div>
           </li>
@@ -88,5 +96,5 @@
   <main id="main-content" class="container-fluid" tabindex="-1">
     <router-outlet></router-outlet>
   </main>
-  <ngx-scrolltop [size]="70" symbolColor="#fff"></ngx-scrolltop>
+  <app-scroll-top></app-scroll-top>
 </div></div>

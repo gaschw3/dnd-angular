@@ -6,19 +6,23 @@
   <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected == 'treasure'}" (click)="setItems('treasure')">Treasure</button>
 </div>
 <div class="row">
-  <div *ngIf="shownItems.length" class="col items-table p-0">
-    <app-reference-table
-      tableId="tbl-items"
-      [data]="shownItems"
-      [columns]="columns"
-      [rowKey]="rowKey"
-      [selectedKey]="currItem ? idPipe.transform(currItem.name) : null"
-      [pageSize]="10"
-      [pageSizeOptions]="[10, 15, 30, 60, -1]"
-      itemLabel="items"
-      defaultSortKey="name"
-      (rowClick)="setCurrItem($event)"
-    ></app-reference-table>
-  </div>
+  @if (shownItems.length) {
+    <div class="col items-table p-0">
+      <app-reference-table
+        tableId="tbl-items"
+        [data]="shownItems"
+        [columns]="columns"
+        [rowKey]="rowKey"
+        [selectedKey]="currItem ? idPipe.transform(currItem.name) : null"
+        [pageSize]="10"
+        [pageSizeOptions]="[10, 15, 30, 60, -1]"
+        itemLabel="items"
+        defaultSortKey="name"
+        (rowClick)="setCurrItem($event)"
+      ></app-reference-table>
+    </div>
+  }
 </div>
-<app-item *ngIf="currItem" [item]="currItem"></app-item>
+@if (currItem) {
+  <app-item [item]="currItem"></app-item>
+}

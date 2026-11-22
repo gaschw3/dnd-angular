@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
+  standalone: false,
   selector: 'app-hexmap',
   templateUrl: './hexmap.component.html',
   styleUrls: ['./hexmap.component.scss']

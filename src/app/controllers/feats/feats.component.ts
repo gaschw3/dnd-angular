@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -11,6 +11,7 @@ import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
+  standalone: false,
   selector: 'app-feats',
   templateUrl: './feats.component.html',
   styleUrls: ['./feats.component.scss']
@@ -69,12 +70,14 @@ export class FeatsComponent implements OnInit, OnDestroy {
   constructor(
     private dataService: DndDataService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
     this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(params => {
       this.initialFilters = { ...params };
+      this.cdr.markForCheck();
     });
 
     this.dataService.getFeats().pipe(takeUntil(this.destroy$)).subscribe(feats => {
@@ -84,7 +87,9 @@ export class FeatsComponent implements OnInit, OnDestroy {
         if (featName) {
           this.currFeat = this.feats.find(f => f.id === featName);
         }
+        this.cdr.markForCheck();
       });
+      this.cdr.markForCheck();
     });
   }
 

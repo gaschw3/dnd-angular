@@ -1,7 +1,6 @@
 import { HelperService } from './../../shared/helpers/helper.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Ancestry } from '../../models/ancestry';
-import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { DndDataService } from '../../shared/services/dnd-data.service';
 
 interface Stat {
@@ -12,13 +11,12 @@ interface Stat {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-point-buy',
   templateUrl: './point-buy.component.html',
   styleUrls: ['./point-buy.component.scss']
 })
 export class PointBuyComponent implements OnInit {
-  ancestryForm?: UntypedFormGroup;
-
   ancestries: Ancestry[] = [];
   selectedAncestry?: Ancestry;
 
@@ -49,13 +47,14 @@ export class PointBuyComponent implements OnInit {
 
   constructor(
     private dataService: DndDataService,
-    private fb: UntypedFormBuilder,
-    public helper: HelperService
+    public helper: HelperService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
     this.dataService.getLegacyAncestries().subscribe(ancestries => {
       this.ancestries = ancestries;
+      this.cdr.markForCheck();
     });
   }
 

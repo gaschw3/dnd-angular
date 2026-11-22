@@ -1,19 +1,23 @@
 <h1>D&D 5e Backgrounds</h1>
 
 <div class="row">
-  <div *ngIf="backgrounds.length" class="col backgrounds-table">
-    <app-reference-table
-      tableId="tbl-backgrounds"
-      [data]="backgrounds"
-      [columns]="columns"
-      [rowKey]="rowKey"
-      [selectedKey]="currBackground?.id || null"
-      [pageSize]="10"
-      [pageSizeOptions]="[10, 15, 30, 60, -1]"
-      itemLabel="backgrounds"
-      defaultSortKey="name"
-      (rowClick)="setCurrBackground($event)"
-    ></app-reference-table>
-  </div>
+  @if (backgrounds.length) {
+    <div class="col backgrounds-table">
+      <app-reference-table
+        tableId="tbl-backgrounds"
+        [data]="backgrounds"
+        [columns]="columns"
+        [rowKey]="rowKey"
+        [selectedKey]="currBackground?.id || null"
+        [pageSize]="10"
+        [pageSizeOptions]="[10, 15, 30, 60, -1]"
+        itemLabel="backgrounds"
+        defaultSortKey="name"
+        (rowClick)="setCurrBackground($event)"
+      ></app-reference-table>
+    </div>
+  }
 </div>
-<app-background *ngIf="currBackground" [background]="currBackground"></app-background>
+@if (currBackground) {
+  <app-background [background]="currBackground"></app-background>
+}

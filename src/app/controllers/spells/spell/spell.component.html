@@ -1,43 +1,55 @@
-<ng-container *ngIf="spell">
-    <div class="pb-4">
-        <div class="card">
-            <div class="card-body">
-                <div [class]="'spell-header spell-header-'+spell.school.name | lowercase">
-                    <div class="row">
-                        <div class="col">
-                            <ng-container *ngIf="spell.replaced">
-                                <s><h1>{{spell.name}}</h1></s>
-                                <h1>See: <span [innerHtml]="'{@spell '+spell.replaced+'}' | linkmaker"></span></h1>
-                            </ng-container>
-                            <h1 *ngIf="!spell.replaced">{{spell.name}}</h1>
-                        </div>
-                        <div class="col">
-                            <h3 [class]="'pull-right color-'+spell.source | lowercase">{{spell.source}}</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <h4><em [class]="'color-'+spell.school.name | lowercase">{{formatSpellLevel(spell.level, spell.school)}}<span *ngIf="spell.ritual"> Ritual</span></em></h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="p-0 m-0"><strong>Casting Time: </strong>{{spell.time}}<span *ngIf="spell.ritual"> or ritual</span></p>
-                            <p class="pt-0 mt-0"><strong>Components: </strong>{{spell.components}}</p>
-                        </div>
-                        <div class="col">
-                            <p class="p-0 m-0"><strong>Range: </strong>{{spell.range}}</p>
-                            <p class="pt-0 mt-0"><strong>Duration: </strong>{{spell.duration}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-text">
-                    <entry-renderer [list]=spell.entries [parent]="''"></entry-renderer>
-                    <p *ngIf="spell.higher"><strong><em>{{spell.higher.name}}: </em></strong><entry-renderer [list]=spell.higher.entries [parent]="''"></entry-renderer></p>
-                    <p *ngIf="spell.classes" class="mb-0"><strong>Classes: </strong><span [innerHtml]="spell.classes.join(', ') | linkmaker"></span></p>
-                    <p *ngIf="spell.subclasses.length > 0" class="mb-0"><strong>Subclasses: </strong><span [innerHtml]="spell.subclasses.join(', ') | linkmaker"></span></p>
-                </div>
+@if (spell) {
+  <div class="pb-4">
+    <div class="card">
+      <div class="card-body">
+        <div [class]="'spell-header spell-header-'+spell.school.name | lowercase">
+          <div class="row">
+            <div class="col">
+              @if (spell.replaced) {
+                <s><h1>{{spell.name}}</h1></s>
+                <h1>See: <span [innerHtml]="'{@spell '+spell.replaced+'}' | linkmaker"></span></h1>
+              }
+              @if (!spell.replaced) {
+                <h1>{{spell.name}}</h1>
+              }
             </div>
+            <div class="col">
+              <h3 [class]="'pull-right color-'+spell.source | lowercase">{{spell.source}}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4><em [class]="'color-'+spell.school.name | lowercase">{{formatSpellLevel(spell.level, spell.school)}}@if (spell.ritual) {
+                <span> Ritual</span>
+              }</em></h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="p-0 m-0"><strong>Casting Time: </strong>{{spell.time}}@if (spell.ritual) {
+              <span> or ritual</span>
+            }</p>
+            <p class="pt-0 mt-0"><strong>Components: </strong>{{spell.components}}</p>
+          </div>
+          <div class="col">
+            <p class="p-0 m-0"><strong>Range: </strong>{{spell.range}}</p>
+            <p class="pt-0 mt-0"><strong>Duration: </strong>{{spell.duration}}</p>
+          </div>
         </div>
+      </div>
+      <div class="feature-text">
+        <entry-renderer [list]=spell.entries [parent]="''"></entry-renderer>
+        @if (spell.higher) {
+          <p><strong><em>{{spell.higher.name}}: </em></strong><entry-renderer [list]=spell.higher.entries [parent]="''"></entry-renderer></p>
+        }
+        @if (spell.classes) {
+          <p class="mb-0"><strong>Classes: </strong><span [innerHtml]="spell.classes.join(', ') | linkmaker"></span></p>
+        }
+        @if (spell.subclasses.length > 0) {
+          <p class="mb-0"><strong>Subclasses: </strong><span [innerHtml]="spell.subclasses.join(', ') | linkmaker"></span></p>
+        }
+      </div>
     </div>
-</ng-container>
+  </div>
+</div>
+}

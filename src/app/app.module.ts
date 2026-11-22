@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -12,7 +12,7 @@ import { ParticlesComponent } from './controllers/particles/particles.component'
 import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
-import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +25,14 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     SharedModule,
-    NgxScrollTopModule
+    ScrollTopComponent
   ],
   exports: [],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 

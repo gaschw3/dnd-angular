@@ -1,4 +1,8 @@
 <div class="particle-container" [ngClass]="theme">
-  <div *ngFor="let i of helper.counter(150)" class="particle"></div>
-  <div *ngFor="let i of helper.counter(11); let index = index" [ngClass]="theme=='end' ? 'ripple-'+index : ''"></div>
+  @for (i of helper.counter(150); track i) {
+    <div class="particle"></div>
+  }
+  @for (i of helper.counter(11); track i; let index = $index) {
+    <div [ngClass]="theme=='end' ? 'ripple-'+index : ''"></div>
+  }
 </div>

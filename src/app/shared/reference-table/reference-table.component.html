@@ -2,146 +2,174 @@
   <div class="table-responsive">
     <table [id]="tableId" class="table table-hover table-sm ref-table" [class.table-striped]="striped">
       <thead>
-        <tr *ngIf="showFilterRow" class="ref-filter-row">
-          <th *ngFor="let col of columns" [style.width]="col.width || null">
-            <ng-container *ngIf="col.filterable !== false && col.filterType !== 'none' && !col.action">
-              <div *ngIf="col.filterType === 'number-range'; else textFilter" class="input-group input-group-sm">
-                <input
-                  [id]="(col.filterId || col.key) + '-min'"
-                  class="form-control"
-                  type="number"
-                  [attr.min]="col.min ?? 0"
-                  [attr.max]="col.max ?? 30"
-                  placeholder="Min"
-                  [(ngModel)]="rangeFilters[col.key].min"
-                  (ngModelChange)="onFilterChange()"
-                />
-                <input
-                  [id]="(col.filterId || col.key) + '-max'"
-                  class="form-control"
-                  type="number"
-                  [attr.min]="col.min ?? 0"
-                  [attr.max]="col.max ?? 31"
-                  placeholder="Max"
-                  [(ngModel)]="rangeFilters[col.key].max"
-                  (ngModelChange)="onFilterChange()"
-                />
-              </div>
-              <ng-template #textFilter>
-                <div class="input-group input-group-sm">
-                  <div *ngIf="col.headerIcon" class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
-                  </div>
-                  <input
-                    [id]="col.filterId || col.key"
-                    class="form-control"
-                    type="search"
-                    [placeholder]="col.placeholder || col.label"
-                    [(ngModel)]="filters[col.key]"
-                    (ngModelChange)="onFilterChange()"
-                  />
-                </div>
-              </ng-template>
-            </ng-container>
-          </th>
-        </tr>
+        @if (showFilterRow) {
+          <tr class="ref-filter-row">
+            @for (col of columns; track col) {
+              <th [style.width]="col.width || null">
+                @if (col.filterable !== false && col.filterType !== 'none' && !col.action) {
+                  @if (col.filterType === 'number-range') {
+                    <div class="input-group input-group-sm">
+                      <input
+                        [id]="(col.filterId || col.key) + '-min'"
+                        class="form-control"
+                        type="number"
+                        [attr.min]="col.min ?? 0"
+                        [attr.max]="col.max ?? 30"
+                        placeholder="Min"
+                        [(ngModel)]="rangeFilters[col.key].min"
+                        (ngModelChange)="onFilterChange()"
+                        />
+                      <input
+                        [id]="(col.filterId || col.key) + '-max'"
+                        class="form-control"
+                        type="number"
+                        [attr.min]="col.min ?? 0"
+                        [attr.max]="col.max ?? 31"
+                        placeholder="Max"
+                        [(ngModel)]="rangeFilters[col.key].max"
+                        (ngModelChange)="onFilterChange()"
+                        />
+                    </div>
+                  } @else {
+                    <div class="input-group input-group-sm">
+                      @if (col.headerIcon) {
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                      }
+                      <input
+                        [id]="col.filterId || col.key"
+                        class="form-control"
+                        type="search"
+                        [placeholder]="col.placeholder || col.label"
+                        [(ngModel)]="filters[col.key]"
+                        (ngModelChange)="onFilterChange()"
+                        />
+                    </div>
+                  }
+                }
+              </th>
+            }
+          </tr>
+        }
         <tr class="ref-header-row">
-          <th
-            *ngFor="let col of columns"
-            [style.width]="col.width || null"
-            [class.text-center]="col.align === 'center'"
-            [class.text-right]="col.align === 'right'"
-            [class.sortable]="col.sortable !== false && !col.action"
-            (click)="toggleSort(col)"
-          >
-            <span>{{ col.label }}</span>
-            <span *ngIf="col.sortable !== false && !col.action" class="sort-indicator" aria-hidden="true">
-              <ng-container *ngIf="sortKey === col.key; else unsortedIcon">
-                {{ sortDir === 'asc' ? '▲' : '▼' }}
-              </ng-container>
-              <ng-template #unsortedIcon>⇅</ng-template>
-            </span>
-          </th>
+          @for (col of columns; track col) {
+            <th
+              [style.width]="col.width || null"
+              [class.text-center]="col.align === 'center'"
+              [class.text-right]="col.align === 'right'"
+              [class.sortable]="col.sortable !== false && !col.action"
+              (click)="toggleSort(col)"
+              >
+              <span>{{ col.label }}</span>
+              @if (col.sortable !== false && !col.action) {
+                <span class="sort-indicator" aria-hidden="true">
+                  @if (sortKey === col.key) {
+                    {{ sortDir === 'asc' ? '▲' : '▼' }}
+                  } @else {
+                    ⇅
+                  }
+                </span>
+              }
+            </th>
+          }
         </tr>
       </thead>
       <tbody>
-        <tr
-          *ngFor="let row of pagedRows"
-          (click)="rowClick.emit(row)"
-          [class.table-active]="isRowActive(row)"
-          class="ref-data-row"
-        >
-          <td *ngFor="let col of columns" [ngClass]="getCellClasses(col, row)">
-            <ng-container *ngIf="col.action; else valueCell">
-              <button
-                type="button"
-                [class]="col.action.btnClass || 'btn btn-sm btn-success'"
-                [attr.aria-label]="col.action.ariaLabel"
-                (click)="onActionClick(col, row, $event)"
-              >
-                <i [class]="col.action.iconClass" aria-hidden="true"></i>
-              </button>
-            </ng-container>
-            <ng-template #valueCell>
-              <span *ngIf="col.isHtml" [innerHTML]="getSafeHtml(col, row)"></span>
-              <ng-container *ngIf="!col.isHtml">{{ getCellValue(col, row) }}</ng-container>
-            </ng-template>
-          </td>
-        </tr>
-        <tr *ngIf="pagedRows.length === 0">
-          <td [attr.colspan]="columns.length" class="text-center py-3 ref-empty">
-            No matching {{ itemLabel }} found.
-            <button *ngIf="hasActiveFilters" type="button" class="btn btn-sm btn-link p-0 ml-2" (click)="clearFilters()">
-              Clear filters
-            </button>
-          </td>
-        </tr>
+        @for (row of pagedRows; track row) {
+          <tr
+            (click)="rowClick.emit(row)"
+            [class.table-active]="isRowActive(row)"
+            class="ref-data-row"
+            >
+            @for (col of columns; track col) {
+              <td [ngClass]="getCellClasses(col, row)">
+                @if (col.action) {
+                  <button
+                    type="button"
+                    [class]="col.action.btnClass || 'btn btn-sm btn-success'"
+                    [attr.aria-label]="col.action.ariaLabel"
+                    (click)="onActionClick(col, row, $event)"
+                    >
+                    <i [class]="col.action.iconClass" aria-hidden="true"></i>
+                  </button>
+                } @else {
+                  @if (col.isHtml) {
+                    <span [innerHTML]="getSafeHtml(col, row)"></span>
+                  }
+                  @if (!col.isHtml) {
+                    {{ getCellValue(col, row) }}
+                  }
+                }
+              </td>
+            }
+          </tr>
+        }
+        @if (pagedRows.length === 0) {
+          <tr>
+            <td [attr.colspan]="columns.length" class="text-center py-3 ref-empty">
+              No matching {{ itemLabel }} found.
+              @if (hasActiveFilters) {
+                <button type="button" class="btn btn-sm btn-link p-0 ml-2" (click)="clearFilters()">
+                  Clear filters
+                </button>
+              }
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
   </div>
 
-  <div *ngIf="paging" class="ref-table-footer d-flex flex-wrap justify-content-between align-items-center mt-2">
-    <div class="ref-table-length d-flex align-items-center mb-1">
-      <label class="mb-0 mr-2">
-        Show
-        <select
-          class="form-control form-control-sm d-inline-block w-auto mx-1"
-          [(ngModel)]="pageSize"
-          (ngModelChange)="onPageSizeChange()"
-        >
-          <option *ngFor="let opt of pageSizeOptions" [ngValue]="opt">
-            {{ opt === -1 ? 'All' : opt }}
-          </option>
-        </select>
-        {{ itemLabel }}
-      </label>
-      <span class="ref-table-count ml-2">
-        ({{ startIndex }}–{{ endIndex }} of {{ filteredRows.length }})
-      </span>
-      <button
-        *ngIf="hasActiveFilters"
-        type="button"
-        class="btn btn-sm btn-outline-secondary ml-2 py-0 px-2"
-        (click)="clearFilters()"
-      >
-        Clear filters
-      </button>
+  @if (paging) {
+    <div class="ref-table-footer d-flex flex-wrap justify-content-between align-items-center mt-2">
+      <div class="ref-table-length d-flex align-items-center mb-1">
+        <label class="mb-0 mr-2">
+          Show
+          <select
+            class="form-control form-control-sm d-inline-block w-auto mx-1"
+            [(ngModel)]="pageSize"
+            (ngModelChange)="onPageSizeChange()"
+            >
+            @for (opt of pageSizeOptions; track opt) {
+              <option [ngValue]="opt">
+                {{ opt === -1 ? 'All' : opt }}
+              </option>
+            }
+          </select>
+          {{ itemLabel }}
+        </label>
+        <span class="ref-table-count ml-2">
+          ({{ startIndex }}–{{ endIndex }} of {{ filteredRows.length }})
+        </span>
+        @if (hasActiveFilters) {
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-secondary ml-2 py-0 px-2"
+            (click)="clearFilters()"
+            >
+            Clear filters
+          </button>
+        }
+      </div>
+      @if (totalPages > 1) {
+        <nav aria-label="Table pagination" class="ref-table-pagination mb-1">
+          <button type="button" class="ref-page-btn" [disabled]="currentPage === 1" (click)="goToPage(1)" aria-label="First page">&laquo;</button>
+          <button type="button" class="ref-page-btn" [disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)" aria-label="Previous page">&lsaquo;</button>
+          @for (page of visiblePages; track page) {
+            <button
+              type="button"
+              class="ref-page-btn"
+              [class.current]="page === currentPage"
+              (click)="goToPage(page)"
+              >
+              {{ page }}
+            </button>
+          }
+          <button type="button" class="ref-page-btn" [disabled]="currentPage === totalPages" (click)="goToPage(currentPage + 1)" aria-label="Next page">&rsaquo;</button>
+          <button type="button" class="ref-page-btn" [disabled]="currentPage === totalPages" (click)="goToPage(totalPages)" aria-label="Last page">&raquo;</button>
+        </nav>
+      }
     </div>
-
-    <nav *ngIf="totalPages > 1" aria-label="Table pagination" class="ref-table-pagination mb-1">
-      <button type="button" class="ref-page-btn" [disabled]="currentPage === 1" (click)="goToPage(1)" aria-label="First page">&laquo;</button>
-      <button type="button" class="ref-page-btn" [disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)" aria-label="Previous page">&lsaquo;</button>
-      <button
-        *ngFor="let page of visiblePages"
-        type="button"
-        class="ref-page-btn"
-        [class.current]="page === currentPage"
-        (click)="goToPage(page)"
-      >
-        {{ page }}
-      </button>
-      <button type="button" class="ref-page-btn" [disabled]="currentPage === totalPages" (click)="goToPage(currentPage + 1)" aria-label="Next page">&rsaquo;</button>
-      <button type="button" class="ref-page-btn" [disabled]="currentPage === totalPages" (click)="goToPage(totalPages)" aria-label="Last page">&raquo;</button>
-    </nav>
-  </div>
+  }
 </div>

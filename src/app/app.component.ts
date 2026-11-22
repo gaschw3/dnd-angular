@@ -5,6 +5,7 @@ import { filter } from 'rxjs/operators';
 declare var gtag: any;
 
 @Component({
+  standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
