@@ -1,71 +1,20 @@
 <h1 text="dnd 5e spells">D&D 5e Spells</h1>
 
 <div class="row">
-  <div *ngIf="spells" class="col-md-12 spell-table">
-    <table id="tbl-spells" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-condensed">
-      <thead>
-        <tr>
-          <th class="spell-filter" colspan="1">
-            <div class="input-group input-group-sm">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-search"></i></span>
-              </div>
-              <input id="spell-name-filter" class="form-control" type="search" placeholder="Name">
-            </div>
-          </th>
-          <th class="spell-filter" colspan="1">
-            <div class="input-group input-group-sm">
-              <input id="spell-level-filter" class="form-control" type="search" placeholder="Lvl">
-            </div>
-          </th>
-          <th class="spell-filter" colspan="1">
-            <div class="input-group input-group-sm">
-              <input id="spell-conc-filter" class="form-control" type="search" placeholder="Conc">
-            </div>
-          </th>
-          <th class="spell-filter" colspan="1">
-            <div class="input-group input-group-sm">
-              <input id="spell-time-filter" class="form-control" type="search" placeholder="Time">
-            </div>
-          </th>
-          <th class="spell-filter" colspan="1">
-            <div class="input-group input-group-sm">
-              <input id="spell-school-filter" class="form-control" type="search" placeholder="School">
-            </div>
-          </th>
-          <th class="spell-filter" colspan="1">
-            <div class="input-group input-group-sm">
-              <input id="spell-class-filter" class="form-control" type="search" placeholder="Classes">
-            </div>
-          </th>
-          <th class="spell-filter" colspan="1">
-            <div class="input-group input-group-sm">
-              <input id="spell-source-filter" class="form-control" type="search" placeholder="Source">
-            </div>
-          </th>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th>Level</th>
-          <th>Conc</th>
-          <th>Time</th>
-          <th>School</th>
-          <th>Classes</th>
-          <th>Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let spell of spells" (click)="setCurrSpell(spell)" [class.table-active]="currSpell?.id == spell.id">
-          <td [ngClass]="spell.replaced ? 'strikethrough': ''">{{spell.name}}{{spell.ritual ? ' (r)' : ''}}{{spell.change == 'buff' ? ' (++)' : ''}}{{spell.change == 'nerf' ? ' (--)' : ''}}{{spell.change == 'change' ? ' (??)' : ''}}</td>
-          <td class="text-center">{{spell.level}}</td>
-          <td class="text-center">{{spell.concentration == true ? "X" : " "}}</td>
-          <td class="text-center">{{spell.tableTime | titlecase}}</td>
-          <td [class]="'color-'+spell.school.name | lowercase" class="text-center">{{spell.school.abbrev}}</td>
-          <td>{{spell.classes.join(", ")}}</td>
-          <td [class]="'text-right color-'+spell.source | lowercase" class="text-right">{{spell.source}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div *ngIf="spells.length" class="col-md-12 spell-table">
+    <app-reference-table
+      tableId="tbl-spells"
+      [data]="spells"
+      [columns]="columns"
+      [rowKey]="rowKey"
+      [selectedKey]="currSpell?.id || null"
+      [initialFilters]="initialFilters"
+      [pageSize]="10"
+      [pageSizeOptions]="[10, 15, 30, 60, -1]"
+      itemLabel="spells"
+      defaultSortKey="name"
+      (rowClick)="setCurrSpell($event)"
+    ></app-reference-table>
   </div>
 </div>
 <app-spell *ngIf="currSpell" [spell]="currSpell"></app-spell>

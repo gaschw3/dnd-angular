@@ -1,99 +1,76 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
-import { Observable, Subject } from "rxjs";
-import { HttpClient } from '@angular/common/http';
-import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 
 import { AncestryComponent } from './ancestry/ancestry.component';
 import { Ancestry } from 'src/app/models/ancestry';
-import { ADTSettings } from 'angular-datatables/src/models/settings';
+import { DndDataService } from 'src/app/shared/services/dnd-data.service';
+import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
   selector: 'app-ancestries',
   templateUrl: './ancestries.component.html',
   styleUrls: ['./ancestries.component.scss']
 })
-export class AncestriesComponent implements OnInit {
+export class AncestriesComponent implements OnInit, OnDestroy {
+  ancestries: Ancestry[] = [];
+  currAncestry?: Ancestry;
 
-  ancestries: Ancestry[];
-  currAncestry: Ancestry;
+  private destroy$ = new Subject<void>();
 
-  public getJSON(): Observable<any> {
-    return this.http.get("assets/data/2024/ancestry-small.json")
-  }
+  @ViewChild(AncestryComponent) child?: AncestryComponent;
 
-  constructor(private http: HttpClient,
+  columns: ReferenceTableColumn<Ancestry>[] = [
+    {
+      key: 'name',
+      label: 'Name',
+      placeholder: 'Filter Ancestry',
+      filterId: 'ancestry-name-filter',
+      width: '70%',
+      headerIcon: true,
+      value: a => a.name
+    },
+    {
+      key: 'source',
+      label: 'Source',
+      placeholder: 'Source',
+      filterId: 'ancestry-source-filter',
+      width: '30%',
+      align: 'right',
+      value: a => a.source || '',
+      cellClass: a => (a.source ? `color-${a.source.toLowerCase()}` : '')
+    }
+  ];
+
+  readonly rowKey = (ancestry: Ancestry) => ancestry.id;
+
+  constructor(
+    private dataService: DndDataService,
     private route: ActivatedRoute,
-    private location: Location) {}
-
-  @ViewChild(AncestryComponent) child: AncestryComponent ;
-
-  // DataTables objects
-  @ViewChild(DataTableDirective)
-  private dtElement: DataTableDirective;
-  dtOptions:  {};
-  dtTrigger: Subject<ADTSettings> = new Subject();
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
-    this.dtOptions = {
-      columnDefs: [
-        { width: '70%', targets: 0 },
-        { width: '30%', targets: 1 },
-      ],
-      autoWidth: false,
-      scrollX: true,
-      dom: 'trlp',
-      orderMulti: true,
-      pageLength: 20,
-      pagingType: "full_numbers",
-      searching: true,
-      language: {
-        lengthMenu: 'Show <select>'+
-        '<option value="20">20</option>'+
-        '<option value="-1">All</option>'+
-        '</select> ancestries',
-        paginate: {
-          first:      "<<",
-          last:       ">>",
-          next:       ">",
-          previous:   "<"
-        }
-      },
-      initComplete: function(settings, json) {
-        const api = this.api();
-        api.columns().every(function() {
-          const column = this;
-          const $head = $(column.header());
-          const inputContainer = $head.parent().prev().children().get($head.index());
-          $(':input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
-            const $this = $(this);
-            const value = <string>$this.val();
-            if (column.search() !== value) {
-              column.search(value).draw();
-            }
-          }).trigger('change');
-        });
-      }
-    };
-
-    this.getJSON().subscribe(ancestries => {
+    this.dataService.getAncestries().pipe(takeUntil(this.destroy$)).subscribe(ancestries => {
       this.ancestries = ancestries;
-      this.route.paramMap.subscribe(params => {
-        this.currAncestry = this.ancestries.find(f => f.id == this.route.snapshot.params.ancestryName);
-      });
-      setTimeout(() => {
-        this.dtTrigger.next(this.dtOptions);
+      this.route.paramMap.pipe(takeUntil(this.destroy$)).subscribe(params => {
+        const ancestryName = params.get('ancestryName');
+        if (ancestryName) {
+          this.currAncestry = this.ancestries.find(f => f.id === ancestryName);
+        }
       });
     });
   }
 
   ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
-  setCurrAncestry(clicked): void {
+  setCurrAncestry(clicked: Ancestry): void {
     this.currAncestry = clicked;
-    this.location.go("/ancestries/" + this.currAncestry.id)
+    this.location.go('/ancestries/' + this.currAncestry.id);
   }
 }

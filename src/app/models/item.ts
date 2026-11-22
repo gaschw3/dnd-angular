@@ -12,4 +12,7 @@ export interface Item {
   dmg2: string;
   ac: string;
   rarity: string;
+  wondrous?: boolean;
+  weaponCategory?: string;
+  baseItem?: string;
 }

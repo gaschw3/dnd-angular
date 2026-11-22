@@ -1,95 +1,94 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {Location} from '@angular/common';
-import { Observable, Subject } from "rxjs";
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Location } from '@angular/common';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 import { newClass } from '../../models';
-import { HttpClient } from '@angular/common/http';
-import { DataTableDirective } from 'angular-datatables';
-import { ActivatedRoute } from '@angular/router';
 import { ClassComponent } from './class/class.component';
-import { ADTSettings } from 'angular-datatables/src/models/settings';
+import { DndDataService } from 'src/app/shared/services/dnd-data.service';
+import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
   selector: 'app-classes',
   templateUrl: './classes.component.html',
   styleUrls: ['./classes.component.scss']
 })
-export class ClassesComponent implements OnInit {
-
+export class ClassesComponent implements OnInit, OnDestroy {
   classes: newClass[] = [];
-  currClass: newClass;
+  currClass?: newClass;
 
-  public getJSON(): Observable<any> {
-      return this.http.get("assets/data/2024/classes-small.json")
-  }
+  private destroy$ = new Subject<void>();
 
-  constructor(private http: HttpClient,
+  @ViewChild(ClassComponent) child?: ClassComponent;
+
+  columns: ReferenceTableColumn<newClass>[] = [
+    {
+      key: 'name',
+      label: 'Name',
+      placeholder: 'Filter Class',
+      filterId: 'class-name-filter',
+      headerIcon: true,
+      sortable: false,
+      value: c => c.name
+    },
+    {
+      key: 'source',
+      label: 'Src',
+      align: 'right',
+      sortable: false,
+      filterable: false,
+      value: c => c.source || '',
+      cellClass: c => (c.source ? `color-${c.source.toLowerCase()}` : '')
+    }
+  ];
+
+  readonly rowKey = (cls: newClass) => cls.id;
+
+  constructor(
+    private dataService: DndDataService,
     private route: ActivatedRoute,
-    private location: Location) {}
-
-  @ViewChild(ClassComponent) child: ClassComponent;
-
-  // DataTables objects
-  @ViewChild(DataTableDirective)
-  private dtElement: DataTableDirective;
-  dtOptions:  {};
-  dtTrigger: Subject<ADTSettings> = new Subject();
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
-    this.dtOptions = {
-      autoWidth: false,
-      dom: 'tr',
-      paging: false,
-      ordering: false,
-      searching: true,
-      initComplete: function(settings, json) {
-        const api = this.api();
-        api.columns().every(function() {
-          const column = this;
-          const $head = $(column.header());
-          if ($head.index() == 0) {
-            const inputContainer = $head.parent().prev().children().get($head.index());
-            $(':input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
-              const $this = $(this);
-              const value = <string>$this.val();
-              if (column.search() !== value) {
-                column.search(value).draw();
-              }
-            }).trigger('change');
-          }
-        });
-      }
-    };
-
-    this.getJSON().subscribe(inputClasses => {
-      inputClasses.forEach(inClass => this.classes.push(new newClass(inClass)));
-      this.route.paramMap.subscribe(params => {
-        this.currClass = this.classes.find(f => f.id == this.route.snapshot.params.className);
-      });
-      setTimeout(() => {
-        this.dtTrigger.next(this.dtOptions);
+    this.dataService.getClasses().pipe(takeUntil(this.destroy$)).subscribe(classes => {
+      this.classes = classes;
+      this.route.paramMap.pipe(takeUntil(this.destroy$)).subscribe(params => {
+        const className = params.get('className');
+        if (className) {
+          this.currClass = this.classes.find(f => f.id === className);
+        }
       });
     });
   }
 
   ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
-  setCurrClass(clickedClass): void {
+  setCurrClass(clickedClass: newClass): void {
     if (this.child) {
-      this.child.selectedArchetypes.splice(0,100); //clear out archetypes when you change classes
+      this.child.selectedArchetypes.splice(0, 100);
     }
     this.currClass = clickedClass;
-    this.location.go("/classes/" + this.currClass.id)
+    this.location.go('/classes/' + this.currClass.id);
   }
 
   shake(id: string): void {
-    $( '#'+id )
-    .animate({ "left": "-=5px" }, "fast" )
-    .animate({ "left": "+=10px" }, "fast" )
-    .animate({ "left": "-=10px" }, "fast" )
-    .animate({ "left": "+=5px" }, "fast" );
-   }
-
+    const el = document.getElementById(id);
+    if (el && typeof el.animate === 'function') {
+      el.animate(
+        [
+          { transform: 'translateX(0)' },
+          { transform: 'translateX(-5px)' },
+          { transform: 'translateX(5px)' },
+          { transform: 'translateX(-5px)' },
+          { transform: 'translateX(0)' }
+        ],
+        { duration: 350, easing: 'ease-in-out' }
+      );
+    }
+  }
 }

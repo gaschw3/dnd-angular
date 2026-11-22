@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Class } from 'src/app/models';
 
 @Component({
   selector: 'app-archetypes',
@@ -7,48 +6,37 @@ import { Class } from 'src/app/models';
   styleUrls: ['./archetypes.component.scss']
 })
 export class ArchetypesComponent implements OnInit {
-
-  @Input() archetypes: any;
-  @Input() selectedArchetypes: any;
-  @Input() allSelected: boolean = false;
+  @Input() archetypes: any[] = [];
+  @Input() selectedArchetypes: string[] = [];
+  @Input() allSelected = false;
   @Output() check: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit(): void {}
 
-  clickArchetype(name) {
-    if (this.selectedArchetypes.includes(name)) {
-      this.selectedArchetypes.splice(this.selectedArchetypes.indexOf(name), 1);
-      $("."+name.replace(" ","")).hide();
-     }
-    else {
-      this.selectedArchetypes.push(name);
-       $("."+name.replace(" ","")).show();
-    }
-    if (this.selectedArchetypes.length == $('.btn-archetype').length){
-      this.allSelected = true;
+  clickArchetype(name: string): void {
+    const idx = this.selectedArchetypes.indexOf(name);
+    if (idx !== -1) {
+      this.selectedArchetypes.splice(idx, 1);
     } else {
-      this.allSelected = false;
+      this.selectedArchetypes.push(name);
+    }
+    this.allSelected = this.archetypes.length > 0 && this.selectedArchetypes.length === this.archetypes.length;
+  }
+
+  selectAll(): void {
+    this.allSelected = true;
+    for (const archetype of this.archetypes) {
+      if (!this.selectedArchetypes.includes(archetype.shortName)) {
+        this.selectedArchetypes.push(archetype.shortName);
+      }
     }
   }
 
-  selectAll() {
-    this.allSelected = true;
-    const that = this;
-    $('.btn-archetype').each(function(index, item) {
-      const currName = $(item).data('name');
-      if (!that.selectedArchetypes.includes(currName)) {
-        that.selectedArchetypes.push(currName);
-      }
-    });
-    this.selectedArchetypes;
-  }
-
-  selectNone() {
+  selectNone(): void {
     this.allSelected = false;
-    this.selectedArchetypes.splice(0, 100);
-    this.selectedArchetypes.push('none')
+    this.selectedArchetypes.splice(0, this.selectedArchetypes.length);
+    this.selectedArchetypes.push('none');
   }
 }

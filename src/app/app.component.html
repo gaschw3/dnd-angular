@@ -9,89 +9,84 @@
       <div *ngIf="theme == 'royal'" class="form-group mb-0">
         <img src="./royal-seal.png" width="30" height="36" alt="site icon">
       </div>
-      <a class="d-inline-block align-top navbar-brand" routerLink="/classes" (click)="isNavbarCollapsed = true">Poop Deck 5e</a>
+      <a class="d-inline-block align-top navbar-brand" routerLink="/classes" data-phy="Poop De" (click)="closeMenus()">Poop Deck 5e</a>
       <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isNavbarCollapsed" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
-      <span  class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}" id="navbarSupportedContent">
-        <ul  class="navbar-nav mr-auto">
-            <li  class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-              <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownChar"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown" [class.show]="openDropdown === 'char'">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownChar" role="button" data-phy="Charact"
+              [attr.aria-expanded]="openDropdown === 'char'" aria-haspopup="true" (click)="toggleDropdown('char', $event)">
               Characters
-              </a>
-              <div  class="dropdown-menu"  aria-labelledby="navbarDropdownChar">
-                <a class="dropdown-item" routerLink="/classes" routerLinkActive="active"> Classes </a>
-                <a class="dropdown-item" routerLink="/backgrounds" routerLinkActive="active"> Backgrounds </a>
-                <a class="dropdown-item" routerLink="/ancestries" routerLinkActive="active"> Ancestries </a>
-                <a class="dropdown-item" routerLink="/feats" routerLinkActive="active"> Feats </a>
-                <!--<a  class="dropdown-item" [routerLink]="'/epic-boons'"> Epic Boons </a>-->
-                <a class="dropdown-item" routerLink="/other-features" routerLinkActive="active"> Misc. Features</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-              <a class="nav-link dropdown-toggle" href="#" id="navdarDropdownDm" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                DM<!--<span class="ml-1 badge badge-success">*</span>-->
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navdarDropdownDm">
-                <a class="dropdown-item" routerLink="/beastiary" routerLinkActive="active"> Beastiary </a>
-                <!--<a class="dropdown-item" [routerLink]="'/dm-assistant'"> DM Assistant
-                  <span class="ml-1 badge badge-success">NEW</span>
-                </a>-->
-                <a class="dropdown-item" routerLink="/encounter-builder" routerLinkActive="active"> Encounter Builder</a>
-                <a class="dropdown-item" routerLink="/items" routerLinkActive="active"> Items </a>
-              </div>
-            </li>
-            <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-              <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownRef"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-              Reference<!--<span class="ml-1 badge badge-warning">*</span>>-->
-              </a>
-              <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
-                <a class="dropdown-item" routerLink="/spells" routerLinkActive="active"> Spells </a>
-                <a class="dropdown-item" routerLink="/map" routerLinkActive="active"> Map </a>
-                <a class="dropdown-item" routerLink="/point-buy" routerLinkActive="active"> Point Buy Calculator</a>
-              </div>
-            </li>
-          </ul>
-          <ul  class="navbar-nav portal">
-            <li class="nav-item dropdown float-right" data-toggle="collapse" data-target=".navbar-collapse.show">
-              <a class="nav-link " href="#" id="navbarDropdownPortal" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+            </a>
+            <div class="dropdown-menu" [class.show]="openDropdown === 'char'" aria-labelledby="navbarDropdownChar">
+              <a class="dropdown-item" routerLink="/classes" routerLinkActive="active" (click)="closeMenus()">Classes</a>
+              <a class="dropdown-item" routerLink="/backgrounds" routerLinkActive="active" (click)="closeMenus()">Backgrounds</a>
+              <a class="dropdown-item" routerLink="/ancestries" routerLinkActive="active" (click)="closeMenus()">Ancestries</a>
+              <a class="dropdown-item" routerLink="/feats" routerLinkActive="active" (click)="closeMenus()">Feats</a>
+              <a class="dropdown-item" routerLink="/other-features" routerLinkActive="active" (click)="closeMenus()">Misc. Features</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown" [class.show]="openDropdown === 'dm'">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDm" role="button" data-phy="DM"
+              [attr.aria-expanded]="openDropdown === 'dm'" aria-haspopup="true" (click)="toggleDropdown('dm', $event)">
+              DM
+            </a>
+            <div class="dropdown-menu" [class.show]="openDropdown === 'dm'" aria-labelledby="navbarDropdownDm">
+              <a class="dropdown-item" routerLink="/beastiary" routerLinkActive="active" (click)="closeMenus()">Beastiary</a>
+              <a class="dropdown-item" routerLink="/encounter-builder" routerLinkActive="active" (click)="closeMenus()">Encounter Builder</a>
+              <a class="dropdown-item" routerLink="/items" routerLinkActive="active" (click)="closeMenus()">Items</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown" [class.show]="openDropdown === 'ref'">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRef" role="button" data-phy="Referen"
+              [attr.aria-expanded]="openDropdown === 'ref'" aria-haspopup="true" (click)="toggleDropdown('ref', $event)">
+              Reference
+            </a>
+            <div class="dropdown-menu" [class.show]="openDropdown === 'ref'" aria-labelledby="navbarDropdownRef">
+              <a class="dropdown-item" routerLink="/spells" routerLinkActive="active" (click)="closeMenus()">Spells</a>
+              <a class="dropdown-item" routerLink="/map" routerLinkActive="active" (click)="closeMenus()">Map</a>
+              <a class="dropdown-item" routerLink="/point-buy" routerLinkActive="active" (click)="closeMenus()">Point Buy Calculator</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav portal">
+          <li class="nav-item dropdown float-right" [class.show]="openDropdown === 'portal'">
+            <a class="nav-link" href="#" id="navbarDropdownPortal" role="button" data-phy="Planar "
+              [attr.aria-expanded]="openDropdown === 'portal'" aria-haspopup="true" (click)="toggleDropdown('portal', $event)">
               Planar Portal
               <i class="fa fa-cog" aria-hidden="true"></i>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownRef">
-                <form class="form-sm m-3">
-                  <div class="form-group">
-                    <label for="theme"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label>
-                    <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
-                      <option value="dark">Material Realm</option>
-                      <option value="greek">Arkhos</option>
-                      <option value="ice">Seven Cities</option>
-                      <option value="rainbow">Shizomi</option>
-                      <option value="royal">Aldovia</option>
-                      <option value="end">Worldbreaker</option>
-                      <option value="forest">Hidden Vale</option>
-                      <!--
-                      <option value="light">Celestia</option>
-                      -->
-                    </select>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" [class.show]="openDropdown === 'portal'" aria-labelledby="navbarDropdownPortal" (click)="$event.stopPropagation()">
+              <form class="form-sm m-3">
+                <div class="form-group">
+                  <label for="theme-select"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label>
+                  <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
+                    <option value="dark">Material Realm</option>
+                    <option value="greek">Arkhos</option>
+                    <option value="ice">Seven Cities</option>
+                    <option value="rainbow">Shizomi</option>
+                    <option value="royal">Aldovia</option>
+                    <option value="end">Worldbreaker</option>
+                    <option value="forest">Hidden Vale</option>
+                  </select>
+                </div>
+                <div *ngIf="theme != 'dark' && theme != 'royal' && theme != 'forest'" class="form-group">
+                  <div class="form-check form-switch">
+                    <input type="checkbox" class="form-check-input" [(ngModel)]="particles" (change)="changeParticles()" id="particles" name="particles">
+                    <label class="form-check-label" for="particles">Use Occultum<sup><a class="text--op" routerLink="/items/occultum-op" (click)="closeMenus()">?</a></sup></label>
                   </div>
-                  <div *ngIf="theme != 'dark' && theme != 'royal' && theme != 'forest'" class="form-group">
-                    <div class="form-check form-switch">
-                      <input type="checkbox" class="form-check-input" [(ngModel)]="particles" (change)="changeParticles()" id="particles" name="particles">
-                      <label class="form-check-label" for="particles">Use Occultum<sup><a class="text--op" routerLink="/items/occultum-op">?</a></sup></label>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
-          </ul>
+                </div>
+              </form>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
   <main id="main-content" class="container-fluid" tabindex="-1">
-      <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </main>
   <ngx-scrolltop [size]="70" symbolColor="#fff"></ngx-scrolltop>
 </div></div>

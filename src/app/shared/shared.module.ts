@@ -3,7 +3,7 @@ import { MonsterHelperService } from './helpers/monster/monster-helper.service';
 import { AncestryComponent } from './../controllers/ancestries/ancestry/ancestry.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataTablesModule } from 'angular-datatables';
+import { ReferenceTableComponent } from './reference-table/reference-table.component';
 import { LinkmakerPipe } from '../pipes/linkmaker.pipe';
 import { SanitizeHtmlPipe } from '../pipes/sanitize-html.pipe';
 import { ItemTypePipe } from '../pipes/item-type.pipe';
@@ -33,11 +33,11 @@ import { FeatComponent } from '../controllers/feats/feat/feat.component';
   ],
   imports: [
     CommonModule,
-    DataTablesModule
+    ReferenceTableComponent
   ],
   exports: [
     CommonModule,
-    DataTablesModule,
+    ReferenceTableComponent,
     LinkmakerPipe,
     SanitizeHtmlPipe,
     ItemTypePipe,

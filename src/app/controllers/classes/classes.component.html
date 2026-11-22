@@ -1,30 +1,16 @@
 <h1 class="glitch layers">D&D 5e Classes</h1>
 <div class="row">
-  <div *ngIf="classes" class="col-md-2 class-table">
-    <table id="tbl-classes" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-condensed">
-      <thead>
-        <tr>
-          <th class="class-filter" colspan="3">
-            <div class="input-group input-group-sm">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-search"></i></span>
-              </div>
-              <input id="class-name-filter" class="form-control" type="search" placeholder="Filter Class">
-            </div>
-          </th>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th class="text-right">Src</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let class of classes" (click)="setCurrClass(class)" [class.table-active]="currClass?.id == class.id">
-          <td>{{class.name}}</td>
-          <td [class]="'text-right color-'+class.source | lowercase" class="text-right">{{class.source}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div *ngIf="classes.length" class="col-md-2 class-table">
+    <app-reference-table
+      tableId="tbl-classes"
+      [data]="classes"
+      [columns]="columns"
+      [rowKey]="rowKey"
+      [selectedKey]="currClass?.id || null"
+      [paging]="false"
+      itemLabel="classes"
+      (rowClick)="setCurrClass($event)"
+    ></app-reference-table>
   </div>
   <div class="col-md-10">
     <app-level-table *ngIf="currClass" (talk)="shake($event)" [class]="currClass"></app-level-table>

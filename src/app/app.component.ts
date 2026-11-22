@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
-declare var gtag
+declare var gtag: any;
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'Poop Deck 5e';
   defaultTheme = 'forest';
   isNavbarCollapsed = true;
+  openDropdown: string | null = null;
   particles = this.getStoredParticles();
   theme = this.getStoredTheme();
 
@@ -22,15 +23,38 @@ export class AppComponent {
     );
     navEndEvent$.subscribe((e: NavigationEnd) => {
       this.isNavbarCollapsed = true;
+      this.openDropdown = null;
       window.scrollTo({ top: 0, behavior: 'smooth' });
       if (typeof gtag !== 'undefined') {
-        gtag('config', 'G-BKMXZP7BG0', {'page_path': e.urlAfterRedirects});
+        gtag('config', 'G-BKMXZP7BG0', { page_path: e.urlAfterRedirects });
       }
     });
   }
 
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
+
+  toggleDropdown(name: string, event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.openDropdown = this.openDropdown === name ? null : name;
+  }
+
+  closeMenus(): void {
+    this.openDropdown = null;
+    this.isNavbarCollapsed = true;
+  }
+
+  @HostListener('document:click')
+  onDocumentClick(): void {
+    this.openDropdown = null;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscapeKey(): void {
+    this.openDropdown = null;
+    this.isNavbarCollapsed = true;
   }
 
   private getStoredTheme(): string {

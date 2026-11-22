@@ -1,125 +1,139 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Location } from '@angular/common';
-import { Observable, Subject } from "rxjs";
-import { HttpClient } from '@angular/common/http';
-import { DataTableDirective } from 'angular-datatables';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Location, TitleCasePipe } from '@angular/common';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 
 import { Item } from 'src/app/models/item';
 import { ItemComponent } from './item/item.component';
 import { typeTable } from '../../shared/itemTypes';
-import { ADTSettings } from 'angular-datatables/src/models/settings';
 import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
+import { DndDataService } from 'src/app/shared/services/dnd-data.service';
+import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss']
 })
-export class ItemsComponent implements OnInit {
+export class ItemsComponent implements OnInit, OnDestroy {
+  magic: Item[] = [];
+  normal: Item[] = [];
+  treasure: Item[] = [];
+  items: Item[] = [];
+  shownItems: Item[] = [];
 
-  magic: Item[];
-  normal: Item[];
-  treasure: Item[];
-  items: Item[];
-  shownItems: Item[];
+  currItem?: Item;
+  selected = 'all';
 
-  currItem: Item;
-  selected: string;
+  idPipe = new IdToNamePipe();
+  private titleCase = new TitleCasePipe();
+  private destroy$ = new Subject<void>();
 
-  idPipe = new IdToNamePipe;
+  @ViewChild(ItemComponent) child?: ItemComponent;
 
-  public getJSON(): Observable<any> {
-    return this.http.get("assets/data/2024/items.json")
-  }
+  columns: ReferenceTableColumn<Item>[] = [
+    {
+      key: 'name',
+      label: 'Name',
+      placeholder: 'Filter Items',
+      filterId: 'item-name-filter',
+      width: '38%',
+      headerIcon: true,
+      isHtml: true,
+      value: item => item.name
+    },
+    {
+      key: 'type',
+      label: 'Type',
+      placeholder: 'Type',
+      filterId: 'item-prof-filter',
+      width: '24%',
+      value: item => this.titleCase.transform(this.getItemType(item))
+    },
+    {
+      key: 'attunement',
+      label: 'Attun.',
+      placeholder: 'Attunement',
+      filterId: 'item-attune-filter',
+      width: '8%',
+      align: 'center',
+      value: item => (item.reqAttune ? 'X' : '')
+    },
+    {
+      key: 'value',
+      label: 'Value',
+      placeholder: 'Value',
+      filterId: 'item-value-filter',
+      width: '10%',
+      value: item => this.formatValue(item.value),
+      sortValue: item => item.value || 0,
+      cellClass: item => {
+        if (!item.value) {
+          return '';
+        }
+        return item.value / 100 >= 1 ? 'text--gp' : item.value / 10 >= 1 ? 'text--sp' : 'text--cp';
+      }
+    },
+    {
+      key: 'rarity',
+      label: 'Rarity',
+      placeholder: 'Rarity',
+      filterId: 'item-rarity-filter',
+      width: '12%',
+      value: item => item.rarity || '',
+      sortValue: item => this.getRaritySort(item.rarity)
+    },
+    {
+      key: 'source',
+      label: 'Source',
+      placeholder: 'Source',
+      filterId: 'item-source-filter',
+      width: '8%',
+      align: 'right',
+      value: item => item.source || '',
+      cellClass: item => (item.source ? `color-${item.source.toLowerCase()}` : '')
+    }
+  ];
 
-  constructor(private http: HttpClient,
+  readonly rowKey = (item: Item) => this.idPipe.transform(item.name);
+
+  constructor(
+    private dataService: DndDataService,
     private route: ActivatedRoute,
-    private location: Location) { }
-
-  @ViewChild(ItemComponent) child: ItemComponent;
-
-  // DataTables objects
-  @ViewChild(DataTableDirective)
-  private dtElement: DataTableDirective;
-  dtOptions: {};
-  dtTrigger: Subject<ADTSettings> = new Subject();
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
-    this.dtOptions = {
-      columnDefs: [
-        { width: '60%', targets: 0 },
-        { width: '20%', targets: 1 },
-        { width: '20%', targets: 2 },
-      ],
-      autoWidth: false,
-      scrollX: true,
-      dom: 'trlp',
-      orderMulti: true,
-      pagingType: "full_numbers",
-      searching: true,
-      language: {
-        lengthMenu: 'Show <select>' +
-          '<option value="10">10</option>' +
-          '<option value="15">15</option>' +
-          '<option value="20">30</option>' +
-          '<option value="60">60</option>' +
-          '<option value="-1">All</option>' +
-          '</select> items',
-        paginate: {
-          first: "<<",
-          last: ">>",
-          next: ">",
-          previous: "<"
-        }
-      },
-      initComplete: function (settings, json) {
-        const api = this.api();
-        api.columns().every(function () {
-          const column = this;
-          const $head = $(column.header());
-          const inputContainer = $head.parent().prev().children().get($head.index());
-          $(':input', inputContainer).off('keyup change search').on('keyup change search', function (e) {
-            const $this = $(this);
-            const value = <string>$this.val();
-            if (column.search() !== value) {
-              column.search(value).draw();
-            }
-          }).trigger('change');
-        });
-      }
-    };
-
-    this.getJSON().subscribe(items => {
+    this.dataService.getItems().pipe(takeUntil(this.destroy$)).subscribe(items => {
       this.items = items;
-      this.items.sort(function (a, b) {
-        return (a.name < b.name) ? -1 : 1;
-      });
-      this.treasure = this.items.filter(f => f.type ? f.type.includes("$") : false);
-      this.normal = this.items.filter(f => f.type ? (!f.type.includes("$") && f.rarity.includes("none")) : false);
-      this.magic = this.items.filter(f => f.type ? (!f.type.includes("$") && !f.rarity.includes("none")) : true)
+      this.treasure = this.items.filter(f => (f.type ? f.type.includes('$') : false));
+      this.normal = this.items.filter(f => (f.type ? !f.type.includes('$') && f.rarity.includes('none') : false));
+      this.magic = this.items.filter(f => (f.type ? !f.type.includes('$') && !f.rarity.includes('none') : true));
       this.shownItems = this.items;
       this.selected = 'all';
-      this.route.paramMap.subscribe(params => {
-        this.currItem = this.items.find(f => this.idPipe.transform(f.name) == this.route.snapshot.params.itemName);
-      });
-      setTimeout(() => {
-        this.dtTrigger.next(this.dtOptions);
+
+      this.route.paramMap.pipe(takeUntil(this.destroy$)).subscribe(params => {
+        const itemName = params.get('itemName');
+        if (itemName) {
+          this.currItem = this.items.find(f => this.idPipe.transform(f.name) === itemName);
+        }
       });
     });
   }
 
   ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
-  setCurrItem(clicked): void {
+  setCurrItem(clicked: Item): void {
     this.currItem = clicked;
-    this.location.go("/items/" + this.idPipe.transform(this.currItem.name))
+    this.location.go('/items/' + this.idPipe.transform(this.currItem.name));
   }
 
-  setItems(choice): void {
-    if (choice != this.selected) {
+  setItems(choice: string): void {
+    if (choice !== this.selected) {
       switch (choice) {
         case 'magic':
           this.shownItems = this.magic;
@@ -134,83 +148,76 @@ export class ItemsComponent implements OnInit {
           this.shownItems = this.items;
           break;
       }
-      this.dtElement.dtInstance.then((dtInstance) => {
-        // Destroy the table first
-        dtInstance.destroy();
-        // Call the dtTrigger to rerender again
-        this.dtTrigger.next(this.dtOptions);
-      });
       this.selected = choice;
     }
   }
 
-  getValueSort(value): number {
-    if (value) {
-      return value;
-    } else {
-      return 1;
+  formatValue(value?: number): string {
+    if (!value) {
+      return '';
     }
+    if (value / 100 >= 1) {
+      return `${Math.round(value / 100).toLocaleString('en-US')} gp`;
+    }
+    if (value / 10 >= 1) {
+      return `${Math.round(value / 10).toLocaleString('en-US')} sp`;
+    }
+    return `${Math.round(value).toLocaleString('en-US')} cp`;
   }
 
-  getRaritySort(rarity): number {
+  getRaritySort(rarity: string): number {
     switch (rarity) {
-      case "none":
+      case 'none':
         return 0;
-        break;
-      case "common":
+      case 'common':
         return 1;
-        break;
-      case "uncommon":
+      case 'uncommon':
         return 2;
-        break;
-      case "rare":
+      case 'rare':
         return 3;
-        break;
-      case "very rare":
+      case 'very rare':
         return 4;
-        break;
-      case "legendary":
+      case 'legendary':
         return 5;
-        break;
-      case "artifact":
+      case 'artifact':
         return 6;
-        break;
+      default:
+        return 0;
     }
-    return 0;
   }
 
-  getItemType(item): string {
-    let returnType = "";
+  getItemType(item: Item): string {
+    let returnType = '';
 
     if (item.wondrous && item.type) {
-      returnType += "Wondrous Item, ";
+      returnType += 'Wondrous Item, ';
     } else if (item.wondrous) {
-      return "Wondrous Item";
+      return 'Wondrous Item';
     }
 
     switch (item.type) {
-      case "M": {
+      case 'M': {
         if (item.weaponCategory && item.baseItem) {
-          returnType += item.weaponCategory + " Melee Weapon (" + item.baseItem + ")";
+          returnType += item.weaponCategory + ' Melee Weapon (' + item.baseItem + ')';
         } else if (item.weaponCategory) {
-          returnType += item.weaponCategory + " Melee Weapon";
+          returnType += item.weaponCategory + ' Melee Weapon';
         } else if (item.baseItem) {
-          returnType += "Melee Weapon(" + item.baseItem + ")";
+          returnType += 'Melee Weapon(' + item.baseItem + ')';
         }
         break;
       }
-      case "R": {
+      case 'R': {
         if (item.weaponCategory && item.baseItem) {
-          returnType += item.weaponCategory + " Ranged Weapon (" + item.baseItem + ")";
+          returnType += item.weaponCategory + ' Ranged Weapon (' + item.baseItem + ')';
         } else if (item.weaponCategory) {
-          returnType += item.weaponCategory + " Ranged Weapon";
+          returnType += item.weaponCategory + ' Ranged Weapon';
         } else if (item.baseItem) {
-          returnType += "Ranged Weapon(" + item.baseItem + ")";
+          returnType += 'Ranged Weapon(' + item.baseItem + ')';
         }
         break;
       }
       default: {
-        returnType += typeTable[item.type];
+        returnType += typeTable[item.type] || '';
         break;
       }
     }

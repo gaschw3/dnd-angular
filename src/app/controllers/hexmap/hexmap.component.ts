@@ -247,14 +247,15 @@ export class HexmapComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  changeZoom(map, targetLayer, zoomMin, zoomMax) {
-    map.on('zoom', function () {
-      let zoom = map.getZoom();
-      if (zoom > zoomMax || zoom < zoomMin) {
-        $(targetLayer).fadeTo(500, 0, function () {  });
-      } else if (zoom <= zoomMax && zoom >= zoomMin) {
-        $(targetLayer).fadeTo(500, 1, function () { });
-      }
-    });
+  changeZoom(map: L.Map, targetLayer: string, zoomMin: number, zoomMax: number): void {
+    const updateOpacity = () => {
+      const zoom = map.getZoom();
+      const visible = zoom <= zoomMax && zoom >= zoomMin;
+      document.querySelectorAll<HTMLElement>(targetLayer).forEach(el => {
+        el.style.transition = 'opacity 0.4s ease';
+        el.style.opacity = visible ? '1' : '0';
+      });
+    };
+    map.on('zoom', updateOpacity);
   }
 }

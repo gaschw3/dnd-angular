@@ -1,0 +1,74 @@
+.ref-table {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.ref-filter-row th {
+  border-top: none;
+  padding: 0.35rem 0.25rem;
+  vertical-align: middle;
+}
+
+.ref-header-row th {
+  white-space: nowrap;
+  user-select: none;
+}
+
+.ref-header-row th.sortable {
+  cursor: pointer;
+}
+
+.sort-indicator {
+  font-size: 0.72em;
+  opacity: 0.65;
+  margin-left: 0.3rem;
+}
+
+.ref-data-row {
+  cursor: pointer;
+}
+
+.ref-table-footer {
+  font-size: 0.9rem;
+}
+
+.ref-table-count {
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.ref-table-pagination {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.ref-page-btn {
+  background: transparent;
+  border: 1px solid rgba(151, 151, 151, 0.5);
+  border-radius: 0.2rem;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.2rem 0.55rem;
+  line-height: 1.3;
+  transition: background-color 0.15s ease;
+
+  &:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+
+  &.current {
+    font-weight: 700;
+    border-color: currentColor;
+    background-color: rgba(121, 175, 255, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
+
+.ref-empty {
+  opacity: 0.8;
+}

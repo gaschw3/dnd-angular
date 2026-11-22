@@ -1,129 +1,143 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {Location} from '@angular/common';
-import { forkJoin, Observable, Subject } from 'rxjs';
-
-import { HttpClient } from '@angular/common/http';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Location, TitleCasePipe } from '@angular/common';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
+
 import { SpellComponent } from './spell/spell.component';
-import { DataTableDirective } from 'angular-datatables';
 import { Spell } from 'src/app/models/spell';
-import { ADTSettings } from 'angular-datatables/src/models/settings';
+import { DndDataService } from 'src/app/shared/services/dnd-data.service';
+import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
   selector: 'app-spells',
   templateUrl: './spells.component.html',
   styleUrls: ['./spells.component.scss']
 })
-export class SpellsComponent implements OnInit {
-
+export class SpellsComponent implements OnInit, OnDestroy {
   spells: Spell[] = [];
-  currSpell: Spell;
-  spellName: string;
+  currSpell?: Spell;
+  initialFilters: Record<string, string> = {};
 
-  public getSourceJSON(): Observable<any> {
-    return this.http.get("assets/data/2024/spellSource.json")
-}
+  private destroy$ = new Subject<void>();
+  private titleCase = new TitleCasePipe();
 
-  public getJSON(): Observable<any> {
-      return this.http.get("assets/data/2024/spells-small.json")
-  }
+  @ViewChild(SpellComponent) child?: SpellComponent;
 
-  constructor(private http: HttpClient,
+  columns: ReferenceTableColumn<Spell>[] = [
+    {
+      key: 'name',
+      label: 'Name',
+      placeholder: 'Name',
+      filterId: 'spell-name-filter',
+      width: '30%',
+      headerIcon: true,
+      filterType: 'regex',
+      value: s =>
+        `${s.name}${s.ritual ? ' (r)' : ''}${s.change === 'buff' ? ' (++)' : ''}${s.change === 'nerf' ? ' (--)' : ''}${s.change === 'change' ? ' (??)' : ''}`,
+      sortValue: s => s.name,
+      cellClass: s => (s.replaced ? 'strikethrough' : '')
+    },
+    {
+      key: 'level',
+      label: 'Level',
+      placeholder: 'Lvl',
+      filterId: 'spell-level-filter',
+      width: '7%',
+      align: 'center',
+      filterType: 'regex',
+      value: s => s.level,
+      sortValue: s => Number(s.level) || 0
+    },
+    {
+      key: 'concentration',
+      label: 'Conc',
+      placeholder: 'Conc',
+      filterId: 'spell-conc-filter',
+      width: '5%',
+      align: 'center',
+      filterType: 'regex',
+      value: s => (s.concentration === true ? 'X' : '')
+    },
+    {
+      key: 'time',
+      label: 'Time',
+      placeholder: 'Time',
+      filterId: 'spell-time-filter',
+      width: '7%',
+      align: 'center',
+      filterType: 'regex',
+      value: s => this.titleCase.transform(s.tableTime || '')
+    },
+    {
+      key: 'school',
+      label: 'School',
+      placeholder: 'School',
+      filterId: 'spell-school-filter',
+      width: '7%',
+      align: 'center',
+      filterType: 'regex',
+      value: s => s.school?.abbrev || '',
+      cellClass: s => (s.school?.name ? `color-${s.school.name.toLowerCase()}` : '')
+    },
+    {
+      key: 'classes',
+      label: 'Classes',
+      placeholder: 'Classes',
+      filterId: 'spell-class-filter',
+      width: '39%',
+      sortable: false,
+      filterType: 'regex',
+      value: s => (s.classes ? s.classes.join(', ') : '')
+    },
+    {
+      key: 'source',
+      label: 'Source',
+      placeholder: 'Source',
+      filterId: 'spell-source-filter',
+      width: '5%',
+      align: 'right',
+      filterType: 'regex',
+      value: s => s.source || '',
+      cellClass: s => (s.source ? `color-${s.source.toLowerCase()}` : '')
+    }
+  ];
+
+  readonly rowKey = (spell: Spell) => spell.id;
+
+  constructor(
+    private dataService: DndDataService,
     private route: ActivatedRoute,
-    private location: Location) {}
-
-  @ViewChild(SpellComponent) child: SpellComponent;
-
-  // DataTables objects
-  @ViewChild(DataTableDirective)
-  private dtElement: DataTableDirective;
-  dtOptions:  {};
-  dtTrigger: Subject<ADTSettings> = new Subject();
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
-    let route = this.route.queryParams;
-    this.dtOptions = {
-      columnDefs: [
-        { width: '30%', targets: 0 },
-        { width: '7%', targets: 1 },
-        { width: '5%', targets: 2 },
-        { width: '7%', targets: 3 },
-        { width: '7%', targets: 4 },
-        { width: '41%', orderable: false, targets: 5 },
-        { width: '5%', targets: 6 }
-      ],
-      autoWidth: false,
-      scrollX: true,
-      dom: 'trpl',
-      paging: true,
-      orderMulti: true,
-      pagingType: "full_numbers",
-      searching: true,
-      language: {
-        lengthMenu: 'Show <select>'+
-        '<option value="10">10</option>'+
-        '<option value="15">15</option>'+
-        '<option value="30">30</option>'+
-        '<option value="60">60</option>'+
-        '<option value="-1">All</option>'+
-        '</select> spells',
-        paginate: {
-          first:      "<<",
-          last:       ">>",
-          next:       ">",
-          previous:   "<"
+    this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(params => {
+      this.initialFilters = { ...params };
+    });
+
+    this.dataService.getSpells().pipe(takeUntil(this.destroy$)).subscribe(spells => {
+      this.spells = spells;
+      this.route.paramMap.pipe(takeUntil(this.destroy$)).subscribe(params => {
+        const spellName = params.get('spellName');
+        if (spellName) {
+          this.currSpell = this.spells.find(f => f.id === spellName);
         }
-      },
-      initComplete: function(settings, json) {
-        const api = this.api();
-
-        route.subscribe(params => {
-          for (var param in params) {
-            $(`#${param}`).val(params[param]); //fill in text boxes with query params
-          }
-        });
-        api.columns().every(function() {
-          const column = this;
-          const $head = $(column.header());
-          const inputContainer = $head.parent().prev().children().get($head.index());
-          $(':input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
-            const $this = $(this);
-            const value = <string>$this.val();
-            if (column.search() !== value) {
-              column.search(value,true,false).draw(); //text, regex, smartSearch
-            }
-          }).trigger('change');
-        });
-      }
-    };
-
-    const combined = forkJoin([
-      this.getJSON(),
-      this.getSourceJSON()
-    ]);
-    combined.subscribe((response) => {
-      let spells = response[0];
-      let spellSource = response[1];
-      spells.spell.forEach(spell => this.spells.push(new Spell(spell, spellSource[spell.name.toLowerCase()])));
-      this.route.paramMap.subscribe(params => {
-        this.currSpell = this.spells.find(f => f.id == this.route.snapshot.params.spellName);
-      });
-      setTimeout(() => {
-        this.dtTrigger.next(this.dtOptions);
       });
     });
   }
 
   ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
-  setCurrSpell(clickedSpell): void {
+  setCurrSpell(clickedSpell: Spell): void {
     this.currSpell = clickedSpell;
-    this.location.go("/spells/" + this.currSpell.id)
+    this.location.go('/spells/' + this.currSpell.id);
   }
 
-  goBack() {
+  goBack(): void {
     this.location.back();
   }
 }

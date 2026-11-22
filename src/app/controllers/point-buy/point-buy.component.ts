@@ -1,17 +1,14 @@
 import { HelperService } from './../../shared/helpers/helper.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Ancestry } from '../../models/ancestry';
-
-import { Subject, Observable } from "rxjs";
-import { HttpClient } from '@angular/common/http';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-
+import { DndDataService } from '../../shared/services/dnd-data.service';
 
 interface Stat {
-  name: string,
-  value: number,
-  topChosen?: boolean,
-  botChosen?: boolean
+  name: string;
+  value: number;
+  topChosen?: boolean;
+  botChosen?: boolean;
 }
 
 @Component({
@@ -20,154 +17,127 @@ interface Stat {
   styleUrls: ['./point-buy.component.scss']
 })
 export class PointBuyComponent implements OnInit {
+  ancestryForm?: UntypedFormGroup;
 
-  ancestryForm: UntypedFormGroup;
+  ancestries: Ancestry[] = [];
+  selectedAncestry?: Ancestry;
 
-  ancestries: Ancestry[];
-  selectedAncestry: Ancestry;
+  pointsSpent = 0;
+  totalPoints = 27;
 
-  public getJSON(): Observable<any> {
-    return this.http.get("assets/data/2023/ancestryData.json")
-  }
+  stats: Stat[] = [
+    { name: 'str', value: 8, topChosen: false, botChosen: false },
+    { name: 'dex', value: 8, topChosen: false, botChosen: false },
+    { name: 'con', value: 8, topChosen: false, botChosen: false },
+    { name: 'int', value: 8, topChosen: false, botChosen: false },
+    { name: 'wis', value: 8, topChosen: false, botChosen: false },
+    { name: 'cha', value: 8, topChosen: false, botChosen: false }
+  ];
 
-  // default value for point buy is 27
-  pointsSpent : number = 0;
-  totalPoints: number = 27;
+  ancestryStats: Stat[] = [
+    { name: 'str', value: 0 },
+    { name: 'dex', value: 0 },
+    { name: 'con', value: 0 },
+    { name: 'int', value: 0 },
+    { name: 'wis', value: 0 },
+    { name: 'cha', value: 0 }
+  ];
 
-  // stats start at 8 by default
-  stats: Array<Stat> = [
-    {name: "str", value: 8, topChosen: false, botChosen: false},
-    {name: "dex", value: 8, topChosen: false, botChosen: false},
-    {name: "con", value: 8, topChosen: false, botChosen: false},
-    {name: "int", value: 8, topChosen: false, botChosen: false},
-    {name: "wis", value: 8, topChosen: false, botChosen: false},
-    {name: "cha", value: 8, topChosen: false, botChosen: false},
-  ]
+  anChoose = 0;
+  choose = 3;
+  pickTwo = false;
 
-  // storage for ancestry related boosts
-  ancestryStats: Array<Stat> = [
-    {name: "str", value: 0},
-    {name: "dex", value: 0},
-    {name: "con", value: 0},
-    {name: "int", value: 0},
-    {name: "wis", value: 0},
-    {name: "cha", value: 0},
-  ]
-
-  //starting values and store for races where you choose stat bonuses
-  anChoose: number = 0;
-  choose: number = 3;
-  pickTwo: boolean = false;
-
-  constructor(private http: HttpClient,
+  constructor(
+    private dataService: DndDataService,
     private fb: UntypedFormBuilder,
-    public helper: HelperService) { this.updatePercentage();}
+    public helper: HelperService
+  ) {}
 
-  ngOnInit() {
-    this.updatePercentage();
-    this.getJSON().subscribe(ancestries => {
+  ngOnInit(): void {
+    this.dataService.getLegacyAncestries().subscribe(ancestries => {
       this.ancestries = ancestries;
     });
   }
 
-  updatePercentage() {
-    $(".progress").each(function () {
-      var value = $(this).attr('data-value');
-      var left = $(this).find('.progress-left .progress-bar');
-      var right = $(this).find('.progress-right .progress-bar');
-
-      if (parseInt(value) > 0) {
-        if (parseInt(value) <= 50) {
-          right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-        } else {
-          right.css('transform', 'rotate(180deg)')
-          left.css('transform', 'rotate(' + percentageToDegrees(parseInt(value) - 50) + 'deg)')
-        }
-      }
-
-    })
-
-    function percentageToDegrees(percentage) {
-      return percentage / 100 * 360
-    }
+  updatePercentage(): void {
+    // Progress circle updates reactively via getPercentage() in the template.
   }
 
-  getPercentage() {
+  getPercentage(): number {
     return Math.floor(((this.totalPoints - this.pointsSpent) / this.totalPoints) * 100);
   }
 
-  setCurrAncestry(ancestry) {
+  setCurrAncestry(ancestry: any): void {
     if (ancestry) {
-      for (let anStat of this.ancestryStats) {
-        ancestry[anStat.name] ? anStat.value = ancestry[anStat.name] : anStat.value = 0;
+      for (const anStat of this.ancestryStats) {
+        anStat.value = ancestry[anStat.name] ? ancestry[anStat.name] : 0;
       }
-      ancestry.choose ? this.choose = ancestry.choose : this.choose = 3;
+      this.choose = ancestry.choose ? ancestry.choose : 3;
     }
   }
 
-  chooseStats(event) {
-    this.anChoose = $('input:checkbox:checked').length;
-    if(event.target.checked === true){
+  chooseStats(event: any): void {
+    const checkedCount = this.stats.reduce(
+      (sum, stat) => sum + (stat.topChosen ? 1 : 0) + (stat.botChosen ? 1 : 0),
+      0
+    );
+    this.anChoose = checkedCount;
+    if (event.target.checked === true) {
       if (this.anChoose <= this.choose) {
-        this.anChoose++;
-        for (let anStat of this.ancestryStats) {
-          if (event.target.value == anStat.name) {
+        for (const anStat of this.ancestryStats) {
+          if (event.target.value === anStat.name) {
             anStat.value += 1;
           }
         }
       } else {
-          event.target.checked = false;
+        event.target.checked = false;
+        this.anChoose = Math.max(0, this.anChoose - 1);
       }
-    } else if (this.anChoose > -1) {
-      this.anChoose--;
-      for (let anStat of this.ancestryStats) {
-        if (event.target.value == anStat.name) {
+    } else if (this.anChoose >= 0) {
+      for (const anStat of this.ancestryStats) {
+        if (event.target.value === anStat.name) {
           anStat.value -= 1;
         }
       }
     }
   }
 
-  calculatePoints() {
+  calculatePoints(): void {
     this.pointsSpent = 0;
-    for (let stat of this.stats) {
+    for (const stat of this.stats) {
       this.validateStat(stat);
       this.pointsSpent += this.pointCost(stat.value);
     }
-    this.updatePercentage();
   }
 
-  pointCost(stat) {
+  pointCost(stat: number): number {
     if (stat > 7 && stat < 14) {
-        return stat - 8;
-    } else if (stat == 14) {
-        return 7;
-    } else if (stat == 15) {
-        return 9;
+      return stat - 8;
+    } else if (stat === 14) {
+      return 7;
+    } else if (stat === 15) {
+      return 9;
     }
+    return 0;
   }
 
-  // don't allow illegal values in the input fields
-  validateStat(stat) {
+  validateStat(stat: Stat): void {
     if (stat.value < 8) {
       stat.value = 8;
     } else if (stat.value > 15) {
       stat.value = 15;
-    } else {
-      return;
     }
   }
 
-  getMod (stat, ancestryStat) {
-    return this.helper.getStatMod(stat + ancestryStat);
+  getMod(stat: number, ancestryStat: number): string {
+    return this.helper.getStatMod(String(stat + ancestryStat));
   }
 
-  getModNum(stat, ancestryStat): number {
-    return parseInt(this.getMod(stat, ancestryStat));
+  getModNum(stat: number, ancestryStat: number): number {
+    return parseInt(this.getMod(stat, ancestryStat), 10);
   }
 
-  getAnStat(statName) {
-    return (this.ancestryStats.filter(anStat => anStat.name == statName))[0].value;
+  getAnStat(statName: string): number {
+    return this.ancestryStats.filter(anStat => anStat.name === statName)[0].value;
   }
-
 }

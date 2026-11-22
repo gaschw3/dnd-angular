@@ -17,12 +17,12 @@ export class ClassComponent implements OnInit, OnChanges {
   @ViewChild(ArchetypesComponent) child2: ArchetypesComponent;
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
 
-  archetypeChange: Subject<Array<String>> = new Subject<Array<String>>();
+  archetypeChange: Subject<Array<string>> = new Subject<Array<string>>();
   selectedChange: Subject<boolean> = new Subject<boolean>();
 
   prof: Proficiencies;
   multi: newMulticlass;
-  selectedArchetypes: Array<String> = [];
+  selectedArchetypes: Array<string> = [];
   allSelected: boolean = false;
   ccId: number = 0; //current class id
 

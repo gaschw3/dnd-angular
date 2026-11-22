@@ -1,14 +1,13 @@
-import { MonsterHelperService } from '../../shared/helpers/monster/monster-helper.service';
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { DataTableDirective } from 'angular-datatables';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
-import { Observable, Subject } from 'rxjs';
+import { MonsterHelperService } from '../../shared/helpers/monster/monster-helper.service';
 import { Monster } from 'src/app/models';
 import { HelperService } from '../../shared/helpers/helper.service';
 import { crXpMap, levelXp } from 'src/app/shared/helpers/monster/experienceMaps';
-import { ActivatedRoute } from '@angular/router';
-import { ADTSettings } from 'angular-datatables/src/models/settings';
+import { DndDataService } from 'src/app/shared/services/dnd-data.service';
+import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
   selector: 'app-encounter-builder',
@@ -16,160 +15,137 @@ import { ADTSettings } from 'angular-datatables/src/models/settings';
   styleUrls: ['./encounter-builder.component.scss']
 })
 export class EncounterBuilderComponent implements OnInit, OnDestroy {
-
   levelXp = levelXp;
   crXp = crXpMap;
 
-  //bound variables for party size
-  partySize: any = 5;
-  partyLevel: any = 9;
-  //derived variables used to calculate and show total XP values
-  singleMultiplier:number = 1;
-  pairMultiplier: number = 1;
-  groupMultiplier: number = 1;
-  hordeMultiplier: number = 1;
-  encounterXp: number = 0;
-  adjustedXp: number = 0;
-  currEncounterDifficulty: string = "trivial";
-  currPartyDifficulty: PartyDifficulty;
+  partySize = 5;
+  partyLevel = 9;
 
-  //used for sorting on CR more complexly
-  min: number = null;
-  max: number = null;
+  singleMultiplier = 1;
+  pairMultiplier = 1;
+  groupMultiplier = 1;
+  hordeMultiplier = 1;
+  encounterXp = 0;
+  adjustedXp = 0;
+  currEncounterDifficulty = 'trivial';
+  currPartyDifficulty!: PartyDifficulty;
 
-  //toggle show/hide monster table to change button text
-  showMonsterTable: boolean = true;
+  showMonsterTable = true;
+  showLegend = false;
 
-  //various monsters show in table, card, or encounter areas
-  currMonster: Monster;
-  monsters: Array<Monster>;
-  currEncounter: Array<EncounterMonster> = [];
+  currMonster?: Monster;
+  monsters: Monster[] = [];
+  currEncounter: EncounterMonster[] = [];
 
-  public getJSON(): Observable<any> {
-      return this.http.get("assets/data/2023/beastiary.json")
-  }
+  private destroy$ = new Subject<void>();
+
+  columns: ReferenceTableColumn<Monster>[] = [
+    {
+      key: 'add',
+      label: '',
+      width: '5%',
+      sortable: false,
+      filterable: false,
+      action: {
+        iconClass: 'fa fa-plus',
+        btnClass: 'btn btn-sm btn-success',
+        ariaLabel: 'Add monster to encounter',
+        onClick: monster => this.addMonster(monster)
+      }
+    },
+    {
+      key: 'name',
+      label: 'Name',
+      placeholder: 'Name',
+      filterId: 'beastiary-name-filter',
+      width: '28%',
+      headerIcon: true,
+      value: m => m.name
+    },
+    {
+      key: 'cr',
+      label: 'CR',
+      filterId: 'beastiary-cr-filter',
+      width: '17%',
+      align: 'center',
+      filterType: 'number-range',
+      min: 0,
+      max: 30,
+      value: m => m.cr,
+      sortValue: m => this.monsterHelper.getSortCr(m.cr),
+      cellClass: m => `text--black color--${this.getMonsterDifficulty(m.cr)}`
+    },
+    {
+      key: 'size',
+      label: 'Size',
+      placeholder: 'Size',
+      filterId: 'beastiary-size-filter',
+      width: '12%',
+      value: m => this.monsterHelper.translateSize(m.size)
+    },
+    {
+      key: 'type',
+      label: 'Type',
+      placeholder: 'Type',
+      filterId: 'beastiary-type-filter',
+      width: '18%',
+      value: m => this.monsterHelper.getType(m.type)
+    },
+    {
+      key: 'alignment',
+      label: 'Alignment',
+      placeholder: 'Alignment',
+      filterId: 'beastiary-alignment-filter',
+      width: '14%',
+      value: m => this.monsterHelper.translateAlignment(m.alignment)
+    },
+    {
+      key: 'source',
+      label: 'Source',
+      placeholder: 'Source',
+      filterId: 'beastiary-source-filter',
+      width: '6%',
+      align: 'right',
+      value: m => m.source || '',
+      cellClass: m => (m.source ? `color-${m.source.toLowerCase()}` : '')
+    }
+  ];
+
+  readonly rowKey = (monster: Monster) => monster.id;
 
   constructor(
-    private http: HttpClient,
+    private dataService: DndDataService,
     public helper: HelperService,
-    private route: ActivatedRoute,
-    public monsterHelper: MonsterHelperService) {}
-
-  // DataTables objects
-  @ViewChild(DataTableDirective)
-  private dtElement: DataTableDirective;
-  dtOptions:  {};
-  dtTrigger: Subject<ADTSettings> = new Subject();
+    public monsterHelper: MonsterHelperService
+  ) {}
 
   ngOnInit(): void {
-
-    // Add a new search method to be used on the CR column for a range of numbers
-    $.fn['dataTable'].ext.search.push((settings, data, dataIndex) => {
-      const id = parseFloat(data[2]) || 0; // data[2] is the CR column, this should in unit tests
-      if ( (this.min == null && this.max == null)
-        || (this.min == null && id <= this.max)
-        || (this.min <= id && this.max == null)
-        || (this.min <= id && id <= this.max)) {
-        return true;
-      }
-      return false;
-    });
-
-    this.dtOptions = {
-      columnDefs: [
-        { width: '5%', sortable: false, orderable: false, targets: 0 },
-        { width: '30%', targets: 1 },
-        { width: '15%', targets: 2 },
-        { width: '15%', targets: 3 },
-        { width: '30%', targets: 4 },
-        { width: '5%', targets: 5 }
-      ],
-      autoWidth: false,
-      scrollX: true,
-      dom: 'trpl',
-      paging: true,
-      orderMulti: true,
-      pagingType: "full_numbers",
-      searching: true,
-      order: [1, "asc"],
-      language: {
-        lengthMenu: 'Show <select>'+
-        '<option value="10">10</option>'+
-        '<option value="15">15</option>'+
-        '<option value="30">30</option>'+
-        '<option value="60">60</option>'+
-        '<option value="-1">All</option>'+
-        '</select> monsters',
-        paginate: {
-          first:      "<<",
-          last:       ">>",
-          next:       ">",
-          previous:   "<"
-        }
-      },
-      initComplete: function(settings, json) {
-        const api = this.api();
-        api.columns().every(function() {
-          const column = this;
-          const $head = $(column.header());
-          if ($head.index() === 0 || $head.index() === 2) {
-            return true;
-          }
-          const inputContainer = $head.parent().prev().children().get($head.index());
-          $(':input', inputContainer).off('keyup change search').on('keyup change search', function(e) {
-            const $this = $(this);
-            const colIndex = $(column.header()).index();
-            if (colIndex === 2) {
-              //intentionally blank, I don't want this search method for the CR column
-            } else {
-              const value = <string>$this.val();
-              if (column.search() !== value) {
-                column.search(value).draw();
-              }
-            }
-          }).trigger('change');
-        });
-      }
-    };
-
-    this.getJSON().subscribe(beastiary => {
-        this.monsters = beastiary.monsters.filter(f => f.cr !== "N/A");
-        setTimeout(() => {
-          this.dtTrigger.next(this.dtOptions);
-        });
+    this.dataService.getMonsters().pipe(takeUntil(this.destroy$)).subscribe(monsters => {
+      this.monsters = monsters.filter(f => f.cr !== 'N/A');
     });
     this.recalcPartyDifficulty();
   }
 
   ngOnDestroy(): void {
-    // We remove the last function in the global ext search array so we do not add the fn each time the component is drawn
-    // /!\ This is not the ideal solution if other components add search function in this array, so be careful
-    $.fn['dataTable'].ext.search.pop();
-    this.dtTrigger.unsubscribe();
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
-  complexCrFilter(): void {
-    this.dtElement.dtInstance.then((dtInstance) => {
-      dtInstance.draw();
-    });
-  }
-
-  setCurrMonster(clickedMonster): void {
+  setCurrMonster(clickedMonster: Monster): void {
     this.currMonster = clickedMonster;
   }
 
   addMonster(clickedMonster: Monster): void {
-    let newMonster = { monster: clickedMonster, number:1 };
-    let monsterInCurrEncounter = this.currEncounter.find(encEntry => encEntry.monster == clickedMonster);
+    const monsterInCurrEncounter = this.currEncounter.find(encEntry => encEntry.monster === clickedMonster);
     if (monsterInCurrEncounter) {
       monsterInCurrEncounter.number++;
     } else {
-      this.currEncounter.push(newMonster);
+      this.currEncounter.push({ monster: clickedMonster, number: 1 });
     }
-    this.recalcEncounterXp()
+    this.recalcEncounterXp();
   }
 
-  encounterChange(index:number, change: number) {
+  encounterChange(index: number, change: number): void {
     this.currEncounter[index].number += change;
     if (this.currEncounter[index].number < 1) {
       this.currEncounter.splice(index, 1);
@@ -178,29 +154,27 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   }
 
   clearEncounter(): void {
-    //reset current counter, is this okay?
     this.currEncounter = [];
     this.recalcEncounterXp();
   }
 
-  //this function is so complex, why is D&D experience calculated this way? It's actually insane.
-  recalcPartyDifficulty() {
-    let mediumXp = levelXp[this.partyLevel].medium * this.partySize
-    if ( this.partySize < 3 ) { // For small groups, increase multiplier
-      this.singleMultiplier  = 1.5;
-      this.pairMultiplier    = 2;
-      this.groupMultiplier   = 2.5;
-      this.hordeMultiplier   = 3;
-    } else if ( this.partySize > 5 ) { // For large groups, reduce multiplier
-      this.singleMultiplier  = 0.5;
-      this.pairMultiplier    = 1;
-      this.groupMultiplier   = 1.5;
-      this.hordeMultiplier   = 2;
-    } else { //default for more standard party sizes
-      this.singleMultiplier  = 1;
-      this.pairMultiplier    = 1.5;
-      this.groupMultiplier   = 2;
-      this.hordeMultiplier   = 2.5;
+  recalcPartyDifficulty(): void {
+    const mediumXp = levelXp[this.partyLevel].medium * this.partySize;
+    if (this.partySize < 3) {
+      this.singleMultiplier = 1.5;
+      this.pairMultiplier = 2;
+      this.groupMultiplier = 2.5;
+      this.hordeMultiplier = 3;
+    } else if (this.partySize > 5) {
+      this.singleMultiplier = 0.5;
+      this.pairMultiplier = 1;
+      this.groupMultiplier = 1.5;
+      this.hordeMultiplier = 2;
+    } else {
+      this.singleMultiplier = 1;
+      this.pairMultiplier = 1.5;
+      this.groupMultiplier = 2;
+      this.hordeMultiplier = 2.5;
     }
 
     this.currPartyDifficulty = {
@@ -210,100 +184,97 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
       easy: (levelXp[this.partyLevel].easy * this.partySize) / this.singleMultiplier,
       pair: mediumXp / (2 * this.pairMultiplier),
       group: mediumXp / (4 * this.groupMultiplier),
-      trivial: mediumXp / (8 * this.hordeMultiplier),
-    }
+      trivial: mediumXp / (8 * this.hordeMultiplier)
+    };
     this.recalcEncounterXp();
   }
 
-  //this function is so complex, why is D&D experience calculated this way? It's actually insane.
-  recalcEncounterDifficulty(adjXp: number) {
+  recalcEncounterDifficulty(adjXp: number): string {
     if (adjXp < this.currPartyDifficulty.easy) {
-      return "trivial"
+      return 'trivial';
     } else if (adjXp < this.currPartyDifficulty.medium) {
-      return "easy"
+      return 'easy';
     } else if (adjXp < this.currPartyDifficulty.hard) {
-      return "medium"
+      return 'medium';
     } else if (adjXp < this.currPartyDifficulty.deadly) {
-      return "hard"
-    } else if (adjXp >= this.currPartyDifficulty.deadly) {
-      return "deadly"
+      return 'hard';
     }
+    return 'deadly';
   }
 
   recalcEncounterXp(): void {
-    let totalXp = 0, totalMonters = 0;
-    for (let m of this.currEncounter) {
-      let matchingCr = (this.crXp.find(i => i.cr === m.monster.cr));
-      totalXp += matchingCr.xp * m.number;
-      totalMonters += m.number;
+    let totalXp = 0;
+    let totalMonsters = 0;
+    for (const m of this.currEncounter) {
+      const cr = m.monster.cr.includes('(') ? m.monster.cr.split(' (')[0] : m.monster.cr;
+      const matchingCr = this.crXp.find(i => i.cr === cr);
+      if (matchingCr) {
+        totalXp += matchingCr.xp * m.number;
+      }
+      totalMonsters += m.number;
     }
     this.encounterXp = totalXp;
-    this.adjustedXp = totalXp * this.getMultiplier(totalMonters);
+    this.adjustedXp = totalXp * this.getMultiplier(totalMonsters);
     this.currEncounterDifficulty = this.recalcEncounterDifficulty(this.adjustedXp);
   }
 
-  getMultiplier(monsterCount: number) {
-    let partySize = this.partySize
-    let multiplierCategory,
-      multipliers = [
-        0.5,
-        1,
-        1.5,
-        2,
-        2.5,
-        3,
-        4,
-        5,
-      ];
+  getMultiplier(monsterCount: number): number {
+    const partySize = this.partySize;
+    const multipliers = [0.5, 1, 1.5, 2, 2.5, 3, 4, 5];
+    let multiplierCategory: number;
 
-    if ( monsterCount === 0 ) {
+    if (monsterCount === 0) {
       return 0;
-    } else if ( monsterCount === 1 ) {
+    } else if (monsterCount === 1) {
       multiplierCategory = 1;
-    } else if ( monsterCount === 2 ) {
+    } else if (monsterCount === 2) {
       multiplierCategory = 2;
-    } else if ( monsterCount < 7 ) {
+    } else if (monsterCount < 7) {
       multiplierCategory = 3;
-    } else if ( monsterCount < 11 ) {
+    } else if (monsterCount < 11) {
       multiplierCategory = 4;
-    } else if ( monsterCount < 15 ) {
+    } else if (monsterCount < 15) {
       multiplierCategory = 5;
     } else {
       multiplierCategory = 6;
     }
 
-    if ( partySize < 3 ) { // Increase multiplier for parties of one and two
+    if (partySize < 3) {
       multiplierCategory++;
-    } else if ( partySize > 5 ) { // Decrease multiplier for parties of six through eight
+    } else if (partySize > 5) {
       multiplierCategory--;
     }
 
     return multipliers[multiplierCategory];
   }
 
-  getMonsterDifficulty(cr: string) {
-    if (cr === "N/A") {
-      return "trivial"
+  getMonsterDifficulty(cr: string): string {
+    if (!cr || cr === 'N/A') {
+      return 'trivial';
     }
-    if (cr.includes("(")) { //contains extra text for lair or coven or etc.
+    if (cr.includes('(')) {
       cr = cr.split(' (')[0];
     }
 
-    let monsterXp = (this.crXp.find(i => i.cr === cr)).xp;
-    if ( monsterXp >  this.currPartyDifficulty.deadly ) {
-        return "deadly";
-    } else if ( monsterXp >  this.currPartyDifficulty.hard ) {
-        return "hard";
-    } else if ( monsterXp >  this.currPartyDifficulty.medium ) {
-        return "medium";
-    } else if ( monsterXp > this.currPartyDifficulty.easy ) {
-        return "easy";
-    } else if ( monsterXp >  this.currPartyDifficulty.pair ) {
-        return "pair";
-    } else if ( monsterXp > this.currPartyDifficulty.group ) {
-        return "group";
+    const matchingCr = this.crXp.find(i => i.cr === cr);
+    if (!matchingCr) {
+      return 'trivial';
+    }
+    const monsterXp = matchingCr.xp;
+    if (monsterXp > this.currPartyDifficulty.deadly) {
+      return 'deadly';
+    } else if (monsterXp > this.currPartyDifficulty.hard) {
+      return 'hard';
+    } else if (monsterXp > this.currPartyDifficulty.medium) {
+      return 'medium';
+    } else if (monsterXp > this.currPartyDifficulty.easy) {
+      return 'easy';
+    } else if (monsterXp > this.currPartyDifficulty.pair) {
+      return 'pair';
+    } else if (monsterXp > this.currPartyDifficulty.group) {
+      return 'group';
     } else {
-        return "trivial";
+      return 'trivial';
     }
   }
 }
@@ -314,11 +285,11 @@ interface EncounterMonster {
 }
 
 interface PartyDifficulty {
-  deadly: number,
-  hard: number,
-  medium: number,
-  easy: number,
-  pair: number,
-  group: number,
-  trivial: number,
+  deadly: number;
+  hard: number;
+  medium: number;
+  easy: number;
+  pair: number;
+  group: number;
+  trivial: number;
 }
