@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
@@ -6,7 +6,8 @@ import * as L from 'leaflet';
   templateUrl: './hexmap.component.html',
   styleUrls: ['./hexmap.component.scss']
 })
-export class HexmapComponent implements AfterViewInit {
+export class HexmapComponent implements AfterViewInit, OnDestroy {
+  private map: L.Map;
   private countries;
   private continents;
   private cities;
@@ -149,14 +150,11 @@ export class HexmapComponent implements AfterViewInit {
 
   private initMap(): void {
     let map = L.map('map', {zoomSnap: 0.25}).setView([52, 5], 4);
-    let textLabel = L.icon({
-      iconUrl: 't',
+    this.map = map;
+    let textLabel = L.divIcon({
+      className: 'empty-text-icon',
       iconSize: [0, 0],
-      iconAnchor: [0, 0],
-      popupAnchor: [0, 0],
-      shadowUrl: '',
-      shadowSize: [0, 0],
-      shadowAnchor: [0, 0]
+      iconAnchor: [0, 0]
     });
     let cityLabel = L.icon({
       iconUrl: 'assets/city-marker.png',
@@ -241,6 +239,12 @@ export class HexmapComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.initMap();
+  }
+
+  ngOnDestroy(): void {
+    if (this.map) {
+      this.map.remove();
+    }
   }
 
   changeZoom(map, targetLayer, zoomMin, zoomMax) {

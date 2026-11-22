@@ -1,3 +1,25 @@
 .container-fluid {
-  max-width:90%;
+  max-width: 1600px;
+  width: 95%;
+}
+
+@media (min-width: 992px) {
+  .container-fluid {
+    width: 90%;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 1100;
+  padding: .5rem .75rem;
+  background: #fff;
+  color: #212529 !important;
+  border-radius: .25rem;
+}
+
+.skip-link:focus {
+  top: .5rem;
 }

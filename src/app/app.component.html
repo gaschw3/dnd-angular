@@ -1,5 +1,6 @@
 <app-particles *ngIf="particles" [theme]="theme"></app-particles>
 <div [ngClass]="'theme-'+theme"><div class="theme-container">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
       <div *ngIf="theme != 'royal'" class="form-group mb-0">
@@ -8,23 +9,23 @@
       <div *ngIf="theme == 'royal'" class="form-group mb-0">
         <img src="./royal-seal.png" width="30" height="36" alt="site icon">
       </div>
-      <a class="d-inline-block align-top navbar-brand" href="#">Poop Deck 5e</a>
-      <button  class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
+      <a class="d-inline-block align-top navbar-brand" routerLink="/classes" (click)="isNavbarCollapsed = true">Poop Deck 5e</a>
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isNavbarCollapsed" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
       <span  class="navbar-toggler-icon"></span>
       </button>
-      <div  class="collapse navbar-collapse"  id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}" id="navbarSupportedContent">
         <ul  class="navbar-nav mr-auto">
             <li  class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdownChar"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
               Characters
               </a>
               <div  class="dropdown-menu"  aria-labelledby="navbarDropdownChar">
-                <a  class="dropdown-item" [routerLink]="'/classes'"> Classes </a>
-                <a  class="dropdown-item" [routerLink]="'/backgrounds'"> Backgrounds </a>
-                <a  class="dropdown-item" [routerLink]="'/ancestries'"> Ancestries </a>
-                <a  class="dropdown-item" [routerLink]="'/feats'"> Feats </a>
+                <a class="dropdown-item" routerLink="/classes" routerLinkActive="active"> Classes </a>
+                <a class="dropdown-item" routerLink="/backgrounds" routerLinkActive="active"> Backgrounds </a>
+                <a class="dropdown-item" routerLink="/ancestries" routerLinkActive="active"> Ancestries </a>
+                <a class="dropdown-item" routerLink="/feats" routerLinkActive="active"> Feats </a>
                 <!--<a  class="dropdown-item" [routerLink]="'/epic-boons'"> Epic Boons </a>-->
-                <a class="dropdown-item" [routerLink]="'/other-features'"> Misc. Features</a>
+                <a class="dropdown-item" routerLink="/other-features" routerLinkActive="active"> Misc. Features</a>
               </div>
             </li>
             <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
@@ -33,12 +34,12 @@
                 DM<!--<span class="ml-1 badge badge-success">*</span>-->
               </a>
               <div class="dropdown-menu" aria-labelledby="navdarDropdownDm">
-                <a class="dropdown-item" [routerLink]="'/beastiary'"> Beastiary </a>
+                <a class="dropdown-item" routerLink="/beastiary" routerLinkActive="active"> Beastiary </a>
                 <!--<a class="dropdown-item" [routerLink]="'/dm-assistant'"> DM Assistant
                   <span class="ml-1 badge badge-success">NEW</span>
                 </a>-->
-                <a class="dropdown-item" [routerLink]="'/encounter-builder'"> Encounter Builder</a>
-                <a class="dropdown-item" [routerLink]="'/items'"> Items </a>
+                <a class="dropdown-item" routerLink="/encounter-builder" routerLinkActive="active"> Encounter Builder</a>
+                <a class="dropdown-item" routerLink="/items" routerLinkActive="active"> Items </a>
               </div>
             </li>
             <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
@@ -46,9 +47,9 @@
               Reference<!--<span class="ml-1 badge badge-warning">*</span>>-->
               </a>
               <div  class="dropdown-menu"  aria-labelledby="navbarDropdownRef">
-                <a  class="dropdown-item" [routerLink]="'/spells'"> Spells </a>
-                <a  class="dropdown-item" [routerLink]="'/map'"> Map </a>
-                <a class="dropdown-item" [routerLink]="'/point-buy'"> Point Buy Calculator</a>
+                <a class="dropdown-item" routerLink="/spells" routerLinkActive="active"> Spells </a>
+                <a class="dropdown-item" routerLink="/map" routerLinkActive="active"> Map </a>
+                <a class="dropdown-item" routerLink="/point-buy" routerLinkActive="active"> Point Buy Calculator</a>
               </div>
             </li>
           </ul>
@@ -78,8 +79,8 @@
                   </div>
                   <div *ngIf="theme != 'dark' && theme != 'royal' && theme != 'forest'" class="form-group">
                     <div class="form-check form-switch">
-                      <input type="checkbox" class="form-check-input" [(ngModel)]="particles" id="particles" name="particles">
-                      <label class="form-check-label" for="particles">Use Occultum<sup><a class="text--op" href="/items/occultum-op">?</a></sup></label>
+                      <input type="checkbox" class="form-check-input" [(ngModel)]="particles" (change)="changeParticles()" id="particles" name="particles">
+                      <label class="form-check-label" for="particles">Use Occultum<sup><a class="text--op" routerLink="/items/occultum-op">?</a></sup></label>
                     </div>
                   </div>
                 </form>
@@ -89,8 +90,8 @@
       </div>
     </div>
   </nav>
-  <div  class="container-fluid">
+  <main id="main-content" class="container-fluid" tabindex="-1">
       <router-outlet></router-outlet>
-  </div>
+  </main>
   <ngx-scrolltop [size]="70" symbolColor="#fff"></ngx-scrolltop>
 </div></div>

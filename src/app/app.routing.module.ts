@@ -1,4 +1,3 @@
-import { PointBuyModule } from './controllers/point-buy/point-buy.module';
 import { NgModule } from '@angular/core';
 //import { ForbiddenComponent, NotAuthorizedComponent, NotFoundComponent, ServerErrorComponent } from './error';
 

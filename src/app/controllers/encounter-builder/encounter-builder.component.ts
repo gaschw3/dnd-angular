@@ -96,7 +96,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
         lengthMenu: 'Show <select>'+
         '<option value="10">10</option>'+
         '<option value="15">15</option>'+
-        '<option value="20">30</option>'+
+        '<option value="30">30</option>'+
         '<option value="60">60</option>'+
         '<option value="-1">All</option>'+
         '</select> monsters',
@@ -188,7 +188,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
     let mediumXp = levelXp[this.partyLevel].medium * this.partySize
     if ( this.partySize < 3 ) { // For small groups, increase multiplier
       this.singleMultiplier  = 1.5;
-      this.groupMultiplier   = 2;
+      this.pairMultiplier    = 2;
       this.groupMultiplier   = 2.5;
       this.hordeMultiplier   = 3;
     } else if ( this.partySize > 5 ) { // For large groups, reduce multiplier

@@ -63,7 +63,7 @@ export class SpellsComponent implements OnInit {
         lengthMenu: 'Show <select>'+
         '<option value="10">10</option>'+
         '<option value="15">15</option>'+
-        '<option value="20">30</option>'+
+        '<option value="30">30</option>'+
         '<option value="60">60</option>'+
         '<option value="-1">All</option>'+
         '</select> spells',
