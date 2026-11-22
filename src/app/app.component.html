@@ -3,15 +3,15 @@
 }
 <div [ngClass]="'theme-'+theme"><div class="theme-container">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar sticky-top navbar-expand-lg bg-primary" [ngClass]="theme === 'royal' || theme === 'light' ? 'navbar-light' : 'navbar-dark'">
     <div class="container-fluid">
       @if (theme != 'royal') {
-        <div class="form-group mb-0">
+        <div class="me-2 d-flex align-items-center">
           <img src="./favicon.ico" width="30" height="30" alt="site favicon">
         </div>
       }
       @if (theme == 'royal') {
-        <div class="form-group mb-0">
+        <div class="me-2 d-flex align-items-center">
           <img src="./royal-seal.png" width="30" height="36" alt="site icon">
         </div>
       }
@@ -20,7 +20,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav me-auto">
           <li class="nav-item dropdown" [class.show]="openDropdown === 'char'">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownChar" role="button" data-phy="Charact"
               [attr.aria-expanded]="openDropdown === 'char'" aria-haspopup="true" (click)="toggleDropdown('char', $event)">
@@ -58,17 +58,17 @@
           </li>
         </ul>
         <ul class="navbar-nav portal">
-          <li class="nav-item dropdown float-right" [class.show]="openDropdown === 'portal'">
+          <li class="nav-item dropdown float-end" [class.show]="openDropdown === 'portal'">
             <a class="nav-link" href="#" id="navbarDropdownPortal" role="button" data-phy="Planar "
               [attr.aria-expanded]="openDropdown === 'portal'" aria-haspopup="true" (click)="toggleDropdown('portal', $event)">
               Planar Portal
               <i class="fa fa-cog" aria-hidden="true"></i>
             </a>
-            <div class="dropdown-menu dropdown-menu-right" [class.show]="openDropdown === 'portal'" aria-labelledby="navbarDropdownPortal" (click)="$event.stopPropagation()">
+            <div class="dropdown-menu dropdown-menu-end" [class.show]="openDropdown === 'portal'" aria-labelledby="navbarDropdownPortal" (click)="$event.stopPropagation()">
               <form class="form-sm m-3">
-                <div class="form-group">
+                <div class="mb-3">
                   <label for="theme-select"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label>
-                  <select class="form-control form-control-sm mx-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
+                  <select class="form-select form-select-sm mt-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
                     <option value="dark">Material Realm</option>
                     <option value="greek">Arkhos</option>
                     <option value="ice">Seven Cities</option>
@@ -79,7 +79,7 @@
                   </select>
                 </div>
                 @if (theme != 'dark' && theme != 'royal' && theme != 'forest') {
-                  <div class="form-group">
+                  <div class="mb-3">
                     <div class="form-check form-switch">
                       <input type="checkbox" class="form-check-input" [(ngModel)]="particles" (change)="changeParticles()" id="particles" name="particles">
                       <label class="form-check-label" for="particles">Use Occultum<sup><a class="text--op" routerLink="/items/occultum-op" (click)="closeMenus()">?</a></sup></label>

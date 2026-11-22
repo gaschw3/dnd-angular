@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .particle-container {
   width: 100vw;
   height: 100vh;
@@ -7,20 +9,14 @@
   left: 0;
   pointer-events: none;
   z-index: 900;
-  transform: translate(0, 0, 1);
+  transform: translate3d(0, 0, 1px);
   transform-style: preserve-3d;
   perspective: 800px;
 }
 
-body {
-  height: 100vh;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  overflow: hidden;
-}
-
 @function random_range($min, $max) {
-  $rand: random();
-  $random_range: $min + floor($rand * (($max - $min) + 1));
+  $rand: math.random();
+  $random_range: $min + math.floor($rand * (($max - $min) + 1));
   @return $random_range;
 }
 
@@ -30,10 +26,9 @@ $wave-start: 80;
 div[class^='ripple-'] {
   width: 100%;
   position: absolute;
-  z-index: 10;
-  left: 0px;
+  left: 0;
   z-index: 6;
-  animation-name: water; 
+  animation-name: water;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -43,18 +38,18 @@ div[class^='ripple-'] {
 @for $i from 1 through 10 {
   .ripple-#{$i} {
     height: ($wave-height * $i * 2);
-    top: (  $wave-start + ($i * 2) + 1%);
-    animation-delay: -1 * calc(random(10)/5) + s;
-    animation-duration: $ripple-speed * calc($i/5) + calc(random(2)/4);
+    top: ($wave-start + ($i * 2) + 1%);
+    animation-delay: -1 * calc(math.random(10) / 5) + s;
+    animation-duration: $ripple-speed * calc($i / 5) + calc(math.random(2) / 4);
     background: linear-gradient(110deg * $i, rgb(0, 95, 14), rgb(131, 0, 0));
     background-size: 100%;
-    background-position:0  ( $wave-start + ($i * 2) - 5%);
+    background-position: 0 ($wave-start + ($i * 2) - 5%);
   }
 }
 
 @keyframes water {
   from { transform: rotateX(0deg); filter: blur(10px); }
-  to { transform: rotateX(random(360)+deg);  filter: blur(30px);}
+  to { transform: rotateX(math.random(360) + deg); filter: blur(30px); }
 }
 
 .particle {
@@ -63,61 +58,53 @@ div[class^='ripple-'] {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  $dotSize: .2;
-  
+  $dotSize: 0.2;
+
   &:after {
     content: "";
     position: absolute;
-    width: $dotSize+vw;
-    height: $dotSize+vw;
+    width: $dotSize + vw;
+    height: $dotSize + vw;
     border-radius: 50%;
     left: 50%;
-    bottom: calc($dotSize/-2)+vw;
-    margin-left: calc($dotSize/-2)+vw;
+    bottom: calc($dotSize / -2) + vw;
+    margin-left: calc($dotSize / -2) + vw;
   }
-  
 
   @for $i from 1 through $total {
-    $size: random(50) * 1px; //maybe unused
-    $rotate: random(360) * 1deg; //maybe unused
-    $time: 10s; //maybe unused
-
-    $random-x: random(1000) * 0.1vw;
-    $random-y: random(1000) * 0.1vh;
+    $random-x: math.random(1000) * 0.1vw;
+    $random-y: math.random(1000) * 0.1vh;
     $random-offset: random_range(-100, 100) * 0.1vw;
     $random-x-end: $random-x + $random-offset;
     $random-x-end-yoyo: $random-x + calc($random-offset / 2);
     $random-yoyo-time: calc(random_range(5, 8) / 10);
     $random-yoyo-y: $random-yoyo-time * 100vh;
-    $random-scale: random(25) * 0.1;
-    $random-scale-wave: 1+ calc(1 / random(10));
+    $random-scale: math.random(25) * 0.1;
     $fall-duration: random_range(5, 15) * 1s;
-    $fall-delay: random(10) * .1;
-    $ember-duration: random_range(8, 15) * 1s;
-    $ember-yoyo-y: $random-yoyo-time * 150vh;
+    $fall-delay: math.random(10) * 0.1;
 
     .greek &:nth-child(#{$i}) {
-      opacity: random(1000) * 0.1;
-      filter: drop-shadow(0 0 50px rgb(random(50), random(50), 200));
-      background: rgb(random(50)+25, random(100)+50, 200);
-      transform: translate(($i+-1)*1vw, 100vh);
-      animation: waves-out-#{$i} 4s linear ($fall-delay*1s) infinite;
+      opacity: math.random(1000) * 0.1;
+      filter: drop-shadow(0 0 50px rgb(math.random(50), math.random(50), 200));
+      background: rgb(math.random(50) + 25, math.random(100) + 50, 200);
+      transform: translate(($i - 1) * 1vw, 100vh);
+      animation: waves-out-#{$i} 4s linear ($fall-delay * 1s) infinite;
     }
 
     @keyframes waves-out-#{$i} {
       0% {
-        transform: translate(($i)*1vw, 101vh);
+        transform: translate($i * 1vw, 101vh);
         animation-timing-function: ease-in-out;
       }
       35% {
-        transform: translate($i*1vw, 100vh+-(random(50)*.1vh));
+        transform: translate($i * 1vw, 100vh - (math.random(50) * 0.1vh));
         animation-timing-function: ease-in-out;
       }
       70% {
         background: rgba(255, 255, 255, 0);
       }
       100% {
-        transform: translate(($i)*1vw, 101vh+(random(5)*1vh));
+        transform: translate($i * 1vw, 101vh + (math.random(5) * 1vh));
         animation-timing-function: ease-in-out;
         background: rgba(255, 255, 255, 0);
       }
@@ -125,17 +112,16 @@ div[class^='ripple-'] {
 
     .ice &:nth-child(#{$i}) {
       filter: drop-shadow(0 0 10px white);
-      opacity: random(100) * 0.01;
+      opacity: math.random(100) * 0.01;
       background: rgb(255, 255, 255);
-      transform: translate($random-x, -10px) scale(random(10)*0.1);
-      animation: ice-#{$i} $fall-duration ($fall-delay*4s) linear infinite;
+      transform: translate($random-x, -10px) scale(math.random(10) * 0.1);
+      animation: ice-#{$i} $fall-duration ($fall-delay * 4s) linear infinite;
     }
 
     @keyframes ice-#{$i} {
-      #{percentage($random-yoyo-time)} {
+      #{math.percentage($random-yoyo-time)} {
         transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
       }
-
       to {
         transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
       }
@@ -143,134 +129,25 @@ div[class^='ripple-'] {
 
     .rainbow &:nth-child(#{$i}) {
       animation: rainbow-#{$i} 20s infinite;
-      filter: drop-shadow(0 0 15px hsl(random(360), 90%, 90%));
-      $size: random(10) * 12px;
+      filter: drop-shadow(0 0 15px hsl(math.random(360), 90%, 90%));
+      $size: math.random(10) * 12px;
       height: $size;
       width: 1px;
-      animation-delay: -$i * .2s;
+      animation-delay: -$i * 0.2s;
       transform: translate($random-x, $random-y);
-      background: hsl(random_range(130,300), 70%, 50%);
+      background: hsl(random_range(130, 300), 70%, 50%);
     }
 
-         @keyframes rainbow-#{$i} {
-      0%,
-      50%,
-      100% {
+    @keyframes rainbow-#{$i} {
+      0%, 50%, 100% {
         transform: translate($random-x, $random-y);
       }
-
       25% {
         transform: translate($random-x, 100%);
       }
-
       75% {
         transform: translate($random-x, -100%);
       }
     }
-
-    /*.hell &:nth-child(#{$i}) {
-      opacity: random(1000) * 0.1;
-      filter: drop-shadow(0 0 50px rgb(255, random(200), 0));
-      background: rgb(255, random(200), 0);
-      transform: translate($random-x, 100vh) scale($random-scale);
-      animation: ember-#{$i} $ember-duration $fall-delay*1s linear infinite;
-    }
-
-    @keyframes ember-#{$i} {
-      30% {
-        transform: translate($random-x-end, 90vh+(random(5)*1vh)) scale(1.5);
-      }
-
-      to {
-        transform: translate($random-x-end-yoyo, 95vh+-(random(25)*1vh)) scale(0.1);
-        background: rgb(155, random(100), 0);
-      }
-    }
-
-    /*.waterfall &:nth-child(#{$i}){
-      $hue: random(50);
-      opacity: 0;
-      $height: 400;
-      $percent: .69444%;
-      position: relative;
-      height: $height+px;
-      width: $percent;
-      margin-top: -$height+px;
-      left: ($i - 1) * $percent;
-      z-index: -10;
-      background-image: linear-gradient( to bottom, black, hsla($hue, 100%, 50%, .8));
-      animation: drop 4+s infinite ease-in;
-      animation-delay: random($total) * (4s/$total) * -1;
-      &:after {
-        background: hsla($hue, 100%, 50%, 1);
-      }
-    }
-  
-    @keyframes drop {
-      80% {
-        opacity: .2;
-      }
-      100% {
-        transform: translate3d(0, 150vh, 0);
-        opacity: 0;
-      }
-    }
-
-    /*.vortex &:nth-child(#{$i}){
-      border-top: $size solid hsla(random(360), 100%, 50%, 1);
-      border-right: $size solid transparent;
-      border-left: $size solid transparent;
-      margin-left: -$size/2;
-      margin-top: -$size/2;
-      -webkit-filter: grayscale(1);
-      filter: grayscale(1);
-      transform: rotate($rotate) translate3d(0,0,-1500px) scale(0);
-      animation: anim#{$i} $time infinite linear;
-      animation-delay: $i * -($time/$total);
-      opacity: 0;
-    }
-    
-    @keyframes anim#{$i}{
-      0% {
-        opacity: 1;
-        transform: rotate($rotate * 1.5) translate3d(random(1000) * 1px, random(1000) * 1px,1000px) scale(1);
-      }
-    }
-
-    /*.rainbow &:nth-child(#{$i}) {
-      animation: rainbow-#{$i} 60s infinite;
-      filter: drop-shadow(0 0 10px hsl(random(360), 70%, 50%));
-      $size: random(10) * 1px;
-      opacity: random(100)/100;
-      height: $size;
-      width: $size;
-      animation-delay: -$i * .2s;
-      transform: translate3d((random(100) * 1vw), (random(100) * 1vh), (random(100) * 1px));
-      background: hsl(random(360), 70%, 50%);
-    }
-
-    @keyframes rainbow-#{$i} {
-      100% {
-        transform: translate3d((random(100) * 1vw), (random(100) * 1vh), (random(100) * 1px));
-        background: hsl(random(360), 100%, 70%);
-      }
-    }
-
-    .light &:nth-child(#{$i}) {
-      animation: light-#{$i} 25s $fall-delay linear infinite;
-      filter: drop-shadow(0 0 10px rgb(255, 255, 0));
-      $size: random(10) * 1px;
-      opacity: random(100)/10;
-      height: $size;
-      width: $size;
-      transform: translate($random-x, -10px);
-      background: hsl(random_range(52, 58), 100%, 80%);
-    }
-
-    @keyframes light-#{$i} {
-      100% {
-        transform: translate((random(100) * 1vw), (random(100) * 1vh));
-      }
-    }*/
   }
 }

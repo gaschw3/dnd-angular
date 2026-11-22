@@ -1,216 +1,247 @@
-/*general styles used on multiple pages
-  Mostly color related, also some stuff for cardsm navbars, tables, and map*/
-@use "sass:color";
-@import './scss-theme/themes.scss';
-@import "./scss-theme/colors.scss";
-@import "./scss-theme/functions.scss";
+/* General styles used on multiple pages — powered by CSS Custom Properties */
+@use './scss-theme/themes';
+@use './scss-theme/colors';
 
-//fix for number of card columns displayed at certain breakpoints
-@media (min-width: 576px) {
-    .card-columns {
-        column-count: 1!important;
-    }
+// Responsive multi-column cards (Bootstrap 5 removed .card-columns)
+.card-columns {
+  column-count: 1;
+  column-gap: 1.25rem;
+
+  .card {
+    display: inline-block;
+    width: 100%;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
 }
+
 @media (min-width: 768px) {
-    .card-columns {
-        column-count: 2!important;
-    }
+  .card-columns {
+    column-count: 2;
+  }
 }
+
 @media (min-width: 2000px) {
-    .card-columns {
-        column-count: 3!important;
-    }
+  .card-columns {
+    column-count: 3;
+  }
 }
 
 .theme-container {
-  @include themify($themes) {
-    //hacky thing for bgimages, most themes don't have one
-    @if (themed("bgImage")) {
-      @media (min-width: 768px) {
-        background-image: themed("bgImage"), themed("bgImage")!important;
-        background-repeat: repeat-y!important;
-        background-size: 50px!important;
-        background-position-x: left, right!important;
-      }
-      @media (min-width: 300px) {
-        background-image: themed("bgImage");
-        background-repeat: repeat-y;
-        background-size: 40px;
-        background-position-x: left;
-      }
-    }
-    @if (themed("wholeBgImage")) {
-      background-image: themed("wholeBgImage"), themed("wholeBgImage") !important;
-      background-repeat: no-repeat !important;
-      background-size: 150% !important;
-    }
+  // Border background images for realms that define --theme-bg-image
+  background-image: var(--theme-bg-image, var(--theme-bg, none));
+  background-repeat: repeat-y;
+  background-size: 40px;
+  background-position-x: left;
 
-    @if (themed("name") == 'Phyrexian') {
-      nav a { 
-        &:before {
-          margin-top:6px;
-          content: attr(data-phy);
-          color:#f8505b;
-          text-transform: lowercase;
-          pointer-events: none;
-          position: absolute; 
-          font-family: 'Phyrexian';
-          opacity: 1;
-          z-index: 2;
-          font-weight: 900;
-        }
-      }
-    }
+  @media (min-width: 768px) {
+    background-image: var(--theme-bg-image, var(--theme-bg, none)), var(--theme-bg-image, none);
+    background-repeat: repeat-y, repeat-y;
+    background-size: 50px, 50px;
+    background-position-x: left, right;
+  }
 
   .navbar-brand {
-    padding-left: 5px;
-    color: themed("brandText");
+    padding-left: 0.35rem;
+    color: var(--theme-brand-text);
+    font-weight: 600;
 
     &:hover {
-      color: color.scale(themed('brandText'), $lightness: 40%);
+      color: var(--theme-brand-text-hover);
     }
   }
 
   .navbar-nav a {
-      color: themed("navText") !important;
+    color: var(--theme-nav-text) !important;
 
-      &:hover {
-        text-decoration: none;
-        color: themed("colorPrimary") !important;
-      }
-
-      &:focus {
-        text-decoration: none;
-        color: themed("colorPrimary") !important;
-      }
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: var(--theme-primary) !important;
+    }
   }
+
   .scrolltop-button {
-    background-color: themed("colorPrimary") !important;
+    background-color: var(--theme-primary) !important;
   }
 
   .color-primary {
-    color: themed("colorPrimary");
-  }
-  .color-secondary {
-    color: themed("colorSecondary");
-  }
-  .border-bottom-primary {
-    border-bottom: 2px solid themed("colorPrimary");
-  }
-  .beastiary-border {
-    border-bottom: 2px solid themed("colorPrimary");
+    color: var(--theme-primary);
   }
 
-  /* sizing and placement for monster tokens in the beastiary entries */
-  .mon__wrp-token {
-      display: block;
-      position: absolute;
-      z-index: 10;
-      top: 0;
-      right: 40%;
-      width: auto;
-      max-width: 8rem;
-      height: auto;
+  .color-secondary {
+    color: var(--theme-secondary);
   }
+
+  .border-bottom-primary,
+  .beastiary-border {
+    border-bottom: 2px solid var(--theme-primary);
+  }
+
+  /* Sizing and placement for monster tokens in the beastiary entries */
+  .mon__wrp-token {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 40%;
+    width: auto;
+    max-width: 8rem;
+    height: auto;
+  }
+
   .mon__token {
-      width: 100%;
-      height: 100%;
+    width: 100%;
+    height: 100%;
   }
 
   .table {
-    color: themed("textColor") !important;
+    color: var(--theme-text-color) !important;
+    --bs-table-color: var(--theme-text-color);
+    --bs-table-bg: transparent;
+    --bs-table-striped-color: var(--theme-text-color);
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+    --bs-table-hover-color: var(--theme-text-link-color);
+    --bs-table-hover-bg: var(--theme-table-hover);
+    --bs-table-active-color: var(--theme-text-link-color);
+    --bs-table-active-bg: var(--theme-table-active);
   }
 
-  /* specific rules around some hidden very large tables on class pages */
+  /* Specific rules around hidden very large tables on class pages */
   .read-more-state {
     display: none;
   }
+
   .read-more-target {
     opacity: 0;
     max-height: 0;
     font-size: 0;
     display: none;
-    transition: .25s ease;
+    transition: 0.25s ease;
   }
+
   .read-more-state:checked ~ .read-more-wrap .read-more-target {
     opacity: 1;
     display: block;
     font-size: inherit;
     max-height: 999em;
   }
+
   .read-more-state ~ .read-more-trigger:before {
     content: 'Show Surge Table';
   }
+
   .read-more-state:checked ~ .read-more-trigger:before {
     content: 'Hide Surge Table';
   }
+
   .read-more-trigger {
     cursor: pointer;
     display: inline-block;
-    padding: 0 .5em;
-    font-size: .9em;
+    padding: 0 0.5em;
+    font-size: 0.9em;
     line-height: 2;
-    border: 1px solid themed("colorSecondary");
-    border-radius: .25em;
+    border: 1px solid var(--theme-secondary);
+    border-radius: 0.25em;
   }
 
-  /* make sure fieature list doesn't ride on top of the navbar */
+  /* Make sure feature list doesn't ride on top of the navbar */
   .features-list {
     z-index: 800 !important;
   }
+}
 
+// Themes using full-page gradient or whole-page image instead of side border tiles
+.theme-ice .theme-container {
+  background: var(--theme-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.theme-rainbow .theme-container {
+  background-image: var(--theme-whole-bg-image) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed;
+}
+
+.theme-dark .theme-container,
+.theme-light .theme-container {
+  background-image: none !important;
+}
+
+// Phyrexian navbar overlay for Worldbreaker theme
+.theme-end .theme-container nav a {
+  position: relative;
+
+  &:before {
+    margin-top: 6px;
+    content: attr(data-phy);
+    color: #f8505b;
+    text-transform: lowercase;
+    pointer-events: none;
+    position: absolute;
+    font-family: 'Phyrexian';
+    opacity: 1;
+    z-index: 2;
+    font-weight: 900;
   }
 }
 
 .entry-title p:first-child {
   display: inline;
 }
+
 .entry-title p:last-child {
-  padding-bottom: .5rem !important;
-}
-div:has(.entry-title p:only-child) {
-  padding-bottom: .25rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
-/* labels for map stuff, probably better way to do this but it's working for now */
+div:has(.entry-title p:only-child) {
+  padding-bottom: 0.25rem !important;
+}
+
+/* Labels for Leaflet map */
 .continent-label {
-    font-size: 50px;
-    letter-spacing: 6px;
-    font-weight: bold;
-    background-color: transparent !important;
-    border: transparent !important;
-    box-shadow: none !important;
-    color: #000 !important;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  font-size: 50px;
+  letter-spacing: 6px;
+  font-weight: bold;
+  background-color: transparent !important;
+  border: transparent !important;
+  box-shadow: none !important;
+  color: #000 !important;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
+
 .country-label {
-    font-size:30px;
-    font-weight: bold;
-    letter-spacing: 4px;
-    background-color: transparent !important;
-    border: transparent !important;
-    box-shadow: none !important;
-    color: #111 !important;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  background-color: transparent !important;
+  border: transparent !important;
+  box-shadow: none !important;
+  color: #111 !important;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
+
 .city-label {
-    font-size:18px;
-    font-weight: bold;
-    opacity: 0;
-    background-color: transparent !important;
-    border: transparent !important;
-    box-shadow: none !important;
-    color: #fff !important;
-    text-shadow: -1px 0 0 #000, 1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0;
+  background-color: transparent !important;
+  border: transparent !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  text-shadow: -1px 0 0 #000, 1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
 }
+
 .town-label {
-    font-size:14px;
-    opacity: 0;
-    background-color: transparent !important;
-    border: transparent !important;
-    box-shadow: none !important;
-    color: #fff !important;
+  font-size: 14px;
+  opacity: 0;
+  background-color: transparent !important;
+  border: transparent !important;
+  box-shadow: none !important;
+  color: #fff !important;
 }
+
 .shizomi-label {
   font-size: 14px;
   opacity: 0;
@@ -219,15 +250,17 @@ div:has(.entry-title p:only-child) {
   box-shadow: none !important;
   color: #000 !important;
 }
+
 .water-label {
-    font-size:22px;
-    font-weight: bold;
-    background-color: transparent !important;
-    border: transparent !important;
-    box-shadow: none !important;
-    color: rgb(88, 180, 255) !important;
-    text-shadow: -1px -1px 0 #555, 1px -1px 0 #555, -1px 1px 0 #555, 1px 1px 0 #555;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: transparent !important;
+  border: transparent !important;
+  box-shadow: none !important;
+  color: rgb(88, 180, 255) !important;
+  text-shadow: -1px -1px 0 #555, 1px -1px 0 #555, -1px 1px 0 #555, 1px 1px 0 #555;
 }
+
 .leaflet-marker-icon {
-    opacity: 0;
+  opacity: 0;
 }

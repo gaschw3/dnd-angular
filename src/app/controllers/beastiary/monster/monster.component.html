@@ -9,7 +9,7 @@
                 <h1 class="text-success">{{monster.name}}</h1>
               </div>
               <div class="col">
-                <h3 [class]="'pull-right color-'+monster.source | lowercase">{{monster.source}}</h3>
+                <h3 [class]="'float-end color-'+monster.source | lowercase">{{monster.source}}</h3>
               </div>
             </div>
             @if (monster.hasToken || monster.token) {
@@ -154,45 +154,45 @@
       <h3 class="color-primary beastiary-border">{{monster.spellcasting[0].name}}</h3>
       <div class="col pb-2">
         @for (line of monster.spellcasting[0].headerEntries; track line) {
-          <p class="pl-2 m-0">{{line}}</p>
+          <p class="ps-2 m-0">{{line}}</p>
         }
         @if (monster.spellcasting[0].spells) {
           <div class="pt-2">
             @if (monster.spellcasting[0].spells.cantrip) {
-              <p class="pl-2 m-0" [innerHtml]="'Cantrips (at will): ' + monster.spellcasting[0].spells.cantrip.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'Cantrips (at will): ' + monster.spellcasting[0].spells.cantrip.spells.join(', ') | linkmaker"></p>
             }
             @if (monster.spellcasting[0].spells.first) {
-              <p class="pl-2 m-0" [innerHtml]="'1st level (' + monster.spellcasting[0].spells.first.slots + ' slots): ' + monster.spellcasting[0].spells.first.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'1st level (' + monster.spellcasting[0].spells.first.slots + ' slots): ' + monster.spellcasting[0].spells.first.spells.join(', ') | linkmaker"></p>
             }
             @if (monster.spellcasting[0].spells.second) {
-              <p class="pl-2 m-0" [innerHtml]="'2nd level (' + monster.spellcasting[0].spells.second.slots + ' slots): ' + monster.spellcasting[0].spells.second.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'2nd level (' + monster.spellcasting[0].spells.second.slots + ' slots): ' + monster.spellcasting[0].spells.second.spells.join(', ') | linkmaker"></p>
             }
             @if (monster.spellcasting[0].spells.third) {
-              <p class="pl-2 m-0" [innerHtml]="'3rd level (' + monster.spellcasting[0].spells.third.slots + ' slots): ' + monster.spellcasting[0].spells.third.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'3rd level (' + monster.spellcasting[0].spells.third.slots + ' slots): ' + monster.spellcasting[0].spells.third.spells.join(', ') | linkmaker"></p>
             }
             @if (monster.spellcasting[0].spells.fourth) {
-              <p class="pl-2 m-0" [innerHtml]="'4th level (' + monster.spellcasting[0].spells.fourth.slots + ' slots): ' + monster.spellcasting[0].spells.fourth.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'4th level (' + monster.spellcasting[0].spells.fourth.slots + ' slots): ' + monster.spellcasting[0].spells.fourth.spells.join(', ') | linkmaker"></p>
             }
             @if (monster.spellcasting[0].spells.fifth) {
-              <p class="pl-2 m-0" [innerHtml]="'5th level (' + monster.spellcasting[0].spells.fifth.slots + ' slots): ' + monster.spellcasting[0].spells.fifth.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'5th level (' + monster.spellcasting[0].spells.fifth.slots + ' slots): ' + monster.spellcasting[0].spells.fifth.spells.join(', ') | linkmaker"></p>
             }
             @if (monster.spellcasting[0].spells.sixth) {
-              <p class="pl-2 m-0" [innerHtml]="'6th level (' + monster.spellcasting[0].spells.sixth.slots + ' slots): ' + monster.spellcasting[0].spells.sixth.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'6th level (' + monster.spellcasting[0].spells.sixth.slots + ' slots): ' + monster.spellcasting[0].spells.sixth.spells.join(', ') | linkmaker"></p>
             }
             @if (monster.spellcasting[0].spells.seventh) {
-              <p class="pl-2 m-0" [innerHtml]="'7th level (' + monster.spellcasting[0].spells.seventh.slots + ' slots): ' + monster.spellcasting[0].spells.seventh.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'7th level (' + monster.spellcasting[0].spells.seventh.slots + ' slots): ' + monster.spellcasting[0].spells.seventh.spells.join(', ') | linkmaker"></p>
             }
             @if (monster.spellcasting[0].spells.eighth) {
-              <p class="pl-2 m-0" [innerHtml]="'8th level (' + monster.spellcasting[0].spells.eighth.slots + ' slots): ' + monster.spellcasting[0].spells.eighth.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'8th level (' + monster.spellcasting[0].spells.eighth.slots + ' slots): ' + monster.spellcasting[0].spells.eighth.spells.join(', ') | linkmaker"></p>
             }
             @if (monster.spellcasting[0].spells.ninth) {
-              <p class="pl-2 m-0" [innerHtml]="'9th level (' + monster.spellcasting[0].spells.ninth.slots + ' slots): ' + monster.spellcasting[0].spells.ninth.spells.join(', ') | linkmaker"></p>
+              <p class="ps-2 m-0" [innerHtml]="'9th level (' + monster.spellcasting[0].spells.ninth.slots + ' slots): ' + monster.spellcasting[0].spells.ninth.spells.join(', ') | linkmaker"></p>
             }
           </div>
         }
         @if (monster.spellcasting[0].will) {
           <div class="pt-2">
-            <p class="pl-2 m-0"
+            <p class="ps-2 m-0"
               [innerHtml]="'At will: ' + monster.spellcasting[0].will.join(', ') | linkmaker">
             </p>
           </div>
@@ -200,24 +200,24 @@
         @if (monster.spellcasting[0].daily) {
           <div>
             @if (monster.spellcasting[0].daily.once) {
-              <p class="pl-2 m-0"
+              <p class="ps-2 m-0"
                 [innerHtml]="'1/day each: ' + monster.spellcasting[0].daily.once.join(', ') | linkmaker">
               </p>
             }
             @if (monster.spellcasting[0].daily.twice) {
-              <p class="pl-2 m-0"
+              <p class="ps-2 m-0"
                 [innerHtml]="'2/day each: ' + monster.spellcasting[0].daily.twice.join(', ') | linkmaker">
               </p>
             }
             @if (monster.spellcasting[0].daily.thrice) {
-              <p class="pl-2 m-0"
+              <p class="ps-2 m-0"
                 [innerHtml]="'3/day each: ' + monster.spellcasting[0].daily.thrice.join(', ') | linkmaker">
               </p>
             }
           </div>
         }
         @for (line of monster.spellcasting[0].footerEntries; track line) {
-          <p class="pl-2 m-0">{{line}}</p>
+          <p class="ps-2 m-0">{{line}}</p>
         }
       </div>
     </div>

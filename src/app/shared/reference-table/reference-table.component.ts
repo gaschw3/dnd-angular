@@ -219,7 +219,7 @@ export class ReferenceTableComponent<T = any> implements OnChanges {
     if (col.align === 'center') {
       classes.push('text-center');
     } else if (col.align === 'right') {
-      classes.push('text-right');
+      classes.push('text-end');
     }
     if (col.cellClass) {
       const custom = col.cellClass(row);

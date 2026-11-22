@@ -1,177 +1,215 @@
-@use "sass:color";
-@import "./scss-theme/functions.scss";
+/* App-wide Bootstrap 5 theme overrides — driven by CSS Custom Properties */
 
-// TODO: shouldn't need this, but I'm seeing a tiny y-scroll bar show up sometimes
 body {
-  //overflow-x:hidden;
-  min-width: auto!important;
+  margin: 0;
+  min-width: auto !important;
 }
 
-/* overrides for full app styles from Angular-Bootstrep (mostly default colors) */
 .theme-container {
-  @include themify($themes) {
-    background: themed('background') no-repeat center center fixed;
-    min-height: 100vh;
-    min-width: 98vw;
-    background-color: themed('backgroundColor');
-    color: themed('textColor');
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: clip;
+  background-color: var(--theme-bg-color);
+  color: var(--theme-text-color);
 
-    .bg-primary {
-      background-color: themed('navColor') !important;
-    }
+  --bs-body-bg: var(--theme-bg-color);
+  --bs-body-color: var(--theme-text-color);
+  --bs-card-bg: var(--theme-card-color);
+  --bs-card-color: var(--theme-text-color);
+  --bs-link-color: var(--theme-link-color);
+  --bs-link-hover-color: var(--theme-link-hover);
+  --bs-border-color: var(--theme-input-border);
 
-    h1, h2, h3,
-    h4, h5, h6 {
-      font-family: themed("headerFont"), themed("headerFallbackFont");
-    }
+  .bg-primary {
+    background-color: var(--theme-nav-color) !important;
+  }
 
-    h1 {
-      background: themed('headerColor');
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: themed('headerColor');
-    }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--theme-header-font);
+  }
 
-    h5 {
-      color: themed("colorTertiary");
-    }
+  h1 {
+    color: var(--theme-header-color);
+  }
 
-    a {
-      color: themed('linkColor');
-      text-decoration: none;
+  h5 {
+    color: var(--theme-tertiary);
+  }
 
-      &:hover {
-        color: color.scale(themed('linkColor'), $lightness: 50%);
-        text-decoration: underline;
-      }
-    }
+  a {
+    color: var(--theme-link-color);
+    text-decoration: none;
 
-    .color-primary {
-      color: themed('colorPrimary');
-    }
-
-    .dropdown-menu {
-      background-color: themed('navColor');
-      border: 1px solid rgba(0,0,0,.6);
-
-
-      .dropdown-item {
-        color: themed('textColor');
-      }
-
-      a:focus, a:hover {
-        color: themed('textLinkColor')!important;
-        text-decoration: none;
-        background-color: themed('textLinkBackground')!important;
-      }
-
-      a.active, a:active {
-        color: themed('textLinkColor')!important;
-        text-decoration: none;
-        background-color: themed('textLinkBackground')!important;
-      }
-
-      .form-group {
-        color: themed("navText") !important;
-      }
-    }
-
-    .portal>li>.dropdown-menu { min-width: 180px; }
-
-    .card {
-      background-color: themed('cardColor');
-    }
-
-    .alert-dark {
-      color: themed("textColor");
-      border-color: themed('textLinkColor');
-      background-color: lighten(themed('cardColor'), 10%);
-      padding-bottom: 0;
-    }
-
-    .text-success {
-      color: themed('colorPrimary')!important;
-    }
-
-    .btn-warning.active {
-      box-shadow: 0px 0px 1px 3px  #a17940 !important;
-      background-image: linear-gradient(#9e5f04, #ad6704 40%, #b76d04) !important;
-    }
-
-    .btn-success.active {
-      box-shadow: 0px 0px 1px 3px #609960 !important;
-      background-image: linear-gradient(#379337, #3b9e3b 40%, #3ea63e) !important;
-    }
-
-    .btn-primary {
-      background-image: themed("classButtonGradient");
-      background-repeat: no-repeat;
-      -webkit-filter: none;
-      filter: none;
-      border-color: themed("navColor");
-
-      &.active {
-        background-image: themed("classButtonGradientActive");
-        border-color: themed("colorSecondary")!important;
-      }
-
-      &:hover {
-        border-color: themed("colorSecondary");
-      }
-
-      &:focus {
-        box-shadow: 0 0 0 0.2rem themed("colorSecondary")!important;
-      }
-    }
-
-    .table-hover tbody tr:hover {
-        color: themed("textLinkColor");
-        background-color: themed("tableHover");
-    }
-
-    .list-group-item {
-      color: themed("textColor");
-      background-color: themed("cardColor");
-      border: 1px solid rgba(0,0,0,.6);
-
-      &.active {
-        background-color: themed("tableHover");
-        color: themed("textLinkColor");
-
-        &:hover {
-          background-color: color.scale(themed("tableHover"), $lightness: -15%);
-        }
-      }
-
-      &:hover {
-        color: themed("textLinkColor");
-        background-color: color.scale(themed("cardColor"), $lightness: -15%);
-      }
-    }
-
-    table .table-active {
-        background-color: themed("tableActiveColor")!important;
-        color: themed("textLinkColor");
-    }
-    .table-bordered th, .table-bordered td {
-      border: 1px solid themed("textColor") !important;
-    }
-    .ref-table-footer {
-      color: themed("textColor");
-    }
-    .ref-page-btn {
-      color: themed("textColor");
-
-      &:hover:not(:disabled) {
-        color: themed("textLinkColor");
-        background: themed("navColor");
-      }
-
-      &.current {
-        color: themed("textLinkColor");
-        border-color: #979797;
-        background: themed("paginateSelected");
-      }
+    &:hover {
+      color: var(--theme-link-hover);
+      text-decoration: underline;
     }
   }
+
+  .color-primary {
+    color: var(--theme-primary);
+  }
+
+  .dropdown-menu {
+    background-color: var(--theme-nav-color);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.35);
+
+    .dropdown-item {
+      color: var(--theme-nav-text);
+
+      &:focus,
+      &:hover,
+      &.active,
+      &:active {
+        color: var(--theme-text-link-color) !important;
+        text-decoration: none;
+        background-color: var(--theme-text-link-bg) !important;
+      }
+    }
+
+    .mb-3,
+    .mb-0,
+    label {
+      color: var(--theme-nav-text) !important;
+    }
+  }
+
+  .portal > li > .dropdown-menu {
+    min-width: 210px;
+  }
+
+  .card {
+    background-color: var(--theme-card-color);
+    color: var(--theme-text-color);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  }
+
+  .alert-dark {
+    color: var(--theme-text-color);
+    border-color: var(--theme-text-link-color);
+    background-color: var(--theme-alert-bg);
+    padding-bottom: 0;
+  }
+
+  .text-success {
+    color: var(--theme-primary) !important;
+  }
+
+  .form-control,
+  .form-select {
+    background-color: var(--theme-input-bg);
+    color: var(--theme-text-color);
+    border-color: var(--theme-input-border);
+
+    &:focus {
+      background-color: var(--theme-input-bg);
+      color: var(--theme-text-link-color);
+      border-color: var(--theme-secondary);
+      box-shadow: 0 0 0 0.2rem rgba(91, 192, 222, 0.25);
+    }
+
+    &::placeholder {
+      color: var(--theme-text-color);
+      opacity: 0.6;
+    }
+  }
+
+  .input-group-text {
+    background-color: var(--theme-nav-color);
+    color: var(--theme-nav-text);
+    border-color: var(--theme-input-border);
+  }
+
+  .btn-warning.active {
+    box-shadow: 0 0 1px 3px #a17940 !important;
+    background-image: linear-gradient(#9e5f04, #ad6704 40%, #b76d04) !important;
+  }
+
+  .btn-success.active {
+    box-shadow: 0 0 1px 3px #609960 !important;
+    background-image: linear-gradient(#379337, #3b9e3b 40%, #3ea63e) !important;
+  }
+
+  .btn-primary {
+    background-color: transparent;
+    background-image: var(--theme-btn-gradient);
+    background-repeat: no-repeat;
+    border-color: var(--theme-nav-color);
+    color: #fff;
+
+    &.active {
+      background-image: var(--theme-btn-gradient-active);
+      border-color: var(--theme-secondary) !important;
+    }
+
+    &:hover {
+      border-color: var(--theme-secondary);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem var(--theme-secondary) !important;
+    }
+  }
+
+  .table-hover > tbody > tr:hover > * {
+    color: var(--theme-text-link-color);
+    background-color: var(--theme-table-hover);
+  }
+
+  .list-group-item {
+    color: var(--theme-text-color);
+    background-color: var(--theme-card-color);
+    border: 1px solid rgba(0, 0, 0, 0.45);
+
+    &.active {
+      background-color: var(--theme-table-hover);
+      color: var(--theme-text-link-color);
+      border-color: var(--theme-primary);
+    }
+
+    &:hover {
+      color: var(--theme-text-link-color);
+      background-color: var(--theme-card-hover);
+    }
+  }
+
+  table .table-active > * {
+    background-color: var(--theme-table-active) !important;
+    color: var(--theme-text-link-color);
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid var(--theme-input-border) !important;
+  }
+
+  .ref-table-footer {
+    color: var(--theme-text-color);
+  }
+
+  .ref-page-btn {
+    color: var(--theme-text-color);
+
+    &:hover:not(:disabled) {
+      color: var(--theme-text-link-color);
+      background: var(--theme-nav-color);
+    }
+
+    &.current {
+      color: var(--theme-text-link-color);
+      border-color: #979797;
+      background: var(--theme-paginate-selected);
+    }
+  }
+}
+
+// Gradient H1 text for Ice and Rainbow realms
+.theme-ice .theme-container h1,
+.theme-rainbow .theme-container h1 {
+  background: var(--theme-header-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }

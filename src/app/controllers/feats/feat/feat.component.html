@@ -8,7 +8,7 @@
               <h1 [class]="'color-primary mb-1' | lowercase">{{feat.name}}</h1>
             </div>
             <div class="col-4">
-              <h3 [class]="'pull-right color-'+feat.source | lowercase">{{feat.source}}</h3>
+              <h3 [class]="'float-end color-'+feat.source | lowercase">{{feat.source}}</h3>
             </div>
             <div class="col-12">
               <p class="m-0 mb-2"><em>{{featCategory[feat.category]}} feat @if (feat.prerequisite) {

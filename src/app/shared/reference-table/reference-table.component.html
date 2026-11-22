@@ -33,9 +33,7 @@
                   } @else {
                     <div class="input-group input-group-sm">
                       @if (col.headerIcon) {
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
-                        </div>
+                        <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
                       }
                       <input
                         [id]="col.filterId || col.key"
@@ -57,7 +55,7 @@
             <th
               [style.width]="col.width || null"
               [class.text-center]="col.align === 'center'"
-              [class.text-right]="col.align === 'right'"
+              [class.text-end]="col.align === 'right'"
               [class.sortable]="col.sortable !== false && !col.action"
               (click)="toggleSort(col)"
               >
@@ -110,7 +108,7 @@
             <td [attr.colspan]="columns.length" class="text-center py-3 ref-empty">
               No matching {{ itemLabel }} found.
               @if (hasActiveFilters) {
-                <button type="button" class="btn btn-sm btn-link p-0 ml-2" (click)="clearFilters()">
+                <button type="button" class="btn btn-sm btn-link p-0 ms-2" (click)="clearFilters()">
                   Clear filters
                 </button>
               }
@@ -124,7 +122,7 @@
   @if (paging) {
     <div class="ref-table-footer d-flex flex-wrap justify-content-between align-items-center mt-2">
       <div class="ref-table-length d-flex align-items-center mb-1">
-        <label class="mb-0 mr-2">
+        <label class="mb-0 me-2">
           Show
           <select
             class="form-control form-control-sm d-inline-block w-auto mx-1"
@@ -139,13 +137,13 @@
           </select>
           {{ itemLabel }}
         </label>
-        <span class="ref-table-count ml-2">
+        <span class="ref-table-count ms-2">
           ({{ startIndex }}–{{ endIndex }} of {{ filteredRows.length }})
         </span>
         @if (hasActiveFilters) {
           <button
             type="button"
-            class="btn btn-sm btn-outline-secondary ml-2 py-0 px-2"
+            class="btn btn-sm btn-outline-secondary ms-2 py-0 px-2"
             (click)="clearFilters()"
             >
             Clear filters

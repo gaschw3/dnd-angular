@@ -1,222 +1,241 @@
-$themes: (
-  royal: (
-    bgImage: url(../royal.png),
-    backgroundColor: #171612,
-    headerFont: "UnifrakturCook",
-    headerFallbackFont: serif,
-    background: auto,
-    navColor: #fde37b,
-    tableActiveColor: #3a3f44,
-    navText: #333,
-    brandText: #333, //color for text next to favicon
-    cardColor: #32383e,
-    textColor: #aaa,
-    textLinkColor: #fff,
-    textLinkBackground: #574310,
-    linkColor: #dec45b,
-    colorPrimary: #c4b262, //most headers on site
-    colorSecondary: #a749ff, //feature headers in class, features outline,
-    colorTertiary: #ddd, //feature usbheaders for stuff like fighting styles
-    headerColor: #ffffff,
-    classButtonGradient: linear-gradient(#484e55,#3a3f44 60%,#313539),
-    classButtonGradientActive: linear-gradient(#101112, #17191b 40%, #1b1e20),
-    paginateSelected: rgba(255, 237, 121, 0.514),
-    tableHover: rgba(255,255,255,.075)
-  ),
-  light: (
-    backgroundColor: #fff,
-    headerFont: "Cinzel Decorative",
-    headerFallbackFont: cursive,
-    background: auto,
-    navColor: #fff59b,
-    tableActiveColor: #fff59b,
-    navText: #000,
-    brandText: #60adff, //color for text next to favicon
-    cardColor: #fff,
-    textColor: auto,
-    textLinkColor: auto,
-    textLinkBackground: inherit,
-    linkColor: #0044ff,
-    colorPrimary: #0044ff, //most headers on site
-    colorSecondary: #c4ba87, //feature headers in class, features outline,
-    colorTertiary: #60adff, //feature usbheaders for stuff like fighting styles
-    headerColor: #ffed49,
-    classButtonGradient: auto,
-    classButtonGradientActive: auto,
-    paginateSelected: auto,
-    tableHover: rgba(0, 0, 0, 0.075)
-  ),
-  greek: (
-    bgImage: url(../meander.svg),
-    backgroundColor: #FCDEC2,
-    headerFont: 'Mate SC',
-    headerFallbackFont: serif,
-    background: auto,
-    navColor: #946B44,
-    navText: #fff,
-    brandText: #67b4e0, //color for text next to favicon
-    cardColor: #ebd4c1,
-    textColor: #343a40,
-    textLinkColor: #E0A267,
-    textLinkBackground: inherit,
-    linkColor: #946B44,
-    colorPrimary: #E0A267, //most headers on site
-    colorSecondary: #e06767, //feature headers in class, features outline, button clicked
-    colorTertiary: #67b4e0, //feature usbheaders for stuff like fighting styles
-    headerColor: #E0A267,
-    classButtonGradient: linear-gradient(#946B44,#805b39 60%,#68482b),
-    classButtonGradientActive: linear-gradient(#68482b, #553a20 40%, #462f19),
-    paginateSelected: rgba(121, 175, 255, 0.514),
-    tableHover: rgba(255, 255, 255, 0.075)
-  ),
-  dark: (
-    backgroundColor: #272b30,
-    headerFont: "Segoe UI",
-    headerFallbackFont: sans-serif,
-    background: auto,
-    navColor: #3a3f44,
-    tableActiveColor: #3a3f44,
-    navText: #fff,
-    brandText: #ccc, //color for text next to favicon
-    cardColor: #32383e,
-    textColor: #aaa,
-    textLinkColor: #fff,
-    textLinkBackground: #272b30,
-    linkColor: #5bc0de,
-    colorPrimary: #62c462, //most headers on site
-    colorSecondary: #5bc0de, //feature headers in class, features outline,
-    colorTertiary: #ccc, //feature usbheaders for stuff like fighting styles
-    headerColor: #aaa,
-    classButtonGradient: linear-gradient(#484e55,#3a3f44 60%,#313539),
-    classButtonGradientActive: linear-gradient(#101112, #17191b 40%, #1b1e20),
-    paginateSelected: rgba(121, 175, 255, 0.514),
-    tableHover: rgba(255,255,255,.075)
-  ),
-  forest: (
-    bgImage: url(../flower.png),
-    backgroundColor: #0e120e,
-    headerFont: "Segoe UI",
-    headerFallbackFont: sans-serif,
-    background: auto,
-    navColor: #43443a,
-    tableActiveColor: #3f443a,
-    navText: #fff,
-    brandText: #ff91ca, //color for text next to favicon
-    cardColor: #343e32,
-    textColor: #bbb,
-    textLinkColor: #fff,
-    textLinkBackground: #212e18,
-    linkColor: #c997cf,
-    colorPrimary: #78dc7d, //most headers on site
-    colorSecondary: #e1e389, //feature headers in class, features outline,
-    colorTertiary: #ec92e1, //feature usbheaders for stuff like fighting styles
-    headerColor: #bbb,
-    classButtonGradient: linear-gradient(#4b5548,#3a443f 60%,#313739),
-    classButtonGradientActive: linear-gradient(#1f231f, #212724 40%, #22272a),
-    paginateSelected: rgba(121, 255, 161, 0.514),
-    tableHover: rgba(255, 255, 255, 0.075)
-  ),
-  ice: (
-    backgroundColor: #2e0505,
-    headerFont: 'Iceberg',
-    headerFallbackFont: cursive,
-    background: linear-gradient(15deg, #140220 0%, #0a0046 74%),
-    navColor: #192970,
-    navText: #fff,
-    brandText: #ffcc80, //color for text next to favicon
-    cardColor: #35377c,
-    textColor: #eee,
-    textLinkColor: #c4fff7,
-    textLinkBackground: #073942,
-    linkColor: #15e2fd,
-    colorPrimary: #4671ff, //most headers on site
-    colorSecondary: #d294e6, //feature headers in class, features outline,
-    colorTertiary: #ffcc80, //feature usbheaders for stuff like fighting styles
-    headerColor: linear-gradient(1deg, rgb(217, 251, 255) 0%, rgb(0, 162, 255) 30%, rgb(205, 129, 255) 95%),
-    classButtonGradientActive: linear-gradient(315deg, #35338b 0%, #4193a1 74%),
-    classButtonGradient: linear-gradient(50deg, #29286b 0%, #316770 74%),
-    paginateSelected: rgba(184, 255, 216, 0.514),
-    tableHover: rgba(255, 255, 255, .075)),
-  rainbow: (
-    wholeBgImage: url(../shizomi.png),
-    backgroundColor: #272b30,
-    headerFont: Monoton,
-    headerFallbackFont: sans-serif,
-    background: linear-gradient(15deg, #140220 0%, #0a0046 74%),
-    navColor: #000,
-    navText: #fff,
-    brandText: #cc92ff, //color for text next to favicon
-    cardColor: #2b333a,
-    textColor: #fff,
-    textLinkColor: #00f7ff,
-    textLinkBackground: #350b33,
-    linkColor: #ffa1f7,
-    colorPrimary: #ffc6f5, //most headers on site
-    colorSecondary: #9eff9e, //feature headers in class, features outline,
-    colorTertiary: #cc92ff, //feature headers for stuff like fighting styles
-    headerColor: linear-gradient( 0deg,
-      rgb(255, 0, 221) 30%,
-      rgb(187, 0, 255) 50%,
-      rgb(0, 255, 251) 60%
-    ),
-    classButtonGradient: linear-gradient( 45deg,
-      rgb(151, 0, 131) 20%,
-      rgb(89, 0, 144) 40%,
-      rgb(0, 96, 160) 70%
-    ),
-    classButtonGradientActive: linear-gradient( 135deg,
-      rgb(255, 0, 221) 20%,
-      rgb(128, 0, 255) 40%,
-      rgb(0, 153, 255) 70%
-    ),
-    paginateSelected: rgb(228, 0, 0),
-    tableHover: rgba(255,255,255,.075)
-  ),
-  end: (
-    name: 'Phyrexian',
-    bgImage: url(../phyrexian-border.png),
-    backgroundColor: #302727,
-    headerFont: "Iceberg",
-    headerFallbackFont: sans-serif,
-    background: auto,
-    navColor: #443a3a,
-    tableActiveColor: #443a3a,
-    navText: #fff,
-    brandText: #ccc, //color for text next to favicon
-    cardColor: #32383e,
-    textColor: #aaa,
-    textLinkColor: #fff,
-    textLinkBackground: #272b30,
-    linkColor: #de5b5b,
-    colorPrimary: #de5b5b, //most headers on site
-    colorSecondary: #c4b462, //feature headers in class, features outline,
-    colorTertiary: #ccc, //feature usbheaders for stuff like fighting styles
-    headerColor: #aaa,
-    classButtonGradient: linear-gradient(#484e55,#3a3f44 60%,#313539),
-    classButtonGradientActive: linear-gradient(#101112, #17191b 40%, #1b1e20),
-    paginateSelected: rgba(255, 150, 121, 0.514),
-    tableHover: rgba(255,255,255,.075)
-  )
-  /*hell: (
-    backgroundColor: #2e0505,
-    headerFont: 'Iceberg',
-    headerFallbackFont: serif,
-    background: linear-gradient(#2e0505 80%, #ffbb001c),
-    navColor: #531111,
-    navText: #fff,
-    brandText: #ff4949, //color for text next to favicon
-    cardColor: #531111,
-    textColor: #ccc,
-    textLinkColor: #ffeac4,
-    textLinkBackground: #030303,
-    linkColor: #fdf915,
-    colorPrimary: #ffb546, //most headers on site
-    colorSecondary: #ff4949, //feature headers in class, features outline,
-    colorTertiary: #fff8b9, //feature usbheaders for stuff like fighting styles
-    headerColor: #F1490D,
-    classButtonGradientActive: linear-gradient(315deg,  #f5a020 0%, #ac2500 74%),
-    classButtonGradient: linear-gradient(50deg,  #b16a00 0%, #5c1400 74%),
-    paginateSelected: rgba(255, 121, 121, 0.514),
-    tableHover: rgba(255,255,255,.075)
-  )*/
-);
+// Planar Portal Themes — CSS Custom Properties
+// Preserves all original realms while eliminating 8x Sass selector duplication.
+
+.theme-royal {
+  --theme-bg-color: #171612;
+  --theme-bg: none;
+  --theme-bg-image: url(../royal.png);
+  --theme-header-font: "UnifrakturCook", serif;
+  --theme-nav-color: #fde37b;
+  --theme-nav-text: #333;
+  --theme-brand-text: #333;
+  --theme-brand-text-hover: #666;
+  --theme-card-color: #32383e;
+  --theme-card-hover: #292e33;
+  --theme-alert-bg: #49525a;
+  --theme-text-color: #bbb;
+  --theme-text-link-color: #fff;
+  --theme-text-link-bg: #574310;
+  --theme-link-color: #dec45b;
+  --theme-link-hover: #f2e4a8;
+  --theme-primary: #c4b262;
+  --theme-secondary: #a749ff;
+  --theme-tertiary: #ddd;
+  --theme-header-color: #ffffff;
+  --theme-btn-gradient: linear-gradient(#484e55, #3a3f44 60%, #313539);
+  --theme-btn-gradient-active: linear-gradient(#101112, #17191b 40%, #1b1e20);
+  --theme-paginate-selected: rgba(255, 237, 121, 0.514);
+  --theme-table-active: #3a3f44;
+  --theme-table-hover: rgba(255, 255, 255, 0.075);
+  --theme-input-bg: #252a2f;
+  --theme-input-border: rgba(255, 255, 255, 0.18);
+}
+
+.theme-light {
+  --theme-bg-color: #fff;
+  --theme-bg: none;
+  --theme-header-font: "Cinzel Decorative", cursive;
+  --theme-nav-color: #fff59b;
+  --theme-nav-text: #000;
+  --theme-brand-text: #60adff;
+  --theme-brand-text-hover: #99cbff;
+  --theme-card-color: #fff;
+  --theme-card-hover: #f2f2f2;
+  --theme-alert-bg: #f8f9fa;
+  --theme-text-color: #212529;
+  --theme-text-link-color: #212529;
+  --theme-text-link-bg: #e9ecef;
+  --theme-link-color: #0044ff;
+  --theme-link-hover: #4d7cff;
+  --theme-primary: #0044ff;
+  --theme-secondary: #c4ba87;
+  --theme-tertiary: #60adff;
+  --theme-header-color: #ffed49;
+  --theme-btn-gradient: linear-gradient(#0d6efd, #0b5ed7);
+  --theme-btn-gradient-active: linear-gradient(#0a58ca, #084298);
+  --theme-paginate-selected: rgba(0, 68, 255, 0.18);
+  --theme-table-active: #fff59b;
+  --theme-table-hover: rgba(0, 0, 0, 0.075);
+  --theme-input-bg: #fff;
+  --theme-input-border: #ced4da;
+}
+
+.theme-greek {
+  --theme-bg-color: #fcdec2;
+  --theme-bg: none;
+  --theme-bg-image: url(../meander.svg);
+  --theme-header-font: "Mate SC", serif;
+  --theme-nav-color: #946b44;
+  --theme-nav-text: #fff;
+  --theme-brand-text: #67b4e0;
+  --theme-brand-text-hover: #a6d5f0;
+  --theme-card-color: #ebd4c1;
+  --theme-card-hover: #dec0a7;
+  --theme-alert-bg: #f5e6da;
+  --theme-text-color: #343a40;
+  --theme-text-link-color: #e0a267;
+  --theme-text-link-bg: #68482b;
+  --theme-link-color: #946b44;
+  --theme-link-hover: #c59b73;
+  --theme-primary: #b87333;
+  --theme-secondary: #e06767;
+  --theme-tertiary: #3b8bb8;
+  --theme-header-color: #b87333;
+  --theme-btn-gradient: linear-gradient(#946b44, #805b39 60%, #68482b);
+  --theme-btn-gradient-active: linear-gradient(#68482b, #553a20 40%, #462f19);
+  --theme-paginate-selected: rgba(121, 175, 255, 0.514);
+  --theme-table-active: #dfc2aa;
+  --theme-table-hover: rgba(148, 107, 68, 0.12);
+  --theme-input-bg: #fff7f0;
+  --theme-input-border: rgba(148, 107, 68, 0.35);
+}
+
+.theme-dark {
+  --theme-bg-color: #272b30;
+  --theme-bg: none;
+  --theme-header-font: "Segoe UI", system-ui, sans-serif;
+  --theme-nav-color: #3a3f44;
+  --theme-nav-text: #fff;
+  --theme-brand-text: #ccc;
+  --theme-brand-text-hover: #fff;
+  --theme-card-color: #32383e;
+  --theme-card-hover: #292e33;
+  --theme-alert-bg: #49525a;
+  --theme-text-color: #c2c7cc;
+  --theme-text-link-color: #fff;
+  --theme-text-link-bg: #272b30;
+  --theme-link-color: #5bc0de;
+  --theme-link-hover: #a6ddf0;
+  --theme-primary: #62c462;
+  --theme-secondary: #5bc0de;
+  --theme-tertiary: #ccc;
+  --theme-header-color: #d4d8dc;
+  --theme-btn-gradient: linear-gradient(#484e55, #3a3f44 60%, #313539);
+  --theme-btn-gradient-active: linear-gradient(#101112, #17191b 40%, #1b1e20);
+  --theme-paginate-selected: rgba(121, 175, 255, 0.514);
+  --theme-table-active: #3a3f44;
+  --theme-table-hover: rgba(255, 255, 255, 0.075);
+  --theme-input-bg: #23272b;
+  --theme-input-border: rgba(255, 255, 255, 0.18);
+}
+
+.theme-forest {
+  --theme-bg-color: #0e120e;
+  --theme-bg: none;
+  --theme-bg-image: url(../flower.png);
+  --theme-header-font: "Segoe UI", system-ui, sans-serif;
+  --theme-nav-color: #43443a;
+  --theme-nav-text: #fff;
+  --theme-brand-text: #ff91ca;
+  --theme-brand-text-hover: #ffc7e4;
+  --theme-card-color: #2c352a;
+  --theme-card-hover: #232b21;
+  --theme-alert-bg: #3e4a3b;
+  --theme-text-color: #c8cec7;
+  --theme-text-link-color: #fff;
+  --theme-text-link-bg: #212e18;
+  --theme-link-color: #c997cf;
+  --theme-link-hover: #e5c9e8;
+  --theme-primary: #78dc7d;
+  --theme-secondary: #e1e389;
+  --theme-tertiary: #ec92e1;
+  --theme-header-color: #d4dcd3;
+  --theme-btn-gradient: linear-gradient(#4b5548, #3a443f 60%, #313739);
+  --theme-btn-gradient-active: linear-gradient(#1f231f, #212724 40%, #22272a);
+  --theme-paginate-selected: rgba(121, 255, 161, 0.514);
+  --theme-table-active: #3f443a;
+  --theme-table-hover: rgba(255, 255, 255, 0.075);
+  --theme-input-bg: #1e251d;
+  --theme-input-border: rgba(255, 255, 255, 0.18);
+}
+
+.theme-ice {
+  --theme-bg-color: #0a0046;
+  --theme-bg: linear-gradient(15deg, #140220 0%, #0a0046 74%);
+  --theme-header-font: "Iceberg", cursive;
+  --theme-nav-color: #192970;
+  --theme-nav-text: #fff;
+  --theme-brand-text: #ffcc80;
+  --theme-brand-text-hover: #ffe5bd;
+  --theme-card-color: #35377c;
+  --theme-card-hover: #2b2d68;
+  --theme-alert-bg: #474a9e;
+  --theme-text-color: #eee;
+  --theme-text-link-color: #c4fff7;
+  --theme-text-link-bg: #073942;
+  --theme-link-color: #15e2fd;
+  --theme-link-hover: #8ef0fe;
+  --theme-primary: #6b93ff;
+  --theme-secondary: #d294e6;
+  --theme-tertiary: #ffcc80;
+  --theme-header-gradient: linear-gradient(1deg, rgb(217, 251, 255) 0%, rgb(0, 162, 255) 30%, rgb(205, 129, 255) 95%);
+  --theme-header-color: #88d8ff;
+  --theme-btn-gradient: linear-gradient(50deg, #29286b 0%, #316770 74%);
+  --theme-btn-gradient-active: linear-gradient(315deg, #35338b 0%, #4193a1 74%);
+  --theme-paginate-selected: rgba(184, 255, 216, 0.514);
+  --theme-table-active: #273274;
+  --theme-table-hover: rgba(255, 255, 255, 0.085);
+  --theme-input-bg: #232660;
+  --theme-input-border: rgba(184, 255, 216, 0.25);
+}
+
+.theme-rainbow {
+  --theme-bg-color: #272b30;
+  --theme-bg: linear-gradient(15deg, #140220 0%, #0a0046 74%);
+  --theme-whole-bg-image: url(../shizomi.png);
+  --theme-header-font: "Monoton", sans-serif;
+  --theme-nav-color: #000;
+  --theme-nav-text: #fff;
+  --theme-brand-text: #cc92ff;
+  --theme-brand-text-hover: #e7cbff;
+  --theme-card-color: #2b333a;
+  --theme-card-hover: #21282d;
+  --theme-alert-bg: #404c57;
+  --theme-text-color: #fff;
+  --theme-text-link-color: #00f7ff;
+  --theme-text-link-bg: #350b33;
+  --theme-link-color: #ffa1f7;
+  --theme-link-hover: #ffd1fb;
+  --theme-primary: #ffc6f5;
+  --theme-secondary: #9eff9e;
+  --theme-tertiary: #cc92ff;
+  --theme-header-gradient: linear-gradient(0deg, rgb(255, 0, 221) 30%, rgb(187, 0, 255) 50%, rgb(0, 255, 251) 60%);
+  --theme-header-color: #ffc6f5;
+  --theme-btn-gradient: linear-gradient(45deg, rgb(151, 0, 131) 20%, rgb(89, 0, 144) 40%, rgb(0, 96, 160) 70%);
+  --theme-btn-gradient-active: linear-gradient(135deg, rgb(255, 0, 221) 20%, rgb(128, 0, 255) 40%, rgb(0, 153, 255) 70%);
+  --theme-paginate-selected: rgb(228, 0, 0);
+  --theme-table-active: #3a1c4a;
+  --theme-table-hover: rgba(255, 255, 255, 0.085);
+  --theme-input-bg: #1e2429;
+  --theme-input-border: rgba(255, 198, 245, 0.3);
+}
+
+.theme-end {
+  --theme-bg-color: #302727;
+  --theme-bg: none;
+  --theme-bg-image: url(../phyrexian-border.png);
+  --theme-header-font: "Iceberg", sans-serif;
+  --theme-nav-color: #443a3a;
+  --theme-nav-text: #fff;
+  --theme-brand-text: #ccc;
+  --theme-brand-text-hover: #fff;
+  --theme-card-color: #32383e;
+  --theme-card-hover: #292e33;
+  --theme-alert-bg: #49525a;
+  --theme-text-color: #c2c2c2;
+  --theme-text-link-color: #fff;
+  --theme-text-link-bg: #272b30;
+  --theme-link-color: #de5b5b;
+  --theme-link-hover: #f0a6a6;
+  --theme-primary: #de5b5b;
+  --theme-secondary: #c4b462;
+  --theme-tertiary: #ccc;
+  --theme-header-color: #d4c8c8;
+  --theme-btn-gradient: linear-gradient(#484e55, #3a3f44 60%, #313539);
+  --theme-btn-gradient-active: linear-gradient(#101112, #17191b 40%, #1b1e20);
+  --theme-paginate-selected: rgba(255, 150, 121, 0.514);
+  --theme-table-active: #443a3a;
+  --theme-table-hover: rgba(255, 255, 255, 0.075);
+  --theme-input-bg: #252020;
+  --theme-input-border: rgba(222, 91, 91, 0.3);
+}
