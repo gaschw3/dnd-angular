@@ -24,7 +24,7 @@ export class AppComponent {
   @ViewChild(QuickSearchComponent) quickSearch?: QuickSearchComponent;
   @ViewChild(BookmarksTrayComponent) bookmarksTray?: BookmarksTrayComponent;
 
-  constructor(router: Router, public bookmarks: BookmarksService) {
+  constructor(private router: Router, public bookmarks: BookmarksService) {
     const navEndEvent$ = router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     );
@@ -61,6 +61,24 @@ export class AppComponent {
   closeMenus(): void {
     this.openDropdown = null;
     this.isNavbarCollapsed = true;
+  }
+
+  //hijack internal-link clicks to preserve navigation stats and avoid reloads
+  @HostListener('click', ['$event'])
+  onInternalLinkClick(event: MouseEvent): void {
+    if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
+      return;
+    }
+    const target = event.target as HTMLElement | null;
+    const anchor = target?.closest('a.internal-link') as HTMLAnchorElement | null;
+    if (!anchor) {
+      return;
+    }
+    const href = anchor.getAttribute('href');
+    if (href?.startsWith('./')) {
+      event.preventDefault();
+      this.router.navigateByUrl(href.slice(1));
+    }
   }
 
   @HostListener('document:click')

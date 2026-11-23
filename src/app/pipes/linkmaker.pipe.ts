@@ -1,5 +1,54 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// tags that get routed, some weird duplicates right now because of JSON errors
+const ROUTE_MAP: Record<string, string> = {
+  creature: 'beastiary',
+  beastiary: 'beastiary',
+  spell: 'spells',
+  spells: 'spells',
+  item: 'items',
+  items: 'items',
+  feat: 'feats',
+  feats: 'feats',
+  'epic-boon': 'epic-boons',
+  'epic-boons': 'epic-boons',
+  class: 'classes',
+  classes: 'classes',
+  background: 'backgrounds',
+  backgrounds: 'backgrounds',
+  ancestry: 'ancestries',
+  ancestries: 'ancestries',
+  'other-features': 'other-features'
+};
+
+// tags in JSON that I'm not currently handling - just render as werid text mostly
+const PLAIN_TEXT_TAGS = new Set([
+  'damage',
+  'scaledamage',
+  'dice',
+  'scaledice',
+  'condition',
+  'conditions',
+  'skill',
+  'sense',
+  'chance',
+  'filter',
+  'rule',
+  'variantrule',
+  'action',
+  'quickref',
+  'status',
+  'itemMastery',
+  'disease',
+  'language',
+  'book',
+  'note',
+  'optfeature',
+  'hitYourSpellAttack',
+  'classFeature',
+  'subclassFeature'
+]);
+
 @Pipe({
   standalone: false,
   name: 'linkmaker'
@@ -7,67 +56,95 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class LinkmakerPipe implements PipeTransform {
 
   transform(value: string): string {
-    let str;
-    let linkText = '';
-    let queryText = '';
-    //probably too complex, but take a given string like:
-    // {@... ...} and turn it into a href
-    // {@place thing name} will convert to '.../place/thing-name' (weird characters removed, spaces to hyphens)
-    // {@place thing name|other name} will convert to '.../place/thing-name' but display 'other name'
-    // {@place ?param=val} will convert to '.../place?param=val'
-    // {@place thing name?param=val} will convert to '.../place/thing-name?param=val'
-    // {@place thing name?param=val|other name} will convert to '.../place/thing-name?param=val' but display 'other name'
-    function replaceLinks(match) {
-      let cleanString = match.replace('{', '').replace('}', '');
-      if (cleanString.includes('|')) {
-        linkText = cleanString.split('|')[1];
-        cleanString = cleanString.split('|')[0];
-      }
-      if (cleanString.includes('?')) {
-        queryText = cleanString.split('?')[1];
-        cleanString = cleanString.split('?')[0];
-      }
-      const splitArr = cleanString.split(' ');
-      const linkPath = splitArr.slice(1).join(' ');
-      let linkLocation = linkPath.replace(/[\s/]/g, '-').replace(/[^\w-/]/g, '').toLowerCase();
-      // XXX:special case for specific EI link - should not be done this way
-      linkLocation = linkLocation.replace('ei-', 'EI/');
-      const linkRoot = splitArr.slice(0, 1).toString().replace('creature', 'beastiary').replace('spells', 'spell').replace('spell', 'spells').replace('items', 'item').replace('item', 'items').replace('feat ', 'feats ').replace('@', '/');
-      const href = queryText !== '' ? linkRoot + '?' + queryText : linkRoot + '/' + linkLocation;
-      // a bunch of these are used in Foundry but I don't really want to make handler pages for all of them
-      // most of these get ignored, a few special ones are turned into stuff like text decorations
-      if (splitArr.slice(0,1).toString() == '@damage' || splitArr.slice(0,1).toString() == '@scaledamage' || splitArr.slice(0,1).toString() == '@dice' || splitArr.slice(0,1).toString() == '@scaledice' || splitArr.slice(0,1).toString() == '@condition' || splitArr.slice(0,1).toString() == '@skill' || splitArr.slice(0,1).toString() == '@hit' || splitArr.slice(0,1).toString() == '@sense' || splitArr.slice(0,1).toString() == '@chance' || splitArr.slice(0,1).toString() == '@h' || splitArr.slice(0,1).toString() == '@atk' || splitArr.slice(0,1).toString() == '@dc' || splitArr.slice(0,1).toString() == '@atkr' || splitArr.slice(0,1).toString() == '@actSave' || splitArr.slice(0,1).toString() == '@actSaveFail' || splitArr.slice(0,1).toString() == '@actSaveSuccess' || splitArr.slice(0,1).toString() == '@b' ||splitArr.slice(0,1).toString() == '@i' || splitArr.slice(0,1).toString() == '@filter') {
-        if (splitArr.slice(0,1).toString() == '@hit') {
-          return `+${linkText === '' ? linkPath : linkText}`;
-        } else if (splitArr.slice(0,1).toString() == '@actSave') {
-          return `<em>${linkPath + ' Saving Throw:'}</em>`;
-        } else if (splitArr.slice(0,1).toString() == '@actSaveFail') {
-          return `<em>${'Failure: '}</em>`;
-        } else if (splitArr.slice(0,1).toString() == '@actSaveSuccess') {
-            return `<em>${'Success: '}</em>`;
-        } else if (splitArr.slice(0,1).toString() == '@dc') {
-            return `DC ${linkPath}`;
-        } else if (splitArr.slice(0,1).toString() == '@atk' || splitArr.slice(0,1).toString() == '@atkr') {
-          return `<em>${linkPath.replace('m', 'Melee').replace('r', 'Ranged').replaceAll('s', ' Spell').replaceAll('w', ' Weapon').replace(',', ' or ') + ' Attack:'}</em>`;
-        } else if (splitArr.slice(0,1).toString() == '@b') {
-          return `<strong>${linkText === '' ? linkPath : linkText}</strong>`
-        } else if (splitArr.slice(0,1).toString() == '@i') {
-          return `<em>${linkText === '' ? linkPath : linkText}</em>`
-        } else {
-          return `${linkText === '' ? linkPath : linkText}`;
-        }
-      } else {
-        return `<a href='.${href}'>${linkText === '' ? linkPath : linkText}</a>`;
-      }
-    }
-
-    if (value && value.includes('@')) {
-      str = value.toString().replace(/{@h}/g, '<em>Hit: </em>')
-        .replace(/{@([\w-]+)\s?([\w\-\s/'|?=(),.:&%+]+)?}/g, replaceLinks);
-      return str;
-    } else {
+    if (!value || !value.includes('@')) {
       return value;
     }
+
+    return value
+      .toString()
+      .replace(/{@h}/g, '<em>Hit: </em>')
+      .replace(/{@([\w-]+)(?:\s([^}]+))?}/g, (_match, tag: string, rawBody = '') =>
+        this.renderTag(tag, rawBody.trim())
+      );
   }
 
+  private renderTag(tag: string, rawBody: string): string {
+    let body = rawBody;
+    let displayText = '';
+    let queryText = '';
+
+    // Handle pipe syntax:
+    // - {@place thing name|display text}
+    // - {@classFeature Name|Class|Source|Level} -> show first segment if >2 parts
+    if (body.includes('|')) {
+      const parts = body.split('|');
+      body = parts[0];
+      if (parts.length === 2) {
+        displayText = parts[1];
+      } else if (tag === 'filter' || tag === 'classFeature' || tag === 'subclassFeature') {
+        displayText = parts[0];
+      } else {
+        displayText = parts[parts.length - 1] || parts[0];
+      }
+    }
+
+    if (body.includes('?')) {
+      const [pathPart, queryPart] = body.split('?');
+      body = pathPart;
+      queryText = queryPart;
+    }
+
+    const label = displayText || body;
+
+    switch (tag) {
+      case 'hit':
+        return `+${label}`;
+      case 'actSave':
+        return `<em>${body} Saving Throw:</em>`;
+      case 'actSaveFail':
+        return '<em>Failure: </em>';
+      case 'actSaveSuccess':
+        return '<em>Success: </em>';
+      case 'actTrigger':
+        return '<em>Trigger: </em>';
+      case 'actResponse':
+        return '<em>Response: </em>';
+      case 'dc':
+        return `DC ${body}`;
+      case 'recharge':
+        return body ? `(Recharge ${body}–6)` : '(Recharge 6)';
+      case 'atk':
+      case 'atkr':
+        return `<em>${body
+          .replace('m', 'Melee')
+          .replace('r', 'Ranged')
+          .replaceAll('s', ' Spell')
+          .replaceAll('w', ' Weapon')
+          .replace(',', ' or ')} Attack:</em>`;
+      case 'b':
+        return `<strong>${label}</strong>`;
+      case 'i':
+        return `<em>${label}</em>`;
+      default:
+        break;
+    }
+
+    if (PLAIN_TEXT_TAGS.has(tag)) {
+      return label;
+    }
+
+    const routeRoot = ROUTE_MAP[tag] ?? tag;
+    let slug = body
+      .replace(/[\s/]/g, '-')
+      .replace(/[^\w-/]/g, '')
+      .toLowerCase();
+
+    // Special case for Eldritch Invocation feature links
+    slug = slug.replace(/^ei-/, 'EI/');
+
+    const basePath = slug ? `/${routeRoot}/${slug}` : `/${routeRoot}`;
+    const routePath = queryText ? `${basePath}?${queryText}` : basePath;
+
+    return `<a class="internal-link" href=".${routePath}">${label}</a>`;
+  }
 }

@@ -13,26 +13,39 @@ describe('LinkmakerPipe', () => {
 
   it('convert basic link syntax to anchor', () => {
     const input = 'Check {@place Thing Name} for info.';
-    const expected = "Check <a href='./place/thing-name'>Thing Name</a> for info.";
+    const expected = 'Check <a class="internal-link" href="./place/thing-name">Thing Name</a> for info.';
     expect(pipe.transform(input)).toBe(expected);
   });
 
   it('handle | to set display text', () => {
     const input = 'Check {@place Thing Name|See More}';
-    const expected = "Check <a href='./place/thing-name'>See More</a>";
+    const expected = 'Check <a class="internal-link" href="./place/thing-name">See More</a>';
     expect(pipe.transform(input)).toBe(expected);
   });
 
   it('handle query params', () => {
     const input = 'Try {@place ?id=5|click here}';
-    const expected = "Try <a href='./place?id=5'>click here</a>";
+    const expected = 'Try <a class="internal-link" href="./place?id=5">click here</a>';
     expect(pipe.transform(input)).toBe(expected);
   });
 
   it('handle path + query params + display text', () => {
     const input = 'Visit {@place Thing Name?id=5|link}';
-    const expected = "Visit <a href='./place/thing-name?id=5'>link</a>";
+    const expected = 'Visit <a class="internal-link" href="./place/thing-name?id=5">link</a>';
     expect(pipe.transform(input)).toBe(expected);
+  });
+
+  it('map singular tags like @feat, @spell, @creature to plural routes', () => {
+    expect(pipe.transform('{@feat Alert}')).toBe('<a class="internal-link" href="./feats/alert">Alert</a>');
+    expect(pipe.transform('{@spell Fireball}')).toBe('<a class="internal-link" href="./spells/fireball">Fireball</a>');
+    expect(pipe.transform('{@creature Goblin}')).toBe('<a class="internal-link" href="./beastiary/goblin">Goblin</a>');
+  });
+
+  it('render non-routed Foundry tags as plain text or formatted labels', () => {
+    expect(pipe.transform('{@conditions prone}')).toBe('prone');
+    expect(pipe.transform('{@rule Bonus Action}')).toBe('Bonus Action');
+    expect(pipe.transform('{@recharge 5}')).toBe('(Recharge 5–6)');
+    expect(pipe.transform('{@recharge}')).toBe('(Recharge 6)');
   });
 
   it('replace {@h} with Hit text', () => {
@@ -79,7 +92,7 @@ describe('LinkmakerPipe', () => {
 
   it('handle mixed content correctly', () => {
     const input = 'See {@place Castle Black?view=map|Map View} and {@b Important}.';
-    const expected = "See <a href='./place/castle-black?view=map'>Map View</a> and <strong>Important</strong>.";
+    const expected = 'See <a class="internal-link" href="./place/castle-black?view=map">Map View</a> and <strong>Important</strong>.';
     expect(pipe.transform(input)).toBe(expected);
   });
 });
