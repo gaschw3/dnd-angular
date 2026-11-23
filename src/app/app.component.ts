@@ -3,6 +3,9 @@ import { CommonModule, ViewportScroller } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faGear, faSearch, faThumbtack } from '@fortawesome/free-solid-svg-icons';
+import { faSuperpowers } from '@fortawesome/free-brands-svg-icons';
 import { ParticlesComponent } from './controllers/particles/particles.component';
 import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
 import { QuickSearchComponent } from './shared/quick-search/quick-search.component';
@@ -16,6 +19,7 @@ declare let gtag: any;
     CommonModule,
     FormsModule,
     RouterModule,
+    FaIconComponent,
     ParticlesComponent,
     ScrollTopComponent,
     QuickSearchComponent,
@@ -26,6 +30,11 @@ declare let gtag: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  readonly faSearch = faSearch;
+  readonly faThumbtack = faThumbtack;
+  readonly faGear = faGear;
+  readonly faSuperpowers = faSuperpowers;
+
   title = 'EotCC 5e';
   defaultTheme = 'forest';
   isNavbarCollapsed = true;

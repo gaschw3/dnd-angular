@@ -87,7 +87,7 @@
                 aria-label="Encounter name"
               />
               <button type="button" (click)="saveEncounter()" class="btn btn-success">
-                <i class="fa fa-save" aria-hidden="true"></i> Save
+                <fa-icon [icon]="faFloppyDisk" aria-hidden="true" /> Save
               </button>
               <button type="button" (click)="clearEncounter()" class="btn btn-primary">
                 Clear
@@ -123,10 +123,10 @@
                         <input class="current-encounter--monster-qty form-control input-lg" type="number" [(ngModel)]="entry.number" (change)="encounterChange(i, 0)">
                         <div class="current-encounter--monster-qty-btns">
                           <button (click)="encounterChange(i, 1)" class="btn btn-xs btn-success" aria-label="Increase quantity">
-                            <i class="fa fa-plus"></i>
+                            <fa-icon [icon]="faPlus" aria-hidden="true" />
                           </button>
                           <button (click)="encounterChange(i, -1)" class="btn btn-xs btn-danger" aria-label="Decrease quantity">
-                            <i class="fa fa-minus"></i>
+                            <fa-icon [icon]="faMinus" aria-hidden="true" />
                           </button>
                         </div>
                       </div>
@@ -200,7 +200,7 @@
           <div class="difficulty-legend px-3 pb-1 pt-0">
             <button class="btn btn-primary difficulty-legend-button" type="button"
               [attr.aria-expanded]="showLegend" aria-controls="legend-collapse" (click)="showLegend = !showLegend">
-              Color Legend <i class="fa" [ngClass]="showLegend ? 'fa-angle-up' : 'fa-angle-down'" aria-hidden="true"></i>
+              Color Legend <fa-icon [icon]="showLegend ? faAngleUp : faAngleDown" aria-hidden="true" />
             </button>
             @if (showLegend) {
               <div id="legend-collapse" class="difficulty-legend-popout mt-2">

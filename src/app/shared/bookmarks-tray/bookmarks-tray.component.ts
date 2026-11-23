@@ -3,15 +3,19 @@ import { CommonModule, Location } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faPlus, faThumbtack } from '@fortawesome/free-solid-svg-icons';
 import { BookmarkCategory, BookmarksService } from '../services/bookmarks.service';
 
 @Component({
   selector: 'app-bookmarks-tray',
-  imports: [CommonModule],
+  imports: [CommonModule, FaIconComponent],
   templateUrl: './bookmarks-tray.component.html',
   styleUrls: ['./bookmarks-tray.component.scss']
 })
 export class BookmarksTrayComponent implements OnDestroy {
+  readonly faThumbtack = faThumbtack;
+  readonly faPlus = faPlus;
   readonly currentUrl = signal('/');
   readonly dragOffset = signal(0);
   readonly isDragging = signal(false);

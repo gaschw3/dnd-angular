@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faSearch, faThumbtack } from '@fortawesome/free-solid-svg-icons';
 
 import { DndDataService } from '../services/dnd-data.service';
 import { BookmarkCategory, BookmarksService } from '../services/bookmarks.service';
@@ -19,11 +21,13 @@ interface SearchEntry {
 
 @Component({
   selector: 'app-quick-search',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FaIconComponent],
   templateUrl: './quick-search.component.html',
   styleUrls: ['./quick-search.component.scss']
 })
 export class QuickSearchComponent {
+  readonly faSearch = faSearch;
+  readonly faThumbtack = faThumbtack;
   @ViewChild('searchInput') searchInput?: ElementRef<HTMLInputElement>;
 
   readonly isOpen = signal(false);

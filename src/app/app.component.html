@@ -18,10 +18,10 @@
       <a class="d-inline-block align-top navbar-brand me-auto me-lg-3" routerLink="/classes" data-phy="EotCC 5" (click)="closeMenus()">EotCC 5e</a>
       <div class="d-flex d-lg-none align-items-center gap-2 me-2">
         <button type="button" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center nav-util-btn nav-mobile-btn" (click)="openQuickSearch()" aria-label="Quick Search" title="Quick Search">
-          <i class="fa fa-search" aria-hidden="true"></i>
+          <fa-icon [icon]="faSearch" aria-hidden="true" />
         </button>
         <button type="button" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center gap-1 nav-util-btn nav-mobile-btn" (click)="toggleBookmarks()" aria-label="Session Pinned Pages" title="Session Pinned Pages">
-          <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+          <fa-icon [icon]="faThumbtack" aria-hidden="true" />
           @if (bookmarks.count() > 0) {
             <span class="badge text-bg-success">{{ bookmarks.count() }}</span>
           }
@@ -71,7 +71,7 @@
         <ul class="navbar-nav portal align-items-lg-center gap-2">
           <li class="nav-item d-none d-lg-block">
             <div class="input-group input-group-sm nav-search-group">
-              <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+              <span class="input-group-text"><fa-icon [icon]="faSearch" aria-hidden="true" /></span>
               <button type="button" class="form-control nav-search-trigger d-flex align-items-center justify-content-between gap-2" (click)="openQuickSearch()" title="Quick Search (Ctrl+G)">
                 <span class="nav-search-placeholder">Global Search</span>
                 <kbd class="d-none d-xl-inline nav-kbd">Ctrl+G</kbd>
@@ -80,7 +80,7 @@
           </li>
           <li class="nav-item d-none d-lg-block">
             <button type="button" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center gap-2 nav-util-btn nav-bookmark-btn" (click)="toggleBookmarks()" title="Session Pinned Pages">
-              <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+              <fa-icon [icon]="faThumbtack" aria-hidden="true" />
               @if (bookmarks.count() > 0) {
                 <span class="badge text-bg-success">{{ bookmarks.count() }}</span>
               }
@@ -90,12 +90,12 @@
             <a class="nav-link" href="#" id="navbarDropdownPortal" role="button" data-phy="Planar "
               [attr.aria-expanded]="openDropdown === 'portal'" aria-haspopup="true" (click)="toggleDropdown('portal', $event)">
               Planar Portal
-              <i class="fa fa-cog" aria-hidden="true"></i>
+              <fa-icon [icon]="faGear" aria-hidden="true" />
             </a>
             <div class="dropdown-menu dropdown-menu-end" [class.show]="openDropdown === 'portal'" aria-labelledby="navbarDropdownPortal" tabindex="-1" (click)="$event.stopPropagation()" (keydown.enter)="$event.stopPropagation()">
               <form class="form-sm m-3">
                 <div class="mb-3">
-                  <label for="theme-select"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label>
+                  <label for="theme-select"><fa-icon [icon]="faSuperpowers" animation="spin" aria-hidden="true" /> Destination</label>
                   <select class="form-select form-select-sm mt-1" id="theme-select" [(ngModel)]="theme" name="theme" (change)="changeTheme()">
                     <option value="dark">Material Realm</option>
                     <option value="greek">Arkhos</option>

@@ -19,7 +19,7 @@
     <div class="bm-sheet-handle" aria-hidden="true"></div>
     <div class="bm-header">
       <h5 class="mb-0">
-        <i class="fa fa-thumb-tack me-2" aria-hidden="true"></i>Pinned Pages
+        <fa-icon [icon]="faThumbtack" class="me-2" aria-hidden="true" />Pinned Pages
       </h5>
       <button type="button" class="bm-close" (click)="close()" aria-label="Close pinned pages">&times;</button>
     </div>
@@ -27,7 +27,7 @@
 
   <div class="bm-actions">
     <button type="button" class="btn btn-sm btn-primary flex-grow-1" (click)="pinCurrentPage()">
-      <i class="fa" [ngClass]="bookmarks.isBookmarked(currentUrl()) ? 'fa-thumb-tack' : 'fa-plus'" aria-hidden="true"></i>
+      <fa-icon [icon]="bookmarks.isBookmarked(currentUrl()) ? faThumbtack : faPlus" aria-hidden="true" />
       {{ bookmarks.isBookmarked(currentUrl()) ? ' Unpin Current Page' : ' Pin Current Page' }}
     </button>
     @if (bookmarks.count() > 0) {

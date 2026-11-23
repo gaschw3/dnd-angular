@@ -1,9 +1,10 @@
 import { Component, HostListener } from '@angular/core';
-
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-scroll-top',
-  imports: [],
+  imports: [FaIconComponent],
   template: `
     @if (visible) {
       <button
@@ -13,7 +14,7 @@ import { Component, HostListener } from '@angular/core';
         aria-label="Scroll to top"
         title="Back to top"
         >
-        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+        <fa-icon [icon]="faChevronUp" aria-hidden="true" />
       </button>
     }
     `,
@@ -41,6 +42,7 @@ import { Component, HostListener } from '@angular/core';
   `]
 })
 export class ScrollTopComponent {
+  readonly faChevronUp = faChevronUp;
   visible = false;
 
   @HostListener('window:scroll')

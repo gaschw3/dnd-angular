@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faAngleDown, faAngleUp, faFloppyDisk, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import { MonsterHelperService } from '../../shared/helpers/monster/monster-helper.service';
 import { Monster } from 'src/app/models';
@@ -39,12 +41,18 @@ interface PartyDifficulty {
 }
 
 @Component({
-  imports: [CommonModule, FormsModule, ReferenceTableComponent, MonsterComponent],
+  imports: [CommonModule, FormsModule, FaIconComponent, ReferenceTableComponent, MonsterComponent],
   selector: 'app-encounter-builder',
   templateUrl: './encounter-builder.component.html',
   styleUrls: ['./encounter-builder.component.scss']
 })
 export class EncounterBuilderComponent implements OnInit, OnDestroy {
+  readonly faFloppyDisk = faFloppyDisk;
+  readonly faPlus = faPlus;
+  readonly faMinus = faMinus;
+  readonly faAngleUp = faAngleUp;
+  readonly faAngleDown = faAngleDown;
+
   levelXp = levelXp;
   levelXp2024 = levelXp2024;
   crXp = crXpMap;
@@ -82,7 +90,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
       sortable: false,
       filterable: false,
       action: {
-        iconClass: 'fa fa-plus',
+        icon: faPlus,
         btnClass: 'btn btn-sm btn-success',
         ariaLabel: 'Add monster to encounter',
         onClick: monster => this.addMonster(monster)

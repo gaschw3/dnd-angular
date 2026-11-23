@@ -2,9 +2,11 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, injec
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { IconDefinition, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export interface ReferenceTableAction<T> {
-  iconClass: string;
+  icon: IconDefinition;
   btnClass?: string;
   ariaLabel: string;
   onClick: (row: T, event: MouseEvent) => void;
@@ -35,11 +37,12 @@ export interface ReferenceTableColumn<T> {
 
 @Component({
   selector: 'app-reference-table',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FaIconComponent],
   templateUrl: './reference-table.component.html',
   styleUrls: ['./reference-table.component.scss']
 })
 export class ReferenceTableComponent<T = any> implements OnChanges {
+  readonly faSearch = faSearch;
   @Input() tableId = 'tbl-reference';
   @Input() data: T[] | null = [];
   @Input() columns: ReferenceTableColumn<T>[] = [];

@@ -174,7 +174,8 @@
   border-radius: 0.25rem;
   transition: color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
 
-  i {
+  fa-icon {
+    display: inline-block;
     transform: rotate(35deg);
     transition: transform 0.15s ease;
   }
@@ -188,7 +189,7 @@
     opacity: 1;
     color: var(--theme-primary, #62c462);
 
-    i {
+    fa-icon {
       transform: rotate(0deg);
     }
   }

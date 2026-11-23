@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import * as L from 'leaflet';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { DndDataService, MapLocationsData } from '../../shared/services/dnd-data.service';
 
 interface SearchableLocation {
@@ -14,12 +16,13 @@ interface SearchableLocation {
 }
 
 @Component({
-  imports: [FormsModule],
+  imports: [FormsModule, FaIconComponent],
   selector: 'app-hexmap',
   templateUrl: './hexmap.component.html',
   styleUrls: ['./hexmap.component.scss']
 })
 export class HexmapComponent implements AfterViewInit, OnDestroy {
+  readonly faLocationDot = faLocationDot;
   private map?: L.Map;
   private destroy$ = new Subject<void>();
 

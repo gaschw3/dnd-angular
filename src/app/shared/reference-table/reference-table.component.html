@@ -34,7 +34,7 @@
                   } @else {
                     <div class="input-group input-group-sm">
                       @if (col.headerIcon) {
-                        <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        <span class="input-group-text"><fa-icon [icon]="faSearch" aria-hidden="true" /></span>
                       }
                       <input
                         [id]="col.filterId || col.key"
@@ -91,7 +91,7 @@
                     [attr.aria-label]="col.action.ariaLabel"
                     (click)="onActionClick(col, row, $event)"
                     >
-                    <i [class]="col.action.iconClass" aria-hidden="true"></i>
+                    <fa-icon [icon]="col.action.icon" aria-hidden="true" />
                   </button>
                 } @else {
                   @if (col.isHtml) {
