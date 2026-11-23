@@ -1,12 +1,15 @@
 import { Component, computed, input } from '@angular/core';
+import { SanitizeHtmlPipe } from 'src/app/pipes/sanitize-html.pipe';
 
 @Component({
+  imports: [SanitizeHtmlPipe],
   selector: 'app-detail-header',
   templateUrl: './detail-header.component.html',
   styleUrls: ['./detail-header.component.scss']
 })
 export class DetailHeaderComponent {
   readonly title = input.required<string>();
+  readonly titleHtml = input<string | undefined>(undefined);
   readonly subtitle = input<string | undefined>(undefined);
   readonly source = input<string | undefined>(undefined);
   readonly strikethrough = input<boolean>(false);

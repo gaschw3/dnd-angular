@@ -1,28 +1,126 @@
 <h1>D&D 5e Items</h1>
-<div class="table-type p-3">
-  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected === 'all'}" (click)="setItems('all')">All</button>
-  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected === 'magic'}" (click)="setItems('magic')">Magic Items</button>
-  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected === 'normal'}" (click)="setItems('normal')">Adventuring Supplies</button>
-  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected === 'treasure'}" (click)="setItems('treasure')">Treasure</button>
+
+<div class="card mb-3">
+  <div class="card-body py-2 px-3 item-quick-filters">
+    <div class="item-filter-row">
+      <div class="item-filter-group">
+        <span class="item-filter-label">Category</span>
+        <div class="item-chip-row">
+          <button
+            type="button"
+            class="display-chip-btn"
+            [class.active]="selectedCategory() === 'all'"
+            [attr.aria-pressed]="selectedCategory() === 'all'"
+            (click)="setCategory('all')"
+          >
+            All
+          </button>
+          <button
+            type="button"
+            class="display-chip-btn"
+            [class.active]="selectedCategory() === 'magic'"
+            [attr.aria-pressed]="selectedCategory() === 'magic'"
+            (click)="setCategory('magic')"
+          >
+            Magic Items
+          </button>
+          <button
+            type="button"
+            class="display-chip-btn"
+            [class.active]="selectedCategory() === 'weapons'"
+            [attr.aria-pressed]="selectedCategory() === 'weapons'"
+            (click)="setCategory('weapons')"
+          >
+            Weapons
+          </button>
+          <button
+            type="button"
+            class="display-chip-btn"
+            [class.active]="selectedCategory() === 'armor'"
+            [attr.aria-pressed]="selectedCategory() === 'armor'"
+            (click)="setCategory('armor')"
+          >
+            Armor
+          </button>
+          <button
+            type="button"
+            class="display-chip-btn"
+            [class.active]="selectedCategory() === 'normal'"
+            [attr.aria-pressed]="selectedCategory() === 'normal'"
+            (click)="setCategory('normal')"
+          >
+            Adventuring Supplies
+          </button>
+          <button
+            type="button"
+            class="display-chip-btn"
+            [class.active]="selectedCategory() === 'treasure'"
+            [attr.aria-pressed]="selectedCategory() === 'treasure'"
+            (click)="setCategory('treasure')"
+          >
+            Treasure
+          </button>
+        </div>
+      </div>
+
+      @if (hasQuickFilters()) {
+        <button
+          type="button"
+          class="btn btn-sm btn-link item-clear-btn"
+          (click)="resetQuickFilters()"
+        >
+          Reset
+        </button>
+      }
+    </div>
+
+    <div class="item-filter-row">
+      <div class="item-filter-group">
+        <span class="item-filter-label">Rarity</span>
+        <div class="item-chip-row">
+          @for (rarity of rarityOptions; track rarity) {
+            <button
+              type="button"
+              class="display-chip-btn"
+              [class.active]="selectedRarities().includes(rarity)"
+              [attr.aria-pressed]="selectedRarities().includes(rarity)"
+              (click)="toggleRarity(rarity)"
+            >
+              {{ formatRarityLabel(rarity) }}
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="row">
-  @if (shownItems.length) {
-    <div class="col items-table p-0">
+
+<div class="row g-3 align-items-start">
+  @if (items().length) {
+    <div class="col-xl-7 item-table">
       <app-reference-table
         tableId="tbl-items"
-        [data]="shownItems"
+        [data]="filteredItems()"
         [columns]="columns"
         [rowKey]="rowKey"
-        [selectedKey]="currItem ? idPipe.transform(currItem.name) : null"
-        [pageSize]="10"
-        [pageSizeOptions]="[10, 15, 30, 60, -1]"
+        [selectedKey]="currItem() ? idPipe.transform(currItem()!.name) : null"
+        [pageSize]="15"
+        [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="items"
         defaultSortKey="name"
         (rowClick)="setCurrItem($event)"
       ></app-reference-table>
     </div>
   }
+
+  <div id="item-detail-pane" class="col-xl-5 item-detail-pane">
+    @if (currItem(); as item) {
+      <app-item [item]="item"></app-item>
+    } @else {
+      <div class="display-empty-state">
+        <div class="display-empty-title">Select an Item</div>
+        <p>Choose an item from the table to view its rarity, value, properties, and full description.</p>
+      </div>
+    }
+  </div>
 </div>
-@if (currItem) {
-  <app-item [item]="currItem"></app-item>
-}

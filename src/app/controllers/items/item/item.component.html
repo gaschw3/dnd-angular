@@ -1,51 +1,50 @@
-@if (item) {
-  <div class="pt-2 pb-4">
+@if (item(); as it) {
+  <div class="pb-4" [class]="'pb-4 ' + rarityClass()">
     <div class="card">
       <div class="card-body">
-        <div [class]="'item-header item-header-'+item.id | lowercase">
-          <div class="row">
-            <div class="col">
-              <h1 [class]="'color-primary' | lowercase" [innerHtml]="item.name | sanitizeHtml"></h1>
-            </div>
-            <div class="col">
-              <h3 [class]="'float-end color-'+item.source | lowercase">{{item.source}}</h3>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <h5><em>{{getItemInfo(item)}}</em></h5>
-            </div>
-          </div>
-          <div class="row border-bottom-primary">
-            <div class="col">
-              <p class="pb-0 mb-2">
-                @if (item.value) {
-                  <span [class]="'text--'+((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')">
-                    {{((item.value/100 >= 1) ? item.value/100 : (item.value/10 >= 1) ? item.value/10 : item.value) | number:'1.0':'en-US'}}
-                    {{((item.value/100 >= 1) ? 'gp' : (item.value/10 >= 1) ? 'sp' : 'cp')}}
-                  </span>
-                  @if (item.value && item.weight) {
-                    ,
-                  }
-                }
-                @if (item.weight) {
-                  {{item.weight + ' lbs.'}}
-                }
-              </div>
-              <div class="col">
-                <p class="pb-0 mb-2 float-end">
-                  @if (item.dmg1) {
-                    {{getItemDamage(item)}}
-                  }
-                </div>
-              </div>
-            </div>
-            <div class="mt-2 feature-text row">
-              <div class="col">
-                <app-entry-renderer [list]=item.entries [parent]="''"></app-entry-renderer>
-              </div>
-            </div>
-          </div>
+        <app-detail-header
+          [title]="plainTitle()"
+          [titleHtml]="hasHtmlTitle() ? it.name : undefined"
+          [source]="it.source"
+        >
+          @if (subtitleText()) {
+            <h4 detail-description class="mb-0">
+              <em>{{ subtitleText() }}</em>
+            </h4>
+          }
+
+          @if (it.value) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Value</span>
+              <span class="display-meta-value" [class]="'display-meta-value text--' + valueUnit()">
+                {{ valueAmount() | number:'1.0':'en-US' }} {{ valueUnit() }}
+              </span>
+            </span>
+          }
+          @if (it.weight) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Weight</span>
+              <span class="display-meta-value">{{ it.weight }} lbs.</span>
+            </span>
+          }
+          @if (it.ac) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">AC</span>
+              <span class="display-meta-value">{{ it.ac }}</span>
+            </span>
+          }
+          @if (damageText()) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Damage</span>
+              <span class="display-meta-value">{{ damageText() }}</span>
+            </span>
+          }
+        </app-detail-header>
+
+        <div class="feature-text">
+          <app-entry-renderer [list]="it.entries" parent=""></app-entry-renderer>
         </div>
       </div>
-    }
+    </div>
+  </div>
+}
