@@ -1,3 +1,98 @@
-.features-list {
-    top: 70px;
+.class-overview-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--theme-primary);
+  text-align: left;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--theme-table-hover, rgba(255, 255, 255, 0.06));
+  }
+}
+
+.class-overview-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.class-overview-chevron {
+  transition: transform 0.2s ease;
+
+  &.collapsed {
+    transform: rotate(-90deg);
+  }
+}
+
+.class-stat-line {
+  margin-bottom: 0.2rem;
+}
+
+.class-sticky-sidebar {
+  top: 70px;
+  z-index: 800;
+
+  @media (min-width: 992px) {
+    max-height: calc(100vh - 85px);
+    overflow-y: auto;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.outline-heading {
+  color: var(--theme-primary);
+  font-weight: 600;
+}
+
+.outline-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  color: var(--theme-text-color);
+  border: none;
+
+  &:hover {
+    background-color: var(--theme-table-hover, rgba(255, 255, 255, 0.08));
+    color: var(--theme-text-link-color, var(--theme-text-color));
+  }
+
+  &.active {
+    background-color: var(--theme-table-active, rgba(255, 255, 255, 0.14));
+    color: var(--theme-text-link-color, var(--theme-text-color));
+    font-weight: 600;
+  }
+
+  &.outline-subclass {
+    padding-left: 1rem;
+    border-left: 2px solid var(--theme-secondary, var(--theme-primary));
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.outline-lvl-badge {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.08rem 0.35rem;
+  border-radius: 999px;
+  background-color: var(--theme-input-bg, rgba(0, 0, 0, 0.2));
+  border: 1px solid var(--theme-input-border, rgba(255, 255, 255, 0.18));
+  color: var(--theme-text-color);
+}
+
+.outline-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

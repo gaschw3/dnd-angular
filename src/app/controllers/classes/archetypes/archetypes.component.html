@@ -1,14 +1,81 @@
-<div class="archetypes text-center p-3">
-  <!--<button class="btn btn-success p-2 m-1" [ngClass]="{'active': this.allSelected }" (click)="selectAll()">
-  All
-</button>
-<button class="btn btn-warning p-2 m-1" [ngClass]="{'active': (selectedArchetypes.length == 0 && selectedArchetypes.includes('none'))}" (click)="selectNone()">
-  None
-</button>-->
-@for (archetype of archetypes; track archetype) {
-  <button class="btn btn-primary p-2 m-1 btn-archetype" [ngClass]="{'active': selectedArchetypes.includes(archetype.shortName)}" (click)="clickArchetype(archetype.shortName)" [attr.data-name]="archetype.shortName">
-    {{archetype.shortName}}
-    (<span [class]="'text-end color-'+archetype.source | lowercase">{{archetype.source}}</span>)
-  </button>
+@if (archetypes().length) {
+  @if (inline()) {
+    <div class="archetypes-inline mb-3">
+      <span class="archetypes-inline-label">{{ subclassTitle() }}:</span>
+      <div class="archetypes-chips">
+        @for (archetype of archetypes(); track archetype.shortName) {
+          <button
+            type="button"
+            class="display-chip-btn btn-archetype"
+            [class.active]="isSelected(archetype.shortName)"
+            [attr.aria-pressed]="isSelected(archetype.shortName)"
+            [attr.data-name]="archetype.shortName"
+            (click)="toggleArchetype(archetype.shortName)"
+          >
+            {{ archetype.shortName }}
+          </button>
+        }
+      </div>
+      <div class="archetypes-controls">
+        <button
+          type="button"
+          class="btn btn-sm btn-link archetypes-ctrl-btn"
+          [disabled]="allSelected()"
+          (click)="selectAll()"
+        >
+          All
+        </button>
+        <span class="archetypes-sep" aria-hidden="true">·</span>
+        <button
+          type="button"
+          class="btn btn-sm btn-link archetypes-ctrl-btn"
+          [disabled]="!hasSelection()"
+          (click)="clearAll()"
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+  } @else {
+    <div class="archetypes-panel card mb-3">
+      <div class="card-body py-2 px-3">
+        <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+          <h5 class="archetypes-title mb-0">{{ subclassTitle() }}</h5>
+          <div class="archetypes-controls">
+            <button
+              type="button"
+              class="btn btn-sm btn-link archetypes-ctrl-btn"
+              [disabled]="allSelected()"
+              (click)="selectAll()"
+            >
+              All
+            </button>
+            <span class="archetypes-sep" aria-hidden="true">·</span>
+            <button
+              type="button"
+              class="btn btn-sm btn-link archetypes-ctrl-btn"
+              [disabled]="!hasSelection()"
+              (click)="clearAll()"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+        <div class="archetypes-chips">
+          @for (archetype of archetypes(); track archetype.shortName) {
+            <button
+              type="button"
+              class="display-chip-btn btn-archetype"
+              [class.active]="isSelected(archetype.shortName)"
+              [attr.aria-pressed]="isSelected(archetype.shortName)"
+              [attr.data-name]="archetype.shortName"
+              (click)="toggleArchetype(archetype.shortName)"
+            >
+              {{ archetype.shortName }}
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  }
 }
-</div>

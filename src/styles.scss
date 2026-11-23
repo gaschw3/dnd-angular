@@ -1,6 +1,7 @@
 /* General styles used on multiple pages — powered by CSS Custom Properties */
 @use './scss-theme/themes';
 @use './scss-theme/colors';
+@use './scss-theme/display';
 
 // Responsive multi-column cards
 .card-columns {

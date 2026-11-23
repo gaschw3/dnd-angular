@@ -1,40 +1,43 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, computed, input, output } from '@angular/core';
+import { Subclass } from 'src/app/models';
 
 @Component({
-  imports: [CommonModule],
   selector: 'app-archetypes',
   templateUrl: './archetypes.component.html',
   styleUrls: ['./archetypes.component.scss']
 })
 export class ArchetypesComponent {
-  @Input() archetypes: any[] = [];
-  @Input() selectedArchetypes: string[] = [];
-  @Input() allSelected = false;
-  @Output() check: EventEmitter<string> = new EventEmitter<string>();
+  readonly archetypes = input<Subclass[]>([]);
+  readonly selectedArchetypes = input<string[]>([]);
+  readonly subclassTitle = input<string>('Subclasses');
+  readonly inline = input<boolean>(false);
+  readonly selectionChange = output<string[]>();
 
-  clickArchetype(name: string): void {
-    const idx = this.selectedArchetypes.indexOf(name);
-    if (idx !== -1) {
-      this.selectedArchetypes.splice(idx, 1);
-    } else {
-      this.selectedArchetypes.push(name);
-    }
-    this.allSelected = this.archetypes.length > 0 && this.selectedArchetypes.length === this.archetypes.length;
+  readonly allSelected = computed(() => {
+    const list = this.archetypes();
+    const selected = this.selectedArchetypes();
+    return list.length > 0 && selected.length === list.length;
+  });
+
+  readonly hasSelection = computed(() => this.selectedArchetypes().length > 0);
+
+  isSelected(shortName: string): boolean {
+    return this.selectedArchetypes().includes(shortName);
+  }
+
+  toggleArchetype(shortName: string): void {
+    const current = this.selectedArchetypes();
+    const next = current.includes(shortName)
+      ? current.filter(name => name !== shortName)
+      : [...current, shortName];
+    this.selectionChange.emit(next);
   }
 
   selectAll(): void {
-    this.allSelected = true;
-    for (const archetype of this.archetypes) {
-      if (!this.selectedArchetypes.includes(archetype.shortName)) {
-        this.selectedArchetypes.push(archetype.shortName);
-      }
-    }
+    this.selectionChange.emit(this.archetypes().map(a => a.shortName));
   }
 
-  selectNone(): void {
-    this.allSelected = false;
-    this.selectedArchetypes.splice(0, this.selectedArchetypes.length);
-    this.selectedArchetypes.push('none');
+  clearAll(): void {
+    this.selectionChange.emit([]);
   }
 }

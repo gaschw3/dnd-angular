@@ -1,28 +1,38 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Subject } from 'rxjs';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faWandSparkles } from '@fortawesome/free-solid-svg-icons';
+import { Subject, combineLatest } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
 
 import { newClass } from '../../models';
+import { ArchetypesComponent } from './archetypes/archetypes.component';
 import { ClassComponent } from './class/class.component';
 import { LevelTableComponent } from './level-table/level-table.component';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
+import { DetailHeaderComponent } from 'src/app/shared/detail-header/detail-header.component';
+import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
 import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
-  imports: [ReferenceTableComponent, LevelTableComponent, ClassComponent],
+  imports: [RouterModule, FaIconComponent, ReferenceTableComponent, DetailHeaderComponent, EntryRendererComponent, ArchetypesComponent, LevelTableComponent, ClassComponent],
   selector: 'app-classes',
   templateUrl: './classes.component.html',
   styleUrls: ['./classes.component.scss']
 })
 export class ClassesComponent implements OnInit, OnDestroy {
-  classes: newClass[] = [];
-  currClass?: newClass;
+  readonly classes = signal<newClass[]>([]);
+  readonly currClass = signal<newClass | undefined>(undefined);
+  readonly selectedArchetypes = signal<string[]>([]);
+  readonly sortedArchetypes = computed(() => {
+    const cls = this.currClass();
+    return cls ? [...cls.subclass].sort((a, b) => a.name.localeCompare(b.name)) : [];
+  });
+  readonly faWandSparkles = faWandSparkles;
 
   private destroy$ = new Subject<void>();
-
-  @ViewChild(ClassComponent) child?: ClassComponent;
+  private shakeTimer?: ReturnType<typeof setTimeout>;
 
   columns: ReferenceTableColumn<newClass>[] = [
     {
@@ -53,52 +63,83 @@ export class ClassesComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private title = inject(Title);
-  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
-    this.dataService.getClasses().pipe(takeUntil(this.destroy$)).subscribe(classes => {
-      this.classes = classes;
-      this.route.paramMap.pipe(takeUntil(this.destroy$)).subscribe(params => {
+    combineLatest([
+      this.dataService.getClasses(),
+      this.route.paramMap,
+      this.route.queryParamMap
+    ])
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(([classes, params, queryParams]) => {
+        this.classes.set(classes);
         const className = params.get('className');
-        if (className) {
-          this.currClass = this.classes.find(f => f.id === className);
-          if (this.currClass) {
-            this.title.setTitle(`${this.currClass.name} — EotCC 5e`);
-          }
+        const found = className ? classes.find(f => f.id === className) : undefined;
+        this.currClass.set(found);
+
+        if (found) {
+          this.title.setTitle(`${found.name} — EotCC 5e`);
+          const rawSub = queryParams.get('subclass') || '';
+          const validSubs = new Set(found.subclass.map(s => s.shortName));
+          const parsedSubs = rawSub
+            .split(',')
+            .map(s => s.trim())
+            .filter(s => validSubs.has(s));
+          this.selectedArchetypes.set(parsedSubs);
+        } else {
+          this.title.setTitle('Classes — EotCC 5e');
+          this.selectedArchetypes.set([]);
         }
-        this.cdr.markForCheck();
       });
-      this.cdr.markForCheck();
-    });
   }
 
   ngOnDestroy(): void {
+    if (this.shakeTimer) {
+      clearTimeout(this.shakeTimer);
+    }
     this.destroy$.next();
     this.destroy$.complete();
   }
 
   setCurrClass(clickedClass: newClass): void {
-    if (this.child) {
-      this.child.selectedArchetypes.splice(0, 100);
-    }
-    this.currClass = clickedClass;
+    this.selectedArchetypes.set([]);
+    this.currClass.set(clickedClass);
     this.title.setTitle(`${clickedClass.name} — EotCC 5e`);
-    this.router.navigate(['/classes', clickedClass.id], { queryParamsHandling: 'preserve' });
+    this.router.navigate(['/classes', clickedClass.id], {
+      queryParams: { subclass: null },
+      queryParamsHandling: 'merge'
+    });
+  }
+
+  onArchetypesChange(next: string[]): void {
+    this.selectedArchetypes.set(next);
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { subclass: next.length ? next.join(',') : null },
+      queryParamsHandling: 'merge',
+      replaceUrl: true
+    });
   }
 
   shake(id: string): void {
-    const el = document.getElementById(id);
-    if (el && typeof el.animate === 'function') {
-      el.animate(
-        [
-          { transform: 'translateX(0)' },
-          { transform: 'translateX(-5px)' },
-          { transform: 'translateX(5px)' },
-          { transform: 'translateX(-5px)' },
-          { transform: 'translateX(0)' }
-        ],
-        { duration: 350, easing: 'ease-in-out' }
-      );
+    if (this.shakeTimer) {
+      clearTimeout(this.shakeTimer);
     }
+    this.shakeTimer = setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el && typeof el.animate === 'function') {
+        el.animate(
+          [
+            { transform: 'translateX(0)' },
+            { transform: 'translateX(-4px)' },
+            { transform: 'translateX(4px)' },
+            { transform: 'translateX(-3px)' },
+            { transform: 'translateX(3px)' },
+            { transform: 'translateX(0)' }
+          ],
+          { duration: 750, easing: 'ease-in-out' }
+        );
+      }
+    }, 500);
   }
 }

@@ -1,71 +1,133 @@
-<div>
-  @if (class) {
-    <div class="row">
-      <div class="col-12">
-        <h2 class="text-center text-success">{{class.name}}</h2>
-        <div class="col-md-6 offset-md-3">
-          <app-entry-renderer [list]=class.fluff.entries parent=''></app-entry-renderer>
-        </div>
-        <app-archetypes [archetypes]="this.getArchetypes()" [selectedArchetypes]="selectedArchetypes" [allSelected]="allSelected"></app-archetypes>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="text-success">Hit Points</h4>
-            <div><strong>Hit Dice: </strong>{{class.hd}}</div>
-            <div><strong>HP at 1st Level: </strong>{{class.hd}} + CON</div>
-            <div><strong>HP at Higher Levels: </strong>({{class.hd}} + CON) per {{class.name}} level after first</div>
-            <h4 class="text-success mt-3 mb-0">Proficiencies</h4>
-            <p>You are proficient with the following items, in addition to any proficiencies provided by your race or background.</p>
-            <div><strong>Armor: </strong><span [innerHtml]="prof.armor | linkmaker"></span></div>
-            <div><strong>Weapons: </strong>{{prof.weapons}}</div>
-            <div><strong>Tools: </strong>{{prof.tools}}</div>
-            <div><strong>Saves: </strong>{{class.saves}}</div>
-            <div><strong>Skills: </strong>{{prof.skills}}</div>
-            <h4 class="text-success mt-3 mb-0">Starting Equipment</h4>
-            <p>You start with the following items, plus anything provided by your background.</p>
-            <ul>
-              @for (item of class.startingEquipment; track item) {
-                <li [innerHtml]="item | linkmaker"></li>
-              }
-            </ul>
-            <p>Alternatively, you may start with <span class="text--gp" [innerHtml]="class.startingGold | linkmaker"></span> to buy your own equipment</p>
-            <h4 class="text-success mt-3 mb-0">Multiclassing</h4>
-            @if (multi.requirements) {
-              <p>{{multi.requirements}}</p>
-            }
-            @if (multi.proficiencies.armor) {
-              <div><strong>Armor: </strong><span [innerHtml]="multi.proficiencies.armor | linkmaker"></span></div>
-            }
-            @if (multi.proficiencies.weapons) {
-              <div><strong>Weapons: </strong>{{multi.proficiencies.weapons}}</div>
-            }
-            @if (multi.proficiencies.tools) {
-              <div><strong>Tools: </strong>{{multi.proficiencies.tools}}</div>
-            }
-            @if (multi.proficiencies.skills) {
-              <div><strong>Skills: </strong>{{multi.proficiencies.skills}}</div>
-            }
+@if (dndClass(); as cls) {
+  <div class="row g-3 mt-1">
+    <div class="col-lg-4">
+      <div class="card mb-3">
+        <button
+          type="button"
+          class="class-overview-toggle"
+          [attr.aria-expanded]="overviewExpanded()"
+          aria-controls="class-overview-body"
+          (click)="toggleOverview()"
+        >
+          <span class="class-overview-title">Class Overview</span>
+          <fa-icon
+            class="class-overview-chevron"
+            [class.collapsed]="!overviewExpanded()"
+            [icon]="faChevronDown"
+            aria-hidden="true"
+          />
+        </button>
+        @if (overviewExpanded()) {
+          <div id="class-overview-body" class="card-body class-overview-card pt-2">
+            <h5 class="display-section-heading">Hit Points</h5>
+          <div class="class-stat-line"><strong>Hit Dice:</strong> {{ cls.hd }}</div>
+          <div class="class-stat-line"><strong>HP at 1st Level:</strong> {{ cls.hpAtFirstLevel }}</div>
+          <div class="class-stat-line">
+            <strong>HP at Higher Levels:</strong> {{ cls.hpAtHigherLevels }} per {{ cls.name }} level after 1st
           </div>
-        </div>
-        <div class="list-group features-list sticky-top py-2 d-none d-md-block">
-          <h5>Outline (jump to feature)</h5>
-          @for (feature of class.classFeature; track feature) {
-            @if (feature.className === class.name) {
-              <a
-                [ngClass]="{'active': this.child?.currActive === feature.id}"
-                class="list-group-item list-group-item-action py-2"
-                (click)="shake(feature.id)"
-              routerLink="./" fragment="{{feature.id}}">{{feature.name}}</a>
+
+          <h5 class="display-section-heading mt-3">Proficiencies</h5>
+          <div class="class-stat-line"><strong>Armor: </strong><span [innerHtml]="prof().armor | linkmaker"></span></div>
+          <div class="class-stat-line"><strong>Weapons:</strong> {{ prof().weapons }}</div>
+          <div class="class-stat-line"><strong>Tools:</strong> {{ prof().tools }}</div>
+          <div class="class-stat-line"><strong>Saves:</strong> {{ cls.saves }}</div>
+          <div class="class-stat-line"><strong>Skills:</strong> {{ prof().skills }}</div>
+
+          @if (cls.startingEquipmentEntries.length || cls.startingEquipment.length || cls.startingGold) {
+            <h5 class="display-section-heading mt-3">Starting Equipment</h5>
+            @if (cls.startingEquipmentEntries.length) {
+              @for (entry of cls.startingEquipmentEntries; track $index) {
+                <p class="mb-2" [innerHtml]="entry | linkmaker"></p>
+              }
+            } @else {
+              <p class="mb-1">You start with the following items, plus anything provided by your background:</p>
+              <ul class="mb-2 ps-3">
+                @for (item of cls.startingEquipment; track $index) {
+                  <li [innerHtml]="item | linkmaker"></li>
+                }
+              </ul>
+              @if (cls.startingGold) {
+                <p class="mb-0">
+                  Alternatively, you may start with
+                  <span class="text--gp" [innerHtml]="cls.startingGold | linkmaker"></span>
+                  to buy your own equipment.
+                </p>
+              }
             }
           }
-        </div>
-        <div class="py-2 d-sm-none d-md-block">
-        </div>
+
+          <h5 class="display-section-heading mt-3">Multiclassing</h5>
+          @if (multi().requirements) {
+            <p class="mb-1">{{ multi().requirements }}</p>
+          }
+          @if (multi().proficiencies.armor) {
+            <div class="class-stat-line"><strong>Armor: </strong><span [innerHtml]="multi().proficiencies.armor | linkmaker"></span></div>
+          }
+          @if (multi().proficiencies.weapons) {
+            <div class="class-stat-line"><strong>Weapons:</strong> {{ multi().proficiencies.weapons }}</div>
+          }
+          @if (multi().proficiencies.tools) {
+            <div class="class-stat-line"><strong>Tools:</strong> {{ multi().proficiencies.tools }}</div>
+          }
+          @if (multi().proficiencies.skills) {
+            <div class="class-stat-line"><strong>Skills:</strong> {{ multi().proficiencies.skills }}</div>
+          }
+          </div>
+        }
       </div>
-      <div class="class-features col-md-8">
-        <app-features [features]="this.getFilteredFeatures()"></app-features>
+
+      <div class="class-sticky-sidebar sticky-top">
+        <app-archetypes
+          [archetypes]="sortedArchetypes()"
+          [selectedArchetypes]="selectedArchetypes()"
+          [subclassTitle]="cls.subclassTitle"
+          (selectionChange)="onArchetypesChange($event)"
+        ></app-archetypes>
+
+        <div class="card features-outline d-none d-lg-block">
+          <div class="card-body py-2 px-3">
+            <h5 class="outline-heading mb-2">Outline</h5>
+            <div class="list-group list-group-flush features-list">
+              @for (feature of outlineFeatures(); track feature.id + '-' + feature.level + '-' + $index) {
+                <a
+                  class="list-group-item list-group-item-action outline-item"
+                  [class.active]="featuresCmp?.currActive() === feature.id"
+                  [class.outline-subclass]="!!feature.subclassShortName"
+                  routerLink="./"
+                  [fragment]="feature.id"
+                  queryParamsHandling="preserve"
+                  (click)="jumpToFeature(feature.id)"
+                >
+                  <span class="outline-lvl-badge">Lv {{ feature.level }}</span>
+                  <span class="outline-name">{{ feature.name }}</span>
+                </a>
+              }
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  }
-</div>
+
+    <div class="class-features col-lg-8">
+      @if (outlineFeatures().length) {
+        <div class="d-lg-none mb-2">
+          <label for="mobile-feature-jump" class="visually-hidden">Jump to feature</label>
+          <select
+            id="mobile-feature-jump"
+            class="form-select form-select-sm"
+            (change)="onMobileJump($event)"
+          >
+            <option value="">Jump to feature...</option>
+            @for (feature of outlineFeatures(); track feature.id + '-' + feature.level + '-' + $index) {
+              <option [value]="feature.id">
+                Lv {{ feature.level }} — {{ feature.subclassShortName ? '[' + feature.subclassShortName + '] ' : '' }}{{ feature.name }}
+              </option>
+            }
+          </select>
+        </div>
+      }
+
+      <app-features [features]="filteredFeatures()"></app-features>
+    </div>
+  </div>
+}

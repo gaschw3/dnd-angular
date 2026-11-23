@@ -1,0 +1,21 @@
+<header class="detail-header">
+  <div class="detail-header-left">
+    <div class="detail-header-titles">
+      <h2 class="detail-header-title mb-0">{{ title() }}</h2>
+      @if (subtitle()) {
+        <p class="detail-header-subtitle mb-0">{{ subtitle() }}</p>
+      }
+    </div>
+    <div class="detail-header-description">
+      <ng-content select="[detail-description]"></ng-content>
+    </div>
+  </div>
+  <div class="detail-header-right">
+    <div class="detail-header-meta">
+      <ng-content select="[detail-meta]"></ng-content>
+    </div>
+    <div class="detail-header-actions">
+      <ng-content select="[detail-actions]"></ng-content>
+    </div>
+  </div>
+</header>

@@ -116,14 +116,20 @@ export class newClass implements IClass{
   subclassTableGroups: any[];
   fluff:              any;
   hd:                 string; // {face: 8, number: 1}
+  hdNumber:           number;
+  hdFaces:            number;
+  hpAtFirstLevel:     string;
+  hpAtHigherLevels:   string;
   multiclassing:      newMulticlass;
   name:               string;
   id:                 string;
   preparedSpells:     string; // "<$level$> + <$wis_mod$>"
+  primaryAbility:     string;
   saves:              string; // ['wis', 'cha']
   source:             string;
   spellcastingAbility?:   string;
-  startingEquipment:  any;
+  startingEquipment:  string[];
+  startingEquipmentEntries: string[];
   startingGold:       string;
   startingProficiencies:  Proficiencies;
   subclassTitle:      string;
@@ -139,21 +145,29 @@ export class newClass implements IClass{
     this.canripProgression = currClass.cantripProgression;
     this.casterProgression = currClass.casterProgression;
     this.classFeatureList = currClass.classFeatures;
-    this.fluff = currClass.fluff[0];
-    this.hd = `${currClass.hd?.number}d${currClass.hd?.faces}`;
+    this.fluff = currClass.fluff?.[0];
+    this.hdNumber = currClass.hd?.number ?? 1;
+    this.hdFaces = currClass.hd?.faces ?? 8;
+    this.hd = `${this.hdNumber}d${this.hdFaces}`;
+    const maxHp = this.hdNumber * this.hdFaces;
+    const avgHp = this.hdNumber * (Math.floor(this.hdFaces / 2) + 1);
+    this.hpAtFirstLevel = `${maxHp} + CON`;
+    this.hpAtHigherLevels = `${this.hd} (or ${avgHp}) + CON`;
+    this.primaryAbility = formatPrimaryAbility(currClass.primaryAbility);
 
-    this.multiclassing = new newMulticlass(currClass.multiclassing);
-    this.saves = currClass.proficiency.join(", ").toUpperCase(); // ['wis', 'cha']
+    this.multiclassing = new newMulticlass(currClass.multiclassing || {});
+    this.saves = (currClass.proficiency || []).join(", ").toUpperCase(); // ['wis', 'cha']
     this.source = currClass.source;
     this.spellcastingAbility = currClass.spellcastingAbility;
-    this.startingEquipment = currClass.startingEquipment.default;
-    this.startingGold = currClass.startingEquipment.goldAlternative;
-    this.startingProficiencies = new Proficiencies(currClass.startingProficiencies, 'none');
-    this.subclassTitle = currClass.subclassTitle;
+    this.startingEquipment = currClass.startingEquipment?.default || [];
+    this.startingEquipmentEntries = currClass.startingEquipment?.entries || [];
+    this.startingGold = currClass.startingEquipment?.goldAlternative || '';
+    this.startingProficiencies = new Proficiencies(currClass.startingProficiencies || {}, 'none');
+    this.subclassTitle = currClass.subclassTitle || 'Subclasses';
 
-    classJson.classFeature.forEach((inFeat: any) => this.classFeature.push(new ClassFeature(inFeat)));
-    this.subclass = classJson.subclass;
-    classJson.subclassFeature.forEach((inFeat: any) => this.subclassFeature.push(new ClassFeature(inFeat)));
+    (classJson.classFeature || []).forEach((inFeat: any) => this.classFeature.push(new ClassFeature(inFeat)));
+    this.subclass = classJson.subclass || [];
+    (classJson.subclassFeature || []).forEach((inFeat: any) => this.subclassFeature.push(new ClassFeature(inFeat)));
 
     //create levelTable[][] from JOSN.classTableGroups
     this.levelTable = new Array<string[]>();
@@ -161,7 +175,7 @@ export class newClass implements IClass{
 
     //all classes start with the same 3 columns
     this.levelTable = JSON.parse(JSON.stringify(commonFeatures)); //this is some goofy javascript witchcraft, 2D arrays get shallow copied in 95% of the normal scenarios I would use, this makes a deep copy to reset it for each new class.
-    this.classTableGroups = currClass.classTableGroups;
+    this.classTableGroups = currClass.classTableGroups || [];
     for (const group of this.classTableGroups) {
       this.levelTable[0] = this.levelTable[0].concat(group.colLabels)
       for (let j = 0; j < group.rows.length; j++) {
@@ -180,4 +194,19 @@ export class newClass implements IClass{
       }
     }
   }
+}
+
+function formatPrimaryAbility(primaryAbility?: Record<string, boolean>[]): string {
+  if (!Array.isArray(primaryAbility) || primaryAbility.length === 0) {
+    return '';
+  }
+  return primaryAbility
+    .map(group =>
+      Object.entries(group)
+        .filter(([, enabled]) => Boolean(enabled))
+        .map(([ability]) => ability.toUpperCase())
+        .join(' & ')
+    )
+    .filter(Boolean)
+    .join(' or ');
 }

@@ -1,12 +1,25 @@
 .level-table {
-    overflow: auto;
-    font-size: 14px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.25;
 }
 
-td.center, th.center {
-    text-align:center;
+td.center,
+th.center {
+  text-align: center;
+  white-space: nowrap;
 }
 
-th,  td {
-    padding: 2px;
+th,
+td {
+  padding: 0.15rem 0.3rem;
+  vertical-align: middle;
+}
+
+.features-col {
+  min-width: 11rem;
+}
+
+th.subclass-col {
+  color: var(--theme-secondary, var(--theme-primary));
 }

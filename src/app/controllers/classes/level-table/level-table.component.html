@@ -1,38 +1,34 @@
-@if (class) {
-  <div class="level-table">
-    <table class="table table-striped table-{{class.id}} table-hover table-condensed">
-      <thead>
+<div class="level-table table-responsive">
+  <table class="table table-sm table-striped table-hover mb-0" [class]="'table table-sm table-striped table-hover mb-0 table-' + dndClass().id">
+    <thead>
+      <tr>
+        @for (header of dndClass().levelTable[0]; track $index) {
+          <th [class.center]="header !== 'Features'" [class.features-col]="header === 'Features'">{{ header }}</th>
+        }
+        @for (subCol of visibleSubclassCols(); track subCol.index) {
+          <th class="center subclass-col">{{ subCol.label }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (levels of levelRows(); track $index; let i = $index) {
         <tr>
-          @for (header of class.levelTable[0]; track header) {
-            <th class="center">{{header}}</th>
-          }
-          @for (header of class.subclassLevelTable[0]; track header) {
-            <th class="center subclass {{header.split('|')[0]}}" style="display: none">{{header.split("|")[1]}}</th>
-          }
-        </tr>
-      </thead>
-      <tbody>
-        @for (levels of class.levelTable | slice: 1; track levels; let i = $index) {
-          <tr>
-            @for (column of levels; track $index) {
-              @if (column === 'features') {
-                <td>
-                  @for (f of getFeatures(i+1); track f; let last = $last) {
-                    <a routerLink="./" fragment="{{f.id}}" (click)="this.shake(f.id)" >{{ f.name }}</a>@if (!last) {
-                    <span>, </span>
-                  }
+          @for (column of levels; track $index) {
+            @if (column === 'features') {
+              <td class="features-col">
+                @for (f of getFeatures(i + 1); track f.id + '-' + $index; let last = $last) {
+                  <a routerLink="./" [fragment]="f.id" queryParamsHandling="preserve" (click)="jumpToFeature(f.id)">{{ f.name }}</a>@if (!last) {<span>, </span>}
                 }
               </td>
             } @else {
-              <td class="center">{{column}}</td>
+              <td class="center">{{ column }}</td>
             }
           }
-          @for (column of class.subclassLevelTable[i+1]; track $index) {
-            <td class="center subclass {{class.subclassLevelTable[0][0].split('|')[0]}}" style="display: none">{{column}}</td>
+          @for (subCol of visibleSubclassCols(); track subCol.index) {
+            <td class="center subclass-col">{{ getSubclassCell(i, subCol.index) }}</td>
           }
         </tr>
       }
     </tbody>
   </table>
 </div>
-}

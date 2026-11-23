@@ -1,25 +1,95 @@
-<h1 class="glitch layers">D&D 5e Classes</h1>
-<div class="row">
-  @if (classes.length) {
-    <div class="col-md-2 class-table">
+<h1>D&D 5e Classes</h1>
+
+<div class="row g-3 align-items-start">
+  @if (classes().length) {
+    <div class="col-lg-3 col-xl-2 class-table">
       <app-reference-table
         tableId="tbl-classes"
-        [data]="classes"
+        [data]="classes()"
         [columns]="columns"
         [rowKey]="rowKey"
-        [selectedKey]="currClass?.id || null"
+        [selectedKey]="currClass()?.id || null"
         [paging]="false"
         itemLabel="classes"
         (rowClick)="setCurrClass($event)"
       ></app-reference-table>
     </div>
   }
-  <div class="col-md-10">
-    @if (currClass) {
-      <app-level-table (talk)="shake($event)" [dndClass]="currClass"></app-level-table>
+
+  <div class="col-lg-9 col-xl-10">
+    @if (currClass(); as cls) {
+      <div class="card mb-3">
+        <div class="card-body">
+          <app-detail-header [title]="cls.name">
+            @if (cls.spellcastingAbility) {
+              <a
+                detail-actions
+                class="btn btn-sm display-action-btn"
+                routerLink="/spells"
+                [queryParams]="{ classes: cls.name }"
+              >
+                <fa-icon [icon]="faWandSparkles" aria-hidden="true" />
+                <span>View Spells</span>
+              </a>
+            }
+
+            @if (cls.fluff?.entries?.length) {
+              <app-entry-renderer detail-description [list]="cls.fluff.entries" parent=""></app-entry-renderer>
+            }
+
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Hit Die</span>
+              <span class="display-meta-value">{{ cls.hd }}</span>
+            </span>
+            @if (cls.primaryAbility) {
+              <span detail-meta class="display-meta-pill">
+                <span class="display-meta-label">Primary</span>
+                <span class="display-meta-value">{{ cls.primaryAbility }}</span>
+              </span>
+            }
+            @if (cls.saves) {
+              <span detail-meta class="display-meta-pill">
+                <span class="display-meta-label">Saves</span>
+                <span class="display-meta-value">{{ cls.saves }}</span>
+              </span>
+            }
+            @if (cls.spellcastingAbility) {
+              <span detail-meta class="display-meta-pill">
+                <span class="display-meta-label">Spellcasting</span>
+                <span class="display-meta-value">{{ cls.spellcastingAbility.toUpperCase() }}</span>
+              </span>
+            }
+          </app-detail-header>
+
+          <app-archetypes
+            [archetypes]="sortedArchetypes()"
+            [selectedArchetypes]="selectedArchetypes()"
+            [subclassTitle]="cls.subclassTitle"
+            [inline]="true"
+            (selectionChange)="onArchetypesChange($event)"
+          ></app-archetypes>
+
+          <app-level-table
+            [dndClass]="cls"
+            [selectedArchetypes]="selectedArchetypes()"
+            (talk)="shake($event)"
+          ></app-level-table>
+        </div>
+      </div>
+    } @else {
+      <div class="display-empty-state">
+        <div class="display-empty-title">Select a Class</div>
+        <p>Choose a class from the list to view its progression table, proficiencies, subclasses, and features.</p>
+      </div>
     }
   </div>
 </div>
-@if (currClass) {
-  <app-class (talk)="shake($event)" [dndClass]="currClass"></app-class>
+
+@if (currClass(); as cls) {
+  <app-class
+    [dndClass]="cls"
+    [selectedArchetypes]="selectedArchetypes()"
+    (selectedArchetypesChange)="onArchetypesChange($event)"
+    (talk)="shake($event)"
+  ></app-class>
 }

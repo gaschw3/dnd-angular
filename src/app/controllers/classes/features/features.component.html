@@ -1,16 +1,29 @@
-@if (features) {
+@if (features().length) {
   <div class="card feature-list">
     <div class="card-body">
-      @for (feature of features; track feature) {
-        <div class="feature" [ngClass]="{'archetype': (feature.subclassShortName && feature.level === 1), 'subclass' : (feature.subclassShortName && feature.header || feature.header === 1), 'subsubclass' : (feature.header === 3)}" [id]="feature.id">
-          <h4 [class.color-primary]="!feature.subclassShortName" [class.color-secondary]="feature.subclassShortName">
-            {{(!feature.subclassShortName) ? ((feature.level) ? "Level "+feature.level+": " : '') : ''}}
-            {{(feature.subclassShortName && feature.header === 2) ? feature.subclassShortName+" - " : ''}}
-          {{feature.name}}{{feature.cost ? " (Cost: "+feature.cost+")": ""}}</h4>
-          <div class="feature-text row">
-            <app-entry-renderer [list]=feature.entries parent=''></app-entry-renderer>
+      @for (feature of features(); track feature.id + '-' + feature.level + '-' + $index) {
+        <section
+          class="feature"
+          [ngClass]="{
+            archetype: feature.subclassShortName && feature.level === 1,
+            subclass: (feature.subclassShortName && feature.header) || feature.header === 1,
+            subsubclass: feature.header === 3
+          }"
+          [id]="feature.id"
+        >
+          <h4 [class.color-primary]="!feature.subclassShortName" [class.color-secondary]="!!feature.subclassShortName">
+            @if (!feature.subclassShortName && feature.level) {
+              <span class="feature-level-tag">Level {{ feature.level }}:</span>
+            }
+            @if (feature.subclassShortName && feature.header === 2) {
+              <span>{{ feature.subclassShortName }} — </span>
+            }
+            {{ feature.name }}{{ feature.cost ? ' (Cost: ' + feature.cost + ')' : '' }}
+          </h4>
+          <div class="feature-text">
+            <app-entry-renderer [list]="feature.entries" parent=""></app-entry-renderer>
           </div>
-        </div>
+        </section>
       }
     </div>
   </div>

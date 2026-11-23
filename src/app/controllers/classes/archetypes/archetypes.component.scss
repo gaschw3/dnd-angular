@@ -1,0 +1,50 @@
+.archetypes-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+}
+
+.archetypes-inline-label {
+  color: var(--theme-secondary, var(--theme-primary));
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.archetypes-title {
+  color: var(--theme-secondary, var(--theme-primary));
+  font-weight: 600;
+}
+
+.archetypes-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.archetypes-ctrl-btn {
+  padding: 0 0.25rem;
+  color: var(--theme-link-color);
+  text-decoration: none;
+
+  &:hover:not(:disabled) {
+    color: var(--theme-link-hover, var(--theme-primary));
+    text-decoration: underline;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+.archetypes-sep {
+  opacity: 0.45;
+}
+
+.archetypes-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}

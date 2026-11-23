@@ -1,32 +1,43 @@
 .card.feature-list {
-    margin-bottom:90vh;
+  margin-bottom: 4rem;
 }
 
 .feature {
-    position:relative;
+  position: relative;
+  scroll-margin-top: 85px;
+  margin-bottom: 1.25rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    border-bottom: 1px solid var(--theme-input-border, currentColor);
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
-.feature h4 {
-    border-bottom: 1px solid;
-}
-
-.feature-text.row {
-    margin: 0px;
+.feature-level-tag {
+  margin-right: 0.25rem;
 }
 
 .subclass {
-    padding-left: 30px;
+  padding-left: 1rem;
+  border-left: 3px solid var(--theme-secondary, var(--theme-primary));
+
+  h4 {
+    border-bottom: none;
+  }
 }
 
 .subsubclass {
-    margin-left: 30px;
-}
+  margin-left: 1rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--theme-input-border, rgba(255, 255, 255, 0.2));
 
-.subsubclass h4 {
-    border-bottom: 1px hidden;
+  h4 {
+    border-bottom: none;
     font-size: 1rem;
-}
-
-.subclass h4 {
-    border-bottom: 1px hidden;
+  }
 }

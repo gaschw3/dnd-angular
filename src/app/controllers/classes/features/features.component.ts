@@ -1,4 +1,4 @@
-import { Component, Input, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClassFeature } from 'src/app/models/newClass';
 import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
@@ -10,24 +10,33 @@ import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-rend
   styleUrls: ['./features.component.scss']
 })
 export class FeaturesComponent {
-  @Input() features: ClassFeature[] = [];
-  @Output() messageEvent = new EventEmitter<string>();
-
-  public currActive = 'test';
+  readonly features = input<ClassFeature[]>([]);
+  readonly currActive = signal<string>('');
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
-    const scroll = window.scrollY;
+    const offset = 115;
     const elements = document.querySelectorAll<HTMLElement>('.feature');
+    let activeId = '';
+
     for (const el of elements) {
-      const offsetTop = el.getBoundingClientRect().top + window.scrollY;
-      if (offsetTop >= scroll) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= offset) {
         const id = el.getAttribute('id');
-        if (id && this.currActive !== id && !el.classList.contains('subclass') && !el.classList.contains('archetype')) {
-          this.currActive = id;
+        if (id && !el.classList.contains('subsubclass')) {
+          activeId = id;
         }
+      } else {
         break;
       }
+    }
+
+    if (!activeId && elements.length > 0) {
+      activeId = elements[0].getAttribute('id') || '';
+    }
+
+    if (activeId && this.currActive() !== activeId) {
+      this.currActive.set(activeId);
     }
   }
 }
