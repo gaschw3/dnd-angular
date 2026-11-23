@@ -4,7 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { faAngleDown, faAngleUp, faFloppyDisk, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleDown,
+  faAngleUp,
+  faCheck,
+  faCopy,
+  faFloppyDisk,
+  faMinus,
+  faPlus,
+  faRotateLeft,
+  faXmark
+} from '@fortawesome/free-solid-svg-icons';
 
 import { MonsterHelperService } from '../../shared/helpers/monster/monster-helper.service';
 import { Monster } from 'src/app/models';
@@ -15,6 +25,7 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
 import { MonsterComponent } from '../beastiary/monster/monster.component';
 
 const ENCOUNTERS_STORAGE_KEY = 'eotcc_encounters_v1';
+const PARTY_STORAGE_KEY = 'eotcc_encounter_party_v1';
 
 interface EncounterMonster {
   monster: Monster;
@@ -52,6 +63,10 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   readonly faMinus = faMinus;
   readonly faAngleUp = faAngleUp;
   readonly faAngleDown = faAngleDown;
+  readonly faCopy = faCopy;
+  readonly faCheck = faCheck;
+  readonly faRotateLeft = faRotateLeft;
+  readonly faXmark = faXmark;
 
   levelXp = levelXp;
   levelXp2024 = levelXp2024;
@@ -71,7 +86,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   currPartyDifficulty!: PartyDifficulty;
 
   showMonsterTable = true;
-  showLegend = false;
+  showLegend = true;
 
   currMonster?: Monster;
   monsters: Monster[] = [];
@@ -79,8 +94,10 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
 
   encounterName = '';
   savedEncounters: SavedEncounter[] = [];
+  copied = false;
 
   private destroy$ = new Subject<void>();
+  private copyResetTimer?: ReturnType<typeof setTimeout>;
 
   columns: ReferenceTableColumn<Monster>[] = [
     {
@@ -114,9 +131,10 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
       filterType: 'number-range',
       min: 0,
       max: 30,
-      value: m => m.cr,
-      sortValue: m => this.monsterHelper.getSortCr(m.cr),
-      cellClass: m => `text--black color--${this.getMonsterDifficulty(m.cr)}`
+      isHtml: true,
+      value: m => `<span class="cr-pill cr-pill--${this.getMonsterDifficulty(m.cr)}">${m.cr}</span>`,
+      filterValue: m => m.cr,
+      sortValue: m => this.monsterHelper.getSortCr(m.cr)
     },
     {
       key: 'size',
@@ -162,6 +180,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
+    this.restorePartySettings();
     this.savedEncounters = this.loadSavedEncounters();
     this.dataService.getMonsters().pipe(takeUntil(this.destroy$)).subscribe(monsters => {
       this.monsters = monsters.filter(f => f.cr !== 'N/A');
@@ -173,10 +192,128 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+    if (this.copyResetTimer) {
+      clearTimeout(this.copyResetTimer);
+    }
+  }
+
+  get totalMonsterCount(): number {
+    return this.currEncounter.reduce((sum, entry) => sum + entry.number, 0);
+  }
+
+  get maxBudgetXp(): number {
+    if (this.ruleset === '2024') {
+      return levelXp2024[this.partyLevel].high * this.partySize;
+    }
+    return levelXp[this.partyLevel].deadly * this.partySize;
+  }
+
+  get budgetFillPercent(): number {
+    const max = this.maxBudgetXp;
+    if (max <= 0) {
+      return 0;
+    }
+    return Math.min(100, Math.round((this.adjustedXp / max) * 100));
+  }
+
+  get difficultyBadgeClass(): string {
+    switch (this.currEncounterDifficulty) {
+      case 'high':
+      case 'deadly':
+        return 'eb-badge-deadly';
+      case 'hard':
+        return 'eb-badge-hard';
+      case 'moderate':
+      case 'medium':
+        return 'eb-badge-medium';
+      case 'low':
+      case 'easy':
+        return 'eb-badge-easy';
+      default:
+        return 'eb-badge-trivial';
+    }
+  }
+
+  removeMonster(index: number): void {
+    this.currEncounter.splice(index, 1);
+    this.recalcEncounterXp();
+  }
+
+  buildEncounterSummary(): string {
+    const title = this.encounterName.trim() || 'Untitled Encounter';
+    const header = `${title} (${this.ruleset} DMG) — ${this.partySize}× Level ${this.partyLevel}`;
+    const lines = this.currEncounter.map(
+      e => `- ${e.number}× ${e.monster.name} (CR ${e.monster.cr}, ${this.monsterHelper.getXpByCr(e.monster.cr).toLocaleString('en-US')} XP)`
+    );
+    const perPlayer = Math.round(this.encounterXp / this.partySize).toLocaleString('en-US');
+    const xpLine = this.ruleset === '2014'
+      ? `Total XP: ${this.encounterXp.toLocaleString('en-US')} (${perPlayer}/player) | Adjusted XP: ${this.adjustedXp.toLocaleString('en-US')} | Difficulty: ${this.currEncounterDifficulty}`
+      : `Total XP: ${this.encounterXp.toLocaleString('en-US')} (${perPlayer}/player) | Difficulty: ${this.currEncounterDifficulty}`;
+    return [header, ...lines, xpLine].join('\n');
+  }
+
+  copyEncounterSummary(): void {
+    if (this.currEncounter.length === 0) {
+      return;
+    }
+    const text = this.buildEncounterSummary();
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(text).then(
+        () => this.flashCopied(),
+        () => this.fallbackCopy(text)
+      );
+    } else {
+      this.fallbackCopy(text);
+    }
+  }
+
+  private flashCopied(): void {
+    this.copied = true;
+    this.cdr.markForCheck();
+    if (this.copyResetTimer) {
+      clearTimeout(this.copyResetTimer);
+    }
+    this.copyResetTimer = setTimeout(() => {
+      this.copied = false;
+      this.cdr.markForCheck();
+    }, 1800);
+  }
+
+  private fallbackCopy(text: string): void {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+      this.flashCopied();
+    } finally {
+      document.body.removeChild(textarea);
+    }
   }
 
   setRuleset(mode: '2024' | '2014'): void {
     this.ruleset = mode;
+    this.recalcPartyDifficulty();
+  }
+
+  stepPartySize(delta: number): void {
+    this.partySize = Math.max(1, Math.min(10, this.partySize + delta));
+    this.recalcPartyDifficulty();
+  }
+
+  stepPartyLevel(delta: number): void {
+    this.partyLevel = Math.max(1, Math.min(20, this.partyLevel + delta));
+    this.recalcPartyDifficulty();
+  }
+
+  onPartyInputChange(): void {
+    const size = Number(this.partySize);
+    const level = Number(this.partyLevel);
+    this.partySize = Number.isFinite(size) ? Math.max(1, Math.min(10, Math.round(size))) : 4;
+    this.partyLevel = Number.isFinite(level) ? Math.max(1, Math.min(20, Math.round(level))) : 1;
     this.recalcPartyDifficulty();
   }
 
@@ -256,6 +393,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   }
 
   recalcPartyDifficulty(): void {
+    this.persistPartySettings();
     if (this.ruleset === '2024') {
       const budget = levelXp2024[this.partyLevel];
       const low = budget.low * this.partySize;
@@ -424,6 +562,38 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   private persistSavedEncounters(): void {
     try {
       localStorage.setItem(ENCOUNTERS_STORAGE_KEY, JSON.stringify(this.savedEncounters));
+    } catch {
+      // Ignore storage errors.
+    }
+  }
+
+  private restorePartySettings(): void {
+    try {
+      const raw = localStorage.getItem(PARTY_STORAGE_KEY);
+      if (!raw) {
+        return;
+      }
+      const parsed = JSON.parse(raw) as { partySize?: number; partyLevel?: number; ruleset?: '2024' | '2014' };
+      if (typeof parsed.partySize === 'number' && parsed.partySize >= 1 && parsed.partySize <= 10) {
+        this.partySize = Math.round(parsed.partySize);
+      }
+      if (typeof parsed.partyLevel === 'number' && parsed.partyLevel >= 1 && parsed.partyLevel <= 20) {
+        this.partyLevel = Math.round(parsed.partyLevel);
+      }
+      if (parsed.ruleset === '2024' || parsed.ruleset === '2014') {
+        this.ruleset = parsed.ruleset;
+      }
+    } catch {
+      // Ignore storage errors.
+    }
+  }
+
+  private persistPartySettings(): void {
+    try {
+      localStorage.setItem(
+        PARTY_STORAGE_KEY,
+        JSON.stringify({ partySize: this.partySize, partyLevel: this.partyLevel, ruleset: this.ruleset })
+      );
     } catch {
       // Ignore storage errors.
     }

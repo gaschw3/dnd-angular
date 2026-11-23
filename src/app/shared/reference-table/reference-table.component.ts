@@ -57,6 +57,7 @@ export class ReferenceTableComponent<T = any> implements OnChanges {
   @Input() initialFilters: Record<string, string> = {};
   @Input() striped = false;
   @Input() showFilterRow = true;
+  @Input() refreshKey?: unknown;
 
   @Output() rowClick = new EventEmitter<T>();
 

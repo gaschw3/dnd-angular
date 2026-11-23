@@ -156,5 +156,34 @@ describe('EncounterBuilderComponent', () => {
       component.deleteSavedEncounter(component.savedEncounters[0].id);
       expect(component.savedEncounters.length).toBe(0);
     });
+
+    it('builds a readable encounter summary and supports removing monsters directly', () => {
+      component.setRuleset('2024');
+      component.partySize = 4;
+      component.partyLevel = 5;
+      component.encounterName = 'Bridge Ambush';
+      component.addMonster(mockMonsters[0]); // Goblin (50 XP)
+      component.addMonster(mockMonsters[0]);
+      component.addMonster(mockMonsters[1]); // Ogre (450 XP)
+
+      const summary = component.buildEncounterSummary();
+      expect(summary).toContain('Bridge Ambush (2024 DMG) — 4× Level 5');
+      expect(summary).toContain('- 2× Goblin (CR 1/4, 50 XP)');
+      expect(summary).toContain('- 1× Ogre (CR 2, 450 XP)');
+      expect(summary).toContain('Total XP: 550');
+
+      component.removeMonster(0);
+      expect(component.currEncounter.length).toBe(1);
+      expect(component.currEncounter[0].monster.id).toBe('ogre');
+    });
+
+    it('persists party size, level, and ruleset in localStorage', () => {
+      component.partySize = 3;
+      component.partyLevel = 12;
+      component.setRuleset('2014');
+
+      const stored = JSON.parse(localStorage.getItem('eotcc_encounter_party_v1') || '{}');
+      expect(stored).toEqual({ partySize: 3, partyLevel: 12, ruleset: '2014' });
+    });
   });
 });

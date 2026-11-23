@@ -1,84 +1,197 @@
-<div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
-  <h1 class="mb-0">D&D 5e Encounter Builder</h1>
-  <div class="btn-group btn-group-sm" role="group" aria-label="Encounter ruleset">
-    <button type="button" class="btn btn-primary" [class.active]="ruleset === '2024'" (click)="setRuleset('2024')">
-      2024 DMG
-    </button>
-    <button type="button" class="btn btn-primary" [class.active]="ruleset === '2014'" (click)="setRuleset('2014')">
-      2014 DMG
-    </button>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xl-4">
-    <div class="group-info row">
-      <div class="group-info--input col-sm-6 ms-auto">
-        <h2 class="group-info--header">XP Budget</h2>
-        <form>
-          <div class="mb-2 row align-items-center">
-            <label for="partySizeSelect" class="col-sm-6 col-xl-5 col-form-label">Players:</label>
-            <div class="col-sm-6 col-xl-7">
-              <select [(ngModel)]="partySize" name="partySize" class="form-select form-select-sm" id="partySizeSelect" (change)="recalcPartyDifficulty()">
-                @for (num of helper.counter(10); track $index; let i = $index) {
-                  <option [ngValue]="i+1">{{i+1}}</option>
-                }
-              </select>
-            </div>
-          </div>
-          <div class="mb-2 row align-items-center">
-            <label for="partyLevelSelect" class="col-sm-6 col-xl-5 col-form-label">Level:</label>
-            <div class="col-sm-6 col-xl-7">
-              <select [(ngModel)]="partyLevel" name="partyLevel" class="form-select form-select-sm" id="partyLevelSelect" (change)="recalcPartyDifficulty()">
-                @for (num of helper.counter(20); track $index; let i = $index) {
-                  <option [ngValue]="i+1">{{i+1}}</option>
-                }
-              </select>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="col-sm-6 mt-3">
-        @if (ruleset === '2024') {
-          <ul class="float-end list-unstyled text-end">
-            <li [class.fw-bold]="currEncounterDifficulty === 'low'">
-              <span>Low:</span> {{levelXp2024[partyLevel].low * partySize | number}} xp
-            </li>
-            <li [class.fw-bold]="currEncounterDifficulty === 'moderate'">
-              <span>Moderate:</span> {{levelXp2024[partyLevel].moderate * partySize | number}} xp
-            </li>
-            <li [class.fw-bold]="currEncounterDifficulty === 'high'">
-              <span>High:</span> {{levelXp2024[partyLevel].high * partySize | number}} xp
-            </li>
-          </ul>
-        } @else {
-          <ul class="float-end list-unstyled text-end">
-            <li [class.fw-bold]="currEncounterDifficulty === 'easy'">
-              <span>Easy:</span> {{levelXp[partyLevel].easy * partySize | number}} xp
-            </li>
-            <li [class.fw-bold]="currEncounterDifficulty === 'medium'">
-              <span>Medium:</span> {{levelXp[partyLevel].medium * partySize | number}} xp
-            </li>
-            <li [class.fw-bold]="currEncounterDifficulty === 'hard'">
-              <span>Hard:</span> {{levelXp[partyLevel].hard * partySize | number}} xp
-            </li>
-            <li [class.fw-bold]="currEncounterDifficulty === 'deadly'">
-              <span>Deadly:</span> {{levelXp[partyLevel].deadly * partySize | number}} xp
-            </li>
-            <li class="mt-2">
-              <span>Daily:</span> {{levelXp[partyLevel].daily * partySize | number}} xp
-            </li>
-          </ul>
-        }
-      </div>
+<div class="py-3">
+  <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+    <div>
+      <h1 class="mb-0">Encounter Builder</h1>
     </div>
-    <hr/>
-    <div class="encounter-builder--current-encounter-container">
-      <div class="encounter-builder--current-encounter-slider">
-        <div class="encounter-builder--current-encounter">
-          <h2>Encounter Info</h2>
-          @if (currEncounter.length > 0) {
-            <div class="input-group input-group-sm mb-2">
+    <div class="btn-group" role="group" aria-label="Encounter ruleset">
+      <button type="button" class="btn btn-primary" [class.active]="ruleset === '2024'" (click)="setRuleset('2024')">
+        2024 DMG
+      </button>
+      <button type="button" class="btn btn-primary" [class.active]="ruleset === '2014'" (click)="setRuleset('2014')">
+        2014 DMG
+      </button>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-xl-4">
+      <!-- Party & XP Budget Card -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h5 mb-0">Party &amp; XP Budget</h2>
+            <span class="eb-diff-badge" [ngClass]="difficultyBadgeClass">
+              {{ currEncounterDifficulty | titlecase }}
+            </span>
+          </div>
+
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label for="partySizeInput" class="form-label mb-1">Players</label>
+              <div class="eb-party-stepper">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary eb-step-btn"
+                  [disabled]="partySize <= 1"
+                  (click)="stepPartySize(-1)"
+                  aria-label="Decrease player count"
+                >
+                  <fa-icon [icon]="faMinus" aria-hidden="true" />
+                </button>
+                <input
+                  id="partySizeInput"
+                  name="partySize"
+                  type="number"
+                  min="1"
+                  max="10"
+                  class="form-control form-control-sm text-center eb-qty-input"
+                  [(ngModel)]="partySize"
+                  (change)="onPartyInputChange()"
+                />
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary eb-step-btn"
+                  [disabled]="partySize >= 10"
+                  (click)="stepPartySize(1)"
+                  aria-label="Increase player count"
+                >
+                  <fa-icon [icon]="faPlus" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="partyLevelInput" class="form-label mb-1">Level</label>
+              <div class="eb-party-stepper">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary eb-step-btn"
+                  [disabled]="partyLevel <= 1"
+                  (click)="stepPartyLevel(-1)"
+                  aria-label="Decrease party level"
+                >
+                  <fa-icon [icon]="faMinus" aria-hidden="true" />
+                </button>
+                <input
+                  id="partyLevelInput"
+                  name="partyLevel"
+                  type="number"
+                  min="1"
+                  max="20"
+                  class="form-control form-control-sm text-center eb-qty-input"
+                  [(ngModel)]="partyLevel"
+                  (change)="onPartyInputChange()"
+                />
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary eb-step-btn"
+                  [disabled]="partyLevel >= 20"
+                  (click)="stepPartyLevel(1)"
+                  aria-label="Increase party level"
+                >
+                  <fa-icon [icon]="faPlus" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="eb-progress-wrap mb-3">
+            <div class="d-flex justify-content-between small mb-1">
+              <span>{{ ruleset === '2014' ? 'Adjusted XP' : 'Encounter XP' }}</span>
+              <span>
+                <strong>{{ adjustedXp | number }}</strong> / {{ maxBudgetXp | number }} XP
+              </span>
+            </div>
+            <div class="eb-progress-track" role="progressbar" [attr.aria-valuenow]="budgetFillPercent" aria-valuemin="0" aria-valuemax="100">
+              <div
+                class="eb-progress-fill"
+                [ngClass]="difficultyBadgeClass"
+                [style.width.%]="budgetFillPercent"
+              ></div>
+            </div>
+          </div>
+
+          @if (ruleset === '2024') {
+            <div class="eb-budget-grid">
+              <div class="eb-budget-cell" [class.active]="currEncounterDifficulty === 'low'">
+                <small class="opacity-75">Low</small>
+                <strong>{{ levelXp2024[partyLevel].low * partySize | number }}</strong>
+              </div>
+              <div class="eb-budget-cell" [class.active]="currEncounterDifficulty === 'moderate'">
+                <small class="opacity-75">Moderate</small>
+                <strong>{{ levelXp2024[partyLevel].moderate * partySize | number }}</strong>
+              </div>
+              <div class="eb-budget-cell" [class.active]="currEncounterDifficulty === 'high'">
+                <small class="opacity-75">High</small>
+                <strong>{{ levelXp2024[partyLevel].high * partySize | number }}</strong>
+              </div>
+            </div>
+          } @else {
+            <div class="eb-budget-grid eb-budget-grid-4">
+              <div class="eb-budget-cell" [class.active]="currEncounterDifficulty === 'easy'">
+                <small class="opacity-75">Easy</small>
+                <strong>{{ levelXp[partyLevel].easy * partySize | number }}</strong>
+              </div>
+              <div class="eb-budget-cell" [class.active]="currEncounterDifficulty === 'medium'">
+                <small class="opacity-75">Medium</small>
+                <strong>{{ levelXp[partyLevel].medium * partySize | number }}</strong>
+              </div>
+              <div class="eb-budget-cell" [class.active]="currEncounterDifficulty === 'hard'">
+                <small class="opacity-75">Hard</small>
+                <strong>{{ levelXp[partyLevel].hard * partySize | number }}</strong>
+              </div>
+              <div class="eb-budget-cell" [class.active]="currEncounterDifficulty === 'deadly'">
+                <small class="opacity-75">Deadly</small>
+                <strong>{{ levelXp[partyLevel].deadly * partySize | number }}</strong>
+              </div>
+            </div>
+            <div class="text-end mt-2">
+              <small class="opacity-75">Daily budget: {{ levelXp[partyLevel].daily * partySize | number }} XP</small>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Current Encounter Card -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2 gap-2">
+            <h2 class="h5 mb-0">
+              Current Encounter
+              @if (totalMonsterCount > 0) {
+                <small class="opacity-75 ms-1">({{ totalMonsterCount }})</small>
+              }
+            </h2>
+            <div class="d-flex gap-1">
+              <button
+                type="button"
+                class="btn btn-sm btn-success"
+                [disabled]="currEncounter.length === 0"
+                (click)="copyEncounterSummary()"
+                title="Copy encounter summary"
+              >
+                <fa-icon [icon]="copied ? faCheck : faCopy" aria-hidden="true" />
+                {{ copied ? ' Copied!' : ' Copy' }}
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm eb-clear-btn"
+                [class.btn-warning]="currEncounter.length > 0"
+                [class.btn-outline-secondary]="currEncounter.length === 0"
+                [disabled]="currEncounter.length === 0"
+                (click)="clearEncounter()"
+                title="Clear encounter"
+              >
+                <fa-icon [icon]="faRotateLeft" aria-hidden="true" /> Clear
+              </button>
+            </div>
+          </div>
+
+          @if (currEncounter.length === 0) {
+            <p class="mb-0 opacity-75">
+              Add monsters from the table to start building an encounter.
+            </p>
+          } @else {
+            <div class="input-group mb-3">
               <input
                 type="text"
                 class="form-control"
@@ -86,141 +199,204 @@
                 [(ngModel)]="encounterName"
                 aria-label="Encounter name"
               />
-              <button type="button" (click)="saveEncounter()" class="btn btn-success">
+              <button type="button" (click)="saveEncounter()" class="btn btn-primary">
                 <fa-icon [icon]="faFloppyDisk" aria-hidden="true" /> Save
               </button>
-              <button type="button" (click)="clearEncounter()" class="btn btn-primary">
-                Clear
-              </button>
             </div>
-          }
-          @if (currEncounter.length <= 0) {
-            <p class="card p-2">
-              Create an encounter by adding monsters from the monsters table.
-            </p>
-          }
-          @if (currEncounter.length > 0) {
-            <div class="current-encounter">
-              <div class="current-encounter--body">
-                <div class="current-encounter--table">
-                  @for (entry of currEncounter; track entry; let i = $index) {
-                    <div class="current-encounter--row">
-                      <div
-                        class="current-encounter--monster-info"
-                        role="button"
-                        tabindex="0"
-                        (click)="setCurrMonster(entry.monster)"
-                        (keydown.enter)="setCurrMonster(entry.monster)"
-                        (keydown.space)="$event.preventDefault(); setCurrMonster(entry.monster)"
-                      >
-                        <a class="current-encounter--monster-name">{{entry.monster.name}}</a>
-                        <div>
-                          <span class="current-encounter--monster-cr">CR: {{entry.monster.cr}}</span>
-                          <span class="current-encounter--monster-xp">XP: {{monsterHelper.getXpByCr(entry.monster.cr)}}</span>
-                        </div>
-                      </div>
-                      <div class="current-encounter--monster-qty-col">
-                        <input class="current-encounter--monster-qty form-control input-lg" type="number" [(ngModel)]="entry.number" (change)="encounterChange(i, 0)">
-                        <div class="current-encounter--monster-qty-btns">
-                          <button (click)="encounterChange(i, 1)" class="btn btn-xs btn-success" aria-label="Increase quantity">
-                            <fa-icon [icon]="faPlus" aria-hidden="true" />
-                          </button>
-                          <button (click)="encounterChange(i, -1)" class="btn btn-xs btn-danger" aria-label="Decrease quantity">
-                            <fa-icon [icon]="faMinus" aria-hidden="true" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  }
-                </div>
-                <div class="current-encounter--totals">
-                  <div class="current-encounter--totals-difficulty">Difficulty: {{currEncounterDifficulty | titlecase}}</div>
-                  <div class="current-encounter--totals-xp">
-                    <span>Total XP: {{encounterXp | number}}
-                      <span class="current-encounter--totals-individual-xp">({{encounterXp/partySize | number:'1.0-0'}} per player)</span>
-                    </span>
-                    @if (ruleset === '2014') {
-                      <span>Adjusted XP: {{adjustedXp | number}}
-                        <span class="current-encounter--totals-individual-xp">({{adjustedXp/partySize | number:'1.0-0'}} per player)</span>
-                      </span>
-                    }
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
 
-          @if (savedEncounters.length > 0) {
-            <div class="mt-3">
-              <h5>Saved Encounters</h5>
-              <div class="list-group list-group-flush">
-                @for (saved of savedEncounters; track saved.id) {
-                  <div class="list-group-item d-flex justify-content-between align-items-center py-2 px-2">
-                    <button type="button" class="btn btn-link p-0 text-start text-decoration-none flex-grow-1" (click)="loadEncounter(saved)">
-                      <strong>{{ saved.name }}</strong>
-                      <small class="d-block opacity-75">
-                        {{ saved.ruleset }} · {{ saved.partySize }}× Lvl {{ saved.partyLevel }} · {{ saved.entries.length }} monster type(s)
-                      </small>
+            <div class="eb-monster-list">
+              @for (entry of currEncounter; track entry.monster.id; let i = $index) {
+                <div class="eb-monster-row" [class.active]="currMonster?.id === entry.monster.id">
+                  <div
+                    class="eb-monster-info"
+                    role="button"
+                    tabindex="0"
+                    (click)="setCurrMonster(entry.monster)"
+                    (keydown.enter)="setCurrMonster(entry.monster)"
+                    (keydown.space)="$event.preventDefault(); setCurrMonster(entry.monster)"
+                  >
+                    <div class="eb-monster-name">{{ entry.monster.name }}</div>
+                    <small class="opacity-75">
+                      CR {{ entry.monster.cr }} · {{ monsterHelper.getXpByCr(entry.monster.cr) | number }} XP
+                    </small>
+                  </div>
+                  <div class="eb-qty-controls">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-primary eb-step-btn"
+                      (click)="encounterChange(i, -1)"
+                      [attr.aria-label]="'Decrease ' + entry.monster.name + ' count'"
+                    >
+                      <fa-icon [icon]="faMinus" aria-hidden="true" />
                     </button>
-                    <button type="button" class="btn btn-sm btn-outline-danger ms-2" (click)="deleteSavedEncounter(saved.id)" aria-label="Delete saved encounter">
-                      &times;
+                    <input
+                      class="form-control form-control-sm text-center eb-qty-input"
+                      type="number"
+                      min="1"
+                      [(ngModel)]="entry.number"
+                      (change)="encounterChange(i, 0)"
+                      [attr.aria-label]="entry.monster.name + ' quantity'"
+                    />
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-primary eb-step-btn"
+                      (click)="encounterChange(i, 1)"
+                      [attr.aria-label]="'Increase ' + entry.monster.name + ' count'"
+                    >
+                      <fa-icon [icon]="faPlus" aria-hidden="true" />
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-danger eb-step-btn ms-1"
+                      (click)="removeMonster(i)"
+                      [attr.aria-label]="'Remove ' + entry.monster.name"
+                      title="Remove"
+                    >
+                      <fa-icon [icon]="faXmark" aria-hidden="true" />
                     </button>
                   </div>
-                }
+                </div>
+              }
+            </div>
+
+            <div class="eb-totals mt-3 pt-2">
+              <div class="d-flex justify-content-between align-items-baseline">
+                <span>Total XP</span>
+                <div class="text-end">
+                  <strong>{{ encounterXp | number }}</strong>
+                  <small class="opacity-75 ms-1">({{ encounterXp / partySize | number:'1.0-0' }}/player)</small>
+                </div>
               </div>
+              @if (ruleset === '2014') {
+                <div class="d-flex justify-content-between align-items-baseline mt-1">
+                  <span>
+                    Adjusted XP
+                    <small class="opacity-75">(×{{ getMultiplier(totalMonsterCount) }})</small>
+                  </span>
+                  <div class="text-end">
+                    <strong>{{ adjustedXp | number }}</strong>
+                    <small class="opacity-75 ms-1">({{ adjustedXp / partySize | number:'1.0-0' }}/player)</small>
+                  </div>
+                </div>
+              }
             </div>
           }
         </div>
       </div>
-    </div>
-  </div>
-  <div class="col-xl-8">
-    <button class="btn btn-primary mb-2" type="button"
-      [attr.aria-expanded]="showMonsterTable" aria-controls="monsterCollapse" (click)="showMonsterTable = !showMonsterTable">
-      {{ showMonsterTable ? 'Hide ' : 'Show ' }}Monster Table
-    </button>
-    @if (monsters.length && showMonsterTable) {
-      <div id="monsterCollapse" class="beastiary-table">
-        <div class="card">
+
+      <!-- Saved Encounters Card -->
+      @if (savedEncounters.length > 0) {
+        <div class="card mb-3">
           <div class="card-body">
-            <app-reference-table
-              tableId="tbl-beastiary"
-              [data]="monsters"
-              [columns]="columns"
-              [rowKey]="rowKey"
-              [selectedKey]="currMonster?.id || null"
-              [pageSize]="10"
-              [pageSizeOptions]="[10, 15, 30, 60, -1]"
-              [striped]="true"
-              itemLabel="monsters"
-              defaultSortKey="name"
-              (rowClick)="setCurrMonster($event)"
-            ></app-reference-table>
+            <h2 class="h5 mb-2">Saved Encounters</h2>
+            <div class="eb-saved-list">
+              @for (saved of savedEncounters; track saved.id) {
+                <div class="eb-saved-row">
+                  <button
+                    type="button"
+                    class="eb-saved-load text-start flex-grow-1"
+                    (click)="loadEncounter(saved)"
+                  >
+                    <div class="fw-semibold">{{ saved.name }}</div>
+                    <small class="opacity-75">
+                      {{ saved.ruleset }} · {{ saved.partySize }}× Lvl {{ saved.partyLevel }} · {{ saved.entries.length }} monster type(s)
+                    </small>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-danger eb-step-btn ms-2"
+                    (click)="deleteSavedEncounter(saved.id)"
+                    aria-label="Delete saved encounter"
+                    title="Delete"
+                  >
+                    <fa-icon [icon]="faXmark" aria-hidden="true" />
+                  </button>
+                </div>
+              }
+            </div>
           </div>
-          <div class="difficulty-legend px-3 pb-1 pt-0">
-            <button class="btn btn-primary difficulty-legend-button" type="button"
-              [attr.aria-expanded]="showLegend" aria-controls="legend-collapse" (click)="showLegend = !showLegend">
-              Color Legend <fa-icon [icon]="showLegend ? faAngleUp : faAngleDown" aria-hidden="true" />
-            </button>
-            @if (showLegend) {
-              <div id="legend-collapse" class="difficulty-legend-popout mt-2">
-                <ul class="list-unstyled text--black">
-                  <li class="p-1 ps-2 color--deadly">High / Deadly: One of these is a high/deadly challenge</li>
-                  <li class="p-1 ps-2 color--hard">Hard: One of these is a hard challenge</li>
-                  <li class="p-1 ps-2 color--medium">Moderate / Medium: One of these is a moderate challenge</li>
-                  <li class="p-1 ps-2 color--easy">Low / Easy: One of these is a low/easy challenge</li>
-                  <li class="p-1 ps-2 color--pair">Pair: Two of these is a moderate challenge</li>
-                  <li class="p-1 ps-2 color--group">Group: Four of these is a moderate challenge</li>
-                  <li class="p-1 ps-2 color--trivial">Trivial: Eight or more of these is a moderate challenge</li>
-                </ul>
+        </div>
+      }
+    </div>
+
+    <!-- Right Column: Monster Table & Preview -->
+    <div class="col-xl-8">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+        <button
+          class="btn btn-primary"
+          type="button"
+          [attr.aria-expanded]="showMonsterTable"
+          aria-controls="monsterCollapse"
+          (click)="showMonsterTable = !showMonsterTable"
+        >
+          {{ showMonsterTable ? 'Hide ' : 'Show ' }}Monster Table
+        </button>
+        @if (monsters.length && showMonsterTable) {
+          <button
+            class="btn btn-primary"
+            type="button"
+            [attr.aria-expanded]="showLegend"
+            aria-controls="legend-collapse"
+            (click)="showLegend = !showLegend"
+          >
+            CR Color Legend <fa-icon [icon]="showLegend ? faAngleUp : faAngleDown" aria-hidden="true" />
+          </button>
+        }
+      </div>
+
+      @if (showLegend && showMonsterTable) {
+        <div id="legend-collapse" class="card mb-3">
+          <div class="card-body py-2 px-3">
+            @if (ruleset === '2024') {
+              <div class="eb-legend-grid">
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--deadly">High</span> <span>1 = high challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--medium">Moderate</span> <span>1 = moderate challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--easy">Low</span> <span>1 = low challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--pair">Pair</span> <span>2 = moderate challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--group">Group</span> <span>4 = moderate challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--trivial">Trivial</span> <span>8+ = moderate challenge</span></div>
+              </div>
+            } @else {
+              <div class="eb-legend-grid">
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--deadly">Deadly</span> <span>1 = deadly challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--hard">Hard</span> <span>1 = hard challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--medium">Medium</span> <span>1 = medium challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--easy">Easy</span> <span>1 = easy challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--pair">Pair</span> <span>2 = medium challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--group">Group</span> <span>4 = medium challenge</span></div>
+                <div class="eb-legend-item"><span class="cr-pill cr-pill--trivial">Trivial</span> <span>8+ = medium challenge</span></div>
               </div>
             }
           </div>
         </div>
-      </div>
-    }
-    @if (currMonster) {
-      <app-monster [monster]="currMonster"></app-monster>
-    }
+      }
+
+      @if (monsters.length && showMonsterTable) {
+        <div id="monsterCollapse" class="mb-3">
+          <div class="card">
+            <div class="card-body">
+              <app-reference-table
+                tableId="tbl-beastiary"
+                [data]="monsters"
+                [columns]="columns"
+                [rowKey]="rowKey"
+                [selectedKey]="currMonster?.id || null"
+                [pageSize]="10"
+                [pageSizeOptions]="[10, 15, 30, 60, -1]"
+                [striped]="true"
+                [refreshKey]="partySize + '-' + partyLevel + '-' + ruleset"
+                itemLabel="monsters"
+                defaultSortKey="name"
+                (rowClick)="setCurrMonster($event)"
+              ></app-reference-table>
+            </div>
+          </div>
+        </div>
+      }
+
+      @if (currMonster) {
+        <app-monster [monster]="currMonster"></app-monster>
+      }
+    </div>
   </div>
 </div>
