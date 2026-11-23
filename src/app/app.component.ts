@@ -66,6 +66,7 @@ export class AppComponent {
       if (typeof gtag !== 'undefined') {
         gtag('config', 'G-BKMXZP7BG0', { page_path: e.urlAfterRedirects });
       }
+      this.syncPhyrexianHeadings();
     });
   }
 
@@ -157,6 +158,21 @@ export class AppComponent {
     const expires = new Date();
     expires.setTime(expires.getTime() + (4 * 24 * 60 * 60 * 1000));
     document.cookie = `theme=${encodeURIComponent(this.theme)}; expires=${expires.toUTCString()}; path=/`;
+    this.syncPhyrexianHeadings();
+  }
+
+  private syncPhyrexianHeadings(): void {
+    if (this.theme !== 'end') {
+      return;
+    }
+    setTimeout(() => {
+      document.querySelectorAll<HTMLElement>('main#main-content h1').forEach(el => {
+        const text = el.textContent?.trim();
+        if (text) {
+          el.dataset['phy'] = text;
+        }
+      });
+    }, 0);
   }
 
   changeParticles(): void {

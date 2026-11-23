@@ -15,12 +15,12 @@
           <img src="./royal-seal.png" width="30" height="36" alt="site icon">
         </div>
       }
-      <a class="d-inline-block align-top navbar-brand me-auto me-lg-3" routerLink="/classes" data-phy="EotCC 5" (click)="closeMenus()">EotCC 5e</a>
+      <a class="d-inline-flex align-items-center navbar-brand me-auto me-lg-3" routerLink="/classes" data-phy="EotX 5e" (click)="closeMenus()">EotCC 5e</a>
       <div class="d-flex d-lg-none align-items-center gap-2 me-2">
-        <button type="button" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center nav-util-btn nav-mobile-btn" (click)="openQuickSearch()" aria-label="Quick Search" title="Quick Search">
+        <button type="button" class="btn btn-sm d-flex align-items-center justify-content-center nav-util-btn nav-mobile-btn" (click)="openQuickSearch()" aria-label="Quick Search" title="Quick Search">
           <fa-icon [icon]="faSearch" aria-hidden="true" />
         </button>
-        <button type="button" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center gap-1 nav-util-btn nav-mobile-btn" (click)="toggleBookmarks()" aria-label="Session Pinned Pages" title="Session Pinned Pages">
+        <button type="button" class="btn btn-sm d-flex align-items-center justify-content-center gap-1 nav-util-btn nav-mobile-btn" (click)="toggleBookmarks()" aria-label="Session Pinned Pages" title="Session Pinned Pages">
           <fa-icon [icon]="faThumbtack" aria-hidden="true" />
           @if (bookmarks.count() > 0) {
             <span class="badge text-bg-success">{{ bookmarks.count() }}</span>
@@ -31,41 +31,41 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item dropdown" [class.show]="openDropdown === 'char'">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownChar" role="button" data-phy="Charact"
+        <ul class="navbar-nav me-auto gap-lg-1 nav-groups">
+          <li class="nav-item dropdown" [class.show]="openDropdown === 'char'" routerLinkActive="active-section">
+            <a class="nav-link dropdown-toggle nav-group-toggle" href="#" id="navbarDropdownChar" role="button" data-phy="Character"
               [attr.aria-expanded]="openDropdown === 'char'" aria-haspopup="true" (click)="toggleDropdown('char', $event)">
               Characters
             </a>
-            <div class="dropdown-menu" [class.show]="openDropdown === 'char'" aria-labelledby="navbarDropdownChar">
+            <div class="dropdown-menu nav-group-menu" [class.show]="openDropdown === 'char'" aria-labelledby="navbarDropdownChar">
               <a class="dropdown-item" routerLink="/classes" routerLinkActive="active" (click)="closeMenus()">Classes</a>
-              <a class="dropdown-item" routerLink="/backgrounds" routerLinkActive="active" (click)="closeMenus()">Backgrounds</a>
               <a class="dropdown-item" routerLink="/ancestries" routerLinkActive="active" (click)="closeMenus()">Ancestries</a>
+              <a class="dropdown-item" routerLink="/backgrounds" routerLinkActive="active" (click)="closeMenus()">Backgrounds</a>
               <a class="dropdown-item" routerLink="/feats" routerLinkActive="active" (click)="closeMenus()">Feats</a>
               <a class="dropdown-item" routerLink="/epic-boons" routerLinkActive="active" (click)="closeMenus()">Epic Boons</a>
               <a class="dropdown-item" routerLink="/other-features" routerLinkActive="active" (click)="closeMenus()">Misc. Features</a>
             </div>
           </li>
-          <li class="nav-item dropdown" [class.show]="openDropdown === 'dm'">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDm" role="button" data-phy="DM"
-              [attr.aria-expanded]="openDropdown === 'dm'" aria-haspopup="true" (click)="toggleDropdown('dm', $event)">
-              DM
+          <li class="nav-item dropdown" [class.show]="openDropdown === 'compendium'" routerLinkActive="active-section">
+            <a class="nav-link dropdown-toggle nav-group-toggle" href="#" id="navbarDropdownCompendium" role="button" data-phy="Compendium"
+              [attr.aria-expanded]="openDropdown === 'compendium'" aria-haspopup="true" (click)="toggleDropdown('compendium', $event)">
+              Compendium
             </a>
-            <div class="dropdown-menu" [class.show]="openDropdown === 'dm'" aria-labelledby="navbarDropdownDm">
-              <a class="dropdown-item" routerLink="/beastiary" routerLinkActive="active" (click)="closeMenus()">Beastiary</a>
-              <a class="dropdown-item" routerLink="/encounter-builder" routerLinkActive="active" (click)="closeMenus()">Encounter Builder</a>
+            <div class="dropdown-menu nav-group-menu" [class.show]="openDropdown === 'compendium'" aria-labelledby="navbarDropdownCompendium">
+              <a class="dropdown-item" routerLink="/spells" routerLinkActive="active" (click)="closeMenus()">Spells</a>
               <a class="dropdown-item" routerLink="/items" routerLinkActive="active" (click)="closeMenus()">Items</a>
+              <a class="dropdown-item" routerLink="/beastiary" routerLinkActive="active" (click)="closeMenus()">Bestiary</a>
             </div>
           </li>
-          <li class="nav-item dropdown" [class.show]="openDropdown === 'ref'">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRef" role="button" data-phy="Referen"
-              [attr.aria-expanded]="openDropdown === 'ref'" aria-haspopup="true" (click)="toggleDropdown('ref', $event)">
-              Reference
+          <li class="nav-item dropdown" [class.show]="openDropdown === 'tools'" routerLinkActive="active-section">
+            <a class="nav-link dropdown-toggle nav-group-toggle" href="#" id="navbarDropdownTools" role="button" data-phy="Tools+Wor"
+              [attr.aria-expanded]="openDropdown === 'tools'" aria-haspopup="true" (click)="toggleDropdown('tools', $event)">
+              Tools &amp; World
             </a>
-            <div class="dropdown-menu" [class.show]="openDropdown === 'ref'" aria-labelledby="navbarDropdownRef">
-              <a class="dropdown-item" routerLink="/spells" routerLinkActive="active" (click)="closeMenus()">Spells</a>
-              <a class="dropdown-item" routerLink="/map" routerLinkActive="active" (click)="closeMenus()">Map</a>
+            <div class="dropdown-menu nav-group-menu" [class.show]="openDropdown === 'tools'" aria-labelledby="navbarDropdownTools">
               <a class="dropdown-item" routerLink="/character-builder" routerLinkActive="active" (click)="closeMenus()">Character Builder</a>
+              <a class="dropdown-item" routerLink="/encounter-builder" routerLinkActive="active" (click)="closeMenus()">Encounter Builder</a>
+              <a class="dropdown-item" routerLink="/map" routerLinkActive="active" (click)="closeMenus()">Map</a>
             </div>
           </li>
         </ul>
@@ -80,15 +80,15 @@
             </div>
           </li>
           <li class="nav-item d-none d-lg-block">
-            <button type="button" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center gap-2 nav-util-btn nav-bookmark-btn" (click)="toggleBookmarks()" title="Session Pinned Pages">
+            <button type="button" class="btn btn-sm d-flex align-items-center justify-content-center gap-2 nav-util-btn nav-bookmark-btn" (click)="toggleBookmarks()" title="Session Pinned Pages">
               <fa-icon [icon]="faThumbtack" aria-hidden="true" />
               @if (bookmarks.count() > 0) {
                 <span class="badge text-bg-success">{{ bookmarks.count() }}</span>
               }
             </button>
           </li>
-          <li class="nav-item dropdown float-end" [class.show]="openDropdown === 'portal'">
-            <a class="nav-link" href="#" id="navbarDropdownPortal" role="button" data-phy="Planar "
+          <li class="nav-item dropdown" [class.show]="openDropdown === 'portal'">
+            <a class="nav-link" href="#" id="navbarDropdownPortal" role="button" data-phy="PlanarPort"
               [attr.aria-expanded]="openDropdown === 'portal'" aria-haspopup="true" (click)="toggleDropdown('portal', $event)">
               Planar Portal
               <fa-icon [icon]="faGear" aria-hidden="true" />

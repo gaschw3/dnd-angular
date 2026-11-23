@@ -1,7 +1,7 @@
 <header class="detail-header">
   <div class="detail-header-left">
     <div class="detail-header-titles">
-      <h2 class="h1 display-title detail-header-title mb-0" [class.text-decoration-line-through]="strikethrough()">{{ title() }}</h2>
+      <h2 class="h1 display-title detail-header-title mb-0" [attr.data-phy]="title()" [class.text-decoration-line-through]="strikethrough()">{{ title() }}</h2>
       @if (subtitle()) {
         <p class="detail-header-subtitle mb-0">{{ subtitle() }}</p>
       }
