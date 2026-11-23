@@ -171,6 +171,7 @@ export class QuickSearchComponent {
       monsters: this.dataService.getMonsters(),
       items: this.dataService.getItems(),
       feats: this.dataService.getFeats(),
+      epicBoons: this.dataService.getEpicBoons(),
       ancestries: this.dataService.getAncestries(),
       backgrounds: this.dataService.getBackgrounds(),
       features: this.dataService.getOtherFeatures()
@@ -237,6 +238,18 @@ export class QuickSearchComponent {
             route: `/feats/${f.id}`,
             subtitle,
             searchText: `${f.name} ${subtitle}`.toLowerCase()
+          });
+        }
+
+        for (const b of data.epicBoons) {
+          const subtitle = `Epic Boon · ${b.source || ''}`.trim();
+          idx.push({
+            id: `epic-boon:${b.id}`,
+            name: b.name,
+            category: 'Feat',
+            route: `/epic-boons/${b.id}`,
+            subtitle,
+            searchText: `${b.name} ${subtitle}`.toLowerCase()
           });
         }
 
