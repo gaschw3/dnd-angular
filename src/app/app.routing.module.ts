@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
-//import { ForbiddenComponent, NotAuthorizedComponent, NotFoundComponent, ServerErrorComponent } from './error';
-
-import { HexmapComponent } from './controllers/hexmap/hexmap.component'
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
-import { EncounterBuilderComponent } from './controllers/encounter-builder/encounter-builder.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
 
@@ -51,11 +47,15 @@ const routes: Routes = [
   },
   {
     path: 'encounter-builder',
-    component: EncounterBuilderComponent
+    loadComponent: () =>
+      import('./controllers/encounter-builder/encounter-builder.component').then(
+        m => m.EncounterBuilderComponent
+      )
   },
   {
     path: 'map',
-    component: HexmapComponent
+    loadComponent: () =>
+      import('./controllers/hexmap/hexmap.component').then(m => m.HexmapComponent)
   },
   { path: '404', component: NotFoundComponent },
   { path: '500', component: ServerErrorComponent },

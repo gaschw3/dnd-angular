@@ -8,7 +8,7 @@ describe('HexmapComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HexmapComponent ]
+      imports: [ HexmapComponent ]
     })
     .compileComponents();
   }));

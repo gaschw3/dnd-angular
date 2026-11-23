@@ -1,8 +1,1 @@
-<div class="particle-container" [ngClass]="theme">
-  @for (i of helper.counter(150); track i) {
-    <div class="particle"></div>
-  }
-  @for (i of helper.counter(11); track i; let index = $index) {
-    <div [ngClass]="theme=='end' ? 'ripple-'+index : ''"></div>
-  }
-</div>
+<canvas #canvas class="particle-canvas" aria-hidden="true"></canvas>

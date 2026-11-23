@@ -1,4 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -8,6 +10,7 @@ import { HelperService } from '../../shared/helpers/helper.service';
 import { crXpMap, levelXp, levelXp2024 } from 'src/app/shared/helpers/monster/experienceMaps';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const ENCOUNTERS_STORAGE_KEY = 'eotcc_encounters_v1';
 
@@ -36,7 +39,8 @@ interface PartyDifficulty {
 }
 
 @Component({
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, FormsModule, SharedModule],
   selector: 'app-encounter-builder',
   templateUrl: './encounter-builder.component.html',
   styleUrls: ['./encounter-builder.component.scss']

@@ -1,4 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import * as L from 'leaflet';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -13,7 +14,8 @@ interface SearchableLocation {
 }
 
 @Component({
-  standalone: false,
+  standalone: true,
+  imports: [FormsModule],
   selector: 'app-hexmap',
   templateUrl: './hexmap.component.html',
   styleUrls: ['./hexmap.component.scss']

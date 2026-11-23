@@ -106,7 +106,7 @@
                     <option value="forest">Hidden Vale</option>
                   </select>
                 </div>
-                @if (theme != 'dark' && theme != 'royal' && theme != 'forest') {
+                @if (theme != 'dark') {
                   <div class="mb-3">
                     <div class="form-check form-switch">
                       <input type="checkbox" class="form-check-input" [(ngModel)]="particles" (change)="changeParticles()" id="particles" name="particles">

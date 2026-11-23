@@ -10,8 +10,7 @@ describe('EncounterBuilderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule ],
-      declarations: [ EncounterBuilderComponent ]
+      imports: [ RouterTestingModule, HttpClientTestingModule, EncounterBuilderComponent ]
     })
     .compileComponents();
   });
