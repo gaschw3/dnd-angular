@@ -6,8 +6,7 @@ import { Subject, combineLatest } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { FeatureComponent } from './feature/feature.component';
-import { featureType, OtherFeature, Prerequisite } from 'src/app/models/otherFeature';
-import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
+import { featureType, OtherFeature } from 'src/app/models/otherFeature';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
@@ -18,7 +17,6 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
   templateUrl: './other-features.component.html'
 })
 export class OtherFeaturesComponent implements OnInit, OnDestroy {
-  readonly idPipe = new IdToNamePipe();
   readonly otherFeatures = signal<OtherFeature[]>([]);
   readonly selected = signal<string>('all');
   readonly currFeature = signal<OtherFeature | undefined>(undefined);
@@ -53,7 +51,7 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
       placeholder: 'Type',
       filterId: 'feature-type-filter',
       width: '30%',
-      value: f => (f.featureType && f.featureType[0] ? this.featureType[f.featureType[0]] || '' : '')
+      value: f => f.typeLabel
     },
     {
       key: 'prereq',
@@ -61,7 +59,7 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
       placeholder: 'Prerequisites',
       filterId: 'feature-prereq-filter',
       width: '30%',
-      value: f => this.getPrereq(f.prerequisite)
+      value: f => f.prereqSummary
     },
     {
       key: 'level',
@@ -70,11 +68,8 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
       filterId: 'feature-level-filter',
       width: '5%',
       align: 'center',
-      value: f => this.getLevelPrereq(f.prerequisite),
-      sortValue: f => {
-        const lvl = this.getLevelPrereq(f.prerequisite);
-        return lvl === '—' ? 0 : Number(lvl) || 0;
-      }
+      value: f => f.levelPrereq,
+      sortValue: f => (f.levelPrereq === '—' ? 0 : Number(f.levelPrereq) || 0)
     },
     {
       key: 'source',
@@ -88,7 +83,7 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
     }
   ];
 
-  readonly rowKey = (f: OtherFeature) => f.name;
+  readonly rowKey = (f: OtherFeature) => f.id;
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
@@ -109,9 +104,7 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
         if (typeParam) {
           this.selected.set(typeParam);
         }
-        const found = featureParam
-          ? otherFeatures.find(f => this.idPipe.transform(f.name) === featureParam)
-          : undefined;
+        const found = featureParam ? otherFeatures.find(f => f.id === featureParam) : undefined;
         this.currFeature.set(found);
         this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Misc. Features — EotCC 5e');
       });
@@ -125,12 +118,11 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
   setCurrFeature(clicked: OtherFeature): void {
     this.currFeature.set(clicked);
     this.title.setTitle(`${clicked.name} — EotCC 5e`);
-    const slug = this.idPipe.transform(clicked.name);
     const sel = this.selected();
     if (sel === 'all') {
-      this.router.navigate(['/other-features', slug], { queryParamsHandling: 'preserve' });
+      this.router.navigate(['/other-features', clicked.id], { queryParamsHandling: 'preserve' });
     } else {
-      this.router.navigate(['/other-features', sel, slug], { queryParamsHandling: 'preserve' });
+      this.router.navigate(['/other-features', sel, clicked.id], { queryParamsHandling: 'preserve' });
     }
   }
 
@@ -139,61 +131,15 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
     const visible = this.shownFeatures();
     const current = this.currFeature();
     if (current && visible.includes(current)) {
-      this.router.navigate(['/other-features', clicked, this.idPipe.transform(current.name)], {
+      this.router.navigate(['/other-features', clicked, current.id], {
         queryParamsHandling: 'preserve'
       });
     } else if (visible.length > 0 && current) {
       this.currFeature.set(visible[0]);
       this.title.setTitle(`${visible[0].name} — EotCC 5e`);
-      this.router.navigate(['/other-features', clicked, this.idPipe.transform(visible[0].name)], {
+      this.router.navigate(['/other-features', clicked, visible[0].id], {
         queryParamsHandling: 'preserve'
       });
     }
-  }
-
-  getPrereq(prereq?: Prerequisite[]): string {
-    if (!prereq || prereq.length < 1) {
-      return '—';
-    }
-    const ret: string[] = [];
-    const reqs = prereq[0];
-    if (typeof reqs.pact !== 'undefined') {
-      ret.push('Pact of the ' + reqs.pact);
-    }
-    if (typeof reqs.spell !== 'undefined') {
-      ret.push(reqs.spell);
-    }
-    if (typeof reqs.item !== 'undefined') {
-      ret.push(reqs.item[0]);
-    }
-    if (typeof reqs.feature !== 'undefined') {
-      ret.push(reqs.feature[0]);
-    }
-    if (typeof reqs.ability !== 'undefined') {
-      reqs.ability.forEach(obj => {
-        const arr = Object.entries(obj);
-        ret.push(`${arr[0][0].replace(/^[a-z]/, firstChar => firstChar.toUpperCase())} ${arr[0][1]}`);
-      });
-    }
-    if (typeof reqs.level !== 'undefined') {
-      const className = reqs.level.class?.name ?? '';
-      if (typeof reqs.level.subclass !== 'undefined') {
-        ret.push(reqs.level.subclass.name + (className ? ' ' + className : ''));
-      } else if (className) {
-        ret.push(className);
-      }
-    }
-    return ret.join(', ');
-  }
-
-  getLevelPrereq(prereq?: Prerequisite[]): string {
-    if (!prereq || prereq.length < 1) {
-      return '—';
-    }
-    const reqs = prereq[0];
-    if (typeof reqs.level !== 'undefined' && typeof reqs.level.level !== 'undefined') {
-      return String(reqs.level.level);
-    }
-    return '—';
   }
 }

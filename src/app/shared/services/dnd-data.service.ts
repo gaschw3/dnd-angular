@@ -5,13 +5,12 @@ import { map, shareReplay } from 'rxjs/operators';
 
 import { Spell } from '../../models/spell';
 import { newClass } from '../../models/newClass';
-import { Monster } from '../../models/monster';
-import { Item } from '../../models/item';
+import { Monster, normalizeMonster } from '../../models/monster';
+import { Item, normalizeItem } from '../../models/item';
 import { Ancestry } from '../../models/ancestry';
 import { Background } from '../../models/background';
 import { Feat } from '../../models/feat';
-import { OtherFeature } from '../../models/otherFeature';
-import { HelperService } from '../helpers/helper.service';
+import { OtherFeature, normalizeOtherFeature } from '../../models/otherFeature';
 
 @Injectable({
   providedIn: 'root'
@@ -58,13 +57,8 @@ export class DndDataService {
 
   getMonsters(): Observable<Monster[]> {
     if (!this.monsters$) {
-      this.monsters$ = this.http.get<{ monsters: Monster[] }>('assets/data/2023/beastiary.json').pipe(
-        map(beastiary =>
-          beastiary.monsters.map(monster => ({
-            ...monster,
-            id: monster.id || HelperService.createIdFromName(monster.name)
-          }))
-        ),
+      this.monsters$ = this.http.get<{ monsters: any[] }>('assets/data/2023/beastiary.json').pipe(
+        map(beastiary => beastiary.monsters.map(normalizeMonster)),
         shareReplay(1)
       );
     }
@@ -73,8 +67,8 @@ export class DndDataService {
 
   getItems(): Observable<Item[]> {
     if (!this.items$) {
-      this.items$ = this.http.get<Item[]>('assets/data/2024/items.json').pipe(
-        map(items => [...items].sort((a, b) => a.name.localeCompare(b.name))),
+      this.items$ = this.http.get<any[]>('assets/data/2024/items.json').pipe(
+        map(items => items.map(normalizeItem).sort((a, b) => a.plainName.localeCompare(b.plainName))),
         shareReplay(1)
       );
     }
@@ -135,7 +129,8 @@ export class DndDataService {
 
   getOtherFeatures(): Observable<OtherFeature[]> {
     if (!this.otherFeatures$) {
-      this.otherFeatures$ = this.http.get<OtherFeature[]>('assets/data/2024/otherFeatures.json').pipe(
+      this.otherFeatures$ = this.http.get<any[]>('assets/data/2024/otherFeatures.json').pipe(
+        map(features => features.map(normalizeOtherFeature)),
         shareReplay(1)
       );
     }

@@ -5,18 +5,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, combineLatest } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { Item } from 'src/app/models/item';
+import { Item, ItemCategory } from 'src/app/models/item';
 import { ItemComponent } from './item/item.component';
-import { typeTable } from '../../shared/itemTypes';
-import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 const RARITY_OPTIONS = ['none', 'common', 'uncommon', 'rare', 'very rare', 'legendary', 'artifact'] as const;
-const ARMOR_TYPES = new Set(['LA', 'MA', 'HA', 'S']);
-const WEAPON_TYPES = new Set(['M', 'R']);
 
-type ItemCategory = 'all' | 'magic' | 'weapons' | 'armor' | 'normal' | 'treasure';
+type ItemCategoryFilter = 'all' | ItemCategory;
 
 @Component({
   imports: [ReferenceTableComponent, ItemComponent],
@@ -27,7 +23,7 @@ type ItemCategory = 'all' | 'magic' | 'weapons' | 'armor' | 'normal' | 'treasure
 export class ItemsComponent implements OnInit, OnDestroy {
   readonly items = signal<Item[]>([]);
   readonly currItem = signal<Item | undefined>(undefined);
-  readonly selectedCategory = signal<ItemCategory>('all');
+  readonly selectedCategory = signal<ItemCategoryFilter>('all');
   readonly selectedRarities = signal<string[]>([]);
 
   readonly rarityOptions = RARITY_OPTIONS;
@@ -42,29 +38,11 @@ export class ItemsComponent implements OnInit, OnDestroy {
     const rarities = this.selectedRarities();
 
     return all.filter(item => {
-      const isTreasure = item.type ? item.type.includes('$') : false;
-      const rarityLower = (item.rarity || '').toLowerCase();
-      const isNoneRarity = !rarityLower || rarityLower.includes('none');
-      const isWeapon = isNoneRarity && WEAPON_TYPES.has(item.type);
-      const isArmor = isNoneRarity && ARMOR_TYPES.has(item.type);
-
-      if (cat === 'treasure' && !isTreasure) {
-        return false;
-      }
-      if (cat === 'weapons' && !isWeapon) {
-        return false;
-      }
-      if (cat === 'armor' && !isArmor) {
-        return false;
-      }
-      if (cat === 'normal' && (isTreasure || !isNoneRarity || isWeapon || isArmor)) {
-        return false;
-      }
-      if (cat === 'magic' && (isTreasure || isNoneRarity)) {
+      if (cat !== 'all' && item.category !== cat) {
         return false;
       }
       if (rarities.length > 0) {
-        const normalized = isNoneRarity ? 'none' : rarityLower;
+        const normalized = !item.rarity || item.rarity.includes('none') ? 'none' : item.rarity;
         if (!rarities.includes(normalized)) {
           return false;
         }
@@ -73,7 +51,6 @@ export class ItemsComponent implements OnInit, OnDestroy {
     });
   });
 
-  readonly idPipe = new IdToNamePipe();
   private titleCase = new TitleCasePipe();
   private destroy$ = new Subject<void>();
 
@@ -87,8 +64,8 @@ export class ItemsComponent implements OnInit, OnDestroy {
       headerIcon: true,
       isHtml: true,
       value: item => formatItemNameHtml(item),
-      filterValue: item => stripHtml(item.name),
-      sortValue: item => stripHtml(item.name)
+      filterValue: item => item.plainName,
+      sortValue: item => item.plainName
     },
     {
       key: 'type',
@@ -96,7 +73,7 @@ export class ItemsComponent implements OnInit, OnDestroy {
       placeholder: 'Type',
       filterId: 'item-prof-filter',
       width: '24%',
-      value: item => this.titleCase.transform(this.getItemType(item))
+      value: item => this.titleCase.transform(item.typeLabel)
     },
     {
       key: 'value',
@@ -104,14 +81,9 @@ export class ItemsComponent implements OnInit, OnDestroy {
       placeholder: 'Value',
       filterId: 'item-value-filter',
       width: '12%',
-      value: item => this.formatValue(item.value),
+      value: item => item.valueFormatted,
       sortValue: item => item.value || 0,
-      cellClass: item => {
-        if (!item.value) {
-          return '';
-        }
-        return item.value / 100 >= 1 ? 'text--gp' : item.value / 10 >= 1 ? 'text--sp' : 'text--cp';
-      }
+      cellClass: item => (item.valueUnit ? `text--${item.valueUnit}` : '')
     },
     {
       key: 'rarity',
@@ -122,8 +94,8 @@ export class ItemsComponent implements OnInit, OnDestroy {
       align: 'center',
       isHtml: true,
       value: item => formatRarityPillHtml(item.rarity, this.titleCase),
-      filterValue: item => item.rarity || '',
-      sortValue: item => this.getRaritySort(item.rarity)
+      filterValue: item => item.rarity,
+      sortValue: item => item.raritySort
     },
     {
       key: 'source',
@@ -137,7 +109,7 @@ export class ItemsComponent implements OnInit, OnDestroy {
     }
   ];
 
-  readonly rowKey = (item: Item) => this.idPipe.transform(item.name);
+  readonly rowKey = (item: Item) => item.id;
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
@@ -147,7 +119,7 @@ export class ItemsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(queryParams => {
       const cat = queryParams['cat'];
-      const nextCat: ItemCategory =
+      const nextCat: ItemCategoryFilter =
         cat === 'magic' || cat === 'weapons' || cat === 'armor' || cat === 'normal' || cat === 'treasure'
           ? cat
           : 'all';
@@ -170,9 +142,9 @@ export class ItemsComponent implements OnInit, OnDestroy {
       .subscribe(([items, params]) => {
         this.items.set(items);
         const itemName = params.get('itemName');
-        const found = itemName ? items.find(f => this.idPipe.transform(f.name) === itemName) : undefined;
+        const found = itemName ? items.find(f => f.id === itemName) : undefined;
         this.currItem.set(found);
-        this.title.setTitle(found ? `${stripHtml(found.name)} — EotCC 5e` : 'Items — EotCC 5e');
+        this.title.setTitle(found ? `${found.plainName} — EotCC 5e` : 'Items — EotCC 5e');
       });
   }
 
@@ -181,7 +153,7 @@ export class ItemsComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  setCategory(choice: ItemCategory): void {
+  setCategory(choice: ItemCategoryFilter): void {
     this.selectedCategory.set(choice);
     this.syncQuickFilterParams();
   }
@@ -215,8 +187,8 @@ export class ItemsComponent implements OnInit, OnDestroy {
 
   setCurrItem(clicked: Item): void {
     this.currItem.set(clicked);
-    this.title.setTitle(`${stripHtml(clicked.name)} — EotCC 5e`);
-    this.router.navigate(['/items', this.idPipe.transform(clicked.name)], { queryParamsHandling: 'preserve' });
+    this.title.setTitle(`${clicked.plainName} — EotCC 5e`);
+    this.router.navigate(['/items', clicked.id], { queryParamsHandling: 'preserve' });
 
     if (window.innerWidth < 1200) {
       setTimeout(() => {
@@ -228,82 +200,6 @@ export class ItemsComponent implements OnInit, OnDestroy {
   formatRarityLabel(rarity: string): string {
     return this.titleCase.transform(rarity);
   }
-
-  formatValue(value?: number): string {
-    if (!value) {
-      return '';
-    }
-    if (value / 100 >= 1) {
-      return `${Math.round(value / 100).toLocaleString('en-US')} gp`;
-    }
-    if (value / 10 >= 1) {
-      return `${Math.round(value / 10).toLocaleString('en-US')} sp`;
-    }
-    return `${Math.round(value).toLocaleString('en-US')} cp`;
-  }
-
-  getRaritySort(rarity: string): number {
-    switch ((rarity || '').toLowerCase()) {
-      case 'none':
-        return 0;
-      case 'common':
-        return 1;
-      case 'uncommon':
-        return 2;
-      case 'rare':
-        return 3;
-      case 'very rare':
-        return 4;
-      case 'legendary':
-        return 5;
-      case 'artifact':
-        return 6;
-      default:
-        return 0;
-    }
-  }
-
-  getItemType(item: Item): string {
-    let returnType = '';
-
-    if (item.wondrous && item.type) {
-      returnType += 'Wondrous Item, ';
-    } else if (item.wondrous) {
-      return 'Wondrous Item';
-    }
-
-    switch (item.type) {
-      case 'M': {
-        if (item.weaponCategory && item.baseItem) {
-          returnType += `${item.weaponCategory} Melee Weapon (${item.baseItem})`;
-        } else if (item.weaponCategory) {
-          returnType += `${item.weaponCategory} Melee Weapon`;
-        } else if (item.baseItem) {
-          returnType += `Melee Weapon (${item.baseItem})`;
-        }
-        break;
-      }
-      case 'R': {
-        if (item.weaponCategory && item.baseItem) {
-          returnType += `${item.weaponCategory} Ranged Weapon (${item.baseItem})`;
-        } else if (item.weaponCategory) {
-          returnType += `${item.weaponCategory} Ranged Weapon`;
-        } else if (item.baseItem) {
-          returnType += `Ranged Weapon (${item.baseItem})`;
-        }
-        break;
-      }
-      default: {
-        returnType += typeTable[item.type] || '';
-        break;
-      }
-    }
-    return returnType;
-  }
-}
-
-function stripHtml(text: string): string {
-  return text.replace(/<[^>]+>/g, '').trim();
 }
 
 function formatItemNameHtml(item: Item): string {
@@ -311,9 +207,8 @@ function formatItemNameHtml(item: Item): string {
   return `${item.name}${attune}`;
 }
 
-function formatRarityPillHtml(rawRarity: string, titleCase: TitleCasePipe): string {
-  const r = (rawRarity || '').toLowerCase().trim();
-  if (!r || r === 'none') {
+function formatRarityPillHtml(rarity: string, titleCase: TitleCasePipe): string {
+  if (!rarity || rarity === 'none') {
     return '—';
   }
   const slugMap: Record<string, string> = {
@@ -324,7 +219,6 @@ function formatRarityPillHtml(rawRarity: string, titleCase: TitleCasePipe): stri
     legendary: 'legendary',
     artifact: 'artifact'
   };
-  const cls = slugMap[r] || 'other';
-  const label = titleCase.transform(r);
-  return `<span class="item-rarity-pill item-rarity-${cls}">${label}</span>`;
+  const cls = slugMap[rarity] || 'other';
+  return `<span class="item-rarity-pill item-rarity-${cls}">${titleCase.transform(rarity)}</span>`;
 }

@@ -50,57 +50,17 @@ export class MonsterComponent {
   });
 
   readonly tokenSizeClass = computed(() => {
-    const rawSize = this.monster().size as string | string[] | undefined;
-    const normalized = Array.isArray(rawSize) ? rawSize.join(',') : String(rawSize || 'M');
-    const primary = normalized.toUpperCase().split(',').pop()?.trim() || 'M';
+    const primary = (this.monster().size || 'M').toUpperCase().split(',').pop()?.trim() || 'M';
     const valid = new Set(['T', 'S', 'M', 'L', 'H', 'G']);
     return `monster-token-${valid.has(primary) ? primary.toLowerCase() : 'm'}`;
   });
 
   readonly subtitleText = computed(() => {
     const m = this.monster();
-    const rawSize = m.size as string | string[] | undefined;
-    const sizeKey = Array.isArray(rawSize) ? rawSize.join(',') : String(rawSize || '');
-    const size = this.titleCase.transform(this.monsterService.translateSize(sizeKey) || sizeKey);
+    const size = this.titleCase.transform(this.monsterService.translateSize(m.size) || m.size);
     const type = this.titlecaseExcept.transform(this.monsterService.getType(m.type) || '');
     const alignment = this.titlecaseExcept.transform(this.monsterService.translateAlignment(m.alignment) || '');
     return `${size} ${type}${alignment ? ', ' + alignment : ''}`.trim();
-  });
-
-  readonly hpText = computed(() => {
-    const hp = this.monster().hp;
-    if (!hp) {
-      return '';
-    }
-    if (hp.average) {
-      return hp.formula ? `${hp.average} (${hp.formula})` : String(hp.average);
-    }
-    return hp.special || '';
-  });
-
-  readonly acText = computed(() => {
-    const acList = this.monster().ac;
-    if (!Array.isArray(acList) || acList.length === 0) {
-      return '';
-    }
-    return acList
-      .map(entry => {
-        if (typeof entry === 'object' && entry !== null) {
-          if (entry.special) {
-            return entry.special;
-          }
-          const details = [
-            Array.isArray(entry.from) ? entry.from.join(', ') : entry.from,
-            entry.condition
-          ]
-            .filter(Boolean)
-            .join(' ');
-          return details ? `${entry.ac} (${details})` : String(entry.ac ?? '');
-        }
-        return String(entry);
-      })
-      .filter(Boolean)
-      .join(', ');
   });
 
   readonly crText = computed(() => {
@@ -123,45 +83,6 @@ export class MonsterComponent {
       { label: 'CHA', score: m.cha, mod: this.helper.getStatMod(m.cha) }
     ];
   });
-
-  readonly speedText = computed(() => {
-    const speed = this.monster().speed as Record<string, any> | undefined;
-    if (!speed || typeof speed !== 'object') {
-      return '';
-    }
-    return Object.entries(speed)
-      .map(([key, val]) => {
-        if (typeof val === 'object' && val !== null) {
-          return `${key} ${val.number} ft.${val.condition ? ' ' + val.condition : ''}`;
-        }
-        return `${key} ${val} ft.`;
-      })
-      .join(', ');
-  });
-
-  readonly savesText = computed(() => {
-    const saves = this.monster().save as unknown as Record<string, string> | undefined;
-    if (!saves || typeof saves !== 'object') {
-      return '';
-    }
-    return Object.entries(saves)
-      .map(([k, v]) => `${this.titleCase.transform(k)} ${v}`)
-      .join(', ');
-  });
-
-  readonly skillsText = computed(() => {
-    const skills = this.monster().skill as unknown as Record<string, string> | undefined;
-    if (!skills || typeof skills !== 'object') {
-      return '';
-    }
-    return Object.entries(skills)
-      .map(([k, v]) => `${this.titleCase.transform(k)} ${v}`)
-      .join(', ');
-  });
-
-  readonly resistText = computed(() => formatDamageList(this.monster().resist));
-  readonly immuneText = computed(() => formatDamageList(this.monster().immune));
-  readonly vulnerableText = computed(() => formatDamageList(this.monster().vulnerable));
 
   getSpellLevelRows(sc: any): SpellLevelRow[] {
     if (!sc?.spells) {
@@ -196,27 +117,4 @@ export class MonsterComponent {
   onTokenError(): void {
     this.failedTokenUrl.set(this.tokenUrl());
   }
-}
-
-function formatDamageList(list?: any[]): string {
-  if (!Array.isArray(list) || list.length === 0) {
-    return '';
-  }
-  return list
-    .map(entry => {
-      if (typeof entry === 'string') {
-        return entry;
-      }
-      if (entry && typeof entry === 'object') {
-        const vals = Array.isArray(entry.resist)
-          ? entry.resist.join(', ')
-          : Array.isArray(entry.immune)
-            ? entry.immune.join(', ')
-            : '';
-        return entry.note ? `${vals} ${entry.note}`.trim() : vals;
-      }
-      return '';
-    })
-    .filter(Boolean)
-    .join('; ');
 }

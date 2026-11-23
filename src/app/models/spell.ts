@@ -95,9 +95,15 @@ export class Spell implements ISpell {
         }
         this.duration = this.duration.charAt(0).toUpperCase() + this.duration.slice(1);
 
-        if (spellSource["class"]["XPHB"]) {
-          for (const className in spellSource["class"]["XPHB"]) {
-            this.classes.push(className);
+        if (spellSource?.["class"]?.["XPHB"]) {
+          const seen = new Set<string>();
+          for (const rawName in spellSource["class"]["XPHB"]) {
+            const trimmed = rawName.trim();
+            const key = trimmed.toLowerCase();
+            if (trimmed && !seen.has(key)) {
+              seen.add(key);
+              this.classes.push(trimmed.charAt(0).toUpperCase() + trimmed.slice(1));
+            }
           }
         }
         if (spellSource["subclass"] && spellSource["subclass"]["XPHB"]) {

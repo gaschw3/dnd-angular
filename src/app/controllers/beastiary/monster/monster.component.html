@@ -25,16 +25,16 @@
               <span class="display-meta-value">{{ crText() }}</span>
             </span>
           }
-          @if (acText()) {
+          @if (m.acText) {
             <span detail-meta class="display-meta-pill">
               <span class="display-meta-label">AC</span>
-              <span class="display-meta-value">{{ acText() }}</span>
+              <span class="display-meta-value">{{ m.acText }}</span>
             </span>
           }
-          @if (hpText()) {
+          @if (m.hpText) {
             <span detail-meta class="display-meta-pill">
               <span class="display-meta-label">HP</span>
-              <span class="display-meta-value">{{ hpText() }}</span>
+              <span class="display-meta-value">{{ m.hpText }}</span>
             </span>
           }
         </app-detail-header>
@@ -50,23 +50,23 @@
         </div>
 
         <div class="monster-props-box mb-3">
-          @if (speedText()) {
-            <div class="monster-prop-line"><strong>Speed:</strong> {{ speedText() }}</div>
+          @if (m.speedText) {
+            <div class="monster-prop-line"><strong>Speed:</strong> {{ m.speedText }}</div>
           }
-          @if (savesText()) {
-            <div class="monster-prop-line"><strong>Saving Throws:</strong> {{ savesText() }}</div>
+          @if (m.savesText) {
+            <div class="monster-prop-line"><strong>Saving Throws:</strong> {{ m.savesText }}</div>
           }
-          @if (skillsText()) {
-            <div class="monster-prop-line"><strong>Skills:</strong> {{ skillsText() }}</div>
+          @if (m.skillsText) {
+            <div class="monster-prop-line"><strong>Skills:</strong> {{ m.skillsText }}</div>
           }
-          @if (vulnerableText()) {
-            <div class="monster-prop-line"><strong>Damage Vulnerabilities:</strong> {{ vulnerableText() }}</div>
+          @if (m.vulnerableText) {
+            <div class="monster-prop-line"><strong>Damage Vulnerabilities:</strong> {{ m.vulnerableText }}</div>
           }
-          @if (resistText()) {
-            <div class="monster-prop-line"><strong>Damage Resistances:</strong> {{ resistText() }}</div>
+          @if (m.resistText) {
+            <div class="monster-prop-line"><strong>Damage Resistances:</strong> {{ m.resistText }}</div>
           }
-          @if (immuneText()) {
-            <div class="monster-prop-line"><strong>Damage Immunities:</strong> {{ immuneText() }}</div>
+          @if (m.immuneText) {
+            <div class="monster-prop-line"><strong>Damage Immunities:</strong> {{ m.immuneText }}</div>
           }
           @if (m.languages?.length) {
             <div class="monster-prop-line"><strong>Languages:</strong> {{ m.languages.join(', ') }}</div>

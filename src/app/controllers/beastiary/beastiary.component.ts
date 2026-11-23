@@ -50,9 +50,8 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
   readonly availableTypes = computed(() => {
     const set = new Set<string>();
     for (const m of this.monsters()) {
-      const base = extractBaseType(m.type);
-      if (base) {
-        set.add(this.titleCase.transform(base));
+      if (m.baseType) {
+        set.add(this.titleCase.transform(m.baseType));
       }
     }
     return [...set].sort((a, b) => a.localeCompare(b));
@@ -96,16 +95,13 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
           return false;
         }
       }
-      if (types.length > 0) {
-        const base = extractBaseType(m.type).toLowerCase();
-        if (!types.includes(base)) {
-          return false;
-        }
-      }
-      if (leg && !(m.legendary && m.legendary.length > 0)) {
+      if (types.length > 0 && !types.includes(m.baseType)) {
         return false;
       }
-      if (spell && !(m.spellcasting && m.spellcasting.length > 0)) {
+      if (leg && !m.isLegendary) {
+        return false;
+      }
+      if (spell && !m.isSpellcaster) {
         return false;
       }
       return true;
@@ -328,19 +324,6 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
   }
 }
 
-function extractBaseType(type: any): string {
-  if (!type) {
-    return '';
-  }
-  if (typeof type === 'string') {
-    return type;
-  }
-  if (typeof type.type === 'string') {
-    return type.type;
-  }
-  return '';
-}
-
 function escapeHtml(text: string): string {
   return text
     .replace(/&/g, '&amp;')
@@ -352,10 +335,10 @@ function escapeHtml(text: string): string {
 function formatMonsterNameHtml(monster: Monster): string {
   const safeName = escapeHtml(monster.name);
   const tags: string[] = [];
-  if (monster.legendary && monster.legendary.length > 0) {
+  if (monster.isLegendary) {
     tags.push('<span class="spell-tag-badge" title="Legendary">L</span>');
   }
-  if (monster.spellcasting && monster.spellcasting.length > 0) {
+  if (monster.isSpellcaster) {
     tags.push('<span class="spell-tag-badge" title="Spellcaster">S</span>');
   }
   return `${safeName}${tags.join('')}`;

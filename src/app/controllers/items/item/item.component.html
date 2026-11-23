@@ -3,21 +3,21 @@
     <div class="card">
       <div class="card-body">
         <app-detail-header
-          [title]="plainTitle()"
-          [titleHtml]="hasHtmlTitle() ? it.name : undefined"
+          [title]="it.plainName"
+          [titleHtml]="it.hasHtmlName ? it.name : undefined"
           [source]="it.source"
         >
-          @if (subtitleText()) {
+          @if (it.subtitleText) {
             <h4 detail-description class="mb-0">
-              <em>{{ subtitleText() }}</em>
+              <em>{{ it.subtitleText }}</em>
             </h4>
           }
 
-          @if (it.value) {
+          @if (it.valueUnit) {
             <span detail-meta class="display-meta-pill">
               <span class="display-meta-label">Value</span>
-              <span class="display-meta-value" [class]="'display-meta-value text--' + valueUnit()">
-                {{ valueAmount() | number:'1.0':'en-US' }} {{ valueUnit() }}
+              <span class="display-meta-value" [class]="'display-meta-value text--' + it.valueUnit">
+                {{ it.valueAmount | number:'1.0':'en-US' }} {{ it.valueUnit }}
               </span>
             </span>
           }
@@ -33,10 +33,10 @@
               <span class="display-meta-value">{{ it.ac }}</span>
             </span>
           }
-          @if (damageText()) {
+          @if (it.damageText) {
             <span detail-meta class="display-meta-pill">
               <span class="display-meta-label">Damage</span>
-              <span class="display-meta-value">{{ damageText() }}</span>
+              <span class="display-meta-value">{{ it.damageText }}</span>
             </span>
           }
         </app-detail-header>

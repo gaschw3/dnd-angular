@@ -103,7 +103,7 @@
         [data]="filteredItems()"
         [columns]="columns"
         [rowKey]="rowKey"
-        [selectedKey]="currItem() ? idPipe.transform(currItem()!.name) : null"
+        [selectedKey]="currItem()?.id || null"
         [pageSize]="15"
         [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="items"

@@ -2,11 +2,11 @@
   <div class="pb-4 mt-3">
     <div class="card">
       <div class="card-body">
-        <app-detail-header [title]="f.name" [subtitle]="typeLabel()" [source]="f.source">
-          @if (prereqLabel()) {
+        <app-detail-header [title]="f.name" [subtitle]="f.typeLabel" [source]="f.source">
+          @if (f.prereqFull) {
             <span detail-meta class="display-meta-pill">
               <span class="display-meta-label">Prerequisite</span>
-              <span class="display-meta-value">{{ prereqLabel() }}</span>
+              <span class="display-meta-value">{{ f.prereqFull }}</span>
             </span>
           }
         </app-detail-header>
