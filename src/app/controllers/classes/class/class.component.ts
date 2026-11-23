@@ -1,12 +1,16 @@
 import { Component, OnInit, OnChanges, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { newClass, newMulticlass, Proficiencies} from '../../../models';
 import { FeaturesComponent } from '../features/features.component';
 import { ArchetypesComponent } from '../archetypes/archetypes.component';
+import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
+import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
 import { Subject } from 'rxjs';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, RouterModule, EntryRendererComponent, ArchetypesComponent, FeaturesComponent, LinkmakerPipe],
   selector: 'app-class',
   templateUrl: './class.component.html',
   styleUrls: ['./class.component.scss']

@@ -7,10 +7,10 @@ import { ActivatedRoute } from '@angular/router';
 import { SpellComponent } from './spell/spell.component';
 import { Spell } from 'src/app/models/spell';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
-  standalone: false,
+  imports: [ReferenceTableComponent, SpellComponent],
   selector: 'app-spells',
   templateUrl: './spells.component.html',
   styleUrls: ['./spells.component.scss']

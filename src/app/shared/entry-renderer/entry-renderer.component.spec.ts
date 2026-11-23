@@ -8,7 +8,7 @@ describe('EntryRendererComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EntryRendererComponent ]
+      imports: [  ]
     })
     .compileComponents();
   });

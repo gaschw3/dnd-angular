@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
-  standalone: false,
     name: 'titlecaseExcept'
 })
 export class TitlecaseExceptPipe implements PipeTransform{

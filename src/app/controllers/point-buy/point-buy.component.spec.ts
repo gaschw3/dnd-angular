@@ -11,8 +11,7 @@ describe('PointBuyComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule ],
-      declarations: [ PointBuyComponent ]
+      imports: [ PointBuyComponent,  HttpClientTestingModule, ReactiveFormsModule, FormsModule ]
     })
     .compileComponents();
   }));

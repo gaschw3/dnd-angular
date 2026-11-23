@@ -10,8 +10,7 @@ describe('BeastiaryComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule ],
-      declarations: [ BeastiaryComponent ]
+      imports: [ BeastiaryComponent,  RouterTestingModule, HttpClientTestingModule ]
     })
     .compileComponents();
   }));

@@ -1,7 +1,9 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { LinkmakerPipe } from '../../pipes/linkmaker.pipe';
+import { SanitizeHtmlPipe } from '../../pipes/sanitize-html.pipe';
 
 @Component({
-  standalone: false,
+  imports: [LinkmakerPipe, SanitizeHtmlPipe],
   selector: 'app-entry-renderer',
   templateUrl: './entry-renderer.component.html',
   styleUrls: ['./entry-renderer.component.scss'],

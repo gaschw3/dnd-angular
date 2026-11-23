@@ -10,8 +10,7 @@ describe('AncestriesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule ],
-      declarations: [ AncestriesComponent ]
+      imports: [ AncestriesComponent,  RouterTestingModule, HttpClientTestingModule ]
     })
     .compileComponents();
   }));

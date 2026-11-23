@@ -14,7 +14,6 @@ interface SearchableLocation {
 }
 
 @Component({
-  standalone: true,
   imports: [FormsModule],
   selector: 'app-hexmap',
   templateUrl: './hexmap.component.html',

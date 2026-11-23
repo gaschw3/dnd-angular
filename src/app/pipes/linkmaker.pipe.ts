@@ -50,7 +50,6 @@ const PLAIN_TEXT_TAGS = new Set([
 ]);
 
 @Pipe({
-  standalone: false,
   name: 'linkmaker'
 })
 export class LinkmakerPipe implements PipeTransform {

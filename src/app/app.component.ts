@@ -1,6 +1,10 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { CommonModule, ViewportScroller } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { ParticlesComponent } from './controllers/particles/particles.component';
+import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
 import { QuickSearchComponent } from './shared/quick-search/quick-search.component';
 import { BookmarksTrayComponent } from './shared/bookmarks-tray/bookmarks-tray.component';
 import { BookmarksService } from './shared/services/bookmarks.service';
@@ -8,7 +12,15 @@ import { BookmarksService } from './shared/services/bookmarks.service';
 declare let gtag: any;
 
 @Component({
-  standalone: false,
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    ParticlesComponent,
+    ScrollTopComponent,
+    QuickSearchComponent,
+    BookmarksTrayComponent
+  ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
@@ -24,7 +36,12 @@ export class AppComponent {
   @ViewChild(QuickSearchComponent) quickSearch?: QuickSearchComponent;
   @ViewChild(BookmarksTrayComponent) bookmarksTray?: BookmarksTrayComponent;
 
-  constructor(private router: Router, public bookmarks: BookmarksService) {
+  constructor(
+    private router: Router,
+    public bookmarks: BookmarksService,
+    viewportScroller: ViewportScroller
+  ) {
+    viewportScroller.setOffset([0, 80]);
     const navEndEvent$ = router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     );

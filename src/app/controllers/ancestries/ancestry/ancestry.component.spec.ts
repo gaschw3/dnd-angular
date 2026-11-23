@@ -8,7 +8,7 @@ describe('AncestryComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AncestryComponent ]
+      imports: [  ]
     })
     .compileComponents();
   }));

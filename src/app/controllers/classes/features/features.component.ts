@@ -1,8 +1,10 @@
 import { Component, Input, HostListener, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ClassFeature } from 'src/app/models/newClass';
+import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, EntryRendererComponent],
   selector: 'app-features',
   templateUrl: './features.component.html',
   styleUrls: ['./features.component.scss']

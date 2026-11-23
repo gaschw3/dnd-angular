@@ -9,8 +9,7 @@ describe('ArchetypesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
-      declarations: [ ArchetypesComponent ]
+      imports: [ ArchetypesComponent,  HttpClientTestingModule ]
     })
     .compileComponents();
   }));

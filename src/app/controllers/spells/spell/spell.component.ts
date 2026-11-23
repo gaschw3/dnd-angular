@@ -1,8 +1,11 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Spell } from 'src/app/models/spell';
+import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
+import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, EntryRendererComponent, LinkmakerPipe],
   selector: 'app-spell',
   templateUrl: './spell.component.html',
   styleUrls: ['./spell.component.scss']

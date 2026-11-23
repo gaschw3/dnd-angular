@@ -9,8 +9,7 @@ describe('ClassComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
-      declarations: [ ClassComponent ]
+      imports: [ ClassComponent,  HttpClientTestingModule ]
     })
     .compileComponents();
   }));

@@ -6,11 +6,12 @@ import { ActivatedRoute } from '@angular/router';
 
 import { newClass } from '../../models';
 import { ClassComponent } from './class/class.component';
+import { LevelTableComponent } from './level-table/level-table.component';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
-  standalone: false,
+  imports: [ReferenceTableComponent, LevelTableComponent, ClassComponent],
   selector: 'app-classes',
   templateUrl: './classes.component.html',
   styleUrls: ['./classes.component.scss']

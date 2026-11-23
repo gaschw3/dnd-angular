@@ -8,7 +8,7 @@ describe('SpellComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpellComponent ]
+      imports: [  ]
     })
     .compileComponents();
   }));

@@ -1,7 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule],
   selector: 'app-archetypes',
   templateUrl: './archetypes.component.html',
   styleUrls: ['./archetypes.component.scss']

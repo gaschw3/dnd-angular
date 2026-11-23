@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -8,10 +8,10 @@ import { FeatureComponent } from './feature/feature.component';
 import { featureType, OtherFeature, Prerequisite } from 'src/app/models/otherFeature';
 import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, ReferenceTableComponent, FeatureComponent],
   selector: 'app-other-features',
   styleUrls: ['./other-features.component.scss'],
   templateUrl: './other-features.component.html'

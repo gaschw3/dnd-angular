@@ -9,10 +9,10 @@ import { Monster } from 'src/app/models/monster';
 import { sizeMap } from 'src/app/shared/helpers/monster/sizeMap';
 import { MonsterHelperService } from 'src/app/shared/helpers/monster/monster-helper.service';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
-  standalone: false,
+  imports: [ReferenceTableComponent, MonsterComponent],
   selector: 'app-beastiary',
   templateUrl: './beastiary.component.html',
   styleUrls: ['./beastiary.component.scss']

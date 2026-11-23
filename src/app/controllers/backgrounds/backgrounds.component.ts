@@ -8,10 +8,10 @@ import { BackgroundComponent } from './background/background.component';
 import { Background } from 'src/app/models/background';
 import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
-  standalone: false,
+  imports: [ReferenceTableComponent, BackgroundComponent],
   selector: 'app-backgrounds',
   templateUrl: './backgrounds.component.html',
   styleUrls: ['./backgrounds.component.scss']

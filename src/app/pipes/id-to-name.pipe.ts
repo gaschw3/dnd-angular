@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  standalone: false,
   name: 'idToName'
 })
 export class IdToNamePipe implements PipeTransform {

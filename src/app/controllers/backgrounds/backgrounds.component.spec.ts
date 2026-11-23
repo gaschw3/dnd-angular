@@ -8,7 +8,7 @@ describe('ClassesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BackgroundsComponent ]
+      imports: [  ]
     })
     .compileComponents();
   }));

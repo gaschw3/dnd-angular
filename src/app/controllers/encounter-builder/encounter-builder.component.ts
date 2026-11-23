@@ -9,8 +9,8 @@ import { Monster } from 'src/app/models';
 import { HelperService } from '../../shared/helpers/helper.service';
 import { crXpMap, levelXp, levelXp2024 } from 'src/app/shared/helpers/monster/experienceMaps';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
+import { MonsterComponent } from '../beastiary/monster/monster.component';
 
 const ENCOUNTERS_STORAGE_KEY = 'eotcc_encounters_v1';
 
@@ -39,8 +39,7 @@ interface PartyDifficulty {
 }
 
 @Component({
-  standalone: true,
-  imports: [CommonModule, FormsModule, SharedModule],
+  imports: [CommonModule, FormsModule, ReferenceTableComponent, MonsterComponent],
   selector: 'app-encounter-builder',
   templateUrl: './encounter-builder.component.html',
   styleUrls: ['./encounter-builder.component.scss']

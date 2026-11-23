@@ -8,7 +8,7 @@ describe('LevelTableComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LevelTableComponent ]
+      imports: [  ]
     })
     .compileComponents();
   }));

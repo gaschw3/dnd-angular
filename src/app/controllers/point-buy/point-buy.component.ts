@@ -1,7 +1,10 @@
 import { HelperService } from './../../shared/helpers/helper.service';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Ancestry } from '../../models/ancestry';
 import { DndDataService } from '../../shared/services/dnd-data.service';
+import { AncestryComponent } from '../ancestries/ancestry/ancestry.component';
 
 interface Stat {
   name: string;
@@ -11,7 +14,7 @@ interface Stat {
 }
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, FormsModule, AncestryComponent],
   selector: 'app-point-buy',
   templateUrl: './point-buy.component.html',
   styleUrls: ['./point-buy.component.scss']

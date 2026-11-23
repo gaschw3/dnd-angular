@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Location, TitleCasePipe } from '@angular/common';
+import { CommonModule, Location, TitleCasePipe } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
@@ -9,10 +9,10 @@ import { ItemComponent } from './item/item.component';
 import { typeTable } from '../../shared/itemTypes';
 import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, ReferenceTableComponent, ItemComponent],
   selector: 'app-items',
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss']

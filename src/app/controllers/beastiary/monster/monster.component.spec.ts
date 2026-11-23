@@ -8,7 +8,7 @@ describe('MonsterComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MonsterComponent ]
+      imports: [  ]
     })
     .compileComponents();
   }));

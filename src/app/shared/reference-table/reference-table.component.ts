@@ -35,7 +35,6 @@ export interface ReferenceTableColumn<T> {
 
 @Component({
   selector: 'app-reference-table',
-  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './reference-table.component.html',
   styleUrls: ['./reference-table.component.scss']

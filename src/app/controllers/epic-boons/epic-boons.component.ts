@@ -8,10 +8,10 @@ import { Feat } from 'src/app/models/feat';
 import { FeatComponent } from '../feats/feat/feat.component';
 import { TitlecaseExceptPipe } from 'src/app/pipes/titlecase-except.pipe';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
-  standalone: false,
+  imports: [ReferenceTableComponent, FeatComponent],
   selector: 'app-epic-boons',
   templateUrl: './epic-boons.component.html',
   styleUrls: ['./epic-boons.component.scss']

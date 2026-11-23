@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Item } from 'src/app/models/item';
 import { typeTable } from '../../../shared/itemTypes';
+import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
+import { SanitizeHtmlPipe } from 'src/app/pipes/sanitize-html.pipe';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, EntryRendererComponent, SanitizeHtmlPipe],
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']

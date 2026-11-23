@@ -7,7 +7,6 @@ import { BookmarkCategory, BookmarksService } from '../services/bookmarks.servic
 
 @Component({
   selector: 'app-bookmarks-tray',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './bookmarks-tray.component.html',
   styleUrls: ['./bookmarks-tray.component.scss']

@@ -10,8 +10,7 @@ describe('ItemsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule ],
-      declarations: [ ItemsComponent ]
+      imports: [ ItemsComponent,  RouterTestingModule, HttpClientTestingModule ]
     })
     .compileComponents();
   }));

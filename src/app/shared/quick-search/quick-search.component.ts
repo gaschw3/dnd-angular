@@ -19,7 +19,6 @@ interface SearchEntry {
 
 @Component({
   selector: 'app-quick-search',
-  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './quick-search.component.html',
   styleUrls: ['./quick-search.component.scss']

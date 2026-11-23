@@ -10,8 +10,7 @@ describe('FeatsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule ],
-      declarations: [ FeatsComponent ]
+      imports: [ FeatsComponent,  RouterTestingModule, HttpClientTestingModule ]
     })
     .compileComponents();
   }));

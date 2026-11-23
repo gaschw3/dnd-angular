@@ -1,9 +1,10 @@
-import { ViewportScroller } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { newClass } from 'src/app/models';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, RouterModule],
   selector: 'app-level-table',
   templateUrl: './level-table.component.html',
   styleUrls: ['./level-table.component.scss']

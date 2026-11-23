@@ -32,8 +32,7 @@ describe('SpellsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule ],
-      declarations: [ SpellsComponent ]
+      imports: [ SpellsComponent,  RouterTestingModule, HttpClientTestingModule ]
     })
     .compileComponents();
     httpMock = TestBed.inject(HttpTestingController);

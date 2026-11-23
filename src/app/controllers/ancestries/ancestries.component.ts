@@ -7,10 +7,10 @@ import { ActivatedRoute } from '@angular/router';
 import { AncestryComponent } from './ancestry/ancestry.component';
 import { Ancestry } from 'src/app/models/ancestry';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
 @Component({
-  standalone: false,
+  imports: [ReferenceTableComponent, AncestryComponent],
   selector: 'app-ancestries',
   templateUrl: './ancestries.component.html',
   styleUrls: ['./ancestries.component.scss']

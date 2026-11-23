@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { Background } from 'src/app/models/background';
+import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, EntryRendererComponent],
   selector: 'app-background',
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.scss']

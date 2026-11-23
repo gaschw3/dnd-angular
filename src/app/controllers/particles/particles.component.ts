@@ -24,7 +24,6 @@ interface Particle {
 }
 
 @Component({
-  standalone: false,
   selector: 'app-particles',
   templateUrl: './particles.component.html',
   styleUrls: ['./particles.component.scss']

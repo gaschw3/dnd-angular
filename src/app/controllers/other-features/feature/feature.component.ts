@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { featureType, OtherFeature, Prerequisite } from 'src/app/models/otherFeature';
 import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
+import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
 
 @Component({
-  standalone: false,
+  imports: [CommonModule, EntryRendererComponent],
   selector: 'app-feature',
   templateUrl: './feature.component.html',
   styleUrls: ['./feature.component.scss']

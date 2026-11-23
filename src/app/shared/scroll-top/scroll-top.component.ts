@@ -3,7 +3,6 @@ import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-scroll-top',
-  standalone: true,
   imports: [],
   template: `
     @if (visible) {
