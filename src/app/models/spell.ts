@@ -41,7 +41,7 @@ export class Spell implements ISpell {
   ritual?:    string;
   roll?:      string[] | string;
 
-  constructor (spellJson, spellSource) {
+  constructor (spellJson: any, spellSource: any) {
         this.name = spellJson.name;
         this.id = HelperService.createIdFromName(spellJson.name);
         this.source = spellJson.source;
@@ -114,7 +114,7 @@ export class Spell implements ISpell {
     }
 }
 
-export const spellSchool = {
+export const spellSchool: Record<string, { name: string; abbrev: string }> = {
     "A": {name: "Abjuration", abbrev: "Abj"},
     "C": {name: "Conjuration", abbrev: "Conj"},
     "D": {name: "Divination", abbrev: "Div"},

@@ -29,7 +29,7 @@ export interface Class {
     name: string;
 }
 
-export const featureType = {
+export const featureType: Record<string, string> = {
     //"AI": "Artificer Infusion",
     //"AS": "Arcane Shot",
     "EI": "Eldritch Invocation",

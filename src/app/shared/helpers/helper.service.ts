@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class HelperService {
 
   // return absolute value so that positive and negative things can use the same calc methods
-  abs(number) {
+  abs(number: number): number {
     return Math.abs(number);
   }
 

@@ -9,7 +9,7 @@ export class Feat {
   text:          any[];
   prerequisite?: string;
 
-  constructor(feat) {
+  constructor(feat: any) {
     this.name = feat.name;
     this.id = HelperService.createIdFromName(feat.name);
     this.category = feat.category ? feat.category : 'G';
@@ -74,7 +74,7 @@ export class Feat {
   }
 }
 
-const getOrdinal = (number) => {
+const getOrdinal = (number: number): string => {
   if (number > 3 && number < 21) return `${number}th`;
   switch (number % 10) {
     case 1:
@@ -88,11 +88,11 @@ const getOrdinal = (number) => {
   }
 };
 
-const capitalize = (s) => {
+const capitalize = (s: string): string => {
     return s && s[0].toUpperCase() + s.slice(1);
 }
 
-export const featCategory = {
+export const featCategory: Record<string, string> = {
   "O": "Origin",
   "G": "General",
   "FS": "Fighting Style",

@@ -1,4 +1,4 @@
-export const sizeMap = {
+export const sizeMap: Record<string, string> = {
   "T": "tiny",
   "S": "small",
   "M": "medium",

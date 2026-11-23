@@ -27,10 +27,13 @@ export class FeatureComponent implements OnInit {
       const ret = [];
       const reqs = prereq[0]; // there is always only one entry at this point
       if (typeof reqs.level != "undefined") {
+        const className = reqs.level.class?.name ?? "";
         if (typeof reqs.level.subclass != "undefined") {
-          ret.push("Level " + reqs.level.level + " " + reqs.level.subclass.name + " " + reqs.level.class.name);
+          ret.push("Level " + reqs.level.level + " " + reqs.level.subclass.name + (className ? " " + className : ""));
+        } else if (className) {
+          ret.push("Level " + reqs.level.level + " " + className);
         } else {
-          ret.push("Level " + reqs.level.level + " " + reqs.level.class.name);
+          ret.push("Level " + reqs.level.level);
         }
       }
       if (typeof reqs.pact != "undefined") {

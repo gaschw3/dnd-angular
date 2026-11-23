@@ -50,7 +50,7 @@ export class EpicBoonsComponent implements OnInit, OnDestroy {
       placeholder: 'ASI',
       filterId: 'feat-bonus-filter',
       width: '30%',
-      value: f => this.titlecaseExcept.transform(f.asi || '')
+      value: f => this.titlecaseExcept.transform(f.asi || '') || ''
     },
     {
       key: 'source',

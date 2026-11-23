@@ -12,7 +12,7 @@ export class ItemTypePipe implements PipeTransform {
 
 }
 
-const typeTable = {
+const typeTable: Record<string, string> = {
   "RD": "Rod",
   "WD": "Wand",
   "S": "Shield",

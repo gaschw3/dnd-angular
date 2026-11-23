@@ -12,14 +12,14 @@ export class ItemComponent {
 
   @Input() item: Item;
 
-  damageType = {
+  damageType: Record<string, string> = {
     "B": "bludgeoning",
     "P": "piercing",
     "S": "slashing",
     "Y": "psychic"
   }
 
-  itemProps = {
+  itemProps: Record<string, string> = {
     "A": "ammunition",
     "F": "finesse",
     "2H": "two-handed",
@@ -31,7 +31,7 @@ export class ItemComponent {
     "V": "versatile"
   }
 
-  isSimpleList(items): boolean {
+  isSimpleList(items: any[]): boolean {
     if (typeof items[0] === 'string') {
       return true;
     } else {
@@ -39,7 +39,7 @@ export class ItemComponent {
     }
   }
 
-  getEntryType(entry): string {
+  getEntryType(entry: any): string {
     if (entry.type) {
       if (entry.type == "list") {
         return "list";
@@ -50,18 +50,17 @@ export class ItemComponent {
       } else if (entry.type == "entries") {
         return "entries";
       }
-    } else {
-      return "";
     }
+    return "";
   }
 
-  getItemDamage(item): string {
+  getItemDamage(item: any): string {
     let dmgString = "";
     dmgString += item.dmg1;
     dmgString += " " + this.damageType[item.dmgType];
     if (item.property) {
-      const properties = [];
-      item.property.forEach(element => {
+      const properties: string[] = [];
+      item.property.forEach((element: string) => {
         switch(element) {
           case "A":
             properties.push("ammunition (" + item.range + ")");
@@ -81,14 +80,14 @@ export class ItemComponent {
     return dmgString;
   }
 
-  getItemInfo(item): string {
+  getItemInfo(item: any): string {
     const itemInfo = [];
     itemInfo.push(this.getItemType(item));
     itemInfo.push(this.getItemRarity(item));
     return itemInfo.filter(Boolean).join(", ");
   }
 
-  getItemType(item): string {
+  getItemType(item: any): string {
     let itemInfo = "";
 
     if (item.wondrous && item.type) {
@@ -136,7 +135,7 @@ export class ItemComponent {
     return itemInfo.charAt(0).toUpperCase() + itemInfo.slice(1);
   }
 
-  getItemRarity(item) {
+  getItemRarity(item: any): string {
     let itemRarity = "";
     if (item.rarity && item.rarity !== "none") {
       itemRarity += item.rarity;

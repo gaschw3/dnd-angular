@@ -19,5 +19,5 @@ export class MonsterComponent {
     public monsterService: MonsterHelperService
   ) { }
 
-  isObject(val): boolean { return typeof val === 'object'; }
+  isObject(val: unknown): boolean { return typeof val === 'object'; }
 }

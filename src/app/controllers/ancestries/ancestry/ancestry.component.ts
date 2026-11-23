@@ -11,7 +11,7 @@ export class AncestryComponent {
 
   @Input() ancestry: Ancestry;
 
-  sizeTable = {
+  sizeTable: Record<string, string> = {
     "T": "Tiny",
     "S": "Small",
     "M": "Medium",
@@ -19,7 +19,7 @@ export class AncestryComponent {
     "S/M": "Medium or Small, choose at creation"
   }
 
-  renderSize(size) {
+  renderSize(size: string): string {
     return this.sizeTable[size];
   }
 }

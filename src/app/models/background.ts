@@ -23,7 +23,7 @@ export class Background implements IBackground {
   info: string;
   entries: any[];
 
-  constructor (bgJson) {
+  constructor (bgJson: any) {
     this.name = bgJson.name;
     this.id = HelperService.createIdFromName(bgJson.name);
     this.source = bgJson.source;

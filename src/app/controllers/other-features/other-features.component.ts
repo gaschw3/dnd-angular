@@ -151,7 +151,7 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
     }
   }
 
-  getPrereq(prereq: Prerequisite[]): string {
+  getPrereq(prereq?: Prerequisite[]): string {
     if (!prereq || prereq.length < 1) {
       return '—';
     } else {
@@ -176,17 +176,18 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
         });
       }
       if (typeof reqs.level !== 'undefined') {
+        const className = reqs.level.class?.name ?? '';
         if (typeof reqs.level.subclass !== 'undefined') {
-          ret.push(reqs.level.subclass.name + ' ' + reqs.level.class.name);
-        } else {
-          ret.push(reqs.level.class.name);
+          ret.push(reqs.level.subclass.name + (className ? ' ' + className : ''));
+        } else if (className) {
+          ret.push(className);
         }
       }
       return ret.join(', ');
     }
   }
 
-  getLevelPrereq(prereq: Prerequisite[]): string {
+  getLevelPrereq(prereq?: Prerequisite[]): string {
     if (!prereq || prereq.length < 1) {
       return '—';
     } else {

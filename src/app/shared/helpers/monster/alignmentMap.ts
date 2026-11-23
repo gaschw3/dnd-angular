@@ -1,4 +1,4 @@
-export const alignmentMap = {
+export const alignmentMap: Record<string, string> = {
     "A": "any alignment",
     "NX": "any non-",
     "NY": "any",

@@ -31,17 +31,18 @@ export class MonsterHelperService {
   }
 
   getXpByCr(passedCr: string): number {
-    return (this.crXp.find(i => i.cr === passedCr)).xp;
+    return this.crXp.find(i => i.cr === passedCr)?.xp ?? 0;
   }
 
   //convert "alignment": { "L", "E" }  -> "lawful evil"
-  translateAlignment(alignment): string {
-    const alignString = alignment.map(alignment => this.alignmentMap[alignment]).join(' ');
+  translateAlignment(alignment: string[] | string): string {
+    const codes = Array.isArray(alignment) ? alignment : [alignment];
+    const alignString = codes.map(code => this.alignmentMap[code] ?? code).join(' ');
     return alignString.replace("- ", "-"); //hacky way to remove slashed in "any non-X" situations (
     // eg. alignment: ["NX", "E"] -> 'any non-evil' instead of 'any non- evil')
   }
 
-  translateSize(size): string {
+  translateSize(size: string): string {
     return this.sizeMap[size];
   }
 
@@ -50,7 +51,7 @@ export class MonsterHelperService {
   // "type": { "type": "typeName", "tags": { "typeSubName"}}
   // "type": { "type": "typeName", "swarmSize": [ "size" ]}
   // this coverts them all to the appropriate string
-  getType(type): string {
+  getType(type: any): string {
     if (type.tags) {
       return `${type.type} (${type.tags[0]})`;
     } else if (type.swarmSize) {

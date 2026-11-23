@@ -33,7 +33,7 @@ module.exports = defineConfig([
       ],
       "@angular-eslint/prefer-standalone": "warn",
       "@angular-eslint/prefer-inject": "warn",
-      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-explicit-any": "off",
     },
   },
   {

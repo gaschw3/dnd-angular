@@ -55,8 +55,11 @@ const PLAIN_TEXT_TAGS = new Set([
 })
 export class LinkmakerPipe implements PipeTransform {
 
-  transform(value: string): string {
-    if (!value || !value.includes('@')) {
+  transform(value: string | null | undefined): string {
+    if (!value) {
+      return '';
+    }
+    if (!value.includes('@')) {
       return value;
     }
 

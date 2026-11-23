@@ -12,7 +12,7 @@ export class EntryRendererComponent {
   @Input() parent: any;
   @Input() list: any;
 
-  isSimpleList(items): boolean {
+  isSimpleList(items: any[]): boolean {
     if (typeof items[0] === 'string') {
       return true;
     } else {
@@ -20,7 +20,7 @@ export class EntryRendererComponent {
     }
   }
 
-  getEntryType(entry): string {
+  getEntryType(entry: any): string {
     if (entry.type) {
       if (entry.type == "list") {
         return "list";
@@ -42,7 +42,7 @@ export class EntryRendererComponent {
     }
   }
 
-  getListItemHtml(entry): string {
+  getListItemHtml(entry: any): string {
     //data isn't super clean, an "item" should only have an "entry":string, but very occasionally, one slips through that uses "entries":[] where the array is just one string - handle that case
     if (entry.entries)
       return '<strong>'+entry.name+'</strong> '+ entry.entries.join("\n");

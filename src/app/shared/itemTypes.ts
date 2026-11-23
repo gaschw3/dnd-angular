@@ -1,5 +1,5 @@
 //translation table used to create item types
-export const typeTable = {
+export const typeTable: Record<string, string> = {
   "G": "adventuring gear",
   "TG": "trade good",
   "FD": "food & drink",

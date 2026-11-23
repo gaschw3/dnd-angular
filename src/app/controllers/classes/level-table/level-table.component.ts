@@ -20,7 +20,7 @@ export class LevelTableComponent {
     this.viewport.setOffset([0, 80]);
   }
 
-  getFeatures(level) {
+  getFeatures(level: number) {
     return this.class.classFeature.filter(f => f.level == level);
   }
 

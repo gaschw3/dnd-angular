@@ -39,7 +39,7 @@ export class ClassFeature {
   header: number;
   cost: string;
 
-  constructor (feat) {
+  constructor (feat: any) {
     this.className = feat.className;
     this.classSource = feat.classSource;
     this.entries = feat.entries;
@@ -70,7 +70,7 @@ export class newMulticlass {
   requirements: string;
   proficiencies: Proficiencies;
 
-  constructor (mc) {
+  constructor (mc: any) {
     const reqArr = []
     if (mc.requirements) {
       for (const [key, value] of Object.entries(mc.requirements)) {
@@ -94,7 +94,7 @@ export class Proficiencies {
   weapons?: string;
   tools?: string;
 
-  constructor (prof, fallback) {
+  constructor (prof: any, fallback: string) {
     this.armor = prof.armor ? (prof.armor).join(", ") : fallback;
     if (prof.skills && prof.skills[0].any) {
       this.skills = `Choose any ${prof.skills[0].any.count}`
@@ -132,7 +132,7 @@ export class newClass implements IClass{
   subclass: Subclass[];
   subclassFeature: ClassFeature[] = [];
 
-  constructor (classJson) {
+  constructor (classJson: any) {
     const currClass = classJson.class[0];
     this.name = currClass.name;
     this.id = HelperService.createIdFromName(currClass.name);
@@ -151,9 +151,9 @@ export class newClass implements IClass{
     this.startingProficiencies = new Proficiencies(currClass.startingProficiencies, 'none');
     this.subclassTitle = currClass.subclassTitle;
 
-    classJson.classFeature.forEach(inFeat => this.classFeature.push(new ClassFeature(inFeat)));
+    classJson.classFeature.forEach((inFeat: any) => this.classFeature.push(new ClassFeature(inFeat)));
     this.subclass = classJson.subclass;
-    classJson.subclassFeature.forEach(inFeat => this.subclassFeature.push(new ClassFeature(inFeat)));
+    classJson.subclassFeature.forEach((inFeat: any) => this.subclassFeature.push(new ClassFeature(inFeat)));
 
     //create levelTable[][] from JOSN.classTableGroups
     this.levelTable = new Array<string[]>();

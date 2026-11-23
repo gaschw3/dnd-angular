@@ -13,17 +13,18 @@ export class SpellComponent {
 
   ccId = 0; //current class id
 
-  formatSpellLevel(lvl, schoolObj){
+  formatSpellLevel(lvl: number | string, schoolObj: { name: string }): string {
+    const level = Number(lvl);
     const school = schoolObj.name;
-    if (lvl === 0)
+    if (level === 0)
       return school + " Cantrip";
-    if (lvl === 1)
-      return lvl + "st level " + school;
-    if (lvl === 2)
-      return lvl + "nd level " + school;
-    if (lvl === 3)
-      return lvl + "rd level " + school;
+    if (level === 1)
+      return level + "st level " + school;
+    if (level === 2)
+      return level + "nd level " + school;
+    if (level === 3)
+      return level + "rd level " + school;
     else
-      return lvl + "th level " + school;
+      return level + "th level " + school;
   }
 }
