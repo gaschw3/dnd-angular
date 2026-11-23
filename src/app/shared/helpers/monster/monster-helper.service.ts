@@ -31,7 +31,8 @@ export class MonsterHelperService {
   }
 
   getXpByCr(passedCr: string): number {
-    return this.crXp.find(i => i.cr === passedCr)?.xp ?? 0;
+    const baseCr = passedCr && passedCr.includes('(') ? passedCr.split(' (')[0] : passedCr;
+    return this.crXp.find(i => i.cr === baseCr)?.xp ?? 0;
   }
 
   //convert "alignment": { "L", "E" }  -> "lawful evil"

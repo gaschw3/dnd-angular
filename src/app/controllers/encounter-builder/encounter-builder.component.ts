@@ -311,13 +311,14 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
       return 'high';
     }
 
-    if (xpValue < this.currPartyDifficulty.easy) {
+    const partyBudget = levelXp[this.partyLevel];
+    if (xpValue < partyBudget.easy * this.partySize) {
       return 'trivial';
-    } else if (xpValue < this.currPartyDifficulty.medium) {
+    } else if (xpValue < partyBudget.medium * this.partySize) {
       return 'easy';
-    } else if (xpValue < this.currPartyDifficulty.hard) {
+    } else if (xpValue < partyBudget.hard * this.partySize) {
       return 'medium';
-    } else if (xpValue < this.currPartyDifficulty.deadly) {
+    } else if (xpValue < partyBudget.deadly * this.partySize) {
       return 'hard';
     }
     return 'deadly';

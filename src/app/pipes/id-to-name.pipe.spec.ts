@@ -1,3 +1,4 @@
+import { describe, it, expect, beforeEach } from 'vitest';
 import { IdToNamePipe } from './id-to-name.pipe';
 
 describe('IdToNamePipe', () => {

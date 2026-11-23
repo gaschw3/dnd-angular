@@ -1,4 +1,4 @@
-@for (entry of list; track entry) {
+@for (entry of list; track $index) {
   @switch (getEntryType(entry)) {
     @case ('inset') {
       <div>
@@ -20,15 +20,15 @@
         <table class="table table-bordered table-striped table-sm">
           <thead>
             <tr>
-              @for (row of entry.colLabels; track row; let i = $index) {
+              @for (row of entry.colLabels; track $index; let i = $index) {
                 <th class={{entry.colStyles[i]}}>{{row}}</th>
               }
             </tr>
           </thead>
           <tbody>
-            @for (row of entry.rows; track row) {
+            @for (row of entry.rows; track $index) {
               <tr>
-                @for (cell of row; track cell; let i = $index) {
+                @for (cell of row; track $index; let i = $index) {
                   <td class={{entry.colStyles[i]}} [innerHtml]="cell | linkmaker | sanitizeHtml"></td>
                 }
               </tr>

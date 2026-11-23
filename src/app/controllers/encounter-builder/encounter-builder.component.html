@@ -20,7 +20,7 @@
             <label for="partySizeSelect" class="col-sm-6 col-xl-5 col-form-label">Players:</label>
             <div class="col-sm-6 col-xl-7">
               <select [(ngModel)]="partySize" name="partySize" class="form-select form-select-sm" id="partySizeSelect" (change)="recalcPartyDifficulty()">
-                @for (num of helper.counter(10); track num; let i = $index) {
+                @for (num of helper.counter(10); track $index; let i = $index) {
                   <option [ngValue]="i+1">{{i+1}}</option>
                 }
               </select>
@@ -30,7 +30,7 @@
             <label for="partyLevelSelect" class="col-sm-6 col-xl-5 col-form-label">Level:</label>
             <div class="col-sm-6 col-xl-7">
               <select [(ngModel)]="partyLevel" name="partyLevel" class="form-select form-select-sm" id="partyLevelSelect" (change)="recalcPartyDifficulty()">
-                @for (num of helper.counter(20); track num; let i = $index) {
+                @for (num of helper.counter(20); track $index; let i = $index) {
                   <option [ngValue]="i+1">{{i+1}}</option>
                 }
               </select>

@@ -104,24 +104,10 @@
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
             "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/royal-seal.png",
-              "src/assets"
-            ]
+            "runner": "vitest"
           }
         },
         "deploy": {
