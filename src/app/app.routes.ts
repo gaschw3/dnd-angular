@@ -18,8 +18,10 @@ const loadEpicBoons = () =>
   import('./controllers/epic-boons/epic-boons.component').then(m => m.EpicBoonsComponent);
 const loadItems = () =>
   import('./controllers/items/items.component').then(m => m.ItemsComponent);
-const loadPointBuy = () =>
-  import('./controllers/point-buy/point-buy.component').then(m => m.PointBuyComponent);
+const loadCharacterBuilder = () =>
+  import('./controllers/character-builder/character-builder.component').then(
+    m => m.CharacterBuilderComponent
+  );
 const loadOtherFeatures = () =>
   import('./controllers/other-features/other-features.component').then(m => m.OtherFeaturesComponent);
 
@@ -41,7 +43,8 @@ export const routes: Routes = [
   { path: 'epic-boons/:featName', loadComponent: loadEpicBoons },
   { path: 'items', title: 'Items — EotCC 5e', loadComponent: loadItems },
   { path: 'items/:itemName', loadComponent: loadItems },
-  { path: 'point-buy', title: 'Point Buy — EotCC 5e', loadComponent: loadPointBuy },
+  { path: 'character-builder', title: 'Character Builder — EotCC 5e', loadComponent: loadCharacterBuilder },
+  { path: 'point-buy', redirectTo: 'character-builder', pathMatch: 'full' },
   { path: 'other-features', title: 'Misc. Features — EotCC 5e', loadComponent: loadOtherFeatures },
   { path: 'other-features/:feature', loadComponent: loadOtherFeatures },
   { path: 'other-features/:type/:feature', loadComponent: loadOtherFeatures },

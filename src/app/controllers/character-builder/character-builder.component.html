@@ -1,0 +1,279 @@
+<div class="pb-page py-3">
+  <div class="card pb-card mb-3">
+    <div class="card-body">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <div>
+          <h1 class="mb-0">Character Builder</h1>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+          <button
+            type="button"
+            class="btn btn-sm pb-reset-btn"
+            [class.btn-warning]="hasChanges"
+            [class.btn-outline-secondary]="!hasChanges"
+            [disabled]="!hasChanges"
+            (click)="resetAll()"
+          >
+            <fa-icon [icon]="faRotateLeft" aria-hidden="true" /> Reset
+          </button>
+          <button type="button" class="btn btn-sm btn-success" (click)="copySummary()">
+            <fa-icon [icon]="copied ? faCheck : faCopy" aria-hidden="true" />
+            {{ copied ? ' Copied!' : ' Copy Summary' }}
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-3 align-items-center mb-3">
+        <div class="col-md-7">
+          <div class="mb-3">
+            <label for="totalPoints" class="form-label mb-1">Available Points</label>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <input
+                id="totalPoints"
+                type="number"
+                min="0"
+                class="form-control pb-budget-input"
+                [(ngModel)]="totalPoints"
+                (change)="onBudgetInputChange()"
+              />
+              <div class="btn-group" role="group" aria-label="Point budget presets">
+                @for (preset of budgetPresets; track preset) {
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    [class.active]="totalPoints === preset"
+                    (click)="setBudget(preset)"
+                  >
+                    {{ preset }} pts
+                  </button>
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <label for="backgroundSelect" class="form-label mb-1">Background</label>
+            <select
+              id="backgroundSelect"
+              class="form-select"
+              [(ngModel)]="selectedBackgroundId"
+              (ngModelChange)="onBackgroundChange()"
+            >
+              <option [ngValue]="null">— None / Custom (All Stats) —</option>
+              @for (bg of backgrounds; track bg.id) {
+                <option [ngValue]="bg.id">
+                  {{ bg.name }} ({{ getBackgroundAbilitySummary(bg) }})
+                </option>
+              }
+            </select>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3 mt-2">
+            <div class="form-check form-switch">
+              <input
+                id="freeformAsiSwitch"
+                type="checkbox"
+                class="form-check-input"
+                [(ngModel)]="freeformAsi"
+                (change)="onFreeformChange()"
+              />
+              <label class="form-check-label" for="freeformAsiSwitch">
+                Allow any ability scores
+              </label>
+            </div>
+            <div class="form-check form-switch">
+              <input
+                id="extendedRangeSwitch"
+                type="checkbox"
+                class="form-check-input"
+                [(ngModel)]="extendedRange"
+                (change)="onExtendedRangeChange()"
+              />
+              <label class="form-check-label" for="extendedRangeSwitch">
+                Extended range (6–18)
+              </label>
+            </div>
+            <div class="form-check form-switch">
+              <input
+                id="customOriginFeatSwitch"
+                type="checkbox"
+                class="form-check-input"
+                [(ngModel)]="customOriginFeat"
+                (change)="onCustomOriginFeatChange()"
+              />
+              <label class="form-check-label" for="customOriginFeatSwitch">
+                Choose a different Origin Feat
+              </label>
+            </div>
+          </div>
+
+          @if (customOriginFeat) {
+            <div class="mt-2">
+              <label for="originFeatSelect" class="form-label mb-1">Origin Feat</label>
+              <select
+                id="originFeatSelect"
+                class="form-select"
+                [(ngModel)]="selectedOriginFeatId"
+                (ngModelChange)="onOriginFeatChange()"
+              >
+                <option [ngValue]="null">— None —</option>
+                @for (feat of originFeats; track feat.id) {
+                  <option [ngValue]="feat.id">{{ feat.name }}</option>
+                }
+              </select>
+            </div>
+          }
+        </div>
+
+        <div class="col-md-5 d-flex flex-column align-items-center justify-content-center">
+          <div
+            class="progress-circle"
+            [class.is-negative]="pointsRemaining < 0"
+            [class.is-over-max]="isOverMax"
+            [style.--progress]="clampedProgress + '%'"
+            [style.--overflow]="overflowProgress + '%'"
+          >
+            <div class="progress-circle-inner">
+              <span class="progress-value">{{ pointsRemaining }}/{{ totalPoints }}</span>
+              <small class="progress-label">{{ pointsRemaining < 0 ? 'over budget' : 'pts left' }}</small>
+            </div>
+          </div>
+          <div class="pb-asi-status mt-2">
+            <small>
+              Background ASI:
+              <strong [class.text-success]="bonusSpent === maxBonusTotal">
+                +{{ bonusSpent }} / +{{ maxBonusTotal }}
+              </strong>
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle mb-0 pb-table">
+          <thead>
+            <tr>
+              <th scope="col"><span class="d-none d-sm-inline">Ability</span><span class="d-sm-none">Stat</span></th>
+              <th scope="col" class="text-center">Base <span class="d-none d-sm-inline">({{ minScore }}–{{ maxScore }})</span></th>
+              <th scope="col" class="text-center">Bonus <span class="d-none d-sm-inline">(0–2)</span></th>
+              <th scope="col" class="text-center"><span class="d-none d-sm-inline">Total</span><span class="d-sm-none">Tot</span></th>
+              <th scope="col" class="text-center"><span class="d-none d-sm-inline">Modifier</span><span class="d-sm-none">Mod</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (stat of stats; track stat.key) {
+              <tr [class.pb-row-bg-match]="selectedBackground && !freeformAsi && isStatBonusAllowed(stat.key)">
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <strong class="pb-stat-code">{{ stat.key | uppercase }}</strong>
+                    <span class="d-none d-sm-inline opacity-75">{{ stat.label }}</span>
+                  </div>
+                </td>
+                <td class="text-center">
+                  <div class="pb-stepper">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-primary pb-step-btn"
+                      [disabled]="!canDecrementBase(stat)"
+                      (click)="stepBase(stat, -1)"
+                      [attr.aria-label]="'Decrease ' + stat.label + ' base score'"
+                    >
+                      <fa-icon [icon]="faMinus" aria-hidden="true" />
+                    </button>
+                    <input
+                      type="number"
+                      class="form-control text-center pb-score-input"
+                      [id]="'stat-' + stat.key"
+                      [min]="minScore"
+                      [max]="maxScore"
+                      [(ngModel)]="stat.base"
+                      (change)="onBaseInputChange(stat)"
+                      [attr.aria-label]="stat.label + ' base score'"
+                    />
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-primary pb-step-btn"
+                      [disabled]="!canIncrementBase(stat)"
+                      (click)="stepBase(stat, 1)"
+                      [attr.aria-label]="'Increase ' + stat.label + ' base score'"
+                    >
+                      <fa-icon [icon]="faPlus" aria-hidden="true" />
+                    </button>
+                  </div>
+                  @if (nextStepCost(stat.base) !== null) {
+                    <small class="pb-next-cost opacity-75">next: +{{ nextStepCost(stat.base) }} pt</small>
+                  }
+                </td>
+                <td class="text-center">
+                  <div class="pb-stepper">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-primary pb-step-btn"
+                      [disabled]="!canDecrementBonus(stat)"
+                      (click)="stepBonus(stat, -1)"
+                      [attr.aria-label]="'Decrease ' + stat.label + ' bonus'"
+                    >
+                      <fa-icon [icon]="faMinus" aria-hidden="true" />
+                    </button>
+                    <span
+                      class="pb-bonus-val"
+                      [class.text-success]="stat.bonus > 0"
+                      [class.opacity-50]="!isStatBonusAllowed(stat.key)"
+                    >
+                      +{{ stat.bonus }}
+                    </span>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-primary pb-step-btn"
+                      [disabled]="!canIncrementBonus(stat)"
+                      (click)="stepBonus(stat, 1)"
+                      [attr.aria-label]="'Increase ' + stat.label + ' bonus'"
+                    >
+                      <fa-icon [icon]="faPlus" aria-hidden="true" />
+                    </button>
+                  </div>
+                </td>
+                <td class="text-center fw-bold">{{ getTotalScore(stat) }}</td>
+                <td
+                  class="text-center fw-semibold"
+                  [class.text-danger]="getModNum(stat) < 0"
+                  [class.text-success]="getModNum(stat) > 0"
+                >
+                  {{ getMod(stat) }}
+                </td>
+              </tr>
+            }
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="2" class="text-end">Totals</th>
+              <td class="text-center fw-semibold">+{{ bonusSpent }} / +{{ maxBonusTotal }}</td>
+              <td colspan="2" class="text-center">
+                @if (pointsRemaining < 0) {
+                  <span class="text-danger fw-semibold">{{ helper.abs(pointsRemaining) }} pts over budget</span>
+                } @else {
+                  <span class="opacity-75">{{ pointsRemaining }} / {{ totalPoints }} pts remaining</span>
+                }
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  @if (selectedBackground || activeOriginFeat) {
+    <div class="row g-3">
+      @if (selectedBackground) {
+        <div [class]="activeOriginFeat ? 'col-lg-8' : 'col-12'">
+          <app-background [background]="selectedBackground"></app-background>
+        </div>
+      }
+      @if (activeOriginFeat) {
+        <div [class]="selectedBackground ? 'col-lg-4' : 'col-12'">
+          <app-feat [feat]="activeOriginFeat"></app-feat>
+        </div>
+      }
+    </div>
+  }
+</div>
