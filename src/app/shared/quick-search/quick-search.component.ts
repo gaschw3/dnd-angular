@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, HostListener, ViewChild, computed, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, ViewChild, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -76,12 +76,10 @@ export class QuickSearchComponent {
     return [...prefixMatches, ...nameMatches, ...otherMatches].slice(0, 40);
   });
 
-  constructor(
-    private dataService: DndDataService,
-    public bookmarks: BookmarksService,
-    private router: Router,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private dataService = inject(DndDataService);
+  public bookmarks = inject(BookmarksService);
+  private router = inject(Router);
+  private cdr = inject(ChangeDetectorRef);
 
   @HostListener('document:keydown', ['$event'])
   onKeydown(event: KeyboardEvent): void {

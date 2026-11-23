@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as L from 'leaflet';
 import { Subject } from 'rxjs';
@@ -26,10 +26,8 @@ export class HexmapComponent implements AfterViewInit, OnDestroy {
   searchQuery = '';
   allLocations: SearchableLocation[] = [];
 
-  constructor(
-    private dataService: DndDataService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private dataService = inject(DndDataService);
+  private cdr = inject(ChangeDetectorRef);
 
   get filteredLocations(): SearchableLocation[] {
     const q = this.searchQuery.trim().toLowerCase();

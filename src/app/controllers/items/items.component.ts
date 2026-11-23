@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { CommonModule, Location, TitleCasePipe } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -99,12 +99,10 @@ export class ItemsComponent implements OnInit, OnDestroy {
 
   readonly rowKey = (item: Item) => this.idPipe.transform(item.name);
 
-  constructor(
-    private dataService: DndDataService,
-    private route: ActivatedRoute,
-    private location: Location,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private dataService = inject(DndDataService);
+  private route = inject(ActivatedRoute);
+  private location = inject(Location);
+  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.dataService.getItems().pipe(takeUntil(this.destroy$)).subscribe(items => {

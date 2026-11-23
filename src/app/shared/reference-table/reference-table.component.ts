@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -67,7 +67,7 @@ export class ReferenceTableComponent<T = any> implements OnChanges {
   filteredRows: T[] = [];
   pagedRows: T[] = [];
 
-  constructor(private sanitizer: DomSanitizer) {}
+  private sanitizer = inject(DomSanitizer);
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['defaultSortKey'] && this.sortKey === null) {

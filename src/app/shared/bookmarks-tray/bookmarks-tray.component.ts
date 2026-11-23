@@ -1,4 +1,4 @@
-import { Component, HostListener, OnDestroy, signal } from '@angular/core';
+import { Component, HostListener, OnDestroy, inject, signal } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -20,11 +20,11 @@ export class BookmarksTrayComponent implements OnDestroy {
   private routerSub: Subscription;
   private unlistenLocation?: () => void;
 
-  constructor(
-    public bookmarks: BookmarksService,
-    private router: Router,
-    private location: Location
-  ) {
+  public bookmarks = inject(BookmarksService);
+  private router = inject(Router);
+  private location = inject(Location);
+
+  constructor() {
     this.syncCurrentUrl();
     this.routerSub = this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))

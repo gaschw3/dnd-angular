@@ -1,5 +1,5 @@
 import { HelperService } from './../../shared/helpers/helper.service';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Ancestry } from '../../models/ancestry';
@@ -48,11 +48,9 @@ export class PointBuyComponent implements OnInit {
   choose = 3;
   pickTwo = false;
 
-  constructor(
-    private dataService: DndDataService,
-    public helper: HelperService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private dataService = inject(DndDataService);
+  public helper = inject(HelperService);
+  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.dataService.getLegacyAncestries().subscribe(ancestries => {

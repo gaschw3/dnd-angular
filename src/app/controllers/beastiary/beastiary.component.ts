@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { Location } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -76,13 +76,11 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
 
   readonly rowKey = (monster: Monster) => monster.id;
 
-  constructor(
-    private dataService: DndDataService,
-    private monsterHelper: MonsterHelperService,
-    private route: ActivatedRoute,
-    private location: Location,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private dataService = inject(DndDataService);
+  private monsterHelper = inject(MonsterHelperService);
+  private route = inject(ActivatedRoute);
+  private location = inject(Location);
+  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.dataService.getMonsters().pipe(takeUntil(this.destroy$)).subscribe(monsters => {

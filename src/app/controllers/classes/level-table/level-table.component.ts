@@ -1,5 +1,5 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { newClass } from 'src/app/models';
 
@@ -17,7 +17,9 @@ export class LevelTableComponent {
   }
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private viewport: ViewportScroller) {
+  private viewport = inject(ViewportScroller);
+
+  constructor() {
     this.viewport.setOffset([0, 80]);
   }
 

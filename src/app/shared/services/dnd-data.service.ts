@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin, Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -29,7 +29,7 @@ export class DndDataService {
   private otherFeatures$?: Observable<OtherFeature[]>;
   private mapLocations$?: Observable<MapLocationsData>;
 
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   getSpells(): Observable<Spell[]> {
     if (!this.spells$) {

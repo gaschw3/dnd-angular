@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
+import { Component, HostListener, ViewChild, inject } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
@@ -36,13 +36,13 @@ export class AppComponent {
   @ViewChild(QuickSearchComponent) quickSearch?: QuickSearchComponent;
   @ViewChild(BookmarksTrayComponent) bookmarksTray?: BookmarksTrayComponent;
 
-  constructor(
-    private router: Router,
-    public bookmarks: BookmarksService,
-    viewportScroller: ViewportScroller
-  ) {
-    viewportScroller.setOffset([0, 80]);
-    const navEndEvent$ = router.events.pipe(
+  private router = inject(Router);
+  public bookmarks = inject(BookmarksService);
+  private viewportScroller = inject(ViewportScroller);
+
+  constructor() {
+    this.viewportScroller.setOffset([0, 80]);
+    const navEndEvent$ = this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     );
     navEndEvent$.subscribe((e: NavigationEnd) => {

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { Location } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -77,12 +77,10 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
 
   readonly rowKey = (bg: Background) => bg.id;
 
-  constructor(
-    private dataService: DndDataService,
-    private route: ActivatedRoute,
-    private location: Location,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private dataService = inject(DndDataService);
+  private route = inject(ActivatedRoute);
+  private location = inject(Location);
+  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.dataService.getBackgrounds().pipe(takeUntil(this.destroy$)).subscribe(backgrounds => {

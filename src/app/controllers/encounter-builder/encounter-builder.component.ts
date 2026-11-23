@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
@@ -148,12 +148,10 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
 
   readonly rowKey = (monster: Monster) => monster.id;
 
-  constructor(
-    private dataService: DndDataService,
-    public helper: HelperService,
-    public monsterHelper: MonsterHelperService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private dataService = inject(DndDataService);
+  public helper = inject(HelperService);
+  public monsterHelper = inject(MonsterHelperService);
+  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.savedEncounters = this.loadSavedEncounters();
