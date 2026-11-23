@@ -43,7 +43,6 @@ export class AppComponent {
   theme = this.getStoredTheme();
 
   @ViewChild(QuickSearchComponent) quickSearch?: QuickSearchComponent;
-  @ViewChild(BookmarksTrayComponent) bookmarksTray?: BookmarksTrayComponent;
 
   private router = inject(Router);
   public bookmarks = inject(BookmarksService);

@@ -6,21 +6,12 @@ import { SanitizeHtmlPipe } from '../../pipes/sanitize-html.pipe';
   imports: [LinkmakerPipe, SanitizeHtmlPipe],
   selector: 'app-entry-renderer',
   templateUrl: './entry-renderer.component.html',
-  styleUrls: ['./entry-renderer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EntryRendererComponent {
 
   @Input() parent: any;
   @Input() list: any;
-
-  isSimpleList(items: any[]): boolean {
-    if (typeof items[0] === 'string') {
-      return true;
-    } else {
-      return false;
-    }
-  }
 
   getEntryType(entry: any): string {
     if (entry.type) {

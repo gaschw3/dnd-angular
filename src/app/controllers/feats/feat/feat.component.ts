@@ -8,8 +8,7 @@ import { TitlecaseExceptPipe } from 'src/app/pipes/titlecase-except.pipe';
 @Component({
   imports: [DetailHeaderComponent, EntryRendererComponent, LinkmakerPipe, TitlecaseExceptPipe],
   selector: 'app-feat',
-  templateUrl: './feat.component.html',
-  styleUrls: ['./feat.component.scss']
+  templateUrl: './feat.component.html'
 })
 export class FeatComponent {
   readonly feat = input.required<Feat>();

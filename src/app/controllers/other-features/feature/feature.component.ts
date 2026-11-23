@@ -6,8 +6,7 @@ import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-rend
 @Component({
   imports: [DetailHeaderComponent, EntryRendererComponent],
   selector: 'app-feature',
-  templateUrl: './feature.component.html',
-  styleUrls: ['./feature.component.scss']
+  templateUrl: './feature.component.html'
 })
 export class FeatureComponent {
   readonly feature = input.required<OtherFeature>();

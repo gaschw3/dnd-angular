@@ -29,11 +29,10 @@ describe('HelperService', () => {
     });
   });
 
-  describe('abs and counter', () => {
-    it('returns absolute values and fixed-length arrays', () => {
+  describe('abs', () => {
+    it('returns absolute values', () => {
       expect(service.abs(-4)).toBe(4);
       expect(service.abs(3)).toBe(3);
-      expect(service.counter(5).length).toBe(5);
     });
   });
 });

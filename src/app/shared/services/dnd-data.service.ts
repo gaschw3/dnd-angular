@@ -21,7 +21,6 @@ export class DndDataService {
   private monsters$?: Observable<Monster[]>;
   private items$?: Observable<Item[]>;
   private ancestries$?: Observable<Ancestry[]>;
-  private legacyAncestries$?: Observable<Ancestry[]>;
   private backgrounds$?: Observable<Background[]>;
   private feats$?: Observable<Feat[]>;
   private epicBoons$?: Observable<Feat[]>;
@@ -82,15 +81,6 @@ export class DndDataService {
       );
     }
     return this.ancestries$;
-  }
-
-  getLegacyAncestries(): Observable<Ancestry[]> {
-    if (!this.legacyAncestries$) {
-      this.legacyAncestries$ = this.http.get<Ancestry[]>('assets/data/2023/ancestryData.json').pipe(
-        shareReplay(1)
-      );
-    }
-    return this.legacyAncestries$;
   }
 
   getBackgrounds(): Observable<Background[]> {

@@ -11,8 +11,8 @@ const readJson = (relativePath: string): any => {
 };
 
 describe('JSON data asset integrity', () => {
-  it('validates 2024/spells-small.json entries and school codes', () => {
-    const data = readJson('2024/spells-small.json');
+  it('validates 2024/spells.json entries and school codes', () => {
+    const data = readJson('2024/spells.json');
     expect(Array.isArray(data.spell)).toBe(true);
     expect(data.spell.length).toBeGreaterThan(0);
 
@@ -25,8 +25,8 @@ describe('JSON data asset integrity', () => {
     }
   });
 
-  it('validates 2024/classes-small.json entries', () => {
-    const classes = readJson('2024/classes-small.json');
+  it('validates 2024/classes.json entries', () => {
+    const classes = readJson('2024/classes.json');
     expect(Array.isArray(classes)).toBe(true);
     expect(classes.length).toBeGreaterThan(0);
 

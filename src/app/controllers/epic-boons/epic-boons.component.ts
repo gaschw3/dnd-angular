@@ -13,8 +13,7 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
 @Component({
   imports: [ReferenceTableComponent, FeatComponent],
   selector: 'app-epic-boons',
-  templateUrl: './epic-boons.component.html',
-  styleUrls: ['./epic-boons.component.scss']
+  templateUrl: './epic-boons.component.html'
 })
 export class EpicBoonsComponent implements OnInit, OnDestroy {
   readonly feats = signal<Feat[]>([]);
