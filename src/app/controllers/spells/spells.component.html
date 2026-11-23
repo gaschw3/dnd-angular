@@ -1,24 +1,136 @@
-<h1 text="dnd 5e spells">D&D 5e Spells</h1>
+<h1>D&D 5e Spells</h1>
 
-<div class="row">
-  @if (spells.length) {
-    <div class="col-md-12 spell-table">
+<div class="card mb-3">
+  <div class="card-body py-2 px-3 spell-quick-filters">
+    <div class="spell-filter-group">
+      <span class="spell-filter-label">Class</span>
+      <div class="dropdown spell-class-dropdown" [class.show]="classMenuOpen()">
+        <button
+          type="button"
+          class="form-select form-select-sm spell-class-trigger text-start"
+          [attr.aria-expanded]="classMenuOpen()"
+          aria-haspopup="true"
+          (click)="toggleClassMenu()"
+        >
+          {{ classDropdownLabel() }}
+        </button>
+        <div class="dropdown-menu spell-class-menu p-2" [class.show]="classMenuOpen()">
+          @for (cls of availableClasses(); track cls) {
+            <label class="spell-class-option">
+              <input
+                type="checkbox"
+                class="form-check-input m-0"
+                [checked]="selectedClasses().includes(cls)"
+                (change)="toggleClass(cls)"
+              />
+              <span>{{ cls }}</span>
+            </label>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="spell-filter-group">
+      <span class="spell-filter-label">Level</span>
+      <div class="spell-chip-row">
+        @for (lvl of spellLevels; track lvl) {
+          <button
+            type="button"
+            class="display-chip-btn spell-level-chip"
+            [class.active]="selectedLevels().includes(lvl)"
+            [attr.aria-pressed]="selectedLevels().includes(lvl)"
+            (click)="toggleLevel(lvl)"
+          >
+            {{ lvl }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="spell-filter-group">
+      <button
+        type="button"
+        class="display-chip-btn"
+        [class.active]="onlyConcentration()"
+        [attr.aria-pressed]="onlyConcentration()"
+        (click)="toggleConcentration()"
+      >
+        Concentration
+      </button>
+      <button
+        type="button"
+        class="display-chip-btn"
+        [class.active]="onlyRitual()"
+        [attr.aria-pressed]="onlyRitual()"
+        (click)="toggleRitual()"
+      >
+        Ritual
+      </button>
+      @if (hasQuickFilters()) {
+        <button
+          type="button"
+          class="btn btn-sm btn-link spell-clear-btn"
+          (click)="clearQuickFilters()"
+        >
+          Reset
+        </button>
+      }
+    </div>
+
+    <button
+      type="button"
+      class="display-chip-btn spell-caius-chip ms-auto"
+      [class.active]="onlyCaiusNotes()"
+      [attr.aria-pressed]="onlyCaiusNotes()"
+      aria-label="Filter spells with Caius' Notes"
+      title="Caius' Notes"
+      (click)="toggleCaiusNotes()"
+    >
+      <fa-icon [icon]="faFeatherPointed" aria-hidden="true" />
+      <span class="spell-caius-label">Caius</span>
+    </button>
+  </div>
+</div>
+
+@if (onlyCaiusNotes()) {
+  <figure class="spell-caius-banner mb-3">
+    <blockquote class="blockquote mb-1">
+      <fa-icon [icon]="faFeatherPointed" aria-hidden="true" class="me-2" />
+      <em>"Nice to see a young spellcaster taking some initiative. These are spells I've found in my travels. Mind the ink; it was very expensive."</em>
+    </blockquote>
+    <figcaption class="spell-caius-attrib mb-0">
+      <strong>~ Caius</strong>
+    </figcaption>
+  </figure>
+}
+
+<div class="row g-3 align-items-start">
+  @if (spells().length) {
+    <div class="col-xl-7 spell-table">
       <app-reference-table
         tableId="tbl-spells"
-        [data]="spells"
+        [data]="filteredSpells()"
         [columns]="columns"
         [rowKey]="rowKey"
-        [selectedKey]="currSpell?.id || null"
-        [initialFilters]="initialFilters"
-        [pageSize]="10"
-        [pageSizeOptions]="[10, 15, 30, 60, -1]"
+        [selectedKey]="currSpell()?.id || null"
+        [initialFilters]="initialFilters()"
+        [pageSize]="15"
+        [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="spells"
         defaultSortKey="name"
         (rowClick)="setCurrSpell($event)"
       ></app-reference-table>
     </div>
   }
+
+  <div id="spell-detail-pane" class="col-xl-5 spell-detail-pane">
+    @if (currSpell(); as spell) {
+      <app-spell [spell]="spell"></app-spell>
+    } @else {
+      <div class="display-empty-state">
+        <div class="display-empty-title">Select a Spell</div>
+        <p>Choose a spell from the table to view its casting time, range, components, and full description.</p>
+      </div>
+    }
+  </div>
 </div>
-@if (currSpell) {
-  <app-spell [spell]="currSpell"></app-spell>
-}

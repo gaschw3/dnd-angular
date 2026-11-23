@@ -18,6 +18,7 @@ export interface ISpell {
   higher?:    any;
   ritual?:    string;
   roll?:      string[] | string;
+  hasCaiusNotes: boolean;
 }
 
 export class Spell implements ISpell {
@@ -40,6 +41,7 @@ export class Spell implements ISpell {
   higher?:    any;
   ritual?:    string;
   roll?:      string[] | string;
+  hasCaiusNotes: boolean;
 
   constructor (spellJson: any, spellSource: any) {
         this.name = spellJson.name;
@@ -111,6 +113,16 @@ export class Spell implements ISpell {
         this.change = spellJson.change;
         this.higher = spellJson.entriesHigherLevel ? spellJson.entriesHigherLevel[0] : '';
         this.ritual = spellJson.meta?.ritual;
+        this.hasCaiusNotes =
+          Array.isArray(spellJson.entries) &&
+          spellJson.entries.some(
+            (e: any) =>
+              typeof e === 'object' &&
+              e !== null &&
+              e.type === 'inset' &&
+              typeof e.name === 'string' &&
+              e.name.toLowerCase().includes('caius')
+          );
     }
 }
 

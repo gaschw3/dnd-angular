@@ -28,7 +28,8 @@ body {
     font-family: var(--theme-header-font);
   }
 
-  h1 {
+  h1,
+  .display-title {
     color: var(--theme-header-color);
   }
 
@@ -239,7 +240,9 @@ body {
 
 // Gradient H1 text for Ice and Rainbow realms
 .theme-ice .theme-container h1,
-.theme-rainbow .theme-container h1 {
+.theme-ice .theme-container .display-title,
+.theme-rainbow .theme-container h1,
+.theme-rainbow .theme-container .display-title {
   background: var(--theme-header-gradient);
   background-clip: text;
   -webkit-background-clip: text;

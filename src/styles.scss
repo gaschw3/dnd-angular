@@ -32,14 +32,40 @@
   // Border background images for realms that define --theme-bg-image
   background-image: var(--theme-bg-image, var(--theme-bg, none));
   background-repeat: repeat-y;
-  background-size: 40px;
+  background-size: 20px;
   background-position-x: left;
+
+  main#main-content {
+    padding-left: 28px;
+  }
+
+  @media (min-width: 576px) {
+    background-size: 26px;
+
+    main#main-content {
+      padding-left: 34px;
+    }
+  }
 
   @media (min-width: 768px) {
     background-image: var(--theme-bg-image, var(--theme-bg, none)), var(--theme-bg-image, none);
     background-repeat: repeat-y, repeat-y;
-    background-size: 50px, 50px;
+    background-size: 38px, 38px;
     background-position-x: left, right;
+
+    main#main-content {
+      padding-left: 44px;
+      padding-right: 44px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    background-size: 50px, 50px;
+
+    main#main-content {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
   }
 
   .navbar-brand {

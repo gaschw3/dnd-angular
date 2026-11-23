@@ -90,6 +90,24 @@ export class ReferenceTableComponent<T = any> implements OnChanges {
     if (changes['data'] || changes['columns'] || changes['initialFilters'] || changes['pageSize']) {
       this.recompute(true);
     }
+
+    if (changes['selectedKey'] || (changes['data'] && this.selectedKey)) {
+      this.syncPageToSelected();
+    }
+  }
+
+  private syncPageToSelected(): void {
+    if (!this.paging || this.pageSize <= 0 || !this.selectedKey || !this.rowKey) {
+      return;
+    }
+    const idx = this.filteredRows.findIndex(row => this.rowKey!(row) === this.selectedKey);
+    if (idx === -1) {
+      return;
+    }
+    const targetPage = Math.floor(idx / this.pageSize) + 1;
+    if (targetPage !== this.currentPage) {
+      this.goToPage(targetPage);
+    }
   }
 
   private initFilterModels(): void {

@@ -34,7 +34,7 @@ export class DndDataService {
   getSpells(): Observable<Spell[]> {
     if (!this.spells$) {
       this.spells$ = forkJoin([
-        this.http.get<{ spell: any[] }>('assets/data/2024/spells-small.json'),
+        this.http.get<{ spell: any[] }>('assets/data/2024/spells.json'),
         this.http.get<Record<string, any>>('assets/data/2024/spellSource.json')
       ]).pipe(
         map(([spellsData, spellSource]) =>
@@ -48,7 +48,7 @@ export class DndDataService {
 
   getClasses(): Observable<newClass[]> {
     if (!this.classes$) {
-      this.classes$ = this.http.get<any[]>('assets/data/2024/classes-small.json').pipe(
+      this.classes$ = this.http.get<any[]>('assets/data/2024/classes.json').pipe(
         map(inputClasses => inputClasses.map(inClass => new newClass(inClass))),
         shareReplay(1)
       );

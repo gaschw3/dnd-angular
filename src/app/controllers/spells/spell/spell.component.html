@@ -1,55 +1,60 @@
-@if (spell) {
-  <div class="pb-4">
+@if (spell(); as s) {
+  <div class="pb-4" [class]="'pb-4 spell-school-' + schoolKey()">
     <div class="card">
       <div class="card-body">
-        <div [class]="'spell-header spell-header-'+spell.school.name | lowercase">
-          <div class="row">
-            <div class="col">
-              @if (spell.replaced) {
-                <s><h1>{{spell.name}}</h1></s>
-                <h1>See: <span [innerHtml]="'{@spell '+spell.replaced+'}' | linkmaker"></span></h1>
+        <app-detail-header [title]="s.name" [source]="s.source" [strikethrough]="!!s.replaced">
+          <div detail-description>
+            @if (s.replaced) {
+              <h4 class="mb-1">
+                <strong>Replaced — See: </strong>
+                <span [innerHtml]="'{@spell ' + s.replaced + '}' | linkmaker"></span>
+              </h4>
+            }
+            <h4 class="mb-0">
+              <em [class]="'color-' + schoolKey()">{{ levelSchoolLabel() }}</em>
+            </h4>
+          </div>
+
+          <span detail-meta class="display-meta-pill">
+            <span class="display-meta-label">Casting Time</span>
+            <span class="display-meta-value">{{ castingTimeLabel() }}</span>
+          </span>
+          <span detail-meta class="display-meta-pill">
+            <span class="display-meta-label">Range</span>
+            <span class="display-meta-value">{{ s.range }}</span>
+          </span>
+          <span detail-meta class="display-meta-pill">
+            <span class="display-meta-label">Components</span>
+            <span class="display-meta-value">{{ s.components }}</span>
+          </span>
+          <span detail-meta class="display-meta-pill">
+            <span class="display-meta-label">Duration</span>
+            <span class="display-meta-value">{{ s.duration }}</span>
+          </span>
+        </app-detail-header>
+
+        <div class="feature-text">
+          <app-entry-renderer [list]="s.entries" parent=""></app-entry-renderer>
+
+          @if (s.higher) {
+            <div class="spell-higher-levels mt-3">
+              <p class="mb-1"><strong><em>{{ s.higher.name }}</em></strong></p>
+              <app-entry-renderer [list]="s.higher.entries" parent=""></app-entry-renderer>
+            </div>
+          }
+
+          @if (s.classes.length || s.subclasses.length) {
+            <div class="spell-classes-footer mt-3 pt-2">
+              @if (s.classes.length) {
+                <p class="mb-1"><strong>Classes: </strong><span [innerHtml]="s.classes.join(', ') | linkmaker"></span></p>
               }
-              @if (!spell.replaced) {
-                <h1>{{spell.name}}</h1>
+              @if (s.subclasses.length) {
+                <p class="mb-0"><strong>Subclasses: </strong><span [innerHtml]="s.subclasses.join(', ') | linkmaker"></span></p>
               }
             </div>
-            <div class="col">
-              <h3 [class]="'float-end color-'+spell.source | lowercase">{{spell.source}}</h3>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <h4><em [class]="'color-'+spell.school.name | lowercase">{{formatSpellLevel(spell.level, spell.school)}}@if (spell.ritual) {
-                <span> Ritual</span>
-              }</em></h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p class="p-0 m-0"><strong>Casting Time: </strong>{{spell.time}}@if (spell.ritual) {
-              <span> or ritual</span>
-            }</p>
-            <p class="pt-0 mt-0"><strong>Components: </strong>{{spell.components}}</p>
-          </div>
-          <div class="col">
-            <p class="p-0 m-0"><strong>Range: </strong>{{spell.range}}</p>
-            <p class="pt-0 mt-0"><strong>Duration: </strong>{{spell.duration}}</p>
-          </div>
+          }
         </div>
-      </div>
-      <div class="feature-text">
-        <app-entry-renderer [list]=spell.entries [parent]="''"></app-entry-renderer>
-        @if (spell.higher) {
-          <p><strong><em>{{spell.higher.name}}: </em></strong><app-entry-renderer [list]=spell.higher.entries [parent]="''"></app-entry-renderer></p>
-        }
-        @if (spell.classes) {
-          <p class="mb-0"><strong>Classes: </strong><span [innerHtml]="spell.classes.join(', ') | linkmaker"></span></p>
-        }
-        @if (spell.subclasses.length > 0) {
-          <p class="mb-0"><strong>Subclasses: </strong><span [innerHtml]="spell.subclasses.join(', ') | linkmaker"></span></p>
-        }
       </div>
     </div>
   </div>
-</div>
 }

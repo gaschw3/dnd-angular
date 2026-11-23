@@ -1,16 +1,135 @@
-.spell-filter {
-    padding: 0px;
+.spell-quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1.1rem;
 }
 
-.spell-table {
-    padding-top: 15px;
-    padding-bottom: 15px;
+.spell-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-tbody td {
-    padding: 5px !important;
+.spell-filter-label {
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 0;
 }
 
-.strikethrough {
-    text-decoration: line-through;
+.spell-class-dropdown {
+  position: relative;
+}
+
+.spell-class-trigger {
+  min-width: 9.5rem;
+  max-width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.spell-class-menu {
+  min-width: 12rem;
+  max-height: 16rem;
+  overflow-y: auto;
+  z-index: 900;
+}
+
+.spell-class-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-bottom: 0;
+
+  &:hover {
+    background-color: var(--theme-table-hover, rgba(255, 255, 255, 0.08));
+  }
+}
+
+.spell-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.spell-level-chip {
+  min-width: 2.1rem;
+  justify-content: center;
+  padding-inline: 0.5rem;
+}
+
+.spell-clear-btn {
+  padding: 0 0.35rem;
+  color: var(--theme-link-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--theme-link-hover, var(--theme-primary));
+    text-decoration: underline;
+  }
+}
+
+.spell-caius-chip {
+  background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  opacity: 0.07;
+  transition: opacity 0.25s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.3;
+    background-color: var(--theme-input-bg, rgba(0, 0, 0, 0.18));
+    border-color: var(--theme-input-border, rgba(255, 255, 255, 0.2));
+  }
+
+  &.active {
+    opacity: 1;
+    border-color: var(--theme-primary);
+  }
+}
+
+.spell-caius-label {
+  font-style: italic;
+}
+
+.spell-caius-banner {
+  padding: 0.65rem 1rem;
+  border-radius: 0.375rem;
+  background-color: var(--theme-card-color);
+  border: 1px dashed var(--theme-input-border, rgba(255, 255, 255, 0.2));
+  border-left: 3px solid var(--theme-secondary, var(--theme-primary));
+  color: var(--theme-text-color);
+
+  .blockquote {
+    font-size: inherit;
+  }
+
+  fa-icon {
+    color: var(--theme-secondary, var(--theme-primary));
+  }
+}
+
+.spell-caius-attrib {
+  margin-left: 1.75rem;
+  margin-top: 0.2rem;
+  color: var(--theme-secondary, var(--theme-primary));
+  opacity: 0.9;
+}
+
+.spell-detail-pane {
+  scroll-margin-top: 85px;
+
+  @media (min-width: 1200px) {
+    position: sticky;
+    top: 70px;
+    max-height: calc(100vh - 85px);
+    overflow-y: auto;
+  }
 }

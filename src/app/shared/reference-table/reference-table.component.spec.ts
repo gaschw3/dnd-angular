@@ -100,4 +100,26 @@ describe('ReferenceTableComponent', () => {
     expect(component.isRowActive(rows[1])).toBe(true);
     expect(component.isRowActive(rows[0])).toBe(false);
   });
+
+  it('jumps to the page containing selectedKey on selection change or initial load', () => {
+    expect(component.currentPage).toBe(1);
+
+    component.selectedKey = 'wish';
+    component.ngOnChanges({
+      selectedKey: new SimpleChange(null, 'wish', false)
+    });
+    expect(component.currentPage).toBe(2);
+    expect(component.pagedRows.map(r => r.id)).toEqual(['shield', 'wish']);
+
+    // Manual pagination away does not snap back
+    component.goToPage(1);
+    expect(component.currentPage).toBe(1);
+
+    // Non-existent or filtered-out key leaves current page untouched
+    component.selectedKey = 'non-existent';
+    component.ngOnChanges({
+      selectedKey: new SimpleChange('wish', 'non-existent', false)
+    });
+    expect(component.currentPage).toBe(1);
+  });
 });
