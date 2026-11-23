@@ -1,8 +1,9 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { Location } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { MonsterComponent } from './monster/monster.component';
 import { Monster } from 'src/app/models/monster';
@@ -79,7 +80,9 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
   private dataService = inject(DndDataService);
   private monsterHelper = inject(MonsterHelperService);
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
   private location = inject(Location);
+  private title = inject(Title);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -89,6 +92,9 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
         const monsterName = params.get('monsterName');
         if (monsterName) {
           this.currMonster = this.monsters.find(f => f.id === monsterName);
+          if (this.currMonster) {
+            this.title.setTitle(`${this.currMonster.name} — EotCC 5e`);
+          }
         }
         this.cdr.markForCheck();
       });
@@ -103,7 +109,8 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
 
   setCurrMonster(clickedMonster: Monster): void {
     this.currMonster = clickedMonster;
-    this.location.go('/beastiary/' + this.currMonster.id);
+    this.title.setTitle(`${clickedMonster.name} — EotCC 5e`);
+    this.router.navigate(['/beastiary', clickedMonster.id], { queryParamsHandling: 'preserve' });
   }
 
   getType(type: any): string {

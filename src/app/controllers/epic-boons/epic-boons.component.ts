@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
-import { Location } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Feat } from 'src/app/models/feat';
 import { FeatComponent } from '../feats/feat/feat.component';
@@ -69,7 +69,8 @@ export class EpicBoonsComponent implements OnInit, OnDestroy {
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
-  private location = inject(Location);
+  private router = inject(Router);
+  private title = inject(Title);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -84,6 +85,9 @@ export class EpicBoonsComponent implements OnInit, OnDestroy {
         const featName = params.get('featName');
         if (featName) {
           this.currFeat = this.feats.find(f => f.id === featName);
+          if (this.currFeat) {
+            this.title.setTitle(`${this.currFeat.name} — EotCC 5e`);
+          }
         }
         this.cdr.markForCheck();
       });
@@ -98,6 +102,7 @@ export class EpicBoonsComponent implements OnInit, OnDestroy {
 
   setCurrBoon(clicked: Feat): void {
     this.currFeat = clicked;
-    this.location.go('/epic-boons/' + this.currFeat.id);
+    this.title.setTitle(`${clicked.name} — EotCC 5e`);
+    this.router.navigate(['/epic-boons', clicked.id], { queryParamsHandling: 'preserve' });
   }
 }

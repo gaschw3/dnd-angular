@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
-import { Location } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { newClass } from '../../models';
 import { ClassComponent } from './class/class.component';
@@ -51,7 +51,8 @@ export class ClassesComponent implements OnInit, OnDestroy {
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
-  private location = inject(Location);
+  private router = inject(Router);
+  private title = inject(Title);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -61,6 +62,9 @@ export class ClassesComponent implements OnInit, OnDestroy {
         const className = params.get('className');
         if (className) {
           this.currClass = this.classes.find(f => f.id === className);
+          if (this.currClass) {
+            this.title.setTitle(`${this.currClass.name} — EotCC 5e`);
+          }
         }
         this.cdr.markForCheck();
       });
@@ -78,7 +82,8 @@ export class ClassesComponent implements OnInit, OnDestroy {
       this.child.selectedArchetypes.splice(0, 100);
     }
     this.currClass = clickedClass;
-    this.location.go('/classes/' + this.currClass.id);
+    this.title.setTitle(`${clickedClass.name} — EotCC 5e`);
+    this.router.navigate(['/classes', clickedClass.id], { queryParamsHandling: 'preserve' });
   }
 
   shake(id: string): void {

@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -85,7 +86,8 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
-  private location = inject(Location);
+  private router = inject(Router);
+  private title = inject(Title);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -101,6 +103,9 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
         const typeParam = params.get('type');
         if (featureParam) {
           this.currFeature = this.otherFeatures.find(f => this.idPipe.transform(f.name) === featureParam);
+          if (this.currFeature) {
+            this.title.setTitle(`${this.currFeature.name} — EotCC 5e`);
+          }
         }
         if (typeParam) {
           this.selected = typeParam;
@@ -125,10 +130,12 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
 
   setCurrFeature(clicked: OtherFeature): void {
     this.currFeature = clicked;
+    this.title.setTitle(`${clicked.name} — EotCC 5e`);
+    const slug = this.idPipe.transform(clicked.name);
     if (this.selected === 'all') {
-      this.location.go('/other-features/' + this.idPipe.transform(this.currFeature.name));
+      this.router.navigate(['/other-features', slug], { queryParamsHandling: 'preserve' });
     } else {
-      this.location.go('/other-features/' + this.selected + '/' + this.idPipe.transform(this.currFeature.name));
+      this.router.navigate(['/other-features', this.selected, slug], { queryParamsHandling: 'preserve' });
     }
   }
 
@@ -142,10 +149,15 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
       );
     }
     if (this.currFeature && this.shownFeatures.indexOf(this.currFeature) >= 0) {
-      this.location.go('/other-features/' + clicked + '/' + this.idPipe.transform(this.currFeature.name));
+      this.router.navigate(['/other-features', clicked, this.idPipe.transform(this.currFeature.name)], {
+        queryParamsHandling: 'preserve'
+      });
     } else if (this.shownFeatures.length > 0) {
       this.currFeature = this.shownFeatures[0];
-      this.location.go('/other-features/' + clicked + '/' + this.idPipe.transform(this.shownFeatures[0].name));
+      this.title.setTitle(`${this.currFeature.name} — EotCC 5e`);
+      this.router.navigate(['/other-features', clicked, this.idPipe.transform(this.shownFeatures[0].name)], {
+        queryParamsHandling: 'preserve'
+      });
     }
   }
 

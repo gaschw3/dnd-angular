@@ -1,8 +1,9 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { Location, TitleCasePipe } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { SpellComponent } from './spell/spell.component';
 import { Spell } from 'src/app/models/spell';
@@ -108,7 +109,9 @@ export class SpellsComponent implements OnInit, OnDestroy {
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
   private location = inject(Location);
+  private title = inject(Title);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -123,6 +126,9 @@ export class SpellsComponent implements OnInit, OnDestroy {
         const spellName = params.get('spellName');
         if (spellName) {
           this.currSpell = this.spells.find(f => f.id === spellName);
+          if (this.currSpell) {
+            this.title.setTitle(`${this.currSpell.name} — EotCC 5e`);
+          }
         }
         this.cdr.markForCheck();
       });
@@ -137,7 +143,8 @@ export class SpellsComponent implements OnInit, OnDestroy {
 
   setCurrSpell(clickedSpell: Spell): void {
     this.currSpell = clickedSpell;
-    this.location.go('/spells/' + this.currSpell.id);
+    this.title.setTitle(`${clickedSpell.name} — EotCC 5e`);
+    this.router.navigate(['/spells', clickedSpell.id], { queryParamsHandling: 'preserve' });
   }
 
   goBack(): void {

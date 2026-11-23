@@ -1,8 +1,9 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
-import { CommonModule, Location, TitleCasePipe } from '@angular/common';
+import { CommonModule, TitleCasePipe } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Item } from 'src/app/models/item';
 import { ItemComponent } from './item/item.component';
@@ -101,7 +102,8 @@ export class ItemsComponent implements OnInit, OnDestroy {
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
-  private location = inject(Location);
+  private router = inject(Router);
+  private title = inject(Title);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -117,6 +119,9 @@ export class ItemsComponent implements OnInit, OnDestroy {
         const itemName = params.get('itemName');
         if (itemName) {
           this.currItem = this.items.find(f => this.idPipe.transform(f.name) === itemName);
+          if (this.currItem) {
+            this.title.setTitle(`${this.currItem.name} — EotCC 5e`);
+          }
         }
         this.cdr.markForCheck();
       });
@@ -131,7 +136,8 @@ export class ItemsComponent implements OnInit, OnDestroy {
 
   setCurrItem(clicked: Item): void {
     this.currItem = clicked;
-    this.location.go('/items/' + this.idPipe.transform(this.currItem.name));
+    this.title.setTitle(`${clicked.name} — EotCC 5e`);
+    this.router.navigate(['/items', this.idPipe.transform(clicked.name)], { queryParamsHandling: 'preserve' });
   }
 
   setItems(choice: string): void {

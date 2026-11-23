@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
-import { Location } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AncestryComponent } from './ancestry/ancestry.component';
 import { Ancestry } from 'src/app/models/ancestry';
@@ -49,7 +49,8 @@ export class AncestriesComponent implements OnInit, OnDestroy {
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
-  private location = inject(Location);
+  private router = inject(Router);
+  private title = inject(Title);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -59,6 +60,9 @@ export class AncestriesComponent implements OnInit, OnDestroy {
         const ancestryName = params.get('ancestryName');
         if (ancestryName) {
           this.currAncestry = this.ancestries.find(f => f.id === ancestryName);
+          if (this.currAncestry) {
+            this.title.setTitle(`${this.currAncestry.name} — EotCC 5e`);
+          }
         }
         this.cdr.markForCheck();
       });
@@ -73,6 +77,7 @@ export class AncestriesComponent implements OnInit, OnDestroy {
 
   setCurrAncestry(clicked: Ancestry): void {
     this.currAncestry = clicked;
-    this.location.go('/ancestries/' + this.currAncestry.id);
+    this.title.setTitle(`${clicked.name} — EotCC 5e`);
+    this.router.navigate(['/ancestries', clicked.id], { queryParamsHandling: 'preserve' });
   }
 }

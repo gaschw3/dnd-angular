@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
-import { Location } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { BackgroundComponent } from './background/background.component';
 import { Background } from 'src/app/models/background';
@@ -79,7 +79,8 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
-  private location = inject(Location);
+  private router = inject(Router);
+  private title = inject(Title);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -89,6 +90,9 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
         const backgroundName = params.get('backgroundName');
         if (backgroundName) {
           this.currBackground = this.backgrounds.find(f => f.id === backgroundName);
+          if (this.currBackground) {
+            this.title.setTitle(`${this.currBackground.name} — EotCC 5e`);
+          }
         }
         this.cdr.markForCheck();
       });
@@ -103,6 +107,7 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
 
   setCurrBackground(clicked: Background): void {
     this.currBackground = clicked;
-    this.location.go('/backgrounds/' + this.currBackground.id);
+    this.title.setTitle(`${clicked.name} — EotCC 5e`);
+    this.router.navigate(['/backgrounds', clicked.id], { queryParamsHandling: 'preserve' });
   }
 }

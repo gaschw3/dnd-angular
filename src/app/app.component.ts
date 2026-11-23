@@ -39,6 +39,7 @@ export class AppComponent {
   private router = inject(Router);
   public bookmarks = inject(BookmarksService);
   private viewportScroller = inject(ViewportScroller);
+  private lastSection = '';
 
   constructor() {
     this.viewportScroller.setOffset([0, 80]);
@@ -48,7 +49,11 @@ export class AppComponent {
     navEndEvent$.subscribe((e: NavigationEnd) => {
       this.isNavbarCollapsed = true;
       this.openDropdown = null;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const nextSection = e.urlAfterRedirects.split('?')[0].split('#')[0].split('/')[1] || '';
+      if (nextSection !== this.lastSection && !e.urlAfterRedirects.includes('#')) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      this.lastSection = nextSection;
       if (typeof gtag !== 'undefined') {
         gtag('config', 'G-BKMXZP7BG0', { page_path: e.urlAfterRedirects });
       }
