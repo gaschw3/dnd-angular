@@ -1,24 +1,36 @@
 {
-  "short_name": "Poop Deck D&D 5e",
-  "name": "Poop Deck D&D 5e",
+  "short_name": "EotCC 5e",
+  "name": "Explorers of the Candle Cove 5e",
   "icons": [
     {
       "src": "./icon_x192.png",
       "type": "image/png",
       "sizes": "192x192",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "./icon_x512.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "maskable any"
+      "purpose": "any"
+    },
+    {
+      "src": "./icon_maskable_192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icon_maskable_512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "start_url": "./classes",
-  "background_color": "#424a4f",
+  "background_color": "#272b30",
   "display": "standalone",
   "scope": "./",
-  "theme_color": "#424a4f",
+  "theme_color": "#272b30",
   "description": "Explorers of the Candle Cove D&D 5e reference"
 }

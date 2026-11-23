@@ -32,6 +32,8 @@
 							"src/manifest.json",
 							"src/icon_x192.png",
 							"src/icon_x512.png",
+							"src/icon_maskable_192.png",
+							"src/icon_maskable_512.png",
 							"src/royal-seal.png"
 						],
 						"styles": [

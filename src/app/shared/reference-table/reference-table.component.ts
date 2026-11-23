@@ -19,6 +19,8 @@ export interface ReferenceTableColumn<T> {
   align?: 'left' | 'center' | 'right';
   sortable?: boolean;
   filterable?: boolean;
+  filterColspan?: number;
+  filterSkipCell?: boolean;
   filterType?: 'text' | 'regex' | 'number-range' | 'none';
   headerIcon?: boolean;
   isHtml?: boolean;

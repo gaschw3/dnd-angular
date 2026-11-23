@@ -7,6 +7,21 @@
   margin: 30px;
 }
 
+.map-search-overlay {
+  position: absolute;
+  top: 62px;
+  left: 56px;
+  z-index: 1000;
+  width: min(300px, calc(100vw - 130px));
+}
+
+.map-search-results {
+  max-height: 260px;
+  overflow-y: auto;
+  margin-top: 2px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
 .map-frame {
   border: 2px solid black;
   height: 96%;
@@ -19,6 +34,6 @@
 }
 
 .leaflet-container {
-    background: #272B30;
-    outline: 0;
+  background: #272B30;
+  outline: 0;
 }

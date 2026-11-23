@@ -15,7 +15,18 @@
           <img src="./royal-seal.png" width="30" height="36" alt="site icon">
         </div>
       }
-      <a class="d-inline-block align-top navbar-brand" routerLink="/classes" data-phy="Poop De" (click)="closeMenus()">Poop Deck 5e</a>
+      <a class="d-inline-block align-top navbar-brand me-auto me-lg-3" routerLink="/classes" data-phy="EotCC 5" (click)="closeMenus()">EotCC 5e</a>
+      <div class="d-flex d-lg-none align-items-center gap-2 me-2">
+        <button type="button" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center nav-util-btn nav-mobile-btn" (click)="openQuickSearch()" aria-label="Quick Search" title="Quick Search">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center gap-1 nav-util-btn nav-mobile-btn" (click)="toggleBookmarks()" aria-label="Session Pinned Pages" title="Session Pinned Pages">
+          <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+          @if (bookmarks.count() > 0) {
+            <span class="badge text-bg-success">{{ bookmarks.count() }}</span>
+          }
+        </button>
+      </div>
       <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isNavbarCollapsed" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -57,7 +68,24 @@
             </div>
           </li>
         </ul>
-        <ul class="navbar-nav portal">
+        <ul class="navbar-nav portal align-items-lg-center gap-2">
+          <li class="nav-item d-none d-lg-block">
+            <div class="input-group input-group-sm nav-search-group">
+              <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+              <button type="button" class="form-control nav-search-trigger d-flex align-items-center justify-content-between gap-2" (click)="openQuickSearch()" title="Quick Search (Ctrl+G)">
+                <span class="nav-search-placeholder">Global Search</span>
+                <kbd class="d-none d-xl-inline nav-kbd">Ctrl+G</kbd>
+              </button>
+            </div>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <button type="button" class="btn btn-sm btn-outline-light d-flex align-items-center justify-content-center gap-2 nav-util-btn nav-bookmark-btn" (click)="toggleBookmarks()" title="Session Pinned Pages">
+              <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+              @if (bookmarks.count() > 0) {
+                <span class="badge text-bg-success">{{ bookmarks.count() }}</span>
+              }
+            </button>
+          </li>
           <li class="nav-item dropdown float-end" [class.show]="openDropdown === 'portal'">
             <a class="nav-link" href="#" id="navbarDropdownPortal" role="button" data-phy="Planar "
               [attr.aria-expanded]="openDropdown === 'portal'" aria-haspopup="true" (click)="toggleDropdown('portal', $event)">
@@ -93,8 +121,10 @@
       </div>
     </div>
   </nav>
-  <main id="main-content" class="container-fluid" tabindex="-1">
+  <main id="main-content" class="container-fluid" [class.bookmarks-open]="bookmarks.isOpen()" tabindex="-1">
     <router-outlet></router-outlet>
   </main>
+  <app-quick-search></app-quick-search>
+  <app-bookmarks-tray></app-bookmarks-tray>
   <app-scroll-top></app-scroll-top>
 </div></div>

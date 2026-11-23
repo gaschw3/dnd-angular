@@ -5,9 +5,35 @@ import { takeUntil } from 'rxjs/operators';
 import { MonsterHelperService } from '../../shared/helpers/monster/monster-helper.service';
 import { Monster } from 'src/app/models';
 import { HelperService } from '../../shared/helpers/helper.service';
-import { crXpMap, levelXp } from 'src/app/shared/helpers/monster/experienceMaps';
+import { crXpMap, levelXp, levelXp2024 } from 'src/app/shared/helpers/monster/experienceMaps';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-table.component';
+
+const ENCOUNTERS_STORAGE_KEY = 'eotcc_encounters_v1';
+
+interface EncounterMonster {
+  monster: Monster;
+  number: number;
+}
+
+interface SavedEncounter {
+  id: string;
+  name: string;
+  ruleset: '2024' | '2014';
+  partySize: number;
+  partyLevel: number;
+  entries: { monsterId: string; monsterName: string; number: number }[];
+}
+
+interface PartyDifficulty {
+  deadly: number;
+  hard: number;
+  medium: number;
+  easy: number;
+  pair: number;
+  group: number;
+  trivial: number;
+}
 
 @Component({
   standalone: false,
@@ -17,8 +43,10 @@ import { ReferenceTableColumn } from 'src/app/shared/reference-table/reference-t
 })
 export class EncounterBuilderComponent implements OnInit, OnDestroy {
   levelXp = levelXp;
+  levelXp2024 = levelXp2024;
   crXp = crXpMap;
 
+  ruleset: '2024' | '2014' = '2024';
   partySize = 5;
   partyLevel = 9;
 
@@ -37,6 +65,9 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   currMonster?: Monster;
   monsters: Monster[] = [];
   currEncounter: EncounterMonster[] = [];
+
+  encounterName = '';
+  savedEncounters: SavedEncounter[] = [];
 
   private destroy$ = new Subject<void>();
 
@@ -122,6 +153,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.savedEncounters = this.loadSavedEncounters();
     this.dataService.getMonsters().pipe(takeUntil(this.destroy$)).subscribe(monsters => {
       this.monsters = monsters.filter(f => f.cr !== 'N/A');
       this.cdr.markForCheck();
@@ -132,6 +164,11 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  setRuleset(mode: '2024' | '2014'): void {
+    this.ruleset = mode;
+    this.recalcPartyDifficulty();
   }
 
   setCurrMonster(clickedMonster: Monster): void {
@@ -158,10 +195,76 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
 
   clearEncounter(): void {
     this.currEncounter = [];
+    this.encounterName = '';
     this.recalcEncounterXp();
   }
 
+  saveEncounter(): void {
+    if (this.currEncounter.length === 0) {
+      return;
+    }
+    const name = this.encounterName.trim() || `Encounter (${this.currEncounter[0].monster.name})`;
+    const saved: SavedEncounter = {
+      id: `${Date.now()}`,
+      name,
+      ruleset: this.ruleset,
+      partySize: this.partySize,
+      partyLevel: this.partyLevel,
+      entries: this.currEncounter.map(e => ({
+        monsterId: e.monster.id,
+        monsterName: e.monster.name,
+        number: e.number
+      }))
+    };
+    const existingIdx = this.savedEncounters.findIndex(e => e.name.toLowerCase() === name.toLowerCase());
+    if (existingIdx >= 0) {
+      this.savedEncounters[existingIdx] = saved;
+    } else {
+      this.savedEncounters = [saved, ...this.savedEncounters];
+    }
+    this.encounterName = name;
+    this.persistSavedEncounters();
+  }
+
+  loadEncounter(saved: SavedEncounter): void {
+    this.ruleset = saved.ruleset || '2024';
+    this.partySize = saved.partySize;
+    this.partyLevel = saved.partyLevel;
+    this.encounterName = saved.name;
+    this.currEncounter = [];
+    for (const entry of saved.entries) {
+      const found = this.monsters.find(m => m.id === entry.monsterId || m.name === entry.monsterName);
+      if (found) {
+        this.currEncounter.push({ monster: found, number: entry.number });
+      }
+    }
+    this.recalcPartyDifficulty();
+  }
+
+  deleteSavedEncounter(id: string): void {
+    this.savedEncounters = this.savedEncounters.filter(e => e.id !== id);
+    this.persistSavedEncounters();
+  }
+
   recalcPartyDifficulty(): void {
+    if (this.ruleset === '2024') {
+      const budget = levelXp2024[this.partyLevel];
+      const low = budget.low * this.partySize;
+      const moderate = budget.moderate * this.partySize;
+      const high = budget.high * this.partySize;
+      this.currPartyDifficulty = {
+        deadly: high,
+        hard: high,
+        medium: moderate,
+        easy: low,
+        pair: moderate / 2,
+        group: moderate / 4,
+        trivial: moderate / 8
+      };
+      this.recalcEncounterXp();
+      return;
+    }
+
     const mediumXp = levelXp[this.partyLevel].medium * this.partySize;
     if (this.partySize < 3) {
       this.singleMultiplier = 1.5;
@@ -192,14 +295,28 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
     this.recalcEncounterXp();
   }
 
-  recalcEncounterDifficulty(adjXp: number): string {
-    if (adjXp < this.currPartyDifficulty.easy) {
+  recalcEncounterDifficulty(xpValue: number): string {
+    if (this.ruleset === '2024') {
+      const budget = levelXp2024[this.partyLevel];
+      if (xpValue === 0) {
+        return 'trivial';
+      } else if (xpValue < budget.low * this.partySize) {
+        return 'trivial';
+      } else if (xpValue < budget.moderate * this.partySize) {
+        return 'low';
+      } else if (xpValue < budget.high * this.partySize) {
+        return 'moderate';
+      }
+      return 'high';
+    }
+
+    if (xpValue < this.currPartyDifficulty.easy) {
       return 'trivial';
-    } else if (adjXp < this.currPartyDifficulty.medium) {
+    } else if (xpValue < this.currPartyDifficulty.medium) {
       return 'easy';
-    } else if (adjXp < this.currPartyDifficulty.hard) {
+    } else if (xpValue < this.currPartyDifficulty.hard) {
       return 'medium';
-    } else if (adjXp < this.currPartyDifficulty.deadly) {
+    } else if (xpValue < this.currPartyDifficulty.deadly) {
       return 'hard';
     }
     return 'deadly';
@@ -217,7 +334,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
       totalMonsters += m.number;
     }
     this.encounterXp = totalXp;
-    this.adjustedXp = totalXp * this.getMultiplier(totalMonsters);
+    this.adjustedXp = this.ruleset === '2024' ? totalXp : totalXp * this.getMultiplier(totalMonsters);
     this.currEncounterDifficulty = this.recalcEncounterDifficulty(this.adjustedXp);
   }
 
@@ -280,19 +397,25 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
       return 'trivial';
     }
   }
-}
 
-interface EncounterMonster {
-  monster: Monster;
-  number: number;
-}
+  private loadSavedEncounters(): SavedEncounter[] {
+    try {
+      const raw = localStorage.getItem(ENCOUNTERS_STORAGE_KEY);
+      if (!raw) {
+        return [];
+      }
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  }
 
-interface PartyDifficulty {
-  deadly: number;
-  hard: number;
-  medium: number;
-  easy: number;
-  pair: number;
-  group: number;
-  trivial: number;
+  private persistSavedEncounters(): void {
+    try {
+      localStorage.setItem(ENCOUNTERS_STORAGE_KEY, JSON.stringify(this.savedEncounters));
+    } catch {
+      // Ignore storage errors.
+    }
+  }
 }

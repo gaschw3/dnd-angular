@@ -7,6 +7,17 @@
   .container-fluid {
     width: 90%;
   }
+
+  main#main-content {
+    transition: margin-right 0.2s ease, max-width 0.2s ease, width 0.2s ease;
+
+    &.bookmarks-open {
+      width: auto;
+      max-width: calc(100% - 340px);
+      margin-left: 1.25rem;
+      margin-right: 332px;
+    }
+  }
 }
 
 .skip-link {
@@ -22,4 +33,76 @@
 
 .skip-link:focus {
   top: .5rem;
+}
+
+.nav-search-group {
+  width: 215px;
+  height: 31px;
+
+  .input-group-text {
+    height: 31px;
+    padding: 0.25rem 0.55rem;
+  }
+}
+
+.nav-search-trigger {
+  height: 31px;
+  padding: 0.2rem 0.55rem;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--theme-secondary);
+  }
+}
+
+.nav-search-placeholder {
+  opacity: 0.72;
+  font-size: 0.875rem;
+}
+
+.nav-util-btn {
+  border-color: var(--theme-input-border, rgba(255, 255, 255, 0.35));
+  color: var(--theme-nav-text);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: var(--theme-secondary);
+    color: var(--theme-nav-text);
+  }
+}
+
+.nav-bookmark-btn {
+  height: 31px;
+  min-width: 36px;
+  padding: 0 0.6rem;
+  font-size: 0.9rem;
+}
+
+.nav-mobile-btn {
+  height: 36px;
+  min-width: 38px;
+  padding: 0 0.55rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .container-fluid {
+    width: 100%;
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+  }
+
+  .navbar-brand {
+    margin-right: auto;
+  }
+}
+
+.nav-kbd {
+  background: rgba(0, 0, 0, 0.28);
+  color: inherit;
+  padding: 0.05rem 0.35rem;
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+  line-height: 1.2;
 }

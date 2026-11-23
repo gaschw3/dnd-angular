@@ -1,4 +1,26 @@
 <div class="map-container">
+  <div class="map-search-overlay">
+    <div class="input-group input-group-sm">
+      <span class="input-group-text"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+      <input
+        type="search"
+        class="form-control"
+        placeholder="Fly to location (city, town, sea, etc.)"
+        [(ngModel)]="searchQuery"
+        aria-label="Search map locations"
+      />
+    </div>
+    @if (filteredLocations.length > 0) {
+      <div class="map-search-results list-group">
+        @for (loc of filteredLocations; track loc.name + loc.lat + loc.lng) {
+          <button type="button" class="list-group-item list-group-item-action py-1 px-2 d-flex justify-content-between align-items-center" (click)="flyToLocation(loc)">
+            <span>{{ loc.name }}</span>
+            <small class="opacity-75">{{ loc.category }}</small>
+          </button>
+        }
+      </div>
+    }
+  </div>
   <div class="map-frame">
     <div id="map"></div>
   </div>

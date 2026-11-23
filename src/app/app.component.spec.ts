@@ -24,16 +24,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Poop Deck 5e'`, () => {
+  it(`should have as title 'EotCC 5e'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Poop Deck 5e');
+    expect(app.title).toEqual('EotCC 5e');
   });
 
   it('should render a bootstrap navbar', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.navbar').textContent).toContain('Poop Deck 5e');
+    expect(compiled.querySelector('.navbar').textContent).toContain('EotCC 5e');
   });
 });

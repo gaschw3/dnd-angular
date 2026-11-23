@@ -15,14 +15,12 @@
 
           <!-- Avail Points progress bar -->
           <div class="col">
-            <div class="progress-circle {{helper.abs(getPercentage()) > 50 ? 'over50' : ''}} per{{getPercentage()}}">
+            <div
+              class="progress-circle"
+              [class.is-negative]="getPercentage() < 0"
+              [style.--progress]="(helper.abs(getPercentage()) > 100 ? 100 : helper.abs(getPercentage())) + '%'"
+            >
               <span>{{totalPoints-pointsSpent}}/{{totalPoints}}</span>
-              <div class="left-half-clipper">
-                <div class="first50-bar {{getPercentage() < 0 ? 'hidden' : ''}}"></div>
-                <div class="neg50-bar {{getPercentage() > 0 ? 'hidden' : ''}}"></div>
-                <div class="value-bar {{getPercentage() < 0 ? 'hidden' : ''}}"></div>
-                <div class="value-bar2 {{getPercentage() > 0 ? 'hidden' : ''}}"></div>
-              </div>
             </div>
           </div>
           <!-- END -->

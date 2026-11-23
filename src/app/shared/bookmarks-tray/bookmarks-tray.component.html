@@ -1,0 +1,73 @@
+@if (isOpen()) {
+  <div class="bm-mobile-backdrop" (click)="close()" aria-hidden="true"></div>
+}
+<aside
+  class="bm-drawer"
+  [class.open]="isOpen()"
+  [class.dragging]="isDragging()"
+  [style.transform]="isDragging() ? 'translateY(' + dragOffset() + 'px)' : null"
+  [attr.aria-hidden]="!isOpen()"
+  aria-label="Session pinned pages"
+>
+  <div
+    class="bm-drag-zone"
+    (touchstart)="onTouchStart($event)"
+    (touchmove)="onTouchMove($event)"
+    (touchend)="onTouchEnd()"
+    (touchcancel)="onTouchEnd()"
+  >
+    <div class="bm-sheet-handle" aria-hidden="true"></div>
+    <div class="bm-header">
+      <h5 class="mb-0">
+        <i class="fa fa-thumb-tack me-2" aria-hidden="true"></i>Pinned Pages
+      </h5>
+      <button type="button" class="bm-close" (click)="close()" aria-label="Close pinned pages">&times;</button>
+    </div>
+  </div>
+
+  <div class="bm-actions">
+    <button type="button" class="btn btn-sm btn-primary flex-grow-1" (click)="pinCurrentPage()">
+      <i class="fa" [ngClass]="bookmarks.isBookmarked(currentUrl()) ? 'fa-thumb-tack' : 'fa-plus'" aria-hidden="true"></i>
+      {{ bookmarks.isBookmarked(currentUrl()) ? ' Unpin Current Page' : ' Pin Current Page' }}
+    </button>
+    @if (bookmarks.count() > 0) {
+      <button type="button" class="btn btn-sm btn-outline-secondary" (click)="bookmarks.clear()">
+        Clear All
+      </button>
+    }
+  </div>
+
+  <div class="bm-list">
+    @if (bookmarks.items().length === 0) {
+      <div class="bm-empty">
+        <p class="mb-1">No pinned references yet.</p>
+        <small>Browse freely and click <strong>Pin Current Page</strong> above, or press <kbd>Ctrl+G</kbd> to search and pin spells, monsters, items, or feats.</small>
+      </div>
+    } @else {
+      @for (item of bookmarks.items(); track item.route) {
+        <div
+          class="bm-item"
+          [class.active]="item.route === currentUrl()"
+          (click)="navigateTo(item.route)"
+        >
+          <div class="bm-item-text">
+            <span class="bm-badge">{{ item.category }}</span>
+            <div class="bm-item-name">{{ item.name }}</div>
+            @if (item.subtitle) {
+              <div class="bm-item-sub">{{ item.subtitle }}</div>
+            }
+          </div>
+          <button
+            type="button"
+            class="bm-remove"
+            (click)="$event.stopPropagation(); bookmarks.remove(item.route)"
+            aria-label="Remove pin"
+            title="Remove"
+          >
+            &times;
+          </button>
+        </div>
+      }
+    }
+  </div>
+</aside>

@@ -13,6 +13,8 @@ import { EncounterBuilderComponent } from './controllers/encounter-builder/encou
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { ServerErrorComponent } from './error/server-error/server-error.component';
 import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
+import { QuickSearchComponent } from './shared/quick-search/quick-search.component';
+import { BookmarksTrayComponent } from './shared/bookmarks-tray/bookmarks-tray.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
     ReactiveFormsModule,
     AppRoutingModule,
     SharedModule,
-    ScrollTopComponent
+    ScrollTopComponent,
+    QuickSearchComponent,
+    BookmarksTrayComponent
   ],
   exports: [],
   providers: [provideHttpClient()],

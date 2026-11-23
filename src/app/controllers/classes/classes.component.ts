@@ -29,6 +29,7 @@ export class ClassesComponent implements OnInit, OnDestroy {
       label: 'Name',
       placeholder: 'Filter Class',
       filterId: 'class-name-filter',
+      filterColspan: 2,
       headerIcon: true,
       sortable: false,
       value: c => c.name
@@ -39,6 +40,7 @@ export class ClassesComponent implements OnInit, OnDestroy {
       align: 'right',
       sortable: false,
       filterable: false,
+      filterSkipCell: true,
       value: c => c.source || '',
       cellClass: c => (c.source ? `color-${c.source.toLowerCase()}` : '')
     }

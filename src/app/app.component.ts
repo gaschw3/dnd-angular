@@ -1,6 +1,9 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { QuickSearchComponent } from './shared/quick-search/quick-search.component';
+import { BookmarksTrayComponent } from './shared/bookmarks-tray/bookmarks-tray.component';
+import { BookmarksService } from './shared/services/bookmarks.service';
 
 declare var gtag: any;
 
@@ -11,14 +14,17 @@ declare var gtag: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Poop Deck 5e';
+  title = 'EotCC 5e';
   defaultTheme = 'forest';
   isNavbarCollapsed = true;
   openDropdown: string | null = null;
   particles = this.getStoredParticles();
   theme = this.getStoredTheme();
 
-  constructor(router: Router) {
+  @ViewChild(QuickSearchComponent) quickSearch?: QuickSearchComponent;
+  @ViewChild(BookmarksTrayComponent) bookmarksTray?: BookmarksTrayComponent;
+
+  constructor(router: Router, public bookmarks: BookmarksService) {
     const navEndEvent$ = router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     );
@@ -34,6 +40,16 @@ export class AppComponent {
 
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
+
+  openQuickSearch(): void {
+    this.closeMenus();
+    this.quickSearch?.open();
+  }
+
+  toggleBookmarks(): void {
+    this.closeMenus();
+    this.bookmarks.toggleOpen();
   }
 
   toggleDropdown(name: string, event: Event): void {

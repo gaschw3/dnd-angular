@@ -27,6 +27,7 @@ export class DndDataService {
   private feats$?: Observable<Feat[]>;
   private epicBoons$?: Observable<Feat[]>;
   private otherFeatures$?: Observable<OtherFeature[]>;
+  private mapLocations$?: Observable<MapLocationsData>;
 
   constructor(private http: HttpClient) {}
 
@@ -140,4 +141,24 @@ export class DndDataService {
     }
     return this.otherFeatures$;
   }
+
+  getMapLocations(): Observable<MapLocationsData> {
+    if (!this.mapLocations$) {
+      this.mapLocations$ = this.http.get<MapLocationsData>('assets/data/brew/mapLocations.json').pipe(
+        shareReplay(1)
+      );
+    }
+    return this.mapLocations$;
+  }
+}
+
+export type MapCoordEntry = [string, number, number];
+
+export interface MapLocationsData {
+  continents: MapCoordEntry[];
+  countries: MapCoordEntry[];
+  seas: MapCoordEntry[];
+  cities: MapCoordEntry[];
+  towns: MapCoordEntry[];
+  shizomi: MapCoordEntry[];
 }

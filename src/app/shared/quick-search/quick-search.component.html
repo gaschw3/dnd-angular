@@ -1,0 +1,74 @@
+@if (isOpen()) {
+  <div class="qs-backdrop" (click)="close()" role="dialog" aria-modal="true" aria-label="Global quick search">
+    <div class="qs-modal" (click)="$event.stopPropagation()">
+      <div class="qs-header">
+        <i class="fa fa-search qs-icon" aria-hidden="true"></i>
+        <input
+          #searchInput
+          type="text"
+          class="qs-input"
+          placeholder="Search spells, classes, monsters, items, feats..."
+          [ngModel]="query()"
+          (ngModelChange)="onQueryChange($event)"
+          aria-label="Search all D&D content"
+        />
+        @if (query()) {
+          <button type="button" class="qs-clear" (click)="onQueryChange(''); searchInput.focus()">Clear</button>
+        }
+        <button type="button" class="qs-close" (click)="close()" aria-label="Close search" title="Close (Esc)">Esc</button>
+      </div>
+
+      <div class="qs-categories">
+        @for (cat of categories; track cat) {
+          <button
+            type="button"
+            class="qs-cat-pill"
+            [class.active]="activeCategory() === cat"
+            (click)="setCategory(cat)"
+          >
+            {{ cat }}
+          </button>
+        }
+      </div>
+
+      <div class="qs-results">
+        @if (loading()) {
+          <div class="qs-status">Loading compendium index...</div>
+        } @else if (results().length === 0) {
+          <div class="qs-status">No results matching "{{ query() }}".</div>
+        } @else {
+          @for (item of results(); track item.id; let i = $index) {
+            <div
+              class="qs-result-row"
+              [class.active]="i === activeIndex()"
+              (mouseenter)="activeIndex.set(i)"
+              (click)="select(item)"
+            >
+              <div class="qs-result-main">
+                <span class="qs-badge">{{ item.category }}</span>
+                <span class="qs-name">{{ item.name }}</span>
+                <span class="qs-sub">{{ item.subtitle }}</span>
+              </div>
+              <button
+                type="button"
+                class="qs-pin-btn"
+                [class.pinned]="bookmarks.isBookmarked(item.route)"
+                (click)="toggleBookmark(item, $event)"
+                [attr.aria-label]="bookmarks.isBookmarked(item.route) ? 'Remove Pin' : 'Add to Pinned Pages'"
+                [title]="bookmarks.isBookmarked(item.route) ? 'Remove from Pinned Pages' : 'Add to Pinned Pages'"
+              >
+                <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+              </button>
+            </div>
+          }
+        }
+      </div>
+
+      <div class="qs-footer">
+        <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+        <span><kbd>Enter</kbd> Open</span>
+        <span><kbd>Esc</kbd> Close</span>
+      </div>
+    </div>
+  </div>
+}

@@ -5,7 +5,7 @@ More or less a test/personal site that I use to play/run D&D 5e except this time
 * Update to 2024 version of data (mostly done now)
 * Nice but unlikely would be some kind of Markdown -> JSON converter to type up homebrew
 * Code cleanup around modules and routing.
-  * Some of this done with 2024 update, various JSON cleanups, and angular version updates but some moldering code still exists.
+  * Now mostly done with 2026 Angular+TS update, could still use a pass on data and models that are messy to turn 'strict' back on
 
 ## Running Locally
 Ostensibly you could run this locally if you have npm and node installed. Just pull from this repo and then in the same directory as package.json run:

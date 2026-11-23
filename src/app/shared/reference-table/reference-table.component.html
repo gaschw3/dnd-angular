@@ -5,7 +5,8 @@
         @if (showFilterRow) {
           <tr class="ref-filter-row">
             @for (col of columns; track col) {
-              <th [style.width]="col.width || null">
+              @if (!col.filterSkipCell) {
+              <th [style.width]="col.filterColspan ? null : (col.width || null)" [attr.colspan]="col.filterColspan || 1">
                 @if (col.filterable !== false && col.filterType !== 'none' && !col.action) {
                   @if (col.filterType === 'number-range') {
                     <div class="input-group input-group-sm">
@@ -47,6 +48,7 @@
                   }
                 }
               </th>
+              }
             }
           </tr>
         }

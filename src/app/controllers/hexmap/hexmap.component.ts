@@ -1,5 +1,16 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import * as L from 'leaflet';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { DndDataService, MapLocationsData } from '../../shared/services/dnd-data.service';
+
+interface SearchableLocation {
+  name: string;
+  category: string;
+  lat: number;
+  lng: number;
+  zoom: number;
+}
 
 @Component({
   standalone: false,
@@ -8,247 +19,156 @@ import * as L from 'leaflet';
   styleUrls: ['./hexmap.component.scss']
 })
 export class HexmapComponent implements AfterViewInit, OnDestroy {
-  private map: L.Map;
-  private countries;
-  private continents;
-  private cities;
-  private towns;
-  private seas;
-  private shizomi;
+  private map?: L.Map;
+  private destroy$ = new Subject<void>();
 
-  constructor() {
-    this.continents = [
-      ['Ilia', 50, -77],
-      ['Ischia', 41, 15],
-      ['Humerum', -42, -95]
-    ];
-    this.countries = [
-      ['Denari', 30, -120],
-      ['Florin', 29, -105],
-      ['Pfennig', 19, -105],
-      ['Arkhos', 25, 20],
-      ['Seven Cities', 65, -90],
-      ['Hokai', 37, -212],
-      ['Concordat', 52, 4.5]
-    ];
-    this.seas = [
-      ['Starfall Sea', 28, -88],
-      ['Illian Sea', 30, -113.5],
-      ['Devil\'s Eye', 36, -101],
-      ['The Darkslick', 24.5,-103],
-      ['Shimmerbay', 19.5, -95],
+  searchQuery = '';
+  allLocations: SearchableLocation[] = [];
 
-      ['Cerulean Sea', 23, 20],
-      ['Siren Sea', 21.5, 22.5],
+  constructor(
+    private dataService: DndDataService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
-      ['Sea of Moving Ice', 66.13, -93.01],
+  get filteredLocations(): SearchableLocation[] {
+    const q = this.searchQuery.trim().toLowerCase();
+    if (!q) {
+      return [];
+    }
+    return this.allLocations
+      .filter(loc => loc.name.toLowerCase().includes(q) || loc.category.toLowerCase().includes(q))
+      .slice(0, 12);
+  }
 
-      ['Great North Sea', 55, 6]
-    ];
-    this.cities = [
-      ['Avon', 30, -120.6],
-      ['Noctus', 27.4, -117.9],
-      ['Tarraktur', 32.7, -116.5],
+  ngAfterViewInit(): void {
+    this.dataService.getMapLocations().pipe(takeUntil(this.destroy$)).subscribe(data => {
+      this.buildSearchIndex(data);
+      this.initMap(data);
+      this.cdr.markForCheck();
+    });
+  }
 
-      ['Arden', 16.57, -100],
-      ['Dalgrange', 22.3, -105.91],
-      ['Tramere', 17.05, -101.18],
-      ['Stromshire', 24.69, -109.4],
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+    if (this.map) {
+      this.map.remove();
+    }
+  }
 
-      ['Reliqa', 28.4, -110.5],
-      ['Kintalla', 31.6, -106.4],
-      ['Hieraxa', 25.5, -104.79],
+  flyToLocation(loc: SearchableLocation): void {
+    if (!this.map) {
+      return;
+    }
+    this.map.flyTo([loc.lat, loc.lng], loc.zoom, { duration: 1.1 });
+    this.searchQuery = '';
+  }
 
-      ['Scythia', 23.7, 22],
-      ['Melos', 24.3, 20.5],
-      ['Pylea', 27, 17.8],
-      ['Themis', 25.2, 18.7],
+  private buildSearchIndex(data: MapLocationsData): void {
+    const index: SearchableLocation[] = [];
+    const pushAll = (entries: [string, number, number][], category: string, zoom: number) => {
+      for (const [name, lat, lng] of entries) {
+        index.push({ name, category, lat, lng, zoom });
+      }
+    };
+    pushAll(data.continents, 'Continent', 3.5);
+    pushAll(data.countries, 'Country', 4.5);
+    pushAll(data.seas, 'Sea', 6);
+    pushAll(data.cities, 'City', 6.5);
+    pushAll(data.towns, 'Town', 7.25);
+    pushAll(data.shizomi, 'Shizomi', 6.5);
+    this.allLocations = index;
+  }
 
-      ['Bryn Sturgis', 64.82, -89.65],
-      ["Bryn Nonig", 65.216, -86.29],
-
-      ['Shizomi', 34.23, -211.59],
-
-      ['Aldovia', 52, 4],
-      ['Ascalon', 51.28, 3.48],
-      ['Kyvyrthin', 50.91, 6.9],
-      ['Throne', 52.89, 2.78],
-      ['Ivry-sur-Vin', 53.67, 2.77],
-      ['Verdunia', 53.12, 4.45],
-      ['Redharbour', 52.386, 6.01]
-    ];
-    this.towns = [
-      ['Borderland Keep', 30.2, -119.7],
-      ['Norton\'s Point', 30.6, -120.8],
-      ['Ralsburg Ruins', 30, -119.13],
-      ['Elfhome', 29.955, -121.4],
-      ["S. Terminus", 30.29, -118.444],
-      ["N. Terminus", 32.6, -116.95],
-      ["Stag Lord's Fort", 29.47, -120.48 ],
-      ["Sorrow's Furnace", 26.98, -118.416],
-      ["Falurin's Filter", 31.5, -116.565],
-      ["Marv's", 30.5, -120.059],
-      ["Vespid Hive", 30.935, -121.99],
-      ["Volung's Gate", 31.78, -119.267],
-      ["Volung's Gate", 31.51, -120.24],
-      ["Sungaze Monastery", 31.23, -118.92],
-      ["Wordless Word Temple", 29.38, -119.322],
-      ["Druid of Swarms", 29.27, -119.32],
-
-      ["Mornrise", 21.32, -109.86],
-      ["Penkirk", 22.42, -102.44],
-      ["Trest", 17.93, -104.17],
-      ["Spitemaw", 21.61, -107.02],
-      ["Golden Isle", 21.19, -111.57],
-      ["Bristad", 23.18, -109.32],
-      ["Iverness", 22.34, -109],
-      ["Belhoff", 19.425, -100.57],
-      ["Dale", 19.94, -104.06],
-
-      ["Fairpoint", 29.4, -108.3],
-      ["Arborback Ferry", 29.1, -104],
-      ["Whistlefen", 28.2, -106.3],
-      ["Greenspan", 33.4, -105.24],
-      ["Adler Larkspur Manor", 29.07, -108.677],
-      ["Bone Dam", 29.76, -103.92],
-      ["Volungfist", 32.3, -104.1],
-      ["Empty Mountain", 30.83, -110.42],
-      ["Caer Kaan", 28.5, -103.4],
-      ["Endless Stairs", 31.8, -104.17],
-
-      ["Zodanii", 26, 19.8],
-      ["Olynthos", 27, 23],
-      ["Kydonia", 21.8, 19.6],
-      ["Megara", 24.6, 21.7],
-      ["Mount Pantheus", 25.7, 23],
-
-      ["Wile's Hole", 65.08, -90.42],
-      ["Tamerlaine", 65.18, -89.1],
-      ["Lostwood", 65.595, -87.7],
-      ["Cold Mead", 64.77, -88.07],
-      ["Targon", 64.86, -86.915],
-      ["Estwall", 64.95, -88.77],
-      ["Ymir's Cairn", 65.48, -86.5],
-
-      ["Screaming Winds", 51.47, 4.19],
-      ["Red Gate", 52.73, 3.19],
-      ["Luminos", 52.73, 4.97],
-      ["Caerleon", 51.8, 6.066],
-      ["Sarcozia", 51.78, 4.31],
-      ["Whore Island", 52.22, 4.59],
-      ["Black Barrow", 52.53, 3.5],
-      ["Tinnakill", 49.79, 5.3]
-    ];
-    this.shizomi = [
-      ['Imperial Palace', 29.71, -210.63],
-      ['World Tree', 30.22, -211.42],
-      ['Zudun Jade', 27.66, -211.305],
-      ['Tori Dam', 31.33, -208.855],
-      ['Yokai Forest', 31.39, -212.5],
-      ['Old City', 29.88, -211.997],
-    ]
-   }
-
-  private initMap(): void {
-    let map = L.map('map', {zoomSnap: 0.25}).setView([52, 5], 4);
+  private initMap(data: MapLocationsData): void {
+    const map = L.map('map', { zoomSnap: 0.25 }).setView([52, 5], 4);
     this.map = map;
-    let textLabel = L.divIcon({
+
+    const textLabel = L.divIcon({
       className: 'empty-text-icon',
       iconSize: [0, 0],
       iconAnchor: [0, 0]
     });
-    let cityLabel = L.icon({
+    const cityLabel = L.icon({
       iconUrl: 'assets/city-marker.png',
       iconSize: [20, 20],
       iconAnchor: [10, 10],
       popupAnchor: [0, 25],
-      shadowUrl: '',
-      shadowSize: [0, 0],
-      shadowAnchor: [0, 0],
-      className: 'city-marker-icon',
+      className: 'city-marker-icon'
     });
-    let townLabel = L.icon({
+    const townLabel = L.icon({
       iconUrl: 'assets/town-marker.png',
       iconSize: [25, 25],
       iconAnchor: [15, 15],
       popupAnchor: [0, 0],
-      shadowUrl: '',
-      shadowSize: [0, 0],
-      shadowAnchor: [0, 0],
-      className: 'town-marker-icon',
+      className: 'town-marker-icon'
     });
 
     L.tileLayer('https://raw.githack.com/gaschw3/dnd-map-tiles/master/{z}/{x}/{y}.png', {
       minZoom: 2,
       maxZoom: 8,
       maxNativeZoom: 6,
-      tms: false,
-      attributionControl: false
+      tms: false
     }).addTo(map);
 
-    map.on('click', function (e) {
-      var coord = e.latlng;
-      console.log("[" + coord.lat + ", " + coord.lng + "]");
-    });
+    const continentsLayer = L.layerGroup().addTo(map);
+    const countriesLayer = L.layerGroup().addTo(map);
+    const seasLayer = L.layerGroup().addTo(map);
+    const citiesLayer = L.layerGroup().addTo(map);
+    const townsLayer = L.layerGroup().addTo(map);
+    const shizomiLayer = L.layerGroup().addTo(map);
 
-    for (let i = 0; i < this.continents.length; i++) {
-      let continent = this.continents[i];
-      let marker = new L.marker([continent[1], continent[2]], { opacity: 1, icon: textLabel });
-      marker.bindTooltip(continent[0], { permanent: true, className: "continent-label", direction: "center", offset: [0, 0] });
-      marker.addTo(map);
+    for (const [name, lat, lng] of data.continents) {
+      L.marker([lat, lng], { opacity: 1, icon: textLabel })
+        .bindTooltip(name, { permanent: true, className: 'continent-label', direction: 'center', offset: [0, 0] })
+        .addTo(continentsLayer);
     }
-    for (let i = 0; i < this.countries.length; i++) {
-      let country = this.countries[i];
-      let marker = new L.marker([country[1], country[2]], { opacity: 1, icon: textLabel });
-      marker.bindTooltip(country[0], { permanent: true, className: "country-label", direction: "center", offset: [0, 0] });
-      marker.addTo(map);
+    for (const [name, lat, lng] of data.countries) {
+      L.marker([lat, lng], { opacity: 1, icon: textLabel })
+        .bindTooltip(name, { permanent: true, className: 'country-label', direction: 'center', offset: [0, 0] })
+        .addTo(countriesLayer);
     }
-    for (let i = 0; i < this.seas.length; i++) {
-      let water = this.seas[i];
-      let marker = new L.marker([water[1], water[2]], { opacity: 1, icon: textLabel });
-      marker.bindTooltip(water[0], { permanent: true, className: "water-label", direction: "center", opacity: 0, offset: [0, 0] });
-      marker.addTo(map);
+    for (const [name, lat, lng] of data.seas) {
+      L.marker([lat, lng], { opacity: 1, icon: textLabel })
+        .bindTooltip(name, { permanent: true, className: 'water-label', direction: 'center', opacity: 0, offset: [0, 0] })
+        .addTo(seasLayer);
     }
-    for (let i = 0; i < this.cities.length; i++) {
-      let city = this.cities[i];
-      let marker = new L.marker([city[1], city[2]], { opacity: 1, icon: cityLabel, className: "cityLabel" });
-      marker.bindTooltip(city[0], { permanent: true, className: "city-label", direction: "center", opacity: 1, offset: [0, 20] });
-      marker.addTo(map);
+    for (const [name, lat, lng] of data.cities) {
+      L.marker([lat, lng], { opacity: 1, icon: cityLabel })
+        .bindTooltip(name, { permanent: true, className: 'city-label', direction: 'center', opacity: 1, offset: [0, 20] })
+        .addTo(citiesLayer);
     }
-    for (let i = 0; i < this.towns.length; i++) {
-      let town = this.towns[i];
-      let marker = new L.marker([town[1], town[2]], { opacity: 1, icon: townLabel, className: "townLabel" });
-      marker.bindTooltip(town[0], { permanent: true, className: "town-label", direction: "center", opacity: 0, offset: [0, 8] });
-      marker.addTo(map);
+    for (const [name, lat, lng] of data.towns) {
+      L.marker([lat, lng], { opacity: 1, icon: townLabel })
+        .bindTooltip(name, { permanent: true, className: 'town-label', direction: 'center', opacity: 0, offset: [0, 8] })
+        .addTo(townsLayer);
     }
-    for (let i = 0; i < this.shizomi.length; i++) {
-      let town = this.shizomi[i];
-      let marker = new L.marker([town[1], town[2]], { opacity: 1, icon: townLabel, className: "shizomiLabel" });
-      marker.bindTooltip(town[0], { permanent: true, className: "shizomi-label", direction: "center", opacity: 0, offset: [0, 8] });
-      marker.addTo(map);
+    for (const [name, lat, lng] of data.shizomi) {
+      L.marker([lat, lng], { opacity: 1, icon: townLabel })
+        .bindTooltip(name, { permanent: true, className: 'shizomi-label', direction: 'center', opacity: 0, offset: [0, 8] })
+        .addTo(shizomiLayer);
     }
 
-    this.changeZoom(map, ".country-label", 4, 5);
-    this.changeZoom(map, ".water-label", 6, 8);
-    this.changeZoom(map, ".city-label", 6, 8);
-    this.changeZoom(map, ".town-label", 7, 8);
-    this.changeZoom(map, ".shizomi-label", 6, 8);
-    this.changeZoom(map, ".city-marker-icon", 5.5, 8);
-    this.changeZoom(map, ".town-marker-icon", 6.5, 8);
+    L.control.layers(undefined, {
+      Continents: continentsLayer,
+      Countries: countriesLayer,
+      Seas: seasLayer,
+      Cities: citiesLayer,
+      Towns: townsLayer,
+      Shizomi: shizomiLayer
+    }, { collapsed: true }).addTo(map);
+
+    this.changeZoom(map, '.country-label', 4, 5);
+    this.changeZoom(map, '.water-label', 6, 8);
+    this.changeZoom(map, '.city-label', 6, 8);
+    this.changeZoom(map, '.town-label', 7, 8);
+    this.changeZoom(map, '.shizomi-label', 6, 8);
+    this.changeZoom(map, '.city-marker-icon', 5.5, 8);
+    this.changeZoom(map, '.town-marker-icon', 6.5, 8);
     map.zoomIn();
   }
 
-  ngAfterViewInit(): void {
-    this.initMap();
-  }
-
-  ngOnDestroy(): void {
-    if (this.map) {
-      this.map.remove();
-    }
-  }
-
-  changeZoom(map: L.Map, targetLayer: string, zoomMin: number, zoomMax: number): void {
+  private changeZoom(map: L.Map, targetLayer: string, zoomMin: number, zoomMax: number): void {
     const updateOpacity = () => {
       const zoom = map.getZoom();
       const visible = zoom <= zoomMax && zoom >= zoomMin;
@@ -257,6 +177,7 @@ export class HexmapComponent implements AfterViewInit, OnDestroy {
         el.style.opacity = visible ? '1' : '0';
       });
     };
-    map.on('zoom', updateOpacity);
+    map.on('zoomend', updateOpacity);
+    map.on('overlayadd', updateOpacity);
   }
 }
