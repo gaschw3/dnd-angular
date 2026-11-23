@@ -12,6 +12,9 @@ export class SameComponentReuseStrategy extends BaseRouteReuseStrategy {
     }
     const futureLoader = future.routeConfig?.loadComponent;
     const currLoader = curr.routeConfig?.loadComponent;
-    return Boolean(futureLoader && futureLoader === currLoader);
+    if (!futureLoader || futureLoader !== currLoader) {
+      return false;
+    }
+    return future.routeConfig?.data?.['mode'] === curr.routeConfig?.data?.['mode'];
   }
 }

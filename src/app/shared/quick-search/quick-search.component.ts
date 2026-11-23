@@ -8,7 +8,6 @@ import { faSearch, faThumbtack } from '@fortawesome/free-solid-svg-icons';
 
 import { DndDataService } from '../services/dnd-data.service';
 import { BookmarkCategory, BookmarksService } from '../services/bookmarks.service';
-import { IdToNamePipe } from '../../pipes/id-to-name.pipe';
 
 interface SearchEntry {
   id: string;
@@ -38,7 +37,6 @@ export class QuickSearchComponent {
 
   private readonly entries = signal<SearchEntry[]>([]);
   private indexLoaded = false;
-  private idPipe = new IdToNamePipe();
 
   readonly categories: (BookmarkCategory | 'All')[] = [
     'All',
@@ -217,15 +215,14 @@ export class QuickSearchComponent {
         }
 
         for (const item of data.items) {
-          const slug = this.idPipe.transform(item.name);
           const subtitle = `${item.rarity || 'item'} · ${item.source || ''}`.trim();
           idx.push({
-            id: `item:${slug}`,
-            name: item.name,
+            id: `item:${item.id}`,
+            name: item.plainName,
             category: 'Item',
-            route: `/items/${slug}`,
+            route: `/items/${item.id}`,
             subtitle,
-            searchText: `${item.name} ${subtitle}`.toLowerCase()
+            searchText: `${item.plainName} ${subtitle}`.toLowerCase()
           });
         }
 
@@ -278,13 +275,12 @@ export class QuickSearchComponent {
         }
 
         for (const feat of data.features) {
-          const slug = this.idPipe.transform(feat.name);
           const subtitle = `Feature · ${feat.source || ''}`.trim();
           idx.push({
-            id: `feature:${slug}`,
+            id: `feature:${feat.id}`,
             name: feat.name,
             category: 'Feature',
-            route: `/other-features/${slug}`,
+            route: `/other-features/${feat.id}`,
             subtitle,
             searchText: `${feat.name} ${subtitle}`.toLowerCase()
           });

@@ -1,9 +1,9 @@
 <h1>D&D 5e Bestiary</h1>
 
 <div class="card mb-3">
-  <div class="card-body py-2 px-3 bestiary-quick-filters">
-    <div class="bestiary-filter-group bestiary-cr-group">
-      <span class="bestiary-filter-label">
+  <div class="card-body py-2 px-3 display-quick-filters">
+    <div class="display-filter-group bestiary-cr-group">
+      <span class="display-filter-label">
         CR <span class="bestiary-cr-readout">{{ crMinLabel() }} – {{ crMaxLabel() }}</span>
       </span>
       <div class="cr-slider-wrap">
@@ -37,21 +37,21 @@
       </div>
     </div>
 
-    <div class="bestiary-filter-group">
-      <span class="bestiary-filter-label">Type</span>
-      <div class="dropdown bestiary-type-dropdown" [class.show]="typeMenuOpen()">
+    <div class="display-filter-group">
+      <span class="display-filter-label">Type</span>
+      <div class="dropdown display-filter-dropdown bestiary-type-dropdown" [class.show]="typeMenuOpen()">
         <button
           type="button"
-          class="form-select form-select-sm bestiary-type-trigger text-start"
+          class="form-select form-select-sm display-filter-trigger text-start"
           [attr.aria-expanded]="typeMenuOpen()"
           aria-haspopup="true"
           (click)="toggleTypeMenu()"
         >
           {{ typeDropdownLabel() }}
         </button>
-        <div class="dropdown-menu bestiary-type-menu p-2" [class.show]="typeMenuOpen()">
+        <div class="dropdown-menu display-filter-menu p-2" [class.show]="typeMenuOpen()">
           @for (typeName of availableTypes(); track typeName) {
-            <label class="bestiary-type-option">
+            <label class="display-filter-option">
               <input
                 type="checkbox"
                 class="form-check-input m-0"
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="bestiary-filter-group">
+    <div class="display-filter-group">
       <button
         type="button"
         class="display-chip-btn"
@@ -87,7 +87,7 @@
       @if (hasQuickFilters()) {
         <button
           type="button"
-          class="btn btn-sm btn-link bestiary-clear-btn"
+          class="btn btn-sm btn-link display-clear-btn"
           (click)="resetQuickFilters()"
         >
           Reset
@@ -115,7 +115,7 @@
     </div>
   }
 
-  <div id="monster-detail-pane" class="col-xl-6 monster-detail-pane">
+  <div id="monster-detail-pane" class="col-xl-6 display-detail-pane">
     @if (currMonster(); as monster) {
       <app-monster [monster]="monster"></app-monster>
     } @else {

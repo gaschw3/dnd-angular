@@ -3,9 +3,9 @@
 <div class="card mb-3">
   <div class="card-body py-2 px-3 item-quick-filters">
     <div class="item-filter-row">
-      <div class="item-filter-group">
-        <span class="item-filter-label">Category</span>
-        <div class="item-chip-row">
+      <div class="display-filter-group">
+        <span class="display-filter-label">Category</span>
+        <div class="display-chip-row">
           <button
             type="button"
             class="display-chip-btn"
@@ -66,7 +66,7 @@
       @if (hasQuickFilters()) {
         <button
           type="button"
-          class="btn btn-sm btn-link item-clear-btn"
+          class="btn btn-sm btn-link display-clear-btn"
           (click)="resetQuickFilters()"
         >
           Reset
@@ -75,9 +75,9 @@
     </div>
 
     <div class="item-filter-row">
-      <div class="item-filter-group">
-        <span class="item-filter-label">Rarity</span>
-        <div class="item-chip-row">
+      <div class="display-filter-group">
+        <span class="display-filter-label">Rarity</span>
+        <div class="display-chip-row">
           @for (rarity of rarityOptions; track rarity) {
             <button
               type="button"
@@ -113,7 +113,7 @@
     </div>
   }
 
-  <div id="item-detail-pane" class="col-xl-5 item-detail-pane">
+  <div id="item-detail-pane" class="col-xl-5 display-detail-pane">
     @if (currItem(); as item) {
       <app-item [item]="item"></app-item>
     } @else {

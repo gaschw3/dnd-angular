@@ -1,13 +1,13 @@
-import { Component, ElementRef, HostListener, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
+import { Component, DestroyRef, ElementRef, HostListener, OnInit, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TitleCasePipe } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject, combineLatest } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 import { MonsterComponent } from './monster/monster.component';
 import { Monster } from 'src/app/models/monster';
-import { sizeMap } from 'src/app/shared/helpers/monster/sizeMap';
+import { escapeHtml, sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { MonsterHelperService } from 'src/app/shared/helpers/monster/monster-helper.service';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
@@ -27,7 +27,7 @@ const CR_MAX_INDEX = CR_STEPS.length - 1;
   templateUrl: './beastiary.component.html',
   styleUrls: ['./beastiary.component.scss']
 })
-export class BeastiaryComponent implements OnInit, OnDestroy {
+export class BeastiaryComponent implements OnInit {
   readonly monsters = signal<Monster[]>([]);
   readonly currMonster = signal<Monster | undefined>(undefined);
 
@@ -108,8 +108,6 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
     });
   });
 
-  private destroy$ = new Subject<void>();
-
   columns: ReferenceTableColumn<Monster>[] = [
     {
       key: 'name',
@@ -141,7 +139,7 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
       placeholder: 'Type',
       filterId: 'beastiary-type-filter',
       width: '25%',
-      value: m => this.titleCase.transform(this.getType(m.type))
+      value: m => this.titleCase.transform(this.monsterHelper.getType(m.type))
     },
     {
       key: 'other',
@@ -160,7 +158,7 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
       width: '8%',
       align: 'right',
       value: m => m.source || '',
-      cellClass: m => (m.source ? `color-${m.source.toLowerCase()}` : '')
+      cellClass: m => sourceColorClass(m.source)
     }
   ];
 
@@ -172,6 +170,7 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private title = inject(Title);
   private hostRef = inject(ElementRef<HTMLElement>);
+  private destroyRef = inject(DestroyRef);
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
@@ -192,7 +191,7 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(queryParams => {
+    this.route.queryParams.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(queryParams => {
       const crMin = queryParams['crMin'];
       const crMax = queryParams['crMax'];
       const minIdx = typeof crMin === 'string' ? CR_STEPS.indexOf(crMin as (typeof CR_STEPS)[number]) : -1;
@@ -216,7 +215,7 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
     });
 
     combineLatest([this.dataService.getMonsters(), this.route.paramMap])
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(([monsters, params]) => {
         this.monsters.set(monsters);
         const monsterName = params.get('monsterName');
@@ -224,11 +223,6 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
         this.currMonster.set(found);
         this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Bestiary — EotCC 5e');
       });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   onCrMinInput(event: Event): void {
@@ -305,31 +299,6 @@ export class BeastiaryComponent implements OnInit, OnDestroy {
       }, 0);
     }
   }
-
-  getType(type: any): string {
-    if (type) {
-      if (type.tags) {
-        return `${type.type} (${type.tags[0]})`;
-      } else if (type.swarmSize) {
-        return `swarm of ${sizeMap[type.swarmSize]} ${type.type}`;
-      } else if (type.type && type.type.choose) {
-        return type.type.choose.join(', ') + ' (choose)';
-      } else if (type.type) {
-        return type.type;
-      } else {
-        return type;
-      }
-    }
-    return '';
-  }
-}
-
-function escapeHtml(text: string): string {
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
 }
 
 function formatMonsterNameHtml(monster: Monster): string {

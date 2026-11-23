@@ -1,12 +1,13 @@
-import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
+import { Component, DestroyRef, OnInit, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TitleCasePipe } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject, combineLatest } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 import { Item, ItemCategory } from 'src/app/models/item';
 import { ItemComponent } from './item/item.component';
+import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
@@ -20,7 +21,7 @@ type ItemCategoryFilter = 'all' | ItemCategory;
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss']
 })
-export class ItemsComponent implements OnInit, OnDestroy {
+export class ItemsComponent implements OnInit {
   readonly items = signal<Item[]>([]);
   readonly currItem = signal<Item | undefined>(undefined);
   readonly selectedCategory = signal<ItemCategoryFilter>('all');
@@ -52,7 +53,6 @@ export class ItemsComponent implements OnInit, OnDestroy {
   });
 
   private titleCase = new TitleCasePipe();
-  private destroy$ = new Subject<void>();
 
   columns: ReferenceTableColumn<Item>[] = [
     {
@@ -105,7 +105,7 @@ export class ItemsComponent implements OnInit, OnDestroy {
       width: '10%',
       align: 'right',
       value: item => item.source || '',
-      cellClass: item => (item.source ? `color-${item.source.toLowerCase()}` : '')
+      cellClass: item => sourceColorClass(item.source)
     }
   ];
 
@@ -115,9 +115,10 @@ export class ItemsComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private title = inject(Title);
+  private destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
-    this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(queryParams => {
+    this.route.queryParams.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(queryParams => {
       const cat = queryParams['cat'];
       const nextCat: ItemCategoryFilter =
         cat === 'magic' || cat === 'weapons' || cat === 'armor' || cat === 'normal' || cat === 'treasure'
@@ -138,7 +139,7 @@ export class ItemsComponent implements OnInit, OnDestroy {
     });
 
     combineLatest([this.dataService.getItems(), this.route.paramMap])
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(([items, params]) => {
         this.items.set(items);
         const itemName = params.get('itemName');
@@ -146,11 +147,6 @@ export class ItemsComponent implements OnInit, OnDestroy {
         this.currItem.set(found);
         this.title.setTitle(found ? `${found.plainName} — EotCC 5e` : 'Items — EotCC 5e');
       });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   setCategory(choice: ItemCategoryFilter): void {

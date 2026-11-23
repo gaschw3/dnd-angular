@@ -1,8 +1,7 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import {
   faAngleDown,
@@ -18,6 +17,7 @@ import {
 
 import { MonsterHelperService } from '../../shared/helpers/monster/monster-helper.service';
 import { Monster } from 'src/app/models';
+import { copyToClipboard, sourceColorClass } from '../../shared/helpers/format.utils';
 import { HelperService } from '../../shared/helpers/helper.service';
 import { crXpMap, levelXp, levelXp2024 } from 'src/app/shared/helpers/monster/experienceMaps';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
@@ -57,7 +57,7 @@ interface PartyDifficulty {
   templateUrl: './encounter-builder.component.html',
   styleUrls: ['./encounter-builder.component.scss']
 })
-export class EncounterBuilderComponent implements OnInit, OnDestroy {
+export class EncounterBuilderComponent implements OnInit {
   readonly faFloppyDisk = faFloppyDisk;
   readonly faPlus = faPlus;
   readonly faMinus = faMinus;
@@ -96,7 +96,6 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   savedEncounters: SavedEncounter[] = [];
   copied = false;
 
-  private destroy$ = new Subject<void>();
   private copyResetTimer?: ReturnType<typeof setTimeout>;
 
   columns: ReferenceTableColumn<Monster>[] = [
@@ -168,7 +167,7 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
       width: '6%',
       align: 'right',
       value: m => m.source || '',
-      cellClass: m => (m.source ? `color-${m.source.toLowerCase()}` : '')
+      cellClass: m => sourceColorClass(m.source)
     }
   ];
 
@@ -178,23 +177,22 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
   public helper = inject(HelperService);
   public monsterHelper = inject(MonsterHelperService);
   private cdr = inject(ChangeDetectorRef);
+  private destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
+    this.destroyRef.onDestroy(() => {
+      if (this.copyResetTimer) {
+        clearTimeout(this.copyResetTimer);
+      }
+    });
+
     this.restorePartySettings();
     this.savedEncounters = this.loadSavedEncounters();
-    this.dataService.getMonsters().pipe(takeUntil(this.destroy$)).subscribe(monsters => {
+    this.dataService.getMonsters().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(monsters => {
       this.monsters = monsters.filter(f => f.cr !== 'N/A');
       this.cdr.markForCheck();
     });
     this.recalcPartyDifficulty();
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-    if (this.copyResetTimer) {
-      clearTimeout(this.copyResetTimer);
-    }
   }
 
   get totalMonsterCount(): number {
@@ -256,15 +254,11 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
     if (this.currEncounter.length === 0) {
       return;
     }
-    const text = this.buildEncounterSummary();
-    if (navigator.clipboard?.writeText) {
-      navigator.clipboard.writeText(text).then(
-        () => this.flashCopied(),
-        () => this.fallbackCopy(text)
-      );
-    } else {
-      this.fallbackCopy(text);
-    }
+    copyToClipboard(this.buildEncounterSummary()).then(ok => {
+      if (ok) {
+        this.flashCopied();
+      }
+    });
   }
 
   private flashCopied(): void {
@@ -277,21 +271,6 @@ export class EncounterBuilderComponent implements OnInit, OnDestroy {
       this.copied = false;
       this.cdr.markForCheck();
     }, 1800);
-  }
-
-  private fallbackCopy(text: string): void {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    try {
-      document.execCommand('copy');
-      this.flashCopied();
-    } finally {
-      document.body.removeChild(textarea);
-    }
   }
 
   setRuleset(mode: '2024' | '2014'): void {

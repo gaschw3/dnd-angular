@@ -14,8 +14,6 @@ const loadAncestries = () =>
   import('./controllers/ancestries/ancestries.component').then(m => m.AncestriesComponent);
 const loadFeats = () =>
   import('./controllers/feats/feats.component').then(m => m.FeatsComponent);
-const loadEpicBoons = () =>
-  import('./controllers/epic-boons/epic-boons.component').then(m => m.EpicBoonsComponent);
 const loadItems = () =>
   import('./controllers/items/items.component').then(m => m.ItemsComponent);
 const loadCharacterBuilder = () =>
@@ -37,10 +35,10 @@ export const routes: Routes = [
   { path: 'backgrounds/:backgroundName', loadComponent: loadBackgrounds },
   { path: 'ancestries', title: 'Ancestries — EotCC 5e', loadComponent: loadAncestries },
   { path: 'ancestries/:ancestryName', loadComponent: loadAncestries },
-  { path: 'feats', title: 'Feats — EotCC 5e', loadComponent: loadFeats },
-  { path: 'feats/:featName', loadComponent: loadFeats },
-  { path: 'epic-boons', title: 'Epic Boons — EotCC 5e', loadComponent: loadEpicBoons },
-  { path: 'epic-boons/:featName', loadComponent: loadEpicBoons },
+  { path: 'feats', title: 'Feats — EotCC 5e', loadComponent: loadFeats, data: { mode: 'feats' } },
+  { path: 'feats/:featName', loadComponent: loadFeats, data: { mode: 'feats' } },
+  { path: 'epic-boons', title: 'Epic Boons — EotCC 5e', loadComponent: loadFeats, data: { mode: 'epic-boons' } },
+  { path: 'epic-boons/:featName', loadComponent: loadFeats, data: { mode: 'epic-boons' } },
   { path: 'items', title: 'Items — EotCC 5e', loadComponent: loadItems },
   { path: 'items/:itemName', loadComponent: loadItems },
   { path: 'character-builder', title: 'Character Builder — EotCC 5e', loadComponent: loadCharacterBuilder },

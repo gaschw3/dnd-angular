@@ -6,7 +6,7 @@ import { MonsterHelperService } from 'src/app/shared/helpers/monster/monster-hel
 import { DetailHeaderComponent } from 'src/app/shared/detail-header/detail-header.component';
 import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
 import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
-import { TitlecaseExceptPipe } from 'src/app/pipes/titlecase-except.pipe';
+import { titlecaseExcept } from 'src/app/pipes/titlecase-except.pipe';
 
 export interface StatBlockAbility {
   label: string;
@@ -31,7 +31,6 @@ export class MonsterComponent {
   public helper = inject(HelperService);
   public monsterService = inject(MonsterHelperService);
   private titleCase = new TitleCasePipe();
-  private titlecaseExcept = new TitlecaseExceptPipe();
 
   private failedTokenUrl = signal('');
 
@@ -58,8 +57,8 @@ export class MonsterComponent {
   readonly subtitleText = computed(() => {
     const m = this.monster();
     const size = this.titleCase.transform(this.monsterService.translateSize(m.size) || m.size);
-    const type = this.titlecaseExcept.transform(this.monsterService.getType(m.type) || '');
-    const alignment = this.titlecaseExcept.transform(this.monsterService.translateAlignment(m.alignment) || '');
+    const type = titlecaseExcept(this.monsterService.getType(m.type) || '');
+    const alignment = titlecaseExcept(this.monsterService.translateAlignment(m.alignment) || '');
     return `${size} ${type}${alignment ? ', ' + alignment : ''}`.trim();
   });
 

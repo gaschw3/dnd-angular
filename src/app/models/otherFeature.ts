@@ -1,6 +1,4 @@
-import { IdToNamePipe } from '../pipes/id-to-name.pipe';
-
-const idPipe = new IdToNamePipe();
+import { slugifyName } from '../pipes/id-to-name.pipe';
 
 export interface OtherFeature {
   id: string;
@@ -57,7 +55,7 @@ export function normalizeOtherFeature(raw: any): OtherFeature {
   const firstType = raw.featureType?.[0];
   return {
     ...raw,
-    id: raw.id || idPipe.transform(String(raw.name || '')),
+    id: raw.id || slugifyName(String(raw.name || '')),
     typeLabel: firstType ? featureType[firstType] || '' : '',
     prereqSummary: formatPrereq(raw.prerequisite, false),
     prereqFull: formatPrereq(raw.prerequisite, true),

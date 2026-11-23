@@ -1,12 +1,13 @@
-import { Component, OnDestroy, OnInit, inject, signal } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject, combineLatest } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 import { BackgroundComponent } from './background/background.component';
 import { Background } from 'src/app/models/background';
-import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
+import { transformLinks } from 'src/app/pipes/linkmaker.pipe';
+import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
@@ -16,12 +17,9 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
   templateUrl: './backgrounds.component.html',
   styleUrls: ['./backgrounds.component.scss']
 })
-export class BackgroundsComponent implements OnInit, OnDestroy {
+export class BackgroundsComponent implements OnInit {
   readonly backgrounds = signal<Background[]>([]);
   readonly currBackground = signal<Background | undefined>(undefined);
-
-  private destroy$ = new Subject<void>();
-  private linkmaker = new LinkmakerPipe();
 
   columns: ReferenceTableColumn<Background>[] = [
     {
@@ -48,7 +46,7 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
       filterId: 'bg-tool-filter',
       width: '22%',
       isHtml: true,
-      value: bg => this.linkmaker.transform(bg.tool || ''),
+      value: bg => transformLinks(bg.tool || ''),
       filterValue: bg => bg.tool || ''
     },
     {
@@ -58,7 +56,7 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
       filterId: 'bg-feat-filter',
       width: '22%',
       isHtml: true,
-      value: bg => this.linkmaker.transform(bg.feat || ''),
+      value: bg => transformLinks(bg.feat || ''),
       filterValue: bg => bg.feat || ''
     },
     {
@@ -69,7 +67,7 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
       width: '12%',
       align: 'right',
       value: bg => bg.source || '',
-      cellClass: bg => (bg.source ? `color-${bg.source.toLowerCase()}` : '')
+      cellClass: bg => sourceColorClass(bg.source)
     }
   ];
 
@@ -79,10 +77,11 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private title = inject(Title);
+  private destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
     combineLatest([this.dataService.getBackgrounds(), this.route.paramMap])
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(([backgrounds, params]) => {
         this.backgrounds.set(backgrounds);
         const backgroundName = params.get('backgroundName');
@@ -90,11 +89,6 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
         this.currBackground.set(found);
         this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Backgrounds — EotCC 5e');
       });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   setCurrBackground(clicked: Background): void {

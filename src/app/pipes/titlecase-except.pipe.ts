@@ -1,32 +1,32 @@
 import { Pipe, PipeTransform } from '@angular/core';
+
+const LOWERCASE_EXCEPTIONS = new Set(['a', 'and', 'an', 'or', 'the', 'but', 'not', 'for']);
+
+export function titlecaseExcept(value: string): string {
+  if (!value) {
+    return '';
+  }
+
+  return value
+    .split(/([\s/]+)/)
+    .map((word, index) => {
+      const lower = word.toLowerCase();
+      if (index > 0 && LOWERCASE_EXCEPTIONS.has(lower)) {
+        return lower;
+      }
+      return word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join('');
+}
+
 @Pipe({
-    name: 'titlecaseExcept'
+  name: 'titlecaseExcept'
 })
-export class TitlecaseExceptPipe implements PipeTransform{
-    except:string[] = []; 
-    transform(value: string){ // accepts any number of arguments
-        this.except = ["a", "and", "an", "or", "the", "but", "not", "for"];
-        if(!value) return null;
-
-        const words = value.split(/([\s/]+)/);
-        for (let index = 0; index < words.length; index++) {
-        const word = words[index];
-        if (index > 0 && this.isPreposition(word)) {
-            words[index] = word.toLowerCase();
-        }
-        else {
-            words[index] = this.toTitleCase(word);
-        }
-        }
-
-        return words.join("");
+export class TitlecaseExceptPipe implements PipeTransform {
+  transform(value: string): string | null {
+    if (!value) {
+      return null;
     }
-    private isPreposition = (word: string):boolean => {
-        const lowerCaseWords  = [...this.except];
-        return lowerCaseWords.includes(word.toLowerCase());
-    }
-
-    private toTitleCase = (word: string):string => 
-         word.substr(0, 1).toUpperCase() + word.substr(1).toLowerCase();
-
+    return titlecaseExcept(value);
+  }
 }

@@ -1,78 +1,7 @@
-.spell-quick-filters {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.65rem 1.1rem;
-}
-
-.spell-filter-group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.spell-filter-label {
-  font-weight: 600;
-  opacity: 0.85;
-  margin-bottom: 0;
-}
-
-.spell-class-dropdown {
-  position: relative;
-}
-
-.spell-class-trigger {
-  min-width: 9.5rem;
-  max-width: 14rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.spell-class-menu {
-  min-width: 12rem;
-  max-height: 16rem;
-  overflow-y: auto;
-  z-index: 900;
-}
-
-.spell-class-option {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.45rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  margin-bottom: 0;
-
-  &:hover {
-    background-color: var(--theme-table-hover, rgba(255, 255, 255, 0.08));
-  }
-}
-
-.spell-chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
-
 .spell-level-chip {
   min-width: 2.1rem;
   justify-content: center;
   padding-inline: 0.5rem;
-}
-
-.spell-clear-btn {
-  padding: 0 0.35rem;
-  color: var(--theme-link-color);
-  text-decoration: none;
-
-  &:hover {
-    color: var(--theme-link-hover, var(--theme-primary));
-    text-decoration: underline;
-  }
 }
 
 .spell-caius-chip {
@@ -121,15 +50,4 @@
   margin-top: 0.2rem;
   color: var(--theme-secondary, var(--theme-primary));
   opacity: 0.9;
-}
-
-.spell-detail-pane {
-  scroll-margin-top: 85px;
-
-  @media (min-width: 1200px) {
-    position: sticky;
-    top: 70px;
-    max-height: calc(100vh - 85px);
-    overflow-y: auto;
-  }
 }

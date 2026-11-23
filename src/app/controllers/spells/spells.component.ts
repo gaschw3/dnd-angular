@@ -1,14 +1,15 @@
-import { Component, ElementRef, HostListener, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
+import { Component, DestroyRef, ElementRef, HostListener, OnInit, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TitleCasePipe } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faFeatherPointed } from '@fortawesome/free-solid-svg-icons';
-import { Subject, combineLatest } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 import { SpellComponent } from './spell/spell.component';
 import { Spell } from 'src/app/models/spell';
+import { escapeHtml, sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
@@ -20,7 +21,7 @@ const SPELL_LEVELS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   templateUrl: './spells.component.html',
   styleUrls: ['./spells.component.scss']
 })
-export class SpellsComponent implements OnInit, OnDestroy {
+export class SpellsComponent implements OnInit {
   readonly faFeatherPointed = faFeatherPointed;
   readonly spells = signal<Spell[]>([]);
   readonly currSpell = signal<Spell | undefined>(undefined);
@@ -100,7 +101,6 @@ export class SpellsComponent implements OnInit, OnDestroy {
     });
   });
 
-  private destroy$ = new Subject<void>();
   private titleCase = new TitleCasePipe();
 
   columns: ReferenceTableColumn<Spell>[] = [
@@ -161,7 +161,7 @@ export class SpellsComponent implements OnInit, OnDestroy {
       align: 'right',
       filterType: 'regex',
       value: s => s.source || '',
-      cellClass: s => (s.source ? `color-${s.source.toLowerCase()}` : '')
+      cellClass: s => sourceColorClass(s.source)
     }
   ];
 
@@ -172,6 +172,7 @@ export class SpellsComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private title = inject(Title);
   private hostRef = inject(ElementRef<HTMLElement>);
+  private destroyRef = inject(DestroyRef);
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
@@ -192,7 +193,7 @@ export class SpellsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(queryParams => {
+    this.route.queryParams.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(queryParams => {
       const {
         classes: classQuery,
         levels: levelsQuery,
@@ -244,7 +245,7 @@ export class SpellsComponent implements OnInit, OnDestroy {
     });
 
     combineLatest([this.dataService.getSpells(), this.route.paramMap])
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(([spells, params]) => {
         this.spells.set(spells);
         const spellName = params.get('spellName');
@@ -252,11 +253,6 @@ export class SpellsComponent implements OnInit, OnDestroy {
         this.currSpell.set(found);
         this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Spells — EotCC 5e');
       });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   toggleLevel(level: number): void {
@@ -330,14 +326,6 @@ export class SpellsComponent implements OnInit, OnDestroy {
       }, 0);
     }
   }
-}
-
-function escapeHtml(text: string): string {
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
 }
 
 function formatSpellNameHtml(spell: Spell): string {

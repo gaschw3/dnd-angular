@@ -1,7 +1,7 @@
-import { Component, HostListener, OnDestroy, inject, signal } from '@angular/core';
+import { Component, DestroyRef, HostListener, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule, Location } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faPlus, faThumbtack } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +13,7 @@ import { BookmarkCategory, BookmarksService } from '../services/bookmarks.servic
   templateUrl: './bookmarks-tray.component.html',
   styleUrls: ['./bookmarks-tray.component.scss']
 })
-export class BookmarksTrayComponent implements OnDestroy {
+export class BookmarksTrayComponent {
   readonly faThumbtack = faThumbtack;
   readonly faPlus = faPlus;
   readonly currentUrl = signal('/');
@@ -21,26 +21,19 @@ export class BookmarksTrayComponent implements OnDestroy {
   readonly isDragging = signal(false);
 
   private dragStartY = 0;
-  private routerSub: Subscription;
-  private unlistenLocation?: () => void;
 
   public bookmarks = inject(BookmarksService);
   private router = inject(Router);
   private location = inject(Location);
+  private destroyRef = inject(DestroyRef);
 
   constructor() {
     this.syncCurrentUrl();
-    this.routerSub = this.router.events
-      .pipe(filter(e => e instanceof NavigationEnd))
+    this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd), takeUntilDestroyed())
       .subscribe(() => this.syncCurrentUrl());
-    this.unlistenLocation = this.location.onUrlChange(() => this.syncCurrentUrl());
-  }
-
-  ngOnDestroy(): void {
-    this.routerSub.unsubscribe();
-    if (this.unlistenLocation) {
-      this.unlistenLocation();
-    }
+    const unlistenLocation = this.location.onUrlChange(() => this.syncCurrentUrl());
+    this.destroyRef.onDestroy(() => unlistenLocation());
   }
 
   get isOpen() {

@@ -1,8 +1,7 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, DestroyRef, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import * as L from 'leaflet';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { DndDataService, MapLocationsData } from '../../shared/services/dnd-data.service';
@@ -21,16 +20,16 @@ interface SearchableLocation {
   templateUrl: './hexmap.component.html',
   styleUrls: ['./hexmap.component.scss']
 })
-export class HexmapComponent implements AfterViewInit, OnDestroy {
+export class HexmapComponent implements AfterViewInit {
   readonly faLocationDot = faLocationDot;
   private map?: L.Map;
-  private destroy$ = new Subject<void>();
 
   searchQuery = '';
   allLocations: SearchableLocation[] = [];
 
   private dataService = inject(DndDataService);
   private cdr = inject(ChangeDetectorRef);
+  private destroyRef = inject(DestroyRef);
 
   get filteredLocations(): SearchableLocation[] {
     const q = this.searchQuery.trim().toLowerCase();
@@ -43,19 +42,17 @@ export class HexmapComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.dataService.getMapLocations().pipe(takeUntil(this.destroy$)).subscribe(data => {
+    this.destroyRef.onDestroy(() => {
+      if (this.map) {
+        this.map.remove();
+      }
+    });
+
+    this.dataService.getMapLocations().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(data => {
       this.buildSearchIndex(data);
       this.initMap(data);
       this.cdr.markForCheck();
     });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-    if (this.map) {
-      this.map.remove();
-    }
   }
 
   flyToLocation(loc: SearchableLocation): void {

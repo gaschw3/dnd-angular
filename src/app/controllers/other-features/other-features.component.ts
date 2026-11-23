@@ -1,12 +1,13 @@
-import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
+import { Component, DestroyRef, OnInit, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject, combineLatest } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 import { FeatureComponent } from './feature/feature.component';
 import { featureType, OtherFeature } from 'src/app/models/otherFeature';
+import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
 
@@ -16,7 +17,7 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
   styleUrls: ['./other-features.component.scss'],
   templateUrl: './other-features.component.html'
 })
-export class OtherFeaturesComponent implements OnInit, OnDestroy {
+export class OtherFeaturesComponent implements OnInit {
   readonly otherFeatures = signal<OtherFeature[]>([]);
   readonly selected = signal<string>('all');
   readonly currFeature = signal<OtherFeature | undefined>(undefined);
@@ -32,8 +33,6 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
     }
     return all.filter(f => (f.featureType ? f.featureType[0].includes(sel) : false));
   });
-
-  private destroy$ = new Subject<void>();
 
   columns: ReferenceTableColumn<OtherFeature>[] = [
     {
@@ -79,7 +78,7 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
       width: '5%',
       align: 'right',
       value: f => f.source || '',
-      cellClass: f => (f.source ? `color-${f.source.toLowerCase()}` : '')
+      cellClass: f => sourceColorClass(f.source)
     }
   ];
 
@@ -89,14 +88,15 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private title = inject(Title);
+  private destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
-    this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(params => {
+    this.route.queryParams.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(params => {
       this.initialFilters.set({ ...params });
     });
 
     combineLatest([this.dataService.getOtherFeatures(), this.route.paramMap])
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(([otherFeatures, params]) => {
         this.otherFeatures.set(otherFeatures);
         const featureParam = params.get('feature');
@@ -108,11 +108,6 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
         this.currFeature.set(found);
         this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Misc. Features — EotCC 5e');
       });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   setCurrFeature(clicked: OtherFeature): void {

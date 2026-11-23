@@ -1,7 +1,5 @@
-import { IdToNamePipe } from '../pipes/id-to-name.pipe';
+import { slugifyName } from '../pipes/id-to-name.pipe';
 import { typeTable } from '../shared/itemTypes';
-
-const idPipe = new IdToNamePipe();
 
 export type ItemCategory = 'magic' | 'weapons' | 'armor' | 'normal' | 'treasure';
 
@@ -69,7 +67,7 @@ export function normalizeItem(raw: any): Item {
 
   return {
     ...raw,
-    id: raw.id || idPipe.transform(String(raw.name || '')),
+    id: raw.id || slugifyName(String(raw.name || '')),
     plainName,
     hasHtmlName: String(raw.name || '').includes('<'),
     rarity,

@@ -53,12 +53,17 @@ export class MonsterHelperService {
   // "type": { "type": "typeName", "swarmSize": [ "size" ]}
   // this coverts them all to the appropriate string
   getType(type: any): string {
+    if (!type) {
+      return '';
+    }
     if (type.tags) {
       return `${type.type} (${type.tags[0]})`;
     } else if (type.swarmSize) {
       return `swarm of ${sizeMap[type.swarmSize]} ${type.type}`;
     } else if (type.type && type.type.choose) {
-      return type.type.choose.join(", ").replace(/, ([^,]*)$/, ' or $1');
+      return type.type.choose.join(', ').replace(/, ([^,]*)$/, ' or $1');
+    } else if (type.type) {
+      return type.type;
     } else {
       return type;
     }

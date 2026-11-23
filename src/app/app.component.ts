@@ -1,4 +1,5 @@
 import { Component, HostListener, ViewChild, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
@@ -52,7 +53,8 @@ export class AppComponent {
   constructor() {
     this.viewportScroller.setOffset([0, 80]);
     const navEndEvent$ = this.router.events.pipe(
-      filter(e => e instanceof NavigationEnd)
+      filter(e => e instanceof NavigationEnd),
+      takeUntilDestroyed()
     );
     navEndEvent$.subscribe((e: NavigationEnd) => {
       this.isNavbarCollapsed = true;

@@ -1,14 +1,15 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Subject, forkJoin } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faCopy, faCheck, faMinus, faPlus, faRotateLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { Background } from '../../models/background';
 import { Feat } from '../../models/feat';
 import { DndDataService } from '../../shared/services/dnd-data.service';
+import { copyToClipboard } from '../../shared/helpers/format.utils';
 import { HelperService } from '../../shared/helpers/helper.service';
 import { BackgroundComponent } from '../backgrounds/background/background.component';
 import { FeatComponent } from '../feats/feat/feat.component';
@@ -68,7 +69,7 @@ const MAX_BONUS_PER_STAT = 2;
   templateUrl: './character-builder.component.html',
   styleUrls: ['./character-builder.component.scss']
 })
-export class CharacterBuilderComponent implements OnInit, OnDestroy {
+export class CharacterBuilderComponent implements OnInit {
   readonly faPlus = faPlus;
   readonly faMinus = faMinus;
   readonly faCopy = faCopy;
@@ -98,19 +99,25 @@ export class CharacterBuilderComponent implements OnInit, OnDestroy {
     { key: 'cha', label: 'Charisma', base: 8, bonus: 0 }
   ];
 
-  private destroy$ = new Subject<void>();
   private copyResetTimer?: ReturnType<typeof setTimeout>;
 
   private dataService = inject(DndDataService);
   public helper = inject(HelperService);
   private cdr = inject(ChangeDetectorRef);
+  private destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
+    this.destroyRef.onDestroy(() => {
+      if (this.copyResetTimer) {
+        clearTimeout(this.copyResetTimer);
+      }
+    });
+
     this.restoreState();
     forkJoin({
       backgrounds: this.dataService.getBackgrounds(),
       feats: this.dataService.getFeats()
-    }).pipe(takeUntil(this.destroy$)).subscribe(({ backgrounds, feats }) => {
+    }).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({ backgrounds, feats }) => {
       this.backgrounds = backgrounds;
       this.originFeats = feats.filter(f => f.category === 'O');
       if (this.selectedBackgroundId && !this.selectedBackground) {
@@ -122,14 +129,6 @@ export class CharacterBuilderComponent implements OnInit, OnDestroy {
       this.enforceAllowedBonuses();
       this.cdr.markForCheck();
     });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-    if (this.copyResetTimer) {
-      clearTimeout(this.copyResetTimer);
-    }
   }
 
   get minScore(): number {
@@ -350,15 +349,11 @@ export class CharacterBuilderComponent implements OnInit, OnDestroy {
   }
 
   copySummary(): void {
-    const summary = this.buildSummaryText();
-    if (navigator.clipboard?.writeText) {
-      navigator.clipboard.writeText(summary).then(
-        () => this.flashCopied(),
-        () => this.fallbackCopy(summary)
-      );
-    } else {
-      this.fallbackCopy(summary);
-    }
+    copyToClipboard(this.buildSummaryText()).then(ok => {
+      if (ok) {
+        this.flashCopied();
+      }
+    });
   }
 
   private flashCopied(): void {
@@ -371,21 +366,6 @@ export class CharacterBuilderComponent implements OnInit, OnDestroy {
       this.copied = false;
       this.cdr.markForCheck();
     }, 1800);
-  }
-
-  private fallbackCopy(text: string): void {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    try {
-      document.execCommand('copy');
-      this.flashCopied();
-    } finally {
-      document.body.removeChild(textarea);
-    }
   }
 
   private clampScore(score: number): number {

@@ -1,15 +1,16 @@
-import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
+import { Component, DestroyRef, OnInit, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faWandSparkles } from '@fortawesome/free-solid-svg-icons';
-import { Subject, combineLatest } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 import { newClass } from '../../models';
 import { ArchetypesComponent } from './archetypes/archetypes.component';
 import { ClassComponent } from './class/class.component';
 import { LevelTableComponent } from './level-table/level-table.component';
+import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import { DetailHeaderComponent } from 'src/app/shared/detail-header/detail-header.component';
 import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
@@ -21,7 +22,7 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
   templateUrl: './classes.component.html',
   styleUrls: ['./classes.component.scss']
 })
-export class ClassesComponent implements OnInit, OnDestroy {
+export class ClassesComponent implements OnInit {
   readonly classes = signal<newClass[]>([]);
   readonly currClass = signal<newClass | undefined>(undefined);
   readonly selectedArchetypes = signal<string[]>([]);
@@ -31,7 +32,6 @@ export class ClassesComponent implements OnInit, OnDestroy {
   });
   readonly faWandSparkles = faWandSparkles;
 
-  private destroy$ = new Subject<void>();
   private shakeTimer?: ReturnType<typeof setTimeout>;
 
   columns: ReferenceTableColumn<newClass>[] = [
@@ -53,7 +53,7 @@ export class ClassesComponent implements OnInit, OnDestroy {
       filterable: false,
       filterSkipCell: true,
       value: c => c.source || '',
-      cellClass: c => (c.source ? `color-${c.source.toLowerCase()}` : '')
+      cellClass: c => sourceColorClass(c.source)
     }
   ];
 
@@ -63,14 +63,21 @@ export class ClassesComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private title = inject(Title);
+  private destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
+    this.destroyRef.onDestroy(() => {
+      if (this.shakeTimer) {
+        clearTimeout(this.shakeTimer);
+      }
+    });
+
     combineLatest([
       this.dataService.getClasses(),
       this.route.paramMap,
       this.route.queryParamMap
     ])
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(([classes, params, queryParams]) => {
         this.classes.set(classes);
         const className = params.get('className');
@@ -91,14 +98,6 @@ export class ClassesComponent implements OnInit, OnDestroy {
           this.selectedArchetypes.set([]);
         }
       });
-  }
-
-  ngOnDestroy(): void {
-    if (this.shakeTimer) {
-      clearTimeout(this.shakeTimer);
-    }
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   setCurrClass(clickedClass: newClass): void {

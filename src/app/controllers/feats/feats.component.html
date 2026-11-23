@@ -1,4 +1,4 @@
-<h1>D&D 5e Feats</h1>
+<h1>{{ pageHeading }}</h1>
 
 <div class="row g-3 align-items-start">
   @if (feats().length) {
@@ -12,7 +12,7 @@
         [initialFilters]="initialFilters()"
         [pageSize]="20"
         [pageSizeOptions]="[20, 45, -1]"
-        itemLabel="feats"
+        [itemLabel]="itemLabel"
         defaultSortKey="name"
         (rowClick)="setCurrFeat($event)"
       ></app-reference-table>
@@ -23,8 +23,8 @@
       <app-feat [feat]="feat"></app-feat>
     } @else {
       <div class="display-empty-state">
-        <div class="display-empty-title">Select a Feat</div>
-        <p>Choose a feat from the list to view its prerequisites, ability score bonuses, and benefits.</p>
+        <div class="display-empty-title">{{ emptyTitle }}</div>
+        <p>{{ emptyDescription }}</p>
       </div>
     }
   </div>
