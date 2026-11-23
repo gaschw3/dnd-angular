@@ -22,7 +22,7 @@ export class MonsterHelperService {
         return (parseInt(split[0]) / parseInt(split[1]));
       } else {
         //this is an error state and something bad has happened in the JSON
-        console.log("Gound problem CR, returning -1: " + cr);
+        console.log("Found problem CR, returning -1: " + cr);
         return -1;
       }
     } else {

@@ -1,23 +1,128 @@
-<h1>D&D 5e Beastiary</h1>
+<h1>D&D 5e Bestiary</h1>
 
-<div class="row">
-  @if (monsters.length) {
-    <div class="col-md-12 beastiary-table">
+<div class="card mb-3">
+  <div class="card-body py-2 px-3 bestiary-quick-filters">
+    <div class="bestiary-filter-group bestiary-cr-group">
+      <span class="bestiary-filter-label">
+        CR <span class="bestiary-cr-readout">{{ crMinLabel() }} – {{ crMaxLabel() }}</span>
+      </span>
+      <div class="cr-slider-wrap">
+        <div class="cr-slider-track">
+          <div
+            class="cr-slider-fill"
+            [style.left.%]="crFillLeft()"
+            [style.width.%]="crFillWidth()"
+          ></div>
+        </div>
+        <input
+          type="range"
+          class="cr-slider-input"
+          [min]="0"
+          [max]="crMaxLimit"
+          step="1"
+          [value]="crMinIndex()"
+          aria-label="Minimum CR"
+          (input)="onCrMinInput($event)"
+        />
+        <input
+          type="range"
+          class="cr-slider-input"
+          [min]="0"
+          [max]="crMaxLimit"
+          step="1"
+          [value]="crMaxIndex()"
+          aria-label="Maximum CR"
+          (input)="onCrMaxInput($event)"
+        />
+      </div>
+    </div>
+
+    <div class="bestiary-filter-group">
+      <span class="bestiary-filter-label">Type</span>
+      <div class="dropdown bestiary-type-dropdown" [class.show]="typeMenuOpen()">
+        <button
+          type="button"
+          class="form-select form-select-sm bestiary-type-trigger text-start"
+          [attr.aria-expanded]="typeMenuOpen()"
+          aria-haspopup="true"
+          (click)="toggleTypeMenu()"
+        >
+          {{ typeDropdownLabel() }}
+        </button>
+        <div class="dropdown-menu bestiary-type-menu p-2" [class.show]="typeMenuOpen()">
+          @for (typeName of availableTypes(); track typeName) {
+            <label class="bestiary-type-option">
+              <input
+                type="checkbox"
+                class="form-check-input m-0"
+                [checked]="selectedTypes().includes(typeName)"
+                (change)="toggleType(typeName)"
+              />
+              <span>{{ typeName }}</span>
+            </label>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="bestiary-filter-group">
+      <button
+        type="button"
+        class="display-chip-btn"
+        [class.active]="onlyLegendary()"
+        [attr.aria-pressed]="onlyLegendary()"
+        (click)="toggleLegendary()"
+      >
+        Legendary
+      </button>
+      <button
+        type="button"
+        class="display-chip-btn"
+        [class.active]="onlySpellcaster()"
+        [attr.aria-pressed]="onlySpellcaster()"
+        (click)="toggleSpellcaster()"
+      >
+        Spellcaster
+      </button>
+      @if (hasQuickFilters()) {
+        <button
+          type="button"
+          class="btn btn-sm btn-link bestiary-clear-btn"
+          (click)="resetQuickFilters()"
+        >
+          Reset
+        </button>
+      }
+    </div>
+  </div>
+</div>
+
+<div class="row g-3 align-items-start">
+  @if (monsters().length) {
+    <div class="col-xl-6 beastiary-table">
       <app-reference-table
         tableId="tbl-beastiary"
-        [data]="monsters"
+        [data]="filteredMonsters()"
         [columns]="columns"
         [rowKey]="rowKey"
-        [selectedKey]="currMonster?.id || null"
-        [pageSize]="10"
-        [pageSizeOptions]="[10, 15, 30, 60, -1]"
+        [selectedKey]="currMonster()?.id || null"
+        [pageSize]="15"
+        [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="monsters"
         defaultSortKey="name"
         (rowClick)="setCurrMonster($event)"
       ></app-reference-table>
     </div>
   }
+
+  <div id="monster-detail-pane" class="col-xl-6 monster-detail-pane">
+    @if (currMonster(); as monster) {
+      <app-monster [monster]="monster"></app-monster>
+    } @else {
+      <div class="display-empty-state">
+        <div class="display-empty-title">Select a Monster</div>
+        <p>Choose a creature from the table to view its full statblock, traits, spells, and actions.</p>
+      </div>
+    }
+  </div>
 </div>
-@if (currMonster) {
-  <app-monster [monster]="currMonster"></app-monster>
-}
