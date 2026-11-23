@@ -13,6 +13,12 @@
   <div class="detail-header-right">
     <div class="detail-header-meta">
       <ng-content select="[detail-meta]"></ng-content>
+      @if (source()) {
+        <span class="display-meta-pill">
+          <span class="display-meta-label">Source</span>
+          <span class="display-meta-value" [class]="sourceClass()">{{ source() }}</span>
+        </span>
+      }
     </div>
     <div class="detail-header-actions">
       <ng-content select="[detail-actions]"></ng-content>

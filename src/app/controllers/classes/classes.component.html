@@ -20,7 +20,7 @@
     @if (currClass(); as cls) {
       <div class="card mb-3">
         <div class="card-body">
-          <app-detail-header [title]="cls.name">
+          <app-detail-header [title]="cls.name" [source]="cls.source">
             @if (cls.spellcastingAbility) {
               <a
                 detail-actions

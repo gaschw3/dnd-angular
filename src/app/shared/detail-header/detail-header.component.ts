@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'app-detail-header',
@@ -8,4 +8,10 @@ import { Component, input } from '@angular/core';
 export class DetailHeaderComponent {
   readonly title = input.required<string>();
   readonly subtitle = input<string | undefined>(undefined);
+  readonly source = input<string | undefined>(undefined);
+
+  readonly sourceClass = computed(() => {
+    const src = this.source();
+    return src ? `color-${src.replace(/[+-]/g, '').toLowerCase()}` : '';
+  });
 }

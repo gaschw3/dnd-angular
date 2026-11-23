@@ -2,7 +2,7 @@
   <div class="pb-4 mt-3">
     <div class="card">
       <div class="card-body">
-        <app-detail-header [title]="f.name" [subtitle]="typeLabel()">
+        <app-detail-header [title]="f.name" [subtitle]="typeLabel()" [source]="f.source">
           @if (prereqLabel()) {
             <span detail-meta class="display-meta-pill">
               <span class="display-meta-label">Prerequisite</span>
