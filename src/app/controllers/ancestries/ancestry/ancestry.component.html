@@ -1,54 +1,48 @@
-@if (ancestry) {
+@if (ancestry(); as a) {
   <div class="pb-4">
     <div class="card">
       <div class="card-body">
-        <div [class]="'ancestry-header ancestry-header-'+ancestry.id | lowercase">
-          <div class="row">
-            <div class="col">
-              <h1 [class]="'color-primary' | lowercase">{{ancestry.name}}</h1>
-            </div>
-            <div class="col">
-              <h3 [class]="'float-end color-'+ancestry.source | lowercase">{{ancestry.source}}</h3>
-            </div>
+        <app-detail-header [title]="a.name">
+          @if (sizeLabel()) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Size</span>
+              <span class="display-meta-value">{{ sizeLabel() }}</span>
+            </span>
+          }
+          @if (a.speed) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Speed</span>
+              <span class="display-meta-value">{{ speedLabel() }}</span>
+            </span>
+          }
+        </app-detail-header>
+
+        @if (introTraits().length) {
+          <div class="ancestry-intro-traits mb-3 pb-2">
+            @for (trait of introTraits(); track trait.name) {
+              <p class="mb-1"><strong>{{ trait.name }}:</strong> {{ trait.text }}</p>
+            }
           </div>
-          <div class="row border-bottom-primary">
-            <div class="col-sm-6">
-              <p class="pb-0 m-0"><strong>Size</strong> {{renderSize(ancestry.size)}}</p>
-            </div>
-            <div class="col-sm-6">
-              <p class="pb-0 m-0"><strong>Speed</strong> {{ancestry.speed}} ft.@if (ancestry.extraspeed) {
-              , {{ancestry.extraspeed}}
-            }</p>
-          </div>
-          <!-- This is badly done; the first three traits are Age, Alignment, and Size but I shouldn't be relying on that-->
-          <div class="col-sm-12">
-            <p class="pb-1 m-0"><strong>{{ancestry.traits[0].name}}</strong> {{ancestry.traits[0].text}}</p>
-          </div>
-          <div class="col-sm-12">
-            <p class="pb-1 m-0"><strong>{{ancestry.traits[1].name}}</strong> {{ancestry.traits[1].text}}</p>
-          </div>
-          <div class="col-sm-12">
-            <p class="pb-3 m-0"><strong>{{ancestry.traits[2].name}}</strong> {{ancestry.traits[2].text}}</p>
-          </div>
-        </div>
-        @if (ancestry.entries?.length) {
+        }
+
+        @if (a.entries?.length) {
           <div class="card-columns">
-            @for (entry of ancestry.entries; track entry) {
+            @for (entry of a.entries; track entry.name || $index) {
               <div class="card border-0">
-                <div class="card-body pb-0">
-                  <h4 [class]="'color-primary' | lowercase">{{entry.name}}</h4>
-                  <app-entry-renderer [list]="entry.entries" [parent]="''"></app-entry-renderer>
+                <div class="card-body px-0 pt-0 pb-2">
+                  <h4 class="display-section-heading">{{ entry.name }}</h4>
+                  <app-entry-renderer [list]="entry.entries" parent=""></app-entry-renderer>
                 </div>
               </div>
             }
           </div>
-        } @else if (ancestry.traits?.length > 3) {
+        } @else if (remainingTraits().length) {
           <div class="card-columns">
-            @for (trait of ancestry.traits | slice: 3; track trait) {
+            @for (trait of remainingTraits(); track trait.name || $index) {
               <div class="card border-0">
-                <div class="card-body pb-0">
-                  <h4 [class]="'color-primary' | lowercase">{{trait.name}}</h4>
-                  <app-entry-renderer [list]="trait.text" [parent]="''"></app-entry-renderer>
+                <div class="card-body px-0 pt-0 pb-2">
+                  <h4 class="display-section-heading">{{ trait.name }}</h4>
+                  <app-entry-renderer [list]="trait.text" parent=""></app-entry-renderer>
                 </div>
               </div>
             }
@@ -57,5 +51,4 @@
       </div>
     </div>
   </div>
-</div>
 }

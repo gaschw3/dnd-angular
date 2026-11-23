@@ -1,63 +1,58 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, computed, input } from '@angular/core';
 import { featureType, OtherFeature, Prerequisite } from 'src/app/models/otherFeature';
-import { IdToNamePipe } from 'src/app/pipes/id-to-name.pipe';
+import { DetailHeaderComponent } from 'src/app/shared/detail-header/detail-header.component';
 import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
 
 @Component({
-  imports: [CommonModule, EntryRendererComponent],
+  imports: [DetailHeaderComponent, EntryRendererComponent],
   selector: 'app-feature',
   templateUrl: './feature.component.html',
   styleUrls: ['./feature.component.scss']
 })
-export class FeatureComponent implements OnInit {
+export class FeatureComponent {
+  readonly feature = input.required<OtherFeature>();
 
-  @Input() feature: OtherFeature;
-  id: string;
+  readonly typeLabel = computed(() => {
+    const key = this.feature().featureType?.[0];
+    return key ? featureType[key] || '' : '';
+  });
 
-  idPipe = new IdToNamePipe;
-  featureType = featureType;
-
-  ngOnInit() {
-    this.id = this.idPipe.transform(this.feature.name);
-   }
-
-   getPrereq(prereq: Prerequisite[]): string {
-    if (!prereq || prereq.length < 1) {
-      return "—";
-    } else {
-      const ret = [];
-      const reqs = prereq[0]; // there is always only one entry at this point
-      if (typeof reqs.level != "undefined") {
-        const className = reqs.level.class?.name ?? "";
-        if (typeof reqs.level.subclass != "undefined") {
-          ret.push("Level " + reqs.level.level + " " + reqs.level.subclass.name + (className ? " " + className : ""));
-        } else if (className) {
-          ret.push("Level " + reqs.level.level + " " + className);
-        } else {
-          ret.push("Level " + reqs.level.level);
-        }
-      }
-      if (typeof reqs.pact != "undefined") {
-        ret.push("Pact of the " + reqs.pact );
-      }
-      if (typeof reqs.spell != "undefined") {
-        ret.push(reqs.spell);
-      }
-      if (typeof reqs.ability != "undefined") {
-        reqs.ability.forEach((obj) => {
-          const arr = Object.entries(obj);
-          ret.push(`${arr[0][0].replace(/^[a-z]/, (firstChar) => firstChar.toUpperCase())} ${arr[0][1]}`);
-        })
-      }
-      if (typeof reqs.item != "undefined") {
-        ret.push(reqs.item[0]);
-      }
-      if (typeof reqs.feature != "undefined") {
-        ret.push(reqs.feature[0]);
-      }
-      return ret.join(", ");
-    }
-  }
+  readonly prereqLabel = computed(() => formatFeaturePrereq(this.feature().prerequisite));
 }
 
+function formatFeaturePrereq(prereq?: Prerequisite[]): string {
+  if (!prereq || prereq.length < 1) {
+    return '';
+  }
+  const ret: string[] = [];
+  const reqs = prereq[0];
+  if (reqs.level !== undefined) {
+    const className = reqs.level.class?.name ?? '';
+    if (reqs.level.subclass !== undefined) {
+      ret.push(`Level ${reqs.level.level} ${reqs.level.subclass.name}${className ? ' ' + className : ''}`);
+    } else if (className) {
+      ret.push(`Level ${reqs.level.level} ${className}`);
+    } else {
+      ret.push(`Level ${reqs.level.level}`);
+    }
+  }
+  if (reqs.pact !== undefined) {
+    ret.push(`Pact of the ${reqs.pact}`);
+  }
+  if (reqs.spell !== undefined) {
+    ret.push(reqs.spell);
+  }
+  if (reqs.ability !== undefined) {
+    reqs.ability.forEach(obj => {
+      const arr = Object.entries(obj);
+      ret.push(`${arr[0][0].replace(/^[a-z]/, c => c.toUpperCase())} ${arr[0][1]}`);
+    });
+  }
+  if (reqs.item !== undefined) {
+    ret.push(reqs.item[0]);
+  }
+  if (reqs.feature !== undefined) {
+    ret.push(reqs.feature[0]);
+  }
+  return ret.join(', ');
+}

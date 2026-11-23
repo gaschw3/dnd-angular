@@ -1,15 +1,15 @@
 <h1>D&D 5e Feats</h1>
 
-<div class="row">
-  @if (feats.length) {
-    <div class="col-sm-6 feats-table">
+<div class="row g-3 align-items-start">
+  @if (feats().length) {
+    <div class="col-lg-6 feats-table">
       <app-reference-table
         tableId="tbl-feats"
-        [data]="feats"
+        [data]="feats()"
         [columns]="columns"
         [rowKey]="rowKey"
-        [selectedKey]="currFeat?.id || null"
-        [initialFilters]="initialFilters"
+        [selectedKey]="currFeat()?.id || null"
+        [initialFilters]="initialFilters()"
         [pageSize]="20"
         [pageSizeOptions]="[20, 45, -1]"
         itemLabel="feats"
@@ -18,9 +18,14 @@
       ></app-reference-table>
     </div>
   }
-  <div class="col-sm-6">
-    @if (currFeat) {
-      <app-feat [feat]="currFeat"></app-feat>
+  <div class="col-lg-6">
+    @if (currFeat(); as feat) {
+      <app-feat [feat]="feat"></app-feat>
+    } @else {
+      <div class="display-empty-state">
+        <div class="display-empty-title">Select a Feat</div>
+        <p>Choose a feat from the list to view its prerequisites, ability score bonuses, and benefits.</p>
+      </div>
     }
   </div>
 </div>

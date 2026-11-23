@@ -1,14 +1,14 @@
 <h1>D&D 5e Ancestries</h1>
 
-<div class="row">
-  @if (ancestries.length) {
-    <div class="col-sm-4 ancestries-table">
+<div class="row g-3 align-items-start">
+  @if (ancestries().length) {
+    <div class="col-lg-4 ancestries-table">
       <app-reference-table
         tableId="tbl-ancestries"
-        [data]="ancestries"
+        [data]="ancestries()"
         [columns]="columns"
         [rowKey]="rowKey"
-        [selectedKey]="currAncestry?.id || null"
+        [selectedKey]="currAncestry()?.id || null"
         [pageSize]="20"
         [pageSizeOptions]="[20, -1]"
         itemLabel="ancestries"
@@ -17,9 +17,14 @@
       ></app-reference-table>
     </div>
   }
-  <div class="col-sm-8">
-    @if (currAncestry) {
-      <app-ancestry [ancestry]="currAncestry"></app-ancestry>
+  <div class="col-lg-8">
+    @if (currAncestry(); as ancestry) {
+      <app-ancestry [ancestry]="ancestry"></app-ancestry>
+    } @else {
+      <div class="display-empty-state">
+        <div class="display-empty-title">Select an Ancestry</div>
+        <p>Choose an ancestry from the list to view its size, speed, and traits.</p>
+      </div>
     }
   </div>
 </div>

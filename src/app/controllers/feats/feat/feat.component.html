@@ -1,25 +1,28 @@
-@if (feat) {
-  <div class="col pb-4">
+@if (feat(); as f) {
+  <div class="pb-4">
     <div class="card">
       <div class="card-body">
-        <div [class]="'feat-header feat-header-'+feat.id | lowercase">
-          <div class="row mb-2 border-bottom-primary">
-            <div class="col-8">
-              <h1 [class]="'color-primary mb-1' | lowercase">{{feat.name}}</h1>
-            </div>
-            <div class="col-4">
-              <h3 [class]="'float-end color-'+feat.source | lowercase">{{feat.source}}</h3>
-            </div>
-            <div class="col-12">
-              <p class="m-0 mb-2"><em>{{featCategory[feat.category]}} feat @if (feat.prerequisite) {
-                <span > (Prerequisite: <span [innerHtml]="feat.prerequisite | linkmaker"></span>)</span>
-              }</em></p>
-            </div>
-          </div>
-          <div class="col">
-            <app-entry-renderer [list]=feat.text parent=''></app-entry-renderer>
-          </div>
-        </div>
+        <app-detail-header [title]="f.name">
+          @if (f.prerequisite) {
+            <p detail-description class="mb-0">
+              <em>Prerequisite: <span [innerHtml]="f.prerequisite | linkmaker"></span></em>
+            </p>
+          }
+          @if (categoryName()) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Type</span>
+              <span class="display-meta-value">{{ categoryName() }}</span>
+            </span>
+          }
+          @if (f.asi) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">ASI</span>
+              <span class="display-meta-value">{{ f.asi | titlecaseExcept }}</span>
+            </span>
+          }
+        </app-detail-header>
+
+        <app-entry-renderer [list]="f.text" parent=""></app-entry-renderer>
       </div>
     </div>
   </div>

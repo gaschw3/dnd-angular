@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject, combineLatest } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { AncestryComponent } from './ancestry/ancestry.component';
 import { Ancestry } from 'src/app/models/ancestry';
@@ -16,12 +16,10 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
   styleUrls: ['./ancestries.component.scss']
 })
 export class AncestriesComponent implements OnInit, OnDestroy {
-  ancestries: Ancestry[] = [];
-  currAncestry?: Ancestry;
+  readonly ancestries = signal<Ancestry[]>([]);
+  readonly currAncestry = signal<Ancestry | undefined>(undefined);
 
   private destroy$ = new Subject<void>();
-
-  @ViewChild(AncestryComponent) child?: AncestryComponent;
 
   columns: ReferenceTableColumn<Ancestry>[] = [
     {
@@ -51,23 +49,17 @@ export class AncestriesComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private title = inject(Title);
-  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
-    this.dataService.getAncestries().pipe(takeUntil(this.destroy$)).subscribe(ancestries => {
-      this.ancestries = ancestries;
-      this.route.paramMap.pipe(takeUntil(this.destroy$)).subscribe(params => {
+    combineLatest([this.dataService.getAncestries(), this.route.paramMap])
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(([ancestries, params]) => {
+        this.ancestries.set(ancestries);
         const ancestryName = params.get('ancestryName');
-        if (ancestryName) {
-          this.currAncestry = this.ancestries.find(f => f.id === ancestryName);
-          if (this.currAncestry) {
-            this.title.setTitle(`${this.currAncestry.name} — EotCC 5e`);
-          }
-        }
-        this.cdr.markForCheck();
+        const found = ancestryName ? ancestries.find(f => f.id === ancestryName) : undefined;
+        this.currAncestry.set(found);
+        this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Ancestries — EotCC 5e');
       });
-      this.cdr.markForCheck();
-    });
   }
 
   ngOnDestroy(): void {
@@ -76,7 +68,7 @@ export class AncestriesComponent implements OnInit, OnDestroy {
   }
 
   setCurrAncestry(clicked: Ancestry): void {
-    this.currAncestry = clicked;
+    this.currAncestry.set(clicked);
     this.title.setTitle(`${clicked.name} — EotCC 5e`);
     this.router.navigate(['/ancestries', clicked.id], { queryParamsHandling: 'preserve' });
   }

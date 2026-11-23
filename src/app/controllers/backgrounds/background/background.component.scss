@@ -1,9 +1,7 @@
-.background-border-bottom {
-    border-bottom: 2px solid
-}
-
 .bg-image {
-    width:50%;
-    display:block;
-    margin:auto;
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  margin-inline: auto;
+  border: 1px solid var(--theme-input-border, rgba(255, 255, 255, 0.15));
 }

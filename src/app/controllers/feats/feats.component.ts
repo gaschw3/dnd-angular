@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject, combineLatest } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { FeatComponent } from './feat/feat.component';
 import { Feat } from 'src/app/models/feat';
@@ -17,14 +17,12 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
   styleUrls: ['./feats.component.scss']
 })
 export class FeatsComponent implements OnInit, OnDestroy {
-  feats: Feat[] = [];
-  currFeat?: Feat;
-  initialFilters: Record<string, string> = {};
+  readonly feats = signal<Feat[]>([]);
+  readonly currFeat = signal<Feat | undefined>(undefined);
+  readonly initialFilters = signal<Record<string, string>>({});
 
   private destroy$ = new Subject<void>();
   private titlecaseExcept = new TitlecaseExceptPipe();
-
-  @ViewChild(FeatComponent) child?: FeatComponent;
 
   columns: ReferenceTableColumn<Feat>[] = [
     {
@@ -71,28 +69,21 @@ export class FeatsComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private title = inject(Title);
-  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(params => {
-      this.initialFilters = { ...params };
-      this.cdr.markForCheck();
+      this.initialFilters.set({ ...params });
     });
 
-    this.dataService.getFeats().pipe(takeUntil(this.destroy$)).subscribe(feats => {
-      this.feats = feats;
-      this.route.paramMap.pipe(takeUntil(this.destroy$)).subscribe(params => {
+    combineLatest([this.dataService.getFeats(), this.route.paramMap])
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(([feats, params]) => {
+        this.feats.set(feats);
         const featName = params.get('featName');
-        if (featName) {
-          this.currFeat = this.feats.find(f => f.id === featName);
-          if (this.currFeat) {
-            this.title.setTitle(`${this.currFeat.name} — EotCC 5e`);
-          }
-        }
-        this.cdr.markForCheck();
+        const found = featName ? feats.find(f => f.id === featName) : undefined;
+        this.currFeat.set(found);
+        this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Feats — EotCC 5e');
       });
-      this.cdr.markForCheck();
-    });
   }
 
   ngOnDestroy(): void {
@@ -101,7 +92,7 @@ export class FeatsComponent implements OnInit, OnDestroy {
   }
 
   setCurrFeat(clicked: Feat): void {
-    this.currFeat = clicked;
+    this.currFeat.set(clicked);
     this.title.setTitle(`${clicked.name} — EotCC 5e`);
     this.router.navigate(['/feats', clicked.id], { queryParamsHandling: 'preserve' });
   }

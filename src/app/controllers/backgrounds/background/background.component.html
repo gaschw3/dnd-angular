@@ -1,29 +1,42 @@
-@if (background) {
-  <div class="pb-4">
+@if (background(); as bg) {
+  <div class="pb-4 mt-3">
     <div class="card">
       <div class="card-body">
-        <img class="bg-image" src={{background.image}} [alt]="background.name">
-        <div [class]="'background-header background-header-'+background.id | lowercase">
-          <div class="row">
-            <div class="col">
-              <h1 [class]="'color-primary' | lowercase">{{background.name}}</h1>
-            </div>
-            <div class="col">
-              <h3 [class]="'float-end color-'+background.source | lowercase">{{background.source}}</h3>
-            </div>
-          </div>
-          <div class="row">
-            @if (background.info) {
-              <div [class]="'col-12 border-bottom-primary' | lowercase">
-                <p class="pb-2 mb-0">{{background.info}}</p>
-              </div>
+        <app-detail-header [title]="bg.name">
+          @if (bg.info) {
+            <p detail-description class="mb-0">{{ bg.info }}</p>
+          }
+          @if (bg.skill) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Skills</span>
+              <span class="display-meta-value">{{ bg.skill }}</span>
+            </span>
+          }
+          @if (bg.tool) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Tool</span>
+              <span class="display-meta-value" [innerHtml]="bg.tool | linkmaker"></span>
+            </span>
+          }
+          @if (bg.feat) {
+            <span detail-meta class="display-meta-pill">
+              <span class="display-meta-label">Feat</span>
+              <span class="display-meta-value" [innerHtml]="bg.feat | linkmaker"></span>
+            </span>
+          }
+        </app-detail-header>
+
+        <div class="row g-3 align-items-start">
+          <div [class]="bg.image ? 'col-lg-8' : 'col-12'">
+            @if (bg.entries?.length) {
+              <app-entry-renderer [list]="bg.entries" parent=""></app-entry-renderer>
             }
           </div>
-          <div>
-            @if (background.entries) {
-              <app-entry-renderer [list]=background.entries parent=''></app-entry-renderer>
-            }
-          </div>
+          @if (bg.image) {
+            <div class="col-lg-4">
+              <img class="bg-image img-fluid rounded" [src]="bg.image" [alt]="bg.name">
+            </div>
+          }
         </div>
       </div>
     </div>

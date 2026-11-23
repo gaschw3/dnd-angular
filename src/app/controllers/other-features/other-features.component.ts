@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, combineLatest } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { FeatureComponent } from './feature/feature.component';
@@ -18,18 +18,24 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
   templateUrl: './other-features.component.html'
 })
 export class OtherFeaturesComponent implements OnInit, OnDestroy {
-  idPipe = new IdToNamePipe();
-  otherFeatures: OtherFeature[] = [];
-  shownFeatures: OtherFeature[] = [];
-  currFeature?: OtherFeature;
-  initialFilters: Record<string, string> = {};
+  readonly idPipe = new IdToNamePipe();
+  readonly otherFeatures = signal<OtherFeature[]>([]);
+  readonly selected = signal<string>('all');
+  readonly currFeature = signal<OtherFeature | undefined>(undefined);
+  readonly initialFilters = signal<Record<string, string>>({});
 
-  selected = 'all';
-  featureType = featureType;
+  readonly featureType = featureType;
+
+  readonly shownFeatures = computed(() => {
+    const all = this.otherFeatures();
+    const sel = this.selected();
+    if (!sel || sel === 'all') {
+      return all;
+    }
+    return all.filter(f => (f.featureType ? f.featureType[0].includes(sel) : false));
+  });
 
   private destroy$ = new Subject<void>();
-
-  @ViewChild(FeatureComponent) child?: FeatureComponent;
 
   columns: ReferenceTableColumn<OtherFeature>[] = [
     {
@@ -88,39 +94,27 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private title = inject(Title);
-  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(params => {
-      this.initialFilters = { ...params };
-      this.cdr.markForCheck();
+      this.initialFilters.set({ ...params });
     });
 
-    this.dataService.getOtherFeatures().pipe(takeUntil(this.destroy$)).subscribe(otherFeatures => {
-      this.otherFeatures = otherFeatures;
-      this.route.paramMap.pipe(takeUntil(this.destroy$)).subscribe(params => {
+    combineLatest([this.dataService.getOtherFeatures(), this.route.paramMap])
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(([otherFeatures, params]) => {
+        this.otherFeatures.set(otherFeatures);
         const featureParam = params.get('feature');
         const typeParam = params.get('type');
-        if (featureParam) {
-          this.currFeature = this.otherFeatures.find(f => this.idPipe.transform(f.name) === featureParam);
-          if (this.currFeature) {
-            this.title.setTitle(`${this.currFeature.name} — EotCC 5e`);
-          }
-        }
         if (typeParam) {
-          this.selected = typeParam;
+          this.selected.set(typeParam);
         }
-        if (this.selected !== 'all' && this.selected !== undefined) {
-          this.shownFeatures = this.otherFeatures.filter(f =>
-            f.featureType ? f.featureType[0].includes(this.selected) : false
-          );
-        } else {
-          this.shownFeatures = this.otherFeatures;
-        }
-        this.cdr.markForCheck();
+        const found = featureParam
+          ? otherFeatures.find(f => this.idPipe.transform(f.name) === featureParam)
+          : undefined;
+        this.currFeature.set(found);
+        this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Misc. Features — EotCC 5e');
       });
-      this.cdr.markForCheck();
-    });
   }
 
   ngOnDestroy(): void {
@@ -129,33 +123,29 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
   }
 
   setCurrFeature(clicked: OtherFeature): void {
-    this.currFeature = clicked;
+    this.currFeature.set(clicked);
     this.title.setTitle(`${clicked.name} — EotCC 5e`);
     const slug = this.idPipe.transform(clicked.name);
-    if (this.selected === 'all') {
+    const sel = this.selected();
+    if (sel === 'all') {
       this.router.navigate(['/other-features', slug], { queryParamsHandling: 'preserve' });
     } else {
-      this.router.navigate(['/other-features', this.selected, slug], { queryParamsHandling: 'preserve' });
+      this.router.navigate(['/other-features', sel, slug], { queryParamsHandling: 'preserve' });
     }
   }
 
   setFilter(clicked: string): void {
-    this.selected = clicked;
-    if (clicked === 'all') {
-      this.shownFeatures = this.otherFeatures;
-    } else {
-      this.shownFeatures = this.otherFeatures.filter(f =>
-        f.featureType ? f.featureType[0].includes(clicked) : false
-      );
-    }
-    if (this.currFeature && this.shownFeatures.indexOf(this.currFeature) >= 0) {
-      this.router.navigate(['/other-features', clicked, this.idPipe.transform(this.currFeature.name)], {
+    this.selected.set(clicked);
+    const visible = this.shownFeatures();
+    const current = this.currFeature();
+    if (current && visible.includes(current)) {
+      this.router.navigate(['/other-features', clicked, this.idPipe.transform(current.name)], {
         queryParamsHandling: 'preserve'
       });
-    } else if (this.shownFeatures.length > 0) {
-      this.currFeature = this.shownFeatures[0];
-      this.title.setTitle(`${this.currFeature.name} — EotCC 5e`);
-      this.router.navigate(['/other-features', clicked, this.idPipe.transform(this.shownFeatures[0].name)], {
+    } else if (visible.length > 0 && current) {
+      this.currFeature.set(visible[0]);
+      this.title.setTitle(`${visible[0].name} — EotCC 5e`);
+      this.router.navigate(['/other-features', clicked, this.idPipe.transform(visible[0].name)], {
         queryParamsHandling: 'preserve'
       });
     }
@@ -164,48 +154,46 @@ export class OtherFeaturesComponent implements OnInit, OnDestroy {
   getPrereq(prereq?: Prerequisite[]): string {
     if (!prereq || prereq.length < 1) {
       return '—';
-    } else {
-      const ret: string[] = [];
-      const reqs = prereq[0];
-      if (typeof reqs.pact !== 'undefined') {
-        ret.push('Pact of the ' + reqs.pact);
-      }
-      if (typeof reqs.spell !== 'undefined') {
-        ret.push(reqs.spell);
-      }
-      if (typeof reqs.item !== 'undefined') {
-        ret.push(reqs.item[0]);
-      }
-      if (typeof reqs.feature !== 'undefined') {
-        ret.push(reqs.feature[0]);
-      }
-      if (typeof reqs.ability !== 'undefined') {
-        reqs.ability.forEach(obj => {
-          const arr = Object.entries(obj);
-          ret.push(`${arr[0][0].replace(/^[a-z]/, firstChar => firstChar.toUpperCase())} ${arr[0][1]}`);
-        });
-      }
-      if (typeof reqs.level !== 'undefined') {
-        const className = reqs.level.class?.name ?? '';
-        if (typeof reqs.level.subclass !== 'undefined') {
-          ret.push(reqs.level.subclass.name + (className ? ' ' + className : ''));
-        } else if (className) {
-          ret.push(className);
-        }
-      }
-      return ret.join(', ');
     }
+    const ret: string[] = [];
+    const reqs = prereq[0];
+    if (typeof reqs.pact !== 'undefined') {
+      ret.push('Pact of the ' + reqs.pact);
+    }
+    if (typeof reqs.spell !== 'undefined') {
+      ret.push(reqs.spell);
+    }
+    if (typeof reqs.item !== 'undefined') {
+      ret.push(reqs.item[0]);
+    }
+    if (typeof reqs.feature !== 'undefined') {
+      ret.push(reqs.feature[0]);
+    }
+    if (typeof reqs.ability !== 'undefined') {
+      reqs.ability.forEach(obj => {
+        const arr = Object.entries(obj);
+        ret.push(`${arr[0][0].replace(/^[a-z]/, firstChar => firstChar.toUpperCase())} ${arr[0][1]}`);
+      });
+    }
+    if (typeof reqs.level !== 'undefined') {
+      const className = reqs.level.class?.name ?? '';
+      if (typeof reqs.level.subclass !== 'undefined') {
+        ret.push(reqs.level.subclass.name + (className ? ' ' + className : ''));
+      } else if (className) {
+        ret.push(className);
+      }
+    }
+    return ret.join(', ');
   }
 
   getLevelPrereq(prereq?: Prerequisite[]): string {
     if (!prereq || prereq.length < 1) {
       return '—';
-    } else {
-      const reqs = prereq[0];
-      if (typeof reqs.level !== 'undefined' && typeof reqs.level.level !== 'undefined') {
-        return String(reqs.level.level);
-      }
-      return '—';
     }
+    const reqs = prereq[0];
+    if (typeof reqs.level !== 'undefined' && typeof reqs.level.level !== 'undefined') {
+      return String(reqs.level.level);
+    }
+    return '—';
   }
 }

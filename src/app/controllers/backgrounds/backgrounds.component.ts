@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject, combineLatest } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { BackgroundComponent } from './background/background.component';
 import { Background } from 'src/app/models/background';
@@ -17,13 +17,11 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
   styleUrls: ['./backgrounds.component.scss']
 })
 export class BackgroundsComponent implements OnInit, OnDestroy {
-  backgrounds: Background[] = [];
-  currBackground?: Background;
+  readonly backgrounds = signal<Background[]>([]);
+  readonly currBackground = signal<Background | undefined>(undefined);
 
   private destroy$ = new Subject<void>();
   private linkmaker = new LinkmakerPipe();
-
-  @ViewChild(BackgroundComponent) child?: BackgroundComponent;
 
   columns: ReferenceTableColumn<Background>[] = [
     {
@@ -81,23 +79,17 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private title = inject(Title);
-  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
-    this.dataService.getBackgrounds().pipe(takeUntil(this.destroy$)).subscribe(backgrounds => {
-      this.backgrounds = backgrounds;
-      this.route.paramMap.pipe(takeUntil(this.destroy$)).subscribe(params => {
+    combineLatest([this.dataService.getBackgrounds(), this.route.paramMap])
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(([backgrounds, params]) => {
+        this.backgrounds.set(backgrounds);
         const backgroundName = params.get('backgroundName');
-        if (backgroundName) {
-          this.currBackground = this.backgrounds.find(f => f.id === backgroundName);
-          if (this.currBackground) {
-            this.title.setTitle(`${this.currBackground.name} — EotCC 5e`);
-          }
-        }
-        this.cdr.markForCheck();
+        const found = backgroundName ? backgrounds.find(f => f.id === backgroundName) : undefined;
+        this.currBackground.set(found);
+        this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Backgrounds — EotCC 5e');
       });
-      this.cdr.markForCheck();
-    });
   }
 
   ngOnDestroy(): void {
@@ -106,7 +98,7 @@ export class BackgroundsComponent implements OnInit, OnDestroy {
   }
 
   setCurrBackground(clicked: Background): void {
-    this.currBackground = clicked;
+    this.currBackground.set(clicked);
     this.title.setTitle(`${clicked.name} — EotCC 5e`);
     this.router.navigate(['/backgrounds', clicked.id], { queryParamsHandling: 'preserve' });
   }
