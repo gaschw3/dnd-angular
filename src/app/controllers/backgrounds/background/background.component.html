@@ -2,7 +2,7 @@
   <div class="pb-4">
     <div class="card">
       <div class="card-body">
-        <img class="bg-image" src={{background.image}}>
+        <img class="bg-image" src={{background.image}} [alt]="background.name">
         <div [class]="'background-header background-header-'+background.id | lowercase">
           <div class="row">
             <div class="col">
@@ -21,7 +21,7 @@
           </div>
           <div>
             @if (background.entries) {
-              <entry-renderer [list]=background.entries parent=''></entry-renderer>
+              <app-entry-renderer [list]=background.entries parent=''></app-entry-renderer>
             }
           </div>
         </div>

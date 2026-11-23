@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Ancestry } from 'src/app/models/ancestry';
 
 @Component({
@@ -7,7 +7,7 @@ import { Ancestry } from 'src/app/models/ancestry';
   templateUrl: './ancestry.component.html',
   styleUrls: ['./ancestry.component.scss']
 })
-export class AncestryComponent implements OnInit {
+export class AncestryComponent {
 
   @Input() ancestry: Ancestry;
 
@@ -18,8 +18,6 @@ export class AncestryComponent implements OnInit {
     "L": "Large",
     "S/M": "Medium or Small, choose at creation"
   }
-
-  ngOnInit() {}
 
   renderSize(size) {
     return this.sizeTable[size];

@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import { Subject } from 'rxjs';
 import { Background } from 'src/app/models/background';
 
 @Component({
@@ -9,14 +8,12 @@ import { Background } from 'src/app/models/background';
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.scss']
 })
-export class BackgroundComponent implements OnInit {
+export class BackgroundComponent {
 
   @Input() background: Background;
 
   traitTables = ["Ideal", "Bond", "Flaw", "Personality Trait"];
   repeatedTraits = ["Skill Proficiencies", "Languages", "Tool Proficiencies", "Equipment"];
-
-  ngOnInit() {}
 
   isUnique(trait) {
     if (this.repeatedTraits.includes(trait.name)) {
@@ -29,7 +26,7 @@ export class BackgroundComponent implements OnInit {
   isTable(trait) {
     if (this.traitTables.includes(trait.name)) {
       return true;
-    } else if (Boolean(trait.leadin)) {
+    } else if (trait.leadin) {
       return true;
     } else {
       return false;

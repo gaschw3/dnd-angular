@@ -32,8 +32,8 @@ export class Feat {
     }
 
     if (feat.prerequisite) {
-      let jsonPrereq = feat.prerequisite[0];
-      let prereqArr = [];
+      const jsonPrereq = feat.prerequisite[0];
+      const prereqArr = [];
       if (jsonPrereq.level) {
         prereqArr.push(`${getOrdinal(jsonPrereq.level)} level`);
       }
@@ -41,24 +41,24 @@ export class Feat {
         prereqArr.push("Spellcasting or pact magic feature");
       }
       if (jsonPrereq.race) {
-        let ancestryArr = [];
-        for (let ancestry of jsonPrereq.race) {
+        const ancestryArr = [];
+        for (const ancestry of jsonPrereq.race) {
           ancestryArr.push(ancestry.name);
         }
         //kind of yucky regex, but basically parse into a comma-seperated list in this format: 'x', 'x or y', 'x, y, or z', etc.
         prereqArr.push(ancestryArr.join(', ').replace(/, ([^,]*)$/, ' or $1'));
       }
       if (jsonPrereq.class) {
-        let classArr = [];
-        for (let clazz of jsonPrereq.class) {
+        const classArr = [];
+        for (const clazz of jsonPrereq.class) {
           classArr.push(clazz.name);
         }
         //kind of yucky regex, but basically parse into a comma-seperated list in this format: 'x', 'x or y', 'x, y, or z', etc.
         prereqArr.push(classArr.join(', ').replace(/, ([^,]*)$/, ' or $1'));
       }
       if (jsonPrereq.ability) {
-        let abilityArr = [];
-        for (let ability of jsonPrereq.ability) {
+        const abilityArr = [];
+        for (const ability of jsonPrereq.ability) {
           abilityArr.push(`${Object.keys(ability)[0].toUpperCase()} ${Object.values(ability)[0]}+`);
         }
         prereqArr.push(abilityArr.join(', ').replace(/, ([^,]*)$/, ' or $1'));

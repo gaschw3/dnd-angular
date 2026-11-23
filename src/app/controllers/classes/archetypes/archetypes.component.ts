@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   standalone: false,
@@ -6,15 +6,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './archetypes.component.html',
   styleUrls: ['./archetypes.component.scss']
 })
-export class ArchetypesComponent implements OnInit {
+export class ArchetypesComponent {
   @Input() archetypes: any[] = [];
   @Input() selectedArchetypes: string[] = [];
   @Input() allSelected = false;
   @Output() check: EventEmitter<string> = new EventEmitter<string>();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   clickArchetype(name: string): void {
     const idx = this.selectedArchetypes.indexOf(name);

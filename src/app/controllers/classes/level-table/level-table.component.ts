@@ -1,5 +1,5 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { newClass } from 'src/app/models';
 
 @Component({
@@ -8,7 +8,7 @@ import { newClass } from 'src/app/models';
   templateUrl: './level-table.component.html',
   styleUrls: ['./level-table.component.scss']
 })
-export class LevelTableComponent implements OnInit {
+export class LevelTableComponent {
 
   @Input() dndClass: newClass;
   get class(): newClass {
@@ -18,9 +18,6 @@ export class LevelTableComponent implements OnInit {
 
   constructor(private viewport: ViewportScroller) {
     this.viewport.setOffset([0, 80]);
-  }
-
-  ngOnInit() {
   }
 
   getFeatures(level) {

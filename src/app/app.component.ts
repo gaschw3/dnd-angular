@@ -5,7 +5,7 @@ import { QuickSearchComponent } from './shared/quick-search/quick-search.compone
 import { BookmarksTrayComponent } from './shared/bookmarks-tray/bookmarks-tray.component';
 import { BookmarksService } from './shared/services/bookmarks.service';
 
-declare var gtag: any;
+declare let gtag: any;
 
 @Component({
   standalone: false,

@@ -47,8 +47,12 @@
       @for (item of bookmarks.items(); track item.route) {
         <div
           class="bm-item"
+          role="button"
+          tabindex="0"
           [class.active]="item.route === currentUrl()"
           (click)="navigateTo(item.route)"
+          (keydown.enter)="navigateTo(item.route)"
+          (keydown.space)="$event.preventDefault(); navigateTo(item.route)"
         >
           <div class="bm-item-text">
             <span class="bm-badge">{{ item.category }}</span>

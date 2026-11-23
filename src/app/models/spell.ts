@@ -48,7 +48,7 @@ export class Spell implements ISpell {
         this.level = spellJson.level;
         this.replaced = spellJson.replaced;
         this.school = spellSchool[spellJson.school];
-        let time = spellJson.time[0];
+        const time = spellJson.time[0];
 
         this.time = `${time.number} ${time.unit == 'bonus' ? 'bonus action' : time.unit} ${time.condition ? ', ' + time.condition : ''}`;
         if (time.unit !== 'bonus' && time.unit !== 'action' && time.unit !== 'reaction') {
@@ -71,7 +71,7 @@ export class Spell implements ISpell {
           this.components += ` (${spellJson.components.m.text ? spellJson.components.m.text : spellJson.components.m})`;
         }
 
-        let duration = spellJson.duration[0];
+        const duration = spellJson.duration[0];
         this.duration = '';
         this.concentration = false;
         if (duration.concentration) {

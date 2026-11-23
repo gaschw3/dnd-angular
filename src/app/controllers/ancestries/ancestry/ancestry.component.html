@@ -37,7 +37,7 @@
               <div class="card border-0">
                 <div class="card-body pb-0">
                   <h4 [class]="'color-primary' | lowercase">{{entry.name}}</h4>
-                  <entry-renderer [list]="entry.entries" [parent]="''"></entry-renderer>
+                  <app-entry-renderer [list]="entry.entries" [parent]="''"></app-entry-renderer>
                 </div>
               </div>
             }
@@ -48,7 +48,7 @@
               <div class="card border-0">
                 <div class="card-body pb-0">
                   <h4 [class]="'color-primary' | lowercase">{{trait.name}}</h4>
-                  <entry-renderer [list]="trait.text" [parent]="''"></entry-renderer>
+                  <app-entry-renderer [list]="trait.text" [parent]="''"></app-entry-renderer>
                 </div>
               </div>
             }

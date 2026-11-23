@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 
 @Directive({
   standalone: false,
-    selector: '[backButton]'
+    selector: '[appBackButton]'
 })
 export class BackButtonDirective {
     constructor(private location: Location) { }

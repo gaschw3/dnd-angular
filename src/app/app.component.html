@@ -5,12 +5,12 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav class="navbar sticky-top navbar-expand-lg bg-primary" [ngClass]="theme === 'royal' || theme === 'light' ? 'navbar-light' : 'navbar-dark'">
     <div class="container-fluid">
-      @if (theme != 'royal') {
+      @if (theme !== 'royal') {
         <div class="me-2 d-flex align-items-center">
           <img src="./favicon.ico" width="30" height="30" alt="site favicon">
         </div>
       }
-      @if (theme == 'royal') {
+      @if (theme === 'royal') {
         <div class="me-2 d-flex align-items-center">
           <img src="./royal-seal.png" width="30" height="36" alt="site icon">
         </div>
@@ -92,7 +92,7 @@
               Planar Portal
               <i class="fa fa-cog" aria-hidden="true"></i>
             </a>
-            <div class="dropdown-menu dropdown-menu-end" [class.show]="openDropdown === 'portal'" aria-labelledby="navbarDropdownPortal" (click)="$event.stopPropagation()">
+            <div class="dropdown-menu dropdown-menu-end" [class.show]="openDropdown === 'portal'" aria-labelledby="navbarDropdownPortal" tabindex="-1" (click)="$event.stopPropagation()" (keydown.enter)="$event.stopPropagation()">
               <form class="form-sm m-3">
                 <div class="mb-3">
                   <label for="theme-select"><i class="fa fa-superpowers fa-spin" aria-hidden="true"></i> Destination</label>
@@ -106,7 +106,7 @@
                     <option value="forest">Hidden Vale</option>
                   </select>
                 </div>
-                @if (theme != 'dark') {
+                @if (theme !== 'dark') {
                   <div class="mb-3">
                     <div class="form-check form-switch">
                       <input type="checkbox" class="form-check-input" [(ngModel)]="particles" (change)="changeParticles()" id="particles" name="particles">

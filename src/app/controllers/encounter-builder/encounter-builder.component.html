@@ -41,28 +41,28 @@
       <div class="col-sm-6 mt-3">
         @if (ruleset === '2024') {
           <ul class="float-end list-unstyled text-end">
-            <li [class.fw-bold]="currEncounterDifficulty == 'low'">
+            <li [class.fw-bold]="currEncounterDifficulty === 'low'">
               <span>Low:</span> {{levelXp2024[partyLevel].low * partySize | number}} xp
             </li>
-            <li [class.fw-bold]="currEncounterDifficulty == 'moderate'">
+            <li [class.fw-bold]="currEncounterDifficulty === 'moderate'">
               <span>Moderate:</span> {{levelXp2024[partyLevel].moderate * partySize | number}} xp
             </li>
-            <li [class.fw-bold]="currEncounterDifficulty == 'high'">
+            <li [class.fw-bold]="currEncounterDifficulty === 'high'">
               <span>High:</span> {{levelXp2024[partyLevel].high * partySize | number}} xp
             </li>
           </ul>
         } @else {
           <ul class="float-end list-unstyled text-end">
-            <li [class.fw-bold]="currEncounterDifficulty == 'easy'">
+            <li [class.fw-bold]="currEncounterDifficulty === 'easy'">
               <span>Easy:</span> {{levelXp[partyLevel].easy * partySize | number}} xp
             </li>
-            <li [class.fw-bold]="currEncounterDifficulty == 'medium'">
+            <li [class.fw-bold]="currEncounterDifficulty === 'medium'">
               <span>Medium:</span> {{levelXp[partyLevel].medium * partySize | number}} xp
             </li>
-            <li [class.fw-bold]="currEncounterDifficulty == 'hard'">
+            <li [class.fw-bold]="currEncounterDifficulty === 'hard'">
               <span>Hard:</span> {{levelXp[partyLevel].hard * partySize | number}} xp
             </li>
-            <li [class.fw-bold]="currEncounterDifficulty == 'deadly'">
+            <li [class.fw-bold]="currEncounterDifficulty === 'deadly'">
               <span>Deadly:</span> {{levelXp[partyLevel].deadly * partySize | number}} xp
             </li>
             <li class="mt-2">
@@ -105,7 +105,14 @@
                 <div class="current-encounter--table">
                   @for (entry of currEncounter; track entry; let i = $index) {
                     <div class="current-encounter--row">
-                      <div class="current-encounter--monster-info" (click)="setCurrMonster(entry.monster)">
+                      <div
+                        class="current-encounter--monster-info"
+                        role="button"
+                        tabindex="0"
+                        (click)="setCurrMonster(entry.monster)"
+                        (keydown.enter)="setCurrMonster(entry.monster)"
+                        (keydown.space)="$event.preventDefault(); setCurrMonster(entry.monster)"
+                      >
                         <a class="current-encounter--monster-name">{{entry.monster.name}}</a>
                         <div>
                           <span class="current-encounter--monster-cr">CR: {{entry.monster.cr}}</span>

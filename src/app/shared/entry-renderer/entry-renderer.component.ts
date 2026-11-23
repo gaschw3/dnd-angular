@@ -1,21 +1,16 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   standalone: false,
-  selector: 'entry-renderer',
+  selector: 'app-entry-renderer',
   templateUrl: './entry-renderer.component.html',
   styleUrls: ['./entry-renderer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EntryRendererComponent implements OnInit {
+export class EntryRendererComponent {
 
   @Input() parent: any;
   @Input() list: any;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   isSimpleList(items): boolean {
     if (typeof items[0] === 'string') {

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 
 import { newClass, newMulticlass, Proficiencies} from '../../../models';
 import { FeaturesComponent } from '../features/features.component';
@@ -21,14 +21,14 @@ export class ClassComponent implements OnInit, OnChanges {
   @ViewChild(ArchetypesComponent) child2: ArchetypesComponent;
   @Output() talk: EventEmitter<string> = new EventEmitter<string>();
 
-  archetypeChange: Subject<Array<string>> = new Subject<Array<string>>();
+  archetypeChange: Subject<string[]> = new Subject<string[]>();
   selectedChange: Subject<boolean> = new Subject<boolean>();
 
   prof: Proficiencies;
   multi: newMulticlass;
-  selectedArchetypes: Array<string> = [];
-  allSelected: boolean = false;
-  ccId: number = 0; //current class id
+  selectedArchetypes: string[] = [];
+  allSelected = false;
+  ccId = 0; //current class id
 
   constructor() {
     this.archetypeChange.subscribe((value) => {

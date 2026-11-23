@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Spell } from 'src/app/models/spell';
 
 @Component({
@@ -7,20 +7,14 @@ import { Spell } from 'src/app/models/spell';
   templateUrl: './spell.component.html',
   styleUrls: ['./spell.component.scss']
 })
-export class SpellComponent implements OnInit {
+export class SpellComponent {
 
   @Input() spell: Spell;
 
-  ccId: number = 0; //current class id
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
+  ccId = 0; //current class id
 
   formatSpellLevel(lvl, schoolObj){
-    let school = schoolObj.name;
+    const school = schoolObj.name;
     if (lvl === 0)
       return school + " Cantrip";
     if (lvl === 1)

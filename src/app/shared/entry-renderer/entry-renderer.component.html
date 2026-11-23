@@ -3,14 +3,14 @@
     @case ('inset') {
       <div>
         <div class="alert alert-dark" role="alert">
-          <strong>{{entry.name}} - </strong><entry-renderer [list]=entry.entries [parent]="''"></entry-renderer>
+          <strong>{{entry.name}} - </strong><app-entry-renderer [list]=entry.entries [parent]="''"></app-entry-renderer>
         </div>
       </div>
     }
     @case ('list') {
       <div>
         <ul>
-          <entry-renderer [list]=entry.items [parent]="'list'"></entry-renderer>
+          <app-entry-renderer [list]=entry.items [parent]="'list'"></app-entry-renderer>
         </ul>
       </div>
     }
@@ -40,40 +40,40 @@
     @case ('column') {
       <div class="row">
         <div class="col-sm-6">
-          <entry-renderer [list]=entry.column [parent]="''"></entry-renderer>
+          <app-entry-renderer [list]=entry.column [parent]="''"></app-entry-renderer>
         </div>
         <div class="col-sm-6">
-          <entry-renderer [list]=entry.column2 [parent]="''"></entry-renderer>
+          <app-entry-renderer [list]=entry.column2 [parent]="''"></app-entry-renderer>
         </div>
       </div>
     }
     @case ('entries') {
       <div>
-        @if (parent=='') {
+        @if (parent==='') {
           <p class="pb-0 mb-2 entry-title">
             @if (entry.name) {
               <strong>{{entry.name}}. </strong>
-              }<entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+              }<app-entry-renderer [list]=entry.entries [parent]="'entries'"></app-entry-renderer>
             </p>
           }
-          @if (parent=='entries') {
+          @if (parent==='entries') {
             <p class="pb-0 mb-2 entry-title">
-              <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+              <strong>{{entry.name}}. </strong><app-entry-renderer [list]=entry.entries [parent]="'entries'"></app-entry-renderer>
             </p>
           }
-          @if (parent=='list') {
+          @if (parent==='list') {
             <li>
-              <strong>{{entry.name}}. </strong><entry-renderer [list]=entry.entries [parent]="'entries'"></entry-renderer>
+              <strong>{{entry.name}}. </strong><app-entry-renderer [list]=entry.entries [parent]="'entries'"></app-entry-renderer>
             </li>
           }
         </div>
       }
       @case ('item') {
         <div>
-          @if (parent=='') {
+          @if (parent==='') {
             <p [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></p>
           }
-          @if (parent=='list') {
+          @if (parent==='list') {
             <li [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></li>
           }
         </div>
@@ -84,13 +84,13 @@
         </div>
       }
       @default {
-        @if (parent=='') {
+        @if (parent==='') {
           <p [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
         }
-        @if (parent=='entries') {
+        @if (parent==='entries') {
           <p class="pb-0 mb-1" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
         }
-        @if (parent=='list') {
+        @if (parent==='list') {
           <li [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
         }
       }

@@ -54,7 +54,7 @@ export class QuickSearchComponent {
     const cat = this.activeCategory();
     const all = this.entries();
 
-    let filtered = cat === 'All' ? all : all.filter(e => e.category === cat);
+    const filtered = cat === 'All' ? all : all.filter(e => e.category === cat);
     if (!q) {
       return filtered.slice(0, 25);
     }

@@ -9,9 +9,9 @@ export class TitlecaseExceptPipe implements PipeTransform{
         this.except = ["a", "and", "an", "or", "the", "but", "not", "for"];
         if(!value) return null;
 
-        let words = value.split(/([\s\/]+)/);
-        for (var index = 0; index < words.length; index++) {
-        var word = words[index];
+        const words = value.split(/([\s/]+)/);
+        for (let index = 0; index < words.length; index++) {
+        const word = words[index];
         if (index > 0 && this.isPreposition(word)) {
             words[index] = word.toLowerCase();
         }
@@ -23,7 +23,7 @@ export class TitlecaseExceptPipe implements PipeTransform{
         return words.join("");
     }
     private isPreposition = (word: string):boolean => {
-        let lowerCaseWords  = [...this.except];
+        const lowerCaseWords  = [...this.except];
         return lowerCaseWords.includes(word.toLowerCase());
     }
 

@@ -8,8 +8,6 @@ import { crXpMap } from './experienceMaps';
 })
 export class MonsterHelperService {
 
-  constructor() { }
-
   sizeMap = sizeMap;
   alignmentMap = alignmentMap;
   crXp = crXpMap;
@@ -20,7 +18,7 @@ export class MonsterHelperService {
       if (cr == "N/A") {
         return 10000; //some summons don't have a CR, return arbitrary high val so they go to 'bottom'
       } else if (cr.match(/\d\/\d/)) {
-        let split = cr.split('/');
+        const split = cr.split('/');
         return (parseInt(split[0]) / parseInt(split[1]));
       } else {
         //this is an error state and something bad has happened in the JSON
@@ -38,7 +36,7 @@ export class MonsterHelperService {
 
   //convert "alignment": { "L", "E" }  -> "lawful evil"
   translateAlignment(alignment): string {
-    let alignString = alignment.map(alignment => this.alignmentMap[alignment]).join(' ');
+    const alignString = alignment.map(alignment => this.alignmentMap[alignment]).join(' ');
     return alignString.replace("- ", "-"); //hacky way to remove slashed in "any non-X" situations (
     // eg. alignment: ["NX", "E"] -> 'any non-evil' instead of 'any non- evil')
   }

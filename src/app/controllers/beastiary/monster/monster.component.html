@@ -230,7 +230,7 @@
       @for (trait of monster.trait; track trait) {
         <div class="col">
           <strong>{{trait.name | linkmaker}}</strong>
-          <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
+          <app-entry-renderer [list]=trait.entries [parent]="''"></app-entry-renderer>
         </div>
       }
     </div>
@@ -243,7 +243,7 @@
       @for (trait of monster.action; track trait) {
         <div class="col">
           <strong>{{trait.name}}</strong>
-          <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
+          <app-entry-renderer [list]=trait.entries [parent]="''"></app-entry-renderer>
         </div>
       }
     </div>
@@ -256,7 +256,7 @@
       @for (trait of monster.bonus; track trait) {
         <div class="col">
           <strong>{{trait.name}}</strong>
-          <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
+          <app-entry-renderer [list]=trait.entries [parent]="''"></app-entry-renderer>
         </div>
       }
     </div>
@@ -269,7 +269,7 @@
       @for (trait of monster.reaction; track trait) {
         <div class="col">
           <strong>{{trait.name}}</strong>
-          <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
+          <app-entry-renderer [list]=trait.entries [parent]="''"></app-entry-renderer>
         </div>
       }
     </div>
@@ -282,7 +282,7 @@
       @for (trait of monster.legendary; track trait) {
         <div class="col">
           <strong>{{trait.name}}</strong>
-          <entry-renderer [list]=trait.entries [parent]="''"></entry-renderer>
+          <app-entry-renderer [list]=trait.entries [parent]="''"></app-entry-renderer>
         </div>
       }
     </div>

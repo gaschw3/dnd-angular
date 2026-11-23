@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Feat, featCategory } from 'src/app/models/feat';
 
 @Component({
@@ -7,10 +7,8 @@ import { Feat, featCategory } from 'src/app/models/feat';
   templateUrl: './feat.component.html',
   styleUrls: ['./feat.component.scss']
 })
-export class FeatComponent implements OnInit {
+export class FeatComponent {
 
   @Input() feat: Feat;
   featCategory = featCategory;
-
-  ngOnInit() { }
 }

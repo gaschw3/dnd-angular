@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Item } from 'src/app/models/item';
 import { typeTable } from '../../../shared/itemTypes';
 
@@ -8,7 +8,7 @@ import { typeTable } from '../../../shared/itemTypes';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent {
 
   @Input() item: Item;
 
@@ -60,7 +60,7 @@ export class ItemComponent implements OnInit {
     dmgString += item.dmg1;
     dmgString += " " + this.damageType[item.dmgType];
     if (item.property) {
-      let properties = [];
+      const properties = [];
       item.property.forEach(element => {
         switch(element) {
           case "A":
@@ -82,7 +82,7 @@ export class ItemComponent implements OnInit {
   }
 
   getItemInfo(item): string {
-    let itemInfo = [];
+    const itemInfo = [];
     itemInfo.push(this.getItemType(item));
     itemInfo.push(this.getItemRarity(item));
     return itemInfo.filter(Boolean).join(", ");
@@ -150,7 +150,5 @@ export class ItemComponent implements OnInit {
     }
     return itemRarity;
   }
-
-  ngOnInit() { }
 }
 

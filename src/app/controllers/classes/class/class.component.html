@@ -4,7 +4,7 @@
       <div class="col-12">
         <h2 class="text-center text-success">{{class.name}}</h2>
         <div class="col-md-6 offset-md-3">
-          <entry-renderer [list]=class.fluff.entries parent=''></entry-renderer>
+          <app-entry-renderer [list]=class.fluff.entries parent=''></app-entry-renderer>
         </div>
         <app-archetypes [archetypes]="this.getArchetypes()" [selectedArchetypes]="selectedArchetypes" [allSelected]="allSelected"></app-archetypes>
       </div>
@@ -51,9 +51,9 @@
         <div class="list-group features-list sticky-top py-2 d-none d-md-block">
           <h5>Outline (jump to feature)</h5>
           @for (feature of class.classFeature; track feature) {
-            @if (feature.className == class.name) {
+            @if (feature.className === class.name) {
               <a
-                [ngClass]="{'active': this.child?.currActive == feature.id}"
+                [ngClass]="{'active': this.child?.currActive === feature.id}"
                 class="list-group-item list-group-item-action py-2"
                 (click)="shake(feature.id)"
               routerLink="./" fragment="{{feature.id}}">{{feature.name}}</a>

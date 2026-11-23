@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ItemTypePipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): any {
+  transform(value: any): any {
     return typeTable[value] ? typeTable[value] : value;
   }
 

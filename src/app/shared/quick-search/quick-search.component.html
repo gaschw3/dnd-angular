@@ -1,6 +1,6 @@
 @if (isOpen()) {
-  <div class="qs-backdrop" (click)="close()" role="dialog" aria-modal="true" aria-label="Global quick search">
-    <div class="qs-modal" (click)="$event.stopPropagation()">
+  <div class="qs-backdrop" (click)="close()" (keydown.escape)="close()" role="dialog" aria-modal="true" aria-label="Global quick search">
+    <div class="qs-modal" tabindex="-1" (click)="$event.stopPropagation()" (keydown.enter)="$event.stopPropagation()">
       <div class="qs-header">
         <i class="fa fa-search qs-icon" aria-hidden="true"></i>
         <input
@@ -40,9 +40,12 @@
           @for (item of results(); track item.id; let i = $index) {
             <div
               class="qs-result-row"
+              role="button"
+              tabindex="0"
               [class.active]="i === activeIndex()"
               (mouseenter)="activeIndex.set(i)"
               (click)="select(item)"
+              (keydown.enter)="select(item)"
             >
               <div class="qs-result-main">
                 <span class="qs-badge">{{ item.category }}</span>

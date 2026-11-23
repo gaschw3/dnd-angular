@@ -169,7 +169,7 @@ export class ReferenceTableComponent<T = any> implements OnChanges {
       return Array.from({ length: total }, (_, i) => i + 1);
     }
     let start = Math.max(1, current - 2);
-    let end = Math.min(total, start + maxButtons - 1);
+    const end = Math.min(total, start + maxButtons - 1);
     if (end - start < maxButtons - 1) {
       start = Math.max(1, end - maxButtons + 1);
     }

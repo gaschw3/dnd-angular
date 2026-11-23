@@ -38,9 +38,9 @@
         </div>
       </div>
       <div class="feature-text">
-        <entry-renderer [list]=spell.entries [parent]="''"></entry-renderer>
+        <app-entry-renderer [list]=spell.entries [parent]="''"></app-entry-renderer>
         @if (spell.higher) {
-          <p><strong><em>{{spell.higher.name}}: </em></strong><entry-renderer [list]=spell.higher.entries [parent]="''"></entry-renderer></p>
+          <p><strong><em>{{spell.higher.name}}: </em></strong><app-entry-renderer [list]=spell.higher.entries [parent]="''"></app-entry-renderer></p>
         }
         @if (spell.classes) {
           <p class="mb-0"><strong>Classes: </strong><span [innerHtml]="spell.classes.join(', ') | linkmaker"></span></p>

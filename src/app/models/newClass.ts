@@ -71,7 +71,7 @@ export class newMulticlass {
   proficiencies: Proficiencies;
 
   constructor (mc) {
-    let reqArr = []
+    const reqArr = []
     if (mc.requirements) {
       for (const [key, value] of Object.entries(mc.requirements)) {
         reqArr.push(`${key.toUpperCase()} ${value}`);
@@ -133,7 +133,7 @@ export class newClass implements IClass{
   subclassFeature: ClassFeature[] = [];
 
   constructor (classJson) {
-    var currClass = classJson.class[0];
+    const currClass = classJson.class[0];
     this.name = currClass.name;
     this.id = HelperService.createIdFromName(currClass.name);
     this.canripProgression = currClass.cantripProgression;
@@ -156,26 +156,26 @@ export class newClass implements IClass{
     classJson.subclassFeature.forEach(inFeat => this.subclassFeature.push(new ClassFeature(inFeat)));
 
     //create levelTable[][] from JOSN.classTableGroups
-    this.levelTable = new Array<Array<string>>();
-    this.subclassLevelTable = new Array<Array<string>>();
+    this.levelTable = new Array<string[]>();
+    this.subclassLevelTable = new Array<string[]>();
 
     //all classes start with the same 3 columns
     this.levelTable = JSON.parse(JSON.stringify(commonFeatures)); //this is some goofy javascript witchcraft, 2D arrays get shallow copied in 95% of the normal scenarios I would use, this makes a deep copy to reset it for each new class.
     this.classTableGroups = currClass.classTableGroups;
-    for (let i = 0; i < this.classTableGroups.length; i++) {
-      this.levelTable[0] = this.levelTable[0].concat(this.classTableGroups[i].colLabels)
-      for (let j = 0; j < this.classTableGroups[i].rows.length; j++) {
-        this.levelTable[j+1] = this.levelTable[j+1].concat(this.classTableGroups[i].rows[j]);
+    for (const group of this.classTableGroups) {
+      this.levelTable[0] = this.levelTable[0].concat(group.colLabels)
+      for (let j = 0; j < group.rows.length; j++) {
+        this.levelTable[j+1] = this.levelTable[j+1].concat(group.rows[j]);
       }
     }
 
     this.subclassLevelTable = JSON.parse(JSON.stringify(subclassFeatures))
     this.subclassTableGroups = currClass.subclassTableGroups;
     if(this.subclassTableGroups) {
-      for (let i = 0; i < this.subclassTableGroups.length; i++) {
-        this.subclassLevelTable[0] = this.subclassLevelTable[0].concat(this.subclassTableGroups[i].colLabels)
-        for (let j = 0; j < this.subclassTableGroups[i].rows.length; j++) {
-          this.subclassLevelTable[j+1] = this.subclassLevelTable[j+1].concat(this.subclassTableGroups[i].rows[j]);
+      for (const group of this.subclassTableGroups) {
+        this.subclassLevelTable[0] = this.subclassLevelTable[0].concat(group.colLabels)
+        for (let j = 0; j < group.rows.length; j++) {
+          this.subclassLevelTable[j+1] = this.subclassLevelTable[j+1].concat(group.rows[j]);
         }
       }
     }

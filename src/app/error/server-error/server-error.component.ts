@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   standalone: false,
   selector: 'app-server-error',
   templateUrl: './server-error.component.html'
 })
-export class ServerErrorComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class ServerErrorComponent {}

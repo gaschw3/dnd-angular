@@ -15,7 +15,7 @@
         @for (levels of class.levelTable | slice: 1; track levels; let i = $index) {
           <tr>
             @for (column of levels; track column) {
-              @if (column == 'features') {
+              @if (column === 'features') {
                 <td>
                   @for (f of getFeatures(i+1); track f; let last = $last) {
                     <a routerLink="./" fragment="{{f.id}}" (click)="this.shake(f.id)" >{{ f.name }}</a>@if (!last) {

@@ -1,9 +1,9 @@
 <h1>D&D 5e Items</h1>
 <div class="table-type p-3">
-  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected == 'all'}" (click)="setItems('all')">All</button>
-  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected == 'magic'}" (click)="setItems('magic')">Magic Items</button>
-  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected == 'normal'}" (click)="setItems('normal')">Adventuring Supplies</button>
-  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected == 'treasure'}" (click)="setItems('treasure')">Treasure</button>
+  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected === 'all'}" (click)="setItems('all')">All</button>
+  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected === 'magic'}" (click)="setItems('magic')">Magic Items</button>
+  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected === 'normal'}" (click)="setItems('normal')">Adventuring Supplies</button>
+  <button class="btn btn-primary p-2 m-1" role="button" [ngClass]="{'active': selected === 'treasure'}" (click)="setItems('treasure')">Treasure</button>
 </div>
 <div class="row">
   @if (shownItems.length) {

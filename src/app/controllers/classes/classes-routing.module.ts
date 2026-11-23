@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ClassesComponent } from './classes.component';
-import { ClassComponent } from './class/class.component';
 
 const routes: Routes = [
   { path: '', component: ClassesComponent },
