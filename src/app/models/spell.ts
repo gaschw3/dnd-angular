@@ -156,11 +156,11 @@ function buildSpellSearchText(spell: Spell): string {
 
 export const spellSchool: Record<string, { name: string; abbrev: string }> = {
     "A": {name: "Abjuration", abbrev: "Abj"},
-    "C": {name: "Conjuration", abbrev: "Conj"},
-    "D": {name: "Divination", abbrev: "Div"},
-    "E": {name: "Enchantment", abbrev: "Ench"},
-    "V": {name: "Evocation", abbrev: "Evo"},
+    "T": {name: "Transmutation", abbrev: "Trans"},
     "I": {name: "Illusion", abbrev: "Ill"},
     "N": {name: "Necromancy", abbrev: "Necro"},
-    "T": {name: "Transmutation", abbrev: "Trans"}
+    "V": {name: "Evocation", abbrev: "Evo"},
+    "C": {name: "Conjuration", abbrev: "Conj"},
+    "E": {name: "Enchantment", abbrev: "Ench"},
+    "D": {name: "Divination", abbrev: "Div"},
 }

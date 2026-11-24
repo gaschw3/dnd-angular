@@ -1,26 +1,26 @@
 .spell-school-abjuration {
-  --detail-header-accent: rgb(253, 246, 207);
+  --detail-header-accent: var(--school-abjuration);
 }
 .spell-school-transmutation {
-  --detail-header-accent: rgb(236, 145, 60);
+  --detail-header-accent: var(--school-transmutation);
 }
 .spell-school-illusion {
-  --detail-header-accent: rgb(45, 148, 245);
+  --detail-header-accent: var(--school-illusion);
 }
 .spell-school-necromancy {
-  --detail-header-accent: rgb(143, 0, 172);
+  --detail-header-accent: var(--school-necromancy);
 }
 .spell-school-evocation {
-  --detail-header-accent: rgb(241, 90, 90);
+  --detail-header-accent: var(--school-evocation);
 }
 .spell-school-enchantment {
-  --detail-header-accent: rgb(255, 152, 250);
+  --detail-header-accent: var(--school-enchantment);
 }
 .spell-school-conjuration {
-  --detail-header-accent: rgb(113, 230, 102);
+  --detail-header-accent: var(--school-conjuration);
 }
 .spell-school-divination {
-  --detail-header-accent: rgb(200, 200, 200);
+  --detail-header-accent: var(--school-divination);
 }
 
 .spell-higher-levels {

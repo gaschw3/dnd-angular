@@ -269,18 +269,6 @@
   white-space: nowrap;
 }
 
-// Spell school palette
-:root {
-  --school-abjuration: rgb(253, 246, 207);
-  --school-transmutation: rgb(236, 145, 60);
-  --school-illusion: rgb(95, 175, 250);
-  --school-necromancy: rgb(143, 0, 172);
-  --school-evocation: rgb(241, 108, 108);
-  --school-enchantment: rgb(255, 152, 250);
-  --school-conjuration: rgb(113, 230, 102);
-  --school-divination: rgb(212, 216, 222);
-}
-
 .spell-pill-abjuration {
   background-color: var(--school-abjuration);
 }
@@ -292,7 +280,9 @@
 }
 .spell-pill-necromancy {
   background-color: var(--school-necromancy);
-  color: #fff;
+  color: var(--school-necromancy-rim);
+  border: 1px solid color-mix(in srgb, var(--school-necromancy-rim) 75%, transparent);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--school-necromancy-rim) 22%, transparent);
 }
 .spell-pill-evocation {
   background-color: var(--school-evocation);
@@ -350,7 +340,24 @@
 }
 .display-chip-btn[data-school='necromancy'] {
   --school-color: var(--school-necromancy);
-  --school-active-text: #fff;
+  --school-active-text: var(--school-necromancy-rim);
+  background-color: color-mix(in srgb, var(--school-necromancy) 45%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
+  border-color: color-mix(in srgb, var(--school-necromancy-rim) 55%, var(--theme-input-border, rgba(255, 255, 255, 0.2)));
+
+  &:hover,
+  &:focus-visible {
+    background-color: color-mix(in srgb, var(--school-necromancy) 75%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
+    border-color: var(--school-necromancy-rim);
+  }
+
+  &.active {
+    background-color: var(--school-necromancy);
+    border-color: var(--school-necromancy-rim);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--school-necromancy-rim) 70%, transparent),
+      0 0 8px color-mix(in srgb, var(--school-necromancy-rim) 30%, transparent);
+    color: var(--school-necromancy-rim);
+  }
 }
 .display-chip-btn[data-school='transmutation'] {
   --school-color: var(--school-transmutation);

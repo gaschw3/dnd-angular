@@ -21,30 +21,43 @@ h1 .text--op,
 }
 
 
-// speel school colors
+// spell school colors
+:root {
+  --school-abjuration: rgb(255, 250, 220);
+  --school-transmutation: rgb(236, 145, 60);
+  --school-illusion: rgb(46, 154, 255);
+  --school-necromancy: rgb(20, 19, 24);
+  --school-necromancy-rim: #e6e6e6;
+  --school-enchantment: rgb(223, 67, 215);
+  --school-evocation: rgb(255, 74, 74);
+  --school-conjuration: rgb(45, 206, 31);
+  --school-divination: rgb(185, 191, 199);
+}
+
 .color-abjuration {
-  color: rgb(255, 248, 211) !important;
+  color: var(--school-abjuration) !important;
 }
 .color-transmutation {
-  color: rgb(236, 145, 60) !important;
+  color: var(--school-transmutation) !important;
 }
 .color-illusion {
-  color: rgb(45, 148, 245) !important;
+  color: var(--school-illusion) !important;
 }
 .color-necromancy {
-  color: rgb(115, 0, 138) !important;
+  color: var(--school-necromancy) !important;
+  text-shadow: 0 0 7px color-mix(in srgb, var(--school-necromancy-rim) 100%, transparent);
 }
 .color-enchantment {
-  color: rgb(255, 105, 248) !important;
+  color: var(--school-enchantment) !important;
 }
 .color-evocation {
-  color: rgb(241, 90, 90) !important;
+  color: var(--school-evocation) !important;
 }
 .color-conjuration {
-  color: rgb(113, 230, 102) !important;
+  color: var(--school-conjuration) !important;
 }
 .color-divination {
-  color: rgb(200, 200, 200) !important;
+  color: var(--school-divination) !important;
 }
 
 //sourcebook colors

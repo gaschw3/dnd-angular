@@ -21,7 +21,6 @@ const SPELL_LEVELS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const SPELL_SCHOOLS = Object.values(spellSchool)
   .map(s => ({ name: s.name, key: s.name.toLowerCase(), abbrev: s.abbrev }))
-  .sort((a, b) => a.name.localeCompare(b.name));
 
 const VALID_SCHOOL_KEYS = new Set(SPELL_SCHOOLS.map(s => s.key));
 
