@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-import { ClassFeature, newClass } from '../../../models';
+import { ClassFeature, DndClass } from '../../../models';
 import { FeaturesComponent } from '../features/features.component';
 import { ArchetypesComponent } from '../archetypes/archetypes.component';
 import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
@@ -16,7 +16,7 @@ import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
   styleUrls: ['./class.component.scss']
 })
 export class ClassComponent {
-  readonly dndClass = input.required<newClass>();
+  readonly dndClass = input.required<DndClass>();
   readonly selectedArchetypes = input<string[]>([]);
   readonly selectedArchetypesChange = output<string[]>();
   readonly talk = output<string>();

@@ -1,6 +1,6 @@
-import { ChangeDetectorRef, Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { Component, DestroyRef, OnInit, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { CommonModule } from '@angular/common';
+import { DecimalPipe, TitleCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import {
@@ -21,7 +21,11 @@ import { copyToClipboard, sourceColorClass } from '../../shared/helpers/format.u
 import { HelperService } from '../../shared/helpers/helper.service';
 import { crXpMap, levelXp, levelXp2024 } from 'src/app/shared/helpers/monster/experienceMaps';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
+import {
+  ReferenceTableCellDirective,
+  ReferenceTableColumn,
+  ReferenceTableComponent
+} from 'src/app/shared/reference-table/reference-table.component';
 import { MonsterComponent } from '../beastiary/monster/monster.component';
 
 const ENCOUNTERS_STORAGE_KEY = 'eotcc_encounters_v1';
@@ -52,7 +56,15 @@ interface PartyDifficulty {
 }
 
 @Component({
-  imports: [CommonModule, FormsModule, FaIconComponent, ReferenceTableComponent, MonsterComponent],
+  imports: [
+    DecimalPipe,
+    TitleCasePipe,
+    FormsModule,
+    FaIconComponent,
+    ReferenceTableComponent,
+    ReferenceTableCellDirective,
+    MonsterComponent
+  ],
   selector: 'app-encounter-builder',
   templateUrl: './encounter-builder.component.html',
   styleUrls: ['./encounter-builder.component.scss']
@@ -68,33 +80,24 @@ export class EncounterBuilderComponent implements OnInit {
   readonly faRotateLeft = faRotateLeft;
   readonly faXmark = faXmark;
 
-  levelXp = levelXp;
-  levelXp2024 = levelXp2024;
-  crXp = crXpMap;
+  readonly levelXp = levelXp;
+  readonly levelXp2024 = levelXp2024;
+  readonly crXp = crXpMap;
 
-  ruleset: '2024' | '2014' = '2024';
-  partySize = 5;
-  partyLevel = 9;
+  readonly ruleset = signal<'2024' | '2014'>('2024');
+  readonly partySize = signal(5);
+  readonly partyLevel = signal(9);
 
-  singleMultiplier = 1;
-  pairMultiplier = 1;
-  groupMultiplier = 1;
-  hordeMultiplier = 1;
-  encounterXp = 0;
-  adjustedXp = 0;
-  currEncounterDifficulty = 'trivial';
-  currPartyDifficulty!: PartyDifficulty;
+  readonly showMonsterTable = signal(true);
+  readonly showLegend = signal(true);
 
-  showMonsterTable = true;
-  showLegend = true;
+  readonly currMonster = signal<Monster | undefined>(undefined);
+  readonly monsters = signal<Monster[]>([]);
+  readonly currEncounter = signal<EncounterMonster[]>([]);
 
-  currMonster?: Monster;
-  monsters: Monster[] = [];
-  currEncounter: EncounterMonster[] = [];
-
-  encounterName = '';
-  savedEncounters: SavedEncounter[] = [];
-  copied = false;
+  readonly encounterName = signal('');
+  readonly savedEncounters = signal<SavedEncounter[]>([]);
+  readonly copied = signal(false);
 
   private copyResetTimer?: ReturnType<typeof setTimeout>;
 
@@ -130,9 +133,7 @@ export class EncounterBuilderComponent implements OnInit {
       filterType: 'number-range',
       min: 0,
       max: 30,
-      isHtml: true,
-      value: m => `<span class="cr-pill cr-pill--${this.getMonsterDifficulty(m.cr)}">${m.cr}</span>`,
-      filterValue: m => m.cr,
+      value: m => m.cr,
       sortValue: m => this.monsterHelper.getSortCr(m.cr)
     },
     {
@@ -176,46 +177,124 @@ export class EncounterBuilderComponent implements OnInit {
   private dataService = inject(DndDataService);
   public helper = inject(HelperService);
   public monsterHelper = inject(MonsterHelperService);
-  private cdr = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
 
-  ngOnInit(): void {
-    this.destroyRef.onDestroy(() => {
-      if (this.copyResetTimer) {
-        clearTimeout(this.copyResetTimer);
-      }
-    });
+  readonly totalMonsterCount = computed(() =>
+    this.currEncounter().reduce((sum, entry) => sum + entry.number, 0)
+  );
 
-    this.restorePartySettings();
-    this.savedEncounters = this.loadSavedEncounters();
-    this.dataService.getMonsters().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(monsters => {
-      this.monsters = monsters.filter(f => f.cr !== 'N/A');
-      this.cdr.markForCheck();
-    });
-    this.recalcPartyDifficulty();
-  }
+  readonly currPartyDifficulty = computed<PartyDifficulty>(() => {
+    const mode = this.ruleset();
+    const size = this.partySize();
+    const level = this.partyLevel();
 
-  get totalMonsterCount(): number {
-    return this.currEncounter.reduce((sum, entry) => sum + entry.number, 0);
-  }
-
-  get maxBudgetXp(): number {
-    if (this.ruleset === '2024') {
-      return levelXp2024[this.partyLevel].high * this.partySize;
+    if (mode === '2024') {
+      const budget = levelXp2024[level];
+      const low = budget.low * size;
+      const moderate = budget.moderate * size;
+      const high = budget.high * size;
+      return {
+        deadly: high,
+        hard: high,
+        medium: moderate,
+        easy: low,
+        pair: moderate / 2,
+        group: moderate / 4,
+        trivial: moderate / 8
+      };
     }
-    return levelXp[this.partyLevel].deadly * this.partySize;
-  }
 
-  get budgetFillPercent(): number {
-    const max = this.maxBudgetXp;
+    const mediumXp = levelXp[level].medium * size;
+    let singleMultiplier = 1;
+    let pairMultiplier = 1.5;
+    let groupMultiplier = 2;
+    let hordeMultiplier = 2.5;
+
+    if (size < 3) {
+      singleMultiplier = 1.5;
+      pairMultiplier = 2;
+      groupMultiplier = 2.5;
+      hordeMultiplier = 3;
+    } else if (size > 5) {
+      singleMultiplier = 0.5;
+      pairMultiplier = 1;
+      groupMultiplier = 1.5;
+      hordeMultiplier = 2;
+    }
+
+    return {
+      deadly: (levelXp[level].deadly * size) / singleMultiplier,
+      hard: (levelXp[level].hard * size) / singleMultiplier,
+      medium: mediumXp / singleMultiplier,
+      easy: (levelXp[level].easy * size) / singleMultiplier,
+      pair: mediumXp / (2 * pairMultiplier),
+      group: mediumXp / (4 * groupMultiplier),
+      trivial: mediumXp / (8 * hordeMultiplier)
+    };
+  });
+
+  readonly encounterXp = computed(() => {
+    let totalXp = 0;
+    for (const m of this.currEncounter()) {
+      totalXp += this.monsterHelper.getXpByCr(m.monster.cr) * m.number;
+    }
+    return totalXp;
+  });
+
+  readonly adjustedXp = computed(() => {
+    const totalXp = this.encounterXp();
+    return this.ruleset() === '2024' ? totalXp : totalXp * this.getMultiplier(this.totalMonsterCount());
+  });
+
+  readonly currEncounterDifficulty = computed(() => {
+    const xpValue = this.adjustedXp();
+    const size = this.partySize();
+    const level = this.partyLevel();
+
+    if (this.ruleset() === '2024') {
+      const budget = levelXp2024[level];
+      if (xpValue === 0 || xpValue < budget.low * size) {
+        return 'trivial';
+      } else if (xpValue < budget.moderate * size) {
+        return 'low';
+      } else if (xpValue < budget.high * size) {
+        return 'moderate';
+      }
+      return 'high';
+    }
+
+    const partyBudget = levelXp[level];
+    if (xpValue < partyBudget.easy * size) {
+      return 'trivial';
+    } else if (xpValue < partyBudget.medium * size) {
+      return 'easy';
+    } else if (xpValue < partyBudget.hard * size) {
+      return 'medium';
+    } else if (xpValue < partyBudget.deadly * size) {
+      return 'hard';
+    }
+    return 'deadly';
+  });
+
+  readonly maxBudgetXp = computed(() => {
+    const size = this.partySize();
+    const level = this.partyLevel();
+    if (this.ruleset() === '2024') {
+      return levelXp2024[level].high * size;
+    }
+    return levelXp[level].deadly * size;
+  });
+
+  readonly budgetFillPercent = computed(() => {
+    const max = this.maxBudgetXp();
     if (max <= 0) {
       return 0;
     }
-    return Math.min(100, Math.round((this.adjustedXp / max) * 100));
-  }
+    return Math.min(100, Math.round((this.adjustedXp() / max) * 100));
+  });
 
-  get difficultyBadgeClass(): string {
-    switch (this.currEncounterDifficulty) {
+  readonly difficultyBadgeClass = computed(() => {
+    switch (this.currEncounterDifficulty()) {
       case 'high':
       case 'deadly':
         return 'eb-badge-deadly';
@@ -230,28 +309,52 @@ export class EncounterBuilderComponent implements OnInit {
       default:
         return 'eb-badge-trivial';
     }
+  });
+
+  ngOnInit(): void {
+    this.destroyRef.onDestroy(() => {
+      if (this.copyResetTimer) {
+        clearTimeout(this.copyResetTimer);
+      }
+    });
+
+    this.restorePartySettings();
+    this.savedEncounters.set(this.loadSavedEncounters());
+    this.dataService
+      .getMonsters()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(monsters => {
+        this.monsters.set(monsters.filter(f => f.cr !== 'N/A'));
+      });
   }
 
   removeMonster(index: number): void {
-    this.currEncounter.splice(index, 1);
-    this.recalcEncounterXp();
+    this.currEncounter.update(list => list.filter((_, i) => i !== index));
   }
 
   buildEncounterSummary(): string {
-    const title = this.encounterName.trim() || 'Untitled Encounter';
-    const header = `${title} (${this.ruleset} DMG) — ${this.partySize}× Level ${this.partyLevel}`;
-    const lines = this.currEncounter.map(
-      e => `- ${e.number}× ${e.monster.name} (CR ${e.monster.cr}, ${this.monsterHelper.getXpByCr(e.monster.cr).toLocaleString('en-US')} XP)`
+    const mode = this.ruleset();
+    const size = this.partySize();
+    const level = this.partyLevel();
+    const title = this.encounterName().trim() || 'Untitled Encounter';
+    const header = `${title} (${mode} DMG) — ${size}× Level ${level}`;
+    const lines = this.currEncounter().map(
+      e =>
+        `- ${e.number}× ${e.monster.name} (CR ${e.monster.cr}, ${this.monsterHelper.getXpByCr(e.monster.cr).toLocaleString('en-US')} XP)`
     );
-    const perPlayer = Math.round(this.encounterXp / this.partySize).toLocaleString('en-US');
-    const xpLine = this.ruleset === '2014'
-      ? `Total XP: ${this.encounterXp.toLocaleString('en-US')} (${perPlayer}/player) | Adjusted XP: ${this.adjustedXp.toLocaleString('en-US')} | Difficulty: ${this.currEncounterDifficulty}`
-      : `Total XP: ${this.encounterXp.toLocaleString('en-US')} (${perPlayer}/player) | Difficulty: ${this.currEncounterDifficulty}`;
+    const totalXp = this.encounterXp();
+    const adjXp = this.adjustedXp();
+    const diff = this.currEncounterDifficulty();
+    const perPlayer = Math.round(totalXp / size).toLocaleString('en-US');
+    const xpLine =
+      mode === '2014'
+        ? `Total XP: ${totalXp.toLocaleString('en-US')} (${perPlayer}/player) | Adjusted XP: ${adjXp.toLocaleString('en-US')} | Difficulty: ${diff}`
+        : `Total XP: ${totalXp.toLocaleString('en-US')} (${perPlayer}/player) | Difficulty: ${diff}`;
     return [header, ...lines, xpLine].join('\n');
   }
 
   copyEncounterSummary(): void {
-    if (this.currEncounter.length === 0) {
+    if (this.currEncounter().length === 0) {
       return;
     }
     copyToClipboard(this.buildEncounterSummary()).then(ok => {
@@ -262,211 +365,138 @@ export class EncounterBuilderComponent implements OnInit {
   }
 
   private flashCopied(): void {
-    this.copied = true;
-    this.cdr.markForCheck();
+    this.copied.set(true);
     if (this.copyResetTimer) {
       clearTimeout(this.copyResetTimer);
     }
     this.copyResetTimer = setTimeout(() => {
-      this.copied = false;
-      this.cdr.markForCheck();
+      this.copied.set(false);
     }, 1800);
   }
 
   setRuleset(mode: '2024' | '2014'): void {
-    this.ruleset = mode;
-    this.recalcPartyDifficulty();
+    this.ruleset.set(mode);
+    this.persistPartySettings();
   }
 
   stepPartySize(delta: number): void {
-    this.partySize = Math.max(1, Math.min(10, this.partySize + delta));
-    this.recalcPartyDifficulty();
+    this.partySize.update(s => Math.max(1, Math.min(10, s + delta)));
+    this.persistPartySettings();
   }
 
   stepPartyLevel(delta: number): void {
-    this.partyLevel = Math.max(1, Math.min(20, this.partyLevel + delta));
-    this.recalcPartyDifficulty();
+    this.partyLevel.update(l => Math.max(1, Math.min(20, l + delta)));
+    this.persistPartySettings();
   }
 
-  onPartyInputChange(): void {
-    const size = Number(this.partySize);
-    const level = Number(this.partyLevel);
-    this.partySize = Number.isFinite(size) ? Math.max(1, Math.min(10, Math.round(size))) : 4;
-    this.partyLevel = Number.isFinite(level) ? Math.max(1, Math.min(20, Math.round(level))) : 1;
-    this.recalcPartyDifficulty();
+  setPartySize(rawValue: number | string): void {
+    const size = Number(rawValue);
+    this.partySize.set(Number.isFinite(size) ? Math.max(1, Math.min(10, Math.round(size))) : 4);
+    this.persistPartySettings();
+  }
+
+  setPartyLevel(rawValue: number | string): void {
+    const level = Number(rawValue);
+    this.partyLevel.set(Number.isFinite(level) ? Math.max(1, Math.min(20, Math.round(level))) : 1);
+    this.persistPartySettings();
   }
 
   setCurrMonster(clickedMonster: Monster): void {
-    this.currMonster = clickedMonster;
+    this.currMonster.set(clickedMonster);
   }
 
   addMonster(clickedMonster: Monster): void {
-    const monsterInCurrEncounter = this.currEncounter.find(encEntry => encEntry.monster === clickedMonster);
-    if (monsterInCurrEncounter) {
-      monsterInCurrEncounter.number++;
-    } else {
-      this.currEncounter.push({ monster: clickedMonster, number: 1 });
-    }
-    this.recalcEncounterXp();
+    this.currEncounter.update(list => {
+      const idx = list.findIndex(encEntry => encEntry.monster === clickedMonster);
+      if (idx >= 0) {
+        return list.map((entry, i) => (i === idx ? { ...entry, number: entry.number + 1 } : entry));
+      }
+      return [...list, { monster: clickedMonster, number: 1 }];
+    });
   }
 
   encounterChange(index: number, change: number): void {
-    this.currEncounter[index].number += change;
-    if (this.currEncounter[index].number < 1) {
-      this.currEncounter.splice(index, 1);
-    }
-    this.recalcEncounterXp();
+    this.currEncounter.update(list => {
+      const target = list[index];
+      if (!target) {
+        return list;
+      }
+      const nextCount = target.number + change;
+      if (nextCount < 1) {
+        return list.filter((_, i) => i !== index);
+      }
+      return list.map((entry, i) => (i === index ? { ...entry, number: nextCount } : entry));
+    });
+  }
+
+  setMonsterCount(index: number, rawValue: number | string): void {
+    const parsed = Math.round(Number(rawValue));
+    this.currEncounter.update(list => {
+      if (!Number.isFinite(parsed) || parsed < 1) {
+        return list.filter((_, i) => i !== index);
+      }
+      return list.map((entry, i) => (i === index ? { ...entry, number: parsed } : entry));
+    });
   }
 
   clearEncounter(): void {
-    this.currEncounter = [];
-    this.encounterName = '';
-    this.recalcEncounterXp();
+    this.currEncounter.set([]);
+    this.encounterName.set('');
   }
 
   saveEncounter(): void {
-    if (this.currEncounter.length === 0) {
+    const current = this.currEncounter();
+    if (current.length === 0) {
       return;
     }
-    const name = this.encounterName.trim() || `Encounter (${this.currEncounter[0].monster.name})`;
+    const name = this.encounterName().trim() || `Encounter (${current[0].monster.name})`;
     const saved: SavedEncounter = {
       id: `${Date.now()}`,
       name,
-      ruleset: this.ruleset,
-      partySize: this.partySize,
-      partyLevel: this.partyLevel,
-      entries: this.currEncounter.map(e => ({
+      ruleset: this.ruleset(),
+      partySize: this.partySize(),
+      partyLevel: this.partyLevel(),
+      entries: current.map(e => ({
         monsterId: e.monster.id,
         monsterName: e.monster.name,
         number: e.number
       }))
     };
-    const existingIdx = this.savedEncounters.findIndex(e => e.name.toLowerCase() === name.toLowerCase());
-    if (existingIdx >= 0) {
-      this.savedEncounters[existingIdx] = saved;
-    } else {
-      this.savedEncounters = [saved, ...this.savedEncounters];
-    }
-    this.encounterName = name;
+    this.savedEncounters.update(list => {
+      const existingIdx = list.findIndex(e => e.name.toLowerCase() === name.toLowerCase());
+      if (existingIdx >= 0) {
+        return list.map((item, i) => (i === existingIdx ? saved : item));
+      }
+      return [saved, ...list];
+    });
+    this.encounterName.set(name);
     this.persistSavedEncounters();
   }
 
   loadEncounter(saved: SavedEncounter): void {
-    this.ruleset = saved.ruleset || '2024';
-    this.partySize = saved.partySize;
-    this.partyLevel = saved.partyLevel;
-    this.encounterName = saved.name;
-    this.currEncounter = [];
+    this.ruleset.set(saved.ruleset || '2024');
+    this.partySize.set(saved.partySize);
+    this.partyLevel.set(saved.partyLevel);
+    this.encounterName.set(saved.name);
+    const allMonsters = this.monsters();
+    const loaded: EncounterMonster[] = [];
     for (const entry of saved.entries) {
-      const found = this.monsters.find(m => m.id === entry.monsterId || m.name === entry.monsterName);
+      const found = allMonsters.find(m => m.id === entry.monsterId || m.name === entry.monsterName);
       if (found) {
-        this.currEncounter.push({ monster: found, number: entry.number });
+        loaded.push({ monster: found, number: entry.number });
       }
     }
-    this.recalcPartyDifficulty();
+    this.currEncounter.set(loaded);
+    this.persistPartySettings();
   }
 
   deleteSavedEncounter(id: string): void {
-    this.savedEncounters = this.savedEncounters.filter(e => e.id !== id);
+    this.savedEncounters.update(list => list.filter(e => e.id !== id));
     this.persistSavedEncounters();
   }
 
-  recalcPartyDifficulty(): void {
-    this.persistPartySettings();
-    if (this.ruleset === '2024') {
-      const budget = levelXp2024[this.partyLevel];
-      const low = budget.low * this.partySize;
-      const moderate = budget.moderate * this.partySize;
-      const high = budget.high * this.partySize;
-      this.currPartyDifficulty = {
-        deadly: high,
-        hard: high,
-        medium: moderate,
-        easy: low,
-        pair: moderate / 2,
-        group: moderate / 4,
-        trivial: moderate / 8
-      };
-      this.recalcEncounterXp();
-      return;
-    }
-
-    const mediumXp = levelXp[this.partyLevel].medium * this.partySize;
-    if (this.partySize < 3) {
-      this.singleMultiplier = 1.5;
-      this.pairMultiplier = 2;
-      this.groupMultiplier = 2.5;
-      this.hordeMultiplier = 3;
-    } else if (this.partySize > 5) {
-      this.singleMultiplier = 0.5;
-      this.pairMultiplier = 1;
-      this.groupMultiplier = 1.5;
-      this.hordeMultiplier = 2;
-    } else {
-      this.singleMultiplier = 1;
-      this.pairMultiplier = 1.5;
-      this.groupMultiplier = 2;
-      this.hordeMultiplier = 2.5;
-    }
-
-    this.currPartyDifficulty = {
-      deadly: (levelXp[this.partyLevel].deadly * this.partySize) / this.singleMultiplier,
-      hard: (levelXp[this.partyLevel].hard * this.partySize) / this.singleMultiplier,
-      medium: mediumXp / this.singleMultiplier,
-      easy: (levelXp[this.partyLevel].easy * this.partySize) / this.singleMultiplier,
-      pair: mediumXp / (2 * this.pairMultiplier),
-      group: mediumXp / (4 * this.groupMultiplier),
-      trivial: mediumXp / (8 * this.hordeMultiplier)
-    };
-    this.recalcEncounterXp();
-  }
-
-  recalcEncounterDifficulty(xpValue: number): string {
-    if (this.ruleset === '2024') {
-      const budget = levelXp2024[this.partyLevel];
-      if (xpValue === 0) {
-        return 'trivial';
-      } else if (xpValue < budget.low * this.partySize) {
-        return 'trivial';
-      } else if (xpValue < budget.moderate * this.partySize) {
-        return 'low';
-      } else if (xpValue < budget.high * this.partySize) {
-        return 'moderate';
-      }
-      return 'high';
-    }
-
-    const partyBudget = levelXp[this.partyLevel];
-    if (xpValue < partyBudget.easy * this.partySize) {
-      return 'trivial';
-    } else if (xpValue < partyBudget.medium * this.partySize) {
-      return 'easy';
-    } else if (xpValue < partyBudget.hard * this.partySize) {
-      return 'medium';
-    } else if (xpValue < partyBudget.deadly * this.partySize) {
-      return 'hard';
-    }
-    return 'deadly';
-  }
-
-  recalcEncounterXp(): void {
-    let totalXp = 0;
-    let totalMonsters = 0;
-    for (const m of this.currEncounter) {
-      const cr = m.monster.cr.includes('(') ? m.monster.cr.split(' (')[0] : m.monster.cr;
-      const matchingCr = this.crXp.find(i => i.cr === cr);
-      if (matchingCr) {
-        totalXp += matchingCr.xp * m.number;
-      }
-      totalMonsters += m.number;
-    }
-    this.encounterXp = totalXp;
-    this.adjustedXp = this.ruleset === '2024' ? totalXp : totalXp * this.getMultiplier(totalMonsters);
-    this.currEncounterDifficulty = this.recalcEncounterDifficulty(this.adjustedXp);
-  }
-
   getMultiplier(monsterCount: number): number {
-    const partySize = this.partySize;
+    const partySize = this.partySize();
     const multipliers = [0.5, 1, 1.5, 2, 2.5, 3, 4, 5];
     let multiplierCategory: number;
 
@@ -499,30 +529,25 @@ export class EncounterBuilderComponent implements OnInit {
     if (!cr || cr === 'N/A') {
       return 'trivial';
     }
-    if (cr.includes('(')) {
-      cr = cr.split(' (')[0];
-    }
-
-    const matchingCr = this.crXp.find(i => i.cr === cr);
-    if (!matchingCr) {
+    const monsterXp = this.monsterHelper.getXpByCr(cr);
+    if (!monsterXp) {
       return 'trivial';
     }
-    const monsterXp = matchingCr.xp;
-    if (monsterXp > this.currPartyDifficulty.deadly) {
+    const difficulty = this.currPartyDifficulty();
+    if (monsterXp > difficulty.deadly) {
       return 'deadly';
-    } else if (monsterXp > this.currPartyDifficulty.hard) {
+    } else if (monsterXp > difficulty.hard) {
       return 'hard';
-    } else if (monsterXp > this.currPartyDifficulty.medium) {
+    } else if (monsterXp > difficulty.medium) {
       return 'medium';
-    } else if (monsterXp > this.currPartyDifficulty.easy) {
+    } else if (monsterXp > difficulty.easy) {
       return 'easy';
-    } else if (monsterXp > this.currPartyDifficulty.pair) {
+    } else if (monsterXp > difficulty.pair) {
       return 'pair';
-    } else if (monsterXp > this.currPartyDifficulty.group) {
+    } else if (monsterXp > difficulty.group) {
       return 'group';
-    } else {
-      return 'trivial';
     }
+    return 'trivial';
   }
 
   private loadSavedEncounters(): SavedEncounter[] {
@@ -540,7 +565,7 @@ export class EncounterBuilderComponent implements OnInit {
 
   private persistSavedEncounters(): void {
     try {
-      localStorage.setItem(ENCOUNTERS_STORAGE_KEY, JSON.stringify(this.savedEncounters));
+      localStorage.setItem(ENCOUNTERS_STORAGE_KEY, JSON.stringify(this.savedEncounters()));
     } catch {
       // Ignore storage errors.
     }
@@ -554,13 +579,13 @@ export class EncounterBuilderComponent implements OnInit {
       }
       const parsed = JSON.parse(raw) as { partySize?: number; partyLevel?: number; ruleset?: '2024' | '2014' };
       if (typeof parsed.partySize === 'number' && parsed.partySize >= 1 && parsed.partySize <= 10) {
-        this.partySize = Math.round(parsed.partySize);
+        this.partySize.set(Math.round(parsed.partySize));
       }
       if (typeof parsed.partyLevel === 'number' && parsed.partyLevel >= 1 && parsed.partyLevel <= 20) {
-        this.partyLevel = Math.round(parsed.partyLevel);
+        this.partyLevel.set(Math.round(parsed.partyLevel));
       }
       if (parsed.ruleset === '2024' || parsed.ruleset === '2014') {
-        this.ruleset = parsed.ruleset;
+        this.ruleset.set(parsed.ruleset);
       }
     } catch {
       // Ignore storage errors.
@@ -571,7 +596,11 @@ export class EncounterBuilderComponent implements OnInit {
     try {
       localStorage.setItem(
         PARTY_STORAGE_KEY,
-        JSON.stringify({ partySize: this.partySize, partyLevel: this.partyLevel, ruleset: this.ruleset })
+        JSON.stringify({
+          partySize: this.partySize(),
+          partyLevel: this.partyLevel(),
+          ruleset: this.ruleset()
+        })
       );
     } catch {
       // Ignore storage errors.

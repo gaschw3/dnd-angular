@@ -9,14 +9,18 @@ import { combineLatest } from 'rxjs';
 
 import { SpellComponent } from './spell/spell.component';
 import { Spell } from 'src/app/models/spell';
-import { escapeHtml, sourceColorClass } from 'src/app/shared/helpers/format.utils';
+import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
+import {
+  ReferenceTableCellDirective,
+  ReferenceTableColumn,
+  ReferenceTableComponent
+} from 'src/app/shared/reference-table/reference-table.component';
 
 const SPELL_LEVELS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 @Component({
-  imports: [FaIconComponent, ReferenceTableComponent, SpellComponent],
+  imports: [FaIconComponent, ReferenceTableComponent, ReferenceTableCellDirective, SpellComponent],
   selector: 'app-spells',
   templateUrl: './spells.component.html',
   styleUrls: ['./spells.component.scss']
@@ -112,10 +116,7 @@ export class SpellsComponent implements OnInit {
       width: '46%',
       headerIcon: true,
       filterType: 'regex',
-      isHtml: true,
-      value: s => formatSpellNameHtml(s),
-      filterValue: s => s.name,
-      sortValue: s => s.name
+      value: s => s.name
     },
     {
       key: 'level',
@@ -147,8 +148,7 @@ export class SpellsComponent implements OnInit {
       width: '17%',
       align: 'center',
       filterType: 'regex',
-      isHtml: true,
-      value: s => formatSchoolPillHtml(s),
+      value: s => s.school?.abbrev || s.school?.name || '',
       filterValue: s => `${s.school?.name || ''} ${s.school?.abbrev || ''}`,
       sortValue: s => s.school?.name || ''
     },
@@ -326,34 +326,4 @@ export class SpellsComponent implements OnInit {
       }, 0);
     }
   }
-}
-
-function formatSpellNameHtml(spell: Spell): string {
-  const safeName = escapeHtml(spell.name);
-  const namePart = spell.replaced ? `<span class="strikethrough">${safeName}</span>` : safeName;
-  const tags: string[] = [];
-  if (spell.concentration) {
-    tags.push('<span class="spell-tag-badge" title="Concentration">C</span>');
-  }
-  if (spell.ritual) {
-    tags.push('<span class="spell-tag-badge" title="Ritual">R</span>');
-  }
-  if (spell.change === 'buff') {
-    tags.push('<span class="spell-tag-badge spell-tag-buff" title="Buffed">++</span>');
-  } else if (spell.change === 'nerf') {
-    tags.push('<span class="spell-tag-badge spell-tag-nerf" title="Nerfed">--</span>');
-  } else if (spell.change === 'change') {
-    tags.push('<span class="spell-tag-badge spell-tag-change" title="Modified">??</span>');
-  }
-  return `${namePart}${tags.join('')}`;
-}
-
-function formatSchoolPillHtml(spell: Spell): string {
-  const name = spell.school?.name || '';
-  const abbrev = spell.school?.abbrev || name;
-  if (!abbrev) {
-    return '';
-  }
-  const key = name.toLowerCase();
-  return `<span class="spell-school-pill spell-pill-${escapeHtml(key)}" title="${escapeHtml(name)}">${escapeHtml(abbrev)}</span>`;
 }

@@ -1,7 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, computed, inject, input, output } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ClassFeature, newClass } from 'src/app/models';
+import { ClassFeature, DndClass } from 'src/app/models';
 
 export interface SubclassTableColumn {
   index: number;
@@ -16,7 +16,7 @@ export interface SubclassTableColumn {
   styleUrls: ['./level-table.component.scss']
 })
 export class LevelTableComponent {
-  readonly dndClass = input.required<newClass>();
+  readonly dndClass = input.required<DndClass>();
   readonly selectedArchetypes = input<string[]>([]);
   readonly talk = output<string>();
 

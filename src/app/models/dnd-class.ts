@@ -1,52 +1,52 @@
 import { Spell } from './spell';
-import { commonFeatures, subclassFeatures } from './consts'
+import { commonFeatures, subclassFeatures } from './consts';
 import { HelperService } from '../shared/helpers/helper.service';
 
-export interface IClass {
-  canripProgression?: number[];
+export interface IDndClass {
+  cantripProgression?: number[];
   casterProgression?: string;
-  classFeatureList:   any[];
-  levelTable:         string[][];
-  classTableGroups:   any[];
-  fluff:              any[];
-  hd:                 string; // {face: 8, number: 1}
-  multiclassing:      newMulticlass;
-  name:               string;
-  saves:              string; // ['wis', 'cha']
-  source:             string;
-  spellcastingAbility?:     string;
-  startingEquipment:  string[];
-  startingGold:       string;
-  startingProficiencies?:   any;
-  subclassTitle:      string;
+  classFeatureList: any[];
+  levelTable: string[][];
+  classTableGroups: any[];
+  fluff: any[];
+  hd: string; // {face: 8, number: 1}
+  multiclassing: ClassMulticlass;
+  name: string;
+  saves: string; // ['wis', 'cha']
+  source: string;
+  spellcastingAbility?: string;
+  startingEquipment: string[];
+  startingGold: string;
+  startingProficiencies?: any;
+  subclassTitle: string;
 
-  classFeature:       ClassFeature[]
-  subclass:           Subclass[]
-  subclassFeature:    ClassFeature[];
+  classFeature: ClassFeature[];
+  subclass: Subclass[];
+  subclassFeature: ClassFeature[];
 }
 
 export class ClassFeature {
   className: string;
-	classSource: string;
-	entries: any[]
-	level: number;
-	name: string;
+  classSource: string;
+  entries: any[];
+  level: number;
+  name: string;
   id: string;
-	source: string;
+  source: string;
 
   subclassShortName: string;
   subclassSource: string;
   header: number;
   cost: string;
 
-  constructor (feat: any) {
+  constructor(feat: any) {
     this.className = feat.className;
     this.classSource = feat.classSource;
     this.entries = feat.entries;
     this.level = feat.level;
     this.name = feat.name;
     this.id = HelperService.createIdFromName(this.name);
-    this.source = feat.source; 
+    this.source = feat.source;
 
     this.subclassShortName = feat.subclassShortName ? feat.subclassShortName : '';
     this.subclassSource = feat.subclassSource ? feat.subclassSource : '';
@@ -56,33 +56,35 @@ export class ClassFeature {
 }
 
 export interface Subclass {
-	additionalSpells: Spell[];
-	className: string;
-	classSource: string;
-	name: string;
-	shortName: string;
-	subclassFeature: ClassFeature[];
+  additionalSpells: Spell[];
+  className: string;
+  classSource: string;
+  name: string;
+  shortName: string;
+  subclassFeature: ClassFeature[];
   subclassTableGroups: any[];
   source: string;
 }
 
-export class newMulticlass {
+export class ClassMulticlass {
   requirements: string;
   proficiencies: Proficiencies;
 
-  constructor (mc: any) {
-    const reqArr = []
+  constructor(mc: any) {
+    const reqArr = [];
     if (mc.requirements) {
       for (const [key, value] of Object.entries(mc.requirements)) {
         reqArr.push(`${key.toUpperCase()} ${value}`);
       }
-      this.requirements = reqArr.join(", ");
+      this.requirements = reqArr.join(', ');
     } else {
-      this.requirements = "To qualify for a new class, you must have a score of at least 13 in the primary ability of the new class and your current classes."
+      this.requirements =
+        'To qualify for a new class, you must have a score of at least 13 in the primary ability of the new class and your current classes.';
     }
     if (mc.proficienciesGained) {
       this.proficiencies = new Proficiencies(mc.proficienciesGained, '');
-    } else {//some multiclasses provide no extra proficiencies
+    } else {
+      //some multiclasses provide no extra proficiencies
       this.proficiencies = new Proficiencies({}, '');
     }
   }
@@ -94,55 +96,57 @@ export class Proficiencies {
   weapons?: string;
   tools?: string;
 
-  constructor (prof: any, fallback: string) {
-    this.armor = prof.armor ? (prof.armor).join(", ") : fallback;
+  constructor(prof: any, fallback: string) {
+    this.armor = prof.armor ? prof.armor.join(', ') : fallback;
     if (prof.skills && prof.skills[0].any) {
-      this.skills = `Choose any ${prof.skills[0].any.count}`
+      this.skills = `Choose any ${prof.skills[0].any.count}`;
     } else {
-      this.skills = prof.skills ? `Choose ${prof.skills[0].choose.count} from ${(prof.skills[0].choose.from).join(", ")}` : fallback;
+      this.skills = prof.skills
+        ? `Choose ${prof.skills[0].choose.count} from ${prof.skills[0].choose.from.join(', ')}`
+        : fallback;
     }
-    this.weapons = prof.weapons ? (prof.weapons).join(", ") : fallback;
-    this.tools = prof.tools ? (prof.tools).join(", ") : fallback;
+    this.weapons = prof.weapons ? prof.weapons.join(', ') : fallback;
+    this.tools = prof.tools ? prof.tools.join(', ') : fallback;
   }
 }
 
-export class newClass implements IClass{
-  canripProgression?: number[];
+export class DndClass implements IDndClass {
+  cantripProgression?: number[];
   casterProgression?: string;
-  classFeatureList:   ClassFeature[];
-  levelTable:         string[][];
+  classFeatureList: ClassFeature[];
+  levelTable: string[][];
   subclassLevelTable: string[][];
-  classTableGroups:   any[];
+  classTableGroups: any[];
   subclassTableGroups: any[];
-  fluff:              any;
-  hd:                 string; // {face: 8, number: 1}
-  hdNumber:           number;
-  hdFaces:            number;
-  hpAtFirstLevel:     string;
-  hpAtHigherLevels:   string;
-  multiclassing:      newMulticlass;
-  name:               string;
-  id:                 string;
-  preparedSpells:     string; // "<$level$> + <$wis_mod$>"
-  primaryAbility:     string;
-  saves:              string; // ['wis', 'cha']
-  source:             string;
-  spellcastingAbility?:   string;
-  startingEquipment:  string[];
+  fluff: any;
+  hd: string; // {face: 8, number: 1}
+  hdNumber: number;
+  hdFaces: number;
+  hpAtFirstLevel: string;
+  hpAtHigherLevels: string;
+  multiclassing: ClassMulticlass;
+  name: string;
+  id: string;
+  preparedSpells: string; // "<$level$> + <$wis_mod$>"
+  primaryAbility: string;
+  saves: string; // ['wis', 'cha']
+  source: string;
+  spellcastingAbility?: string;
+  startingEquipment: string[];
   startingEquipmentEntries: string[];
-  startingGold:       string;
-  startingProficiencies:  Proficiencies;
-  subclassTitle:      string;
+  startingGold: string;
+  startingProficiencies: Proficiencies;
+  subclassTitle: string;
 
   classFeature: ClassFeature[] = [];
   subclass: Subclass[];
   subclassFeature: ClassFeature[] = [];
 
-  constructor (classJson: any) {
+  constructor(classJson: any) {
     const currClass = classJson.class[0];
     this.name = currClass.name;
     this.id = HelperService.createIdFromName(currClass.name);
-    this.canripProgression = currClass.cantripProgression;
+    this.cantripProgression = currClass.cantripProgression;
     this.casterProgression = currClass.casterProgression;
     this.classFeatureList = currClass.classFeatures;
     this.fluff = currClass.fluff?.[0];
@@ -155,8 +159,8 @@ export class newClass implements IClass{
     this.hpAtHigherLevels = `${this.hd} (or ${avgHp}) + CON`;
     this.primaryAbility = formatPrimaryAbility(currClass.primaryAbility);
 
-    this.multiclassing = new newMulticlass(currClass.multiclassing || {});
-    this.saves = (currClass.proficiency || []).join(", ").toUpperCase(); // ['wis', 'cha']
+    this.multiclassing = new ClassMulticlass(currClass.multiclassing || {});
+    this.saves = (currClass.proficiency || []).join(', ').toUpperCase(); // ['wis', 'cha']
     this.source = currClass.source;
     this.spellcastingAbility = currClass.spellcastingAbility;
     this.startingEquipment = currClass.startingEquipment?.default || [];
@@ -169,27 +173,24 @@ export class newClass implements IClass{
     this.subclass = classJson.subclass || [];
     (classJson.subclassFeature || []).forEach((inFeat: any) => this.subclassFeature.push(new ClassFeature(inFeat)));
 
-    //create levelTable[][] from JOSN.classTableGroups
-    this.levelTable = new Array<string[]>();
-    this.subclassLevelTable = new Array<string[]>();
-
+    //create levelTable[][] from JSON.classTableGroups
     //all classes start with the same 3 columns
     this.levelTable = JSON.parse(JSON.stringify(commonFeatures)); //this is some goofy javascript witchcraft, 2D arrays get shallow copied in 95% of the normal scenarios I would use, this makes a deep copy to reset it for each new class.
     this.classTableGroups = currClass.classTableGroups || [];
     for (const group of this.classTableGroups) {
-      this.levelTable[0] = this.levelTable[0].concat(group.colLabels)
+      this.levelTable[0] = this.levelTable[0].concat(group.colLabels);
       for (let j = 0; j < group.rows.length; j++) {
-        this.levelTable[j+1] = this.levelTable[j+1].concat(group.rows[j]);
+        this.levelTable[j + 1] = this.levelTable[j + 1].concat(group.rows[j]);
       }
     }
 
-    this.subclassLevelTable = JSON.parse(JSON.stringify(subclassFeatures))
+    this.subclassLevelTable = JSON.parse(JSON.stringify(subclassFeatures));
     this.subclassTableGroups = currClass.subclassTableGroups;
-    if(this.subclassTableGroups) {
+    if (this.subclassTableGroups) {
       for (const group of this.subclassTableGroups) {
-        this.subclassLevelTable[0] = this.subclassLevelTable[0].concat(group.colLabels)
+        this.subclassLevelTable[0] = this.subclassLevelTable[0].concat(group.colLabels);
         for (let j = 0; j < group.rows.length; j++) {
-          this.subclassLevelTable[j+1] = this.subclassLevelTable[j+1].concat(group.rows[j]);
+          this.subclassLevelTable[j + 1] = this.subclassLevelTable[j + 1].concat(group.rows[j]);
         }
       }
     }

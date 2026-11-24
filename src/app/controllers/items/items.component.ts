@@ -7,16 +7,30 @@ import { combineLatest } from 'rxjs';
 
 import { Item, ItemCategory } from 'src/app/models/item';
 import { ItemComponent } from './item/item.component';
+import { SanitizeHtmlPipe } from 'src/app/pipes/sanitize-html.pipe';
 import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
+import {
+  ReferenceTableCellDirective,
+  ReferenceTableColumn,
+  ReferenceTableComponent
+} from 'src/app/shared/reference-table/reference-table.component';
 
 const RARITY_OPTIONS = ['none', 'common', 'uncommon', 'rare', 'very rare', 'legendary', 'artifact'] as const;
+
+const RARITY_SLUG_MAP: Record<string, string> = {
+  common: 'common',
+  uncommon: 'uncommon',
+  rare: 'rare',
+  'very rare': 'very-rare',
+  legendary: 'legendary',
+  artifact: 'artifact'
+};
 
 type ItemCategoryFilter = 'all' | ItemCategory;
 
 @Component({
-  imports: [ReferenceTableComponent, ItemComponent],
+  imports: [ReferenceTableComponent, ReferenceTableCellDirective, SanitizeHtmlPipe, ItemComponent],
   selector: 'app-items',
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss']
@@ -62,10 +76,7 @@ export class ItemsComponent implements OnInit {
       filterId: 'item-name-filter',
       width: '38%',
       headerIcon: true,
-      isHtml: true,
-      value: item => formatItemNameHtml(item),
-      filterValue: item => item.plainName,
-      sortValue: item => item.plainName
+      value: item => item.plainName
     },
     {
       key: 'type',
@@ -92,9 +103,7 @@ export class ItemsComponent implements OnInit {
       filterId: 'item-rarity-filter',
       width: '16%',
       align: 'center',
-      isHtml: true,
-      value: item => formatRarityPillHtml(item.rarity, this.titleCase),
-      filterValue: item => item.rarity,
+      value: item => item.rarity,
       sortValue: item => item.raritySort
     },
     {
@@ -196,25 +205,8 @@ export class ItemsComponent implements OnInit {
   formatRarityLabel(rarity: string): string {
     return this.titleCase.transform(rarity);
   }
-}
 
-function formatItemNameHtml(item: Item): string {
-  const attune = item.reqAttune ? '<span class="spell-tag-badge" title="Requires Attunement">A</span>' : '';
-  return `${item.name}${attune}`;
-}
-
-function formatRarityPillHtml(rarity: string, titleCase: TitleCasePipe): string {
-  if (!rarity || rarity === 'none') {
-    return '—';
+  getRaritySlug(rarity: string): string {
+    return RARITY_SLUG_MAP[rarity] || 'other';
   }
-  const slugMap: Record<string, string> = {
-    common: 'common',
-    uncommon: 'uncommon',
-    rare: 'rare',
-    'very rare': 'very-rare',
-    legendary: 'legendary',
-    artifact: 'artifact'
-  };
-  const cls = slugMap[rarity] || 'other';
-  return `<span class="item-rarity-pill item-rarity-${cls}">${titleCase.transform(rarity)}</span>`;
 }

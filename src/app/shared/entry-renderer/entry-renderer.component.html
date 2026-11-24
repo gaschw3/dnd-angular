@@ -1,16 +1,16 @@
-@for (entry of list; track $index) {
+@for (entry of list(); track $index) {
   @switch (getEntryType(entry)) {
     @case ('inset') {
       <div>
         <div class="alert alert-dark" role="alert">
-          <strong>{{entry.name}} - </strong><app-entry-renderer [list]=entry.entries [parent]="''"></app-entry-renderer>
+          <strong>{{entry.name}} - </strong><app-entry-renderer [list]="entry.entries" [parent]="''"></app-entry-renderer>
         </div>
       </div>
     }
     @case ('list') {
       <div>
         <ul>
-          <app-entry-renderer [list]=entry.items [parent]="'list'"></app-entry-renderer>
+          <app-entry-renderer [list]="entry.items" [parent]="'list'"></app-entry-renderer>
         </ul>
       </div>
     }
@@ -40,59 +40,59 @@
     @case ('column') {
       <div class="row">
         <div class="col-sm-6">
-          <app-entry-renderer [list]=entry.column [parent]="''"></app-entry-renderer>
+          <app-entry-renderer [list]="entry.column" [parent]="''"></app-entry-renderer>
         </div>
         <div class="col-sm-6">
-          <app-entry-renderer [list]=entry.column2 [parent]="''"></app-entry-renderer>
+          <app-entry-renderer [list]="entry.column2" [parent]="''"></app-entry-renderer>
         </div>
       </div>
     }
     @case ('entries') {
       <div>
-        @if (parent==='') {
+        @if (parent() === '') {
           <p class="pb-0 mb-2 entry-title">
             @if (entry.name) {
               <strong>{{entry.name}}. </strong>
-              }<app-entry-renderer [list]=entry.entries [parent]="'entries'"></app-entry-renderer>
-            </p>
-          }
-          @if (parent==='entries') {
-            <p class="pb-0 mb-2 entry-title">
-              <strong>{{entry.name}}. </strong><app-entry-renderer [list]=entry.entries [parent]="'entries'"></app-entry-renderer>
-            </p>
-          }
-          @if (parent==='list') {
-            <li>
-              <strong>{{entry.name}}. </strong><app-entry-renderer [list]=entry.entries [parent]="'entries'"></app-entry-renderer>
-            </li>
-          }
-        </div>
-      }
-      @case ('item') {
-        <div>
-          @if (parent==='') {
-            <p [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></p>
-          }
-          @if (parent==='list') {
-            <li [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></li>
-          }
-        </div>
-      }
-      @case ('undef') {
-        <div>
-          <p [innerHtml]="entry.type"></p>
-        </div>
-      }
-      @default {
-        @if (parent==='') {
-          <p [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
+            }<app-entry-renderer [list]="entry.entries" [parent]="'entries'"></app-entry-renderer>
+          </p>
         }
-        @if (parent==='entries') {
-          <p class="pb-0 mb-1" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
+        @if (parent() === 'entries') {
+          <p class="pb-0 mb-2 entry-title">
+            <strong>{{entry.name}}. </strong><app-entry-renderer [list]="entry.entries" [parent]="'entries'"></app-entry-renderer>
+          </p>
         }
-        @if (parent==='list') {
-          <li [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
+        @if (parent() === 'list') {
+          <li>
+            <strong>{{entry.name}}. </strong><app-entry-renderer [list]="entry.entries" [parent]="'entries'"></app-entry-renderer>
+          </li>
         }
+      </div>
+    }
+    @case ('item') {
+      <div>
+        @if (parent() === '') {
+          <p [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></p>
+        }
+        @if (parent() === 'list') {
+          <li [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></li>
+        }
+      </div>
+    }
+    @case ('undef') {
+      <div>
+        <p [innerHtml]="entry.type"></p>
+      </div>
+    }
+    @default {
+      @if (parent() === '') {
+        <p [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
+      }
+      @if (parent() === 'entries') {
+        <p class="pb-0 mb-1" [innerHtml]="entry | linkmaker | sanitizeHtml"></p>
+      }
+      @if (parent() === 'list') {
+        <li [innerHtml]="entry | linkmaker | sanitizeHtml"></li>
       }
     }
   }
+}

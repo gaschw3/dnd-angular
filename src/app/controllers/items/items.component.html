@@ -109,7 +109,27 @@
         itemLabel="items"
         defaultSortKey="name"
         (rowClick)="setCurrItem($event)"
-      ></app-reference-table>
+      >
+        <ng-template appTableCell="name" let-item>
+          @if (item.hasHtmlName) {
+            <span [innerHTML]="item.name | sanitizeHtml"></span>
+          } @else {
+            {{ item.name }}
+          }
+          @if (item.reqAttune) {
+            <span class="spell-tag-badge" title="Requires Attunement">A</span>
+          }
+        </ng-template>
+        <ng-template appTableCell="rarity" let-item>
+          @if (item.rarity && item.rarity !== 'none') {
+            <span [class]="'item-rarity-pill item-rarity-' + getRaritySlug(item.rarity)">
+              {{ formatRarityLabel(item.rarity) }}
+            </span>
+          } @else {
+            —
+          }
+        </ng-template>
+      </app-reference-table>
     </div>
   }
 

@@ -1,13 +1,13 @@
 import {
   AfterViewInit,
   Component,
+  DestroyRef,
   ElementRef,
   HostListener,
-  Input,
-  OnChanges,
-  OnDestroy,
-  SimpleChanges,
-  ViewChild
+  effect,
+  inject,
+  input,
+  viewChild
 } from '@angular/core';
 
 interface Particle {
@@ -28,10 +28,11 @@ interface Particle {
   templateUrl: './particles.component.html',
   styleUrls: ['./particles.component.scss']
 })
-export class ParticlesComponent implements AfterViewInit, OnChanges, OnDestroy {
-  @Input() theme = 'ice';
-  @ViewChild('canvas') canvasRef?: ElementRef<HTMLCanvasElement>;
+export class ParticlesComponent implements AfterViewInit {
+  readonly theme = input('ice');
+  readonly canvasRef = viewChild<ElementRef<HTMLCanvasElement>>('canvas');
 
+  private destroyRef = inject(DestroyRef);
   private ctx: CanvasRenderingContext2D | null = null;
   private rafId: number | null = null;
   private particles: Particle[] = [];
@@ -40,38 +41,41 @@ export class ParticlesComponent implements AfterViewInit, OnChanges, OnDestroy {
   private lastTime = 0;
   private elapsed = 0;
 
+  constructor() {
+    effect(() => {
+      const currentTheme = this.theme();
+      if (this.ctx) {
+        this.initParticles(currentTheme);
+      }
+    });
+
+    this.destroyRef.onDestroy(() => {
+      if (this.rafId !== null) {
+        cancelAnimationFrame(this.rafId);
+        this.rafId = null;
+      }
+    });
+  }
+
   ngAfterViewInit(): void {
-    const canvas = this.canvasRef?.nativeElement;
+    const canvas = this.canvasRef()?.nativeElement;
     if (!canvas) {
       return;
     }
     this.ctx = canvas.getContext('2d');
     this.resize();
-    this.initParticles();
+    this.initParticles(this.theme());
     this.startLoop();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['theme'] && !changes['theme'].firstChange) {
-      this.initParticles();
-    }
-  }
-
-  ngOnDestroy(): void {
-    if (this.rafId !== null) {
-      cancelAnimationFrame(this.rafId);
-      this.rafId = null;
-    }
   }
 
   @HostListener('window:resize')
   onResize(): void {
     this.resize();
-    this.initParticles();
+    this.initParticles(this.theme());
   }
 
   private resize(): void {
-    const canvas = this.canvasRef?.nativeElement;
+    const canvas = this.canvasRef()?.nativeElement;
     if (!canvas || !this.ctx) {
       return;
     }
@@ -83,14 +87,14 @@ export class ParticlesComponent implements AfterViewInit, OnChanges, OnDestroy {
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
-  private initParticles(): void {
+  private initParticles(theme: string): void {
     const w = this.width || window.innerWidth;
     const h = this.height || window.innerHeight;
     const isMobile = w < 768;
     const count = isMobile ? 65 : 130;
     const list: Particle[] = [];
 
-    if (this.theme === 'ice') {
+    if (theme === 'ice') {
       //snowflakes
       for (let i = 0; i < count; i++) {
         const depth = 0.35 + Math.random() * 0.65;
@@ -107,7 +111,7 @@ export class ParticlesComponent implements AfterViewInit, OnChanges, OnDestroy {
           color: '#ffffff'
         });
       }
-    } else if (this.theme === 'greek') {
+    } else if (theme === 'greek') {
       // 'foam' bubbles that ride waves and dissolve
       const foamCount = isMobile ? 55 : 110;
       for (let i = 0; i < foamCount; i++) {
@@ -124,7 +128,7 @@ export class ParticlesComponent implements AfterViewInit, OnChanges, OnDestroy {
           color: '#ffffff'
         });
       }
-    } else if (this.theme === 'rainbow') {
+    } else if (theme === 'rainbow') {
       const neonCount = isMobile ? 55 : 110;
       for (let i = 0; i < neonCount; i++) {
         const hue = 175 + Math.random() * 145; // cyan -> violet -> magenta
@@ -141,7 +145,7 @@ export class ParticlesComponent implements AfterViewInit, OnChanges, OnDestroy {
           color: `hsl(${Math.floor(hue)}, 90%, 62%)`
         });
       }
-    } else if (this.theme === 'end') {
+    } else if (theme === 'end') {
       const emberCount = isMobile ? 35 : 70;
       for (let i = 0; i < emberCount; i++) {
         const isGreen = Math.random() < 0.28;
@@ -158,7 +162,7 @@ export class ParticlesComponent implements AfterViewInit, OnChanges, OnDestroy {
           color: isGreen ? '#39c25b' : '#f8505b'
         });
       }
-    } else if (this.theme === 'forest') {
+    } else if (theme === 'forest') {
       // fireflies (length = 0) + drifting petals (length = 1)
       const fireflyCount = isMobile ? 25 : 50;
       for (let i = 0; i < fireflyCount; i++) {
@@ -192,7 +196,7 @@ export class ParticlesComponent implements AfterViewInit, OnChanges, OnDestroy {
           color: petalColors[Math.floor(Math.random() * petalColors.length)]
         });
       }
-    } else if (this.theme === 'royal') {
+    } else if (theme === 'royal') {
       // hearth embers & drifting ash
       const moteCount = isMobile ? 35 : 70;
       for (let i = 0; i < moteCount; i++) {
@@ -244,17 +248,18 @@ export class ParticlesComponent implements AfterViewInit, OnChanges, OnDestroy {
     const h = this.height;
     ctx.clearRect(0, 0, w, h);
 
-    if (this.theme === 'ice') {
+    const theme = this.theme();
+    if (theme === 'ice') {
       this.drawIce(ctx, w, h, dt);
-    } else if (this.theme === 'greek') {
+    } else if (theme === 'greek') {
       this.drawGreek(ctx, w, h, dt);
-    } else if (this.theme === 'rainbow') {
+    } else if (theme === 'rainbow') {
       this.drawRainbow(ctx, w, h, dt);
-    } else if (this.theme === 'end') {
+    } else if (theme === 'end') {
       this.drawEnd(ctx, w, h, dt);
-    } else if (this.theme === 'forest') {
+    } else if (theme === 'forest') {
       this.drawForest(ctx, w, h, dt);
-    } else if (this.theme === 'royal') {
+    } else if (theme === 'royal') {
       this.drawRoyal(ctx, w, h, dt);
     }
   }

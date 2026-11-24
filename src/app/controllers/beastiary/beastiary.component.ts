@@ -7,10 +7,14 @@ import { combineLatest } from 'rxjs';
 
 import { MonsterComponent } from './monster/monster.component';
 import { Monster } from 'src/app/models/monster';
-import { escapeHtml, sourceColorClass } from 'src/app/shared/helpers/format.utils';
+import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { MonsterHelperService } from 'src/app/shared/helpers/monster/monster-helper.service';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
-import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/reference-table/reference-table.component';
+import {
+  ReferenceTableCellDirective,
+  ReferenceTableColumn,
+  ReferenceTableComponent
+} from 'src/app/shared/reference-table/reference-table.component';
 
 const CR_STEPS = [
   '0', '1/8', '1/4', '1/2',
@@ -22,7 +26,7 @@ const CR_STEPS = [
 const CR_MAX_INDEX = CR_STEPS.length - 1;
 
 @Component({
-  imports: [ReferenceTableComponent, MonsterComponent],
+  imports: [ReferenceTableComponent, ReferenceTableCellDirective, MonsterComponent],
   selector: 'app-beastiary',
   templateUrl: './beastiary.component.html',
   styleUrls: ['./beastiary.component.scss']
@@ -116,10 +120,7 @@ export class BeastiaryComponent implements OnInit {
       filterId: 'beastiary-name-filter',
       width: '40%',
       headerIcon: true,
-      isHtml: true,
-      value: m => formatMonsterNameHtml(m),
-      filterValue: m => m.name,
-      sortValue: m => m.name
+      value: m => m.name
     },
     {
       key: 'cr',
@@ -128,9 +129,7 @@ export class BeastiaryComponent implements OnInit {
       filterId: 'beastiary-cr-filter',
       width: '13%',
       align: 'center',
-      isHtml: true,
-      value: m => formatCrPillHtml(m.cr, this.monsterHelper),
-      filterValue: m => m.cr || '',
+      value: m => m.cr || '',
       sortValue: m => this.monsterHelper.getSortCr(m.cr)
     },
     {
@@ -299,35 +298,25 @@ export class BeastiaryComponent implements OnInit {
       }, 0);
     }
   }
-}
 
-function formatMonsterNameHtml(monster: Monster): string {
-  const safeName = escapeHtml(monster.name);
-  const tags: string[] = [];
-  if (monster.isLegendary) {
-    tags.push('<span class="spell-tag-badge" title="Legendary">L</span>');
+  getBaseCr(cr: string): string {
+    return cr.includes('(') ? cr.split(' (')[0] : cr;
   }
-  if (monster.isSpellcaster) {
-    tags.push('<span class="spell-tag-badge" title="Spellcaster">S</span>');
-  }
-  return `${safeName}${tags.join('')}`;
-}
 
-function formatCrPillHtml(cr: string, helper: MonsterHelperService): string {
-  if (!cr || cr === 'N/A') {
-    return '<span class="monster-cr-pill monster-cr-na">N/A</span>';
+  getCrTier(cr: string): string {
+    const val = this.monsterHelper.getSortCr(this.getBaseCr(cr));
+    if (val >= 17) {
+      return 'epic';
+    }
+    if (val >= 11) {
+      return 'high';
+    }
+    if (val >= 5) {
+      return 'challenging';
+    }
+    if (val >= 2) {
+      return 'standard';
+    }
+    return 'low';
   }
-  const baseCr = cr.includes('(') ? cr.split(' (')[0] : cr;
-  const val = helper.getSortCr(baseCr);
-  let tier = 'low';
-  if (val >= 17) {
-    tier = 'epic';
-  } else if (val >= 11) {
-    tier = 'high';
-  } else if (val >= 5) {
-    tier = 'challenging';
-  } else if (val >= 2) {
-    tier = 'standard';
-  }
-  return `<span class="monster-cr-pill monster-cr-${tier}" title="CR ${escapeHtml(cr)}">${escapeHtml(baseCr)}</span>`;
 }

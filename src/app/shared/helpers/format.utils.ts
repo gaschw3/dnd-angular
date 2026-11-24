@@ -1,11 +1,3 @@
-export function escapeHtml(text: string): string {
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
 export function sourceColorClass(source?: string | null): string {
   return source ? `color-${source.replace(/[+-]/g, '').toLowerCase()}` : '';
 }

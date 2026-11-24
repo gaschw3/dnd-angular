@@ -1,9 +1,9 @@
 @if (particles) {
   <app-particles [theme]="theme"></app-particles>
 }
-<div [ngClass]="'theme-'+theme"><div class="theme-container">
+<div [class]="'theme-' + theme"><div class="theme-container">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <nav class="navbar sticky-top navbar-expand-lg bg-primary" [ngClass]="theme === 'royal' || theme === 'light' ? 'navbar-light' : 'navbar-dark'">
+  <nav class="navbar sticky-top navbar-expand-lg bg-primary" [class.navbar-light]="theme === 'royal' || theme === 'light'" [class.navbar-dark]="theme !== 'royal' && theme !== 'light'">
     <div class="container-fluid">
       @if (theme !== 'royal') {
         <div class="me-2 d-flex align-items-center">
@@ -30,7 +30,7 @@
       <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isNavbarCollapsed" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" [class.show]="!isNavbarCollapsed" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto gap-lg-1 nav-groups">
           <li class="nav-item dropdown" [class.show]="openDropdown === 'char'" routerLinkActive="active-section">
             <a class="nav-link dropdown-toggle nav-group-toggle" href="#" id="navbarDropdownChar" role="button" data-phy="Character"

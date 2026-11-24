@@ -1,6 +1,6 @@
-import { ChangeDetectorRef, Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { Component, DestroyRef, OnInit, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { CommonModule } from '@angular/common';
+import { UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { forkJoin } from 'rxjs';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
@@ -63,8 +63,17 @@ const POINT_COST_TABLE: Record<number, number> = {
 const MAX_BONUS_TOTAL = 3;
 const MAX_BONUS_PER_STAT = 2;
 
+const DEFAULT_STATS: AbilityStat[] = [
+  { key: 'str', label: 'Strength', base: 8, bonus: 0 },
+  { key: 'dex', label: 'Dexterity', base: 8, bonus: 0 },
+  { key: 'con', label: 'Constitution', base: 8, bonus: 0 },
+  { key: 'int', label: 'Intelligence', base: 8, bonus: 0 },
+  { key: 'wis', label: 'Wisdom', base: 8, bonus: 0 },
+  { key: 'cha', label: 'Charisma', base: 8, bonus: 0 }
+];
+
 @Component({
-  imports: [CommonModule, FormsModule, FaIconComponent, BackgroundComponent, FeatComponent],
+  imports: [UpperCasePipe, FormsModule, FaIconComponent, BackgroundComponent, FeatComponent],
   selector: 'app-character-builder',
   templateUrl: './character-builder.component.html',
   styleUrls: ['./character-builder.component.scss']
@@ -80,31 +89,89 @@ export class CharacterBuilderComponent implements OnInit {
   readonly maxBonusTotal = MAX_BONUS_TOTAL;
   readonly maxBonusPerStat = MAX_BONUS_PER_STAT;
 
-  backgrounds: Background[] = [];
-  originFeats: Feat[] = [];
-  selectedBackgroundId: string | null = null;
-  customOriginFeat = false;
-  selectedOriginFeatId: string | null = null;
-  freeformAsi = false;
-  extendedRange = false;
-  totalPoints = 27;
-  copied = false;
-
-  stats: AbilityStat[] = [
-    { key: 'str', label: 'Strength', base: 8, bonus: 0 },
-    { key: 'dex', label: 'Dexterity', base: 8, bonus: 0 },
-    { key: 'con', label: 'Constitution', base: 8, bonus: 0 },
-    { key: 'int', label: 'Intelligence', base: 8, bonus: 0 },
-    { key: 'wis', label: 'Wisdom', base: 8, bonus: 0 },
-    { key: 'cha', label: 'Charisma', base: 8, bonus: 0 }
-  ];
+  readonly backgrounds = signal<Background[]>([]);
+  readonly originFeats = signal<Feat[]>([]);
+  readonly selectedBackgroundId = signal<string | null>(null);
+  readonly customOriginFeat = signal(false);
+  readonly selectedOriginFeatId = signal<string | null>(null);
+  readonly freeformAsi = signal(false);
+  readonly extendedRange = signal(false);
+  readonly totalPoints = signal(27);
+  readonly copied = signal(false);
+  readonly stats = signal<AbilityStat[]>(DEFAULT_STATS.map(s => ({ ...s })));
 
   private copyResetTimer?: ReturnType<typeof setTimeout>;
 
   private dataService = inject(DndDataService);
   public helper = inject(HelperService);
-  private cdr = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
+
+  readonly minScore = computed(() => (this.extendedRange() ? 6 : 8));
+  readonly maxScore = computed(() => (this.extendedRange() ? 18 : 15));
+
+  readonly selectedBackground = computed(() => {
+    const id = this.selectedBackgroundId();
+    return id ? this.backgrounds().find(bg => bg.id === id) : undefined;
+  });
+
+  readonly suggestedOriginFeat = computed(() => {
+    const bg = this.selectedBackground();
+    if (!bg?.feat) {
+      return undefined;
+    }
+    const match = bg.feat.match(/\{@\w+\s+([^|}]+)/);
+    const featName = (match ? match[1] : bg.feat).trim().toLowerCase();
+    return this.originFeats().find(f => f.name.toLowerCase() === featName);
+  });
+
+  readonly activeOriginFeat = computed(() => {
+    if (this.customOriginFeat()) {
+      const id = this.selectedOriginFeatId();
+      return this.originFeats().find(f => f.id === id);
+    }
+    return this.suggestedOriginFeat();
+  });
+
+  readonly allowedBackgroundStats = computed<StatKey[]>(() => {
+    const bg = this.selectedBackground();
+    if (!bg) {
+      return ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+    }
+    return this.extractBackgroundStats(bg);
+  });
+
+  readonly pointsSpent = computed(() =>
+    this.stats().reduce((sum, stat) => sum + this.pointCost(stat.base), 0)
+  );
+
+  readonly pointsRemaining = computed(() => this.totalPoints() - this.pointsSpent());
+
+  readonly bonusSpent = computed(() => this.stats().reduce((sum, stat) => sum + stat.bonus, 0));
+
+  readonly progressPercentage = computed(() => {
+    const total = this.totalPoints();
+    if (total <= 0) {
+      return 0;
+    }
+    return Math.round((this.pointsRemaining() / total) * 100);
+  });
+
+  readonly clampedProgress = computed(() => Math.min(100, Math.abs(this.progressPercentage())));
+
+  readonly isOverMax = computed(() => {
+    const total = this.totalPoints();
+    return total > 0 && this.pointsRemaining() > total;
+  });
+
+  readonly overflowProgress = computed(() => {
+    const total = this.totalPoints();
+    if (!this.isOverMax() || total <= 0) {
+      return 0;
+    }
+    return Math.min(100, Math.round(((this.pointsRemaining() - total) / total) * 100));
+  });
+
+  readonly hasChanges = computed(() => this.stats().some(stat => stat.base !== 8 || stat.bonus !== 0));
 
   ngOnInit(): void {
     this.destroyRef.onDestroy(() => {
@@ -117,121 +184,49 @@ export class CharacterBuilderComponent implements OnInit {
     forkJoin({
       backgrounds: this.dataService.getBackgrounds(),
       feats: this.dataService.getFeats()
-    }).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({ backgrounds, feats }) => {
-      this.backgrounds = backgrounds;
-      this.originFeats = feats.filter(f => f.category === 'O');
-      if (this.selectedBackgroundId && !this.selectedBackground) {
-        this.selectedBackgroundId = null;
-      }
-      if (this.selectedOriginFeatId && !this.originFeats.some(f => f.id === this.selectedOriginFeatId)) {
-        this.selectedOriginFeatId = null;
-      }
-      this.enforceAllowedBonuses();
-      this.cdr.markForCheck();
-    });
-  }
-
-  get minScore(): number {
-    return this.extendedRange ? 6 : 8;
-  }
-
-  get maxScore(): number {
-    return this.extendedRange ? 18 : 15;
-  }
-
-  get selectedBackground(): Background | undefined {
-    if (!this.selectedBackgroundId) {
-      return undefined;
-    }
-    return this.backgrounds.find(bg => bg.id === this.selectedBackgroundId);
-  }
-
-  get suggestedOriginFeat(): Feat | undefined {
-    const bg = this.selectedBackground;
-    if (!bg?.feat) {
-      return undefined;
-    }
-    const match = bg.feat.match(/\{@\w+\s+([^|}]+)/);
-    const featName = (match ? match[1] : bg.feat).trim().toLowerCase();
-    return this.originFeats.find(f => f.name.toLowerCase() === featName);
-  }
-
-  get activeOriginFeat(): Feat | undefined {
-    if (this.customOriginFeat) {
-      return this.originFeats.find(f => f.id === this.selectedOriginFeatId);
-    }
-    return this.suggestedOriginFeat;
-  }
-
-  get allowedBackgroundStats(): StatKey[] {
-    const bg = this.selectedBackground;
-    if (!bg) {
-      return ['str', 'dex', 'con', 'int', 'wis', 'cha'];
-    }
-    return this.extractBackgroundStats(bg);
-  }
-
-  get pointsSpent(): number {
-    return this.stats.reduce((sum, stat) => sum + this.pointCost(stat.base), 0);
-  }
-
-  get pointsRemaining(): number {
-    return this.totalPoints - this.pointsSpent;
-  }
-
-  get bonusSpent(): number {
-    return this.stats.reduce((sum, stat) => sum + stat.bonus, 0);
-  }
-
-  get progressPercentage(): number {
-    if (this.totalPoints <= 0) {
-      return 0;
-    }
-    return Math.round((this.pointsRemaining / this.totalPoints) * 100);
-  }
-
-  get clampedProgress(): number {
-    return Math.min(100, Math.abs(this.progressPercentage));
-  }
-
-  get isOverMax(): boolean {
-    return this.totalPoints > 0 && this.pointsRemaining > this.totalPoints;
-  }
-
-  get overflowProgress(): number {
-    if (!this.isOverMax || this.totalPoints <= 0) {
-      return 0;
-    }
-    return Math.min(100, Math.round(((this.pointsRemaining - this.totalPoints) / this.totalPoints) * 100));
-  }
-
-  get hasChanges(): boolean {
-    return this.stats.some(stat => stat.base !== 8 || stat.bonus !== 0);
+    })
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(({ backgrounds, feats }) => {
+        this.backgrounds.set(backgrounds);
+        const origins = feats.filter(f => f.category === 'O');
+        this.originFeats.set(origins);
+        if (this.selectedBackgroundId() && !this.selectedBackground()) {
+          this.selectedBackgroundId.set(null);
+        }
+        const selectedOrigin = this.selectedOriginFeatId();
+        if (selectedOrigin && !origins.some(f => f.id === selectedOrigin)) {
+          this.selectedOriginFeatId.set(null);
+        }
+        this.enforceAllowedBonuses();
+      });
   }
 
   isStatBonusAllowed(statKey: StatKey): boolean {
-    if (this.freeformAsi || !this.selectedBackground) {
+    if (this.freeformAsi() || !this.selectedBackground()) {
       return true;
     }
-    return this.allowedBackgroundStats.includes(statKey);
+    return this.allowedBackgroundStats().includes(statKey);
   }
 
   canIncrementBase(stat: AbilityStat): boolean {
-    return stat.base < this.maxScore;
+    return stat.base < this.maxScore();
   }
 
   canDecrementBase(stat: AbilityStat): boolean {
-    return stat.base > this.minScore;
+    return stat.base > this.minScore();
   }
 
   stepBase(stat: AbilityStat, delta: number): void {
-    stat.base = this.clampScore(stat.base + delta);
+    this.stats.update(list =>
+      list.map(s => (s.key === stat.key ? { ...s, base: this.clampScore(s.base + delta) } : s))
+    );
     this.persistState();
   }
 
-  onBaseInputChange(stat: AbilityStat): void {
-    const parsed = Number(stat.base);
-    stat.base = this.clampScore(Number.isFinite(parsed) ? Math.round(parsed) : this.minScore);
+  onBaseInputChange(stat: AbilityStat, rawValue: number | string): void {
+    const parsed = Number(rawValue);
+    const nextBase = this.clampScore(Number.isFinite(parsed) ? Math.round(parsed) : this.minScore());
+    this.stats.update(list => list.map(s => (s.key === stat.key ? { ...s, base: nextBase } : s)));
     this.persistState();
   }
 
@@ -239,7 +234,7 @@ export class CharacterBuilderComponent implements OnInit {
     return (
       this.isStatBonusAllowed(stat.key) &&
       stat.bonus < MAX_BONUS_PER_STAT &&
-      this.bonusSpent < MAX_BONUS_TOTAL
+      this.bonusSpent() < MAX_BONUS_TOTAL
     );
   }
 
@@ -248,60 +243,65 @@ export class CharacterBuilderComponent implements OnInit {
   }
 
   stepBonus(stat: AbilityStat, delta: number): void {
-    if (delta > 0 && !this.canIncrementBonus(stat)) {
+    const current = this.stats().find(s => s.key === stat.key);
+    if (!current) {
       return;
     }
-    if (delta < 0 && !this.canDecrementBonus(stat)) {
+    if (delta > 0 && !this.canIncrementBonus(current)) {
       return;
     }
-    stat.bonus = Math.max(0, Math.min(MAX_BONUS_PER_STAT, stat.bonus + delta));
+    if (delta < 0 && !this.canDecrementBonus(current)) {
+      return;
+    }
+    const nextBonus = Math.max(0, Math.min(MAX_BONUS_PER_STAT, current.bonus + delta));
+    this.stats.update(list => list.map(s => (s.key === stat.key ? { ...s, bonus: nextBonus } : s)));
     this.persistState();
   }
 
   setBudget(points: number): void {
-    this.totalPoints = Math.max(0, Math.round(points));
+    this.totalPoints.set(Math.max(0, Math.round(points)));
     this.persistState();
   }
 
-  onBudgetInputChange(): void {
-    const parsed = Number(this.totalPoints);
-    this.totalPoints = Number.isFinite(parsed) && parsed >= 0 ? Math.round(parsed) : 27;
+  onBudgetInputChange(rawValue: number | string): void {
+    const parsed = Number(rawValue);
+    this.totalPoints.set(Number.isFinite(parsed) && parsed >= 0 ? Math.round(parsed) : 27);
     this.persistState();
   }
 
-  onBackgroundChange(): void {
+  setBackground(id: string | null): void {
+    this.selectedBackgroundId.set(id);
     this.enforceAllowedBonuses();
     this.persistState();
   }
 
-  onFreeformChange(): void {
+  setFreeformAsi(enabled: boolean): void {
+    this.freeformAsi.set(enabled);
     this.enforceAllowedBonuses();
     this.persistState();
   }
 
-  onCustomOriginFeatChange(): void {
-    if (this.customOriginFeat && !this.selectedOriginFeatId) {
-      this.selectedOriginFeatId = this.suggestedOriginFeat?.id ?? this.originFeats[0]?.id ?? null;
+  setCustomOriginFeat(enabled: boolean): void {
+    this.customOriginFeat.set(enabled);
+    if (enabled && !this.selectedOriginFeatId()) {
+      this.selectedOriginFeatId.set(this.suggestedOriginFeat()?.id ?? this.originFeats()[0]?.id ?? null);
     }
     this.persistState();
   }
 
-  onOriginFeatChange(): void {
+  setOriginFeat(id: string | null): void {
+    this.selectedOriginFeatId.set(id);
     this.persistState();
   }
 
-  onExtendedRangeChange(): void {
-    for (const stat of this.stats) {
-      stat.base = this.clampScore(stat.base);
-    }
+  setExtendedRange(enabled: boolean): void {
+    this.extendedRange.set(enabled);
+    this.stats.update(list => list.map(s => ({ ...s, base: this.clampScore(s.base) })));
     this.persistState();
   }
 
   resetAll(): void {
-    for (const stat of this.stats) {
-      stat.base = 8;
-      stat.bonus = 0;
-    }
+    this.stats.update(list => list.map(s => ({ ...s, base: 8, bonus: 0 })));
     this.persistState();
   }
 
@@ -310,7 +310,7 @@ export class CharacterBuilderComponent implements OnInit {
   }
 
   nextStepCost(score: number): number | null {
-    if (score >= this.maxScore) {
+    if (score >= this.maxScore()) {
       return null;
     }
     return this.pointCost(score + 1) - this.pointCost(score);
@@ -334,18 +334,21 @@ export class CharacterBuilderComponent implements OnInit {
   }
 
   buildSummaryText(): string {
-    const bgName = this.selectedBackground
-      ? `${this.selectedBackground.name}${this.freeformAsi ? ' (Custom ASI)' : ''}`
+    const selectedBg = this.selectedBackground();
+    const bgName = selectedBg
+      ? `${selectedBg.name}${this.freeformAsi() ? ' (Custom ASI)' : ''}`
       : 'Custom';
-    const statLine = this.stats
+    const currentStats = this.stats();
+    const statLine = currentStats
       .map(s => `${s.key.toUpperCase()} ${this.getTotalScore(s)} (${this.getMod(s)})`)
       .join(' | ');
-    const chosenBonuses = this.stats
+    const chosenBonuses = currentStats
       .filter(s => s.bonus > 0)
       .map(s => `${s.key.toUpperCase()} +${s.bonus}`);
     const bonusLine = chosenBonuses.length > 0 ? chosenBonuses.join(', ') : 'None';
-    const featLine = this.activeOriginFeat ? ` | Origin Feat: ${this.activeOriginFeat.name}` : '';
-    return `Background: ${bgName}${featLine}\n${statLine}\nPoints: ${this.pointsSpent}/${this.totalPoints} | Bonus ASI: ${bonusLine}`;
+    const activeFeat = this.activeOriginFeat();
+    const featLine = activeFeat ? ` | Origin Feat: ${activeFeat.name}` : '';
+    return `Background: ${bgName}${featLine}\n${statLine}\nPoints: ${this.pointsSpent()}/${this.totalPoints()} | Bonus ASI: ${bonusLine}`;
   }
 
   copySummary(): void {
@@ -357,27 +360,23 @@ export class CharacterBuilderComponent implements OnInit {
   }
 
   private flashCopied(): void {
-    this.copied = true;
-    this.cdr.markForCheck();
+    this.copied.set(true);
     if (this.copyResetTimer) {
       clearTimeout(this.copyResetTimer);
     }
     this.copyResetTimer = setTimeout(() => {
-      this.copied = false;
-      this.cdr.markForCheck();
+      this.copied.set(false);
     }, 1800);
   }
 
   private clampScore(score: number): number {
-    return Math.max(this.minScore, Math.min(this.maxScore, score));
+    return Math.max(this.minScore(), Math.min(this.maxScore(), score));
   }
 
   private enforceAllowedBonuses(): void {
-    for (const stat of this.stats) {
-      if (!this.isStatBonusAllowed(stat.key)) {
-        stat.bonus = 0;
-      }
-    }
+    this.stats.update(list =>
+      list.map(s => (this.isStatBonusAllowed(s.key) ? s : { ...s, bonus: 0 }))
+    );
   }
 
   private extractBackgroundStats(bg: Background): StatKey[] {
@@ -407,13 +406,13 @@ export class CharacterBuilderComponent implements OnInit {
 
   private persistState(): void {
     const payload: StoredCharacterBuilderState = {
-      totalPoints: this.totalPoints,
-      extendedRange: this.extendedRange,
-      freeformAsi: this.freeformAsi,
-      backgroundId: this.selectedBackgroundId,
-      customOriginFeat: this.customOriginFeat,
-      originFeatId: this.selectedOriginFeatId,
-      stats: this.stats.map(s => ({ key: s.key, base: s.base, bonus: s.bonus }))
+      totalPoints: this.totalPoints(),
+      extendedRange: this.extendedRange(),
+      freeformAsi: this.freeformAsi(),
+      backgroundId: this.selectedBackgroundId(),
+      customOriginFeat: this.customOriginFeat(),
+      originFeatId: this.selectedOriginFeatId(),
+      stats: this.stats().map(s => ({ key: s.key, base: s.base, bonus: s.bonus }))
     };
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
@@ -430,31 +429,38 @@ export class CharacterBuilderComponent implements OnInit {
       }
       const parsed = JSON.parse(raw) as Partial<StoredCharacterBuilderState>;
       if (typeof parsed.totalPoints === 'number' && parsed.totalPoints >= 0) {
-        this.totalPoints = Math.round(parsed.totalPoints);
+        this.totalPoints.set(Math.round(parsed.totalPoints));
       }
       if (typeof parsed.extendedRange === 'boolean') {
-        this.extendedRange = parsed.extendedRange;
+        this.extendedRange.set(parsed.extendedRange);
       }
       if (typeof parsed.freeformAsi === 'boolean') {
-        this.freeformAsi = parsed.freeformAsi;
+        this.freeformAsi.set(parsed.freeformAsi);
       }
       if (typeof parsed.backgroundId === 'string' || parsed.backgroundId === null) {
-        this.selectedBackgroundId = parsed.backgroundId;
+        this.selectedBackgroundId.set(parsed.backgroundId);
       }
       if (typeof parsed.customOriginFeat === 'boolean') {
-        this.customOriginFeat = parsed.customOriginFeat;
+        this.customOriginFeat.set(parsed.customOriginFeat);
       }
       if (typeof parsed.originFeatId === 'string' || parsed.originFeatId === null) {
-        this.selectedOriginFeatId = parsed.originFeatId;
+        this.selectedOriginFeatId.set(parsed.originFeatId);
       }
       if (Array.isArray(parsed.stats)) {
-        for (const saved of parsed.stats) {
-          const target = this.stats.find(s => s.key === saved.key);
-          if (target) {
-            target.base = this.clampScore(Number(saved.base) || 8);
-            target.bonus = Math.max(0, Math.min(MAX_BONUS_PER_STAT, Number(saved.bonus) || 0));
-          }
-        }
+        const savedByKey = new Map(parsed.stats.map(s => [s.key, s]));
+        this.stats.update(list =>
+          list.map(stat => {
+            const saved = savedByKey.get(stat.key);
+            if (!saved) {
+              return stat;
+            }
+            return {
+              ...stat,
+              base: this.clampScore(Number(saved.base) || 8),
+              bonus: Math.max(0, Math.min(MAX_BONUS_PER_STAT, Number(saved.bonus) || 0))
+            };
+          })
+        );
       }
     } catch {
       // Ignore malformed stored state.

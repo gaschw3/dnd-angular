@@ -1,6 +1,6 @@
-import { Component, HostListener, ViewChild, inject } from '@angular/core';
+import { Component, HostListener, inject, viewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { CommonModule, ViewportScroller } from '@angular/common';
+import { ViewportScroller } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -17,7 +17,6 @@ declare let gtag: any;
 
 @Component({
   imports: [
-    CommonModule,
     FormsModule,
     RouterModule,
     FaIconComponent,
@@ -43,7 +42,7 @@ export class AppComponent {
   particles = this.getStoredParticles();
   theme = this.getStoredTheme();
 
-  @ViewChild(QuickSearchComponent) quickSearch?: QuickSearchComponent;
+  readonly quickSearch = viewChild(QuickSearchComponent);
 
   private router = inject(Router);
   public bookmarks = inject(BookmarksService);
@@ -77,7 +76,7 @@ export class AppComponent {
 
   openQuickSearch(): void {
     this.closeMenus();
-    this.quickSearch?.open();
+    this.quickSearch()?.open();
   }
 
   toggleBookmarks(): void {

@@ -1,71 +1,71 @@
 <div class="ref-table-wrapper">
   <div class="table-responsive">
-    <table [id]="tableId" class="table table-hover table-sm ref-table" [class.table-striped]="striped">
+    <table [id]="tableId()" class="table table-hover table-sm ref-table" [class.table-striped]="striped()">
       <thead>
-        @if (showFilterRow) {
+        @if (showFilterRow()) {
           <tr class="ref-filter-row">
-            @for (col of columns; track col) {
+            @for (col of columns(); track col.key) {
               @if (!col.filterSkipCell) {
-              <th [style.width]="col.filterColspan ? null : (col.width || null)" [attr.colspan]="col.filterColspan || 1">
-                @if (col.filterable !== false && col.filterType !== 'none' && !col.action) {
-                  @if (col.filterType === 'number-range') {
-                    <div class="input-group input-group-sm">
-                      <input
-                        [id]="(col.filterId || col.key) + '-min'"
-                        class="form-control"
-                        type="number"
-                        [attr.min]="col.min ?? 0"
-                        [attr.max]="col.max ?? 30"
-                        placeholder="Min"
-                        [(ngModel)]="rangeFilters[col.key].min"
-                        (ngModelChange)="onFilterChange()"
+                <th [style.width]="col.filterColspan ? null : (col.width || null)" [attr.colspan]="col.filterColspan || 1">
+                  @if (col.filterable !== false && col.filterType !== 'none' && !col.action) {
+                    @if (col.filterType === 'number-range') {
+                      <div class="input-group input-group-sm">
+                        <input
+                          [id]="(col.filterId || col.key) + '-min'"
+                          class="form-control"
+                          type="number"
+                          [attr.min]="col.min ?? 0"
+                          [attr.max]="col.max ?? 30"
+                          placeholder="Min"
+                          [ngModel]="rangeFilters()[col.key]?.min ?? null"
+                          (ngModelChange)="setRangeFilter(col.key, 'min', $event)"
                         />
-                      <input
-                        [id]="(col.filterId || col.key) + '-max'"
-                        class="form-control"
-                        type="number"
-                        [attr.min]="col.min ?? 0"
-                        [attr.max]="col.max ?? 31"
-                        placeholder="Max"
-                        [(ngModel)]="rangeFilters[col.key].max"
-                        (ngModelChange)="onFilterChange()"
+                        <input
+                          [id]="(col.filterId || col.key) + '-max'"
+                          class="form-control"
+                          type="number"
+                          [attr.min]="col.min ?? 0"
+                          [attr.max]="col.max ?? 31"
+                          placeholder="Max"
+                          [ngModel]="rangeFilters()[col.key]?.max ?? null"
+                          (ngModelChange)="setRangeFilter(col.key, 'max', $event)"
                         />
-                    </div>
-                  } @else {
-                    <div class="input-group input-group-sm">
-                      @if (col.headerIcon) {
-                        <span class="input-group-text"><fa-icon [icon]="faSearch" aria-hidden="true" /></span>
-                      }
-                      <input
-                        [id]="col.filterId || col.key"
-                        class="form-control"
-                        type="search"
-                        [placeholder]="col.placeholder || col.label"
-                        [(ngModel)]="filters[col.key]"
-                        (ngModelChange)="onFilterChange()"
+                      </div>
+                    } @else {
+                      <div class="input-group input-group-sm">
+                        @if (col.headerIcon) {
+                          <span class="input-group-text"><fa-icon [icon]="faSearch" aria-hidden="true" /></span>
+                        }
+                        <input
+                          [id]="col.filterId || col.key"
+                          class="form-control"
+                          type="search"
+                          [placeholder]="col.placeholder || col.label"
+                          [ngModel]="filters()[col.key] ?? ''"
+                          (ngModelChange)="setFilter(col.key, $event)"
                         />
-                    </div>
+                      </div>
+                    }
                   }
-                }
-              </th>
+                </th>
               }
             }
           </tr>
         }
         <tr class="ref-header-row">
-          @for (col of columns; track col) {
+          @for (col of columns(); track col.key) {
             <th
               [style.width]="col.width || null"
               [class.text-center]="col.align === 'center'"
               [class.text-end]="col.align === 'right'"
               [class.sortable]="col.sortable !== false && !col.action"
               (click)="toggleSort(col)"
-              >
+            >
               <span>{{ col.label }}</span>
               @if (col.sortable !== false && !col.action) {
                 <span class="sort-indicator" aria-hidden="true">
-                  @if (sortKey === col.key) {
-                    {{ sortDir === 'asc' ? '▲' : '▼' }}
+                  @if (sortKey() === col.key) {
+                    {{ sortDir() === 'asc' ? '▲' : '▼' }}
                   } @else {
                     ⇅
                   }
@@ -76,40 +76,39 @@
         </tr>
       </thead>
       <tbody>
-        @for (row of pagedRows; track row) {
+        @for (row of pagedRows(); track $index) {
           <tr
             (click)="rowClick.emit(row)"
             [class.table-active]="isRowActive(row)"
             class="ref-data-row"
-            >
-            @for (col of columns; track col) {
-              <td [ngClass]="getCellClasses(col, row)">
+          >
+            @for (col of columns(); track col.key) {
+              <td [class]="getCellClasses(col, row)">
                 @if (col.action) {
                   <button
                     type="button"
                     [class]="col.action.btnClass || 'btn btn-sm btn-success'"
                     [attr.aria-label]="col.action.ariaLabel"
                     (click)="onActionClick(col, row, $event)"
-                    >
+                  >
                     <fa-icon [icon]="col.action.icon" aria-hidden="true" />
                   </button>
+                } @else if (cellTemplates().get(col.key); as cellTpl) {
+                  <ng-container *ngTemplateOutlet="cellTpl; context: { $implicit: row, col: col }"></ng-container>
+                } @else if (col.isHtml) {
+                  <span [innerHTML]="getSafeHtml(col, row)"></span>
                 } @else {
-                  @if (col.isHtml) {
-                    <span [innerHTML]="getSafeHtml(col, row)"></span>
-                  }
-                  @if (!col.isHtml) {
-                    {{ getCellValue(col, row) }}
-                  }
+                  {{ getCellValue(col, row) }}
                 }
               </td>
             }
           </tr>
         }
-        @if (pagedRows.length === 0) {
+        @if (pagedRows().length === 0) {
           <tr>
-            <td [attr.colspan]="columns.length" class="text-center py-3 ref-empty">
-              No matching {{ itemLabel }} found.
-              @if (hasActiveFilters) {
+            <td [attr.colspan]="columns().length" class="text-center py-3 ref-empty">
+              No matching {{ itemLabel() }} found.
+              @if (hasActiveFilters()) {
                 <button type="button" class="btn btn-sm btn-link p-0 ms-2" (click)="clearFilters()">
                   Clear filters
                 </button>
@@ -121,53 +120,53 @@
     </table>
   </div>
 
-  @if (paging) {
+  @if (paging()) {
     <div class="ref-table-footer d-flex flex-wrap justify-content-between align-items-center mt-2">
       <div class="ref-table-length d-flex align-items-center mb-1">
         <label class="mb-0 me-2">
           Show
           <select
             class="form-control form-control-sm d-inline-block w-auto mx-1"
-            [(ngModel)]="pageSize"
-            (ngModelChange)="onPageSizeChange()"
-            >
-            @for (opt of pageSizeOptions; track opt) {
+            [ngModel]="activePageSize()"
+            (ngModelChange)="onPageSizeChange($event)"
+          >
+            @for (opt of pageSizeOptions(); track opt) {
               <option [ngValue]="opt">
                 {{ opt === -1 ? 'All' : opt }}
               </option>
             }
           </select>
-          {{ itemLabel }}
+          {{ itemLabel() }}
         </label>
         <span class="ref-table-count ms-2">
-          ({{ startIndex }}–{{ endIndex }} of {{ filteredRows.length }})
+          ({{ startIndex() }}–{{ endIndex() }} of {{ filteredRows().length }})
         </span>
-        @if (hasActiveFilters) {
+        @if (hasActiveFilters()) {
           <button
             type="button"
             class="btn btn-sm btn-outline-secondary ms-2 py-0 px-2"
             (click)="clearFilters()"
-            >
+          >
             Clear filters
           </button>
         }
       </div>
-      @if (totalPages > 1) {
+      @if (totalPages() > 1) {
         <nav aria-label="Table pagination" class="ref-table-pagination mb-1">
-          <button type="button" class="ref-page-btn" [disabled]="currentPage === 1" (click)="goToPage(1)" aria-label="First page">&laquo;</button>
-          <button type="button" class="ref-page-btn" [disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)" aria-label="Previous page">&lsaquo;</button>
-          @for (page of visiblePages; track page) {
+          <button type="button" class="ref-page-btn" [disabled]="currentPage() === 1" (click)="goToPage(1)" aria-label="First page">&laquo;</button>
+          <button type="button" class="ref-page-btn" [disabled]="currentPage() === 1" (click)="goToPage(currentPage() - 1)" aria-label="Previous page">&lsaquo;</button>
+          @for (page of visiblePages(); track page) {
             <button
               type="button"
               class="ref-page-btn"
-              [class.current]="page === currentPage"
+              [class.current]="page === currentPage()"
               (click)="goToPage(page)"
-              >
+            >
               {{ page }}
             </button>
           }
-          <button type="button" class="ref-page-btn" [disabled]="currentPage === totalPages" (click)="goToPage(currentPage + 1)" aria-label="Next page">&rsaquo;</button>
-          <button type="button" class="ref-page-btn" [disabled]="currentPage === totalPages" (click)="goToPage(totalPages)" aria-label="Last page">&raquo;</button>
+          <button type="button" class="ref-page-btn" [disabled]="currentPage() === totalPages()" (click)="goToPage(currentPage() + 1)" aria-label="Next page">&rsaquo;</button>
+          <button type="button" class="ref-page-btn" [disabled]="currentPage() === totalPages()" (click)="goToPage(totalPages())" aria-label="Last page">&raquo;</button>
         </nav>
       }
     </div>

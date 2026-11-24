@@ -6,7 +6,7 @@ import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faWandSparkles } from '@fortawesome/free-solid-svg-icons';
 import { combineLatest } from 'rxjs';
 
-import { newClass } from '../../models';
+import { DndClass } from '../../models';
 import { ArchetypesComponent } from './archetypes/archetypes.component';
 import { ClassComponent } from './class/class.component';
 import { LevelTableComponent } from './level-table/level-table.component';
@@ -23,8 +23,8 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
   styleUrls: ['./classes.component.scss']
 })
 export class ClassesComponent implements OnInit {
-  readonly classes = signal<newClass[]>([]);
-  readonly currClass = signal<newClass | undefined>(undefined);
+  readonly classes = signal<DndClass[]>([]);
+  readonly currClass = signal<DndClass | undefined>(undefined);
   readonly selectedArchetypes = signal<string[]>([]);
   readonly sortedArchetypes = computed(() => {
     const cls = this.currClass();
@@ -34,7 +34,7 @@ export class ClassesComponent implements OnInit {
 
   private shakeTimer?: ReturnType<typeof setTimeout>;
 
-  columns: ReferenceTableColumn<newClass>[] = [
+  columns: ReferenceTableColumn<DndClass>[] = [
     {
       key: 'name',
       label: 'Name',
@@ -57,7 +57,7 @@ export class ClassesComponent implements OnInit {
     }
   ];
 
-  readonly rowKey = (cls: newClass) => cls.id;
+  readonly rowKey = (cls: DndClass) => cls.id;
 
   private dataService = inject(DndDataService);
   private route = inject(ActivatedRoute);
@@ -100,7 +100,7 @@ export class ClassesComponent implements OnInit {
       });
   }
 
-  setCurrClass(clickedClass: newClass): void {
+  setCurrClass(clickedClass: DndClass): void {
     this.selectedArchetypes.set([]);
     this.currClass.set(clickedClass);
     this.title.setTitle(`${clickedClass.name} — EotCC 5e`);

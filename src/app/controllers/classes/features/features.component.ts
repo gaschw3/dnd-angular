@@ -1,6 +1,6 @@
 import { Component, HostListener, input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClassFeature } from 'src/app/models/newClass';
+import { ClassFeature } from 'src/app/models/dnd-class';
 import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
 
 @Component({

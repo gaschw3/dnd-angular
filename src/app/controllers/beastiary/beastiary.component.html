@@ -111,7 +111,27 @@
         itemLabel="monsters"
         defaultSortKey="name"
         (rowClick)="setCurrMonster($event)"
-      ></app-reference-table>
+      >
+        <ng-template appTableCell="name" let-monster>
+          {{ monster.name }}
+          @if (monster.isLegendary) {
+            <span class="spell-tag-badge" title="Legendary">L</span>
+          }
+          @if (monster.isSpellcaster) {
+            <span class="spell-tag-badge" title="Spellcaster">S</span>
+          }
+        </ng-template>
+        <ng-template appTableCell="cr" let-monster>
+          @if (!monster.cr || monster.cr === 'N/A') {
+            <span class="monster-cr-pill monster-cr-na">N/A</span>
+          } @else {
+            <span
+              [class]="'monster-cr-pill monster-cr-' + getCrTier(monster.cr)"
+              [title]="'CR ' + monster.cr"
+            >{{ getBaseCr(monster.cr) }}</span>
+          }
+        </ng-template>
+      </app-reference-table>
     </div>
   }
 

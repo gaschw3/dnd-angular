@@ -4,7 +4,7 @@ import { forkJoin, Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 import { Spell } from '../../models/spell';
-import { newClass } from '../../models/newClass';
+import { DndClass } from '../../models/dnd-class';
 import { Monster, normalizeMonster } from '../../models/monster';
 import { Item, normalizeItem } from '../../models/item';
 import { Ancestry } from '../../models/ancestry';
@@ -17,7 +17,7 @@ import { OtherFeature, normalizeOtherFeature } from '../../models/otherFeature';
 })
 export class DndDataService {
   private spells$?: Observable<Spell[]>;
-  private classes$?: Observable<newClass[]>;
+  private classes$?: Observable<DndClass[]>;
   private monsters$?: Observable<Monster[]>;
   private items$?: Observable<Item[]>;
   private ancestries$?: Observable<Ancestry[]>;
@@ -44,10 +44,10 @@ export class DndDataService {
     return this.spells$;
   }
 
-  getClasses(): Observable<newClass[]> {
+  getClasses(): Observable<DndClass[]> {
     if (!this.classes$) {
       this.classes$ = this.http.get<any[]>('assets/data/2024/classes.json').pipe(
-        map(inputClasses => inputClasses.map(inClass => new newClass(inClass))),
+        map(inputClasses => inputClasses.map(inClass => new DndClass(inClass))),
         shareReplay(1)
       );
     }

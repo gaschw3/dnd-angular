@@ -86,93 +86,82 @@ describe('CharacterBuilderComponent', () => {
   });
 
   it('tracks resettable changes and overflow points in extended range', () => {
-    expect(component.hasChanges).toBe(false);
-    expect(component.isOverMax).toBe(false);
+    expect(component.hasChanges()).toBe(false);
+    expect(component.isOverMax()).toBe(false);
 
-    component.extendedRange = true;
-    component.stepBase(component.stats[0], -2); // STR 6 (-2 pts -> 29/27 remaining)
-    expect(component.hasChanges).toBe(true);
-    expect(component.pointsRemaining).toBe(29);
-    expect(component.isOverMax).toBe(true);
-    expect(component.overflowProgress).toBeGreaterThan(0);
+    component.setExtendedRange(true);
+    component.stepBase(component.stats()[0], -2); // STR 6 (-2 pts -> 29/27 remaining)
+    expect(component.hasChanges()).toBe(true);
+    expect(component.pointsRemaining()).toBe(29);
+    expect(component.isOverMax()).toBe(true);
+    expect(component.overflowProgress()).toBeGreaterThan(0);
 
     component.resetAll();
-    expect(component.hasChanges).toBe(false);
-    expect(component.isOverMax).toBe(false);
+    expect(component.hasChanges()).toBe(false);
+    expect(component.isOverMax()).toBe(false);
   });
 
   it('enforces background ASI restrictions and unlocks when freeform is toggled', () => {
-    component.selectedBackgroundId = 'acolyte';
-    component.onBackgroundChange();
-
-    const str = component.stats[0];
-    const wis = component.stats[4];
-    const cha = component.stats[5];
+    component.setBackground('acolyte');
 
     expect(component.isStatBonusAllowed('str')).toBe(false);
     expect(component.isStatBonusAllowed('wis')).toBe(true);
 
-    component.stepBonus(str, 1);
-    expect(str.bonus).toBe(0); // blocked by Acolyte
+    component.stepBonus(component.stats()[0], 1);
+    expect(component.stats()[0].bonus).toBe(0); // blocked by Acolyte
 
-    component.stepBonus(wis, 1);
-    component.stepBonus(wis, 1);
-    component.stepBonus(wis, 1); // capped at +2 per stat
-    expect(wis.bonus).toBe(2);
+    component.stepBonus(component.stats()[4], 1);
+    component.stepBonus(component.stats()[4], 1);
+    component.stepBonus(component.stats()[4], 1); // capped at +2 per stat
+    expect(component.stats()[4].bonus).toBe(2);
 
-    component.stepBonus(cha, 1);
-    component.stepBonus(cha, 1); // capped at +3 total
-    expect(cha.bonus).toBe(1);
-    expect(component.bonusSpent).toBe(3);
+    component.stepBonus(component.stats()[5], 1);
+    component.stepBonus(component.stats()[5], 1); // capped at +3 total
+    expect(component.stats()[5].bonus).toBe(1);
+    expect(component.bonusSpent()).toBe(3);
 
     // Switching to Soldier clears non-Soldier bonuses
-    component.selectedBackgroundId = 'soldier';
-    component.onBackgroundChange();
-    expect(wis.bonus).toBe(0);
-    expect(cha.bonus).toBe(0);
+    component.setBackground('soldier');
+    expect(component.stats()[4].bonus).toBe(0);
+    expect(component.stats()[5].bonus).toBe(0);
 
     // Enabling freeform unlocks all stats
-    component.freeformAsi = true;
-    component.onFreeformChange();
+    component.setFreeformAsi(true);
     expect(component.isStatBonusAllowed('wis')).toBe(true);
-    component.stepBonus(wis, 1);
-    expect(wis.bonus).toBe(1);
+    component.stepBonus(component.stats()[4], 1);
+    expect(component.stats()[4].bonus).toBe(1);
   });
 
   it('clamps extended scores back to 8-15 when extended range is disabled', () => {
-    component.extendedRange = true;
-    const str = component.stats[0];
-    const cha = component.stats[5];
-    component.stepBase(str, 10); // 18
-    component.stepBase(cha, -2); // 6
-    expect(str.base).toBe(18);
-    expect(cha.base).toBe(6);
+    component.setExtendedRange(true);
+    component.stepBase(component.stats()[0], 10); // 18
+    component.stepBase(component.stats()[5], -2); // 6
+    expect(component.stats()[0].base).toBe(18);
+    expect(component.stats()[5].base).toBe(6);
 
-    component.extendedRange = false;
-    component.onExtendedRangeChange();
-    expect(str.base).toBe(15);
-    expect(cha.base).toBe(8);
+    component.setExtendedRange(false);
+    expect(component.stats()[0].base).toBe(15);
+    expect(component.stats()[5].base).toBe(8);
   });
 
   it('resolves suggested origin feat from background and allows custom override', () => {
-    expect(component.originFeats.map(f => f.name)).toEqual(['Magic Initiate', 'Savage Attacker', 'Alert']);
+    expect(component.originFeats().map(f => f.name)).toEqual(['Magic Initiate', 'Savage Attacker', 'Alert']);
 
-    component.selectedBackgroundId = 'acolyte';
-    expect(component.activeOriginFeat?.name).toBe('Magic Initiate');
+    component.setBackground('acolyte');
+    expect(component.activeOriginFeat()?.name).toBe('Magic Initiate');
 
-    component.customOriginFeat = true;
-    component.onCustomOriginFeatChange();
-    expect(component.selectedOriginFeatId).toBe('magic-initiate');
+    component.setCustomOriginFeat(true);
+    expect(component.selectedOriginFeatId()).toBe('magic-initiate');
 
-    component.selectedOriginFeatId = 'alert';
-    expect(component.activeOriginFeat?.name).toBe('Alert');
+    component.setOriginFeat('alert');
+    expect(component.activeOriginFeat()?.name).toBe('Alert');
   });
 
   it('formats a readable summary string with specific bonus ASIs and origin feat', () => {
-    component.selectedBackgroundId = 'acolyte';
-    component.stepBase(component.stats[4], 7); // WIS 15 (9 pts)
-    component.stepBonus(component.stats[4], 2);
-    component.stepBonus(component.stats[5], 1);
+    component.setBackground('acolyte');
+    component.stepBase(component.stats()[4], 7); // WIS 15 (9 pts)
+    component.stepBonus(component.stats()[4], 2);
+    component.stepBonus(component.stats()[5], 1);
 
     const summary = component.buildSummaryText();
     expect(summary).toContain('Background: Acolyte | Origin Feat: Magic Initiate');

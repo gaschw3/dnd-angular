@@ -119,7 +119,32 @@
         itemLabel="spells"
         defaultSortKey="name"
         (rowClick)="setCurrSpell($event)"
-      ></app-reference-table>
+      >
+        <ng-template appTableCell="name" let-spell>
+          <span [class.strikethrough]="spell.replaced">{{ spell.name }}</span>
+          @if (spell.concentration) {
+            <span class="spell-tag-badge" title="Concentration">C</span>
+          }
+          @if (spell.ritual) {
+            <span class="spell-tag-badge" title="Ritual">R</span>
+          }
+          @if (spell.change === 'buff') {
+            <span class="spell-tag-badge spell-tag-buff" title="Buffed">++</span>
+          } @else if (spell.change === 'nerf') {
+            <span class="spell-tag-badge spell-tag-nerf" title="Nerfed">--</span>
+          } @else if (spell.change === 'change') {
+            <span class="spell-tag-badge spell-tag-change" title="Modified">??</span>
+          }
+        </ng-template>
+        <ng-template appTableCell="school" let-spell>
+          @if (spell.school?.abbrev || spell.school?.name; as abbrev) {
+            <span
+              [class]="'spell-school-pill spell-pill-' + (spell.school?.name || '').toLowerCase()"
+              [title]="spell.school?.name || ''"
+            >{{ abbrev }}</span>
+          }
+        </ng-template>
+      </app-reference-table>
     </div>
   }
 

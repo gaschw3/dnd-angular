@@ -9,16 +9,16 @@
           <button
             type="button"
             class="btn btn-sm pb-reset-btn"
-            [class.btn-warning]="hasChanges"
-            [class.btn-outline-secondary]="!hasChanges"
-            [disabled]="!hasChanges"
+            [class.btn-warning]="hasChanges()"
+            [class.btn-outline-secondary]="!hasChanges()"
+            [disabled]="!hasChanges()"
             (click)="resetAll()"
           >
             <fa-icon [icon]="faRotateLeft" aria-hidden="true" /> Reset
           </button>
           <button type="button" class="btn btn-sm btn-success" (click)="copySummary()">
-            <fa-icon [icon]="copied ? faCheck : faCopy" aria-hidden="true" />
-            {{ copied ? ' Copied!' : ' Copy Summary' }}
+            <fa-icon [icon]="copied() ? faCheck : faCopy" aria-hidden="true" />
+            {{ copied() ? ' Copied!' : ' Copy Summary' }}
           </button>
         </div>
       </div>
@@ -33,15 +33,15 @@
                 type="number"
                 min="0"
                 class="form-control pb-budget-input"
-                [(ngModel)]="totalPoints"
-                (change)="onBudgetInputChange()"
+                [ngModel]="totalPoints()"
+                (ngModelChange)="onBudgetInputChange($event)"
               />
               <div class="btn-group" role="group" aria-label="Point budget presets">
                 @for (preset of budgetPresets; track preset) {
                   <button
                     type="button"
                     class="btn btn-primary"
-                    [class.active]="totalPoints === preset"
+                    [class.active]="totalPoints() === preset"
                     (click)="setBudget(preset)"
                   >
                     {{ preset }} pts
@@ -56,11 +56,11 @@
             <select
               id="backgroundSelect"
               class="form-select"
-              [(ngModel)]="selectedBackgroundId"
-              (ngModelChange)="onBackgroundChange()"
+              [ngModel]="selectedBackgroundId()"
+              (ngModelChange)="setBackground($event)"
             >
               <option [ngValue]="null">— None / Custom (All Stats) —</option>
-              @for (bg of backgrounds; track bg.id) {
+              @for (bg of backgrounds(); track bg.id) {
                 <option [ngValue]="bg.id">
                   {{ bg.name }} ({{ getBackgroundAbilitySummary(bg) }})
                 </option>
@@ -74,8 +74,8 @@
                 id="freeformAsiSwitch"
                 type="checkbox"
                 class="form-check-input"
-                [(ngModel)]="freeformAsi"
-                (change)="onFreeformChange()"
+                [ngModel]="freeformAsi()"
+                (ngModelChange)="setFreeformAsi($event)"
               />
               <label class="form-check-label" for="freeformAsiSwitch">
                 Allow any ability scores
@@ -86,8 +86,8 @@
                 id="extendedRangeSwitch"
                 type="checkbox"
                 class="form-check-input"
-                [(ngModel)]="extendedRange"
-                (change)="onExtendedRangeChange()"
+                [ngModel]="extendedRange()"
+                (ngModelChange)="setExtendedRange($event)"
               />
               <label class="form-check-label" for="extendedRangeSwitch">
                 Extended range (6–18)
@@ -98,8 +98,8 @@
                 id="customOriginFeatSwitch"
                 type="checkbox"
                 class="form-check-input"
-                [(ngModel)]="customOriginFeat"
-                (change)="onCustomOriginFeatChange()"
+                [ngModel]="customOriginFeat()"
+                (ngModelChange)="setCustomOriginFeat($event)"
               />
               <label class="form-check-label" for="customOriginFeatSwitch">
                 Choose a different Origin Feat
@@ -107,17 +107,17 @@
             </div>
           </div>
 
-          @if (customOriginFeat) {
+          @if (customOriginFeat()) {
             <div class="mt-2">
               <label for="originFeatSelect" class="form-label mb-1">Origin Feat</label>
               <select
                 id="originFeatSelect"
                 class="form-select"
-                [(ngModel)]="selectedOriginFeatId"
-                (ngModelChange)="onOriginFeatChange()"
+                [ngModel]="selectedOriginFeatId()"
+                (ngModelChange)="setOriginFeat($event)"
               >
                 <option [ngValue]="null">— None —</option>
-                @for (feat of originFeats; track feat.id) {
+                @for (feat of originFeats(); track feat.id) {
                   <option [ngValue]="feat.id">{{ feat.name }}</option>
                 }
               </select>
@@ -128,21 +128,21 @@
         <div class="col-md-5 d-flex flex-column align-items-center justify-content-center">
           <div
             class="progress-circle"
-            [class.is-negative]="pointsRemaining < 0"
-            [class.is-over-max]="isOverMax"
-            [style.--progress]="clampedProgress + '%'"
-            [style.--overflow]="overflowProgress + '%'"
+            [class.is-negative]="pointsRemaining() < 0"
+            [class.is-over-max]="isOverMax()"
+            [style.--progress]="clampedProgress() + '%'"
+            [style.--overflow]="overflowProgress() + '%'"
           >
             <div class="progress-circle-inner">
-              <span class="progress-value">{{ pointsRemaining }}/{{ totalPoints }}</span>
-              <small class="progress-label">{{ pointsRemaining < 0 ? 'over budget' : 'pts left' }}</small>
+              <span class="progress-value">{{ pointsRemaining() }}/{{ totalPoints() }}</span>
+              <small class="progress-label">{{ pointsRemaining() < 0 ? 'over budget' : 'pts left' }}</small>
             </div>
           </div>
           <div class="pb-asi-status mt-2">
             <small>
               Background ASI:
-              <strong [class.text-success]="bonusSpent === maxBonusTotal">
-                +{{ bonusSpent }} / +{{ maxBonusTotal }}
+              <strong [class.text-success]="bonusSpent() === maxBonusTotal">
+                +{{ bonusSpent() }} / +{{ maxBonusTotal }}
               </strong>
             </small>
           </div>
@@ -154,15 +154,15 @@
           <thead>
             <tr>
               <th scope="col"><span class="d-none d-sm-inline">Ability</span><span class="d-sm-none">Stat</span></th>
-              <th scope="col" class="text-center">Base <span class="d-none d-sm-inline">({{ minScore }}–{{ maxScore }})</span></th>
+              <th scope="col" class="text-center">Base <span class="d-none d-sm-inline">({{ minScore() }}–{{ maxScore() }})</span></th>
               <th scope="col" class="text-center">Bonus <span class="d-none d-sm-inline">(0–2)</span></th>
               <th scope="col" class="text-center"><span class="d-none d-sm-inline">Total</span><span class="d-sm-none">Tot</span></th>
               <th scope="col" class="text-center"><span class="d-none d-sm-inline">Modifier</span><span class="d-sm-none">Mod</span></th>
             </tr>
           </thead>
           <tbody>
-            @for (stat of stats; track stat.key) {
-              <tr [class.pb-row-bg-match]="selectedBackground && !freeformAsi && isStatBonusAllowed(stat.key)">
+            @for (stat of stats(); track stat.key) {
+              <tr [class.pb-row-bg-match]="selectedBackground() && !freeformAsi() && isStatBonusAllowed(stat.key)">
                 <td>
                   <div class="d-flex align-items-center gap-2">
                     <strong class="pb-stat-code">{{ stat.key | uppercase }}</strong>
@@ -184,10 +184,10 @@
                       type="number"
                       class="form-control text-center pb-score-input"
                       [id]="'stat-' + stat.key"
-                      [min]="minScore"
-                      [max]="maxScore"
-                      [(ngModel)]="stat.base"
-                      (change)="onBaseInputChange(stat)"
+                      [min]="minScore()"
+                      [max]="maxScore()"
+                      [ngModel]="stat.base"
+                      (ngModelChange)="onBaseInputChange(stat, $event)"
                       [attr.aria-label]="stat.label + ' base score'"
                     />
                     <button
@@ -247,12 +247,12 @@
           <tfoot>
             <tr>
               <th scope="row" colspan="2" class="text-end">Totals</th>
-              <td class="text-center fw-semibold">+{{ bonusSpent }} / +{{ maxBonusTotal }}</td>
+              <td class="text-center fw-semibold">+{{ bonusSpent() }} / +{{ maxBonusTotal }}</td>
               <td colspan="2" class="text-center">
-                @if (pointsRemaining < 0) {
-                  <span class="text-danger fw-semibold">{{ helper.abs(pointsRemaining) }} pts over budget</span>
+                @if (pointsRemaining() < 0) {
+                  <span class="text-danger fw-semibold">{{ helper.abs(pointsRemaining()) }} pts over budget</span>
                 } @else {
-                  <span class="opacity-75">{{ pointsRemaining }} / {{ totalPoints }} pts remaining</span>
+                  <span class="opacity-75">{{ pointsRemaining() }} / {{ totalPoints() }} pts remaining</span>
                 }
               </td>
             </tr>
@@ -262,16 +262,16 @@
     </div>
   </div>
 
-  @if (selectedBackground || activeOriginFeat) {
+  @if (selectedBackground() || activeOriginFeat()) {
     <div class="row g-3">
-      @if (selectedBackground) {
-        <div [class]="activeOriginFeat ? 'col-lg-8' : 'col-12'">
-          <app-background [background]="selectedBackground"></app-background>
+      @if (selectedBackground(); as bg) {
+        <div [class]="activeOriginFeat() ? 'col-lg-8' : 'col-12'">
+          <app-background [background]="bg"></app-background>
         </div>
       }
-      @if (activeOriginFeat) {
-        <div [class]="selectedBackground ? 'col-lg-4' : 'col-12'">
-          <app-feat [feat]="activeOriginFeat"></app-feat>
+      @if (activeOriginFeat(); as feat) {
+        <div [class]="selectedBackground() ? 'col-lg-4' : 'col-12'">
+          <app-feat [feat]="feat"></app-feat>
         </div>
       }
     </div>
