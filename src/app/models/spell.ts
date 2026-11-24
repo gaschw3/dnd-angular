@@ -1,4 +1,5 @@
 import { HelperService } from "../shared/helpers/helper.service";
+import { buildSearchText, extractEntryText } from "../shared/helpers/format.utils";
 
 export interface ISpell {
   name:       string;
@@ -19,6 +20,7 @@ export interface ISpell {
   ritual?:    string;
   roll?:      string[] | string;
   hasCaiusNotes: boolean;
+  searchText: string;
 }
 
 export class Spell implements ISpell {
@@ -42,6 +44,7 @@ export class Spell implements ISpell {
   ritual?:    string;
   roll?:      string[] | string;
   hasCaiusNotes: boolean;
+  searchText: string;
 
   constructor (spellJson: any, spellSource: any) {
         this.name = spellJson.name;
@@ -129,7 +132,26 @@ export class Spell implements ISpell {
               typeof e.name === 'string' &&
               e.name.toLowerCase().includes('caius')
           );
+        this.searchText = buildSpellSearchText(this);
     }
+}
+
+function buildSpellSearchText(spell: Spell): string {
+  return buildSearchText([
+    spell.name,
+    spell.source || '',
+    spell.school?.name || '',
+    spell.school?.abbrev || '',
+    spell.time || '',
+    spell.tableTime || '',
+    spell.range || '',
+    spell.components || '',
+    spell.duration || '',
+    ...spell.classes,
+    ...spell.subclasses,
+    extractEntryText(spell.entries),
+    extractEntryText(spell.higher)
+  ]);
 }
 
 export const spellSchool: Record<string, { name: string; abbrev: string }> = {

@@ -1,4 +1,5 @@
 import { slugifyName } from '../pipes/id-to-name.pipe';
+import { buildSearchText, extractEntryText } from '../shared/helpers/format.utils';
 import { typeTable } from '../shared/itemTypes';
 
 export type ItemCategory = 'magic' | 'weapons' | 'armor' | 'normal' | 'treasure';
@@ -34,6 +35,7 @@ export interface Item {
   valueUnit: 'gp' | 'sp' | 'cp' | '';
   valueFormatted: string;
   raritySort: number;
+  searchText: string;
 }
 
 const ARMOR_TYPES = new Set(['LA', 'MA', 'HA', 'S']);
@@ -65,6 +67,9 @@ export function normalizeItem(raw: any): Item {
   const rarityLabel = formatItemRarity(rarity, raw.reqAttune);
   const { valueAmount, valueUnit, valueFormatted } = formatItemValue(raw.value);
 
+  const subtitleText = [typeLabel, rarityLabel].filter(Boolean).join(', ');
+  const damageText = formatItemDamage(raw);
+
   return {
     ...raw,
     id: raw.id || slugifyName(String(raw.name || '')),
@@ -73,12 +78,22 @@ export function normalizeItem(raw: any): Item {
     rarity,
     category: classifyItemCategory(raw.type, rarity),
     typeLabel,
-    subtitleText: [typeLabel, rarityLabel].filter(Boolean).join(', '),
-    damageText: formatItemDamage(raw),
+    subtitleText,
+    damageText,
     valueAmount,
     valueUnit,
     valueFormatted,
-    raritySort: getRaritySort(rarity)
+    raritySort: getRaritySort(rarity),
+    searchText: buildSearchText([
+      plainName,
+      raw.source || '',
+      rarity !== 'none' ? rarity : '',
+      subtitleText,
+      damageText,
+      valueFormatted,
+      raw.ac ? `AC ${raw.ac}` : '',
+      extractEntryText(raw.entries)
+    ])
   };
 }
 

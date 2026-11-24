@@ -4,12 +4,12 @@ import { TitleCasePipe } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { faFeatherPointed } from '@fortawesome/free-solid-svg-icons';
+import { faFeatherPointed, faFileLines, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { combineLatest } from 'rxjs';
 
 import { SpellComponent } from './spell/spell.component';
-import { Spell } from 'src/app/models/spell';
-import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
+import { Spell, spellSchool } from 'src/app/models/spell';
+import { matchesPhrase, sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import {
   ReferenceTableCellDirective,
@@ -19,6 +19,12 @@ import {
 
 const SPELL_LEVELS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+const SPELL_SCHOOLS = Object.values(spellSchool)
+  .map(s => ({ name: s.name, key: s.name.toLowerCase(), abbrev: s.abbrev }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const VALID_SCHOOL_KEYS = new Set(SPELL_SCHOOLS.map(s => s.key));
+
 @Component({
   imports: [FaIconComponent, ReferenceTableComponent, ReferenceTableCellDirective, SpellComponent],
   selector: 'app-spells',
@@ -27,17 +33,23 @@ const SPELL_LEVELS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 })
 export class SpellsComponent implements OnInit {
   readonly faFeatherPointed = faFeatherPointed;
+  readonly faSearch = faSearch;
+  readonly faFileLines = faFileLines;
+
   readonly spells = signal<Spell[]>([]);
   readonly currSpell = signal<Spell | undefined>(undefined);
-  readonly initialFilters = signal<Record<string, string>>({});
 
   readonly spellLevels = SPELL_LEVELS;
+  readonly schoolOptions = SPELL_SCHOOLS;
   readonly selectedLevels = signal<number[]>([]);
+  readonly selectedSchools = signal<string[]>([]);
   readonly selectedClasses = signal<string[]>([]);
   readonly classMenuOpen = signal<boolean>(false);
   readonly onlyConcentration = signal<boolean>(false);
   readonly onlyRitual = signal<boolean>(false);
   readonly onlyCaiusNotes = signal<boolean>(false);
+  readonly nameQuery = signal<string>('');
+  readonly fullTextQuery = signal<string>('');
 
   readonly availableClasses = computed(() => {
     const map = new Map<string, string>();
@@ -71,22 +83,31 @@ export class SpellsComponent implements OnInit {
   readonly hasQuickFilters = computed(
     () =>
       this.selectedLevels().length > 0 ||
+      this.selectedSchools().length > 0 ||
       this.selectedClasses().length > 0 ||
       this.onlyConcentration() ||
       this.onlyRitual() ||
-      this.onlyCaiusNotes()
+      this.onlyCaiusNotes() ||
+      this.nameQuery().trim().length > 0 ||
+      this.fullTextQuery().trim().length > 0
   );
 
   readonly filteredSpells = computed(() => {
     const all = this.spells();
     const levels = this.selectedLevels();
+    const schools = this.selectedSchools();
     const classes = this.selectedClasses().map(c => c.toLowerCase());
     const conc = this.onlyConcentration();
     const ritual = this.onlyRitual();
     const caius = this.onlyCaiusNotes();
+    const nameTerm = this.nameQuery().trim().toLowerCase();
+    const fullText = this.fullTextQuery();
 
     return all.filter(s => {
       if (levels.length > 0 && !levels.includes(Number(s.level))) {
+        return false;
+      }
+      if (schools.length > 0 && !schools.includes((s.school?.name || '').toLowerCase())) {
         return false;
       }
       if (classes.length > 0 && !(s.classes || []).some(c => classes.includes(c.trim().toLowerCase()))) {
@@ -101,6 +122,12 @@ export class SpellsComponent implements OnInit {
       if (caius && !s.hasCaiusNotes) {
         return false;
       }
+      if (nameTerm && !s.name.toLowerCase().includes(nameTerm)) {
+        return false;
+      }
+      if (!matchesPhrase(s.searchText, fullText)) {
+        return false;
+      }
       return true;
     });
   });
@@ -111,55 +138,42 @@ export class SpellsComponent implements OnInit {
     {
       key: 'name',
       label: 'Name',
-      placeholder: 'Filter Spells',
-      filterId: 'spell-name-filter',
       width: '46%',
-      headerIcon: true,
-      filterType: 'regex',
+      filterable: false,
       value: s => s.name
     },
     {
       key: 'level',
       label: 'Lvl',
-      placeholder: 'Lvl',
-      filterId: 'spell-level-filter',
       width: '9%',
       align: 'center',
-      filterType: 'regex',
+      filterable: false,
       value: s => s.level,
-      filterValue: s => String(s.level),
       sortValue: s => Number(s.level) || 0
     },
     {
       key: 'time',
       label: 'Time',
-      placeholder: 'Time',
-      filterId: 'spell-time-filter',
       width: '16%',
       align: 'center',
-      filterType: 'regex',
+      filterable: false,
       value: s => this.titleCase.transform(s.tableTime || '')
     },
     {
       key: 'school',
       label: 'School',
-      placeholder: 'School',
-      filterId: 'spell-school-filter',
       width: '17%',
       align: 'center',
-      filterType: 'regex',
+      filterable: false,
       value: s => s.school?.abbrev || s.school?.name || '',
-      filterValue: s => `${s.school?.name || ''} ${s.school?.abbrev || ''}`,
       sortValue: s => s.school?.name || ''
     },
     {
       key: 'source',
       label: 'Src',
-      placeholder: 'Src',
-      filterId: 'spell-source-filter',
       width: '12%',
       align: 'right',
-      filterType: 'regex',
+      filterable: false,
       value: s => s.source || '',
       cellClass: s => sourceColorClass(s.source)
     }
@@ -194,20 +208,7 @@ export class SpellsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(queryParams => {
-      const {
-        classes: classQuery,
-        levels: levelsQuery,
-        conc: concQuery,
-        ritual: ritualQuery,
-        caius: caiusQuery,
-        ...tableFilters
-      } = queryParams;
-
-      const nextFilters = tableFilters as Record<string, string>;
-      if (JSON.stringify(nextFilters) !== JSON.stringify(this.initialFilters())) {
-        this.initialFilters.set(nextFilters);
-      }
-
+      const classQuery = queryParams['classes'] ?? queryParams['spell-class-filter'];
       const nextClasses =
         typeof classQuery === 'string' && classQuery.trim()
           ? [
@@ -224,6 +225,7 @@ export class SpellsComponent implements OnInit {
         this.selectedClasses.set(nextClasses);
       }
 
+      const levelsQuery = queryParams['levels'] ?? queryParams['spell-level-filter'];
       const nextLevels =
         typeof levelsQuery === 'string' && levelsQuery.trim()
           ? [
@@ -239,9 +241,35 @@ export class SpellsComponent implements OnInit {
         this.selectedLevels.set(nextLevels);
       }
 
-      this.onlyConcentration.set(concQuery === '1' || concQuery === 'true');
-      this.onlyRitual.set(ritualQuery === '1' || ritualQuery === 'true');
-      this.onlyCaiusNotes.set(caiusQuery === '1' || caiusQuery === 'true');
+      const schoolsQuery = queryParams['schools'] ?? queryParams['spell-school-filter'];
+      const nextSchools =
+        typeof schoolsQuery === 'string' && schoolsQuery.trim()
+          ? [
+              ...new Set(
+                schoolsQuery
+                  .split(',')
+                  .map(s => s.trim().toLowerCase())
+                  .filter(s => VALID_SCHOOL_KEYS.has(s))
+              )
+            ]
+          : [];
+      if (nextSchools.join(',') !== this.selectedSchools().join(',')) {
+        this.selectedSchools.set(nextSchools);
+      }
+
+      const nameParam = queryParams['name'] ?? queryParams['spell-name-filter'];
+      if (typeof nameParam === 'string' && nameParam !== this.nameQuery()) {
+        this.nameQuery.set(nameParam);
+      }
+
+      const textParam = queryParams['text'];
+      if (typeof textParam === 'string' && textParam !== this.fullTextQuery()) {
+        this.fullTextQuery.set(textParam);
+      }
+
+      this.onlyConcentration.set(queryParams['conc'] === '1' || queryParams['conc'] === 'true');
+      this.onlyRitual.set(queryParams['ritual'] === '1' || queryParams['ritual'] === 'true');
+      this.onlyCaiusNotes.set(queryParams['caius'] === '1' || queryParams['caius'] === 'true');
     });
 
     combineLatest([this.dataService.getSpells(), this.route.paramMap])
@@ -255,10 +283,25 @@ export class SpellsComponent implements OnInit {
       });
   }
 
+  onNameInput(event: Event): void {
+    this.nameQuery.set((event.target as HTMLInputElement).value);
+  }
+
+  onFullTextInput(event: Event): void {
+    this.fullTextQuery.set((event.target as HTMLInputElement).value);
+  }
+
   toggleLevel(level: number): void {
     const curr = this.selectedLevels();
     const next = curr.includes(level) ? curr.filter(l => l !== level) : [...curr, level].sort((a, b) => a - b);
     this.selectedLevels.set(next);
+    this.syncQuickFilterParams();
+  }
+
+  toggleSchool(schoolKey: string): void {
+    const curr = this.selectedSchools();
+    const next = curr.includes(schoolKey) ? curr.filter(s => s !== schoolKey) : [...curr, schoolKey];
+    this.selectedSchools.set(next);
     this.syncQuickFilterParams();
   }
 
@@ -290,10 +333,13 @@ export class SpellsComponent implements OnInit {
 
   clearQuickFilters(): void {
     this.selectedLevels.set([]);
+    this.selectedSchools.set([]);
     this.selectedClasses.set([]);
     this.onlyConcentration.set(false);
     this.onlyRitual.set(false);
     this.onlyCaiusNotes.set(false);
+    this.nameQuery.set('');
+    this.fullTextQuery.set('');
     this.classMenuOpen.set(false);
     this.syncQuickFilterParams();
   }
@@ -301,11 +347,19 @@ export class SpellsComponent implements OnInit {
   private syncQuickFilterParams(): void {
     const classes = this.selectedClasses();
     const levels = this.selectedLevels();
+    const schools = this.selectedSchools();
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: {
         classes: classes.length ? classes.join(',') : null,
+        'spell-class-filter': null,
         levels: levels.length ? levels.join(',') : null,
+        'spell-level-filter': null,
+        schools: schools.length ? schools.join(',') : null,
+        'spell-school-filter': null,
+        'spell-name-filter': null,
+        name: this.nameQuery().trim() || null,
+        text: this.fullTextQuery().trim() || null,
         conc: this.onlyConcentration() ? '1' : null,
         ritual: this.onlyRitual() ? '1' : null,
         caius: this.onlyCaiusNotes() ? '1' : null

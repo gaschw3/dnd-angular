@@ -99,12 +99,40 @@
 <div class="row g-3 align-items-start">
   @if (items().length) {
     <div class="col-xl-7 item-table">
+      <div class="display-search-bar mb-2">
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faSearch" aria-hidden="true" /></span>
+          <input
+            id="item-name-filter"
+            type="search"
+            class="form-control"
+            placeholder="Filter by name..."
+            aria-label="Filter items by name"
+            [value]="nameQuery()"
+            (input)="onNameInput($event)"
+          />
+        </div>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faFileLines" aria-hidden="true" /></span>
+          <input
+            id="item-fulltext-filter"
+            type="search"
+            class="form-control"
+            placeholder="Full-text search (description, properties, type, source...)"
+            aria-label="Full-text search items"
+            [value]="fullTextQuery()"
+            (input)="onFullTextInput($event)"
+          />
+        </div>
+      </div>
+
       <app-reference-table
         tableId="tbl-items"
         [data]="filteredItems()"
         [columns]="columns"
         [rowKey]="rowKey"
         [selectedKey]="currItem()?.id || null"
+        [showFilterRow]="false"
         [pageSize]="15"
         [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="items"

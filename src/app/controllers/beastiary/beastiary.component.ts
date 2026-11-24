@@ -3,11 +3,13 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TitleCasePipe } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faFileLines, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { combineLatest } from 'rxjs';
 
 import { MonsterComponent } from './monster/monster.component';
 import { Monster } from 'src/app/models/monster';
-import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
+import { matchesPhrase, sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { MonsterHelperService } from 'src/app/shared/helpers/monster/monster-helper.service';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import {
@@ -26,12 +28,15 @@ const CR_STEPS = [
 const CR_MAX_INDEX = CR_STEPS.length - 1;
 
 @Component({
-  imports: [ReferenceTableComponent, ReferenceTableCellDirective, MonsterComponent],
+  imports: [FaIconComponent, ReferenceTableComponent, ReferenceTableCellDirective, MonsterComponent],
   selector: 'app-beastiary',
   templateUrl: './beastiary.component.html',
   styleUrls: ['./beastiary.component.scss']
 })
 export class BeastiaryComponent implements OnInit {
+  readonly faSearch = faSearch;
+  readonly faFileLines = faFileLines;
+
   readonly monsters = signal<Monster[]>([]);
   readonly currMonster = signal<Monster | undefined>(undefined);
 
@@ -43,6 +48,8 @@ export class BeastiaryComponent implements OnInit {
   readonly typeMenuOpen = signal<boolean>(false);
   readonly onlyLegendary = signal<boolean>(false);
   readonly onlySpellcaster = signal<boolean>(false);
+  readonly nameQuery = signal<string>('');
+  readonly fullTextQuery = signal<string>('');
 
   private titleCase = new TitleCasePipe();
 
@@ -78,7 +85,9 @@ export class BeastiaryComponent implements OnInit {
       this.crMaxIndex() < CR_MAX_INDEX ||
       this.selectedTypes().length > 0 ||
       this.onlyLegendary() ||
-      this.onlySpellcaster()
+      this.onlySpellcaster() ||
+      this.nameQuery().trim().length > 0 ||
+      this.fullTextQuery().trim().length > 0
   );
 
   readonly filteredMonsters = computed(() => {
@@ -91,6 +100,8 @@ export class BeastiaryComponent implements OnInit {
     const types = this.selectedTypes().map(t => t.toLowerCase());
     const leg = this.onlyLegendary();
     const spell = this.onlySpellcaster();
+    const nameTerm = this.nameQuery().trim().toLowerCase();
+    const fullText = this.fullTextQuery();
 
     return all.filter(m => {
       if (crFiltered) {
@@ -108,6 +119,12 @@ export class BeastiaryComponent implements OnInit {
       if (spell && !m.isSpellcaster) {
         return false;
       }
+      if (nameTerm && !m.name.toLowerCase().includes(nameTerm)) {
+        return false;
+      }
+      if (!matchesPhrase(m.searchText, fullText)) {
+        return false;
+      }
       return true;
     });
   });
@@ -116,46 +133,40 @@ export class BeastiaryComponent implements OnInit {
     {
       key: 'name',
       label: 'Name',
-      placeholder: 'Filter Monsters',
-      filterId: 'beastiary-name-filter',
       width: '40%',
-      headerIcon: true,
+      filterable: false,
       value: m => m.name
     },
     {
       key: 'cr',
       label: 'CR',
-      placeholder: 'CR',
-      filterId: 'beastiary-cr-filter',
       width: '13%',
       align: 'center',
+      filterable: false,
       value: m => m.cr || '',
       sortValue: m => this.monsterHelper.getSortCr(m.cr)
     },
     {
       key: 'type',
       label: 'Type',
-      placeholder: 'Type',
-      filterId: 'beastiary-type-filter',
       width: '25%',
+      filterable: false,
       value: m => this.titleCase.transform(this.monsterHelper.getType(m.type))
     },
     {
       key: 'other',
       label: 'Tags',
-      placeholder: 'Tags',
-      filterId: 'beastiary-tags-filter',
       width: '14%',
       sortable: false,
+      filterable: false,
       value: m => m.other || ''
     },
     {
       key: 'source',
       label: 'Src',
-      placeholder: 'Src',
-      filterId: 'beastiary-source-filter',
       width: '8%',
       align: 'right',
+      filterable: false,
       value: m => m.source || '',
       cellClass: m => sourceColorClass(m.source)
     }
@@ -209,6 +220,16 @@ export class BeastiaryComponent implements OnInit {
         this.selectedTypes.set(nextTypes);
       }
 
+      const nameParam = queryParams['name'];
+      if (typeof nameParam === 'string' && nameParam !== this.nameQuery()) {
+        this.nameQuery.set(nameParam);
+      }
+
+      const textParam = queryParams['text'];
+      if (typeof textParam === 'string' && textParam !== this.fullTextQuery()) {
+        this.fullTextQuery.set(textParam);
+      }
+
       this.onlyLegendary.set(queryParams['leg'] === '1' || queryParams['leg'] === 'true');
       this.onlySpellcaster.set(queryParams['spell'] === '1' || queryParams['spell'] === 'true');
     });
@@ -222,6 +243,14 @@ export class BeastiaryComponent implements OnInit {
         this.currMonster.set(found);
         this.title.setTitle(found ? `${found.name} — EotCC 5e` : 'Bestiary — EotCC 5e');
       });
+  }
+
+  onNameInput(event: Event): void {
+    this.nameQuery.set((event.target as HTMLInputElement).value);
+  }
+
+  onFullTextInput(event: Event): void {
+    this.fullTextQuery.set((event.target as HTMLInputElement).value);
   }
 
   onCrMinInput(event: Event): void {
@@ -265,6 +294,8 @@ export class BeastiaryComponent implements OnInit {
     this.selectedTypes.set([]);
     this.onlyLegendary.set(false);
     this.onlySpellcaster.set(false);
+    this.nameQuery.set('');
+    this.fullTextQuery.set('');
     this.typeMenuOpen.set(false);
     this.syncQuickFilterParams();
   }
@@ -279,6 +310,8 @@ export class BeastiaryComponent implements OnInit {
         crMin: minIdx > 0 ? CR_STEPS[minIdx] : null,
         crMax: maxIdx < CR_MAX_INDEX ? CR_STEPS[maxIdx] : null,
         types: types.length ? types.join(',') : null,
+        name: this.nameQuery().trim() || null,
+        text: this.fullTextQuery().trim() || null,
         leg: this.onlyLegendary() ? '1' : null,
         spell: this.onlySpellcaster() ? '1' : null
       },

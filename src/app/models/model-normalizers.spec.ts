@@ -3,6 +3,8 @@ import { describe, it, expect } from 'vitest';
 import { normalizeMonster } from './monster';
 import { normalizeItem } from './item';
 import { normalizeOtherFeature } from './otherFeature';
+import { Spell } from './spell';
+import { matchesPhrase } from '../shared/helpers/format.utils';
 
 describe('Model normalizers', () => {
   it('normalizes Monster array sizes, structured resistances, AC, and HP', () => {
@@ -18,7 +20,10 @@ describe('Model normalizers', () => {
       save: { wis: '+4' },
       skill: { perception: '+4' },
       resist: ['cold', { resist: ['bludgeoning', 'piercing'], note: 'from nonmagical attacks' }],
-      spellcasting: [{ name: 'Spellcasting (Psionics)' }],
+      spellcasting: [{ name: 'Spellcasting (Psionics)', will: ['{@spells ray of frost}'] }],
+      action: [
+        { name: 'Breath Weapon {@recharge 5}', entries: ['{@atk mw} {@hit 6} to hit, {@h} {@damage 2d6} cold damage.'] }
+      ],
       legendary: []
     });
 
@@ -33,6 +38,10 @@ describe('Model normalizers', () => {
     expect(monster.resistText).toBe('cold; bludgeoning, piercing from nonmagical attacks');
     expect(monster.isSpellcaster).toBe(true);
     expect(monster.isLegendary).toBe(false);
+    expect(monster.searchText).toContain('melee weapon attack');
+    expect(monster.searchText).toContain('recharge 5–6');
+    expect(monster.searchText).toContain('ray of frost');
+    expect(monster.searchText).not.toContain('{@atk');
   });
 
   it('normalizes Item HTML names, capitalized rarities, categories, and currency', () => {
@@ -59,10 +68,14 @@ describe('Model normalizers', () => {
       dmg2: '1d10',
       dmgType: 'S',
       property: ['V'],
-      value: 1500
+      value: 1500,
+      entries: ['Can cast {@spells fly} once per day.']
     });
     expect(longsword.category).toBe('weapons');
     expect(longsword.damageText).toBe('1d8 slashing — versatile (1d10)');
+    expect(longsword.searchText).toContain('versatile');
+    expect(longsword.searchText).toContain('fly');
+    expect(longsword.searchText).not.toContain('{@spells');
 
     const shield = normalizeItem({ name: 'Shield', type: 'S', rarity: 'none', ac: '2' });
     expect(shield.category).toBe('armor');
@@ -82,5 +95,40 @@ describe('Model normalizers', () => {
     expect(feat.levelPrereq).toBe('2');
     expect(feat.prereqSummary).toBe('Eldritch Blast, Warlock');
     expect(feat.prereqFull).toBe('Level 2 Warlock, Eldritch Blast');
+  });
+
+  it('builds plain-text full-text search index for Spells with inline tags stripped', () => {
+    const spell = new Spell(
+      {
+        name: 'Fireball',
+        source: "PHB'24",
+        level: 3,
+        school: 'V',
+        time: [{ number: 1, unit: 'action' }],
+        range: { type: 'point', distance: { type: 'feet', amount: 150 } },
+        components: { v: true, s: true, m: 'a tiny ball of bat guano and sulfur' },
+        duration: [{ type: 'instant' }],
+        entries: [
+          'A bright streak flashes to deal {@damage 8d6} fire damage on a failed Dexterity saving throw.',
+          { type: 'entries', name: 'Ignite', entries: ['Flammable objects {@condition burning|ignite}.'] },
+          'Summons a {@filter Tiny Beast|bestiary|size=T|type=beast}.'
+        ],
+        entriesHigherLevel: [
+          { type: 'entries', name: 'At Higher Levels', entries: ['Damage increases by {@scaledamage 1d6}.'] }
+        ]
+      },
+      { class: { XPHB: { Sorcerer: true, Wizard: true } } }
+    );
+
+    expect(spell.searchText).toContain('fireball');
+    expect(spell.searchText).toContain('8d6 fire damage');
+    expect(spell.searchText).toContain('bat guano');
+    expect(spell.searchText).toContain('ignite');
+    expect(spell.searchText).toContain('tiny beast');
+    expect(spell.searchText).toContain('1d6');
+    expect(spell.searchText).not.toContain('{@damage');
+    expect(matchesPhrase(spell.searchText, 'fire damage')).toBe(true);
+    expect(matchesPhrase(spell.searchText, 'fire   damage')).toBe(true);
+    expect(matchesPhrase(spell.searchText, 'fire saving')).toBe(false);
   });
 });

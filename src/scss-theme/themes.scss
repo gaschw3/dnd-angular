@@ -1,6 +1,7 @@
 // Planar Portal Themes — CSS Custom Properties
 // Preserves all original realms while eliminating 8x Sass selector duplication.
 
+:root:has(> body > app-root > .theme-royal),
 .theme-royal {
   --theme-bg-color: #171612;
   --theme-bg: none;
@@ -31,6 +32,7 @@
   --theme-input-border: rgba(255, 255, 255, 0.18);
 }
 
+:root:has(> body > app-root > .theme-light),
 .theme-light {
   --theme-bg-color: #fff;
   --theme-bg: none;
@@ -60,6 +62,7 @@
   --theme-input-border: #ced4da;
 }
 
+:root:has(> body > app-root > .theme-greek),
 .theme-greek {
   --theme-bg-color: #fcdec2;
   --theme-bg: none;
@@ -90,6 +93,7 @@
   --theme-input-border: rgba(148, 107, 68, 0.35);
 }
 
+:root:has(> body > app-root > .theme-dark),
 .theme-dark {
   --theme-bg-color: #272b30;
   --theme-bg: none;
@@ -119,6 +123,7 @@
   --theme-input-border: rgba(255, 255, 255, 0.18);
 }
 
+:root:has(> body > app-root > .theme-forest),
 .theme-forest {
   --theme-bg-color: #0e120e;
   --theme-bg: none;
@@ -149,6 +154,7 @@
   --theme-input-border: rgba(255, 255, 255, 0.18);
 }
 
+:root:has(> body > app-root > .theme-ice),
 .theme-ice {
   --theme-bg-color: #0a0046;
   --theme-bg: linear-gradient(15deg, #140220 0%, #0a0046 74%);
@@ -179,6 +185,7 @@
   --theme-input-border: rgba(184, 255, 216, 0.25);
 }
 
+:root:has(> body > app-root > .theme-rainbow),
 .theme-rainbow {
   --theme-bg-color: #272b30;
   --theme-bg: linear-gradient(15deg, #140220 0%, #0a0046 74%);
@@ -210,6 +217,7 @@
   --theme-input-border: rgba(255, 198, 245, 0.3);
 }
 
+:root:has(> body > app-root > .theme-end),
 .theme-end {
   --theme-bg-color: #302727;
   --theme-bg: none;

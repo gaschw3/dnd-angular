@@ -100,12 +100,40 @@
 <div class="row g-3 align-items-start">
   @if (monsters().length) {
     <div class="col-xl-6 beastiary-table">
+      <div class="display-search-bar mb-2">
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faSearch" aria-hidden="true" /></span>
+          <input
+            id="beastiary-name-filter"
+            type="search"
+            class="form-control"
+            placeholder="Filter by name..."
+            aria-label="Filter monsters by name"
+            [value]="nameQuery()"
+            (input)="onNameInput($event)"
+          />
+        </div>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faFileLines" aria-hidden="true" /></span>
+          <input
+            id="beastiary-fulltext-filter"
+            type="search"
+            class="form-control"
+            placeholder="Full-text search (traits, actions, spells, resistances...)"
+            aria-label="Full-text search monsters"
+            [value]="fullTextQuery()"
+            (input)="onFullTextInput($event)"
+          />
+        </div>
+      </div>
+
       <app-reference-table
         tableId="tbl-beastiary"
         [data]="filteredMonsters()"
         [columns]="columns"
         [rowKey]="rowKey"
         [selectedKey]="currMonster()?.id || null"
+        [showFilterRow]="false"
         [pageSize]="15"
         [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="monsters"

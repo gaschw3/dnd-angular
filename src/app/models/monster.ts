@@ -1,4 +1,5 @@
 import { HelperService } from '../shared/helpers/helper.service';
+import { buildSearchText, extractEntryText } from '../shared/helpers/format.utils';
 import { Trait } from './trait';
 
 export interface Monster {
@@ -46,6 +47,7 @@ export interface Monster {
   vulnerableText: string;
   isLegendary: boolean;
   isSpellcaster: boolean;
+  searchText: string;
 }
 
 interface Action {
@@ -105,22 +107,60 @@ interface sLevel {
 export function normalizeMonster(raw: any): Monster {
   const size = Array.isArray(raw.size) ? raw.size.join(',') : String(raw.size || 'M');
   const baseType = extractMonsterBaseType(raw.type);
+  const hpText = formatMonsterHp(raw.hp);
+  const acText = formatMonsterAc(raw.ac);
+  const speedText = formatMonsterSpeed(raw.speed);
+  const savesText = formatKeyValueMap(raw.save);
+  const skillsText = formatKeyValueMap(raw.skill);
+  const resistText = formatMonsterDamageList(raw.resist);
+  const immuneText = formatMonsterDamageList(raw.immune);
+  const vulnerableText = formatMonsterDamageList(raw.vulnerable);
+  const typeTags = Array.isArray(raw.type?.tags)
+    ? raw.type.tags.join(' ')
+    : Array.isArray(raw.type?.type?.choose)
+      ? raw.type.type.choose.join(' ')
+      : '';
 
   return {
     ...raw,
     id: raw.id || HelperService.createIdFromName(raw.name),
     size,
     baseType,
-    hpText: formatMonsterHp(raw.hp),
-    acText: formatMonsterAc(raw.ac),
-    speedText: formatMonsterSpeed(raw.speed),
-    savesText: formatKeyValueMap(raw.save),
-    skillsText: formatKeyValueMap(raw.skill),
-    resistText: formatMonsterDamageList(raw.resist),
-    immuneText: formatMonsterDamageList(raw.immune),
-    vulnerableText: formatMonsterDamageList(raw.vulnerable),
+    hpText,
+    acText,
+    speedText,
+    savesText,
+    skillsText,
+    resistText,
+    immuneText,
+    vulnerableText,
     isLegendary: Array.isArray(raw.legendary) && raw.legendary.length > 0,
-    isSpellcaster: Array.isArray(raw.spellcasting) && raw.spellcasting.length > 0
+    isSpellcaster: Array.isArray(raw.spellcasting) && raw.spellcasting.length > 0,
+    searchText: buildSearchText([
+      raw.name || '',
+      raw.source || '',
+      raw.cr ? `cr ${raw.cr}` : '',
+      baseType,
+      typeTags,
+      raw.other || '',
+      acText,
+      hpText,
+      speedText,
+      savesText,
+      skillsText,
+      resistText,
+      immuneText,
+      vulnerableText,
+      Array.isArray(raw.languages) ? raw.languages.join(' ') : '',
+      Array.isArray(raw.senses) ? raw.senses.join(' ') : '',
+      Array.isArray(raw.conditionImmune) ? raw.conditionImmune.join(' ') : '',
+      extractEntryText(raw.trait),
+      extractEntryText(raw.spellcasting),
+      extractEntryText(raw.action),
+      extractEntryText(raw.bonus),
+      extractEntryText(raw.reaction),
+      extractEntryText(raw.legendary)
+    ])
   };
 }
 

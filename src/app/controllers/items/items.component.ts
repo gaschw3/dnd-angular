@@ -3,12 +3,14 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TitleCasePipe } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faFileLines, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { combineLatest } from 'rxjs';
 
 import { Item, ItemCategory } from 'src/app/models/item';
 import { ItemComponent } from './item/item.component';
 import { SanitizeHtmlPipe } from 'src/app/pipes/sanitize-html.pipe';
-import { sourceColorClass } from 'src/app/shared/helpers/format.utils';
+import { matchesPhrase, sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import {
   ReferenceTableCellDirective,
@@ -30,27 +32,38 @@ const RARITY_SLUG_MAP: Record<string, string> = {
 type ItemCategoryFilter = 'all' | ItemCategory;
 
 @Component({
-  imports: [ReferenceTableComponent, ReferenceTableCellDirective, SanitizeHtmlPipe, ItemComponent],
+  imports: [FaIconComponent, ReferenceTableComponent, ReferenceTableCellDirective, SanitizeHtmlPipe, ItemComponent],
   selector: 'app-items',
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
+  readonly faSearch = faSearch;
+  readonly faFileLines = faFileLines;
+
   readonly items = signal<Item[]>([]);
   readonly currItem = signal<Item | undefined>(undefined);
   readonly selectedCategory = signal<ItemCategoryFilter>('all');
   readonly selectedRarities = signal<string[]>([]);
+  readonly nameQuery = signal<string>('');
+  readonly fullTextQuery = signal<string>('');
 
   readonly rarityOptions = RARITY_OPTIONS;
 
   readonly hasQuickFilters = computed(
-    () => this.selectedCategory() !== 'all' || this.selectedRarities().length > 0
+    () =>
+      this.selectedCategory() !== 'all' ||
+      this.selectedRarities().length > 0 ||
+      this.nameQuery().trim().length > 0 ||
+      this.fullTextQuery().trim().length > 0
   );
 
   readonly filteredItems = computed(() => {
     const all = this.items();
     const cat = this.selectedCategory();
     const rarities = this.selectedRarities();
+    const nameTerm = this.nameQuery().trim().toLowerCase();
+    const fullText = this.fullTextQuery();
 
     return all.filter(item => {
       if (cat !== 'all' && item.category !== cat) {
@@ -62,6 +75,12 @@ export class ItemsComponent implements OnInit {
           return false;
         }
       }
+      if (nameTerm && !item.plainName.toLowerCase().includes(nameTerm)) {
+        return false;
+      }
+      if (!matchesPhrase(item.searchText, fullText)) {
+        return false;
+      }
       return true;
     });
   });
@@ -72,26 +91,22 @@ export class ItemsComponent implements OnInit {
     {
       key: 'name',
       label: 'Name',
-      placeholder: 'Filter Items',
-      filterId: 'item-name-filter',
       width: '38%',
-      headerIcon: true,
+      filterable: false,
       value: item => item.plainName
     },
     {
       key: 'type',
       label: 'Type',
-      placeholder: 'Type',
-      filterId: 'item-prof-filter',
       width: '24%',
+      filterable: false,
       value: item => this.titleCase.transform(item.typeLabel)
     },
     {
       key: 'value',
       label: 'Value',
-      placeholder: 'Value',
-      filterId: 'item-value-filter',
       width: '12%',
+      filterable: false,
       value: item => item.valueFormatted,
       sortValue: item => item.value || 0,
       cellClass: item => (item.valueUnit ? `text--${item.valueUnit}` : '')
@@ -99,20 +114,18 @@ export class ItemsComponent implements OnInit {
     {
       key: 'rarity',
       label: 'Rarity',
-      placeholder: 'Rarity',
-      filterId: 'item-rarity-filter',
       width: '16%',
       align: 'center',
+      filterable: false,
       value: item => item.rarity,
       sortValue: item => item.raritySort
     },
     {
       key: 'source',
       label: 'Src',
-      placeholder: 'Src',
-      filterId: 'item-source-filter',
       width: '10%',
       align: 'right',
+      filterable: false,
       value: item => item.source || '',
       cellClass: item => sourceColorClass(item.source)
     }
@@ -145,6 +158,16 @@ export class ItemsComponent implements OnInit {
       if (nextRarities.join(',') !== this.selectedRarities().join(',')) {
         this.selectedRarities.set(nextRarities);
       }
+
+      const nameParam = queryParams['name'];
+      if (typeof nameParam === 'string' && nameParam !== this.nameQuery()) {
+        this.nameQuery.set(nameParam);
+      }
+
+      const textParam = queryParams['text'];
+      if (typeof textParam === 'string' && textParam !== this.fullTextQuery()) {
+        this.fullTextQuery.set(textParam);
+      }
     });
 
     combineLatest([this.dataService.getItems(), this.route.paramMap])
@@ -156,6 +179,14 @@ export class ItemsComponent implements OnInit {
         this.currItem.set(found);
         this.title.setTitle(found ? `${found.plainName} — EotCC 5e` : 'Items — EotCC 5e');
       });
+  }
+
+  onNameInput(event: Event): void {
+    this.nameQuery.set((event.target as HTMLInputElement).value);
+  }
+
+  onFullTextInput(event: Event): void {
+    this.fullTextQuery.set((event.target as HTMLInputElement).value);
   }
 
   setCategory(choice: ItemCategoryFilter): void {
@@ -173,6 +204,8 @@ export class ItemsComponent implements OnInit {
   resetQuickFilters(): void {
     this.selectedCategory.set('all');
     this.selectedRarities.set([]);
+    this.nameQuery.set('');
+    this.fullTextQuery.set('');
     this.syncQuickFilterParams();
   }
 
@@ -183,7 +216,9 @@ export class ItemsComponent implements OnInit {
       relativeTo: this.route,
       queryParams: {
         cat: cat !== 'all' ? cat : null,
-        rarity: rarities.length ? rarities.join(',') : null
+        rarity: rarities.length ? rarities.join(',') : null,
+        name: this.nameQuery().trim() || null,
+        text: this.fullTextQuery().trim() || null
       },
       queryParamsHandling: 'merge',
       replaceUrl: true

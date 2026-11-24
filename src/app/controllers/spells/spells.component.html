@@ -1,94 +1,116 @@
 <h1>D&D 5e Spells</h1>
 
 <div class="card mb-3">
-  <div class="card-body py-2 px-3 display-quick-filters">
-    <div class="display-filter-group">
-      <span class="display-filter-label">Class</span>
-      <div class="dropdown display-filter-dropdown spell-class-dropdown" [class.show]="classMenuOpen()">
+  <div class="card-body py-2 px-3 spell-quick-filters">
+    <div class="spell-filter-row">
+      <div class="display-filter-group">
+        <span class="display-filter-label">Class</span>
+        <div class="dropdown display-filter-dropdown spell-class-dropdown" [class.show]="classMenuOpen()">
+          <button
+            type="button"
+            class="form-select form-select-sm display-filter-trigger text-start"
+            [attr.aria-expanded]="classMenuOpen()"
+            aria-haspopup="true"
+            (click)="toggleClassMenu()"
+          >
+            {{ classDropdownLabel() }}
+          </button>
+          <div class="dropdown-menu display-filter-menu p-2" [class.show]="classMenuOpen()">
+            @for (cls of availableClasses(); track cls) {
+              <label class="display-filter-option">
+                <input
+                  type="checkbox"
+                  class="form-check-input m-0"
+                  [checked]="selectedClasses().includes(cls)"
+                  (change)="toggleClass(cls)"
+                />
+                <span>{{ cls }}</span>
+              </label>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="display-filter-group">
+        <span class="display-filter-label">Level</span>
+        <div class="display-chip-row">
+          @for (lvl of spellLevels; track lvl) {
+            <button
+              type="button"
+              class="display-chip-btn spell-level-chip"
+              [class.active]="selectedLevels().includes(lvl)"
+              [attr.aria-pressed]="selectedLevels().includes(lvl)"
+              (click)="toggleLevel(lvl)"
+            >
+              {{ lvl }}
+            </button>
+          }
+        </div>
+      </div>
+
+      <div class="display-filter-group">
         <button
           type="button"
-          class="form-select form-select-sm display-filter-trigger text-start"
-          [attr.aria-expanded]="classMenuOpen()"
-          aria-haspopup="true"
-          (click)="toggleClassMenu()"
+          class="display-chip-btn"
+          [class.active]="onlyConcentration()"
+          [attr.aria-pressed]="onlyConcentration()"
+          (click)="toggleConcentration()"
         >
-          {{ classDropdownLabel() }}
+          Concentration
         </button>
-        <div class="dropdown-menu display-filter-menu p-2" [class.show]="classMenuOpen()">
-          @for (cls of availableClasses(); track cls) {
-            <label class="display-filter-option">
-              <input
-                type="checkbox"
-                class="form-check-input m-0"
-                [checked]="selectedClasses().includes(cls)"
-                (change)="toggleClass(cls)"
-              />
-              <span>{{ cls }}</span>
-            </label>
+        <button
+          type="button"
+          class="display-chip-btn"
+          [class.active]="onlyRitual()"
+          [attr.aria-pressed]="onlyRitual()"
+          (click)="toggleRitual()"
+        >
+          Ritual
+        </button>
+        @if (hasQuickFilters()) {
+          <button
+            type="button"
+            class="btn btn-sm btn-link display-clear-btn"
+            (click)="clearQuickFilters()"
+          >
+            Reset
+          </button>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="display-chip-btn spell-caius-chip ms-auto"
+        [class.active]="onlyCaiusNotes()"
+        [attr.aria-pressed]="onlyCaiusNotes()"
+        aria-label="Filter spells with Caius' Notes"
+        title="Caius' Notes"
+        (click)="toggleCaiusNotes()"
+      >
+        <fa-icon [icon]="faFeatherPointed" aria-hidden="true" />
+        <span class="spell-caius-label">Caius</span>
+      </button>
+    </div>
+
+    <div class="spell-filter-row">
+      <div class="display-filter-group">
+        <span class="display-filter-label">School</span>
+        <div class="display-chip-row">
+          @for (school of schoolOptions; track school.key) {
+            <button
+              type="button"
+              class="display-chip-btn"
+              [attr.data-school]="school.key"
+              [class.active]="selectedSchools().includes(school.key)"
+              [attr.aria-pressed]="selectedSchools().includes(school.key)"
+              (click)="toggleSchool(school.key)"
+            >
+              {{ school.name }}
+            </button>
           }
         </div>
       </div>
     </div>
-
-    <div class="display-filter-group">
-      <span class="display-filter-label">Level</span>
-      <div class="display-chip-row">
-        @for (lvl of spellLevels; track lvl) {
-          <button
-            type="button"
-            class="display-chip-btn spell-level-chip"
-            [class.active]="selectedLevels().includes(lvl)"
-            [attr.aria-pressed]="selectedLevels().includes(lvl)"
-            (click)="toggleLevel(lvl)"
-          >
-            {{ lvl }}
-          </button>
-        }
-      </div>
-    </div>
-
-    <div class="display-filter-group">
-      <button
-        type="button"
-        class="display-chip-btn"
-        [class.active]="onlyConcentration()"
-        [attr.aria-pressed]="onlyConcentration()"
-        (click)="toggleConcentration()"
-      >
-        Concentration
-      </button>
-      <button
-        type="button"
-        class="display-chip-btn"
-        [class.active]="onlyRitual()"
-        [attr.aria-pressed]="onlyRitual()"
-        (click)="toggleRitual()"
-      >
-        Ritual
-      </button>
-      @if (hasQuickFilters()) {
-        <button
-          type="button"
-          class="btn btn-sm btn-link display-clear-btn"
-          (click)="clearQuickFilters()"
-        >
-          Reset
-        </button>
-      }
-    </div>
-
-    <button
-      type="button"
-      class="display-chip-btn spell-caius-chip ms-auto"
-      [class.active]="onlyCaiusNotes()"
-      [attr.aria-pressed]="onlyCaiusNotes()"
-      aria-label="Filter spells with Caius' Notes"
-      title="Caius' Notes"
-      (click)="toggleCaiusNotes()"
-    >
-      <fa-icon [icon]="faFeatherPointed" aria-hidden="true" />
-      <span class="spell-caius-label">Caius</span>
-    </button>
   </div>
 </div>
 
@@ -106,14 +128,41 @@
 
 <div class="row g-3 align-items-start">
   @if (spells().length) {
-    <div class="col-xl-7 spell-table">
+    <div class="col-xl-6 spell-table">
+      <div class="display-search-bar mb-2">
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faSearch" aria-hidden="true" /></span>
+          <input
+            id="spell-name-filter"
+            type="search"
+            class="form-control"
+            placeholder="Filter by name..."
+            aria-label="Filter spells by name"
+            [value]="nameQuery()"
+            (input)="onNameInput($event)"
+          />
+        </div>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faFileLines" aria-hidden="true" /></span>
+          <input
+            id="spell-fulltext-filter"
+            type="search"
+            class="form-control"
+            placeholder="Full-text search (description, damage, components...)"
+            aria-label="Full-text search spells"
+            [value]="fullTextQuery()"
+            (input)="onFullTextInput($event)"
+          />
+        </div>
+      </div>
+
       <app-reference-table
         tableId="tbl-spells"
         [data]="filteredSpells()"
         [columns]="columns"
         [rowKey]="rowKey"
         [selectedKey]="currSpell()?.id || null"
-        [initialFilters]="initialFilters()"
+        [showFilterRow]="false"
         [pageSize]="15"
         [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="spells"
@@ -148,7 +197,7 @@
     </div>
   }
 
-  <div id="spell-detail-pane" class="col-xl-5 display-detail-pane">
+  <div id="spell-detail-pane" class="col-xl-6 display-detail-pane">
     @if (currSpell(); as spell) {
       <app-spell [spell]="spell"></app-spell>
     } @else {
