@@ -1,6 +1,8 @@
 import { Component, computed, input, output } from '@angular/core';
 import { Subclass } from 'src/app/models';
 
+const SOURCES_2024 = new Set(["PHB'24", 'XPHB', 'FRHoF', 'AU', 'EFA', 'RHW', 'WoW']);
+
 @Component({
   selector: 'app-archetypes',
   templateUrl: './archetypes.component.html',
@@ -20,6 +22,35 @@ export class ArchetypesComponent {
   });
 
   readonly hasSelection = computed(() => this.selectedArchetypes().length > 0);
+
+  readonly hasMixedEditions = computed(() => {
+    const list = this.archetypes();
+    let has2024 = false;
+    let hasLegacy = false;
+    for (const sub of list) {
+      if (this.is2024(sub)) {
+        has2024 = true;
+      } else {
+        hasLegacy = true;
+      }
+      if (has2024 && hasLegacy) {
+        return true;
+      }
+    }
+    return false;
+  });
+
+  is2024(sub: Subclass): boolean {
+    if (sub.edition) {
+      return sub.edition === '2024';
+    }
+    return SOURCES_2024.has(sub.source);
+  }
+
+  getTooltip(sub: Subclass): string {
+    const ruleset = this.is2024(sub) ? '2024 rules' : '2014 legacy';
+    return sub.source ? `${sub.source} · ${ruleset}` : ruleset;
+  }
 
   isSelected(shortName: string): boolean {
     return this.selectedArchetypes().includes(shortName);

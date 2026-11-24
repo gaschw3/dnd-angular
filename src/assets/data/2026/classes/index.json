@@ -1,0 +1,80 @@
+[
+  {
+    "id": "artificer",
+    "name": "Artificer",
+    "source": "EFA",
+    "file": "artificer.json"
+  },
+  {
+    "id": "barbarian",
+    "name": "Barbarian",
+    "source": "PHB'24",
+    "file": "barbarian.json"
+  },
+  {
+    "id": "bard",
+    "name": "Bard",
+    "source": "PHB'24",
+    "file": "bard.json"
+  },
+  {
+    "id": "cleric",
+    "name": "Cleric",
+    "source": "PHB'24",
+    "file": "cleric.json"
+  },
+  {
+    "id": "druid",
+    "name": "Druid",
+    "source": "PHB'24",
+    "file": "druid.json"
+  },
+  {
+    "id": "fighter",
+    "name": "Fighter",
+    "source": "PHB'24",
+    "file": "fighter.json"
+  },
+  {
+    "id": "monk",
+    "name": "Monk",
+    "source": "PHB'24",
+    "file": "monk.json"
+  },
+  {
+    "id": "paladin",
+    "name": "Paladin",
+    "source": "PHB'24",
+    "file": "paladin.json"
+  },
+  {
+    "id": "ranger",
+    "name": "Ranger",
+    "source": "PHB'24",
+    "file": "ranger.json"
+  },
+  {
+    "id": "rogue",
+    "name": "Rogue",
+    "source": "PHB'24",
+    "file": "rogue.json"
+  },
+  {
+    "id": "sorcerer",
+    "name": "Sorcerer",
+    "source": "PHB'24",
+    "file": "sorcerer.json"
+  },
+  {
+    "id": "warlock",
+    "name": "Warlock",
+    "source": "PHB'24",
+    "file": "warlock.json"
+  },
+  {
+    "id": "wizard",
+    "name": "Wizard",
+    "source": "PHB'24",
+    "file": "wizard.json"
+  }
+]

@@ -39,16 +39,16 @@ export interface Class {
 }
 
 export const featureType: Record<string, string> = {
-    //"AI": "Artificer Infusion",
-    //"AS": "Arcane Shot",
+    "AI": "Artificer Infusion",
+    "AS": "Arcane Shot",
     "EI": "Eldritch Invocation",
     "FS": "Fighting Style",
     "MM": "Metamagic",
     "MV": "Battlemaster Maneuver",
     "EX": "Tactical Exploit",
-    "SP": "Scholarly Pursuit"
-    //"RN": "Rune Knight Rune",
-    //"DM": "Dragonmark"
+    "SP": "Scholarly Pursuit",
+    "RN": "Rune Knight Rune",
+    "DM": "Dragonmark"
 }
 
 export function normalizeOtherFeature(raw: any): OtherFeature {

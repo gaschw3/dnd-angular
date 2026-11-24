@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin, Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { forkJoin, Observable, of } from 'rxjs';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
 
 import { Spell } from '../../models/spell';
 import { DndClass } from '../../models/dnd-class';
@@ -46,10 +46,17 @@ export class DndDataService {
 
   getClasses(): Observable<DndClass[]> {
     if (!this.classes$) {
-      this.classes$ = this.http.get<any[]>('assets/data/2024/classes.json').pipe(
-        map(inputClasses => inputClasses.map(inClass => new DndClass(inClass))),
-        shareReplay(1)
-      );
+      this.classes$ = this.http
+        .get<ClassIndexEntry[]>('assets/data/2026/classes/index.json')
+        .pipe(
+          switchMap(entries =>
+            entries.length
+              ? forkJoin(entries.map(entry => this.http.get<any>(`assets/data/2026/classes/${entry.file}`)))
+              : of([])
+          ),
+          map(inputClasses => inputClasses.map(inClass => new DndClass(inClass))),
+          shareReplay(1)
+        );
     }
     return this.classes$;
   }
@@ -85,7 +92,7 @@ export class DndDataService {
 
   getBackgrounds(): Observable<Background[]> {
     if (!this.backgrounds$) {
-      this.backgrounds$ = this.http.get<any[]>('assets/data/2024/background-small.json').pipe(
+      this.backgrounds$ = this.http.get<any[]>('assets/data/2026/backgrounds.json').pipe(
         map(inputBackgrounds => inputBackgrounds.map(inBg => new Background(inBg))),
         shareReplay(1)
       );
@@ -95,7 +102,7 @@ export class DndDataService {
 
   getFeats(): Observable<Feat[]> {
     if (!this.feats$) {
-      this.feats$ = this.http.get<any[]>('assets/data/2024/feats-small.json').pipe(
+      this.feats$ = this.http.get<any[]>('assets/data/2026/feats.json').pipe(
         map(feats =>
           feats.map(feat => new Feat(feat)).sort((a, b) => a.name.localeCompare(b.name))
         ),
@@ -107,7 +114,7 @@ export class DndDataService {
 
   getEpicBoons(): Observable<Feat[]> {
     if (!this.epicBoons$) {
-      this.epicBoons$ = this.http.get<any[]>('assets/data/2024/epic-boons.json').pipe(
+      this.epicBoons$ = this.http.get<any[]>('assets/data/2026/epic-boons.json').pipe(
         map(feats =>
           feats.map(feat => new Feat(feat)).sort((a, b) => a.name.localeCompare(b.name))
         ),
@@ -119,7 +126,7 @@ export class DndDataService {
 
   getOtherFeatures(): Observable<OtherFeature[]> {
     if (!this.otherFeatures$) {
-      this.otherFeatures$ = this.http.get<any[]>('assets/data/2024/otherFeatures.json').pipe(
+      this.otherFeatures$ = this.http.get<any[]>('assets/data/2026/otherFeatures.json').pipe(
         map(features => features.map(normalizeOtherFeature)),
         shareReplay(1)
       );
@@ -135,6 +142,13 @@ export class DndDataService {
     }
     return this.mapLocations$;
   }
+}
+
+export interface ClassIndexEntry {
+  id: string;
+  name: string;
+  source: string;
+  file: string;
 }
 
 export type MapCoordEntry = [string, number, number];

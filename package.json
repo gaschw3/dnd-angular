@@ -6,7 +6,13 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "convert:classes": "node scripts/convert-classes.mjs",
+    "convert:backgrounds": "node scripts/convert-backgrounds.mjs",
+    "convert:feats": "node scripts/convert-feats.mjs",
+    "convert:optional-features": "node scripts/convert-optional-features.mjs",
+    "convert:all": "npm run convert:classes && npm run convert:backgrounds && npm run convert:feats && npm run convert:optional-features",
+    "sort:json": "node scripts/sort-json.mjs"
   },
   "private": true,
   "dependencies": {

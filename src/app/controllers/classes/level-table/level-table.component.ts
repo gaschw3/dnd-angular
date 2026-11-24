@@ -1,13 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, computed, inject, input, output } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ClassFeature, DndClass } from 'src/app/models';
-
-export interface SubclassTableColumn {
-  index: number;
-  label: string;
-  subclassKey: string;
-}
+import { ClassFeature, DndClass, SubclassTableColumn } from 'src/app/models';
 
 @Component({
   imports: [RouterModule],
@@ -39,40 +33,18 @@ export class LevelTableComponent {
   });
 
   readonly visibleSubclassCols = computed<SubclassTableColumn[]>(() => {
-    const headers = this.dndClass().subclassLevelTable?.[0];
+    const columns = this.dndClass().subclassTableColumns;
     const selected = this.selectedArchetypes();
-    if (!headers?.length || !selected.length) {
+    if (!columns?.length || !selected.length) {
       return [];
     }
 
     const normalizedSelected = new Set(selected.map(s => normalizeKey(s)));
-    const cols: SubclassTableColumn[] = [];
-
-    headers.forEach((rawHeader, index) => {
-      const [prefix, label] = rawHeader.split('|');
-      if (prefix && normalizedSelected.has(normalizeKey(prefix))) {
-        cols.push({
-          index,
-          label: label || rawHeader,
-          subclassKey: prefix
-        });
-      }
-    });
-
-    return cols;
+    return columns.filter(col => normalizedSelected.has(normalizeKey(col.subclassKey)));
   });
 
   getFeatures(level: number): ClassFeature[] {
     return this.featuresByLevel().get(level) || [];
-  }
-
-  getSubclassCell(levelIndex: number, colIndex: number): string {
-    const row = this.dndClass().subclassLevelTable?.[levelIndex + 1];
-    const value: unknown = row?.[colIndex];
-    if (value === undefined || value === null || String(value) === '0') {
-      return '—';
-    }
-    return String(value);
   }
 
   jumpToFeature(id: string): void {

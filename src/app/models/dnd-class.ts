@@ -1,6 +1,14 @@
 import { Spell } from './spell';
-import { commonFeatures, subclassFeatures } from './consts';
+import { commonFeatures } from './consts';
 import { HelperService } from '../shared/helpers/helper.service';
+import { toPlainSearchText } from '../shared/helpers/format.utils';
+
+export interface SubclassTableColumn {
+  subclassKey: string;
+  label: string;
+  tooltip?: string;
+  rows: string[];
+}
 
 export interface IDndClass {
   cantripProgression?: number[];
@@ -59,6 +67,7 @@ export interface Subclass {
   additionalSpells: Spell[];
   className: string;
   classSource: string;
+  edition?: '2024' | '2014';
   name: string;
   shortName: string;
   subclassFeature: ClassFeature[];
@@ -115,7 +124,7 @@ export class DndClass implements IDndClass {
   casterProgression?: string;
   classFeatureList: ClassFeature[];
   levelTable: string[][];
-  subclassLevelTable: string[][];
+  subclassTableColumns: SubclassTableColumn[];
   classTableGroups: any[];
   subclassTableGroups: any[];
   fluff: any;
@@ -184,17 +193,72 @@ export class DndClass implements IDndClass {
       }
     }
 
-    this.subclassLevelTable = JSON.parse(JSON.stringify(subclassFeatures));
-    this.subclassTableGroups = currClass.subclassTableGroups;
-    if (this.subclassTableGroups) {
-      for (const group of this.subclassTableGroups) {
-        this.subclassLevelTable[0] = this.subclassLevelTable[0].concat(group.colLabels);
-        for (let j = 0; j < group.rows.length; j++) {
-          this.subclassLevelTable[j + 1] = this.subclassLevelTable[j + 1].concat(group.rows[j]);
-        }
-      }
-    }
+    this.subclassTableGroups = currClass.subclassTableGroups || [];
+    this.subclassTableColumns = [
+      ...extractSubclassTableColumns(this.subclassTableGroups),
+      ...this.subclass.flatMap(sub => extractSubclassTableColumns(sub.subclassTableGroups, sub.shortName))
+    ];
   }
+}
+
+function extractSubclassTableColumns(groups: any[] | undefined, subclassShortName?: string): SubclassTableColumn[] {
+  if (!Array.isArray(groups) || groups.length === 0) {
+    return [];
+  }
+
+  const columns: SubclassTableColumn[] = [];
+  for (const group of groups) {
+    const labels: string[] = Array.isArray(group.colLabels) ? group.colLabels : [];
+    const rawRows: any[][] = Array.isArray(group.rows)
+      ? group.rows
+      : Array.isArray(group.rowsSpellProgression)
+        ? group.rowsSpellProgression
+        : [];
+
+    labels.forEach((rawHeader, colIdx) => {
+      let subclassKey = subclassShortName || '';
+      let rawLabel = String(rawHeader ?? '');
+
+      // Support class-level legacy format ("PsiWarrior|Psi Die Size")
+      if (!subclassKey && rawLabel.includes('|') && !rawLabel.includes('{@')) {
+        const [prefix, rest] = rawLabel.split('|');
+        subclassKey = prefix.trim();
+        rawLabel = (rest || prefix).trim();
+      }
+
+      if (!subclassKey) {
+        return;
+      }
+
+      const { label, tooltip } = parseTableHeaderLabel(rawLabel, subclassKey, group.title);
+      const rows = rawRows.map(row => formatTableCellValue(row?.[colIdx]));
+      columns.push({ subclassKey, label, tooltip, rows });
+    });
+  }
+
+  return columns;
+}
+
+function parseTableHeaderLabel(
+  rawLabel: string,
+  subclassName: string,
+  groupTitle?: string
+): { label: string; tooltip?: string } {
+  const tipMatch = rawLabel.match(/^\{@tip\s+([^|}]+)\|([^}]+)\}$/);
+  if (tipMatch) {
+    return { label: tipMatch[1].trim(), tooltip: tipMatch[2].trim() };
+  }
+  const cleanLabel = toPlainSearchText(rawLabel).trim();
+  const tooltip = groupTitle ? `${subclassName} — ${groupTitle}` : subclassName;
+  return { label: cleanLabel, tooltip };
+}
+
+function formatTableCellValue(value: unknown): string {
+  if (value === undefined || value === null || String(value) === '0') {
+    return '—';
+  }
+  const text = toPlainSearchText(String(value)).trim();
+  return text || '—';
 }
 
 function formatPrimaryAbility(primaryAbility?: Record<string, boolean>[]): string {

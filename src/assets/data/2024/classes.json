@@ -6119,6 +6119,102 @@
 				"className": "Fighter",
 				"classSource": "PHB'24",
 				"page": 93,
+				"subclassTableGroups": [
+					{
+						"subclasses": [
+							{
+								"name": "Battle Master",
+								"source": "PHB'24"
+							}
+						],
+						"colLabels": [
+							"{@tip Sup. Die Size|Superiority Die Size}",
+							"{@tip Sup. Die Num|Superiority Die Number}"
+						],
+						"rows": [
+							[
+								0,
+								0
+							],
+							[
+								0,
+								0
+							],
+							[
+								0,
+								0
+							],
+							[
+								"{@dice D8}",
+								4
+							],
+							[
+								"{@dice D8}",
+								4
+							],
+							[
+								"{@dice D8}",
+								4
+							],
+							[
+								"{@dice D8}",
+								5
+							],
+							[
+								"{@dice D8}",
+								5
+							],
+							[
+								"{@dice D8}",
+								5
+							],
+							[
+								"{@dice D10}",
+								5
+							],
+							[
+								"{@dice D10}",
+								5
+							],
+							[
+								"{@dice D10}",
+								5
+							],
+							[
+								"{@dice D10}",
+								5
+							],
+							[
+								"{@dice D10}",
+								5
+							],
+							[
+								"{@dice D10}",
+								6
+							],
+							[
+								"{@dice D10}",
+								6
+							],
+							[
+								"{@dice D10}",
+								6
+							],
+							[
+								"{@dice D12}",
+								6
+							],
+							[
+								"{@dice D12}",
+								6
+							],
+							[
+								"{@dice D12}",
+								6
+							]
+						]
+					}
+				],
 				"optionalfeatureProgression": [
 					{
 						"name": "Maneuvers",
@@ -6502,8 +6598,8 @@
 							}
 						],
 						"colLabels": [
-							"{@tip Die Size|Psionic Energy Die Size}",
-							"{@tip Number|Psionic Energy Die Number}"
+							"{@tip Psi Die Size|Psionic Energy Die Size}",
+							"{@tip Psi Number|Psionic Energy Die Number}"
 						],
 						"rows": [
 							[
@@ -12296,8 +12392,8 @@
 							}
 						],
 						"colLabels": [
-							"{@tip Die Size|Soulknife Energy Die Size}",
-							"{@tip Number|Soulknife Energy Die Number}"
+							"{@tip Psi Die Size|Soulknife Energy Die Size}",
+							"{@tip Psi Number|Soulknife Energy Die Number}"
 						],
 						"rows": [
 							[

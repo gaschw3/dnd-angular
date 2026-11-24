@@ -10,9 +10,16 @@
             [class.active]="isSelected(archetype.shortName)"
             [attr.aria-pressed]="isSelected(archetype.shortName)"
             [attr.data-name]="archetype.shortName"
+            [attr.title]="getTooltip(archetype)"
             (click)="toggleArchetype(archetype.shortName)"
           >
-            {{ archetype.shortName }}
+            <span
+              class="archetype-dot"
+              [class.archetype-dot--2024]="is2024(archetype)"
+              [class.archetype-dot--legacy]="!is2024(archetype)"
+              aria-hidden="true"
+            ></span>
+            <span>{{ archetype.shortName }}</span>
           </button>
         }
       </div>
@@ -34,6 +41,18 @@
         >
           Clear
         </button>
+        @if (hasMixedEditions()) {
+          <span class="archetypes-legend ms-2" aria-label="Subclass ruleset legend">
+            <span class="archetypes-legend-item">
+              <span class="archetype-dot archetype-dot--2024" aria-hidden="true"></span>
+              <span>2024</span>
+            </span>
+            <span class="archetypes-legend-item">
+              <span class="archetype-dot archetype-dot--legacy" aria-hidden="true"></span>
+              <span>2014</span>
+            </span>
+          </span>
+        }
       </div>
     </div>
   } @else {
@@ -69,12 +88,31 @@
               [class.active]="isSelected(archetype.shortName)"
               [attr.aria-pressed]="isSelected(archetype.shortName)"
               [attr.data-name]="archetype.shortName"
+              [attr.title]="getTooltip(archetype)"
               (click)="toggleArchetype(archetype.shortName)"
             >
-              {{ archetype.shortName }}
+              <span
+                class="archetype-dot"
+                [class.archetype-dot--2024]="is2024(archetype)"
+                [class.archetype-dot--legacy]="!is2024(archetype)"
+                aria-hidden="true"
+              ></span>
+              <span>{{ archetype.shortName }}</span>
             </button>
           }
         </div>
+        @if (hasMixedEditions()) {
+          <div class="archetypes-legend mt-2" aria-label="Subclass ruleset legend">
+            <span class="archetypes-legend-item">
+              <span class="archetype-dot archetype-dot--2024" aria-hidden="true"></span>
+              <span>2024 rules</span>
+            </span>
+            <span class="archetypes-legend-item">
+              <span class="archetype-dot archetype-dot--legacy" aria-hidden="true"></span>
+              <span>2014 legacy</span>
+            </span>
+          </div>
+        }
       </div>
     </div>
   }

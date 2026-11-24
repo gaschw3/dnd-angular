@@ -4,6 +4,7 @@ import { normalizeMonster } from './monster';
 import { normalizeItem } from './item';
 import { normalizeOtherFeature } from './otherFeature';
 import { Spell } from './spell';
+import { DndClass } from './dnd-class';
 import { matchesPhrase } from '../shared/helpers/format.utils';
 
 describe('Model normalizers', () => {
@@ -130,5 +131,73 @@ describe('Model normalizers', () => {
     expect(matchesPhrase(spell.searchText, 'fire damage')).toBe(true);
     expect(matchesPhrase(spell.searchText, 'fire   damage')).toBe(true);
     expect(matchesPhrase(spell.searchText, 'fire saving')).toBe(false);
+  });
+
+  it('extracts subclassTableGroups from both class-level and subclass-level definitions', () => {
+    const dndClass = new DndClass({
+      class: [
+        {
+          name: 'Fighter',
+          source: "PHB'24",
+          hd: { number: 1, faces: 10 },
+          subclassTableGroups: [
+            { colLabels: ['LegacySub|Legacy Col'], rows: [[0], [1]] }
+          ]
+        }
+      ],
+      subclass: [
+        {
+          name: 'Psi Warrior',
+          shortName: 'Psi Warrior',
+          subclassTableGroups: [
+            {
+              colLabels: ['{@tip Die Size|Psionic Energy Die Size}', '{@tip Number|Psionic Energy Die Number}'],
+              rows: [
+                [0, 0],
+                ['{@dice d6}', 4]
+              ]
+            }
+          ]
+        },
+        {
+          name: 'Eldritch Knight',
+          shortName: 'Eldritch Knight',
+          subclassTableGroups: [
+            {
+              title: 'Spell Slots per Spell Level',
+              colLabels: ['1st'],
+              rows: [[0], [2]]
+            }
+          ]
+        }
+      ]
+    });
+
+    expect(dndClass.subclassTableColumns).toEqual([
+      {
+        subclassKey: 'LegacySub',
+        label: 'Legacy Col',
+        tooltip: 'LegacySub',
+        rows: ['—', '1']
+      },
+      {
+        subclassKey: 'Psi Warrior',
+        label: 'Die Size',
+        tooltip: 'Psionic Energy Die Size',
+        rows: ['—', 'd6']
+      },
+      {
+        subclassKey: 'Psi Warrior',
+        label: 'Number',
+        tooltip: 'Psionic Energy Die Number',
+        rows: ['—', '4']
+      },
+      {
+        subclassKey: 'Eldritch Knight',
+        label: '1st',
+        tooltip: 'Eldritch Knight — Spell Slots per Spell Level',
+        rows: ['—', '2']
+      }
+    ]);
   });
 });

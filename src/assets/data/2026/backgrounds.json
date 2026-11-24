@@ -1,0 +1,3236 @@
+[
+  {
+    "name": "Aberrant Heir",
+    "source": "EFA",
+    "skill": "History, Intimidation",
+    "tool": "{@item Disguise Kit}",
+    "feat": "{@feat Aberrant Dragonmark}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Aberrant Dragonmark}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill History} and {@skill Intimidation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Disguise Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Disguise Kit}, {@item Costume}, {@item Traveler's Clothes}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Acolyte",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Acolyte.webp",
+    "source": "PHB'24",
+    "skill": "Insight, Religion",
+    "tool": "{@item Calligrapher's Supplies}",
+    "feat": "{@feat Magic Initiate} (Cleric)",
+    "info": "You devoted yourself to service in a Root-Sage church or secluded in a sacred grove. There you performed rites as dictated by your religion. You might have served directly under a priest or studied your religion. Thanks to your priest's instruction and/or your own devotion, you also learned how to channel a modicum of divine power in service to your place of worship and the people who prayed there.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Intelligence, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Magic Initiate} (Cleric)"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight}, {@skill Religion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Calligrapher's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Calligrapher's Supplies}, {@item Book|Book (prayers)}, {@item Holy Symbol}, {@item Parchment} (10 sheets), {@item Robe}, 8 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Agent of the Ninth Quill",
+    "source": "AU",
+    "skill": "Arcana, Sleight of Hand",
+    "tool": "{@item Thieves' Tools}",
+    "feat": "{@feat Arcane Infiltrator}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Arcane Infiltrator}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Arcana} and {@skill Sleight of Hand}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Thieves' Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Light Hammer}, {@item Thieves' Tools}, {@item Iron Spikes}, {@item Rope}, {@item Traveler's Clothes}, 17 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Archaeologist",
+    "source": "EFA",
+    "skill": "History, Survival",
+    "tool": "{@item Cartographer's Tools}",
+    "feat": "{@feat Skilled}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Skilled}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill History} and {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Cartographer's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Cartographer's Tools}, {@item Bullseye Lantern}, {@item Map}, {@item Map or Scroll Case}, {@item Shovel}, {@item Tent}, {@item Traveler's Clothes}, 17 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Archivist",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Sage.webp",
+    "source": "PHB'24",
+    "skill": "Investigation, History",
+    "tool": "{@item Calligrapher's Supplies}",
+    "feat": "{@feats Magic Initiate}",
+    "info": "You spent your formative years in the Knowledge Ossuary, the subterranean archive of the Vale's history kept by the Squirrellfolk. The Long River brings flotsam of artifacts and forgotten lore to the Ossuary, and you've spent many a restless night studying trinkets and scrolls. Your mind was sharpened in the archive, and you're ready to put your knowledge to use.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Score Options:",
+            "entry": "Constitution, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feats Magic Initiate}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Investigation}, {@skill History}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Calligrapher's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Calligrapher's Supplies}, {@item Book} (history), {@item Parchment} (8 sheets), {@item Robe}, 8 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Artisan",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Artisan.webp",
+    "source": "PHB'24",
+    "skill": "Investigation, Persuasion",
+    "tool": "Choose one kind of {@item Artisan's Tools}",
+    "feat": "{@feat Crafter}",
+    "info": "You began mopping floors and scrubbing counters in an artisan's workshop for a few acorns per day as soon as you were strong enough to carry a bucket. When you were old enough to apprentice, you learned to create basic crafts of your own, as well as how to barter and discern fine detail and value.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Crafter}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Investigation}, {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Artisan's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Artisan's Tools} (same as above), 2 {@item Pouch|Pouches}, {@item Traveler's Clothes}, 32 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bejeweled Conclave Spy",
+    "source": "AU",
+    "skill": "Deception, Perception",
+    "tool": "{@item Disguise Kit}",
+    "feat": "{@feat Arcane Eloquence}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Arcane Eloquence}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Deception} and {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Disguise Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Disguise Kit}, {@item Fine Clothes}, {@item Perfume}, 5 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Caretaker",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Hermit.webp",
+    "source": "PHB'24",
+    "skill": "Medicine, Investigation",
+    "tool": "{@item Herbalism Kit}",
+    "feat": "{@feats Healer}",
+    "info": "You've always had a level head and a knack for helping in dire situations. Perhaps you were raised in a large, busy family, or perhaps a crisis occurred when you were young that you jumped to solve. Once older, you tutored under a folk healer, learning how to identify healing herbs and how to apply medicine and care to all the different species of the Vale.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Score Options:",
+            "entry": "Constitution, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feats Healer}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Medicine}, {@skill Investigation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Herbalism Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Herbalism Kit}, {@item Bedroll}, {@item Book} (philosophy), {@item Lamp}, {@item Oil} (3 flasks), {@item Traveler's Clothes}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Carouser",
+    "source": "ABH",
+    "skill": "Deception, Persuasion",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Tireless Reveler}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Tireless Reveler}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Deception} and {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Gaming Set} (same as above), {@item Fine Clothes}, {@item Glass Bottle}, {@item Mirror}, {@item Perfume}, {@item Pouch}, {@item Tinderbox}, 19 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Charlatan",
+    "source": "PHB'24",
+    "skill": "Deception, Sleight of Hand",
+    "tool": "{@item Forgery Kit}",
+    "feat": "{@feat Skilled}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Skilled}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Deception}, {@skill Sleight of Hand}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Forgery Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Forgery Kit}, {@item Costume}, {@item Fine Clothes}, 15 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chondathan Freebooter",
+    "source": "FRHoF",
+    "skill": "Athletics, Sleight of Hand",
+    "tool": "{@item Weaver's Tools}",
+    "feat": "{@feat Skilled}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Skilled}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics} and {@skill Sleight of Hand}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Weaver's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Weaver's Tools}, {@item Backpack}, {@item Ball Bearings}, {@item Basket}, {@item Bedroll}, {@item Bucket}, {@item Rations} (3 days' worth), {@item Rope}, {@item Signal Whistle}, {@item Traveler's Clothes}, 38 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cook",
+    "image": "https://cdnb.artstation.com/p/assets/images/images/010/040/849/large/anastasiia-kudryavtseva-kupetz-lec-11-eca43-04.jpg",
+    "source": "PHB'24",
+    "skill": "Nature, Survival",
+    "tool": "{@item Cook's Utensils}",
+    "feat": "{@feats Chef}",
+    "info": "You practically grew up in a kitchen, helping elders by preparing meals from a very young age. You've become familiar with many ingredients, and have developed an innate intuition on how to combine them into delicious dishes. Perhaps you've found work in a restaurant in a village or roadside inn.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Score Options:",
+            "entry": "Constitution, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feats Chef}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Nature}, {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Cook's Utensils}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) 1 {@item Book} (recipes), {@item Cook's Utensils}, {@item Fine Clothes}, {@item Oil} (3 flasks), {@item Iron Pot}, 6 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cosmic Dawn Experiment",
+    "source": "AU",
+    "skill": "Athletics, Survival",
+    "tool": "Choose one kind of {@item Artisan's Tools}",
+    "feat": "{@feat Transmuted Anatomy}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Constitution"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Transmuted Anatomy}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics} and {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Artisan's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Artisan's Tools} (same as above), {@item Backpack}, {@item Robe}, {@item Traveler's Clothes}, 30 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Covenant of the Grave Recruit",
+    "source": "AU",
+    "skill": "History, Medicine",
+    "tool": "{@item Herbalism Kit}",
+    "feat": "{@feat Arcane Undertaker}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Arcane Undertaker}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill History} and {@skill Medicine}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Herbalism Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Herbalism Kit}, {@item Book} (anatomy), {@item Shovel}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Criminal",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Criminal.webp",
+    "source": "PHB'24",
+    "skill": "Sleight of Hand, Stealth",
+    "tool": "{@item Thieves' Tools}",
+    "feat": "{@feat Alert}",
+    "info": "You eked out a living cutting purses or burgling shops. Perhaps you grew up in the dark alleys of a large settlement like Oakheart, or perhaps you turned to banditry on the roads between towns. You may have run with a mercenary gang, like Crueljaw's infamous Purple Ivy Company",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Alert}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Sleight of Hand}, {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Thieves' Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger|2 Daggers}, {@item Thieves' Tools}, {@item Crowbar}, {@item Pouch|2 Pouches}, {@item Traveler's Clothes}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Crucible Storm Chaser",
+    "source": "AU",
+    "skill": "Athletics, Nature",
+    "tool": "{@item Glassblower's Tools}",
+    "feat": "{@feat Arcane Overload}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Arcane Overload}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics} and {@skill Nature}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Glassblower's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Glassblower's Tools}, {@item Backpack}, {@item Rope}, {@item Traveler's Clothes}, 15 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dead Magic Dweller",
+    "source": "FRHoF",
+    "skill": "Medicine, Survival",
+    "tool": "{@item Leatherworker's Tools}",
+    "feat": "{@feat Healer}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Healer}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Medicine} and {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Leatherworker's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Greatclub}, {@item Leatherworker's Tools}, {@item Bedroll}, {@item Blanket}, {@item Healer's Kit}, {@item Pole}, {@item Rations} (3 days' worth), {@item Tent}, {@item Tinderbox}, 5 {@item Torch|Torches}, {@item Traveler's Clothes}, {@item Waterskin}, 32 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Discredited Neural Tuner",
+    "source": "PL",
+    "skill": "Medicine, Nature",
+    "tool": "{@item Tinker's Tools} (as engineer's toolkit)",
+    "feat": "{@feat Gathered Whispers} or a Dark Gift feat of your choice",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Gathered Whispers} or a Dark Gift feat of your choice"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Medicine} and {@skill Nature}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Tinker's Tools} (as engineer's toolkit)"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Tinker's Tools} (as engineer's toolkit); or (B) 50 GP (as 50 dollars)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dragon Cultist",
+    "source": "FRHoF",
+    "skill": "Deception, Stealth",
+    "tool": "{@item Calligrapher's Supplies}",
+    "feat": "{@feat Cult of the Dragon Initiate}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Cult of the Dragon Initiate}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Deception} and {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Calligrapher's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Calligrapher's Supplies}, {@item Dagger}, {@item Glass Bottle}, {@item Lamp}, {@item Manacles}, {@item Oil} (5 flasks), 2 {@item Pouch|Pouches}, {@item Robe}, {@item Rope}, 30 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Emerald Enclave Caretaker",
+    "source": "FRHoF",
+    "skill": "Nature, Survival",
+    "tool": "{@item Herbalism Kit}",
+    "feat": "{@feat Emerald Enclave Fledgling}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Emerald Enclave Fledgling}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Nature} and {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Herbalism Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Shortbow}, {@item Arrow|20 Arrows}, {@item Herbalism Kit}, {@item Bedroll}, {@item Blanket}, {@item Pouch}, {@item Tent}, {@item Traveler's Clothes}, 13 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Entertainer",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Entertainer.webp",
+    "source": "PHB'24",
+    "skill": "Acrobatics, Performance",
+    "tool": "Choose one kind of {@item Musical Instrument}",
+    "feat": "{@feat Musician}",
+    "info": "You spent much of your youth following Mousefolk bards and Otterfolk acrobats, performing odd jobs in exchange for lessons. You've developed your own routine or performance, and you thrive on applause and long for the stage.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Musician}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Acrobatics}, {@skill Performance}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Musical Instrument}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Musical Instrument} (same as above), {@item Costume|2 Costumes}, {@item Mirror}, {@item Perfume}, {@item Traveler's Clothes}, 11 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fabricated Mind",
+    "source": "PL",
+    "skill": "Deception, Insight",
+    "tool": "{@item Forgery Kit}",
+    "feat": "{@feat Echoing Soul} or a Dark Gift feat of your choice",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Echoing Soul} or a Dark Gift feat of your choice"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Deception} and {@skill Insight}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Forgery Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Forgery Kit}, {@item Fine Clothes}, {@item Ink}, 2 {@item Ink Pen|Ink Pens}, 3 {@item Iron Spikes}, 7 GP (as 7 dollars); or (B) 50 GP (as 50 dollars)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Familiar Trainer",
+    "source": "AU",
+    "skill": "Animal Handling, Arcana",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Familiar Friend}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Familiar Friend}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Animal Handling} and {@skill Arcana}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Gaming Set} (same as above), {@item Bedroll}, {@item Bell}, {@item String}, {@item Tinderbox}, {@item Traveler's Clothes}, {@item Waterskin}, 44 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Farmer",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Farmer.webp",
+    "source": "PHB'24",
+    "skill": "Animal Handling, Nature",
+    "tool": "{@item Carpenter's Tools}",
+    "feat": "{@feat Tough}",
+    "info": "You grew up close to the land, perhaps a Rabbitfolk garden or Squirrelfolk food reserve. Years tending insects and cultivating the earth rewarded you with patience and good health. You have a keen appreciate for nature's bounty and a healthy respect for nature's wrath.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Tough}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Animal Handling}, {@skill Nature}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Carpenter's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Sickle}, {@item Carpenter's Tools}, {@item Healer's Kit}, {@item Iron Pot}, {@item Shovel}, {@item Traveler's Clothes}, 30 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fisher",
+    "image": "https://w.wallhaven.cc/full/vg/wallhaven-vgwgd8.jpg",
+    "source": "PHB'24",
+    "skill": "Athletics, Survival",
+    "tool": "{@item Fishing Tackle}",
+    "feat": "{@feats Lucky}",
+    "info": "You have spent your life aboard fishing boats on the Long River or combing the shallows for the bounty of the Purelake. Perhaps you were taught by a family of Frogfolk or Otterfolk, working to help feed your village. Regardless of how you began, you soon fell in love with the water, the art of fishing, and the promise of the eternal horizon.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Score Options:",
+            "entry": "Strength, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feats Lucky}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics}, {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Fishing Tackle}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Bedroll}, {@item Dagger}, {@item Fishing Tackle}, {@item Navigator's Tools}, {@item Net}, {@item Trident}, {@item Traveler's Clothing}, 12 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Flaming Fist Mercenary",
+    "source": "FRHoF",
+    "skill": "Intimidation, Perception",
+    "tool": "{@item Smith's Tools}",
+    "feat": "{@feat Tough}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Tough}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Intimidation} and {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Smith's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Mace}, {@item Smith's Tools}, {@item Fine Clothes}, {@item Manacles}, {@item Portable Ram}, 4 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Genie Touched",
+    "source": "FRHoF",
+    "skill": "Perception, Persuasion",
+    "tool": "{@item Glassblower's Tools}",
+    "feat": "{@feat Magic Initiate} (Wizard)",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Magic Initiate} (Wizard)"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Perception} and {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Glassblower's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Light Hammer}, {@item Glassblower's Tools}, {@item Fine Clothes}, {@item Lamp}, {@item Oil} (3 flasks), {@item Waterskin}, 2 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guard",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Guard.webp",
+    "source": "PHB'24",
+    "skill": "Athletics, Perception",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Alert}",
+    "info": "Your feet ache when you remember the countless hours you spent at your watch post. You were trained to keep one eye looking outside the Thorns, watching for signs of Beasts or Vermin, and your other eye looking inside, searching for sneaks and troublemakers.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Alert}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics}, {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Spear}, {@item Light Crossbow}, 20 {@item Bolt|Bolts}, {@item Gaming Set} (same as above), {@item Hooded Lantern}, {@item Manacles}, {@item Quiver}, {@item Traveler's Clothes}, 12 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guide",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Guide.webp",
+    "source": "PHB'24",
+    "skill": "Stealth, Survival",
+    "tool": "{@item Cartographer's Tools}",
+    "feat": "{@feat Magic Initiate} (Druid)",
+    "info": "You came of age outdoors, far from settled lands. Your home was anywhere you chose to spread your bedroll. There are wonders in the wilderness of the Hollow Vale — strange insects, Vermin, overgrown ruins — and you learned to fend for yourself as you explored them. From time to time, you've found work as a courier, wilderness guide, or insect hunter.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Magic Initiate} (Druid)"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Stealth}, {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Cartographer's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Shortbow}, {@item Arrow|20 Arrows}, {@item Cartographer's Tools}, {@item Bedroll}, {@item Quiver}, {@item Tent}, {@item Traveler's Clothes}, 3 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Harper",
+    "source": "FRHoF",
+    "skill": "Performance, Sleight of Hand",
+    "tool": "{@item Disguise Kit}",
+    "feat": "{@feat Harper Agent}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Harper Agent}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Performance} and {@skill Sleight of Hand}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Disguise Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Disguise Kit}, {@item Bedroll}, {@item Costume}, {@item Grappling Hook}, {@item Rope}, {@item Traveler's Clothes}, 14 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Haunted One",
+    "source": "RHW",
+    "skill": "Arcana, Survival",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Survivor} or a Dark Gift feat of your choice",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Survivor} or a Dark Gift feat of your choice"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Arcana} and {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Gaming Set} (same as above), {@item Crowbar}, {@item Holy Water} (1 {@item flask}), {@item Mirror}, {@item Oil}(2 {@item flask|flasks}), {@item Signal Whistle}, {@item Tinderbox}, {@item Traveler's Clothes}, 5 {@item Torch|Torches}, {@item Waterskin}, and 14 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hermit",
+    "source": "PHB'24",
+    "skill": "Medicine, Religion",
+    "tool": "{@item Herbalism Kit}",
+    "feat": "{@feat Healer}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Healer}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Medicine}, {@skill Religion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Herbalism Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Herbalism Kit}, {@item Bedroll}, {@item Book} (philosophy), {@item Lamp}, {@item Oil} (3 flasks), {@item Traveler's Clothes}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Horizon Weaver Initiate",
+    "source": "AU",
+    "skill": "Acrobatics, Survival",
+    "tool": "{@item Weaver's Tools}",
+    "feat": "{@feat Portal Jumper}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Portal Jumper}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Acrobatics} and {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Weaver's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Shortbow}, {@item Arrows (20)|20 Arrows}, {@item Weaver's Tools}, {@item Map}, {@item Quiver}, {@item Rope}, {@item Traveler's Clothes}, 18 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Agent",
+    "source": "EFA",
+    "skill": "Investigation, Persuasion",
+    "tool": "Choose one kind of {@item Artisan's Tools}",
+    "feat": "{@feat Lucky}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Lucky}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Investigation} and {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Artisan's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Artisan's Tools} (same as above), {@item Fine Clothes}, 20 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Cannith Heir",
+    "source": "EFA",
+    "skill": "Investigation, Sleight of Hand",
+    "tool": "Choose one kind of {@item Artisan's Tools}",
+    "feat": "{@feat Mark of Making}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Making}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Investigation} and {@skill Sleight of Hand}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Artisan's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Artisan's Tools} (same as above), {@item Crowbar}, {@item Fine Clothes}, 2 {@item Pouch|Pouches}, 17 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Deneith Heir",
+    "source": "EFA",
+    "skill": "Insight, Perception",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Mark of Sentinel}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Sentinel}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight} and {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Spear}, {@item Shortbow}, {@item Arrow|20 Arrows}, {@item Gaming Set} (same as above), {@item Fine Clothes}, {@item Healer's Kit}, {@item Quiver}, 1 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Ghallanda Heir",
+    "source": "EFA",
+    "skill": "Insight, Persuasion",
+    "tool": "{@item Cook's Utensils}",
+    "feat": "{@feat Mark of Hospitality}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Hospitality}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight} and {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Cook's Utensils}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Cook's Utensils}, {@item Fine Clothes}, {@item Iron Pot}, {@item Lamp}, {@item Oil} (5 flasks), {@item Perfume}, 26 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Jorasco Heir",
+    "source": "EFA",
+    "skill": "Medicine, Stealth",
+    "tool": "{@item Herbalism Kit}",
+    "feat": "{@feat Mark of Healing}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Healing}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Medicine} and {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Herbalism Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Herbalism Kit}, {@item Fine Clothes}, {@item Healer's Kit}, 25 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Kundarak Heir",
+    "source": "EFA",
+    "skill": "Arcana, Investigation",
+    "tool": "{@item Thieves' Tools}",
+    "feat": "{@feat Mark of Warding}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Warding}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Arcana} and {@skill Investigation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Thieves' Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Thieves' Tools}, {@item Fine Clothes}, 10 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Lyrandar Heir",
+    "source": "EFA",
+    "skill": "Acrobatics, Nature",
+    "tool": "{@item Navigator's Tools}",
+    "feat": "{@feat Mark of Storm}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Storm}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Acrobatics} and {@skill Nature}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Navigator's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Navigator's Tools}, {@item Fine Clothes}, 10 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Medani Heir",
+    "source": "EFA",
+    "skill": "Insight, Investigation",
+    "tool": "{@item Disguise Kit}",
+    "feat": "{@feat Mark of Detection}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Detection}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight} and {@skill Investigation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Disguise Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Disguise Kit}, {@item Fine Clothes}, 10 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Orien Heir",
+    "source": "EFA",
+    "skill": "Acrobatics, Athletics",
+    "tool": "{@item Cartographer's Tools}",
+    "feat": "{@feat Mark of Passage}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Passage}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Acrobatics} and {@skill Athletics}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Cartographer's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Cartographer's Tools}, {@item Fine Clothes}, {@item Map}, {@item Map or Scroll Case}, 18 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Phiarlan Heir",
+    "source": "EFA",
+    "skill": "Deception, Stealth",
+    "tool": "{@item Disguise Kit}",
+    "feat": "{@feat Mark of Shadow}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Shadow}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Deception} and {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Disguise Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Disguise Kit}, {@item Fine Clothes}, 10 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Sivis Heir",
+    "source": "EFA",
+    "skill": "History, Perception",
+    "tool": "{@item Calligrapher's Supplies}",
+    "feat": "{@feat Mark of Scribing}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Intelligence, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Scribing}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill History} and {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Calligrapher's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Calligrapher's Supplies}, {@item Fine Clothes}, {@item Ink}, 5 {@item Ink Pen|Ink Pens}, {@item Paper} (30 sheets), {@item Parchment} (9 sheets), 8 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Tharashk Heir",
+    "source": "EFA",
+    "skill": "Perception, Survival",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Mark of Finding}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Finding}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Perception} and {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Gaming Set} (same as above), {@item Climber's Kit}, {@item Fine Clothes}, {@item Hunting Trap}, {@item Manacles}, 2 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Thuranni Heir",
+    "source": "EFA",
+    "skill": "Performance, Stealth",
+    "tool": "Choose one kind of {@item Musical Instrument}",
+    "feat": "{@feat Mark of Shadow}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Shadow}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Performance} and {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Musical Instrument}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Musical Instrument} (same as above), {@item Costume}, {@item Fine Clothes}, 13 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "House Vadalis Heir",
+    "source": "EFA",
+    "skill": "Animal Handling, Nature",
+    "tool": "{@item Herbalism Kit}",
+    "feat": "{@feat Mark of Handling}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Mark of Handling}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Animal Handling} and {@skill Nature}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Herbalism Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Herbalism Kit}, {@item Fine Clothes}, {@item Net}, 29 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ice Fisher",
+    "source": "FRHoF",
+    "skill": "Animal Handling, Athletics",
+    "tool": "{@item Woodcarver's Tools}",
+    "feat": "{@feat Alert}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Constitution"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Alert}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Animal Handling} and {@skill Athletics}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Woodcarver's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Woodcarver's Tools}, {@item Basket}, {@item Block and Tackle}, {@item Chain}, {@item Hunting Trap}, {@item Net}, {@item Pole}, {@item Rations} (3 days' worth), {@item Traveler's Clothes}, 32 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Innkeeper",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Charlatan.webp",
+    "source": "PHB'24",
+    "skill": "Persuasion, Survival",
+    "tool": "{@item Brewer's Supplies}",
+    "feat": "{@feats Tough}",
+    "info": "You spent your youth scrubbing floors and counters in a travelling caravan of smallfolk, and you soon became a popular fixture at the Inn. You were taken under the wing of the owner, and were taught how to run the business and sweet talk your patrons. You've even learned a few recipes for brewing spirits.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Score Options:",
+            "entry": "Dexterity, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feats Tough}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Persuasion}, {@skill Survival}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Brewer's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Brewer's Supplies}, {@item Fine Clothes}, 3 {@item Glass Bottle}s , {@item Iron Pot}, {@item Oil} (3 flasks), 6 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Inquisitive",
+    "source": "EFA",
+    "skill": "Insight, Investigation",
+    "tool": "{@item Thieves' Tools}",
+    "feat": "{@feat Alert}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Alert}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight} and {@skill Investigation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Thieves' Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Thieves' Tools}, {@item Bullseye Lantern}, {@item Crowbar}, {@item Oil} (10 flasks), {@item Traveler's Clothes}, 10 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Investigator",
+    "source": "RHW",
+    "skill": "Insight, Investigation",
+    "tool": "{@item Disguise Kit}",
+    "feat": "{@feat Sharp Eye} or a Dark Gift feat of your choice",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Intelligence, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Sharp Eye} or a Dark Gift feat of your choice"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight} and {@skill Investigation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Disguise Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Disguise Kit}, {@item Manacles}, {@item Shovel}, {@item Traveler's Clothes}, 3 {@item Vial|Vials}, and 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Knight of the Gauntlet",
+    "source": "FRHoF",
+    "skill": "Athletics, Medicine",
+    "tool": "{@item Smith's Tools}",
+    "feat": "{@feat Tyro of the Gauntlet}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Tyro of the Gauntlet}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics} and {@skill Medicine}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Smith's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Spear}, {@item Smith's Tools}, {@item Bullseye Lantern}, {@item Holy Symbol}, {@item Manacles}, {@item Oil} (5 flasks), {@item Tinderbox}, {@item Traveler's Clothes}, 9 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lords' Alliance Vassal",
+    "source": "FRHoF",
+    "skill": "Insight, Persuasion",
+    "tool": "{@item Calligrapher's Supplies}",
+    "feat": "{@feat Lords' Alliance Agent}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Lords' Alliance Agent}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight} and {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Calligrapher's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) 2 {@item Javelin|Javelins}, {@item Calligrapher's Supplies}, {@item Fine Clothes}, {@item Ink}, 5 {@item Ink Pen|Ink Pens}, {@item Parchment} (9 sheets), 13 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lorwyn Expert",
+    "source": "LFL",
+    "skill": "Athletics, Nature",
+    "tool": "{@item Cartographer's Tools}",
+    "feat": "{@feat Child of the Sun}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Child of the Sun}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics} and {@skill Nature}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Cartographer's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Cartographer's Tools}, {@item Backpack}, {@item Basket}, {@item Parchment} (4 sheets), {@item Rope}, {@item Traveler's Clothes}, 29 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Merchant",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Merchant.webp",
+    "source": "PHB'24",
+    "skill": "Animal Handling, Persuasion",
+    "tool": "{@item Navigator's Tools}",
+    "feat": "{@feat Lucky}",
+    "info": "You were apprenticed to a trader, caravan master, or shopkeeper, learning the fundamentals of commerce. You traveled broadly, and you earned a living by buying and selling the raw materials artisans need to craft or finished works from such crafters. You might have transported goods from one place to another (by ship, wagon, or caravan) or bought them from traveling traders and sold them in your own shop.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Lucky}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Animal Handling}, {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Navigator's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Navigator's Tools}, {@item Pouch|2 Pouches}, {@item Traveler's Clothes}, 22 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mist Wanderer",
+    "source": "RHW",
+    "skill": "Survival, Stealth",
+    "tool": "Choose one kind of {@item Artisan's Tools}",
+    "feat": "A Dark Gift feat of your choice ({@feat Mist Walker} is recommended)",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "A Dark Gift feat of your choice ({@feat Mist Walker} is recommended)"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Survival} and {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Artisan's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Artisan's Tools} (same as above), {@item Lamp}, {@item Oil} (5 flasks), {@item Pouch}, {@item Rope}, {@item Tinderbox}, {@item Traveler's Clothes}, and 30 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Moonwell Pilgrim",
+    "source": "FRHoF",
+    "skill": "Nature, Performance",
+    "tool": "{@item Painter's Supplies}",
+    "feat": "{@feat Magic Initiate} (Druid)",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Magic Initiate} (Druid)"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Nature} and {@skill Performance}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Painter's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Painter's Supplies}, {@item Bedroll}, {@item Bell}, {@item Pouch}, {@item Robe}, {@item String}, {@item Traveler's Clothes}, {@item Waterskin}, 38 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mulhorandi Tomb Raider",
+    "source": "FRHoF",
+    "skill": "Investigation, Religion",
+    "tool": "{@item Mason's Tools}",
+    "feat": "{@feat Lucky}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Intelligence"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Lucky}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Investigation} and {@skill Religion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Mason's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Light Hammer}, {@item Mason's Tools}, {@item Backpack}, {@item Bedroll}, {@item Crowbar}, {@item Ladder}, {@item Pole}, 2 {@item Pouch|Pouches}, {@item Rope}, {@item String}, {@item Tinderbox}, 5 {@item Torch|Torches}, {@item Traveler's Clothes}, {@item Waterskin} 26 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mutated Commuter",
+    "source": "PL",
+    "skill": "Arcana, Investigation",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Aberrant Anatomy} or a Dark Gift feat of your choice",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Aberrant Anatomy} or a Dark Gift feat of your choice"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Arcana} and {@skill Investigation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Gaming Set} (same as above), {@item Book} (horror novel), {@item Flask}, {@item Lock}, {@item Signal Whistle}, {@item Traveler's Clothes}, and 11 GP (as 11 dollars); or (B) 50 GP (as 50 dollars)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mythalkeeper",
+    "source": "FRHoF",
+    "skill": "Arcana, History",
+    "tool": "{@item Jeweler's Tools}",
+    "feat": "{@feat Crafter}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Intelligence, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Crafter}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Arcana} and {@skill History}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Jeweler's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Jeweler's Tools}, {@item Perfume}, {@item Pouch}, {@item Robe}, {@item Shovel}, {@item String}, {@item Waterskin}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Noble",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Noble.webp",
+    "source": "PHB'24",
+    "skill": "History, Persuasion",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Skilled}",
+    "info": "There is no single authority in the Vale, but you were raised as the heir of a mayor, important councilman, or group leader - surrounded by wealth, power, and privilege. Your family ensured you received a first-class education in History and Diplomacy, and it was always expected that you would one day fill a position of leadership.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Skilled}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill History}, {@skill Persuasion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Gaming Set} (same as above), {@item Fine Clothes}, {@item Perfume}, 29 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Phantasmic Circus Trouper",
+    "source": "AU",
+    "skill": "Deception, Performance",
+    "tool": "{@item Disguise Kit}",
+    "feat": "{@feat Arcane Artist}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Arcane Artist}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Deception} and {@skill Performance}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Disguise Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Disguise Kit}, {@item Gaming Set} (any), {@item Costume}, {@item Mirror}, {@item Traveler's Clothes}, 12 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Purple Dragon Squire",
+    "source": "FRHoF",
+    "skill": "Animal Handling, Insight",
+    "tool": "{@item Navigator's Tools}",
+    "feat": "{@feat Purple Dragon Rook}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Purple Dragon Rook}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Animal Handling} and {@skill Insight}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Navigator's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Spear}, {@item Navigator's Tools}, {@item Fine Clothes}, 9 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rashemi Wanderer",
+    "source": "FRHoF",
+    "skill": "Intimidation, Perception",
+    "tool": "{@item Cartographer's Tools}",
+    "feat": "{@feat Tough}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Tough}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Intimidation} and {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Cartographer's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Cartographer's Tools}, {@item Backpack}, {@item Bedroll}, {@item Hooded Lantern}, {@item Oil} (3 flasks), {@item Rope}, {@item Tinderbox}, {@item Traveler's Clothes}, {@item Waterskin}, 23 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Reconstructed Runaway",
+    "source": "PL",
+    "skill": "Athletics, Medicine",
+    "tool": "{@item Smith's Tools} (as welding tools)",
+    "feat": "{@feat Symbiotic Being} or a Dark Gift feat of your choice",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Symbiotic Being} or a Dark Gift feat of your choice"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics} and {@skill Medicine}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Smith's Tools} (as welding tools)"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Smith's Tools} (as welding tools), {@item Bullseye Lantern} (as flashlight), {@item Caltrops}, {@item Chain}, {@item Crowbar}, {@item Grappling Hook}, {@item Oil} (3 flasks; as 3 flashlight batteries), 9 GP (as 9 dollars); or (B) 50 GP (as 50 dollars)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sage",
+    "source": "PHB'24",
+    "skill": "Arcana, History",
+    "tool": "{@item Calligrapher's Supplies}",
+    "feat": "{@feat Magic Initiate} (Wizard)",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Magic Initiate} (Wizard)"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Arcana}, {@skill History}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Calligrapher's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Quarterstaff}, {@item Calligrapher's Supplies}, {@item Book} (history), {@item Parchment} (8 sheets), {@item Robe}, 8 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sailor",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Sailor.webp",
+    "source": "PHB'24",
+    "skill": "Acrobatics, Perception",
+    "tool": "{@item Navigator's Tools}",
+    "feat": "{@feat Tavern Brawler}",
+    "info": "You lived on the Long River that cuts across the Vale - wind at your back and decks swaying beneath your feet. You were raised alongside Otterfolk sailors (or brigands), and perched on barstools in more ports of call than you can remember. Along the river you've faced mighty storms, enormous river Beasts, and even pirates.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Tavern Brawler}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Acrobatics}, {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Navigator's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Navigator's Tools}, {@item Rope}, {@item Traveler's Clothes}, 20 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Scavenger",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Wayfarer.webp",
+    "source": "PHB'24",
+    "skill": "Insight, Stealth",
+    "tool": "{@item Thieves' Tools}",
+    "feat": "{@feats Lucky}",
+    "info": "You grew up on the fringes of society, perhaps on the streets of a settlement like Oakheart, or perhaps on the outskirts of villages. You slept where you could and did odd jobs for food. You've learned to take what's been discarded or left unused, never letting anything go to waste.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Score Options:",
+            "entry": "Dexterity, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feats Lucky}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight}, {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Thieves' Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger|2 Daggers}, {@item Thieves' Tools}, {@item Gaming Set} (any), {@item Bedroll}, {@item Pouch|2 Pouches}, {@item Traveler's Clothes}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Scribe",
+    "source": "PHB'24",
+    "skill": "Investigation, Perception",
+    "tool": "{@item Calligrapher's Supplies}",
+    "feat": "{@feat Skilled}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Skilled}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Investigation}, {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Calligrapher's Supplies}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Calligrapher's Supplies}, {@item Fine Clothes}, {@item Lamp}, {@item Oil} (3 flasks), {@item Parchment} (12 sheets), 23 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Seer Apprentice",
+    "source": "AU",
+    "skill": "History, Insight",
+    "tool": "{@item Navigator's Tools}",
+    "feat": "{@feat Arcane Omens}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Intelligence, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Arcane Omens}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill History} and {@skill Insight}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Navigator's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Navigator's Tools}, 8 {@item Candle|Candles}, {@item Ink}, {@item Ink Pen}, {@item Parchment} (9 sheets), {@item Pouch}, {@item Tinderbox}, {@item Traveler's Clothes}, 11 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shadowmasters Exile",
+    "source": "FRHoF",
+    "skill": "Acrobatics, Stealth",
+    "tool": "{@item Thieves' Tools}",
+    "feat": "{@feat Savage Attacker}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Savage Attacker}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Acrobatics} and {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Thieves' Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) 2 Daggers, {@item Thieves' Tools}, {@item Caltrops}, {@item Costume}, {@item Grappling Hook}, {@item Iron Spikes}, {@item Mirror}, 2 {@item Pouch|Pouches}, {@item Rope}, {@item Traveler's Clothes}, 3 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shadowmoor Expert",
+    "source": "LFL",
+    "skill": "Acrobatics, Deception",
+    "tool": "{@item Glassblower's Tools}",
+    "feat": "{@feat Shadowmoor Hexer}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Shadowmoor Hexer}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Acrobatics} and {@skill Deception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Glassblower's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Glassblower's Tools}, {@item Backpack}, {@item Hunting Trap}, {@item Lamp}, {@item Oil} (3 flasks), {@item Traveler's Clothes}, {@item Waterskin}, 8 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Soldier",
+    "image": "https://5e.tools/img/backgrounds/XPHB/Soldier.webp",
+    "source": "PHB'24",
+    "skill": "Athletics, Intimidation",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Savage Attacker}",
+    "info": "Every settlement in the Vale needs to be ready for Beasts, Vermin, and insects; and many companies of mercenaries and knights form to stand vigilant. You began your martial training with one such group as soon as you reached adulthood and carry precious few memories of life before you took up arms. Battle is in your blood, and you put your training to use on the battlefield, protecting the Vale by waging war.",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Constitution"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Savage Attacker}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Athletics}, {@skill Intimidation}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Spear}, {@item Shortbow}, {@item Arrow|20 Arrows}, {@item Gaming Set} (same as above), {@item Healer's Kit}, {@item Quiver}, {@item Traveler's Clothes}, 14 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spellfire Initiate",
+    "source": "FRHoF",
+    "skill": "Arcana, Perception",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "{@feat Spellfire Spark}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Intelligence, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Spellfire Spark}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Arcana} and {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Gaming Set} (same as above), {@item Arcane Focus} ({@item Crystal} or {@item Wand}), 2 {@item Pouch|Pouches}, {@item Traveler's Clothes}, 36 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spirit Medium",
+    "source": "RHW",
+    "skill": "Insight, Religion",
+    "tool": "Choose one kind of {@item Gaming Set}",
+    "feat": "A Dark Gift feat of your choice ({@feat Gathered Whispers} is recommended)",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Intelligence, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "A Dark Gift feat of your choice ({@feat Gathered Whispers} is recommended)"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight} and {@skill Religion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "Choose one kind of {@item Gaming Set}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger}, {@item Gaming Set} (same as above), {@item Basket}, {@item Bell}, 8 Candles, {@item Ink}, {@item Ink Pen}, {@item Paper} (5 sheets), {@item Tinderbox}, {@item Traveler's Clothes}, and 32 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vampire Devotee",
+    "source": "ABH",
+    "skill": "Persuasion, Stealth",
+    "tool": "{@item Cook's Utensils}",
+    "feat": "{@feat Vampire's Plaything}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Constitution, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Vampire's Plaything}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Persuasion} and {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Cook's Utensils}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Cook's Utensils}, {@item Fine Clothes}, 2 {@item Glass Bottle|Glass Bottles}, {@item Healer's Kit}, {@item Perfume}, {@item Lamp}, {@item Oil} (3 flasks), {@item Waterskin}, 19 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vampire Survivor",
+    "source": "ABH",
+    "skill": "Insight, Religion",
+    "tool": "{@item Woodcarver's Tools}",
+    "feat": "{@feat Vampire Hunter}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Constitution, Wisdom"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Vampire Hunter}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight} and {@skill Religion}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Woodcarver's Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Woodcarver's Tools}, {@item Crowbar}, {@item Hooded Lantern}, {@item Holy Symbol} ({@item reliquary}), {@item Holy Water}, {@item Mirror}, {@item Oil} (3 flasks), {@item Tinderbox}, {@item Traveler's Clothes}, {@item Waterskin}, 4 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ward of the Sheltering Hands",
+    "source": "AU",
+    "skill": "Insight, Medicine",
+    "tool": "{@item Cook's Utensils}",
+    "feat": "{@feat Arcane Safeguard}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Constitution, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Arcane Safeguard}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight} and {@skill Medicine}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Cook's Utensils}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Cook's Utensils}, {@item Blanket}, {@item Healer's Kit}, {@item Lamp}, {@item Oil} (3 flasks), {@item Tinderbox}, {@item Traveler's Clothes}, {@item Waterskin}, 40 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wayfarer",
+    "source": "PHB'24",
+    "skill": "Insight, Stealth",
+    "tool": "{@item Thieves' Tools}",
+    "feat": "{@feat Lucky}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Dexterity, Wisdom, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Lucky}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Insight}, {@skill Stealth}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiency:",
+            "entry": "{@item Thieves' Tools}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Dagger|2 Daggers}, {@item Thieves' Tools}, {@item Gaming Set} (any), {@item Bedroll}, {@item Pouch|2 Pouches}, {@item Traveler's Clothes}, 16 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhentarim Mercenary",
+    "source": "FRHoF",
+    "skill": "Intimidation, Perception",
+    "tool": "{@item Forgery Kit}",
+    "feat": "{@feat Zhentarim Ruffian}",
+    "entries": [
+      {
+        "type": "list",
+        "style": "list-hang-notitle",
+        "items": [
+          {
+            "type": "item",
+            "name": "Ability Scores:",
+            "entry": "Strength, Dexterity, Charisma"
+          },
+          {
+            "type": "item",
+            "name": "Feat:",
+            "entry": "{@feat Zhentarim Ruffian}"
+          },
+          {
+            "type": "item",
+            "name": "Skill Proficiencies:",
+            "entry": "{@skill Intimidation} and {@skill Perception}"
+          },
+          {
+            "type": "item",
+            "name": "Tool Proficiencies:",
+            "entry": "{@item Forgery Kit}"
+          },
+          {
+            "type": "item",
+            "name": "Equipment:",
+            "entry": "Choose A or B: (A) {@item Club}, {@item Dagger}, {@item Forgery Kit}, {@item Fine Clothes}, {@item Hooded Lantern}, {@item Oil} (3 flasks), 2 {@item Pouch|Pouches}, {@item String}, {@item Tinderbox}, 11 GP; or (B) 50 GP"
+          }
+        ]
+      }
+    ]
+  }
+]

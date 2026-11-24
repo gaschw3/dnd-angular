@@ -5,8 +5,8 @@
         @for (header of dndClass().levelTable[0]; track $index) {
           <th [class.center]="header !== 'Features'" [class.features-col]="header === 'Features'">{{ header }}</th>
         }
-        @for (subCol of visibleSubclassCols(); track subCol.index) {
-          <th class="center subclass-col">{{ subCol.label }}</th>
+        @for (subCol of visibleSubclassCols(); track $index) {
+          <th class="center subclass-col" [attr.title]="subCol.tooltip || null">{{ subCol.label }}</th>
         }
       </tr>
     </thead>
@@ -24,8 +24,8 @@
               <td class="center">{{ column }}</td>
             }
           }
-          @for (subCol of visibleSubclassCols(); track subCol.index) {
-            <td class="center subclass-col">{{ getSubclassCell(i, subCol.index) }}</td>
+          @for (subCol of visibleSubclassCols(); track $index) {
+            <td class="center subclass-col">{{ subCol.rows[i] || '—' }}</td>
           }
         </tr>
       }

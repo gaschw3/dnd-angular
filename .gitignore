@@ -42,3 +42,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# archives tuff I don't need in github
+/src/archive

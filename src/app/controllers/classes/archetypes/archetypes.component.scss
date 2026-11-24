@@ -48,3 +48,35 @@
   flex-wrap: wrap;
   gap: 0.35rem;
 }
+
+.archetype-dot {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.archetype-dot--2024 {
+  background-color: #38bdf8;
+  box-shadow: 0 0 4px rgba(56, 189, 248, 0.55);
+}
+
+.archetype-dot--legacy {
+  background-color: transparent;
+  border: 1.5px solid #e5a93c;
+}
+
+.archetypes-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+.archetypes-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}

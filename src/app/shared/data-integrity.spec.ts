@@ -25,12 +25,14 @@ describe('JSON data asset integrity', () => {
     }
   });
 
-  it('validates 2024/classes.json entries', () => {
-    const classes = readJson('2024/classes.json');
-    expect(Array.isArray(classes)).toBe(true);
-    expect(classes.length).toBeGreaterThan(0);
+  it('validates 2026/classes/index.json and per-class entries', () => {
+    const index = readJson('2026/classes/index.json');
+    expect(Array.isArray(index)).toBe(true);
+    expect(index.length).toBeGreaterThan(0);
 
-    for (const entry of classes) {
+    for (const meta of index) {
+      expect(typeof meta.file).toBe('string');
+      const entry = readJson(`2026/classes/${meta.file}`);
       expect(Array.isArray(entry.class)).toBe(true);
       expect(entry.class[0]?.name).toBeTruthy();
       expect(Array.isArray(entry.classFeature)).toBe(true);
@@ -53,14 +55,14 @@ describe('JSON data asset integrity', () => {
     }
   });
 
-  it('validates 2024/items.json, feats-small.json, epic-boons.json, ancestry-small.json, background-small.json, and otherFeatures.json', () => {
+  it('validates items, ancestry, and 2026 feats, epic-boons, backgrounds, and otherFeatures', () => {
     const files = [
       '2024/items.json',
-      '2024/feats-small.json',
-      '2024/epic-boons.json',
       '2024/ancestry-small.json',
-      '2024/background-small.json',
-      '2024/otherFeatures.json'
+      '2026/feats.json',
+      '2026/epic-boons.json',
+      '2026/backgrounds.json',
+      '2026/otherFeatures.json'
     ];
     for (const file of files) {
       const list = readJson(file);
