@@ -82,6 +82,7 @@
             <button
               type="button"
               class="display-chip-btn"
+              [attr.data-rarity]="rarity !== 'none' ? getRaritySlug(rarity) : null"
               [class.active]="selectedRarities().includes(rarity)"
               [attr.aria-pressed]="selectedRarities().includes(rarity)"
               (click)="toggleRarity(rarity)"

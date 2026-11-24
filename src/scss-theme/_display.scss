@@ -318,27 +318,81 @@
   }
 }
 
+// Rarity palette (None -> Grey -> Blue -> Green -> Yellow -> Orange -> Pink -> Purple)
+:root {
+  --rarity-common: #b8bfc6;
+  --rarity-uncommon: #62a4da;
+  --rarity-rare: #58c962;
+  --rarity-very-rare: #f7cf2d;
+  --rarity-legendary: #ffa41b;
+  --rarity-artifact: #fb5b9e;
+  --rarity-more: #a05bfb;
+  --rarity-other: #9aa4b2;
+}
+
 // Colored rarity pills for Items table
 .item-rarity-common {
-  background-color: #c8cfd6;
+  background-color: var(--rarity-common);
 }
 .item-rarity-uncommon {
-  background-color: #6bd475;
+  background-color: var(--rarity-uncommon);
 }
 .item-rarity-rare {
-  background-color: #5faefa;
+  background-color: var(--rarity-rare);
 }
 .item-rarity-very-rare {
-  background-color: #c084fc;
+  background-color: var(--rarity-very-rare);
 }
 .item-rarity-legendary {
-  background-color: #f0a848;
+  background-color: var(--rarity-legendary);
 }
 .item-rarity-artifact {
-  background-color: #ef6c6c;
+  background-color: var(--rarity-artifact);
 }
 .item-rarity-other {
-  background-color: #9aa4b2;
+  background-color: var(--rarity-other);
+}
+
+// Color-coded rarity filter chips on Items page
+.display-chip-btn[data-rarity] {
+  background-image: none;
+  background-color: color-mix(in srgb, var(--rarity-color) 16%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
+  border-color: color-mix(in srgb, var(--rarity-color) 60%, var(--theme-input-border, rgba(255, 255, 255, 0.2)));
+
+  &:hover,
+  &:focus-visible {
+    background-image: none;
+    background-color: color-mix(in srgb, var(--rarity-color) 28%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
+    border-color: var(--rarity-color);
+  }
+
+  &.active {
+    background-image: none;
+    background-color: var(--rarity-color);
+    border-color: var(--rarity-color);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--rarity-color) 65%, transparent);
+    color: #111;
+    font-weight: 700;
+  }
+}
+
+.display-chip-btn[data-rarity='common'] {
+  --rarity-color: var(--rarity-common);
+}
+.display-chip-btn[data-rarity='uncommon'] {
+  --rarity-color: var(--rarity-uncommon);
+}
+.display-chip-btn[data-rarity='rare'] {
+  --rarity-color: var(--rarity-rare);
+}
+.display-chip-btn[data-rarity='very-rare'] {
+  --rarity-color: var(--rarity-very-rare);
+}
+.display-chip-btn[data-rarity='legendary'] {
+  --rarity-color: var(--rarity-legendary);
+}
+.display-chip-btn[data-rarity='artifact'] {
+  --rarity-color: var(--rarity-artifact);
 }
 
 // Colored CR tier pills for Bestiary table
