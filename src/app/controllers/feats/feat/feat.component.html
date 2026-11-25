@@ -2,7 +2,7 @@
   <div class="pb-4">
     <div class="card">
       <div class="card-body">
-        <app-detail-header [title]="f.name" [source]="f.source">
+        <app-detail-header [title]="f.name" [source]="f.source" [change]="f.change" [changeNote]="f.changeNote">
           @if (f.prerequisite) {
             <p detail-description class="mb-0">
               <em>Prerequisite: <span [innerHtml]="f.prerequisite | linkmaker"></span></em>

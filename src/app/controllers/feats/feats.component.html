@@ -1,24 +1,120 @@
 <h1>{{ pageHeading }}</h1>
 
+<div class="card mb-3">
+  <div class="card-body py-2 px-3 display-filter-stack">
+    <div class="display-filter-row">
+      @if (!isEpicBoons) {
+        <div class="display-filter-group">
+          <span class="display-filter-label">Category</span>
+          <div class="display-chip-row">
+            @for (cat of categoryOptions; track cat.key) {
+              <button
+                type="button"
+                class="display-chip-btn"
+                [class.active]="selectedCategories().includes(cat.key)"
+                [attr.aria-pressed]="selectedCategories().includes(cat.key)"
+                (click)="toggleCategory(cat.key)"
+              >
+                {{ cat.label }}
+              </button>
+            }
+          </div>
+        </div>
+      }
+
+      <div class="display-filter-group">
+        <span class="display-filter-label">ASI</span>
+        <div class="display-chip-row">
+          @for (asi of asiOptions; track asi.key) {
+            <button
+              type="button"
+              class="display-chip-btn feat-asi-chip"
+              [class.active]="selectedAsis().includes(asi.key)"
+              [attr.aria-pressed]="selectedAsis().includes(asi.key)"
+              (click)="toggleAsi(asi.key)"
+            >
+              {{ asi.label }}
+            </button>
+          }
+        </div>
+      </div>
+
+      <div class="display-filter-group">
+        <button
+          type="button"
+          class="display-chip-btn"
+          [class.active]="onlyModified()"
+          [attr.aria-pressed]="onlyModified()"
+          (click)="toggleModified()"
+        >
+          Modified
+        </button>
+        @if (hasQuickFilters()) {
+          <button
+            type="button"
+            class="btn btn-sm btn-link display-clear-btn"
+            (click)="clearQuickFilters()"
+          >
+            Reset
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row g-3 align-items-start">
   @if (feats().length) {
-    <div class="col-lg-6 feats-table">
+    <div class="col-xl-6 feats-table">
+      <div class="display-search-bar mb-2">
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faSearch" aria-hidden="true" /></span>
+          <input
+            id="feat-name-filter"
+            type="search"
+            class="form-control"
+            placeholder="Filter by name..."
+            [attr.aria-label]="'Filter ' + itemLabel + ' by name'"
+            [value]="nameQuery()"
+            (input)="onNameInput($event)"
+          />
+        </div>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faFileLines" aria-hidden="true" /></span>
+          <input
+            id="feat-fulltext-filter"
+            type="search"
+            class="form-control"
+            placeholder="Full-text search (benefits, prerequisites, source...)"
+            [attr.aria-label]="'Full-text search ' + itemLabel"
+            [value]="fullTextQuery()"
+            (input)="onFullTextInput($event)"
+          />
+        </div>
+      </div>
+
       <app-reference-table
         tableId="tbl-feats"
-        [data]="feats()"
+        [data]="filteredFeats()"
         [columns]="columns"
         [rowKey]="rowKey"
         [selectedKey]="currFeat()?.id || null"
-        [initialFilters]="initialFilters()"
-        [pageSize]="20"
-        [pageSizeOptions]="[20, 45, -1]"
+        [showFilterRow]="false"
+        [pageSize]="15"
+        [pageSizeOptions]="[15, 30, 60, -1]"
         [itemLabel]="itemLabel"
         defaultSortKey="name"
         (rowClick)="setCurrFeat($event)"
-      ></app-reference-table>
+      >
+        <ng-template appTableCell="name" let-feat>
+          <span>{{ feat.name }}</span>
+          <app-change-badge [change]="feat.change" [note]="feat.changeNote" />
+        </ng-template>
+      </app-reference-table>
     </div>
   }
-  <div class="col-lg-6">
+
+  <div id="feat-detail-pane" class="col-xl-6 display-detail-pane">
     @if (currFeat(); as feat) {
       <app-feat [feat]="feat"></app-feat>
     } @else {

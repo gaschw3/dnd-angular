@@ -1,55 +1,119 @@
 <h1>D&D 5e Features</h1>
 
-<div class="d-flex flex-wrap gap-2 mb-3">
-  <button
-    type="button"
-    class="display-chip-btn"
-    [class.active]="selected() === 'all'"
-    [attr.aria-pressed]="selected() === 'all'"
-    (click)="setFilter('all')"
-  >
-    All
-  </button>
-  @for (fType of featureType | keyvalue; track fType.key) {
-    @if (!fType.key.includes(':')) {
-      <button
-        type="button"
-        class="display-chip-btn"
-        [class.active]="selected() === fType.key"
-        [attr.aria-pressed]="selected() === fType.key"
-        (click)="setFilter(fType.key)"
-      >
-        {{ fType.value }}
-      </button>
-    }
-  }
+<div class="card mb-3">
+  <div class="card-body py-2 px-3 display-filter-stack">
+    <div class="display-filter-row">
+      <div class="display-filter-group">
+        <span class="display-filter-label">Type</span>
+        <div class="display-chip-row">
+          <button
+            type="button"
+            class="display-chip-btn"
+            [class.active]="selected() === 'all'"
+            [attr.aria-pressed]="selected() === 'all'"
+            (click)="setFilter('all')"
+          >
+            All
+          </button>
+          @for (fType of featureType | keyvalue; track fType.key) {
+            @if (!fType.key.includes(':')) {
+              <button
+                type="button"
+                class="display-chip-btn"
+                [class.active]="selected() === fType.key"
+                [attr.aria-pressed]="selected() === fType.key"
+                (click)="setFilter(fType.key)"
+              >
+                {{ fType.value }}
+              </button>
+            }
+          }
+        </div>
+      </div>
+
+      <div class="display-filter-group">
+        <button
+          type="button"
+          class="display-chip-btn"
+          [class.active]="onlyModified()"
+          [attr.aria-pressed]="onlyModified()"
+          (click)="toggleModified()"
+        >
+          Modified
+        </button>
+        @if (hasQuickFilters()) {
+          <button
+            type="button"
+            class="btn btn-sm btn-link display-clear-btn"
+            (click)="clearQuickFilters()"
+          >
+            Reset
+          </button>
+        }
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="row">
-  @if (shownFeatures().length) {
-    <div class="col otherFeatures-table">
+<div class="row g-3 align-items-start">
+  @if (otherFeatures().length) {
+    <div class="col-xl-6 otherFeatures-table">
+      <div class="display-search-bar mb-2">
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faSearch" aria-hidden="true" /></span>
+          <input
+            id="feature-name-filter"
+            type="search"
+            class="form-control"
+            placeholder="Filter by name..."
+            aria-label="Filter features by name"
+            [value]="nameQuery()"
+            (input)="onNameInput($event)"
+          />
+        </div>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text"><fa-icon [icon]="faFileLines" aria-hidden="true" /></span>
+          <input
+            id="feature-fulltext-filter"
+            type="search"
+            class="form-control"
+            placeholder="Full-text search (description, prerequisites, source...)"
+            aria-label="Full-text search features"
+            [value]="fullTextQuery()"
+            (input)="onFullTextInput($event)"
+          />
+        </div>
+      </div>
+
       <app-reference-table
         tableId="tbl-otherFeatures"
         [data]="shownFeatures()"
         [columns]="columns"
         [rowKey]="rowKey"
         [selectedKey]="currFeature()?.id || null"
-        [initialFilters]="initialFilters()"
-        [pageSize]="10"
-        [pageSizeOptions]="[10, 15, 30, 60, -1]"
+        [showFilterRow]="false"
+        [pageSize]="15"
+        [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="features"
         defaultSortKey="name"
         (rowClick)="setCurrFeature($event)"
-      ></app-reference-table>
+      >
+        <ng-template appTableCell="name" let-feat>
+          <span>{{ feat.name }}</span>
+          <app-change-badge [change]="feat.change" [note]="feat.changeNote" />
+        </ng-template>
+      </app-reference-table>
     </div>
   }
-</div>
 
-@if (currFeature(); as feature) {
-  <app-feature [feature]="feature"></app-feature>
-} @else {
-  <div class="display-empty-state mt-3">
-    <div class="display-empty-title">Select a Feature</div>
-    <p>Choose a feature from the table above to view its prerequisites and description.</p>
+  <div id="feature-detail-pane" class="col-xl-6 display-detail-pane">
+    @if (currFeature(); as feature) {
+      <app-feature [feature]="feature"></app-feature>
+    } @else {
+      <div class="display-empty-state">
+        <div class="display-empty-title">Select a Feature</div>
+        <p>Choose a feature from the table to view its prerequisites and description.</p>
+      </div>
+    }
   </div>
-}
+</div>
