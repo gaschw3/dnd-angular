@@ -45,3 +45,4 @@ Thumbs.db
 
 # archives tuff I don't need in github
 /src/archive
+/scripts/raw-input
