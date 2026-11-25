@@ -155,18 +155,65 @@
   }
 }
 
-// Shared quick-filter bar, multi-select dropdown, and sticky detail pane for compendium pages
-.display-quick-filters {
-  display: flex;
-  flex-wrap: wrap;
+// Shared stepper buttons, reset buttons, and spinner-free number inputs for builder pages
+.btn.display-step-btn {
+  padding: 0;
+  display: inline-flex;
   align-items: center;
-  gap: 0.65rem 1.1rem;
+  justify-content: center;
+
+  &:disabled {
+    opacity: 0.35;
+    background: transparent !important;
+    background-image: none !important;
+    border-color: var(--theme-input-border, rgba(255, 255, 255, 0.2)) !important;
+    color: var(--theme-text-color, #999) !important;
+    cursor: not-allowed;
+  }
 }
 
+.btn.display-reset-btn:disabled {
+  opacity: 0.4;
+  border-color: var(--theme-input-border, rgba(255, 255, 255, 0.2)) !important;
+  color: var(--theme-text-color, #999) !important;
+  cursor: not-allowed;
+}
+
+.form-control.display-number-input {
+  font-weight: 600;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+// Shared quick-filter bar, multi-select dropdown, and sticky detail pane for compendium pages
+.display-filter-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.display-quick-filters,
+.display-filter-row,
 .display-filter-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.display-quick-filters {
+  gap: 0.65rem 1.1rem;
+}
+
+.display-filter-row {
+  gap: 0.5rem 1.1rem;
+}
+
+.display-filter-group {
   gap: 0.4rem;
 }
 
@@ -269,78 +316,58 @@
   white-space: nowrap;
 }
 
-.spell-pill-abjuration {
-  background-color: var(--school-abjuration);
+$spell-schools: abjuration, conjuration, divination, enchantment, evocation, illusion, necromancy, transmutation;
+$item-rarities: common, uncommon, rare, very-rare, legendary, artifact;
+$change-variants: (
+  buff: --change-buff,
+  nerf: --change-nerf,
+  change: --change-modified
+);
+
+@each $school in $spell-schools {
+  .spell-pill-#{$school} {
+    background-color: var(--school-#{$school});
+  }
 }
-.spell-pill-transmutation {
-  background-color: var(--school-transmutation);
-}
-.spell-pill-illusion {
-  background-color: var(--school-illusion);
-}
+
 .spell-pill-necromancy {
-  background-color: var(--school-necromancy);
   color: var(--school-necromancy-rim);
   border: 1px solid color-mix(in srgb, var(--school-necromancy-rim) 75%, transparent);
   box-shadow: 0 0 5px color-mix(in srgb, var(--school-necromancy-rim) 22%, transparent);
 }
-.spell-pill-evocation {
-  background-color: var(--school-evocation);
-}
-.spell-pill-enchantment {
-  background-color: var(--school-enchantment);
-}
-.spell-pill-conjuration {
-  background-color: var(--school-conjuration);
-}
-.spell-pill-divination {
-  background-color: var(--school-divination);
-}
 
-// Color-coded school filter chips on Spells page
-.display-chip-btn[data-school] {
+// Color-coded filter chips for Spells school and Items rarity
+.display-chip-btn[data-school],
+.display-chip-btn[data-rarity] {
   background-image: none;
-  background-color: color-mix(in srgb, var(--school-color) 16%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
-  border-color: color-mix(in srgb, var(--school-color) 60%, var(--theme-input-border, rgba(255, 255, 255, 0.2)));
+  background-color: color-mix(in srgb, var(--chip-color) 16%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
+  border-color: color-mix(in srgb, var(--chip-color) 60%, var(--theme-input-border, rgba(255, 255, 255, 0.2)));
 
   &:hover,
   &:focus-visible {
     background-image: none;
-    background-color: color-mix(in srgb, var(--school-color) 28%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
-    border-color: var(--school-color);
+    background-color: color-mix(in srgb, var(--chip-color) 28%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
+    border-color: var(--chip-color);
   }
 
   &.active {
     background-image: none;
-    background-color: var(--school-color);
-    border-color: var(--school-color);
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--school-color) 65%, transparent);
-    color: var(--school-active-text, #111);
+    background-color: var(--chip-color);
+    border-color: var(--chip-color);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--chip-color) 65%, transparent);
+    color: var(--chip-active-text, #111);
     font-weight: 700;
   }
 }
 
-.display-chip-btn[data-school='abjuration'] {
-  --school-color: var(--school-abjuration);
+@each $school in $spell-schools {
+  .display-chip-btn[data-school='#{$school}'] {
+    --chip-color: var(--school-#{$school});
+  }
 }
-.display-chip-btn[data-school='conjuration'] {
-  --school-color: var(--school-conjuration);
-}
-.display-chip-btn[data-school='divination'] {
-  --school-color: var(--school-divination);
-}
-.display-chip-btn[data-school='enchantment'] {
-  --school-color: var(--school-enchantment);
-}
-.display-chip-btn[data-school='evocation'] {
-  --school-color: var(--school-evocation);
-}
-.display-chip-btn[data-school='illusion'] {
-  --school-color: var(--school-illusion);
-}
+
 .display-chip-btn[data-school='necromancy'] {
-  --school-color: var(--school-necromancy);
-  --school-active-text: var(--school-necromancy-rim);
+  --chip-active-text: var(--school-necromancy-rim);
   background-color: color-mix(in srgb, var(--school-necromancy) 45%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
   border-color: color-mix(in srgb, var(--school-necromancy-rim) 55%, var(--theme-input-border, rgba(255, 255, 255, 0.2)));
 
@@ -358,9 +385,6 @@
       0 0 8px color-mix(in srgb, var(--school-necromancy-rim) 30%, transparent);
     color: var(--school-necromancy-rim);
   }
-}
-.display-chip-btn[data-school='transmutation'] {
-  --school-color: var(--school-transmutation);
 }
 
 .spell-tag-badge {
@@ -380,115 +404,53 @@
   border: 1px solid var(--theme-input-border, rgba(255, 255, 255, 0.22));
   color: var(--theme-text-color);
 
-  &.spell-tag-buff {
-    border-color: #62c462;
-    color: #62c462;
+  @each $type, $var in $change-variants {
+    &.spell-tag-#{$type} {
+      background-color: color-mix(in srgb, var(#{$var}) 18%, var(--theme-input-bg, rgba(0, 0, 0, 0.25)));
+      color: var(#{$var});
+      font-size: 0.6rem;
+    }
   }
 
   &.spell-tag-nerf {
-    border-color: #ef6c6c;
-    color: #ef6c6c;
-  }
-
-  &.spell-tag-change {
-    border-color: #e8d258;
-    color: #e8d258;
+    padding-top: 3px;
   }
 }
 
-// Rarity palette (None -> Grey -> Blue -> Green -> Yellow -> Orange -> Pink -> Purple)
-:root {
-  --rarity-common: #b8bfc6;
-  --rarity-uncommon: #62a4da;
-  --rarity-rare: #58c962;
-  --rarity-very-rare: #f7cf2d;
-  --rarity-legendary: #ffa41b;
-  --rarity-artifact: #fb5b9e;
-  --rarity-more: #a05bfb;
-  --rarity-other: #9aa4b2;
+.display-meta-pill.change-meta-pill {
+  font-weight: 700;
+  gap: 0.3rem;
+
+  @each $type, $var in $change-variants {
+    &.spell-tag-#{$type} {
+      background-color: color-mix(in srgb, var(#{$var}) 16%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
+      color: var(#{$var});
+    }
+  }
 }
 
-// Colored rarity pills for Items table
-.item-rarity-common {
-  background-color: var(--rarity-common);
+// Colored rarity pills and filter chips for Items table (palette variables live in colors.scss)
+@each $rarity in $item-rarities {
+  .item-rarity-#{$rarity} {
+    background-color: var(--rarity-#{$rarity});
+  }
+
+  .display-chip-btn[data-rarity='#{$rarity}'] {
+    --chip-color: var(--rarity-#{$rarity});
+  }
 }
-.item-rarity-uncommon {
-  background-color: var(--rarity-uncommon);
-}
-.item-rarity-rare {
-  background-color: var(--rarity-rare);
-}
-.item-rarity-very-rare {
-  background-color: var(--rarity-very-rare);
-}
-.item-rarity-legendary {
-  background-color: var(--rarity-legendary);
-}
-.item-rarity-artifact {
-  background-color: var(--rarity-artifact);
-}
+
 .item-rarity-other {
   background-color: var(--rarity-other);
 }
 
-// Color-coded rarity filter chips on Items page
-.display-chip-btn[data-rarity] {
-  background-image: none;
-  background-color: color-mix(in srgb, var(--rarity-color) 16%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
-  border-color: color-mix(in srgb, var(--rarity-color) 60%, var(--theme-input-border, rgba(255, 255, 255, 0.2)));
-
-  &:hover,
-  &:focus-visible {
-    background-image: none;
-    background-color: color-mix(in srgb, var(--rarity-color) 28%, var(--theme-input-bg, rgba(0, 0, 0, 0.18)));
-    border-color: var(--rarity-color);
-  }
-
-  &.active {
-    background-image: none;
-    background-color: var(--rarity-color);
-    border-color: var(--rarity-color);
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--rarity-color) 65%, transparent);
-    color: #111;
-    font-weight: 700;
+// Colored CR tier pills for Bestiary table (palette variables live in colors.scss)
+@each $tier in trivial, group, pair, easy, medium, hard, deadly, extreme, na {
+  .monster-cr-#{$tier} {
+    background-color: var(--cr-#{$tier});
   }
 }
 
-.display-chip-btn[data-rarity='common'] {
-  --rarity-color: var(--rarity-common);
-}
-.display-chip-btn[data-rarity='uncommon'] {
-  --rarity-color: var(--rarity-uncommon);
-}
-.display-chip-btn[data-rarity='rare'] {
-  --rarity-color: var(--rarity-rare);
-}
-.display-chip-btn[data-rarity='very-rare'] {
-  --rarity-color: var(--rarity-very-rare);
-}
-.display-chip-btn[data-rarity='legendary'] {
-  --rarity-color: var(--rarity-legendary);
-}
-.display-chip-btn[data-rarity='artifact'] {
-  --rarity-color: var(--rarity-artifact);
-}
-
-// Colored CR tier pills for Bestiary table
-.monster-cr-low {
-  background-color: #c8cfd6;
-}
-.monster-cr-standard {
-  background-color: #6bd475;
-}
-.monster-cr-challenging {
-  background-color: #e8d258;
-}
-.monster-cr-high {
-  background-color: #ed9a42;
-}
-.monster-cr-epic {
-  background-color: #ef6c6c;
-}
-.monster-cr-na {
-  background-color: #9aa4b2;
+.monster-cr-extreme {
+  color: #fff;
 }

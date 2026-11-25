@@ -8,24 +8,29 @@
   color: #111;
 }
 
-.eb-badge-trivial {
-  background-color: #c8cfd6;
+@each $level in trivial, easy, medium, hard, deadly {
+  .eb-badge-#{$level} {
+    background-color: var(--cr-#{$level});
+  }
 }
 
-.eb-badge-easy {
-  background-color: #e8d258;
+/* Encounter builder CR difficulty pill & legend gradient (Trivial -> High/Deadly) */
+.cr-pill {
+  display: inline-block;
+  min-width: 2.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  color: #111;
 }
 
-.eb-badge-medium {
-  background-color: #ed9a42;
-}
-
-.eb-badge-hard {
-  background-color: #f0875a;
-}
-
-.eb-badge-deadly {
-  background-color: #ef6c6c;
+@each $level in deadly, hard, medium, easy, pair, group, trivial {
+  .cr-pill--#{$level} {
+    background-color: var(--cr-#{$level});
+  }
 }
 
 .eb-progress-track {
@@ -56,14 +61,19 @@
   }
 }
 
-.eb-budget-cell {
+.eb-budget-cell,
+.eb-monster-row,
+.eb-saved-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 0.35rem 0.25rem;
   border-radius: 0.35rem;
   background-color: var(--theme-input-bg, rgba(0, 0, 0, 0.15));
   border: 1px solid var(--theme-input-border, rgba(255, 255, 255, 0.12));
+}
+
+.eb-budget-cell {
+  flex-direction: column;
+  padding: 0.35rem 0.25rem;
 
   &.active {
     border-color: var(--theme-primary, #62c462);
@@ -78,14 +88,9 @@
 }
 
 .eb-monster-row {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.45rem 0.6rem;
-  border-radius: 0.35rem;
-  background-color: var(--theme-input-bg, rgba(0, 0, 0, 0.15));
-  border: 1px solid var(--theme-input-border, rgba(255, 255, 255, 0.12));
   border-left: 3px solid transparent;
 
   &.active {
@@ -133,39 +138,11 @@
 .eb-step-btn {
   width: 1.85rem;
   height: 1.85rem;
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  &:disabled {
-    opacity: 0.35;
-    background: transparent !important;
-    background-image: none !important;
-    border-color: var(--theme-input-border, rgba(255, 255, 255, 0.2)) !important;
-    color: var(--theme-text-color, #999) !important;
-    cursor: not-allowed;
-  }
 }
 
 .eb-qty-input {
   width: 2.8rem;
   padding: 0.15rem 0.2rem;
-  font-weight: 600;
-  appearance: textfield;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
-
-.eb-clear-btn:disabled {
-  opacity: 0.4;
-  border-color: var(--theme-input-border, rgba(255, 255, 255, 0.2)) !important;
-  color: var(--theme-text-color, #999) !important;
-  cursor: not-allowed;
 }
 
 .eb-totals {
@@ -179,13 +156,8 @@
 }
 
 .eb-saved-row {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 0.4rem 0.6rem;
-  border-radius: 0.35rem;
-  background-color: var(--theme-input-bg, rgba(0, 0, 0, 0.15));
-  border: 1px solid var(--theme-input-border, rgba(255, 255, 255, 0.12));
 }
 
 .eb-saved-load {

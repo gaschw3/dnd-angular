@@ -34,8 +34,7 @@ type ItemCategoryFilter = 'all' | ItemCategory;
 @Component({
   imports: [FaIconComponent, ReferenceTableComponent, ReferenceTableCellDirective, SanitizeHtmlPipe, ItemComponent],
   selector: 'app-items',
-  templateUrl: './items.component.html',
-  styleUrls: ['./items.component.scss']
+  templateUrl: './items.component.html'
 })
 export class ItemsComponent implements OnInit {
   readonly faSearch = faSearch;

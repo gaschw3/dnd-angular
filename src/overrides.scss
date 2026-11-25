@@ -1,4 +1,6 @@
-/* App-wide Bootstrap 5 theme overrides — driven by CSS Custom Properties */
+/* App-wide Bootstrap 5 overrides */
+
+$switch-thumb-off: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28185, 193, 200, 0.9%29'/%3e%3c/svg%3e");
 
 html,
 body {
@@ -56,10 +58,6 @@ app-root {
     }
   }
 
-  .color-primary {
-    color: var(--theme-primary);
-  }
-
   .dropdown-menu {
     background-color: var(--theme-nav-color);
     border: 1px solid color-mix(in srgb, var(--theme-nav-text) 18%, transparent);
@@ -82,7 +80,6 @@ app-root {
     }
 
     .mb-3,
-    .mb-0,
     label {
       color: var(--theme-nav-text) !important;
     }
@@ -146,12 +143,12 @@ app-root {
     cursor: pointer;
     background-color: var(--theme-input-bg);
     border: 1.5px solid var(--theme-input-border);
-    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28185, 193, 200, 0.9%29'/%3e%3c/svg%3e");
+    --bs-form-switch-bg: #{$switch-thumb-off};
 
     &:focus {
       border-color: var(--theme-input-border);
       box-shadow: none;
-      --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28185, 193, 200, 0.9%29'/%3e%3c/svg%3e");
+      --bs-form-switch-bg: #{$switch-thumb-off};
     }
 
     &:checked,
@@ -165,16 +162,6 @@ app-root {
       border-color: var(--theme-secondary);
       box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--theme-secondary) 35%, transparent);
     }
-  }
-
-  .btn-warning.active {
-    box-shadow: 0 0 1px 3px #a17940 !important;
-    background-image: linear-gradient(#9e5f04, #ad6704 40%, #b76d04) !important;
-  }
-
-  .btn-success.active {
-    box-shadow: 0 0 1px 3px #609960 !important;
-    background-image: linear-gradient(#379337, #3b9e3b 40%, #3ea63e) !important;
   }
 
   .btn-primary {
@@ -198,9 +185,31 @@ app-root {
     }
   }
 
+  .table {
+    color: var(--theme-text-color) !important;
+    --bs-table-color: var(--theme-text-color);
+    --bs-table-bg: transparent;
+    --bs-table-striped-color: var(--theme-text-color);
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+    --bs-table-hover-color: var(--theme-text-link-color);
+    --bs-table-hover-bg: var(--theme-table-hover);
+    --bs-table-active-color: var(--theme-text-link-color);
+    --bs-table-active-bg: var(--theme-table-active);
+  }
+
   .table-hover > tbody > tr:hover > * {
     color: var(--theme-text-link-color);
     background-color: var(--theme-table-hover);
+  }
+
+  table .table-active > * {
+    background-color: var(--theme-table-active) !important;
+    color: var(--theme-text-link-color);
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid var(--theme-input-border) !important;
   }
 
   .list-group-item {
@@ -217,35 +226,6 @@ app-root {
     &:hover {
       color: var(--theme-text-link-color);
       background-color: var(--theme-card-hover);
-    }
-  }
-
-  table .table-active > * {
-    background-color: var(--theme-table-active) !important;
-    color: var(--theme-text-link-color);
-  }
-
-  .table-bordered th,
-  .table-bordered td {
-    border: 1px solid var(--theme-input-border) !important;
-  }
-
-  .ref-table-footer {
-    color: var(--theme-text-color);
-  }
-
-  .ref-page-btn {
-    color: var(--theme-text-color);
-
-    &:hover:not(:disabled) {
-      color: var(--theme-text-link-color);
-      background: var(--theme-nav-color);
-    }
-
-    &.current {
-      color: var(--theme-text-link-color);
-      border-color: #979797;
-      background: var(--theme-paginate-selected);
     }
   }
 }

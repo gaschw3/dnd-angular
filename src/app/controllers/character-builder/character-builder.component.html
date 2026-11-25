@@ -8,7 +8,7 @@
         <div class="d-flex flex-wrap gap-2">
           <button
             type="button"
-            class="btn btn-sm pb-reset-btn"
+            class="btn btn-sm display-reset-btn"
             [class.btn-warning]="hasChanges()"
             [class.btn-outline-secondary]="!hasChanges()"
             [disabled]="!hasChanges()"
@@ -173,7 +173,7 @@
                   <div class="pb-stepper">
                     <button
                       type="button"
-                      class="btn btn-sm btn-primary pb-step-btn"
+                      class="btn btn-sm btn-primary display-step-btn pb-step-btn"
                       [disabled]="!canDecrementBase(stat)"
                       (click)="stepBase(stat, -1)"
                       [attr.aria-label]="'Decrease ' + stat.label + ' base score'"
@@ -182,7 +182,7 @@
                     </button>
                     <input
                       type="number"
-                      class="form-control text-center pb-score-input"
+                      class="form-control text-center display-number-input pb-score-input"
                       [id]="'stat-' + stat.key"
                       [min]="minScore()"
                       [max]="maxScore()"
@@ -192,7 +192,7 @@
                     />
                     <button
                       type="button"
-                      class="btn btn-sm btn-primary pb-step-btn"
+                      class="btn btn-sm btn-primary display-step-btn pb-step-btn"
                       [disabled]="!canIncrementBase(stat)"
                       (click)="stepBase(stat, 1)"
                       [attr.aria-label]="'Increase ' + stat.label + ' base score'"
@@ -208,7 +208,7 @@
                   <div class="pb-stepper">
                     <button
                       type="button"
-                      class="btn btn-sm btn-primary pb-step-btn"
+                      class="btn btn-sm btn-primary display-step-btn pb-step-btn"
                       [disabled]="!canDecrementBonus(stat)"
                       (click)="stepBonus(stat, -1)"
                       [attr.aria-label]="'Decrease ' + stat.label + ' bonus'"
@@ -224,7 +224,7 @@
                     </span>
                     <button
                       type="button"
-                      class="btn btn-sm btn-primary pb-step-btn"
+                      class="btn btn-sm btn-primary display-step-btn pb-step-btn"
                       [disabled]="!canIncrementBonus(stat)"
                       (click)="stepBonus(stat, 1)"
                       [attr.aria-label]="'Increase ' + stat.label + ' bonus'"

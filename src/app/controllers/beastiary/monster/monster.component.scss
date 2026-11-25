@@ -4,34 +4,20 @@
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
 }
 
-.monster-token-t {
-  width: 42px;
-  height: 42px;
-}
+$token-sizes: (
+  t: 42px,
+  s: 52px,
+  m: 64px,
+  l: 80px,
+  h: 96px,
+  g: 112px
+);
 
-.monster-token-s {
-  width: 52px;
-  height: 52px;
-}
-
-.monster-token-m {
-  width: 64px;
-  height: 64px;
-}
-
-.monster-token-l {
-  width: 80px;
-  height: 80px;
-}
-
-.monster-token-h {
-  width: 96px;
-  height: 96px;
-}
-
-.monster-token-g {
-  width: 112px;
-  height: 112px;
+@each $size, $dim in $token-sizes {
+  .monster-token-#{$size} {
+    width: $dim;
+    height: $dim;
+  }
 }
 
 .monster-ability-grid {
@@ -92,10 +78,7 @@
   }
 }
 
-.monster-section:last-child {
-  margin-bottom: 0;
-}
-
+.monster-section:last-child,
 .monster-entry:last-child {
   margin-bottom: 0;
 }

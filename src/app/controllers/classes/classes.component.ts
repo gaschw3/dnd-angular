@@ -19,8 +19,7 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
 @Component({
   imports: [RouterModule, FaIconComponent, ReferenceTableComponent, DetailHeaderComponent, EntryRendererComponent, ArchetypesComponent, LevelTableComponent, ClassComponent],
   selector: 'app-classes',
-  templateUrl: './classes.component.html',
-  styleUrls: ['./classes.component.scss']
+  templateUrl: './classes.component.html'
 })
 export class ClassesComponent implements OnInit {
   readonly classes = signal<DndClass[]>([]);

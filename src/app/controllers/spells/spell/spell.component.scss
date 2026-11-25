@@ -1,26 +1,7 @@
-.spell-school-abjuration {
-  --detail-header-accent: var(--school-abjuration);
-}
-.spell-school-transmutation {
-  --detail-header-accent: var(--school-transmutation);
-}
-.spell-school-illusion {
-  --detail-header-accent: var(--school-illusion);
-}
-.spell-school-necromancy {
-  --detail-header-accent: var(--school-necromancy);
-}
-.spell-school-evocation {
-  --detail-header-accent: var(--school-evocation);
-}
-.spell-school-enchantment {
-  --detail-header-accent: var(--school-enchantment);
-}
-.spell-school-conjuration {
-  --detail-header-accent: var(--school-conjuration);
-}
-.spell-school-divination {
-  --detail-header-accent: var(--school-divination);
+@each $school in abjuration, transmutation, illusion, necromancy, evocation, enchantment, conjuration, divination {
+  .spell-school-#{$school} {
+    --detail-header-accent: var(--school-#{$school});
+  }
 }
 
 .spell-higher-levels {

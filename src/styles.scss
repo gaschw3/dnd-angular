@@ -1,4 +1,4 @@
-/* General styles used on multiple pages — powered by CSS Custom Properties */
+/* General styles used on multiple pages */
 @use './scss-theme/themes';
 @use './scss-theme/colors';
 @use './scss-theme/display';
@@ -88,38 +88,12 @@
     }
   }
 
-  .scrolltop-button {
-    background-color: var(--theme-primary) !important;
-  }
-
   .color-primary {
     color: var(--theme-primary);
   }
 
   .color-secondary {
     color: var(--theme-secondary);
-  }
-
-  .border-bottom-primary,
-  .beastiary-border {
-    border-bottom: 2px solid var(--theme-primary);
-  }
-
-  .table {
-    color: var(--theme-text-color) !important;
-    --bs-table-color: var(--theme-text-color);
-    --bs-table-bg: transparent;
-    --bs-table-striped-color: var(--theme-text-color);
-    --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
-    --bs-table-hover-color: var(--theme-text-link-color);
-    --bs-table-hover-bg: var(--theme-table-hover);
-    --bs-table-active-color: var(--theme-text-link-color);
-    --bs-table-active-bg: var(--theme-table-active);
-  }
-
-  /* Make sure feature list doesn't ride on top of the navbar */
-  .features-list {
-    z-index: 800 !important;
   }
 }
 
@@ -136,31 +110,31 @@
   background-attachment: fixed;
 }
 
-.theme-dark .theme-container,
-.theme-light .theme-container {
-  background-image: none !important;
-}
-
 // Phyrexian script overlay for Worldbreaker theme (navbar + page/detail headings)
 .theme-end .theme-container {
+  nav a[data-phy]::before,
+  main#main-content h1[data-phy]::before,
+  main#main-content .display-title[data-phy]::before {
+    content: attr(data-phy);
+    position: absolute;
+    font-family: 'Phyrexian';
+    font-weight: 900;
+    text-transform: lowercase;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+  }
+
   nav a[data-phy] {
     position: relative;
 
     &::before {
-      content: attr(data-phy);
-      position: absolute;
       left: 0.65rem;
       right: 0.65rem;
       top: 50%;
       transform: translateY(-35%);
       color: rgba(248, 80, 91, 0.78);
-      font-family: 'Phyrexian';
-      font-weight: 900;
-      text-transform: lowercase;
-      white-space: nowrap;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 2;
     }
 
     &.navbar-brand::before {
@@ -176,20 +150,11 @@
     max-width: 100%;
 
     &::before {
-      content: attr(data-phy);
-      position: absolute;
       left: 0;
       right: 0;
       top: 55%;
       transform: translateY(-50%);
       color: rgba(248, 80, 91, 0.42);
-      font-family: 'Phyrexian';
-      font-weight: 900;
-      text-transform: lowercase;
-      white-space: nowrap;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 2;
     }
   }
 }
@@ -207,63 +172,60 @@ div:has(.entry-title p:only-child) {
 }
 
 /* Labels for Leaflet map */
-.continent-label {
-  font-size: 50px;
-  letter-spacing: 6px;
-  font-weight: bold;
+.continent-label,
+.country-label,
+.city-label,
+.town-label,
+.shizomi-label,
+.water-label {
   background-color: transparent !important;
   border: transparent !important;
   box-shadow: none !important;
-  color: #000 !important;
+}
+
+.continent-label,
+.country-label {
+  font-weight: bold;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+.continent-label {
+  font-size: 50px;
+  letter-spacing: 6px;
+  color: #000 !important;
 }
 
 .country-label {
   font-size: 30px;
-  font-weight: bold;
   letter-spacing: 4px;
-  background-color: transparent !important;
-  border: transparent !important;
-  box-shadow: none !important;
   color: #111 !important;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 
 .city-label {
   font-size: 18px;
   font-weight: bold;
   opacity: 0;
-  background-color: transparent !important;
-  border: transparent !important;
-  box-shadow: none !important;
   color: #fff !important;
   text-shadow: -1px 0 0 #000, 1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
 }
 
-.town-label {
+.town-label,
+.shizomi-label {
   font-size: 14px;
   opacity: 0;
-  background-color: transparent !important;
-  border: transparent !important;
-  box-shadow: none !important;
+}
+
+.town-label {
   color: #fff !important;
 }
 
 .shizomi-label {
-  font-size: 14px;
-  opacity: 0;
-  background-color: transparent !important;
-  border: transparent !important;
-  box-shadow: none !important;
   color: #000 !important;
 }
 
 .water-label {
   font-size: 22px;
   font-weight: bold;
-  background-color: transparent !important;
-  border: transparent !important;
-  box-shadow: none !important;
   color: rgb(88, 180, 255) !important;
   text-shadow: -1px -1px 0 #555, 1px -1px 0 #555, -1px 1px 0 #555, 1px 1px 0 #555;
 }

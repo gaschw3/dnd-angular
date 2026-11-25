@@ -5,15 +5,14 @@
   gap: 0.45rem 0.65rem;
 }
 
-.archetypes-inline-label {
-  color: var(--theme-secondary, var(--theme-primary));
-  font-weight: 600;
-  white-space: nowrap;
-}
-
+.archetypes-inline-label,
 .archetypes-title {
   color: var(--theme-secondary, var(--theme-primary));
   font-weight: 600;
+}
+
+.archetypes-inline-label {
+  white-space: nowrap;
 }
 
 .archetypes-controls {

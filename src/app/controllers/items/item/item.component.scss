@@ -1,18 +1,5 @@
-.item-rarity-accent-common {
-  --detail-header-accent: var(--rarity-common);
-}
-.item-rarity-accent-uncommon {
-  --detail-header-accent: var(--rarity-uncommon);
-}
-.item-rarity-accent-rare {
-  --detail-header-accent: var(--rarity-rare);
-}
-.item-rarity-accent-very-rare {
-  --detail-header-accent: var(--rarity-very-rare);
-}
-.item-rarity-accent-legendary {
-  --detail-header-accent: var(--rarity-legendary);
-}
-.item-rarity-accent-artifact {
-  --detail-header-accent: var(--rarity-artifact);
+@each $rarity in common, uncommon, rare, very-rare, legendary, artifact {
+  .item-rarity-accent-#{$rarity} {
+    --detail-header-accent: var(--rarity-#{$rarity});
+  }
 }

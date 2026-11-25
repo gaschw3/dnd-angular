@@ -12,39 +12,11 @@
 .pb-step-btn {
   width: 2rem;
   height: 2rem;
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  &:disabled {
-    opacity: 0.35;
-    background: transparent !important;
-    background-image: none !important;
-    border-color: var(--theme-input-border, rgba(255, 255, 255, 0.2)) !important;
-    color: var(--theme-text-color, #999) !important;
-    cursor: not-allowed;
-  }
-}
-
-.pb-reset-btn:disabled {
-  opacity: 0.4;
-  border-color: var(--theme-input-border, rgba(255, 255, 255, 0.2)) !important;
-  color: var(--theme-text-color, #999) !important;
-  cursor: not-allowed;
 }
 
 .pb-score-input {
   width: 3.6rem;
-  font-weight: 600;
   padding-inline: 0.35rem;
-  appearance: textfield;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
 }
 
 .pb-bonus-val {

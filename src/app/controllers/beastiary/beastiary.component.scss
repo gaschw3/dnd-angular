@@ -36,6 +36,22 @@
   background-color: var(--theme-primary);
 }
 
+@mixin slider-thumb {
+  pointer-events: auto;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--theme-primary);
+  border: 2px solid var(--theme-card-color, #222);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
 .cr-slider-input {
   position: absolute;
   inset: 0;
@@ -48,34 +64,10 @@
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    pointer-events: auto;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: var(--theme-primary);
-    border: 2px solid var(--theme-card-color, #222);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
-    cursor: pointer;
-    transition: transform 0.1s ease;
-
-    &:hover {
-      transform: scale(1.15);
-    }
+    @include slider-thumb;
   }
 
   &::-moz-range-thumb {
-    pointer-events: auto;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: var(--theme-primary);
-    border: 2px solid var(--theme-card-color, #222);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
-    cursor: pointer;
-    transition: transform 0.1s ease;
-
-    &:hover {
-      transform: scale(1.15);
-    }
+    @include slider-thumb;
   }
 }

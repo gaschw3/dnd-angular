@@ -338,18 +338,27 @@ export class BeastiaryComponent implements OnInit {
 
   getCrTier(cr: string): string {
     const val = this.monsterHelper.getSortCr(this.getBaseCr(cr));
-    if (val >= 17) {
-      return 'epic';
+    if (val >= 23) {
+      return 'extreme';
+    }
+    if (val >= 20) {
+      return 'deadly';
+    }
+    if (val >= 15) {
+      return 'hard';
     }
     if (val >= 11) {
-      return 'high';
+      return 'medium';
     }
-    if (val >= 5) {
-      return 'challenging';
+    if (val >= 7) {
+      return 'easy';
     }
-    if (val >= 2) {
-      return 'standard';
+    if (val >= 4) {
+      return 'pair';
     }
-    return 'low';
+    if (val >= 1) {
+      return 'group';
+    }
+    return 'trivial';
   }
 }

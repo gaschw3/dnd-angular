@@ -1,10 +1,8 @@
-// Planar Portal Themes — CSS Custom Properties
-// Preserves all original realms while eliminating 8x Sass selector duplication.
+// Planar Portal Themes
 
 :root:has(> body > app-root > .theme-royal),
 .theme-royal {
   --theme-bg-color: #171612;
-  --theme-bg: none;
   --theme-bg-image: url(../royal.png);
   --theme-header-font: "UnifrakturCook", serif;
   --theme-nav-color: #fde37b;
@@ -35,7 +33,6 @@
 :root:has(> body > app-root > .theme-light),
 .theme-light {
   --theme-bg-color: #fff;
-  --theme-bg: none;
   --theme-header-font: "Cinzel Decorative", cursive;
   --theme-nav-color: #fff59b;
   --theme-nav-text: #000;
@@ -65,7 +62,6 @@
 :root:has(> body > app-root > .theme-greek),
 .theme-greek {
   --theme-bg-color: #fcdec2;
-  --theme-bg: none;
   --theme-bg-image: url(../meander.svg);
   --theme-header-font: "Mate SC", serif;
   --theme-nav-color: #946b44;
@@ -96,7 +92,6 @@
 :root:has(> body > app-root > .theme-dark),
 .theme-dark {
   --theme-bg-color: #272b30;
-  --theme-bg: none;
   --theme-header-font: "Segoe UI", system-ui, sans-serif;
   --theme-nav-color: #3a3f44;
   --theme-nav-text: #fff;
@@ -126,7 +121,6 @@
 :root:has(> body > app-root > .theme-forest),
 .theme-forest {
   --theme-bg-color: #0e120e;
-  --theme-bg: none;
   --theme-bg-image: url(../flower.png);
   --theme-header-font: "Segoe UI", system-ui, sans-serif;
   --theme-nav-color: #43443a;
@@ -188,7 +182,6 @@
 :root:has(> body > app-root > .theme-rainbow),
 .theme-rainbow {
   --theme-bg-color: #272b30;
-  --theme-bg: linear-gradient(15deg, #140220 0%, #0a0046 74%);
   --theme-whole-bg-image: url(../shizomi.png);
   --theme-header-font: "Monoton", sans-serif;
   --theme-nav-color: #000;
@@ -220,7 +213,6 @@
 :root:has(> body > app-root > .theme-end),
 .theme-end {
   --theme-bg-color: #302727;
-  --theme-bg: none;
   --theme-bg-image: url(../phyrexian-border.png);
   --theme-header-font: "Iceberg", sans-serif;
   --theme-nav-color: #443a3a;

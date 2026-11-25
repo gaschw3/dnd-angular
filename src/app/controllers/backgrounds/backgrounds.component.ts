@@ -14,8 +14,7 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
 @Component({
   imports: [ReferenceTableComponent, BackgroundComponent],
   selector: 'app-backgrounds',
-  templateUrl: './backgrounds.component.html',
-  styleUrls: ['./backgrounds.component.scss']
+  templateUrl: './backgrounds.component.html'
 })
 export class BackgroundsComponent implements OnInit {
   readonly backgrounds = signal<Background[]>([]);

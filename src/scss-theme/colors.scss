@@ -1,6 +1,6 @@
 // colors for displaying currency
 .text--op {
-  color: #ff7cff!important;
+  color: #ff7cff !important;
   text-shadow: -1px 0 1px rgb(0, 255, 0), 0 1px 1px rgb(0, 255, 255);
 }
 h1 .text--op,
@@ -20,9 +20,9 @@ h1 .text--op,
   color: #91590f !important;
 }
 
-
-// spell school colors
+// semantic colors
 :root {
+  // spell schools
   --school-abjuration: rgb(255, 250, 220);
   --school-transmutation: rgb(236, 145, 60);
   --school-illusion: rgb(46, 154, 255);
@@ -32,35 +32,45 @@ h1 .text--op,
   --school-evocation: rgb(255, 74, 74);
   --school-conjuration: rgb(45, 206, 31);
   --school-divination: rgb(185, 191, 199);
+
+  // house-rule change indicators
+  --change-buff: #62c462;
+  --change-nerf: #ef6c6c;
+  --change-modified: #e8d258;
+
+  // item rarity palette (None -> Grey -> Blue -> Green -> Yellow -> Orange -> Pink -> Purple)
+  --rarity-common: #b8bfc6;
+  --rarity-uncommon: #62a4da;
+  --rarity-rare: #58c962;
+  --rarity-very-rare: #f7cf2d;
+  --rarity-legendary: #ffa41b;
+  --rarity-artifact: #fb5b9e;
+  --rarity-more: #a05bfb;
+  --rarity-other: #9aa4b2;
+
+  // CR tier & encounter difficulty gradient (Trivial -> High/Deadly)
+  --cr-trivial: #c8cfd6;
+  --cr-group: #a9dba8;
+  --cr-pair: #52b768;
+  --cr-easy: #e8d258;
+  --cr-medium: #ed9a42;
+  --cr-hard: #f0875a;
+  --cr-deadly: #ef6c6c;
+  --cr-extreme: #b91c1c;
+  --cr-na: #9aa4b2;
 }
 
-.color-abjuration {
-  color: var(--school-abjuration) !important;
+@each $school in abjuration, transmutation, illusion, necromancy, enchantment, evocation, conjuration, divination {
+  .color-#{$school} {
+    color: var(--school-#{$school}) !important;
+  }
 }
-.color-transmutation {
-  color: var(--school-transmutation) !important;
-}
-.color-illusion {
-  color: var(--school-illusion) !important;
-}
+
 .color-necromancy {
-  color: var(--school-necromancy) !important;
   text-shadow: 0 0 7px color-mix(in srgb, var(--school-necromancy-rim) 100%, transparent);
 }
-.color-enchantment {
-  color: var(--school-enchantment) !important;
-}
-.color-evocation {
-  color: var(--school-evocation) !important;
-}
-.color-conjuration {
-  color: var(--school-conjuration) !important;
-}
-.color-divination {
-  color: var(--school-divination) !important;
-}
 
-//sourcebook colors
+// sourcebook colors
 .color-phb {
   color: rgb(0, 119, 230) !important;
 }
@@ -83,10 +93,10 @@ h1 .text--op,
   color: rgb(168, 92, 198) !important;
 }
 .color-dsotdq {
-  color: rgb(190, 14, 14) !important;
+  color: rgb(221, 14, 14) !important;
 }
-.color-abh {
-  color: rgb(224, 98, 98) !important;
+.color-vamp {
+  color: rgb(161, 0, 35) !important;
 }
 .color-bmt {
   color: rgb(214, 152, 74) !important;
@@ -139,9 +149,6 @@ h1 .text--op,
 .color-vrgr {
   color: rgb(119, 0, 0) !important;
 }
-.color-cos {
-  color: rgb(70, 9, 94) !important;
-}
 .color-ggr {
   color: rgb(119, 223, 255) !important;
 }
@@ -172,7 +179,7 @@ h1 .text--op,
 .color-other {
   color: rgb(141, 115, 141) !important;
 }
-/* beastiary sources, mostly*/
+/* beastiary sources, mostly */
 .color-mm {
   color: rgb(0, 119, 230) !important;
 }
@@ -205,45 +212,4 @@ h1 .text--op,
 }
 .color-idrotf {
   color: rgb(125, 187, 221) !important;
-}
-
-/* Encounter builder CR difficulty pill & legend gradient (Trivial -> High/Deadly) */
-.cr-pill {
-  display: inline-block;
-  min-width: 2.35rem;
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  line-height: 1.3;
-  text-align: center;
-  color: #111;
-}
-.cr-pill--deadly {
-  background-color: #ef6c6c;
-  color: #111;
-}
-.cr-pill--hard {
-  background-color: #f0875a;
-  color: #111;
-}
-.cr-pill--medium {
-  background-color: #ed9a42;
-  color: #111;
-}
-.cr-pill--easy {
-  background-color: #e8d258;
-  color: #111;
-}
-.cr-pill--pair {
-  background-color: #52b768;
-  color: #111;
-}
-.cr-pill--group {
-  background-color: #a9dba8;
-  color: #111;
-}
-.cr-pill--trivial {
-  background-color: #c8cfd6;
-  color: #111;
 }

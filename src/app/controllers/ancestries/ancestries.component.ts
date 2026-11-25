@@ -13,8 +13,7 @@ import { ReferenceTableColumn, ReferenceTableComponent } from 'src/app/shared/re
 @Component({
   imports: [ReferenceTableComponent, AncestryComponent],
   selector: 'app-ancestries',
-  templateUrl: './ancestries.component.html',
-  styleUrls: ['./ancestries.component.scss']
+  templateUrl: './ancestries.component.html'
 })
 export class AncestriesComponent implements OnInit {
   readonly ancestries = signal<Ancestry[]>([]);
