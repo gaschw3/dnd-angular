@@ -1,4 +1,4 @@
-// Shared display styles for standard reference pages (Classes, Spells, Ancestries, Feats, etc.)
+// Shared display styles for standard reference pages
 
 .display-empty-state {
   display: flex;
@@ -155,7 +155,7 @@
   }
 }
 
-// Shared stepper buttons, reset buttons, and spinner-free number inputs for builder pages
+// Shared stepper buttons, reset buttons, and number inputs
 .btn.display-step-btn {
   padding: 0;
   display: inline-flex;
@@ -190,7 +190,7 @@
   }
 }
 
-// Shared quick-filter bar, multi-select dropdown, and sticky detail pane for compendium pages
+// Shared quick-filter bar, multi-select dropdown, and sticky detail pane
 .display-filter-stack {
   display: flex;
   flex-direction: column;
@@ -296,12 +296,11 @@
   }
 }
 
-// Colored school pills & inline badges for Spells table
 .strikethrough {
   text-decoration: line-through;
 }
 
-// Shared base pill styles for Spells school, Items rarity, and Bestiary CR badges
+// Base pill styles for Spells school, Items rarity, and Bestiary CR badges
 .spell-school-pill,
 .item-rarity-pill,
 .monster-cr-pill {
@@ -316,6 +315,7 @@
   white-space: nowrap;
 }
 
+// Colored school pills & inline badges
 $spell-schools: abjuration, conjuration, divination, enchantment, evocation, illusion, necromancy, transmutation;
 $item-rarities: common, uncommon, rare, very-rare, legendary, artifact;
 $change-variants: (
@@ -429,7 +429,7 @@ $change-variants: (
   }
 }
 
-// Colored rarity pills and filter chips for Items table (palette variables live in colors.scss)
+// Colored rarity pills and filter chips for Items table
 @each $rarity in $item-rarities {
   .item-rarity-#{$rarity} {
     background-color: var(--rarity-#{$rarity});
@@ -444,7 +444,7 @@ $change-variants: (
   background-color: var(--rarity-other);
 }
 
-// Colored CR tier pills for Bestiary table (palette variables live in colors.scss)
+// Colored CR tier pills for Bestiary table
 @each $tier in trivial, group, pair, easy, medium, hard, deadly, extreme, na {
   .monster-cr-#{$tier} {
     background-color: var(--cr-#{$tier});
