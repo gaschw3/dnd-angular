@@ -138,6 +138,7 @@
         [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="monsters"
         defaultSortKey="name"
+        [syncUrl]="true"
         (rowClick)="setCurrMonster($event)"
       >
         <ng-template appTableCell="name" let-monster>

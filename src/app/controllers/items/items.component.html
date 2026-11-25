@@ -137,6 +137,7 @@
         [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="items"
         defaultSortKey="name"
+        [syncUrl]="true"
         (rowClick)="setCurrItem($event)"
       >
         <ng-template appTableCell="name" let-item>

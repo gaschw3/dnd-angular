@@ -12,6 +12,7 @@ import { BookmarkCategory, BookmarksService } from '../services/bookmarks.servic
 interface SearchEntry {
   id: string;
   name: string;
+  shortName?: string;
   category: BookmarkCategory;
   route: string;
   subtitle: string;
@@ -42,6 +43,7 @@ export class QuickSearchComponent {
     'All',
     'Spell',
     'Class',
+    'Subclass',
     'Monster',
     'Item',
     'Feat',
@@ -66,9 +68,10 @@ export class QuickSearchComponent {
 
     for (const entry of filtered) {
       const nameLower = entry.name.toLowerCase();
-      if (nameLower.startsWith(q)) {
+      const shortLower = entry.shortName?.toLowerCase();
+      if (nameLower.startsWith(q) || shortLower?.startsWith(q)) {
         prefixMatches.push(entry);
-      } else if (nameLower.includes(q)) {
+      } else if (nameLower.includes(q) || shortLower?.includes(q)) {
         nameMatches.push(entry);
       } else if (entry.searchText.includes(q)) {
         otherMatches.push(entry);
@@ -110,12 +113,21 @@ export class QuickSearchComponent {
       event.preventDefault();
       this.activeIndex.set(Math.max(0, this.activeIndex() - 1));
     } else if (event.key === 'Enter') {
+      if (event.target instanceof HTMLButtonElement) {
+        return;
+      }
       const list = this.results();
       const chosen = list[this.activeIndex()];
       if (chosen) {
         event.preventDefault();
         this.select(chosen);
       }
+    }
+  }
+
+  onBackdropClick(event: MouseEvent): void {
+    if (event.target === event.currentTarget) {
+      this.close();
     }
   }
 
@@ -143,6 +155,8 @@ export class QuickSearchComponent {
   }
 
   select(entry: SearchEntry): void {
+    this.query.set('');
+    this.activeIndex.set(0);
     this.close();
     this.router.navigateByUrl(entry.route);
   }
@@ -200,6 +214,20 @@ export class QuickSearchComponent {
             subtitle,
             searchText: `${c.name} ${subtitle}`.toLowerCase()
           });
+
+          for (const sub of c.subclass || []) {
+            const displayName = sub.name || sub.shortName;
+            const subSubtitle = sub.source ? `${c.name} · ${sub.source}` : c.name;
+            idx.push({
+              id: `subclass:${c.id}:${sub.shortName}`,
+              name: displayName,
+              shortName: sub.shortName,
+              category: 'Subclass',
+              route: `/classes/${c.id}?subclass=${encodeURIComponent(sub.shortName)}`,
+              subtitle: subSubtitle,
+              searchText: `${displayName} ${sub.shortName} ${c.name} ${c.subclassTitle || ''} ${sub.source || ''}`.toLowerCase()
+            });
+          }
         }
 
         for (const m of data.monsters) {

@@ -1,13 +1,13 @@
 @if (isOpen()) {
-  <div class="qs-backdrop" (click)="close()" (keydown.escape)="close()" role="dialog" aria-modal="true" aria-label="Global quick search">
-    <div class="qs-modal" tabindex="-1" (click)="$event.stopPropagation()" (keydown.enter)="$event.stopPropagation()">
+  <div class="qs-backdrop" (click)="onBackdropClick($event)" (keydown.escape)="close()" role="dialog" aria-modal="true" aria-label="Global quick search">
+    <div class="qs-modal" tabindex="-1">
       <div class="qs-header">
         <fa-icon [icon]="faSearch" class="qs-icon" aria-hidden="true" />
         <input
           #searchInput
           type="text"
           class="qs-input"
-          placeholder="Search spells, classes, monsters, items, feats..."
+          placeholder="Search spells, classes, subclasses, monsters, items, feats..."
           [ngModel]="query()"
           (ngModelChange)="onQueryChange($event)"
           aria-label="Search all D&D content"
@@ -45,7 +45,7 @@
               [class.active]="i === activeIndex()"
               (mouseenter)="activeIndex.set(i)"
               (click)="select(item)"
-              (keydown.enter)="select(item)"
+              (keydown.enter)="$event.stopPropagation(); select(item)"
             >
               <div class="qs-result-main">
                 <span class="qs-badge">{{ item.category }}</span>

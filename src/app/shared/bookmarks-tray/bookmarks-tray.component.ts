@@ -108,9 +108,10 @@ export class BookmarksTrayComponent {
   pinCurrentPage(): void {
     this.syncCurrentUrl();
     const url = this.currentUrl();
-    const segments = url.split('/').filter(Boolean);
+    const [pathPart, queryString = ''] = url.split('?');
+    const segments = pathPart.split('/').filter(Boolean);
     const section = segments[0] || 'classes';
-    const slug = segments[1] || '';
+    const slug = segments.length > 1 ? segments[segments.length - 1] : '';
 
     const categoryMap: Record<string, BookmarkCategory> = {
       spells: 'Spell',
@@ -124,24 +125,104 @@ export class BookmarksTrayComponent {
       'other-features': 'Feature'
     };
 
-    const category: BookmarkCategory = categoryMap[section] || 'Page';
-    const rawName = slug || section;
-    const name = rawName
-      .replace(/[-_]+/g, ' ')
-      .replace(/\b\w/g, ch => ch.toUpperCase());
+    const params = new URLSearchParams(queryString);
+    let category: BookmarkCategory = categoryMap[section] || 'Page';
+    const formatSlug = (raw: string): string =>
+      raw
+        .replace(/[-_]+/g, ' ')
+        .replace(/\b\w/g, ch => ch.toUpperCase());
+
+    let name = formatSlug(slug || section);
+    let subtitle = pathPart;
+
+    if (section === 'classes' && slug && params.get('subclass')) {
+      const subclasses = params
+        .get('subclass')!
+        .split(',')
+        .map(s => s.trim())
+        .filter(Boolean);
+      if (subclasses.length === 1) {
+        category = 'Subclass';
+        subtitle = name;
+        name = subclasses[0];
+      } else if (subclasses.length > 1) {
+        subtitle = `Subclasses: ${subclasses.join(', ')}`;
+      }
+    } else if (queryString) {
+      subtitle = this.formatQuerySummary(params) || url;
+    }
 
     this.bookmarks.toggle({
       id: `page:${url}`,
       name,
       category,
       route: url,
-      subtitle: url
+      subtitle
     });
+  }
+
+  private formatQuerySummary(params: URLSearchParams): string {
+    const parts: string[] = [];
+    const sort = params.get('sort');
+    const dir = params.get('dir');
+    const crMin = params.get('crMin');
+    const crMax = params.get('crMax');
+
+    const flagLabels: Record<string, string> = {
+      conc: 'Concentration',
+      ritual: 'Ritual',
+      modified: 'Modified',
+      caius: 'Caius',
+      leg: 'Legendary',
+      spell: 'Spellcaster'
+    };
+
+    const paramLabels: Record<string, string> = {
+      classes: 'Class',
+      levels: 'Lvl',
+      schools: 'School',
+      cat: 'Category',
+      rarity: 'Rarity',
+      types: 'Type',
+      categories: 'Type',
+      asi: 'ASI',
+      type: 'Type',
+      name: 'Name',
+      text: 'Text',
+      skill: 'Skill',
+      tool: 'Tool',
+      feat: 'Feat',
+      source: 'Source'
+    };
+
+    if (crMin || crMax) {
+      parts.push(`CR ${crMin || '0'}–${crMax || '30'}`);
+    }
+
+    params.forEach((value, key) => {
+      if (!value || key === 'sort' || key === 'dir' || key === 'crMin' || key === 'crMax') {
+        return;
+      }
+      if (key in flagLabels) {
+        if (value === '1' || value === 'true') {
+          parts.push(flagLabels[key]);
+        }
+        return;
+      }
+      const label = paramLabels[key] || key;
+      parts.push(`${label}: ${value}`);
+    });
+
+    if (sort) {
+      parts.push(`Sort: ${sort} ${dir === 'desc' ? '↓' : '↑'}`);
+    }
+
+    return parts.join(' · ');
   }
 
   private syncCurrentUrl(): void {
     const raw = this.location.path(false) || this.router.url || '/';
-    const clean = raw.split('?')[0].split('#')[0] || '/';
-    this.currentUrl.set(clean.startsWith('/') ? clean : `/${clean}`);
+    const withoutHash = raw.split('#')[0] || '/';
+    this.currentUrl.set(withoutHash.startsWith('/') ? withoutHash : `/${withoutHash}`);
   }
 }

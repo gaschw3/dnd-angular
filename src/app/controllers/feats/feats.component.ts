@@ -208,13 +208,15 @@ export class FeatsComponent implements OnInit {
       }
 
       const nameParam = queryParams['name'] ?? queryParams['feat-name-filter'];
-      if (typeof nameParam === 'string' && nameParam !== this.nameQuery()) {
-        this.nameQuery.set(nameParam);
+      const nextName = typeof nameParam === 'string' ? nameParam : '';
+      if (nextName.trim() !== this.nameQuery().trim()) {
+        this.nameQuery.set(nextName);
       }
 
       const textParam = queryParams['text'];
-      if (typeof textParam === 'string' && textParam !== this.fullTextQuery()) {
-        this.fullTextQuery.set(textParam);
+      const nextText = typeof textParam === 'string' ? textParam : '';
+      if (nextText.trim() !== this.fullTextQuery().trim()) {
+        this.fullTextQuery.set(nextText);
       }
 
       this.onlyModified.set(queryParams['modified'] === '1' || queryParams['modified'] === 'true');
@@ -234,10 +236,12 @@ export class FeatsComponent implements OnInit {
 
   onNameInput(event: Event): void {
     this.nameQuery.set((event.target as HTMLInputElement).value);
+    this.syncQuickFilterParams();
   }
 
   onFullTextInput(event: Event): void {
     this.fullTextQuery.set((event.target as HTMLInputElement).value);
+    this.syncQuickFilterParams();
   }
 
   toggleCategory(key: string): void {

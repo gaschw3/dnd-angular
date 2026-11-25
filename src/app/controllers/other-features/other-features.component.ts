@@ -130,16 +130,26 @@ export class OtherFeaturesComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(queryParams => {
       const nameParam = queryParams['name'] ?? queryParams['feature-name-filter'];
-      if (typeof nameParam === 'string' && nameParam !== this.nameQuery()) {
-        this.nameQuery.set(nameParam);
+      const nextName = typeof nameParam === 'string' ? nameParam : '';
+      if (nextName.trim() !== this.nameQuery().trim()) {
+        this.nameQuery.set(nextName);
       }
 
       const textParam = queryParams['text'];
-      if (typeof textParam === 'string' && textParam !== this.fullTextQuery()) {
-        this.fullTextQuery.set(textParam);
+      const nextText = typeof textParam === 'string' ? textParam : '';
+      if (nextText.trim() !== this.fullTextQuery().trim()) {
+        this.fullTextQuery.set(nextText);
       }
 
       this.onlyModified.set(queryParams['modified'] === '1' || queryParams['modified'] === 'true');
+
+      if (!this.route.snapshot.paramMap.get('type')) {
+        const typeQuery = typeof queryParams['type'] === 'string' ? queryParams['type'].trim() : '';
+        const nextType = typeQuery && typeQuery in featureType ? typeQuery : 'all';
+        if (nextType !== this.selected()) {
+          this.selected.set(nextType);
+        }
+      }
     });
 
     combineLatest([this.dataService.getOtherFeatures(), this.route.paramMap])
@@ -159,10 +169,12 @@ export class OtherFeaturesComponent implements OnInit {
 
   onNameInput(event: Event): void {
     this.nameQuery.set((event.target as HTMLInputElement).value);
+    this.syncQuickFilterParams();
   }
 
   onFullTextInput(event: Event): void {
     this.fullTextQuery.set((event.target as HTMLInputElement).value);
+    this.syncQuickFilterParams();
   }
 
   toggleModified(): void {
@@ -175,16 +187,32 @@ export class OtherFeaturesComponent implements OnInit {
     this.nameQuery.set('');
     this.fullTextQuery.set('');
     if (this.selected() !== 'all') {
-      this.setFilter('all');
+      this.selected.set('all');
+      const current = this.currFeature();
+      const target = current ? ['/other-features', current.id] : ['/other-features'];
+      this.router.navigate(target, {
+        queryParams: {
+          type: null,
+          modified: null,
+          name: null,
+          text: null,
+          'feature-name-filter': null
+        },
+        queryParamsHandling: 'merge',
+        replaceUrl: true
+      });
     } else {
       this.syncQuickFilterParams();
     }
   }
 
   private syncQuickFilterParams(): void {
+    const sel = this.selected();
+    const hasPathType = Boolean(this.route.snapshot.paramMap.get('type'));
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: {
+        type: sel !== 'all' && !hasPathType ? sel : null,
         modified: this.onlyModified() ? '1' : null,
         name: this.nameQuery().trim() || null,
         text: this.fullTextQuery().trim() || null,
@@ -200,9 +228,15 @@ export class OtherFeaturesComponent implements OnInit {
     this.title.setTitle(`${clicked.name} — EotCC 5e`);
     const sel = this.selected();
     if (sel === 'all') {
-      this.router.navigate(['/other-features', clicked.id], { queryParamsHandling: 'preserve' });
+      this.router.navigate(['/other-features', clicked.id], {
+        queryParams: { type: null },
+        queryParamsHandling: 'merge'
+      });
     } else {
-      this.router.navigate(['/other-features', sel, clicked.id], { queryParamsHandling: 'preserve' });
+      this.router.navigate(['/other-features', sel, clicked.id], {
+        queryParams: { type: null },
+        queryParamsHandling: 'merge'
+      });
     }
 
     if (window.innerWidth < 1200) {
@@ -217,24 +251,29 @@ export class OtherFeaturesComponent implements OnInit {
     const visible = this.shownFeatures();
     const current = this.currFeature();
     if (clicked === 'all') {
-      if (current) {
-        this.router.navigate(['/other-features', current.id], { queryParamsHandling: 'preserve' });
-      } else {
-        this.router.navigate(['/other-features'], { queryParamsHandling: 'preserve' });
-      }
+      const target = current ? ['/other-features', current.id] : ['/other-features'];
+      this.router.navigate(target, {
+        queryParams: { type: null },
+        queryParamsHandling: 'merge',
+        replaceUrl: true
+      });
       return;
     }
 
     if (current && visible.includes(current)) {
       this.router.navigate(['/other-features', clicked, current.id], {
-        queryParamsHandling: 'preserve'
+        queryParams: { type: null },
+        queryParamsHandling: 'merge'
       });
     } else if (visible.length > 0 && current) {
       this.currFeature.set(visible[0]);
       this.title.setTitle(`${visible[0].name} — EotCC 5e`);
       this.router.navigate(['/other-features', clicked, visible[0].id], {
-        queryParamsHandling: 'preserve'
+        queryParams: { type: null },
+        queryParamsHandling: 'merge'
       });
+    } else {
+      this.syncQuickFilterParams();
     }
   }
 }

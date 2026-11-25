@@ -1,6 +1,8 @@
 import {
   Component,
+  DestroyRef,
   Directive,
+  OnInit,
   TemplateRef,
   computed,
   contentChildren,
@@ -12,9 +14,11 @@ import {
   signal,
   untracked
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { IconDefinition, faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -62,7 +66,7 @@ export class ReferenceTableCellDirective {
   templateUrl: './reference-table.component.html',
   styleUrls: ['./reference-table.component.scss']
 })
-export class ReferenceTableComponent<T = any> {
+export class ReferenceTableComponent<T = any> implements OnInit {
   readonly faSearch = faSearch;
 
   readonly tableId = input('tbl-reference');
@@ -79,6 +83,7 @@ export class ReferenceTableComponent<T = any> {
   readonly initialFilters = input<Record<string, string>>({});
   readonly striped = input(false);
   readonly showFilterRow = input(true);
+  readonly syncUrl = input(false);
 
   readonly rowClick = output<T>();
 
@@ -99,6 +104,9 @@ export class ReferenceTableComponent<T = any> {
   readonly currentPage = signal(1);
 
   private sanitizer = inject(DomSanitizer);
+  private route = inject(ActivatedRoute, { optional: true });
+  private router = inject(Router, { optional: true });
+  private destroyRef = inject(DestroyRef);
 
   readonly hasActiveFilters = computed(() => {
     const hasText = Object.values(this.filters()).some(v => v && v.trim().length > 0);
@@ -332,9 +340,20 @@ export class ReferenceTableComponent<T = any> {
     });
   }
 
+  ngOnInit(): void {
+    if (!this.syncUrl() || !this.route) {
+      return;
+    }
+
+    this.route.queryParams.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(queryParams => {
+      this.applyUrlParams(queryParams);
+    });
+  }
+
   setFilter(key: string, value: string): void {
     this.filters.update(curr => ({ ...curr, [key]: value }));
     this.currentPage.set(1);
+    this.syncFilterParamsToUrl();
   }
 
   setRangeFilter(key: string, bound: 'min' | 'max', value: number | null): void {
@@ -343,6 +362,7 @@ export class ReferenceTableComponent<T = any> {
       [key]: { ...(curr[key] ?? { min: null, max: null }), [bound]: value }
     }));
     this.currentPage.set(1);
+    this.syncFilterParamsToUrl();
   }
 
   clearFilters(): void {
@@ -357,6 +377,7 @@ export class ReferenceTableComponent<T = any> {
     this.filters.set(clearedText);
     this.rangeFilters.set(clearedRange);
     this.currentPage.set(1);
+    this.syncFilterParamsToUrl();
   }
 
   toggleSort(col: ReferenceTableColumn<T>): void {
@@ -372,6 +393,125 @@ export class ReferenceTableComponent<T = any> {
     if (this.currentPage() > this.totalPages()) {
       this.currentPage.set(this.totalPages());
     }
+    this.syncSortParamsToUrl();
+  }
+
+  private applyUrlParams(queryParams: Params): void {
+    const cols = this.columns();
+    const rawSort = typeof queryParams['sort'] === 'string' ? queryParams['sort'].trim() : '';
+    const rawDir = queryParams['dir'] === 'desc' ? 'desc' : queryParams['dir'] === 'asc' ? 'asc' : null;
+    const sortableMatch = rawSort
+      ? cols.find(c => c.key === rawSort && c.sortable !== false && !c.action)
+      : undefined;
+
+    const nextSortKey = sortableMatch ? sortableMatch.key : this.defaultSortKey();
+    const nextSortDir: 'asc' | 'desc' = sortableMatch ? (rawDir ?? 'asc') : (rawDir ?? this.defaultSortDir());
+
+    if (this.sortKey() !== nextSortKey) {
+      this.sortKey.set(nextSortKey);
+    }
+    if (this.sortDir() !== nextSortDir) {
+      this.sortDir.set(nextSortDir);
+    }
+
+    if (!this.showFilterRow()) {
+      return;
+    }
+
+    const nextText = { ...this.filters() };
+    const nextRange = { ...this.rangeFilters() };
+    let textChanged = false;
+    let rangeChanged = false;
+
+    for (const col of cols) {
+      if (col.filterable === false || col.filterType === 'none' || col.action) {
+        continue;
+      }
+      if (col.filterType === 'number-range') {
+        const rawMin = queryParams[`${col.key}Min`];
+        const rawMax = queryParams[`${col.key}Max`];
+        const minVal = rawMin !== undefined && rawMin !== '' && Number.isFinite(Number(rawMin)) ? Number(rawMin) : null;
+        const maxVal = rawMax !== undefined && rawMax !== '' && Number.isFinite(Number(rawMax)) ? Number(rawMax) : null;
+        const curr = nextRange[col.key] ?? { min: null, max: null };
+        if (curr.min !== minVal || curr.max !== maxVal) {
+          nextRange[col.key] = { min: minVal, max: maxVal };
+          rangeChanged = true;
+        }
+      } else {
+        const fromKey = queryParams[col.key];
+        const fromId = col.filterId ? queryParams[col.filterId] : undefined;
+        const rawVal = fromKey ?? fromId;
+        const strVal = typeof rawVal === 'string' ? rawVal : '';
+        if ((nextText[col.key] ?? '').trim() !== strVal.trim()) {
+          nextText[col.key] = strVal;
+          textChanged = true;
+        }
+      }
+    }
+
+    if (textChanged) {
+      this.filters.set(nextText);
+    }
+    if (rangeChanged) {
+      this.rangeFilters.set(nextRange);
+    }
+  }
+
+  private syncSortParamsToUrl(): void {
+    if (!this.syncUrl() || !this.router || !this.route) {
+      return;
+    }
+    const key = this.sortKey();
+    const dir = this.sortDir();
+    const isDefault = key === this.defaultSortKey() && dir === this.defaultSortDir();
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {
+        sort: isDefault ? null : key,
+        dir: isDefault ? null : dir
+      },
+      queryParamsHandling: 'merge',
+      replaceUrl: true
+    });
+  }
+
+  private syncFilterParamsToUrl(): void {
+    if (!this.syncUrl() || !this.showFilterRow() || !this.router || !this.route) {
+      return;
+    }
+    const queryParams: Params = {};
+    const textFilters = this.filters();
+    const ranges = this.rangeFilters();
+
+    for (const col of this.columns()) {
+      if (col.filterable === false || col.filterType === 'none' || col.action) {
+        continue;
+      }
+      if (col.filterType === 'number-range') {
+        const range = ranges[col.key];
+        queryParams[`${col.key}Min`] =
+          range && range.min !== null && range.min !== undefined && (range.min as unknown) !== ''
+            ? String(range.min)
+            : null;
+        queryParams[`${col.key}Max`] =
+          range && range.max !== null && range.max !== undefined && (range.max as unknown) !== ''
+            ? String(range.max)
+            : null;
+      } else {
+        const val = (textFilters[col.key] ?? '').trim();
+        queryParams[col.key] = val || null;
+        if (col.filterId && col.filterId !== col.key) {
+          queryParams[col.filterId] = null;
+        }
+      }
+    }
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams,
+      queryParamsHandling: 'merge',
+      replaceUrl: true
+    });
   }
 
   onPageSizeChange(size: number): void {

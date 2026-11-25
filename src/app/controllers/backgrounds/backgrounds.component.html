@@ -13,6 +13,7 @@
         [pageSizeOptions]="[10, 15, 30, 60, -1]"
         itemLabel="backgrounds"
         defaultSortKey="name"
+        [syncUrl]="true"
         (rowClick)="setCurrBackground($event)"
       ></app-reference-table>
     </div>

@@ -1,6 +1,8 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 import {
   ReferenceTableCellDirective,
@@ -139,5 +141,86 @@ describe('ReferenceTableComponent', () => {
     hostFixture.detectChanges();
     const pill = hostFixture.nativeElement.querySelector('.custom-pill') as HTMLElement | null;
     expect(pill?.textContent?.trim()).toBe('Fireball!');
+  });
+});
+
+describe('ReferenceTableComponent URL sync', () => {
+  let queryParams$: BehaviorSubject<Params>;
+  let navigate: ReturnType<typeof vi.fn>;
+  let component: ReferenceTableComponent<TestRow>;
+
+  const rows: TestRow[] = [
+    { id: 'fireball', name: 'Fireball', level: 3, school: 'Evocation' },
+    { id: 'shield', name: 'Shield', level: 1, school: 'Abjuration' },
+    { id: 'wish', name: 'Wish', level: 9, school: 'Conjuration' }
+  ];
+
+  const columns: ReferenceTableColumn<TestRow>[] = [
+    { key: 'name', label: 'Name', filterId: 'name-filter', value: r => r.name },
+    { key: 'level', label: 'Level', filterable: false, value: r => r.level, sortValue: r => r.level },
+    { key: 'school', label: 'School', value: r => r.school }
+  ];
+
+  beforeEach(async () => {
+    queryParams$ = new BehaviorSubject<Params>({ sort: 'level', dir: 'desc', school: 'evoc' });
+    navigate = vi.fn().mockResolvedValue(true);
+
+    await TestBed.configureTestingModule({
+      imports: [ReferenceTableComponent],
+      providers: [
+        { provide: ActivatedRoute, useValue: { queryParams: queryParams$.asObservable() } },
+        { provide: Router, useValue: { navigate } }
+      ]
+    }).compileComponents();
+
+    const fixture = TestBed.createComponent(ReferenceTableComponent<TestRow>);
+    component = fixture.componentInstance;
+    fixture.componentRef.setInput('data', rows);
+    fixture.componentRef.setInput('columns', columns);
+    fixture.componentRef.setInput('rowKey', (r: TestRow) => r.id);
+    fixture.componentRef.setInput('defaultSortKey', 'name');
+    fixture.componentRef.setInput('syncUrl', true);
+    fixture.detectChanges();
+  });
+
+  it('restores sort and inline filters from URL query params', () => {
+    expect(component.sortKey()).toBe('level');
+    expect(component.sortDir()).toBe('desc');
+    expect(component.filteredRows().map(r => r.id)).toEqual(['fireball']);
+
+    queryParams$.next({ sort: 'level', dir: 'desc' });
+    expect(component.filteredRows().map(r => r.id)).toEqual(['wish', 'fireball', 'shield']);
+  });
+
+  it('writes sort changes to URL and clears them when returning to default sort', () => {
+    component.toggleSort(columns[0]); // name asc (matches default)
+    expect(navigate).toHaveBeenLastCalledWith([], expect.objectContaining({
+      queryParams: { sort: null, dir: null },
+      queryParamsHandling: 'merge',
+      replaceUrl: true
+    }));
+
+    component.toggleSort(columns[0]); // name desc
+    expect(navigate).toHaveBeenLastCalledWith([], expect.objectContaining({
+      queryParams: { sort: 'name', dir: 'desc' },
+      queryParamsHandling: 'merge',
+      replaceUrl: true
+    }));
+  });
+
+  it('writes inline filter changes to URL and clears them on clearFilters', () => {
+    component.setFilter('name', 'wish');
+    expect(navigate).toHaveBeenLastCalledWith([], expect.objectContaining({
+      queryParams: expect.objectContaining({ name: 'wish', 'name-filter': null }),
+      queryParamsHandling: 'merge',
+      replaceUrl: true
+    }));
+
+    component.clearFilters();
+    expect(navigate).toHaveBeenLastCalledWith([], expect.objectContaining({
+      queryParams: expect.objectContaining({ name: null, school: null }),
+      queryParamsHandling: 'merge',
+      replaceUrl: true
+    }));
   });
 });

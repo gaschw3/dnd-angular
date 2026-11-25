@@ -176,6 +176,7 @@
         [pageSizeOptions]="[15, 30, 60, -1]"
         itemLabel="spells"
         defaultSortKey="name"
+        [syncUrl]="true"
         (rowClick)="setCurrSpell($event)"
       >
         <ng-template appTableCell="name" let-spell>

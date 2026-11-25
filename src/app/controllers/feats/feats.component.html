@@ -104,6 +104,7 @@
         [pageSizeOptions]="[15, 30, 60, -1]"
         [itemLabel]="itemLabel"
         defaultSortKey="name"
+        [syncUrl]="true"
         (rowClick)="setCurrFeat($event)"
       >
         <ng-template appTableCell="name" let-feat>
