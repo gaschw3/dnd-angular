@@ -9,6 +9,7 @@ import { combineLatest } from 'rxjs';
 
 import { SpellComponent } from './spell/spell.component';
 import { Spell, spellSchool } from 'src/app/models/spell';
+import { ChangeBadgeComponent } from 'src/app/shared/change-badge/change-badge.component';
 import { matchesPhrase, sourceColorClass } from 'src/app/shared/helpers/format.utils';
 import { DndDataService } from 'src/app/shared/services/dnd-data.service';
 import {
@@ -25,7 +26,7 @@ const SPELL_SCHOOLS = Object.values(spellSchool)
 const VALID_SCHOOL_KEYS = new Set(SPELL_SCHOOLS.map(s => s.key));
 
 @Component({
-  imports: [FaIconComponent, ReferenceTableComponent, ReferenceTableCellDirective, SpellComponent],
+  imports: [FaIconComponent, ReferenceTableComponent, ReferenceTableCellDirective, ChangeBadgeComponent, SpellComponent],
   selector: 'app-spells',
   templateUrl: './spells.component.html',
   styleUrls: ['./spells.component.scss']
@@ -46,6 +47,7 @@ export class SpellsComponent implements OnInit {
   readonly classMenuOpen = signal<boolean>(false);
   readonly onlyConcentration = signal<boolean>(false);
   readonly onlyRitual = signal<boolean>(false);
+  readonly onlyModified = signal<boolean>(false);
   readonly onlyCaiusNotes = signal<boolean>(false);
   readonly nameQuery = signal<string>('');
   readonly fullTextQuery = signal<string>('');
@@ -86,6 +88,7 @@ export class SpellsComponent implements OnInit {
       this.selectedClasses().length > 0 ||
       this.onlyConcentration() ||
       this.onlyRitual() ||
+      this.onlyModified() ||
       this.onlyCaiusNotes() ||
       this.nameQuery().trim().length > 0 ||
       this.fullTextQuery().trim().length > 0
@@ -98,6 +101,7 @@ export class SpellsComponent implements OnInit {
     const classes = this.selectedClasses().map(c => c.toLowerCase());
     const conc = this.onlyConcentration();
     const ritual = this.onlyRitual();
+    const modified = this.onlyModified();
     const caius = this.onlyCaiusNotes();
     const nameTerm = this.nameQuery().trim().toLowerCase();
     const fullText = this.fullTextQuery();
@@ -116,6 +120,9 @@ export class SpellsComponent implements OnInit {
         return false;
       }
       if (ritual && !s.ritual) {
+        return false;
+      }
+      if (modified && !s.change) {
         return false;
       }
       if (caius && !s.hasCaiusNotes) {
@@ -268,6 +275,7 @@ export class SpellsComponent implements OnInit {
 
       this.onlyConcentration.set(queryParams['conc'] === '1' || queryParams['conc'] === 'true');
       this.onlyRitual.set(queryParams['ritual'] === '1' || queryParams['ritual'] === 'true');
+      this.onlyModified.set(queryParams['modified'] === '1' || queryParams['modified'] === 'true');
       this.onlyCaiusNotes.set(queryParams['caius'] === '1' || queryParams['caius'] === 'true');
     });
 
@@ -325,6 +333,11 @@ export class SpellsComponent implements OnInit {
     this.syncQuickFilterParams();
   }
 
+  toggleModified(): void {
+    this.onlyModified.update(v => !v);
+    this.syncQuickFilterParams();
+  }
+
   toggleCaiusNotes(): void {
     this.onlyCaiusNotes.update(v => !v);
     this.syncQuickFilterParams();
@@ -336,6 +349,7 @@ export class SpellsComponent implements OnInit {
     this.selectedClasses.set([]);
     this.onlyConcentration.set(false);
     this.onlyRitual.set(false);
+    this.onlyModified.set(false);
     this.onlyCaiusNotes.set(false);
     this.nameQuery.set('');
     this.fullTextQuery.set('');
@@ -361,6 +375,7 @@ export class SpellsComponent implements OnInit {
         text: this.fullTextQuery().trim() || null,
         conc: this.onlyConcentration() ? '1' : null,
         ritual: this.onlyRitual() ? '1' : null,
+        modified: this.onlyModified() ? '1' : null,
         caius: this.onlyCaiusNotes() ? '1' : null
       },
       queryParamsHandling: 'merge',

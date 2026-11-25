@@ -5,6 +5,7 @@ import { normalizeItem } from './item';
 import { normalizeOtherFeature } from './otherFeature';
 import { Spell } from './spell';
 import { DndClass } from './dnd-class';
+import { Feat } from './feat';
 import { matchesPhrase } from '../shared/helpers/format.utils';
 
 describe('Model normalizers', () => {
@@ -199,5 +200,67 @@ describe('Model normalizers', () => {
         rows: ['—', '2']
       }
     ]);
+  });
+
+  it('extracts Feat asiAbilities, change metadata, and searchText', () => {
+    const dual = new Feat({
+      name: 'Athlete',
+      source: "PHB'24",
+      category: 'G',
+      change: 'buff',
+      changeNote: 'Added extra climb speed.',
+      ability: [{ choose: { from: ['str', 'dex'], amount: 1 } }],
+      entries: ['You gain a Climb Speed.']
+    });
+    expect(dual.asiAbilities).toEqual(['str', 'dex']);
+    expect(dual.change).toBe('buff');
+    expect(dual.changeNote).toBe('Added extra climb speed.');
+    expect(dual.searchText).toContain('climb speed');
+
+    const anyFeat = new Feat({
+      name: 'Ability Score Improvement',
+      source: "PHB'24",
+      category: 'G',
+      ability: [{ choose: { from: ['str', 'dex', 'con', 'int', 'wis', 'cha'], amount: 2 } }],
+      entries: []
+    });
+    expect(anyFeat.asiAbilities).toEqual(['any']);
+    expect(anyFeat.asi).toBe('Any +1, Any +1');
+
+    const single = new Feat({
+      name: 'Durable',
+      source: "PHB'24",
+      category: 'G',
+      change: 'nerf',
+      ability: [{ con: 1 }],
+      entries: []
+    });
+    expect(single.asiAbilities).toEqual(['con']);
+    expect(single.change).toBe('nerf');
+
+    const singleClassPrereq = new Feat({
+      name: 'Test Single Class',
+      source: "PHB'24",
+      prerequisite: [{ class: 'Wizard' }],
+      entries: []
+    });
+    expect(singleClassPrereq.prerequisite).toBe('{@class Wizard}');
+    expect(singleClassPrereq.searchText).toContain('wizard');
+
+    const multiClassPrereq = new Feat({
+      name: 'Initiate of High Sorcery',
+      source: 'DSotDQ',
+      prerequisite: [{ class: ['Sorcerer', 'Wizard'] }],
+      entries: []
+    });
+    expect(multiClassPrereq.prerequisite).toBe('{@class Sorcerer} or {@class Wizard}');
+
+    const objClassPrereq = new Feat({
+      name: 'Legacy Class Obj',
+      source: 'PHB',
+      prerequisite: [{ class: [{ name: 'Bard' }, { name: 'Sorcerer' }, { name: 'Wizard' }] }],
+      entries: []
+    });
+    expect(objClassPrereq.prerequisite).toBe('{@class Bard}, {@class Sorcerer} or {@class Wizard}');
   });
 });

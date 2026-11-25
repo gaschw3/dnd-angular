@@ -19,7 +19,11 @@
               <span>{{ feature.subclassShortName }} — </span>
             }
             {{ feature.name }}{{ feature.cost ? ' (Cost: ' + feature.cost + ')' : '' }}
+            <app-change-badge [change]="feature.change" [note]="feature.changeNote" />
           </h4>
+          @if (feature.changeNote) {
+            <p class="small fst-italic mb-2 opacity-75" [innerHtml]="feature.changeNote | linkmaker | sanitizeHtml"></p>
+          }
           <div class="feature-text">
             <app-entry-renderer [list]="feature.entries" parent=""></app-entry-renderer>
           </div>

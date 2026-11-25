@@ -31,7 +31,7 @@
               <div class="eb-party-stepper">
                 <button
                   type="button"
-                  class="btn btn-sm btn-primary eb-step-btn"
+                  class="btn btn-sm btn-primary display-step-btn eb-step-btn"
                   [disabled]="partySize() <= 1"
                   (click)="stepPartySize(-1)"
                   aria-label="Decrease player count"
@@ -44,13 +44,13 @@
                   type="number"
                   min="1"
                   max="10"
-                  class="form-control form-control-sm text-center eb-qty-input"
+                  class="form-control form-control-sm text-center display-number-input eb-qty-input"
                   [ngModel]="partySize()"
                   (ngModelChange)="setPartySize($event)"
                 />
                 <button
                   type="button"
-                  class="btn btn-sm btn-primary eb-step-btn"
+                  class="btn btn-sm btn-primary display-step-btn eb-step-btn"
                   [disabled]="partySize() >= 10"
                   (click)="stepPartySize(1)"
                   aria-label="Increase player count"
@@ -64,7 +64,7 @@
               <div class="eb-party-stepper">
                 <button
                   type="button"
-                  class="btn btn-sm btn-primary eb-step-btn"
+                  class="btn btn-sm btn-primary display-step-btn eb-step-btn"
                   [disabled]="partyLevel() <= 1"
                   (click)="stepPartyLevel(-1)"
                   aria-label="Decrease party level"
@@ -77,13 +77,13 @@
                   type="number"
                   min="1"
                   max="20"
-                  class="form-control form-control-sm text-center eb-qty-input"
+                  class="form-control form-control-sm text-center display-number-input eb-qty-input"
                   [ngModel]="partyLevel()"
                   (ngModelChange)="setPartyLevel($event)"
                 />
                 <button
                   type="button"
-                  class="btn btn-sm btn-primary eb-step-btn"
+                  class="btn btn-sm btn-primary display-step-btn eb-step-btn"
                   [disabled]="partyLevel() >= 20"
                   (click)="stepPartyLevel(1)"
                   aria-label="Increase party level"
@@ -173,7 +173,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-sm eb-clear-btn"
+                class="btn btn-sm display-reset-btn"
                 [class.btn-warning]="currEncounter().length > 0"
                 [class.btn-outline-secondary]="currEncounter().length === 0"
                 [disabled]="currEncounter().length === 0"
@@ -223,14 +223,14 @@
                   <div class="eb-qty-controls">
                     <button
                       type="button"
-                      class="btn btn-sm btn-primary eb-step-btn"
+                      class="btn btn-sm btn-primary display-step-btn eb-step-btn"
                       (click)="encounterChange(i, -1)"
                       [attr.aria-label]="'Decrease ' + entry.monster.name + ' count'"
                     >
                       <fa-icon [icon]="faMinus" aria-hidden="true" />
                     </button>
                     <input
-                      class="form-control form-control-sm text-center eb-qty-input"
+                      class="form-control form-control-sm text-center display-number-input eb-qty-input"
                       type="number"
                       min="1"
                       [ngModel]="entry.number"
@@ -239,7 +239,7 @@
                     />
                     <button
                       type="button"
-                      class="btn btn-sm btn-primary eb-step-btn"
+                      class="btn btn-sm btn-primary display-step-btn eb-step-btn"
                       (click)="encounterChange(i, 1)"
                       [attr.aria-label]="'Increase ' + entry.monster.name + ' count'"
                     >
@@ -247,7 +247,7 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-sm btn-outline-danger eb-step-btn ms-1"
+                      class="btn btn-sm btn-outline-danger display-step-btn eb-step-btn ms-1"
                       (click)="removeMonster(i)"
                       [attr.aria-label]="'Remove ' + entry.monster.name"
                       title="Remove"
@@ -304,7 +304,7 @@
                   </button>
                   <button
                     type="button"
-                    class="btn btn-sm btn-outline-danger eb-step-btn ms-2"
+                    class="btn btn-sm btn-outline-danger display-step-btn eb-step-btn ms-2"
                     (click)="deleteSavedEncounter(saved.id)"
                     aria-label="Delete saved encounter"
                     title="Delete"

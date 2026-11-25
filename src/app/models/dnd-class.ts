@@ -2,6 +2,7 @@ import { Spell } from './spell';
 import { commonFeatures } from './consts';
 import { HelperService } from '../shared/helpers/helper.service';
 import { toPlainSearchText } from '../shared/helpers/format.utils';
+import { ChangeType, normalizeChangeType } from '../shared/change-badge/change-badge.component';
 
 export interface SubclassTableColumn {
   subclassKey: string;
@@ -46,6 +47,8 @@ export class ClassFeature {
   subclassSource: string;
   header: number;
   cost: string;
+  change?: ChangeType;
+  changeNote?: string;
 
   constructor(feat: any) {
     this.className = feat.className;
@@ -60,6 +63,8 @@ export class ClassFeature {
     this.subclassSource = feat.subclassSource ? feat.subclassSource : '';
     this.header = feat.header ? feat.header : 0;
     this.cost = feat.cost ? feat.cost : '';
+    this.change = normalizeChangeType(feat.change);
+    this.changeNote = feat.changeNote;
   }
 }
 

@@ -28,6 +28,7 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
       height: 3rem;
       border-radius: 50%;
       border: none;
+      background-color: var(--theme-primary);
       color: #fff;
       display: flex;
       align-items: center;

@@ -82,3 +82,27 @@
     display: none;
   }
 }
+
+.detail-change-note {
+  margin-top: -0.35rem;
+  margin-bottom: 0.85rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.375rem;
+  background-color: var(--theme-input-bg, rgba(0, 0, 0, 0.18));
+  border: 1px solid var(--theme-input-border, rgba(255, 255, 255, 0.16));
+  border-left-width: 3px;
+  font-size: 0.9rem;
+}
+
+$change-note-variants: (
+  buff: --change-buff,
+  nerf: --change-nerf,
+  change: --change-modified
+);
+
+@each $type, $var in $change-note-variants {
+  .detail-change-note-#{$type} {
+    border-left-color: var(#{$var});
+    strong { color: var(#{$var}); }
+  }
+}

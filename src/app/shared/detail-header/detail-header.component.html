@@ -26,6 +26,9 @@
   <div class="detail-header-right">
     <div class="detail-header-meta">
       <ng-content select="[detail-meta]"></ng-content>
+      @if (normalizedChange()) {
+        <app-change-badge [change]="normalizedChange()" [note]="changeNote()" variant="pill" />
+      }
       @if (source()) {
         <span class="display-meta-pill">
           <span class="display-meta-label">Source</span>
@@ -38,3 +41,11 @@
     </div>
   </div>
 </header>
+@if (changeNote()) {
+  <div
+    class="detail-change-note"
+    [class]="'detail-change-note detail-change-note-' + (normalizedChange() || 'change')"
+  >
+    <strong>{{ changeLabel() }}: </strong><span [innerHtml]="changeNote()! | linkmaker | sanitizeHtml"></span>
+  </div>
+}

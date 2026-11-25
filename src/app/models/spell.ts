@@ -16,6 +16,7 @@ export interface ISpell {
   subclasses: string[];
   entries:    string[];
   change?:    string;
+  changeNote?: string;
   higher?:    any;
   ritual?:    string;
   roll?:      string[] | string;
@@ -39,6 +40,7 @@ export class Spell implements ISpell {
   subclasses: string[] = [];
   entries:    string[];
   change?:    string;
+  changeNote?: string;
   replaced?:  string;
   higher?:    any;
   ritual?:    string;
@@ -120,6 +122,7 @@ export class Spell implements ISpell {
         }
         this.entries = spellJson.entries;
         this.change = spellJson.change;
+        this.changeNote = spellJson.changeNote;
         this.higher = spellJson.entriesHigherLevel ? spellJson.entriesHigherLevel[0] : '';
         this.ritual = spellJson.meta?.ritual;
         this.hasCaiusNotes =

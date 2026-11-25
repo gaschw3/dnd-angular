@@ -1,5 +1,6 @@
 import { slugifyName } from '../pipes/id-to-name.pipe';
 import { buildSearchText, extractEntryText } from '../shared/helpers/format.utils';
+import { ChangeType, normalizeChangeType } from '../shared/change-badge/change-badge.component';
 import { typeTable } from '../shared/itemTypes';
 
 export type ItemCategory = 'magic' | 'weapons' | 'armor' | 'normal' | 'treasure';
@@ -23,6 +24,8 @@ export interface Item {
   baseItem?: string;
   property?: string[];
   range?: string;
+  change?: ChangeType;
+  changeNote?: string;
 
   // Normalized display fields populated by normalizeItem()
   plainName: string;
@@ -73,6 +76,8 @@ export function normalizeItem(raw: any): Item {
   return {
     ...raw,
     id: raw.id || slugifyName(String(raw.name || '')),
+    change: normalizeChangeType(raw.change),
+    changeNote: raw.changeNote,
     plainName,
     hasHtmlName: String(raw.name || '').includes('<'),
     rarity,

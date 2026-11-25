@@ -2,7 +2,7 @@
   <div class="pb-4 mt-3">
     <div class="card">
       <div class="card-body">
-        <app-detail-header [title]="bg.name" [source]="bg.source">
+        <app-detail-header [title]="bg.name" [source]="bg.source" [change]="bg.change" [changeNote]="bg.changeNote">
           @if (bg.info) {
             <p detail-description class="mb-0">{{ bg.info }}</p>
           }

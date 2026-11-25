@@ -1,4 +1,8 @@
 import { HelperService } from "../shared/helpers/helper.service";
+import { buildSearchText, extractEntryText, toPlainSearchText } from "../shared/helpers/format.utils";
+import { ChangeType, normalizeChangeType } from "../shared/change-badge/change-badge.component";
+
+const ABILITY_KEYS = new Set(['str', 'dex', 'con', 'int', 'wis', 'cha']);
 
 export class Feat {
   name:          string;
@@ -6,8 +10,12 @@ export class Feat {
   source:        string;
   category:      string;
   asi?:          string;
+  asiAbilities:  string[] = [];
   text:          any[];
   prerequisite?: string;
+  change?:       ChangeType;
+  changeNote?:   string;
+  searchText:    string;
 
   constructor(feat: any) {
     this.name = feat.name;
@@ -15,18 +23,27 @@ export class Feat {
     this.category = feat.category ? feat.category : 'G';
     this.source = feat.source;
     this.text = feat.entries;
+    this.change = normalizeChangeType(feat.change);
+    this.changeNote = feat.changeNote;
 
     if (feat.ability) {
       if (feat.ability[0].choose) {
-        if (feat.ability[0].choose.from.length == 6) {
+        const from: string[] = Array.isArray(feat.ability[0].choose.from)
+          ? feat.ability[0].choose.from.map((a: string) => String(a).toLowerCase())
+          : [];
+        if (from.length == 6) {
+          this.asiAbilities = ['any'];
           if (feat.ability[0].choose.amount == 2)
             this.asi = `Any +1, Any +1`;
           else 
             this.asi = `Any +1`;
         } else {
-          this.asi = `${feat.ability[0].choose.from.join("/").replace(/, ([^,]*)$/, ' or $1')} +${feat.ability[0].choose.amount}`;
+          this.asiAbilities = from.filter(a => ABILITY_KEYS.has(a));
+          this.asi = `${feat.ability[0].choose.from.join("/").replace(/, ([^,]*)$/, ' or $1')} +${feat.ability[0].choose.amount ?? 1}`;
         }
       } else {
+        const keys = Object.keys(feat.ability[0]).map(k => k.toLowerCase()).filter(k => ABILITY_KEYS.has(k));
+        this.asiAbilities = keys;
         this.asi = `${Object.keys(feat.ability[0])[0]} +${Object.values(feat.ability[0])[0]}`;
       }
     }
@@ -49,12 +66,15 @@ export class Feat {
         prereqArr.push(ancestryArr.join(', ').replace(/, ([^,]*)$/, ' or $1'));
       }
       if (jsonPrereq.class) {
-        const classArr = [];
-        for (const clazz of jsonPrereq.class) {
-          classArr.push(clazz.name);
-        }
+        const rawClasses = Array.isArray(jsonPrereq.class) ? jsonPrereq.class : [jsonPrereq.class];
+        const classArr = rawClasses
+          .map((clazz: any) => (typeof clazz === 'string' ? clazz.trim() : clazz?.name?.trim()))
+          .filter((name: string | undefined): name is string => Boolean(name))
+          .map((name: string) => `{@class ${capitalize(name)}}`);
         //kind of yucky regex, but basically parse into a comma-seperated list in this format: 'x', 'x or y', 'x, y, or z', etc.
-        prereqArr.push(classArr.join(', ').replace(/, ([^,]*)$/, ' or $1'));
+        if (classArr.length > 0) {
+          prereqArr.push(classArr.join(', ').replace(/, ([^,]*)$/, ' or $1'));
+        }
       }
       if (jsonPrereq.ability) {
         const abilityArr = [];
@@ -71,6 +91,16 @@ export class Feat {
       }
       this.prerequisite = capitalize(prereqArr.join("; "));
     }
+
+    this.searchText = buildSearchText([
+      this.name,
+      this.source || '',
+      featCategory[this.category] || this.category,
+      this.asi || '',
+      toPlainSearchText(this.prerequisite || ''),
+      toPlainSearchText(this.changeNote || ''),
+      extractEntryText(this.text)
+    ]);
   }
 }
 

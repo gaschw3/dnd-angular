@@ -1,4 +1,6 @@
 import { slugifyName } from '../pipes/id-to-name.pipe';
+import { buildSearchText, extractEntryText, toPlainSearchText } from '../shared/helpers/format.utils';
+import { ChangeType, normalizeChangeType } from '../shared/change-badge/change-badge.component';
 
 export interface OtherFeature {
   id: string;
@@ -9,12 +11,15 @@ export interface OtherFeature {
   entries: string[];
   prerequisite?: Prerequisite[];
   isClassFeatureVariant?: boolean;
+  change?: ChangeType;
+  changeNote?: string;
 
   // Normalized display fields populated by normalizeOtherFeature()
   typeLabel: string;
   prereqSummary: string;
   prereqFull: string;
   levelPrereq: string;
+  searchText: string;
 }
 
 export interface Prerequisite {
@@ -53,13 +58,28 @@ export const featureType: Record<string, string> = {
 
 export function normalizeOtherFeature(raw: any): OtherFeature {
   const firstType = raw.featureType?.[0];
+  const typeLabel = firstType ? featureType[firstType] || '' : '';
+  const prereqSummary = formatPrereq(raw.prerequisite, false);
+  const prereqFull = formatPrereq(raw.prerequisite, true);
+  const levelPrereq = extractLevelPrereq(raw.prerequisite);
+  const change = normalizeChangeType(raw.change);
   return {
     ...raw,
     id: raw.id || slugifyName(String(raw.name || '')),
-    typeLabel: firstType ? featureType[firstType] || '' : '',
-    prereqSummary: formatPrereq(raw.prerequisite, false),
-    prereqFull: formatPrereq(raw.prerequisite, true),
-    levelPrereq: extractLevelPrereq(raw.prerequisite)
+    change,
+    changeNote: raw.changeNote,
+    typeLabel,
+    prereqSummary,
+    prereqFull,
+    levelPrereq,
+    searchText: buildSearchText([
+      raw.name || '',
+      raw.source || '',
+      typeLabel,
+      prereqFull,
+      toPlainSearchText(raw.changeNote || ''),
+      extractEntryText(raw.entries)
+    ])
   };
 }
 

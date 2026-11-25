@@ -22,10 +22,14 @@ export class EntryRendererComponent {
   }
 
   getListItemHtml(entry: any): string {
-    //data isn't super clean, an "item" should only have an "entry":string, but very occasionally, one slips through that uses "entries":[] where the array is just one string - handle that case
-    if (entry.entries) {
-      return '<strong>' + entry.name + '</strong> ' + entry.entries.join('\n');
+    return '<strong>' + this.formatItemName(entry.name) + '</strong> ' + (entry.entry ?? '');
+  }
+
+  formatItemName(name: string | undefined): string {
+    if (!name) {
+      return '';
     }
-    return '<strong>' + entry.name + '</strong> ' + entry.entry;
+    const trimmed = name.trim();
+    return /[:.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`;
   }
 }

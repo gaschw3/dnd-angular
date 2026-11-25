@@ -16,12 +16,14 @@
     }
     @case ('table') {
       <div>
-        <h4>{{entry.caption}}</h4>
+        @if (entry.caption) {
+          <h4>{{entry.caption}}</h4>
+        }
         <table class="table table-bordered table-striped table-sm">
           <thead>
             <tr>
               @for (row of entry.colLabels; track $index; let i = $index) {
-                <th class={{entry.colStyles[i]}}>{{row}}</th>
+                <th [class]="entry.colStyles?.[i] || ''">{{row}}</th>
               }
             </tr>
           </thead>
@@ -29,7 +31,7 @@
             @for (row of entry.rows; track $index) {
               <tr>
                 @for (cell of row; track $index; let i = $index) {
-                  <td class={{entry.colStyles[i]}} [innerHtml]="cell | linkmaker | sanitizeHtml"></td>
+                  <td [class]="entry.colStyles?.[i] || ''" [innerHtml]="cell | linkmaker | sanitizeHtml"></td>
                 }
               </tr>
             }
@@ -69,14 +71,27 @@
       </div>
     }
     @case ('item') {
-      <div>
-        @if (parent() === '') {
-          <p [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></p>
+      @if (entry.entries?.length) {
+        @if (parent() === 'list') {
+          <li class="entry-title">
+            @if (entry.name) {
+              <strong>{{ formatItemName(entry.name) }} </strong>
+            }<app-entry-renderer [list]="entry.entries" [parent]="'entries'"></app-entry-renderer>
+          </li>
+        } @else {
+          <div class="pb-0 mb-2 entry-title">
+            @if (entry.name) {
+              <strong>{{ formatItemName(entry.name) }} </strong>
+            }<app-entry-renderer [list]="entry.entries" [parent]="'entries'"></app-entry-renderer>
+          </div>
         }
+      } @else {
         @if (parent() === 'list') {
           <li [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></li>
+        } @else {
+          <p [innerHtml]="getListItemHtml(entry) | linkmaker | sanitizeHtml"></p>
         }
-      </div>
+      }
     }
     @case ('undef') {
       <div>

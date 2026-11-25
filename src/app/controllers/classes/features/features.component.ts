@@ -1,10 +1,13 @@
 import { Component, HostListener, input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClassFeature } from 'src/app/models/dnd-class';
+import { LinkmakerPipe } from 'src/app/pipes/linkmaker.pipe';
+import { SanitizeHtmlPipe } from 'src/app/pipes/sanitize-html.pipe';
+import { ChangeBadgeComponent } from 'src/app/shared/change-badge/change-badge.component';
 import { EntryRendererComponent } from 'src/app/shared/entry-renderer/entry-renderer.component';
 
 @Component({
-  imports: [CommonModule, EntryRendererComponent],
+  imports: [CommonModule, LinkmakerPipe, SanitizeHtmlPipe, ChangeBadgeComponent, EntryRendererComponent],
   selector: 'app-features',
   templateUrl: './features.component.html',
   styleUrls: ['./features.component.scss']
