@@ -83,7 +83,7 @@ export class DndDataService {
 
   getAncestries(): Observable<Ancestry[]> {
     if (!this.ancestries$) {
-      this.ancestries$ = this.http.get<Ancestry[]>('assets/data/2024/ancestry-small.json').pipe(
+      this.ancestries$ = this.http.get<Ancestry[]>('assets/data/2024/ancestry.json').pipe(
         shareReplay(1)
       );
     }

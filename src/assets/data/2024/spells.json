@@ -2561,7 +2561,7 @@
                     "type": "inset",
                     "name": "Notes from the Most Recent Magisterial Conclave",
                     "entries": [
-                        "Depending on exact strucutres used and mechanics of the result, this spell can actually work through multiple avenues - internal interferece of enchantment (the official version in Capital), sensory affecting illusions, and even body altering transmutation. Necormancy though, is well out."
+                        "Depending on exact strucutres used and mechanics of the result, this spell can actually work through multiple avenues - internal interferece of enchantment (the official version in Capital), sensory affecting illusions, and even body altering transmutation. Necromancy though, is well out."
                     ]
                 }
 			],
@@ -9037,7 +9037,7 @@
 			"source": "PHB'24",
 			"page": 271,
 			"level": 3,
-			"school": "I",
+			"school": "E",
 			"time": [
 				{
 					"number": 1,
@@ -9068,7 +9068,14 @@
 			],
 			"entries": [
 				"Each creature in a 30-foot Cone must succeed on a Wisdom saving throw or drop whatever it is holding and have the {@condition Frightened} condition for the duration.",
-				"A {@condition Frightened} creature takes the {@action Dash} action and moves away from you by the safest route on each of its turns unless there is nowhere to move. If the creature ends its turn in a space where it doesn't have line of sight to you, the creature makes a Wisdom saving throw. On a successful save, the spell ends on that creature."
+				"A {@condition Frightened} creature takes the {@action Dash} action and moves away from you by the safest route on each of its turns unless there is nowhere to move. If the creature ends its turn in a space where it doesn't have line of sight to you, the creature makes a Wisdom saving throw. On a successful save, the spell ends on that creature.",
+				{
+					"type": "inset",
+					"name": "Notes from the Most Recent Magisterial Conclave",
+					"entries": [
+						"An unusual spell that can be either Illusion or Enchantment depending on how it is enacted. The most common version directly manipulates the mind of targets and thus is Enchantment, though another slightly less common version uses individualized phantasms to cause the fear."
+					]
+				}
 			],
 			"conditionInflict": [
 				"frightened"
@@ -12385,7 +12392,7 @@
                     "type": "inset",
                     "name": "Notes from the Most Recent Magisterial Conclave",
                     "entries": [
-                        "This spell also has a Trasmutation spellform, but it's much easier to use Evoked heat than alter it to suit every material targeted."
+                        "This spell also has a Transmutation spellform, but it's much easier to use Evoked heat than alter it to suit every material targeted."
                     ]
                 }
 			],
