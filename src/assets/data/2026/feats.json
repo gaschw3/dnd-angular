@@ -2695,53 +2695,6 @@
         ]
     },
     {
-        "name": "Street Justice",
-        "source": "FRHoF",
-        "page": 41,
-        "category": "G",
-        "edition": "2024",
-        "prerequisite": [
-            {
-                "level": 4
-            }
-        ],
-        "ability": [
-            {
-                "choose": {
-                    "from": [
-                        "str",
-                        "dex"
-                    ],
-                    "amount": 1
-                }
-            }
-        ],
-        "entries": [
-            "You gain the following benefits.",
-            {
-                "type": "entries",
-                "name": "Headlock",
-                "entries": [
-                    "Your allies have {@rule Advantage} on attack rolls against a creature {@condition Grappled} by you."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Sturdy Knot",
-                "entries": [
-                    "When you use {@item Chain}, {@item Manacles}, or {@item Rope} to bind a creature, add your {@rule Proficiency|Proficiency Bonus} to the DC to escape or burst the {@item Chain}, {@item Manacles}, or {@item Rope}."
-                ]
-            },
-            {
-                "type": "entries",
-                "name": "Tough Talk",
-                "entries": [
-                    "A creature's {@rule Hostile [Attitude]|Hostile} attitude doesn't impose {@rule Disadvantage} on your Charisma ({@skill Intimidation}) checks to influence that creature."
-                ]
-            }
-        ]
-    },
-    {
         "name": "Gift of the Chromatic Dragon",
         "source": "FTD",
         "page": 17,
@@ -4943,49 +4896,6 @@
                 ]
             }
         ]
-    },
-    {
-        "name": "Enveloping Mist",
-        "source": "WoW",
-        "page": 45,
-        "category": "G",
-        "edition": "2024",
-        "prerequisite": [
-            {
-                "level": 4,
-                "ability": [
-                    {
-                        "dex": 13,
-                        "wis": 13
-                    }
-                ]
-            }
-        ],
-        "ability": [
-            {
-                "choose": {
-                    "from": [
-                        "dex",
-                        "wis"
-                    ],
-                    "amount": 1
-                }
-            }
-        ],
-        "entries": [
-            "You gain the following benefits.",
-            {
-                "type": "entries",
-                "name": "Enveloping Mist",
-                "entries": [
-                    "When you cast a spell or use a feature to restore {@rule Hit Points} to a creature, the creature is wrapped in a healing mist. Roll one of the dice from the feature that healed it (or use your Wisdom modifier, minimum 1, if the healing doesn't roll dice), and note that number as the creature's Life Cocoon value.",
-                    "If the creature is hit by an attack roll before the start of its next turn, you can take a {@rule Reaction} to reduce the damage it takes from that attack by its Life Cocoon value. The mist then disappears.",
-                    "At the start of the creature's next turn, if the mist persists, the creature gains {@rule Temporary Hit Points} equal to its Life Cocoon value."
-                ]
-            }
-        ],
-        "change": "change",
-        "changeNote": "Clarify Life Cocoon for healing features that don't roll dice."
     },
     {
         "name": "Fingers of Frost",
