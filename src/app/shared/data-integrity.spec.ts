@@ -30,12 +30,48 @@ describe('JSON data asset integrity', () => {
     expect(Array.isArray(index)).toBe(true);
     expect(index.length).toBeGreaterThan(0);
 
+    const existingShortNamesByClass = new Map<string, Set<string>>();
     for (const meta of index) {
       expect(typeof meta.file).toBe('string');
       const entry = readJson(`2026/classes/${meta.file}`);
       expect(Array.isArray(entry.class)).toBe(true);
       expect(entry.class[0]?.name).toBeTruthy();
       expect(Array.isArray(entry.classFeature)).toBe(true);
+      existingShortNamesByClass.set(
+        entry.class[0].name,
+        new Set((entry.subclass || []).map((s: any) => s.shortName))
+      );
+    }
+
+    const brew = readJson('2026/classes/brew.json');
+    expect(Array.isArray(brew.subclass)).toBe(true);
+    expect(Array.isArray(brew.subclassFeature)).toBe(true);
+    expect(brew.subclass.length).toBeGreaterThan(0);
+
+    const brewKeys = new Set<string>();
+    for (const sub of brew.subclass) {
+      const existing = existingShortNamesByClass.get(sub.className);
+      expect(existing, `Unknown brew target class: ${sub.className}`).toBeDefined();
+      expect(existing!.has(sub.shortName), `Duplicate shortName "${sub.shortName}" on ${sub.className}`).toBe(false);
+      const key = `${sub.className}|${sub.shortName}`;
+      expect(brewKeys.has(key), `Duplicate brew subclass key: ${key}`).toBe(false);
+      brewKeys.add(key);
+      expect(sub.source).toBe('BREW');
+      expect(sub.edition).toBe('brew');
+    }
+
+    const featureCountBySub = new Map<string, number>();
+    for (const feat of brew.subclassFeature) {
+      const key = `${feat.className}|${feat.subclassShortName}`;
+      expect(brewKeys.has(key), `Orphan brew feature "${feat.name}" for ${key}`).toBe(true);
+      expect(typeof feat.level).toBe('number');
+      expect(Array.isArray(feat.entries)).toBe(true);
+      expect(feat.entries.length).toBeGreaterThan(0);
+      featureCountBySub.set(key, (featureCountBySub.get(key) ?? 0) + 1);
+    }
+
+    for (const key of brewKeys) {
+      expect(featureCountBySub.get(key) ?? 0, `Brew subclass ${key} has no features`).toBeGreaterThan(0);
     }
   });
 

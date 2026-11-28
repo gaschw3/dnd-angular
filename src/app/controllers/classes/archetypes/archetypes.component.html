@@ -16,7 +16,8 @@
             <span
               class="archetype-dot"
               [class.archetype-dot--2024]="is2024(archetype)"
-              [class.archetype-dot--legacy]="!is2024(archetype)"
+              [class.archetype-dot--legacy]="isLegacy(archetype)"
+              [class.archetype-dot--brew]="isBrew(archetype)"
               aria-hidden="true"
             ></span>
             <span>{{ archetype.shortName }}</span>
@@ -43,14 +44,24 @@
         </button>
         @if (hasMixedEditions()) {
           <span class="archetypes-legend ms-2" aria-label="Subclass ruleset legend">
-            <span class="archetypes-legend-item">
-              <span class="archetype-dot archetype-dot--2024" aria-hidden="true"></span>
-              <span>2024</span>
-            </span>
-            <span class="archetypes-legend-item">
-              <span class="archetype-dot archetype-dot--legacy" aria-hidden="true"></span>
-              <span>2014</span>
-            </span>
+            @if (has2024()) {
+              <span class="archetypes-legend-item">
+                <span class="archetype-dot archetype-dot--2024" aria-hidden="true"></span>
+                <span>2024</span>
+              </span>
+            }
+            @if (hasLegacy()) {
+              <span class="archetypes-legend-item">
+                <span class="archetype-dot archetype-dot--legacy" aria-hidden="true"></span>
+                <span>2014</span>
+              </span>
+            }
+            @if (hasBrew()) {
+              <span class="archetypes-legend-item">
+                <span class="archetype-dot archetype-dot--brew" aria-hidden="true"></span>
+                <span>Brew</span>
+              </span>
+            }
           </span>
         }
       </div>
@@ -94,7 +105,8 @@
               <span
                 class="archetype-dot"
                 [class.archetype-dot--2024]="is2024(archetype)"
-                [class.archetype-dot--legacy]="!is2024(archetype)"
+                [class.archetype-dot--legacy]="isLegacy(archetype)"
+                [class.archetype-dot--brew]="isBrew(archetype)"
                 aria-hidden="true"
               ></span>
               <span>{{ archetype.shortName }}</span>
@@ -103,14 +115,24 @@
         </div>
         @if (hasMixedEditions()) {
           <div class="archetypes-legend mt-2" aria-label="Subclass ruleset legend">
-            <span class="archetypes-legend-item">
-              <span class="archetype-dot archetype-dot--2024" aria-hidden="true"></span>
-              <span>2024 rules</span>
-            </span>
-            <span class="archetypes-legend-item">
-              <span class="archetype-dot archetype-dot--legacy" aria-hidden="true"></span>
-              <span>2014 legacy</span>
-            </span>
+            @if (has2024()) {
+              <span class="archetypes-legend-item">
+                <span class="archetype-dot archetype-dot--2024" aria-hidden="true"></span>
+                <span>2024 rules</span>
+              </span>
+            }
+            @if (hasLegacy()) {
+              <span class="archetypes-legend-item">
+                <span class="archetype-dot archetype-dot--legacy" aria-hidden="true"></span>
+                <span>2014 legacy</span>
+              </span>
+            }
+            @if (hasBrew()) {
+              <span class="archetypes-legend-item">
+                <span class="archetype-dot archetype-dot--brew" aria-hidden="true"></span>
+                <span>Homebrew</span>
+              </span>
+            }
           </div>
         }
       </div>

@@ -68,11 +68,13 @@ export class ClassFeature {
   }
 }
 
+export type SubclassEdition = '2024' | '2014' | 'brew';
+
 export interface Subclass {
   additionalSpells: Spell[];
   className: string;
   classSource: string;
-  edition?: '2024' | '2014';
+  edition?: SubclassEdition;
   name: string;
   shortName: string;
   subclassFeature: ClassFeature[];

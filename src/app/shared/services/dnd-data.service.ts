@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin, Observable, of } from 'rxjs';
-import { map, shareReplay, switchMap } from 'rxjs/operators';
+import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
 
 import { Spell } from '../../models/spell';
 import { DndClass } from '../../models/dnd-class';
@@ -46,17 +46,22 @@ export class DndDataService {
 
   getClasses(): Observable<DndClass[]> {
     if (!this.classes$) {
-      this.classes$ = this.http
-        .get<ClassIndexEntry[]>('assets/data/2026/classes/index.json')
-        .pipe(
-          switchMap(entries =>
-            entries.length
-              ? forkJoin(entries.map(entry => this.http.get<any>(`assets/data/2026/classes/${entry.file}`)))
-              : of([])
-          ),
-          map(inputClasses => inputClasses.map(inClass => new DndClass(inClass))),
-          shareReplay(1)
-        );
+      this.classes$ = forkJoin({
+        entries: this.http.get<ClassIndexEntry[]>('assets/data/2026/classes/index.json'),
+        brew: this.http
+          .get<BrewSubclassesFile>('assets/data/2026/classes/brew.json')
+          .pipe(catchError(() => of<BrewSubclassesFile>({ subclass: [], subclassFeature: [] })))
+      }).pipe(
+        switchMap(({ entries, brew }) =>
+          entries.length
+            ? forkJoin(entries.map(entry => this.http.get<any>(`assets/data/2026/classes/${entry.file}`))).pipe(
+                map(inputClasses => mergeBrewSubclasses(inputClasses, brew))
+              )
+            : of([])
+        ),
+        map(inputClasses => inputClasses.map(inClass => new DndClass(inClass))),
+        shareReplay(1)
+      );
     }
     return this.classes$;
   }
@@ -149,6 +154,55 @@ export interface ClassIndexEntry {
   name: string;
   source: string;
   file: string;
+}
+
+export interface BrewSubclassesFile {
+  subclass?: any[];
+  subclassFeature?: any[];
+}
+
+export function mergeBrewSubclasses(inputClasses: any[], brew?: BrewSubclassesFile | null): any[] {
+  const brewSubclasses = brew?.subclass ?? [];
+  const brewFeatures = brew?.subclassFeature ?? [];
+  if (!brewSubclasses.length && !brewFeatures.length) {
+    return inputClasses;
+  }
+
+  const subclassesByClass = new Map<string, any[]>();
+  for (const sub of brewSubclasses) {
+    const key = String(sub.className || '').trim().toLowerCase();
+    if (!key) {
+      continue;
+    }
+    const list = subclassesByClass.get(key) ?? [];
+    list.push(sub);
+    subclassesByClass.set(key, list);
+  }
+
+  const featuresByClass = new Map<string, any[]>();
+  for (const feat of brewFeatures) {
+    const key = String(feat.className || '').trim().toLowerCase();
+    if (!key) {
+      continue;
+    }
+    const list = featuresByClass.get(key) ?? [];
+    list.push(feat);
+    featuresByClass.set(key, list);
+  }
+
+  return inputClasses.map(inClass => {
+    const className = String(inClass?.class?.[0]?.name || '').trim().toLowerCase();
+    const extraSubs = subclassesByClass.get(className);
+    const extraFeats = featuresByClass.get(className);
+    if (!extraSubs?.length && !extraFeats?.length) {
+      return inClass;
+    }
+    return {
+      ...inClass,
+      subclass: [...(inClass.subclass || []), ...(extraSubs || [])],
+      subclassFeature: [...(inClass.subclassFeature || []), ...(extraFeats || [])]
+    };
+  });
 }
 
 export type MapCoordEntry = [string, number, number];

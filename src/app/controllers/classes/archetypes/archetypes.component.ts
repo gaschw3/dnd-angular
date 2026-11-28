@@ -1,5 +1,5 @@
 import { Component, computed, input, output } from '@angular/core';
-import { Subclass } from 'src/app/models';
+import { Subclass, SubclassEdition } from 'src/app/models';
 
 const SOURCES_2024 = new Set(["PHB'24", 'XPHB', 'FRHoF', 'AU', 'EFA', 'RHW', 'WoW']);
 
@@ -23,32 +23,42 @@ export class ArchetypesComponent {
 
   readonly hasSelection = computed(() => this.selectedArchetypes().length > 0);
 
-  readonly hasMixedEditions = computed(() => {
-    const list = this.archetypes();
-    let has2024 = false;
-    let hasLegacy = false;
-    for (const sub of list) {
-      if (this.is2024(sub)) {
-        has2024 = true;
-      } else {
-        hasLegacy = true;
-      }
-      if (has2024 && hasLegacy) {
-        return true;
-      }
+  readonly has2024 = computed(() => this.archetypes().some(sub => this.is2024(sub)));
+  readonly hasLegacy = computed(() => this.archetypes().some(sub => this.isLegacy(sub)));
+  readonly hasBrew = computed(() => this.archetypes().some(sub => this.isBrew(sub)));
+
+  readonly hasMixedEditions = computed(
+    () => [this.has2024(), this.hasLegacy(), this.hasBrew()].filter(Boolean).length > 1
+  );
+
+  getCategory(sub: Subclass): SubclassEdition {
+    if (sub.edition === 'brew' || sub.source?.toUpperCase() === 'BREW') {
+      return 'brew';
     }
-    return false;
-  });
+    if (sub.edition) {
+      return sub.edition;
+    }
+    return SOURCES_2024.has(sub.source) ? '2024' : '2014';
+  }
 
   is2024(sub: Subclass): boolean {
-    if (sub.edition) {
-      return sub.edition === '2024';
-    }
-    return SOURCES_2024.has(sub.source);
+    return this.getCategory(sub) === '2024';
+  }
+
+  isLegacy(sub: Subclass): boolean {
+    return this.getCategory(sub) === '2014';
+  }
+
+  isBrew(sub: Subclass): boolean {
+    return this.getCategory(sub) === 'brew';
   }
 
   getTooltip(sub: Subclass): string {
-    const ruleset = this.is2024(sub) ? '2024 rules' : '2014 legacy';
+    const category = this.getCategory(sub);
+    if (category === 'brew') {
+      return sub.source ? `${sub.source} · Homebrew` : 'Homebrew';
+    }
+    const ruleset = category === '2024' ? '2024 rules' : '2014 legacy';
     return sub.source ? `${sub.source} · ${ruleset}` : ruleset;
   }
 

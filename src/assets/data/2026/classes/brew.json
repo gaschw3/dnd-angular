@@ -1,0 +1,1770 @@
+{
+  "subclass": [
+    {
+      "name": "College of Spheres",
+      "shortName": "Spheres",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Bard",
+      "classSource": "PHB'24"
+    },
+    {
+      "name": "Commander",
+      "shortName": "Commander",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Fighter",
+      "classSource": "PHB'24"
+    },
+    {
+      "name": "Way of the Four Elements",
+      "shortName": "Four Elements",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Monk",
+      "classSource": "PHB'24"
+    },
+    {
+      "name": "Oath of Revelry",
+      "shortName": "Revelry",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Paladin",
+      "classSource": "PHB'24"
+    },
+    {
+      "name": "Oath of Spheres",
+      "shortName": "Spheres",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Paladin",
+      "classSource": "PHB'24"
+    },
+    {
+      "name": "Sawbones",
+      "shortName": "Sawbones",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Rogue",
+      "classSource": "PHB'24"
+    },
+    {
+      "name": "Gravity Wielder",
+      "shortName": "Gravity Wielder",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Sorcerer",
+      "classSource": "PHB'24"
+    },
+    {
+      "name": "Raw Magic",
+      "shortName": "Raw Magic",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Sorcerer",
+      "classSource": "PHB'24"
+    },
+    {
+      "name": "Ghost in the Machine Patron",
+      "shortName": "Ghost in the Machine",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Warlock",
+      "classSource": "PHB'24"
+    },
+    {
+      "name": "Worldbreaker Patron",
+      "shortName": "Worldbreaker",
+      "source": "BREW",
+      "edition": "brew",
+      "className": "Warlock",
+      "classSource": "PHB'24"
+    }
+  ],
+  "subclassFeature": [
+    {
+      "name": "College of Spheres",
+      "source": "BREW",
+      "className": "Bard",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        "Bards of the College of Spheres are the scant few mad enough to reach for inspiration and discover that art isn't universal—it transcends universes and speaks to minds beyond mortal ken. They create works blasphemous, alien, and heretical while the abyss beyond offers its strange applause."
+      ]
+    },
+    {
+      "name": "Eldritch Mind",
+      "source": "BREW",
+      "className": "Bard",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "Your experience depicting and contemplating beings that defy mortal sanity grants you proficiency in Intelligence saving throws and in the {@skill Arcana} skill (if you already have proficiency in Arcana, you gain proficiency in another skill of your choice)."
+      ]
+    },
+    {
+      "name": "Maestro of Madness",
+      "source": "BREW",
+      "className": "Bard",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "You use your mind's alien nature to disorient, unsettle, and weaken the mental resolve of others. As a {@rule Bonus Action}, you can expend one use of your Bardic Inspiration and choose one creature you can see within 60 feet of yourself. Roll your Bardic Inspiration die; the creature must subtract the number rolled from the next saving throw it makes before the start of your next turn."
+      ]
+    },
+    {
+      "name": "Sanity's Requiem",
+      "source": "BREW",
+      "className": "Bard",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 6,
+      "header": 2,
+      "entries": [
+        "When a creature deals Psychic damage to you, attempts to read your thoughts, or forces you to make a saving throw against an effect that would give you the {@condition Charmed} condition or control your actions, its mind recoils from the alien patterns of your own. The creature must succeed on a Wisdom saving throw against your Bard spell save DC or take Psychic damage equal to two rolls of your Bardic Inspiration die. A creature can be affected by this recoil no more than once per turn.",
+        "In addition, once per turn when you deal Psychic damage to a creature (other than with this feature's recoil), you can add your Charisma modifier to that damage."
+      ]
+    },
+    {
+      "name": "Incomprehensible Aesthetic",
+      "source": "BREW",
+      "className": "Bard",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 14,
+      "header": 2,
+      "entries": [
+        "Your soul warps past the point of mortal understanding. The artist becomes the subject, and you count as an Aberration in addition to your other creature types.",
+        "When a creature you can see targets you with an attack roll or a spell, you can take a {@rule Reaction} to offer it a true glimpse of your hidden self. The creature must immediately make a Wisdom saving throw against your Bard spell save DC as if triggering Sanity's Requiem. On a failed save, in addition to taking the damage from Sanity's Requiem, the creature has the {@condition Frightened} condition until the end of its next turn (an Aberration has the {@condition Charmed} condition instead).",
+        "Once you use this feature on a creature, that creature is immune to it for the next 24 hours. You can use this feature a number of times equal to your {@rule Proficiency|Proficiency Bonus}, and you regain all expended uses when you finish a {@rule Long Rest}."
+      ]
+    },
+    {
+      "name": "Commander",
+      "source": "BREW",
+      "className": "Fighter",
+      "classSource": "PHB'24",
+      "subclassShortName": "Commander",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        "Also known as warlords, sergeants, or bannerets, Commanders are leaders on the battlefield who direct and inspire their allies through their heroism. Commanders are not generals who direct from afar—they lead from the front, fighting alongside their soldiers and allies in the midst of battle."
+      ]
+    },
+    {
+      "name": "Morale",
+      "source": "BREW",
+      "className": "Fighter",
+      "classSource": "PHB'24",
+      "subclassShortName": "Commander",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "You inspire and bolster your comrades in battle using special dice called Morale Dice. As a {@rule Bonus Action}, choose one ally within 30 feet of yourself that can see or hear you. That ally gains one Morale Die (a {@dice 1d4}) and {@rule Temporary Hit Points} equal to your Fighter level plus your Charisma modifier (minimum of 1).",
+        "Once within the next minute, the ally can roll the Morale Die and add the number rolled to one attack roll, weapon damage roll, or saving throw it makes. Alternatively, when an attack roll is made against the ally, it can take a {@rule Reaction} to roll the Morale Die and add the number rolled to its AC against that attack. The ally can wait until after seeing the roll before deciding to use the Morale Die, but must decide before the outcome is declared.",
+        "Once a Morale Die is rolled, or after 1 minute passes, the die is lost. A creature can have only one Morale Die at a time.",
+        "Your Morale Die increases to a {@dice 1d6} at Fighter level 10 and a {@dice 1d8} at Fighter level 18. You can use this feature a number of times equal to your Charisma modifier (minimum of twice), and you regain all expended uses when you finish a {@rule Short Rest|Short} or {@rule Long Rest}."
+      ]
+    },
+    {
+      "name": "Leadership",
+      "source": "BREW",
+      "className": "Fighter",
+      "classSource": "PHB'24",
+      "subclassShortName": "Commander",
+      "subclassSource": "BREW",
+      "level": 7,
+      "header": 2,
+      "entries": [
+        "Your ability to instill fear, loyalty, or awe in your comrades reaches new heights. Choose {@skill Intimidation}, {@skill Performance}, or {@skill Persuasion}. You gain proficiency in the chosen skill (if you don't already have it) and {@rule Expertise} in it."
+      ]
+    },
+    {
+      "name": "Mobile Tactics",
+      "source": "BREW",
+      "className": "Fighter",
+      "classSource": "PHB'24",
+      "subclassShortName": "Commander",
+      "subclassSource": "BREW",
+      "level": 7,
+      "header": 2,
+      "entries": [
+        "When you grant a Morale Die to an ally, it can immediately take a {@rule Reaction} to move up to half its {@rule Speed} without provoking {@action Opportunity Attack|Opportunity Attacks}."
+      ]
+    },
+    {
+      "name": "Commander's Gambit",
+      "source": "BREW",
+      "className": "Fighter",
+      "classSource": "PHB'24",
+      "subclassShortName": "Commander",
+      "subclassSource": "BREW",
+      "level": 10,
+      "header": 2,
+      "entries": [
+        "You can lead your allies in a coordinated assault. When you take the {@action Attack} action on your turn, you can replace one of your attacks with a gambit strike: expend one use of Morale and make a weapon attack, rolling a Morale Die and adding the number rolled to the attack roll. If the attack hits, choose a number of allies within 30 feet of yourself up to your Charisma modifier (minimum of 1); each chosen ally can immediately take a {@rule Reaction} to make one weapon attack against that target.",
+        "Once you trigger allies' attacks with this feature, you can't use it again until you finish a {@rule Short Rest|Short} or {@rule Long Rest}."
+      ]
+    },
+    {
+      "name": "Fearless Leader",
+      "source": "BREW",
+      "className": "Fighter",
+      "classSource": "PHB'24",
+      "subclassShortName": "Commander",
+      "subclassSource": "BREW",
+      "level": 15,
+      "header": 2,
+      "entries": [
+        "Your fearless presence emboldens your allies. While you don't have the {@condition Incapacitated} condition, you, allies within 10 feet of you, and any creature that currently has a Morale Die from you have {@rule Immunity} to the {@condition Frightened} condition."
+      ]
+    },
+    {
+      "name": "Warlord",
+      "source": "BREW",
+      "className": "Fighter",
+      "classSource": "PHB'24",
+      "subclassShortName": "Commander",
+      "subclassSource": "BREW",
+      "level": 18,
+      "header": 2,
+      "entries": [
+        "You are a dominating presence in battle, striking fear into your enemies and courage into your allies. Your Morale Dice become {@dice 1d8}s.",
+        "Additionally, once per turn when you score a {@rule Critical Hit} against a creature or reduce an enemy to 0 {@rule Hit Points}, you regain 1 expended use of Morale."
+      ]
+    },
+    {
+      "name": "Way of the Four Elements",
+      "source": "BREW",
+      "className": "Monk",
+      "classSource": "PHB'24",
+      "subclassShortName": "Four Elements",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        {
+          "type": "inset",
+          "name": "Author Note",
+          "entries": [
+            "The original 2014 version of this subclass was quite underpowered, so this is a homebrew revision designed to bring it in line with other Monk subclasses (distinct from the 2024 Warrior of the Elements)."
+          ]
+        },
+        "You follow a monastic tradition that teaches you to harness the elements. When you channel your Focus, you can align yourself with the forces of creation and bend the four elements to your will, using them as an extension of your body. Some members of this tradition dedicate themselves to a single element, while others weave the elements together.",
+        "Many Monks of this tradition tattoo their bodies with representations of their elemental powers, commonly imagined as coiling dragons, phoenixes, fish, plants, mountains, and cresting waves."
+      ]
+    },
+    {
+      "name": "Disciple of the Elements",
+      "source": "BREW",
+      "className": "Monk",
+      "classSource": "PHB'24",
+      "subclassShortName": "Four Elements",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "You learn magical disciplines that harness the power of the four elements. You learn two Elemental Disciplines of your choice from the options available to you. You learn two additional Elemental Disciplines at Monk levels 6 and 11, and one additional Elemental Discipline at Monk level 17.",
+        "Whenever you gain a Monk level, you can replace one Elemental Discipline you know with another one for which you meet the level prerequisite.",
+        "Wisdom is your spellcasting ability for Elemental Discipline spells and effects (using your Focus save DC for saving throws), and you don't need Material components unless they have a stated cost.",
+        "Starting at Monk level 5, you can spend additional Focus Points to increase the level of an Elemental Discipline spell you cast, provided the spell has an enhanced effect at a higher level (such as {@spell Burning Hands}). The spell's level increases by 1 for each additional Focus Point you spend. The maximum number of Focus Points you can spend on a single discipline (including its base cost and any additional points) is 2 at level 5, increasing to 3 at level 9, 4 at level 13, and 5 at level 17, unless the discipline specifies otherwise."
+      ]
+    },
+    {
+      "name": "Initiate of the Way",
+      "source": "BREW",
+      "className": "Monk",
+      "classSource": "PHB'24",
+      "subclassShortName": "Four Elements",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "You learn how to manipulate the four elements in subtle ways. You learn two of the following cantrips: {@spell Control Flames}, {@spell Gust}, {@spell Mold Earth}, or {@spell Shape Water}. You learn the other two at Monk level 6. Wisdom is your spellcasting ability for them."
+      ]
+    },
+    {
+      "name": "Level 3 Elemental Disciplines",
+      "source": "BREW",
+      "className": "Monk",
+      "classSource": "PHB'24",
+      "subclassShortName": "Four Elements",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "Starting at Monk level 3, you can learn the following Elemental Disciplines:",
+        {
+          "type": "column",
+          "column": [
+            {
+              "type": "item",
+              "name": "Effortless Step",
+              "entry": "The air around you lifts you as you leap. Your jump distances are doubled (quadrupled when you use Step of the Wind), and you have {@rule Advantage} on Strength ({@skill Athletics}) checks made to jump."
+            },
+            {
+              "type": "item",
+              "name": "Enduring Mountain Stance",
+              "entry": "Your Focus roots your feet into the earth beneath you. While standing on the ground, when you take the {@action Dodge} action, you can't be moved against your will or subjected to the {@condition Grappled}, {@condition Frightened}, or {@condition Prone} conditions until the start of your next turn, even if magically compelled."
+            },
+            {
+              "type": "item",
+              "name": "Fangs of the Fire Snake",
+              "entry": "When you make an {@rule Unarmed Strike} on your turn, you can send out tendrils of flame, increasing your reach by 5 feet for that attack and causing it to deal Fire damage instead of Bludgeoning damage. If the attack hits, you can expend 1 Focus Point to deal an extra {@damage 1d10} Fire damage."
+            },
+            {
+              "type": "item",
+              "name": "Fang of the Frost Wolf",
+              "entry": "You summon a shard of razor-sharp ice and fling it at your foe. You can expend 1 Focus Point to cast {@spell Ice Knife}."
+            },
+            {
+              "type": "item",
+              "name": "Fist of Four Thunders",
+              "entry": "You slam your fists together, unleashing a thunderous boom. You can expend 1 Focus Point to cast {@spell Thunderwave}."
+            },
+            {
+              "type": "item",
+              "name": "Golden Snake's Icy Path",
+              "entry": "Whenever you take the {@action Dash} action, until the end of your turn each surface space you move across becomes coated in slippery ice. This ice is {@rule Difficult Terrain} until the start of your next turn."
+            }
+          ],
+          "column2": [
+            {
+              "type": "item",
+              "name": "Fist of Unbroken Air",
+              "entry": "When you make an {@rule Unarmed Strike} on your turn, you can unleash condensed bursts of air, increasing your reach by 10 feet for that attack. If the attack hits, you can expend 1 Focus Point to force the target to make a Strength saving throw against your Focus save DC; on a failed save, it is pushed 10 feet away from you and has the {@condition Prone} condition."
+            },
+            {
+              "type": "item",
+              "name": "Rumbling Badger",
+              "entry": "You shake the ground to knock over your foes. You can expend 1 Focus Point to cast {@spell Earth Tremor}."
+            },
+            {
+              "type": "item",
+              "name": "Rush of the Gale Spirits",
+              "entry": "You send a blast of air outward with a thrust of your open palm. You can expend 2 Focus Points to cast {@spell Gust of Wind}."
+            },
+            {
+              "type": "item",
+              "name": "Shape the Raincloud",
+              "entry": "You can expend 1 Focus Point to cast {@spell Create or Destroy Water}."
+            },
+            {
+              "type": "item",
+              "name": "Sweeping Cinder Strike",
+              "entry": "With a wide sweeping gesture, you conjure a sheet of hot cinders. You can expend 1 Focus Point to cast {@spell Burning Hands}."
+            },
+            {
+              "type": "item",
+              "name": "Water Whip",
+              "entry": "As a {@rule Bonus Action}, you can expend 1 Focus Point to lash a creature you can see within 30 feet of yourself with a whip of water. The target must make a Dexterity saving throw against your Focus save DC. On a failed save, it takes Bludgeoning damage equal to your Martial Arts die plus your Wisdom modifier, plus an extra {@damage 1d10} Bludgeoning damage for each additional Focus Point you spend (up to your Disciple of the Elements limit), and you either give it the {@condition Prone} condition or pull it up to 25 feet closer to you. On a successful save, it takes half as much damage only. You can't use Water Whip on the same turn you cast a spell."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Level 6 Elemental Disciplines",
+      "source": "BREW",
+      "className": "Monk",
+      "classSource": "PHB'24",
+      "subclassShortName": "Four Elements",
+      "subclassSource": "BREW",
+      "level": 6,
+      "header": 2,
+      "entries": [
+        "Starting at Monk level 6, you can learn the following Elemental Disciplines:",
+        {
+          "type": "column",
+          "column": [
+            {
+              "type": "item",
+              "name": "A Leaf on the Wind",
+              "entry": "A rising updraft catches you whenever you fall. Your Slow Fall feature no longer requires a {@rule Reaction}, applies automatically whenever you don't have the {@condition Incapacitated} condition, and negates all falling damage regardless of distance. While falling this way, you can glide horizontally 5 feet for every 5 feet you descend."
+            },
+            {
+              "type": "item",
+              "name": "Burning Ember Flourish",
+              "entry": "You snuff out a source of flame in a flash of blinding light or billowing smoke. You can expend 2 Focus Points to cast {@spell Pyrotechnics}."
+            },
+            {
+              "type": "item",
+              "name": "Crushing Hands of the Mountain",
+              "entry": "You summon a grasping hand of stone from the earth. You can expend 2 Focus Points to cast {@spell Maximilian's Earthen Grasp}."
+            },
+            {
+              "type": "item",
+              "name": "Curtain of Unyielding Wind",
+              "entry": "A howling gale swirls defensively around you. You can expend 2 Focus Points to cast {@spell Warding Wind}."
+            },
+            {
+              "type": "item",
+              "name": "Gong of the Summit",
+              "entry": "You strike the air as if it were a resonant gong. You can expend 2 Focus Points to cast {@spell Shatter}."
+            },
+            {
+              "type": "item",
+              "name": "Impenetrable Iron Tortoise Shell",
+              "entry": "You raise an earthen barrier to shield an ally. When an attack roll hits a creature you can see within 30 feet of yourself, you can take a {@rule Reaction} and expend 2 Focus Points to use your Deflect Attacks feature against that attack (without redirecting it if the damage is reduced to 0). Any remaining damage is taken by the original target."
+            }
+          ],
+          "column2": [
+            {
+              "type": "item",
+              "name": "Hatchling's Flame",
+              "entry": "You channel a streaking torrent of fire from your outstretched hands. You can expend 2 Focus Points to cast {@spell Aganazzar's Scorcher}."
+            },
+            {
+              "type": "item",
+              "name": "Mote of the Sun",
+              "entry": "Your Focus manifests as a roaring orb of fire. You can expend 2 Focus Points to cast {@spell Flaming Sphere}."
+            },
+            {
+              "type": "item",
+              "name": "Patient Badger Listens",
+              "entry": "As a {@rule Bonus Action}, you can expend 2 Focus Points to gain {@sense Tremorsense} out to 30 feet and a {@rule Burrow Speed} equal to half your {@rule Speed} for 1 minute. Your burrowing through earth or sand leaves behind a tunnel that collapses when this effect ends."
+            },
+            {
+              "type": "item",
+              "name": "Red Dragon's Claws",
+              "entry": "Rays of fire spring from your outstretched hand to sear your foes. You can expend 2 Focus Points to cast {@spell Scorching Ray}."
+            },
+            {
+              "type": "item",
+              "name": "Swarming Ice Rabbit",
+              "entry": "A flurry of magic snowballs erupts at a point you choose. You can expend 2 Focus Points to cast {@spell Snilloc's Snowball Swarm}."
+            },
+            {
+              "type": "item",
+              "name": "Water Jet",
+              "entry": "As a {@action Magic} action, you can expend 2 Focus Points to unleash a pressurized jet of water in a 30-foot-long, 5-foot-wide Line. Each creature in the Line must make a Strength saving throw against your Focus save DC, taking Bludgeoning damage equal to two rolls of your Martial Arts die plus your Wisdom modifier on a failed save, or half as much damage on a successful one. On a failed save, you can also push or pull the creature to any unoccupied space touching the Line."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Level 11 Elemental Disciplines",
+      "source": "BREW",
+      "className": "Monk",
+      "classSource": "PHB'24",
+      "subclassShortName": "Four Elements",
+      "subclassSource": "BREW",
+      "level": 11,
+      "header": 2,
+      "entries": [
+        "Starting at Monk level 11, you can learn the following Elemental Disciplines:",
+        {
+          "type": "column",
+          "column": [
+            {
+              "type": "item",
+              "name": "Dance of Three Ways",
+              "entry": "You suspend six blazing spheres of earth around yourself to hurl at foes. You can expend 3 Focus Points to cast {@spell Melf's Minute Meteors}."
+            },
+            {
+              "type": "item",
+              "name": "Earth Reaches For Sky",
+              "entry": "With a rumbling shout, you cause an eruption of churned earth and stone. You can expend 3 Focus Points to cast {@spell Erupting Earth}."
+            },
+            {
+              "type": "item",
+              "name": "Eternal Mountain Defense",
+              "entry": "Your body hardens to stone, shrugging off blows. You can expend 4 Focus Points to cast {@spell Stoneskin}, targeting yourself."
+            },
+            {
+              "type": "item",
+              "name": "Spellfist Stance",
+              "entry": "You seamlessly weave martial strikes into your elemental arts. When you take a {@action Magic} action to cast a spell or use an Elemental Discipline, you can make one {@rule Unarmed Strike} as part of that same action."
+            },
+            {
+              "type": "item",
+              "name": "Flames of the Phoenix",
+              "entry": "With a swift gesture, you conjure a bead of incandescent flame. You can expend 3 Focus Points to cast {@spell Fireball}."
+            },
+            {
+              "type": "item",
+              "name": "Fist of the Elements",
+              "entry": "Elemental energy coils around your strikes. You can expend 3 Focus Points to cast {@spell Elemental Weapon}, choosing Cold, Fire, or Thunder damage. Your {@rule Unarmed Strike|Unarmed Strikes} count as a weapon for this discipline."
+            }
+          ],
+          "column2": [
+            {
+              "type": "item",
+              "name": "Bing's Perilous Ground",
+              "entry": "You chill the air above into freezing rain and sleet. You can expend 3 Focus Points to cast {@spell Sleet Storm}."
+            },
+            {
+              "type": "item",
+              "name": "Mist Stance",
+              "entry": "A swirling mist envelops your body as you become vapor. You can expend 3 Focus Points to cast {@spell Gaseous Form}, targeting yourself."
+            },
+            {
+              "type": "item",
+              "name": "One with the Waves",
+              "entry": "As a {@action Magic} action, you can expend 2 Focus Points to adapt to the depths for 8 hours. While active, you can breathe underwater, you have a {@rule Swim Speed} equal to your {@rule Speed}, and you have {@sense Blindsight} out to 60 feet while underwater."
+            },
+            {
+              "type": "item",
+              "name": "Ride the Wind",
+              "entry": "You summon a mighty wind that sweeps you skyward. You can expend 3 Focus Points to cast {@spell Fly}, targeting yourself, except your {@rule Fly Speed} equals your {@rule Speed}."
+            },
+            {
+              "type": "item",
+              "name": "River of Hungry Flame",
+              "entry": "You sweep your hands upward, summoning a wall of blazing fire. You can expend 4 Focus Points to cast {@spell Wall of Fire}."
+            },
+            {
+              "type": "item",
+              "name": "Yue's Unbending Tide",
+              "entry": "You conjure a crashing wave of water to crush your foes. You can expend 3 Focus Points to cast {@spell Tidal Wave}."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Avatar of the Elements",
+      "source": "BREW",
+      "className": "Monk",
+      "classSource": "PHB'24",
+      "subclassShortName": "Four Elements",
+      "subclassSource": "BREW",
+      "level": 17,
+      "header": 2,
+      "entries": [
+        "You achieve ultimate mastery over the elements. As a {@rule Bonus Action}, you can expend 5 Focus Points to surround yourself with a whirling sphere of earth, fire, air, and water for 1 minute (ending early if you have the {@condition Incapacitated} condition), gaining the following benefits:",
+        {
+          "type": "list",
+          "items": [
+            "You have {@rule Resistance} to Bludgeoning, Piercing, Slashing, Cold, Fire, Lightning, and Thunder damage.",
+            "You have a {@rule Burrow Speed} (through nonmagical, unworked earth and stone), a {@rule Fly Speed}, and a {@rule Swim Speed} equal to your {@rule Speed}."
+          ]
+        },
+        "While this form is active, you can also take a {@rule Bonus Action} on each of your subsequent turns to unleash one of the following elemental effects (using your Focus save DC):",
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "item",
+              "name": "Earth",
+              "entry": "You trigger a tremor in a 15-foot {@rule Emanation [Area of Effect]|Emanation} originating from you along the ground. Each creature of your choice in the area must succeed on a Dexterity saving throw or take Bludgeoning damage equal to two rolls of your Martial Arts die and have the {@condition Prone} condition."
+            },
+            {
+              "type": "item",
+              "name": "Fire",
+              "entry": "You blast a 30-foot-long, 5-foot-wide Line of fire in a direction you choose. Each creature in the Line makes a Dexterity saving throw, taking Fire damage equal to four rolls of your Martial Arts die on a failed save or half as much damage on a successful one."
+            },
+            {
+              "type": "item",
+              "name": "Air",
+              "entry": "You create a 10-foot-radius {@rule Sphere [Area of Effect]|Sphere} of swirling wind centered on a point you can see within 60 feet of yourself. Each creature in the Sphere makes a Constitution saving throw, taking Bludgeoning damage equal to three rolls of your Martial Arts die on a failed save or half as much damage on a successful one. On a failed save, a Large or smaller creature is also pushed 15 feet away from the center of the Sphere."
+            },
+            {
+              "type": "item",
+              "name": "Water",
+              "entry": "You unleash a 20-foot Cone of razor-sharp ice from your hand. Each creature in the Cone makes a Constitution saving throw, taking Cold damage equal to three rolls of your Martial Arts die on a failed save or half as much damage on a successful one. On a failed save, a creature's {@rule Speed} is also halved until the start of your next turn."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oath of Revelry",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Revelry",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        "Those who take the Oath of Revelry value pleasure and beauty above all else. Such Paladins are often avid hedonists who believe personal pleasure and satisfaction to be the most moral path. They are the center of attention, bringing celebration to the masses and traveling the world to experience everything life has to offer—enticing others to pursue luxuries with enchantments, illusion, or good old-fashioned charm.",
+        "Not all such Paladins are bon vivants, however; some serve darker agendas, twisting desires and dreams into acts of violence and self-destruction. Regardless of their intentions, the Oath of Revelry drives its adherents to experience as much of life as possible; destroying your enemies should bring as much elation as the celebration of your victories.",
+        "These Paladins share the following tenets:",
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "item",
+              "name": "Work Hard, Play Hard",
+              "entry": "You must fight for your right to party. All revelry is grander when you have earned it."
+            },
+            {
+              "type": "item",
+              "name": "Pass the Wine",
+              "entry": "Everyone deserves to smile and laugh. Share the wine, the feast, and the joy with all, even in the face of adversity."
+            },
+            {
+              "type": "item",
+              "name": "Enjoy the View",
+              "entry": "Beauty, whether personal or environmental, fans the flames of pleasure. Always strive to be beautiful and create beauty."
+            },
+            {
+              "type": "item",
+              "name": "You Only Live Once",
+              "entry": "This is your life. It may be the only one you get, and it may end at any time. Do not waste it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oath of Revelry Spells",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Revelry",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "The magic of your oath ensures you always have certain spells ready; when you reach a Paladin level specified in the Oath of Revelry Spells table, you thereafter always have the listed spells prepared.",
+        {
+          "type": "table",
+          "caption": "Oath of Revelry Spells",
+          "colLabels": [
+            "Paladin Level",
+            "Spells"
+          ],
+          "colStyles": [
+            "col-2 text-center",
+            "col-10"
+          ],
+          "rows": [
+            [
+              "3",
+              "{@spell Charm Person}, {@spell Tasha's Hideous Laughter}"
+            ],
+            [
+              "5",
+              "{@spell Detect Thoughts}, {@spell Healing Spirit}"
+            ],
+            [
+              "9",
+              "{@spell Crusader's Mantle}, {@spell Major Image}"
+            ],
+            [
+              "13",
+              "{@spell Charm Monster}, {@spell Freedom of Movement}"
+            ],
+            [
+              "17",
+              "{@spell Seeming}, {@spell Skill Empowerment}"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Raucous Cheer",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Revelry",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "consumes": {
+        "name": "Channel Divinity"
+      },
+      "entries": [
+        "As a {@action Magic} action, you can expend one use of your Channel Divinity to let loose a boisterous yell. Choose a number of creatures within 60 feet of yourself that can hear you, up to a number equal to your Charisma modifier plus your {@rule Proficiency|Proficiency Bonus}. Each chosen creature can take a {@rule Reaction} to join your shout; a creature that does so gains {@rule Temporary Hit Points} equal to your Paladin level plus your Charisma modifier (minimum of 1) and has the {@condition Charmed} condition from you for up to 1 hour or until it loses those Temporary Hit Points."
+      ]
+    },
+    {
+      "name": "Join the Dance",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Revelry",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "consumes": {
+        "name": "Channel Divinity"
+      },
+      "entries": [
+        "As a {@action Magic} action, you can expend one use of your Channel Divinity to break into an infectious jig for up to 1 minute (requiring {@status Concentration}). Each creature of your choice within 15 feet of yourself that can see or hear you must succeed on a Wisdom saving throw against your Paladin spell save DC or begin dancing along.",
+        "While dancing, a creature has the {@condition Incapacitated} condition and a {@rule Speed} of 0 as it taps its feet and shuffles in place. An affected creature repeats the Wisdom saving throw at the end of each of its turns and each time it takes damage (with {@rule Advantage} on saves triggered by damage), ending the effect on itself on a success. On each of your subsequent turns, you must also continue dancing, or the effect ends early for all affected creatures."
+      ]
+    },
+    {
+      "name": "Aura of Comradery",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Revelry",
+      "subclassSource": "BREW",
+      "level": 7,
+      "header": 2,
+      "entries": [
+        "You and your allies fight better together. While you are within 5 feet of at least one ally, you and allies within your Aura of Protection can add your Charisma modifier (minimum of +1) to the damage roll of one weapon attack each creature makes on its turn. At Paladin level 18, this aura remains active even when no ally is within 5 feet of you."
+      ]
+    },
+    {
+      "name": "Ultimate Self",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Revelry",
+      "subclassSource": "BREW",
+      "level": 15,
+      "header": 2,
+      "entries": [
+        "Your body is a perfected temple that no creature can defile. You have {@rule Resistance} to Poison damage, you have {@rule Advantage} on saving throws to avoid or end the {@condition Charmed}, {@condition Poisoned}, and {@condition Petrified} conditions and against curses, and you are immune to any spell or effect that would alter your form against your will."
+      ]
+    },
+    {
+      "name": "Life of the Party",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Revelry",
+      "subclassSource": "BREW",
+      "level": 20,
+      "header": 2,
+      "entries": [
+        "You reach the peak of partying perfection, gaining the following permanent benefits:",
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "item",
+              "name": "Party Starter",
+              "entry": "When you roll {@rule Initiative}, you can treat your total as 20 if it is lower, and allies within your Aura of Protection add your Charisma modifier (minimum of +1) to their Initiative rolls."
+            },
+            {
+              "type": "item",
+              "name": "Entertainer",
+              "entry": "Whenever you make a Charisma check, you can treat a {@dice d20} roll of 9 or lower as a 10."
+            },
+            {
+              "type": "item",
+              "name": "Gracious Host",
+              "entry": "Enemies within your Aura of Protection have {@rule Disadvantage} on saving throws against your Enchantment and Illusion spells and your Channel Divinity options, and creatures that have the {@condition Charmed} condition from you don't turn hostile or realize they were charmed when the spell or effect ends."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oath of Spheres",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        "The Oath of Spheres is sometimes taken by warriors who serve otherworldly entities and quest to release them into the Material Plane, though other adherents are incidental devotees—some tried to prevent an otherworldly incursion and lost their way, while others simply allowed their studies or imagination to roam too widely. Whatever the cause, those who brush too close to incomprehensible truth often swear this oath, devoting themselves to showing others the unrestrained consciousness found in the ever-widening gyre of the stars.",
+        "These Paladins share the following tenets:",
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "item",
+              "name": "Whisper the Truths",
+              "entry": "Normalcy is a curse. You must find hidden knowledge and share its truths to unburden the afflicted."
+            },
+            {
+              "type": "item",
+              "name": "Write the Books",
+              "entry": "There is no point only speaking—spoken word exists for mere seconds. Write the gospel wherever you go, with whatever tools and surfaces are available."
+            },
+            {
+              "type": "item",
+              "name": "Assist the Envoys",
+              "entry": "Those touched with madness have seen the patterns in the stars. You are the protector of the mad, wild, and forgotten; do not allow them to be harmed."
+            },
+            {
+              "type": "item",
+              "name": "Open the Way",
+              "entry": "Doors and windows must be open and uncovered as much as possible so that you might look to the stars—and so that the stars might look back."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oath of Spheres Spells",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "The magic of your oath ensures you always have certain spells ready; when you reach a Paladin level specified in the Oath of Spheres Spells table, you thereafter always have the listed spells prepared.",
+        {
+          "type": "table",
+          "caption": "Oath of Spheres Spells",
+          "colLabels": [
+            "Paladin Level",
+            "Spells"
+          ],
+          "colStyles": [
+            "col-2 text-center",
+            "col-10"
+          ],
+          "rows": [
+            [
+              "3",
+              "{@spell Ensnaring Strike}, {@spell Tasha's Hideous Laughter}"
+            ],
+            [
+              "5",
+              "{@spell Crown of Madness}, {@spell Detect Thoughts}"
+            ],
+            [
+              "9",
+              "{@spell Hunger of Hadar}, {@spell Major Image}"
+            ],
+            [
+              "13",
+              "{@spell Confusion}, {@spell Dimension Door}"
+            ],
+            [
+              "17",
+              "{@spell Dream}, {@spell Telekinesis}"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ihbar's Void",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "consumes": {
+        "name": "Channel Divinity"
+      },
+      "entries": [
+        "As a {@action Magic} action, you can expend one use of your Channel Divinity to open a rift to the darkness between the stars for up to 1 minute (requiring {@status Concentration}). You create a 15-foot-radius {@rule Sphere [Area of Effect]|Sphere} of magical {@rule Darkness} centered on a point within 30 feet of yourself. The void emits soft murmuring voices and distant tinkling music. You can see normally through this Darkness, while other creatures unable to see through magical Darkness are {@condition Blinded} while inside it.",
+        "Any creature other than yourself that remains within the void for the full minute must succeed on a Wisdom saving throw against your Paladin spell save DC or roll on the Long-Term Madness table."
+      ]
+    },
+    {
+      "name": "Khirad's Gaze",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "consumes": {
+        "name": "Channel Divinity"
+      },
+      "entries": [
+        "As a {@action Magic} action, you can expend one use of your Channel Divinity to open your mind and reveal its eldritch nature to one creature you can see within 60 feet of yourself that can see you. The target must make a Wisdom saving throw against your Paladin spell save DC.",
+        "On a failed save, the creature has the {@condition Frightened} condition and a {@rule Speed} of 0 while it laughs, cries, or gibbers uncontrollably for 1 minute; it repeats the Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success. On a successful save, the creature's Speed is halved until the end of its next turn. Either effect also ends immediately if the creature takes damage from any source."
+      ]
+    },
+    {
+      "name": "Acamar's Beckoning",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 7,
+      "header": 2,
+      "entries": [
+        "Your knowledge of forbidden geometries creates a subtle gravity well around you. Creatures of your choice moving away from you treat the area of your Aura of Protection as {@rule Difficult Terrain}.",
+        "Additionally, while you don't have the {@condition Incapacitated} condition, you can effortlessly hold up to three Tiny unattended objects (each weighing no more than 1 pound) in slow orbit within 5 feet of yourself."
+      ]
+    },
+    {
+      "name": "Unknowable Mind",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 15,
+      "header": 2,
+      "entries": [
+        "Your mind becomes so warped and alien that you have {@rule Resistance} to Psychic damage, your thoughts can't be read by telepathy or other means unless you allow it, and you have {@rule Advantage} on saving throws against effects that would give you the {@condition Charmed} condition or control your actions."
+      ]
+    },
+    {
+      "name": "Emissary of the Spheres",
+      "source": "BREW",
+      "className": "Paladin",
+      "classSource": "PHB'24",
+      "subclassShortName": "Spheres",
+      "subclassSource": "BREW",
+      "level": 20,
+      "header": 2,
+      "entries": [
+        "As a {@rule Bonus Action}, you can assume the form of a tentacled otherworldly horror for 1 minute (ending early if you have the {@condition Incapacitated} condition), gaining the following benefits:",
+        {
+          "type": "list",
+          "items": [
+            "Enemies within your Aura of Protection have {@rule Disadvantage} on Intelligence, Wisdom, and Charisma saving throws against your Paladin spells and Channel Divinity options.",
+            "When a creature damages you on its turn, you can take a {@rule Reaction} to use Khirad's Gaze against it without expending a use of Channel Divinity.",
+            "As a {@rule Bonus Action} on each of your subsequent turns, you can bend space to teleport up to 30 feet to an unoccupied space you can see."
+          ]
+        },
+        "Once you use this feature, you can't use it again until you finish a {@rule Long Rest}. You can also restore your use of it by expending a level 5 spell slot (no action required)."
+      ]
+    },
+    {
+      "name": "Sawbones",
+      "source": "BREW",
+      "className": "Rogue",
+      "classSource": "PHB'24",
+      "subclassShortName": "Sawbones",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        "You have studied the humanoid body on a more intimate level than other Rogues. While others know where best to stab in order to kill, you also know how to repair the wounds you inflict—as well as how to make them far deeper. You delve into the secrets of anatomy, learning as much medical knowledge as you can get your hands on, regardless of how dirty the work becomes."
+      ]
+    },
+    {
+      "name": "General Practice",
+      "source": "BREW",
+      "className": "Rogue",
+      "classSource": "PHB'24",
+      "subclassShortName": "Sawbones",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "You gain proficiency in the {@skill Medicine} skill (or {@rule Expertise} in Medicine if you are already proficient), and you can use your Intelligence modifier instead of your Wisdom modifier for Medicine checks.",
+        "Additionally, during a {@rule Short Rest}, you can expend one use of a {@item Healer's Kit} to revitalize your wounded allies. If you or any ally within 30 feet of you regains {@rule Hit Points} at the end of the Short Rest by spending one or more {@rule Hit Point Dice}, each of those creatures regains an extra {@dice 1d6} Hit Points. Once a creature regains Hit Points from this feature, it can't do so again until it finishes a {@rule Long Rest}.",
+        "The extra Hit Points increase as you gain Rogue levels: to {@dice 1d8} at level 9, {@dice 1d10} at level 13, and {@dice 1d12} at level 17."
+      ]
+    },
+    {
+      "name": "Swift Surgery",
+      "source": "BREW",
+      "className": "Rogue",
+      "classSource": "PHB'24",
+      "subclassShortName": "Sawbones",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "You know how to quickly patch up wounds with the right tools. You can use a {@item Healer's Kit} as a {@rule Bonus Action}. When you use a Healer's Kit to stabilize a creature at 0 {@rule Hit Points}, that creature also regains Hit Points equal to your Intelligence modifier (minimum of 1).",
+        "Whenever you restore Hit Points to a creature using a {@item Potion of Healing} or the Battle Medic benefit of the {@feat Healer} feat, that creature regains extra Hit Points equal to your Intelligence modifier (minimum of 1). Additionally, if you have the {@feat Healer} feat, you can use its Battle Medic benefit as a {@rule Bonus Action}."
+      ]
+    },
+    {
+      "name": "Debilitating Strike",
+      "source": "BREW",
+      "className": "Rogue",
+      "classSource": "PHB'24",
+      "subclassShortName": "Sawbones",
+      "subclassSource": "BREW",
+      "level": 9,
+      "header": 2,
+      "entries": [
+        "You apply your anatomical knowledge directly to your Cunning Strike. You can use the higher of your Dexterity or Intelligence modifier when calculating your Cunning Strike save DC, and the following options are added to your Cunning Strike effects (each requires a target with appropriate physiology, and an affected creature repeats the Constitution saving throw at the end of each of its turns, ending the effect on itself on a success; each effect also ends after 1 minute):",
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "item",
+              "name": "Bleed (Cost: 2d6)",
+              "entry": "The target must succeed on a Constitution saving throw or lose {@damage 2d6} {@rule Hit Points} at the start of each of its turns from blood loss. The bleeding also ends early if the target regains any Hit Points or if a creature within 5 feet takes a {@action Utilize} action and succeeds on a {@dc 10} Medicine check (or expends one use of a {@item Healer's Kit}) to staunch the wound."
+            },
+            {
+              "type": "item",
+              "name": "Hamper (Cost: 2d6)",
+              "entry": "The target must succeed on a Constitution saving throw, or its {@rule Speed} is reduced by 15 feet and it has {@rule Disadvantage} on Dexterity saving throws."
+            },
+            {
+              "type": "item",
+              "name": "Pain (Cost: 2d6)",
+              "entry": "The target must succeed on a Constitution saving throw or have {@rule Disadvantage} on attack rolls."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Careful Dosage",
+      "source": "BREW",
+      "className": "Rogue",
+      "classSource": "PHB'24",
+      "subclassShortName": "Sawbones",
+      "subclassSource": "BREW",
+      "level": 13,
+      "header": 2,
+      "entries": [
+        "Your medical expertise allows you to partition and ration healing supplies without sacrificing potency. Over the course of 1 hour (which can be done during a {@rule Short Rest|Short} or {@rule Long Rest}), you can carefully measure and mark out dosages of one {@item Potion of Healing} within reach. The potion can then be used twice before it is consumed. A given potion can benefit from this feature only once.",
+        "At your DM's discretion, you may be able to apply this feature to other types of potions, typically requiring an appropriate Intelligence ({@skill Medicine}) check to succeed."
+      ]
+    },
+    {
+      "name": "Self-Sustain",
+      "source": "BREW",
+      "className": "Rogue",
+      "classSource": "PHB'24",
+      "subclassShortName": "Sawbones",
+      "subclassSource": "BREW",
+      "level": 17,
+      "header": 2,
+      "entries": [
+        "Your mastery of anatomy makes you both extraordinarily hard to kill and devastatingly precise:",
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "item",
+              "name": "Surgical Precision",
+              "entry": "The Sneak Attack die cost of each of your Debilitating Strike options is reduced by {@dice 1d6} (to {@dice 1d6})."
+            },
+            {
+              "type": "item",
+              "name": "Refuse to Flatline",
+              "entry": "Whenever you are reduced to 0 {@rule Hit Points}, you automatically stabilize instead of making Death Saving Throws. In addition, once per {@rule Short Rest|Short} or {@rule Long Rest}, when you are reduced to 0 Hit Points and not killed outright, you can drop to 1 Hit Point instead and immediately regain Hit Points equal to your Rogue level plus your Intelligence modifier (minimum of 1)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gravity Wielder",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Gravity Wielder",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        "Your innate magic comes from the cosmos itself. Perhaps you were touched by cosmic currents at birth, granted power by an old god as a boon to your lineage, or hurled into a plane with vastly different gravity than your own. Whatever the origin, you are among the rare few who can bend gravitational forces to your will."
+      ]
+    },
+    {
+      "name": "Gravity Spells",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Gravity Wielder",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "When you reach a Sorcerer level specified in the Gravity Spells table, you thereafter always have the listed spells prepared.",
+        {
+          "type": "table",
+          "caption": "Gravity Spells",
+          "colLabels": [
+            "Sorcerer Level",
+            "Spells"
+          ],
+          "colStyles": [
+            "col-2 text-center",
+            "col-10"
+          ],
+          "rows": [
+            [
+              "3",
+              "{@spell Jump}, {@spell Levitate}"
+            ],
+            [
+              "5",
+              "{@spell Fly}"
+            ],
+            [
+              "7",
+              "{@spell Freedom of Movement}"
+            ],
+            [
+              "9",
+              "{@spell Telekinesis}"
+            ],
+            [
+              "11",
+              "{@spell Move Earth}"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Motes of Gravity",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Gravity Wielder",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "Immediately before or after you cast a Sorcerer spell on your turn, you can take a {@rule Bonus Action} to create a mote of gravity on the ground within 60 feet of yourself. When you do, you can attempt to pull one Large or smaller creature within 15 feet of the mote up to 5 feet toward it. An unwilling creature can make a Strength saving throw against your Sorcerer spell save DC to resist the pull.",
+        "The pull distance increases to 10 feet at Sorcerer level 6 and 15 feet at Sorcerer level 14."
+      ]
+    },
+    {
+      "name": "Suspended Gravity",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Gravity Wielder",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "While you don't have the {@condition Incapacitated} condition, you are surrounded by a small pocket of low gravity. Objects and equipment you wear or carry count as weighing half their normal weight for you, and your jump distances are doubled."
+      ]
+    },
+    {
+      "name": "Concentrated Cosmos",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Gravity Wielder",
+      "subclassSource": "BREW",
+      "level": 6,
+      "header": 2,
+      "consumes": {
+        "name": "Sorcery Point",
+        "amount": 1
+      },
+      "entries": [
+        "You can create powerful nodes of gravity. As a {@action Magic} action, you can spend 1 Sorcery Point and choose a point you can see within 60 feet of yourself to create a gravity node. Each creature of your choice within 30 feet of the node must make a Strength saving throw against your Sorcerer spell save DC; Huge or larger creatures have {@rule Advantage} on this save, while Small or smaller creatures—and any creature not touching the ground—have {@rule Disadvantage}. On a failed save, a creature takes {@damage 2d6} Force damage and is pulled up to 15 feet toward the node; on a successful save, it takes half as much damage only.",
+        "Alternatively, as a {@rule Bonus Action}, you can spend 1 Sorcery Point to lighten your step, increasing your {@rule Speed} by 10 feet for 10 minutes."
+      ]
+    },
+    {
+      "name": "Afloat in the Currents",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Gravity Wielder",
+      "subclassSource": "BREW",
+      "level": 14,
+      "header": 2,
+      "entries": [
+        "As a {@rule Bonus Action}, you can suspend yourself on cosmic currents, gaining a {@rule Fly Speed} equal to your {@rule Speed} and the ability to hover, though you can't rise higher off the ground than your base Speed. This effect lasts until you end it as a Bonus Action or have the {@condition Incapacitated} condition.",
+        "Additionally, you always have the {@spell Feather Fall} spell prepared, and you can cast it by taking a {@rule Reaction} and spending 1 Sorcery Point instead of expending a spell slot."
+      ]
+    },
+    {
+      "name": "Master of Gravity",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Gravity Wielder",
+      "subclassSource": "BREW",
+      "level": 18,
+      "header": 2,
+      "consumes": {
+        "name": "Sorcery Point",
+        "amount": 5
+      },
+      "entries": [
+        "You can alter gravity around yourself on a massive scale. As a {@action Magic} action, you reshape gravity in a 60-foot-radius, 60-foot-high Cylinder centered on you for up to 1 minute (requiring {@status Concentration}). Choose one of the following effects:",
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "item",
+              "name": "Gravity Tripled",
+              "entry": "A creature moving through the area must spend 3 feet of movement for every 1 foot it moves."
+            },
+            {
+              "type": "item",
+              "name": "Gravity Reversed",
+              "entry": "Gravity reverses within the Cylinder, as per the {@spell Reverse Gravity} spell."
+            },
+            {
+              "type": "item",
+              "name": "Gravity Halved",
+              "entry": "Creatures in the area have their {@rule Speed} and jump distances doubled."
+            }
+          ]
+        },
+        "Regardless of which option you choose, any ranged attack whose projectile passes through the affected area has {@rule Disadvantage}. When you activate this feature, you and a number of creatures of your choice up to your Charisma modifier (minimum of 1) are unaffected by its gravity effect.",
+        "Once you use this feature, you can't use it again until you finish a {@rule Long Rest} unless you spend 5 Sorcery Points (no action required) to restore your use of it."
+      ]
+    },
+    {
+      "name": "Raw Magic",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Raw Magic",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        {
+          "type": "inset",
+          "name": "Author Note",
+          "entries": [
+            "Raw Magic is intended as a slightly less silly, higher player-agency alternative to Wild Magic. Wild Magic is still available, but accidentally dropping a Fireball on your own party isn't always fun—so Raw Magic makes surges smaller, repeatable, and less catastrophic."
+          ]
+        },
+        "You tap directly into the raw source of arcane power. Your magic is unfiltered, potent, and difficult to restrain—capable of both heightened power and volatile side effects."
+      ]
+    },
+    {
+      "name": "Raw Magic Spells",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Raw Magic",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "When you reach a Sorcerer level specified in the Raw Magic Spells table, you thereafter always have the listed spells prepared.",
+        {
+          "type": "table",
+          "caption": "Raw Magic Spells",
+          "colLabels": [
+            "Sorcerer Level",
+            "Spells"
+          ],
+          "colStyles": [
+            "col-2 text-center",
+            "col-10"
+          ],
+          "rows": [
+            [
+              "3",
+              "{@spell Chaos Bolt}, {@spell Nystul's Magic Aura}"
+            ],
+            [
+              "5",
+              "{@spell Dispel Magic}"
+            ],
+            [
+              "7",
+              "{@spell Confusion}"
+            ],
+            [
+              "9",
+              "{@spell Wall of Force}"
+            ],
+            [
+              "11",
+              "{@spell Globe of Invulnerability}"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Raw Magic Surge",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Raw Magic",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "Your magic flows straight from the Weave. It's normally kept in check, but is able to be loosed for greater potency at the risk of chaotic backlash. Once per turn, when you cast a Sorcerer spell using a spell slot (before rolling any attack rolls or saving throws for it), you can roll {@dice 1d20} on both the Positive Surge and Negative Surge tables below (rolling separately for each) and apply both effects to the casting.",
+        "You can use this feature a number of times equal to 1 + your Charisma modifier (minimum of once), and you regain all expended uses when you finish a {@rule Long Rest}.",
+        {
+          "type": "column",
+          "column": [
+            {
+              "type": "table",
+              "caption": "Positive Surge",
+              "colLabels": [
+                "1d20",
+                "Positive Effect"
+              ],
+              "colStyles": [
+                "col-2 text-center",
+                "col-10"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "The flow of raw magic overwhelms you, forcing you to focus just to avoid disaster. No positive effect."
+                ],
+                [
+                  "2",
+                  "Your clothes become spotless, and faded dyes return to full brightness."
+                ],
+                [
+                  "3",
+                  "A 5-foot area of ground at your feet is revitalized (plants bloom, marred stone smooths out, colors brighten, etc.)."
+                ],
+                [
+                  "4",
+                  "A thin layer of protective energy sheathes you. You gain {@rule Temporary Hit Points} equal to the spell's level + your Charisma modifier."
+                ],
+                [
+                  "5",
+                  "A wave of force turns incoming strikes aside. You gain the benefits of the {@action Disengage} action until the end of your turn."
+                ],
+                [
+                  "6",
+                  "You siphon off excess energy for later use, regaining 1 Sorcery Point."
+                ],
+                [
+                  "7",
+                  "The spell flares with blinding brilliance. One creature of your choice within 5 feet of you or a target of the spell must succeed on a Constitution saving throw against your spell save DC or have the {@condition Blinded} condition until the end of your next turn."
+                ],
+                [
+                  "8",
+                  "The spell's energy becomes unformed. If the spell deals damage, you can change its damage type to any other damage type."
+                ],
+                [
+                  "9",
+                  "A surge of energy shifts your position. You immediately teleport up to 10 feet to an unoccupied space you can see."
+                ],
+                [
+                  "10",
+                  "Arcs of chaotic energy leap from the spell. A random hostile creature within 30 feet of you (or within the spell's range, if greater) takes Lightning damage equal to half your Sorcerer level (rounded up) + your Charisma modifier."
+                ],
+                [
+                  "11",
+                  "Excess energy leaves a confusing afterglow around you. The next attack roll made against you before the start of your next turn has {@rule Disadvantage}."
+                ],
+                [
+                  "12",
+                  "Crackling sparks fill the air around you. Until the start of your next turn, whenever a creature hits you with an attack, it takes 3 Lightning damage per level of the spell."
+                ],
+                [
+                  "13",
+                  "The spell bends effortlessly to your will. You regain up to 2 Sorcery Points spent on Metamagic for this spell (or regain 1 Sorcery Point if you used no Metamagic)."
+                ],
+                [
+                  "14",
+                  "Arcane energy accelerates you. You gain the benefits of {@spell Haste} until the end of your next turn, without suffering lethargy when it ends."
+                ],
+                [
+                  "15",
+                  "The spell is amplified. If it deals damage, it deals an extra 5 damage per spell level once to each target."
+                ],
+                [
+                  "16",
+                  "The spell stabilizes unusually well. If it requires {@status Concentration}, you have {@rule Advantage} on Constitution saving throws to maintain it."
+                ],
+                [
+                  "17",
+                  "The spell guides itself toward its mark. You have {@rule Advantage} on attack rolls for this spell, and targets have {@rule Disadvantage} on saving throws against it."
+                ],
+                [
+                  "18",
+                  "Positive energy radiates from the casting. You or one ally within 10 feet of you regains 3 {@rule Hit Points} per spell level."
+                ],
+                [
+                  "19",
+                  "You draw back surplus magic. You regain one expended level 1 spell slot, or you can choose to regain 2 Sorcery Points instead."
+                ],
+                [
+                  "20",
+                  "Magic surges even more chaotically than expected. Roll twice more on the Positive Surge table and apply both effects without rolling additional Negative Surges."
+                ]
+              ]
+            }
+          ],
+          "column2": [
+            {
+              "type": "table",
+              "caption": "Negative Surge",
+              "colLabels": [
+                "1d20",
+                "Negative Effect"
+              ],
+              "colStyles": [
+                "col-2 text-center",
+                "col-10"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "Magic surges even more chaotically than expected. Roll twice more on the Negative Surge table and apply both effects without rolling additional Positive Surges."
+                ],
+                [
+                  "2",
+                  "The spell demands extra power. You must expend an additional level 1+ spell slot (or 2 Sorcery Points), or the spell fails."
+                ],
+                [
+                  "3",
+                  "Negative energy bleeds from the casting. You or one ally within 10 feet of you (your choice) takes 3 Necrotic damage per spell level."
+                ],
+                [
+                  "4",
+                  "The spell grows erratic and hard to aim. You have {@rule Disadvantage} on attack rolls for this spell, and targets have {@rule Advantage} on saving throws against it."
+                ],
+                [
+                  "5",
+                  "The spell becomes volatile. If it requires {@status Concentration}, you have {@rule Disadvantage} on Constitution saving throws to maintain it."
+                ],
+                [
+                  "6",
+                  "Power leaks away from the casting. If the spell deals damage, it deals 3 less damage per spell level to each target (minimum of 1 damage)."
+                ],
+                [
+                  "7",
+                  "Static arcs through your muscles, locking you up. You suffer the effects of {@spell Slow} until the end of your next turn."
+                ],
+                [
+                  "8",
+                  "The spell resists shaping. Any Metamagic options applied to this spell don't take effect (their Sorcery Points are refunded)."
+                ],
+                [
+                  "9",
+                  "Nearby blades are magnetically drawn toward you. One enemy within 5 feet of you can take a {@rule Reaction} to make one melee weapon attack against you after you cast the spell."
+                ],
+                [
+                  "10",
+                  "Static builds across your skin, waiting to discharge. Until the start of your next turn, whenever a creature hits you with an attack, you take Lightning damage equal to half your Sorcerer level (rounded up) + your Charisma modifier."
+                ],
+                [
+                  "11",
+                  "Errant arcs lash out from the casting. A random ally within 30 feet of you (if any) takes {@damage 1d8} Lightning damage."
+                ],
+                [
+                  "12",
+                  "Your footing phases unpredictably. You teleport 10 feet in a random direction to an unoccupied space (or the nearest unoccupied space if obstructed)."
+                ],
+                [
+                  "13",
+                  "The spell fails to coalesce properly. Targets treat its damage as one step more resisted (Vulnerability → Normal → Resistance → Immunity)."
+                ],
+                [
+                  "14",
+                  "A sudden flash bursts in your face. You must succeed on a Constitution saving throw against your own spell save DC or have the {@condition Blinded} condition until the end of your next turn."
+                ],
+                [
+                  "15",
+                  "You are momentarily enervated. Your {@rule Speed} is halved until the end of your next turn."
+                ],
+                [
+                  "16",
+                  "You suddenly feel intensely thirsty and hungry."
+                ],
+                [
+                  "17",
+                  "You hear a faint, harmless ringing in your ears for the next minute."
+                ],
+                [
+                  "18",
+                  "Fractal lightning-shaped markings trace across your hands and arms, vanishing when you receive any magical healing."
+                ],
+                [
+                  "19",
+                  "A 5-foot area of ground at your feet is blighted by overflow magic (grass withers, stone cracks, colors bleach, etc.)."
+                ],
+                [
+                  "20",
+                  "You master the raw surge completely. No negative effect."
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Interference",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Raw Magic",
+      "subclassSource": "BREW",
+      "level": 6,
+      "header": 2,
+      "entries": [
+        "Whenever another creature you can see within 60 feet of yourself casts a spell of level 1 or higher, you can take a {@rule Reaction} and spend a number of Sorcery Points equal to the spell's level to force that caster to roll on your choice of the Positive Surge or Negative Surge table and apply the result to its spell.",
+        "For any surge result that references your Sorcerer level, Charisma modifier, or Sorcery Points, use your own Sorcerer level and Charisma modifier (and ignore Sorcery Point effects if the target doesn't have Sorcery Points)."
+      ]
+    },
+    {
+      "name": "Surge Control",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Raw Magic",
+      "subclassSource": "BREW",
+      "level": 14,
+      "header": 2,
+      "entries": [
+        "You gain a measure of control over raw surges. Whenever you or a creature affected by your Interference rolls on the Positive Surge or Negative Surge table, you can roll twice on one of the tables rolled and choose which result applies."
+      ]
+    },
+    {
+      "name": "Overcharged Surge",
+      "source": "BREW",
+      "className": "Sorcerer",
+      "classSource": "PHB'24",
+      "subclassShortName": "Raw Magic",
+      "subclassSource": "BREW",
+      "level": 18,
+      "header": 2,
+      "entries": [
+        "You can overcharge your spells at a cost to your own vitality. Once per turn, when you roll damage for a Sorcerer spell cast with a spell slot, you can expend a number of your {@rule Hit Point Dice} up to your Charisma modifier. Roll the expended dice; you and each target of the spell take Force damage equal to the total rolled. The damage you take from this feature can't be reduced in any way, and it doesn't force a {@status Concentration} check for the spell you just cast."
+      ]
+    },
+    {
+      "name": "Ghost in the Machine Patron",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Ghost in the Machine",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        "Your patron is a mysterious entity whose nature is bound to the energy of progress. It might be a single artificial intelligence, a powerful creature able to communicate only through a technological otherworld, or a strange emergent consciousness within an expanding network of machines. Through your pact, you allow this entity to extend its influence into the physical world, though its ultimate goals may remain inscrutable."
+      ]
+    },
+    {
+      "name": "Ghost in the Machine Spells",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Ghost in the Machine",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Ghost in the Machine Spells table, you thereafter always have the listed spells prepared.",
+        {
+          "type": "table",
+          "caption": "Ghost in the Machine Spells",
+          "colLabels": [
+            "Warlock Level",
+            "Spells"
+          ],
+          "colStyles": [
+            "col-2 text-center",
+            "col-10"
+          ],
+          "rows": [
+            [
+              "3",
+              "{@spell Detect Thoughts}, {@spell Remote Access}, {@spell Tasha's Mind Whip}, {@spell Thunderwave}"
+            ],
+            [
+              "5",
+              "{@spell Haywire}, {@spell Invisibility to Tech}"
+            ],
+            [
+              "7",
+              "{@spell Arcane Eye}, {@spell Fabricate}"
+            ],
+            [
+              "9",
+              "{@spell Animate Objects}, {@spell Synchronicity}"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Knowledge Download",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Ghost in the Machine",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "Your connection with the Ghost in the Machine grants you proficiency in the Technology skill (or {@skill Arcana} if your campaign doesn't use the Technology skill) and with one other skill, tool, or vehicle of your choice.",
+        "Whenever you finish a {@rule Long Rest}, you can replace the second proficiency gained from this feature with a different skill, tool, or vehicle proficiency."
+      ]
+    },
+    {
+      "name": "Information Surge",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Ghost in the Machine",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "You can temporarily disrupt technological or clockwork devices. As a {@rule Bonus Action}, target one such device you can see within 30 feet of yourself. If the device is held or actively used by a creature, that creature must make an Intelligence saving throw against your Warlock spell save DC; on a failed save, the device ceases to function until the end of your next turn. If the device isn't held or used by a creature, the DM makes a saving throw for it with {@rule Disadvantage} and a +0 modifier (shielded devices may negate the Disadvantage).",
+        "You can use this feature a number of times equal to your {@rule Proficiency|Proficiency Bonus}, and you regain all expended uses when you finish a {@rule Long Rest}."
+      ]
+    },
+    {
+      "name": "Wire Walk",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Ghost in the Machine",
+      "subclassSource": "BREW",
+      "level": 6,
+      "header": 2,
+      "entries": [
+        "You can travel through wires, data lines, or arcane cables. As a {@rule Bonus Action}, touch a device or socket connected to a wire and teleport along that network to an unoccupied space within 5 feet of another connected device or socket you can see within 120 feet of yourself (or within 60 feet even if you can't see it, provided you know its location).",
+        "You can use this feature a number of times equal to your {@rule Proficiency|Proficiency Bonus}, and you regain all expended uses when you finish a {@rule Long Rest}."
+      ]
+    },
+    {
+      "name": "Personal Encryption",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Ghost in the Machine",
+      "subclassSource": "BREW",
+      "level": 10,
+      "header": 2,
+      "entries": [
+        "Your patron shields your thoughts, memories, and presence so you can better infiltrate the physical world. You have {@rule Resistance} to Psychic damage, you are immune to scrying, thought detection, and any other magical means of learning your location or reading your thoughts unless you allow it, and you have {@rule Advantage} on saving throws to avoid or end the {@condition Charmed} and {@condition Frightened} conditions or other ongoing mind-affecting effects."
+      ]
+    },
+    {
+      "name": "Technovirus",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Ghost in the Machine",
+      "subclassSource": "BREW",
+      "level": 14,
+      "header": 2,
+      "entries": [
+        "You can infect a creature with living circuitry. As a {@action Magic} action, choose one creature you can see within 30 feet of yourself (a Construct has {@rule Disadvantage} on its saving throw). The target must make a Constitution saving throw against your Warlock spell save DC as a techno-organic virus races through it, taking {@damage 8d10} Psychic damage on a failed save or half as much damage on a successful one.",
+        "On a failed save, the target is also infected until you finish a {@rule Long Rest} or until the infection is removed by {@spell Lesser Restoration} or similar magic. While the target is infected and within 60 feet of you, you can take a {@rule Bonus Action} on your turn to issue it a single command as if casting the {@spell Command} spell (no spell slot required), and the target has {@rule Disadvantage} on its saving throw against that command.",
+        "Once you use this feature, you can't use it again until you finish a {@rule Long Rest}."
+      ]
+    },
+    {
+      "name": "Worldbreaker Patron",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Worldbreaker",
+      "subclassSource": "BREW",
+      "level": 3,
+      "entries": [
+        "Your patron is an agent of absolute destruction—an entity that seeks to bring all life to ruin and collapse creation to dust. Examples of patrons you might entreat include Tharizdun, Ygorl, Jormundangr, one of the trapped Arkhosan Titans, a sentient {@item Sphere of Annihilation}, or a particularly destructive primordial spirit.",
+        "Even if you act against its interests once you learn its true desires, your patron sees no reason to revoke its boons, viewing you merely as a vessel through which its power reaches out to unmake the world regardless of your intentions."
+      ]
+    },
+    {
+      "name": "Worldbreaker Spells",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Worldbreaker",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Worldbreaker Spells table, you thereafter always have the listed spells prepared.",
+        {
+          "type": "table",
+          "caption": "Worldbreaker Spells",
+          "colLabels": [
+            "Warlock Level",
+            "Spells"
+          ],
+          "colStyles": [
+            "col-2 text-center",
+            "col-10"
+          ],
+          "rows": [
+            [
+              "3",
+              "{@spell Catapult}, {@spell Earth Tremor}, {@spell Maximilian's Earthen Grasp}, {@spell Spike Growth}"
+            ],
+            [
+              "5",
+              "{@spell Erupting Earth}, {@spell Tidal Wave}"
+            ],
+            [
+              "7",
+              "{@spell Storm Sphere}, {@spell Wall of Fire}"
+            ],
+            [
+              "9",
+              "{@spell Immolation}, {@spell Maelstrom}"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Emissary of the Apocalypse",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Worldbreaker",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "As a {@action Magic} action, you can cause any nonmagical object you can see within 30 feet of yourself that isn't being worn or carried and weighs less than 10 pounds to crumble under your gaze; if the item has a value equal to or less than twice your Warlock level in GP, it is immediately destroyed and turns to dust.",
+        "In addition, when you reduce a Small or larger creature to 0 {@rule Hit Points}, you can scar the earth as a mark of your devastation. The ground within 10 feet of the creature corrupts as plants wither and stone erodes, becoming {@rule Difficult Terrain} for 1 year or until cleared by {@spell Dispel Magic} or physical labor."
+      ]
+    },
+    {
+      "name": "Fall to Ruin",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Worldbreaker",
+      "subclassSource": "BREW",
+      "level": 3,
+      "header": 1,
+      "entries": [
+        "When an ally deals damage to a creature or object you can see within 60 feet of yourself, you can take a {@rule Reaction} to inflict ruin upon it, dealing an extra {@damage 2d6} Force damage. This extra damage increases to {@damage 4d6} at Warlock level 10.",
+        "If this feature reduces a creature to 0 {@rule Hit Points}, you don't expend a use of it. Starting at Warlock level 10, when you reduce a creature to 0 Hit Points with this feature, you can cause the creature and any nonmagical equipment it is wearing or carrying to crumble immediately to dust.",
+        "You can use this feature a number of times equal to your {@rule Proficiency|Proficiency Bonus}, and you regain all expended uses when you finish a {@rule Long Rest}."
+      ]
+    },
+    {
+      "name": "Elevated Destruction",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Worldbreaker",
+      "subclassSource": "BREW",
+      "level": 6,
+      "header": 2,
+      "entries": [
+        "You have {@rule Cover|Half Cover} while you are in or directly above any area of {@rule Difficult Terrain} created by one of your Warlock features or spells.",
+        "In addition, as a {@rule Bonus Action}, you can grant yourself a {@rule Fly Speed} equal to your {@rule Speed} for 10 minutes. Once you grant yourself a Fly Speed this way, you can't do so again until you finish a {@rule Short Rest|Short} or {@rule Long Rest}."
+      ]
+    },
+    {
+      "name": "Desecration",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Worldbreaker",
+      "subclassSource": "BREW",
+      "level": 10,
+      "header": 2,
+      "entries": [
+        "Creatures standing in an area of {@rule Difficult Terrain} created by one of your Warlock features or spells have {@rule Disadvantage} on saving throws against your Warlock spells. A creature that ignores the Difficult Terrain it is in is immune to this effect.",
+        "Your magic lingers and permanently scars the land. Any area of Difficult Terrain you create with your Warlock features or Warlock spells of level 1 or higher remains Difficult Terrain indefinitely (any other spell effects still end normally when the spell's duration expires). Lingering Difficult Terrain created this way can be removed by {@spell Dispel Magic} or a similar spell cast at level 5 or higher, or you can dismiss any lingering Difficult Terrain you can see as a {@action Magic} action."
+      ]
+    },
+    {
+      "name": "End of Days",
+      "source": "BREW",
+      "className": "Warlock",
+      "classSource": "PHB'24",
+      "subclassShortName": "Worldbreaker",
+      "subclassSource": "BREW",
+      "level": 14,
+      "header": 2,
+      "entries": [
+        "As a {@action Magic} action, choose a point on the ground that you can see within 300 feet of yourself. A 40-foot {@rule Cube [Area of Effect]|Cube} of destructive force erupts at that point, tearing the earth apart. Nonmagical objects and structures in the Cube that aren't being worn or carried take 300 Force damage; any object or structure inside the Cube that isn't destroyed becomes Vulnerable to all damage until properly repaired.",
+        "Each creature in the Cube must make a Strength saving throw against your Warlock spell save DC. On a failed save, a creature takes {@damage 4d12} Force damage and has the {@condition Stunned} condition until the end of your next turn; on a successful save, it takes half as much damage only. If this feature reduces a creature to 0 {@rule Hit Points}, it and any nonmagical equipment it is wearing or carrying are immediately destroyed, turning to dust.",
+        "Once you use this feature, you can't use it again until you finish a {@rule Long Rest}."
+      ]
+    }
+  ]
+}

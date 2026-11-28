@@ -7,6 +7,7 @@ import { Spell } from './spell';
 import { DndClass } from './dnd-class';
 import { Feat } from './feat';
 import { matchesPhrase } from '../shared/helpers/format.utils';
+import { mergeBrewSubclasses } from '../shared/services/dnd-data.service';
 
 describe('Model normalizers', () => {
   it('normalizes Monster array sizes, structured resistances, AC, and HP', () => {
@@ -267,5 +268,34 @@ describe('Model normalizers', () => {
       entries: []
     });
     expect(objClassPrereq.prerequisite).toBe('{@class Bard}, {@class Sorcerer} or {@class Wizard}');
+  });
+
+  it('merges brew subclasses and features into matching base classes without mutating inputs', () => {
+    const baseBard = {
+      class: [{ name: 'Bard', source: "PHB'24", hd: { number: 1, faces: 8 } }],
+      classFeature: [],
+      subclass: [{ name: 'College of Lore', shortName: 'Lore', source: "PHB'24", edition: '2024', className: 'Bard' }],
+      subclassFeature: [{ name: 'College of Lore', subclassShortName: 'Lore', level: 3, entries: ['Lore intro'] }]
+    };
+    const baseWizard = {
+      class: [{ name: 'Wizard', source: "PHB'24", hd: { number: 1, faces: 6 } }],
+      classFeature: [],
+      subclass: [],
+      subclassFeature: []
+    };
+    const brew = {
+      subclass: [{ name: 'College of Spheres', shortName: 'Spheres', source: 'BREW', edition: 'brew', className: 'Bard' }],
+      subclassFeature: [{ name: 'College of Spheres', className: 'Bard', subclassShortName: 'Spheres', level: 3, entries: ['Spheres intro'] }]
+    };
+
+    const merged = mergeBrewSubclasses([baseBard, baseWizard], brew);
+    expect(merged[0].subclass.map((s: any) => s.shortName)).toEqual(['Lore', 'Spheres']);
+    expect(merged[0].subclassFeature.map((f: any) => f.subclassShortName)).toEqual(['Lore', 'Spheres']);
+    expect(merged[1]).toBe(baseWizard);
+    expect(baseBard.subclass.length).toBe(1);
+
+    const bardModel = new DndClass(merged[0]);
+    expect(bardModel.subclass.find(s => s.shortName === 'Spheres')?.edition).toBe('brew');
+    expect(bardModel.subclassFeature.some(f => f.subclassShortName === 'Spheres')).toBe(true);
   });
 });
