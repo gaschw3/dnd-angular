@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 
 import { normalizeMonster } from './monster';
 import { normalizeItem } from './item';
-import { normalizeOtherFeature } from './otherFeature';
+import { hasKnownFeatureType, normalizeOtherFeature } from './otherFeature';
 import { Spell } from './spell';
 import { DndClass } from './dnd-class';
 import { Feat } from './feat';
@@ -97,6 +97,11 @@ describe('Model normalizers', () => {
     expect(feat.levelPrereq).toBe('2');
     expect(feat.prereqSummary).toBe('Eldritch Blast, Warlock');
     expect(feat.prereqFull).toBe('Level 2 Warlock, Eldritch Blast');
+
+    expect(hasKnownFeatureType({ featureType: ['EI'] })).toBe(true);
+    expect(hasKnownFeatureType({ featureType: ['PB'] })).toBe(false);
+    expect(hasKnownFeatureType({ featureType: [] })).toBe(false);
+    expect(hasKnownFeatureType({})).toBe(false);
   });
 
   it('builds plain-text full-text search index for Spells with inline tags stripped', () => {

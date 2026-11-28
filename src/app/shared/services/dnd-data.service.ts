@@ -10,7 +10,7 @@ import { Item, normalizeItem } from '../../models/item';
 import { Ancestry } from '../../models/ancestry';
 import { Background } from '../../models/background';
 import { Feat } from '../../models/feat';
-import { OtherFeature, normalizeOtherFeature } from '../../models/otherFeature';
+import { OtherFeature, hasKnownFeatureType, normalizeOtherFeature } from '../../models/otherFeature';
 
 @Injectable({
   providedIn: 'root'
@@ -127,7 +127,7 @@ export class DndDataService {
   getOtherFeatures(): Observable<OtherFeature[]> {
     if (!this.otherFeatures$) {
       this.otherFeatures$ = this.http.get<any[]>('assets/data/2026/otherFeatures.json').pipe(
-        map(features => features.map(normalizeOtherFeature)),
+        map(features => features.filter(hasKnownFeatureType).map(normalizeOtherFeature)),
         shareReplay(1)
       );
     }

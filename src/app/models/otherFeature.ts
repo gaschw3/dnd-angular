@@ -50,15 +50,23 @@ export const featureType: Record<string, string> = {
     "FS": "Fighting Style",
     "MM": "Metamagic",
     "MV": "Battlemaster Maneuver",
-    "EX": "Tactical Exploit",
-    "SP": "Scholarly Pursuit",
+    //"EX": "Tactical Exploit",
+    //"SP": "Scholarly Pursuit",
     "RN": "Rune Knight Rune",
-    "DM": "Dragonmark"
+    //"DM": "Dragonmark"
+}
+
+export function hasKnownFeatureType(feature: { featureType?: string[] }): boolean {
+  return Boolean(
+    feature.featureType?.some(type => Object.prototype.hasOwnProperty.call(featureType, type))
+  );
 }
 
 export function normalizeOtherFeature(raw: any): OtherFeature {
-  const firstType = raw.featureType?.[0];
-  const typeLabel = firstType ? featureType[firstType] || '' : '';
+  const matchedType = raw.featureType?.find((type: string) =>
+    Object.prototype.hasOwnProperty.call(featureType, type)
+  );
+  const typeLabel = matchedType ? featureType[matchedType] : '';
   const prereqSummary = formatPrereq(raw.prerequisite, false);
   const prereqFull = formatPrereq(raw.prerequisite, true);
   const levelPrereq = extractLevelPrereq(raw.prerequisite);
